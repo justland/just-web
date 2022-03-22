@@ -1,15 +1,26 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "newLine": "LF",
     "noEmit": true,
-    "isolatedModules": true
-  }
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "strict": true,
+    "stripInternal": true,
+    "target": "ESNext",
+    "types": [
+      "vite/client"
+    ],
+    "useDefineForClassFields": true
+  },
+  "include": [
+    "ts"
+  ]
 }
