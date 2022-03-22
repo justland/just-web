@@ -15,6 +15,31 @@
       "summary": "",
       "autoinstallerName": "rush-changemanager",
       "shellCommand": "node common/scripts/rush-changefiles.js"
+    },
+    {
+      "name": "build:watch",
+      "commandKind": "bulk",
+      "summary": "Build projects and watch for changes",
+      "description": "For details, see the article \"Using watch mode\" on the Rush website: https://rushjs.io/",
+      // use incremental build logic (important)
+      "incremental": true,
+      "enableParallelism": true,
+      // Enable "watch mode"
+      "watchForChanges": true
+    },
+    {
+      "name": "test",
+      "commandKind": "bulk",
+      "summary": "Test projects",
+      "incremental": true,
+      "enableParallelism": true
+    },
+    {
+      "name": "test:watch",
+      "commandKind": "global",
+      "summary": "Jest watch",
+      "autoinstallerName": "rush-jest",
+      "shellCommand": "jest --watch"
     }
   ],
   "parameters": [

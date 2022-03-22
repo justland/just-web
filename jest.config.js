@@ -4,15 +4,10 @@ module.exports = {
     '!<rootDir>/ts/bin.[jt]s'
   ],
   projects: [
-    'packages/*'
-  ],
-  reporters: [
-    'default',
-    'jest-progress-tracker'
+    'apps/*'
   ],
   watchPlugins: [
     'jest-watch-suspend',
-    'jest-watch-repeat',
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname',
     [
