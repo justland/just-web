@@ -1,8 +1,4 @@
 {
-  "files.associations": {
-    "rush.json": "jsonc",
-    "**/common/config/rush/*.json": "jsonc"
-  },
   "cSpell.words": [
     "codeql",
     "noreply",
@@ -11,6 +7,11 @@
     "pnpmfile",
     "vite"
   ],
+  "files.associations": {
+    "**/common/config/rush/*.json": "jsonc",
+    "common/git-hooks/*": "shell",
+    "rush.json": "jsonc"
+  },
   "json.schemas": [
     {
       "fileMatch": [
