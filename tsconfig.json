@@ -1,0 +1,7 @@
+{
+  "files": [],
+  "exclude": [],
+  "references": [{
+    "path": "apps/just-func-playground"
+  }]
+}

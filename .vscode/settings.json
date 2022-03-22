@@ -1,0 +1,23 @@
+{
+  "files.associations": {
+    "rush.json": "jsonc",
+    "**/common/config/rush/*.json": "jsonc"
+  },
+  "cSpell.words": [
+    "codeql",
+    "noreply",
+    "npmjs",
+    "pnpm",
+    "pnpmfile",
+    "vite"
+  ],
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "tsconfig.*.json"
+      ],
+      "url": "http://json.schemastore.org/tsconfig"
+    }
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
