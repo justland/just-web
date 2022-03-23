@@ -25,16 +25,12 @@
   "projectFolderMinDepth": 2,
   "projects": [
     {
-      "packageName": "just-func-playground",
-      "projectFolder": "just-func/playground",
-      "shouldPublish": false,
-      "versionPolicyName": "independent"
+      "packageName": "just-func-play-solid",
+      "projectFolder": "just-func/play-solid"
     },
     {
-      "packageName": "just-func-playground-react",
-      "projectFolder": "just-func/playground-react",
-      "shouldPublish": false,
-      "versionPolicyName": "independent"
+      "packageName": "just-func-play-react",
+      "projectFolder": "just-func/play-react"
     }
   ],
   "repository": {

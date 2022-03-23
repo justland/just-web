@@ -1,7 +1,12 @@
 {
   "files": [],
   "exclude": [],
-  "references": [{
-    "path": "apps/just-func-playground"
-  }]
+  "references": [
+    {
+      "path": "just-func/play-solid"
+    },
+    {
+      "path": "just-func/play-react"
+    }
+  ]
 }

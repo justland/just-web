@@ -5,72 +5,7 @@ importers:
   .:
     specifiers: {}
 
-  ../../just-func/playground:
-    specifiers:
-      '@babel/core': ~7.17.8
-      '@babel/plugin-proposal-class-properties': ~7.16.7
-      '@babel/plugin-proposal-nullish-coalescing-operator': ~7.16.7
-      '@babel/plugin-proposal-optional-chaining': ~7.16.7
-      '@babel/plugin-transform-runtime': ~7.17.0
-      '@babel/preset-env': ~7.16.11
-      '@babel/preset-typescript': ~7.16.7
-      '@storybook/addon-essentials': ^6.4.19
-      '@storybook/addon-links': ^6.4.19
-      '@storybook/html': ~6.4.19
-      '@types/jest': ^27.4.1
-      babel-loader: ~8.2.3
-      babel-preset-solid: ~1.3.13
-      eslint: ^8.11.0
-      eslint-plugin-harmony: ^6.0.0
-      identity-obj-proxy: ~3.0.0
-      jest: ^27.5.1
-      jest-validate: ^27.5.1
-      jest-watch-suspend: ^1.1.2
-      jest-watch-toggle-config: ^2.0.1
-      jest-watch-typeahead: ^1.0.0
-      npm-run-all: ^4.1.5
-      react: ~17.0.2
-      react-dom: ~17.0.2
-      solid-js: ^1.3.12
-      ts-jest: ^27.1.3
-      typescript: ^4.6.2
-      vite: ^2.8.6
-      vite-plugin-solid: ^2.2.6
-      webpack: ^5.70.0
-    dependencies:
-      solid-js: 1.3.13
-    devDependencies:
-      '@babel/core': 7.17.8
-      '@babel/plugin-proposal-class-properties': 7.16.7_@babel+core@7.17.8
-      '@babel/plugin-proposal-nullish-coalescing-operator': 7.16.7_@babel+core@7.17.8
-      '@babel/plugin-proposal-optional-chaining': 7.16.7_@babel+core@7.17.8
-      '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
-      '@babel/preset-env': 7.16.11_@babel+core@7.17.8
-      '@babel/preset-typescript': 7.16.7_@babel+core@7.17.8
-      '@storybook/addon-essentials': 6.4.19_9997711ac422171101ed14ab835b7c48
-      '@storybook/addon-links': 6.4.19_react-dom@17.0.2+react@17.0.2
-      '@storybook/html': 6.4.19_45975b5e17d41e31bfb09312c44163d9
-      '@types/jest': 27.4.1
-      babel-loader: 8.2.3_fa907c5a4f16ccc493e21649ccc59574
-      babel-preset-solid: 1.3.13_@babel+core@7.17.8
-      eslint: 8.11.0
-      eslint-plugin-harmony: 6.0.0_eslint@8.11.0+typescript@4.6.2
-      identity-obj-proxy: 3.0.0
-      jest: 27.5.1
-      jest-validate: 27.5.1
-      jest-watch-suspend: 1.1.2_jest@27.5.1
-      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
-      jest-watch-typeahead: 1.0.0_jest@27.5.1
-      npm-run-all: 4.1.5
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      ts-jest: 27.1.3_23bc83dd0471d6d2a42908007c85fd69
-      typescript: 4.6.2
-      vite: 2.8.6
-      vite-plugin-solid: 2.2.6
-      webpack: 5.70.0
-
-  ../../just-func/playground-react:
+  ../../just-func/play-react:
     specifiers:
       '@babel/core': ~7.17.8
       '@babel/plugin-proposal-class-properties': ~7.16.7
@@ -171,6 +106,71 @@ importers:
       react-scripts: 5.0.0_be9895a1d61ddb164f91fcd3530242a5
       ts-jest: 27.1.3_23bc83dd0471d6d2a42908007c85fd69
       typescript: 4.6.2
+      webpack: 5.70.0
+
+  ../../just-func/play-solid:
+    specifiers:
+      '@babel/core': ~7.17.8
+      '@babel/plugin-proposal-class-properties': ~7.16.7
+      '@babel/plugin-proposal-nullish-coalescing-operator': ~7.16.7
+      '@babel/plugin-proposal-optional-chaining': ~7.16.7
+      '@babel/plugin-transform-runtime': ~7.17.0
+      '@babel/preset-env': ~7.16.11
+      '@babel/preset-typescript': ~7.16.7
+      '@storybook/addon-essentials': ^6.4.19
+      '@storybook/addon-links': ^6.4.19
+      '@storybook/html': ~6.4.19
+      '@types/jest': ^27.4.1
+      babel-loader: ~8.2.3
+      babel-preset-solid: ~1.3.13
+      eslint: ^8.11.0
+      eslint-plugin-harmony: ^6.0.0
+      identity-obj-proxy: ~3.0.0
+      jest: ^27.5.1
+      jest-validate: ^27.5.1
+      jest-watch-suspend: ^1.1.2
+      jest-watch-toggle-config: ^2.0.1
+      jest-watch-typeahead: ^1.0.0
+      npm-run-all: ^4.1.5
+      react: ~17.0.2
+      react-dom: ~17.0.2
+      solid-js: ^1.3.12
+      ts-jest: ^27.1.3
+      typescript: ^4.6.2
+      vite: ^2.8.6
+      vite-plugin-solid: ^2.2.6
+      webpack: ^5.70.0
+    dependencies:
+      solid-js: 1.3.13
+    devDependencies:
+      '@babel/core': 7.17.8
+      '@babel/plugin-proposal-class-properties': 7.16.7_@babel+core@7.17.8
+      '@babel/plugin-proposal-nullish-coalescing-operator': 7.16.7_@babel+core@7.17.8
+      '@babel/plugin-proposal-optional-chaining': 7.16.7_@babel+core@7.17.8
+      '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
+      '@babel/preset-env': 7.16.11_@babel+core@7.17.8
+      '@babel/preset-typescript': 7.16.7_@babel+core@7.17.8
+      '@storybook/addon-essentials': 6.4.19_9997711ac422171101ed14ab835b7c48
+      '@storybook/addon-links': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/html': 6.4.19_45975b5e17d41e31bfb09312c44163d9
+      '@types/jest': 27.4.1
+      babel-loader: 8.2.3_fa907c5a4f16ccc493e21649ccc59574
+      babel-preset-solid: 1.3.13_@babel+core@7.17.8
+      eslint: 8.11.0
+      eslint-plugin-harmony: 6.0.0_eslint@8.11.0+typescript@4.6.2
+      identity-obj-proxy: 3.0.0
+      jest: 27.5.1
+      jest-validate: 27.5.1
+      jest-watch-suspend: 1.1.2_jest@27.5.1
+      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
+      jest-watch-typeahead: 1.0.0_jest@27.5.1
+      npm-run-all: 4.1.5
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      ts-jest: 27.1.3_23bc83dd0471d6d2a42908007c85fd69
+      typescript: 4.6.2
+      vite: 2.8.6
+      vite-plugin-solid: 2.2.6
       webpack: 5.70.0
 
 packages:
