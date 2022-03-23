@@ -34,13 +34,6 @@
       "incremental": true,
       "enableParallelism": true,
       "allowWarningsInSuccessfulBuild": true
-    },
-    {
-      "name": "test:watch",
-      "commandKind": "global",
-      "summary": "Jest watch",
-      "autoinstallerName": "rush-jest",
-      "shellCommand": "jest --watch"
     }
   ],
   "parameters": [
