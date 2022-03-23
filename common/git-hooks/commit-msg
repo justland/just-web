@@ -1,2 +1,3 @@
 #!/bin/sh
+echo "node common/scripts/install-run-rush.js commitlint --edit $1"
 node common/scripts/install-run-rush.js commitlint --edit $1

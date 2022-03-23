@@ -32,7 +32,8 @@
       "commandKind": "bulk",
       "summary": "Test projects",
       "incremental": true,
-      "enableParallelism": true
+      "enableParallelism": true,
+      "allowWarningsInSuccessfulBuild": true
     },
     {
       "name": "test:watch",
