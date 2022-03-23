@@ -1,6 +1,5 @@
 module.exports = {
   preset: 'ts-jest',
-  displayName: 'playground',
   globals: {
     'ts-jest': {
       babelConfig: {
