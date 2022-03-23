@@ -1,5 +1,5 @@
 module.exports = {
-  preset: "ts-jest",
+  preset: 'ts-jest',
   displayName: 'playground',
   globals: {
     'ts-jest': {
@@ -12,9 +12,9 @@ module.exports = {
     }
   },
   moduleNameMapper: {
-    "solid-js/web": "<rootDir>/node_modules/solid-js/web/dist/web.cjs",
-    "solid-js": "<rootDir>/node_modules/solid-js/dist/solid.cjs",
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+    'solid-js/web': '<rootDir>/node_modules/solid-js/web/dist/web.cjs',
+    'solid-js': '<rootDir>/node_modules/solid-js/dist/solid.cjs',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|scss)': 'identity-obj-proxy'
   },
   collectCoverageFrom: [
