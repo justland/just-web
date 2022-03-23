@@ -6,17 +6,14 @@ on:
   pull_request:
     types: [opened, synchronize]
 jobs:
-  build:
-    uses: unional/.github/.github/workflows/rush-build.yml@main
+  verify:
+    uses: unional/.github/.github/workflows/web-rush-verify.yml@main
     secrets:
       codacy-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-  test:
-    uses: unional/.github/.github/workflows/rush-test.yml@main
-    needs: build
   release:
     if: github.ref == 'refs/heads/main'
     uses: unional/.github/.github/workflows/rush-release.yml@main
-    needs: test
+    needs: verify
     secrets:
       npm-token: ${{ secrets.NPM_TOKEN }}
   # docgen:
