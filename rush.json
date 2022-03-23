@@ -26,7 +26,13 @@
   "projects": [
     {
       "packageName": "just-func-playground",
-      "projectFolder": "apps/just-func-playground",
+      "projectFolder": "just-func/playground",
+      "shouldPublish": false,
+      "versionPolicyName": "independent"
+    },
+    {
+      "packageName": "just-func-playground-react",
+      "projectFolder": "just-func/playground-react",
       "shouldPublish": false,
       "versionPolicyName": "independent"
     }
