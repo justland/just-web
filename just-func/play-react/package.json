@@ -72,6 +72,7 @@
     "chromatic": "~6.5.3",
     "css-loader": "~6.7.1",
     "eslint": "^8.11.0",
+    "eslint-config-react-app": "~7.0.0",
     "eslint-plugin-harmony": "^6.0.0",
     "eslint-plugin-storybook": "^0.5.7",
     "identity-obj-proxy": "~3.0.0",
