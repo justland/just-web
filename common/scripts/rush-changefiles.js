@@ -6,14 +6,7 @@ const rushLib = require(path.join(node_modules, '@microsoft/rush-lib'));
 const rushCore = require(path.join(node_modules, '@rushstack/node-core-library'));
 const gitlog = require(path.join(node_modules, 'gitlog')).default;
 const recommendedBump = require(path.join(node_modules, 'recommended-bump'));
-
-const Colors = {
-  Red: '\u001B[31m',
-  Purple: '\u001B[35m',
-  Green: '\u001B[32m',
-  Yellow: '\u001B[33m',
-  Reset: '\u001B[0m'
-};
+const chalk = require(path.join(node_modules, 'chalk'));
 
 function executeCommand(command) {
   //stdio: 'inherit': process will use the parent's stdin, stdout and stderr streams
@@ -95,30 +88,37 @@ function generateChangeFile(rushConfig, res) {
   fs.writeFileSync(changeFilePath, JSON.stringify(file, null, 2));
 }
 
+const changefiles = 'changefiles'
 function generateChangeFilesFromCommit() {
+  console.time(changefiles)
   const rushConfiguration = rushLib.RushConfiguration.loadFromDefaultLocation({ startingFolder: process.cwd() });
   //parse last commit to see if change file is necessary
   const lastCommitInfo = parseLastCommit(rushConfiguration.rushJsonFolder);
+  console.timeLog(changefiles, 'lastCommitInfo:', lastCommitInfo)
   if (lastCommitInfo) {
     //get changed projects managed by rush
     getChangedProjectNamesAsync(rushConfiguration).then((rushProjects) => {
+      console.timeLog(changefiles, rushProjects)
       rushProjects.forEach((value, key) => {
         //parse last 2 commits: was last commit for the project the last hash?
         const result = parseRecentCommits(key, value, lastCommitInfo, rushConfiguration.rushJsonFolder, rushConfiguration.gitChangeLogUpdateCommitMessage);
         if (result) {
-          console.log(Colors.Green + `Generating change file for "${result.increment}": "${result.subject}" form project ${result.projectName}` + Colors.Reset);
+          console.timeLog(changefiles, chalk.green(`Generating change file for "${result.increment}": "${result.subject}" form project ${result.projectName}`));
           generateChangeFile(rushConfiguration, result);
-          console.log(Colors.Green + "Automatically adding change files" + Colors.Reset);
+          console.timeLog(changefiles, chalk.green("Automatically adding change files"));
           executeCommand(`git add ${rushConfiguration.changesFolder}`);
-          console.log(Colors.Green + `Commiting change files with message: "${rushConfiguration.gitChangeLogUpdateCommitMessage}"` + Colors.Reset);
+          console.timeLog(changefiles, chalk.green(`Commiting change files with message: "${rushConfiguration.gitChangeLogUpdateCommitMessage}"`));
           executeCommandAsync(`git commit --no-edit --no-verify --amend `);
-          console.log(Colors.Green + "All done!" + Colors.Reset);
+          console.timeLog(changefiles, chalk.green("All done!"));
         }
         else {
-          console.log(Colors.Yellow + "Change file not required." + Colors.Reset);
+          console.timeLog(changefiles, chalk.yellow("Change file not required."));
         }
       });
     });
+  }
+  else {
+    console.timeLog(changefiles, 'no last commit info, skipping')
   }
 }
 
