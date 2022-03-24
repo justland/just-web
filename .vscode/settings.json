@@ -5,6 +5,7 @@
     "npmjs",
     "pnpm",
     "pnpmfile",
+    "TTFB",
     "vite"
   ],
   "files.associations": {

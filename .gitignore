@@ -68,4 +68,4 @@ common/autoinstallers/*/.npmrc
 .heft
 
 # project specific
-apps/*/dist
+just-func/*/dist
