@@ -2,12 +2,6 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
   "allowMostlyStandardPackageNames": true,
   "ensureConsistentVersions": true,
-  "eventHooks": {
-    "postRushBuild": [],
-    "postRushInstall": [],
-    "preRushBuild": [],
-    "preRushInstall": []
-  },
   "gitPolicy": {
     "allowedEmailRegExps": [
       "[^@]+@users\\.noreply\\.github\\.com"
