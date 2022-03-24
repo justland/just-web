@@ -1,1 +1,1 @@
-declare module 'react-command-palette'
+declare module 'react-command-palette*'
