@@ -5,6 +5,7 @@
   "dependencies": {
     "@microsoft/rush-lib": "^5.63.0",
     "@rushstack/node-core-library": "^3.45.1",
+    "chalk": "4",
     "gitlog": "^4.0.4",
     "recommended-bump": "^1.5.2"
   }
