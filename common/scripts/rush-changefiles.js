@@ -8,6 +8,8 @@ const gitlog = require(path.join(node_modules, 'gitlog')).default;
 const recommendedBump = require(path.join(node_modules, 'recommended-bump'));
 const chalk = require(path.join(node_modules, 'chalk'));
 
+const changefiles = 'changefiles'
+
 function executeCommand(command) {
   //stdio: 'inherit': process will use the parent's stdin, stdout and stderr streams
   return child_process.execSync(command, { stdio: 'inherit' });
@@ -81,14 +83,15 @@ async function getChangedProjectNamesAsync(rushConfiguration) {
   }
 }
 function generateChangeFile(rushConfig, res) {
+  console.time(changefiles, `generateChangeFile(${JSON.stringify(rushConfig), JSON.stringify(res)})`)
   let changeFilePath = rushLib.ChangeManager.createEmptyChangeFiles(rushConfig, res.projectName, res.emailAddress);
+  console.time(changefiles, `changeFilePath: ${changeFilePath}`)
   const file = require(changeFilePath);
   file.changes[0].comment = res.lastMessage;
   file.changes[0].type = res.increment;
   fs.writeFileSync(changeFilePath, JSON.stringify(file, null, 2));
 }
 
-const changefiles = 'changefiles'
 function generateChangeFilesFromCommit() {
   console.time(changefiles)
   const rushConfiguration = rushLib.RushConfiguration.loadFromDefaultLocation({ startingFolder: process.cwd() });
