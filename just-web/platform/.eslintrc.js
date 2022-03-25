@@ -16,14 +16,6 @@ module.exports = {
         '*.ts',
         '*.tsx'
       ]
-    },
-    {
-      'files': [
-        '**/*.stories.*'
-      ],
-      'rules': {
-        'import/no-anonymous-default-export': 'off'
-      }
     }
   ],
   'root': true
