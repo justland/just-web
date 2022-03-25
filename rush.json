@@ -25,6 +25,10 @@
     {
       "packageName": "just-func-play-react",
       "projectFolder": "just-func/play-react"
+    },
+    {
+      "packageName": "@justland/platform",
+      "projectFolder": "just-web/platform"
     }
   ],
   "repository": {

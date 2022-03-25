@@ -1,4 +1,3 @@
-
 import { FC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
@@ -9,7 +8,6 @@ import styles from './CommandPalette.module.css'
 export interface CommandPaletteProps {
   commands: Array<Command & PartialPick<KeyBinding, 'key'>>
 }
-
 
 function toPaletteCommands(cmds: CommandPaletteProps['commands']) {
   return cmds.map(c => ({
