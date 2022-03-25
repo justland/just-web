@@ -2,3 +2,18 @@
   display: none;
   width: 500px;
 }
+
+.suggestion {
+  display: block;
+  height: 1em;
+}
+
+.suggestion .name {
+  display: inline;
+  float: left;
+}
+
+.suggestion .key {
+  display: inline;
+  float: right;
+}

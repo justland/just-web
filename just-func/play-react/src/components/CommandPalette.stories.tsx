@@ -16,3 +16,17 @@ export const OneCommand = () => <Story commands={[{
   title: 'Simple command',
   command: 'core.simpleCommand',
 }]} />
+
+export const WithOneKey = () => <Story commands={[{
+  title: 'Simple command',
+  command: 'core.simpleCommand',
+  key: 'ctrl+s'
+}, {
+  title: 'Simple command',
+  command: 'core.simpleCommand',
+  key: 'ctrl+s'
+}, {
+  title: 'Simple command',
+  command: 'core.simpleCommand',
+  key: 'ctrl+s'
+}]} />
