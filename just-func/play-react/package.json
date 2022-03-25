@@ -7,6 +7,7 @@
     "build-storybook": "build-storybook -s public",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
     "eject": "react-scripts eject",
+    "lint": "eslint --ext=ts,tsx,js .",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 6006 -s public",
     "test": "react-scripts test --watchAll=false",

@@ -34,6 +34,12 @@
       "incremental": true,
       "enableParallelism": true,
       "allowWarningsInSuccessfulBuild": true
+    },
+    {
+      "name": "lint",
+      "commandKind": "bulk",
+      "summary": "linting",
+      "enableParallelism": true
     }
   ],
   "parameters": [

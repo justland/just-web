@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "lint": "eslint --ext=ts,tsx,js .",
     "test": "jest",
     "test:watch": "jest --watch"
   },
