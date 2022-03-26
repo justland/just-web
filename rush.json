@@ -37,8 +37,13 @@
       "reviewCategory": "production"
     },
     {
-      "packageName": "@justland/platform",
+      "packageName": "@just-web/platform",
       "projectFolder": "just-web/platform",
+      "reviewCategory": "libraries"
+    },
+    {
+      "packageName": "@just-web/command",
+      "projectFolder": "just-web/command",
       "reviewCategory": "libraries"
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "name": "@just-web/platform",
+  "name": "@just-web/command",
   "version": "0.1.0",
   "description": "All about platform - where the code is executed",
   "main": "lib/index.js",

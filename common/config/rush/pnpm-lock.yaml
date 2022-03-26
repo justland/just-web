@@ -14,7 +14,7 @@ importers:
       '@babel/plugin-transform-react-jsx': ~7.17.3
       '@babel/preset-env': ~7.16.11
       '@babel/preset-typescript': ~7.16.7
-      '@justland/platform': workspace:*
+      '@just-web/platform': workspace:*
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
       '@storybook/addon-interactions': ^6.4.19
@@ -72,7 +72,7 @@ importers:
       web-vitals: ^2.1.4
       webpack: ^5.70.0
     dependencies:
-      '@justland/platform': link:../../just-web/platform
+      '@just-web/platform': link:../../just-web/platform
       react: 17.0.2
       react-command-palette: 0.17.1_react-dom@17.0.2+react@17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -216,6 +216,47 @@ importers:
       vite: 2.8.6
       vite-plugin-solid: 2.2.6
       webpack: 5.70.0
+
+  ../../just-web/command:
+    specifiers:
+      '@size-limit/preset-small-lib': ^7.0.8
+      '@types/jest': ^27.4.1
+      '@types/platform': ~1.3.4
+      depcheck: ~1.4.3
+      eslint: ^8.11.0
+      eslint-plugin-harmony: ^6.0.0
+      eslint-plugin-yml: ~0.14.0
+      jest: ^27.5.1
+      jest-validate: ^27.5.1
+      jest-watch-suspend: ^1.1.2
+      jest-watch-toggle-config: ^2.0.1
+      jest-watch-typeahead: ^1.0.0
+      npm-run-all: ^4.1.5
+      platform: ~1.3.6
+      rimraf: ~3.0.2
+      size-limit: ^7.0.8
+      type-plus: ~4.4.0
+      typescript: ^4.6.2
+    dependencies:
+      platform: 1.3.6
+      type-plus: 4.4.0
+    devDependencies:
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@types/jest': 27.4.1
+      '@types/platform': 1.3.4
+      depcheck: 1.4.3
+      eslint: 8.11.0
+      eslint-plugin-harmony: 6.0.0_eslint@8.11.0+typescript@4.6.2
+      eslint-plugin-yml: 0.14.0_eslint@8.11.0
+      jest: 27.5.1
+      jest-validate: 27.5.1
+      jest-watch-suspend: 1.1.2_jest@27.5.1
+      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
+      jest-watch-typeahead: 1.0.0_jest@27.5.1
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      size-limit: 7.0.8
+      typescript: 4.6.2
 
   ../../just-web/platform:
     specifiers:
