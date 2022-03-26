@@ -39,6 +39,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@just-web/command",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@just-web/platform",
       "allowedCategories": [ "production" ]
     },

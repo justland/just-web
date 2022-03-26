@@ -1,4 +1,6 @@
+import { Command, KeyBinding } from '@just-web/command'
 import { FC } from 'react'
+import { stub, Stub } from 'type-plus'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
 
 export default {
@@ -10,37 +12,30 @@ const Story: FC<CommandPaletteProps> = ({ commands, ...args }) => <>
   <CommandPalette commands={commands} {...args} />
 </>
 
+function cmd(input: Stub<Command & KeyBinding>) {
+  return stub<Command & KeyBinding>({ handler() { alert(input.id) }, ...input })
+}
+
+const simpleCmd = cmd({ id: 'core.simpleCommand', description: 'Simple command' })
+
+const keyCmd = cmd({
+  description: 'Simple command',
+  id: 'core.simpleCommand',
+  key: 'ctrl+s'
+})
+
+const macCmd = cmd({
+  description: 'Simple command',
+  id: 'core.simpleCommand',
+  mac: 'ctrl+s'
+})
+
 export const NoCommand = () => <Story commands={[]} />
 
-export const OneCommand = () => <Story commands={[{
-  title: 'Simple command',
-  command: 'core.simpleCommand',
-}]} />
+export const OneCommand = () => <Story commands={[simpleCmd]} />
 
-export const WithOneKey = () => <Story commands={[{
-  title: 'Simple command',
-  command: 'core.simpleCommand',
-  key: 'ctrl+s'
-}, {
-  title: 'Simple command',
-  command: 'core.simpleCommand',
-  key: 'ctrl+s'
-}, {
-  title: 'Simple command',
-  command: 'core.simpleCommand',
-  key: 'ctrl+s'
-}]} />
+export const WithOneKey = () => <Story commands={[keyCmd, keyCmd, keyCmd]} />
 
-export const WithKeyInMac = () => <Story commands={[{
-  title: 'Simple command',
-  command: 'core.simpleCommand',
-  mac: 'cmd+s'
-}, {
-  title: 'Simple command',
-  command: 'core.simpleCommand',
-  mac: 'cmd+s'
-}, {
-  title: 'Simple command',
-  command: 'core.simpleCommand',
-  mac: 'cmd+s'
-}]} ctx={{ isMacOS: () => true }} />
+export const WithKeyInMac = () => <Story
+  commands={[macCmd, macCmd, macCmd]}
+  ctx={{ isMacOS: () => true }} />

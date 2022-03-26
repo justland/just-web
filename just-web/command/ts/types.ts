@@ -9,8 +9,8 @@ export interface Command {
 }
 
 export interface KeyBinding {
-  command: string,
-  key: string,
+  id: string,
+  key?: string,
   mac?: string,
   when?: string
 }
