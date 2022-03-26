@@ -10,9 +10,14 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
+  "dependencies": {
+    "platform": "~1.3.6",
+    "type-plus": "~4.4.0"
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
     "@types/jest": "^27.4.1",
+    "@types/platform": "~1.3.4",
     "@typescript-eslint/parser": "~5.16.0",
     "dependency-check": "^4.1.0",
     "eslint": "^8.11.0",
@@ -24,16 +29,11 @@
     "jest-watch-typeahead": "^1.0.0",
     "npm-run-all": "^4.1.5",
     "size-limit": "^7.0.8",
-    "typescript": "^4.6.2",
-    "@types/platform": "~1.3.4"
+    "typescript": "^4.6.2"
   },
   "size-limit": [
     {
       "limit": "15 kb"
     }
-  ],
-  "dependencies": {
-    "type-plus": "~4.4.0",
-    "platform": "~1.3.6"
-  }
+  ]
 }
