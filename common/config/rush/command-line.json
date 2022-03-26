@@ -38,13 +38,25 @@
     {
       "name": "clean",
       "commandKind": "bulk",
-      "summary": "clean the project",
+      "summary": "clean all projects",
+      "enableParallelism": true
+    },
+    {
+      "name": "coverage",
+      "commandKind": "bulk",
+      "summary": "run code coverage for all projects",
+      "enableParallelism": true
+    },
+    {
+      "name": "depcheck",
+      "commandKind": "bulk",
+      "summary": "depcheck all projects",
       "enableParallelism": true
     },
     {
       "name": "lint",
       "commandKind": "bulk",
-      "summary": "linting",
+      "summary": "lint all projects",
       "enableParallelism": true
     },
     {

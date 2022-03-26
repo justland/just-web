@@ -1,12 +1,15 @@
 {
-  "name": "just-func-play-react",
+  "name": "@just-web/command-react",
   "version": "0.1.0",
-  "private": true,
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "react-app-rewired build",
+    "build": "run-s build:ts copy:css",
+    "build:ts": "tsc",
     "build-storybook": "build-storybook -s public",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
     "clean": "rimraf lib",
+    "copy:css": "copyfiles -u 1 src/**/*.css lib/",
     "coverage": "react-scripts test --watchAll=false --coverage",
     "depcheck": "depcheck",
     "eject": "react-scripts eject",
@@ -15,7 +18,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "test": "react-app-rewired test --watchAll=false",
     "test:visual": "cross-env VISUAL_TEST=1 react-app-rewired test --watchAll=false",
-    "test:watch": "react-app-rewired test",
+    "test:watch": "react-scripts test",
     "verify": "run-p build lint depcheck test",
     "verify:build": "run-s clean build",
     "verify:test": "run-s test test:visual"
@@ -36,10 +39,12 @@
     "react-scripts/**/eslint-config-react-app": "7.0.0"
   },
   "dependencies": {
-    "@just-web/command-react": "workspace:*",
+    "@just-web/command": "workspace:*",
+    "@just-web/platform": "workspace:*",
     "react": "~17.0.2",
+    "react-command-palette": "~0.17.1",
     "react-dom": "~17.0.2",
-    "web-vitals": "^2.1.4"
+    "type-plus": "~4.4.1"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
@@ -73,6 +78,7 @@
     "autoprefixer": "~10.4.4",
     "babel-loader": "~8.2.3",
     "chromatic": "~6.5.3",
+    "cross-env": "~7.0.3",
     "css-loader": "~6.7.1",
     "depcheck": "~1.4.3",
     "eslint": "^8.11.0",
@@ -98,6 +104,7 @@
     "style-loader": "~3.3.1",
     "ts-jest": "^27.1.3",
     "typescript": "^4.6.2",
-    "webpack": "^5.70.0"
+    "webpack": "^5.70.0",
+    "copyfiles": "~2.4.1"
   }
 }

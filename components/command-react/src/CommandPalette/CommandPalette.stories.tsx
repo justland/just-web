@@ -1,6 +1,6 @@
 import { Command, KeyBinding, registerCommand } from '@just-web/command'
 import { FC } from 'react'
-import { stub, Stub } from 'type-plus'
+import { stub } from 'type-plus'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
 
 export default {
@@ -12,7 +12,7 @@ const Story: FC<CommandPaletteProps> = ({ commands, ...args }) => <>
   <CommandPalette commands={commands} {...args} />
 </>
 
-function cmd(input: Stub<Command & KeyBinding>) {
+function cmd(input: stub.Param<Command & KeyBinding>) {
   return stub<Command & KeyBinding>({ handler() { alert(input.id) }, ...input })
 }
 
