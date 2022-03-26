@@ -7,8 +7,12 @@ module.exports = {
     'react-app',
     'react-app/jest',
     'plugin:storybook/recommended',
-    'plugin:harmony/ts-recommended'
+    'plugin:harmony/ts-recommended',
+    'plugin:yml/standard'
   ],
+  'rules': {
+    'yml/block-mapping': [2, 'always']
+  },
   'overrides': [
     {
       'files': [

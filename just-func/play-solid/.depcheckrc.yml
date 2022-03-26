@@ -1,0 +1,13 @@
+ignores:
+  - '@storybook/addon-essentials'
+  - '@storybook/addon-links'
+  - babel-loader
+  - eslint-plugin-yml
+  - fuse.js
+  - identity-obj-proxy
+  - react
+  - react-dom
+  - solid-command-palette
+  - solid-transition-group
+  - tinykeys
+  - webpack
