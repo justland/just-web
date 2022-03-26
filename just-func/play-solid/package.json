@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "build": "vite build",
-    "build:verify": "run-s clean build",
     "build:watch": "vite build",
     "clean": "rimraf lib",
     "depcheck": "depcheck",
@@ -16,7 +15,8 @@
     "storybook": "start-storybook -p 6006",
     "test": "jest",
     "test:watch": "jest --watch",
-    "verify": "run-p build:verify lint depcheck test"
+    "verify": "run-p build lint depcheck test",
+    "verify:build": "run-s clean build"
   },
   "dependencies": {
     "fuse.js": "~6.5.3",

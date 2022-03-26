@@ -6,13 +6,13 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "build:verify": "run-s clean build",
     "clean": "rimraf lib",
     "depcheck": "depcheck",
     "lint": "eslint --ext=ts,tsx,js .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "verify": "run-p build:verify lint depcheck test"
+    "verify": "run-p build lint depcheck test",
+    "verify:build": "run-s clean build"
   },
   "dependencies": {
     "platform": "~1.3.6",

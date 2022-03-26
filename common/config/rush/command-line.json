@@ -36,6 +36,12 @@
       "allowWarningsInSuccessfulBuild": true
     },
     {
+      "name": "clean",
+      "commandKind": "bulk",
+      "summary": "clean the project",
+      "enableParallelism": true
+    },
+    {
       "name": "lint",
       "commandKind": "bulk",
       "summary": "linting",
