@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf lib",
+    "coverage": "jest --coverage",
     "depcheck": "depcheck",
     "lint": "eslint --ext=ts,tsx,js .",
     "test": "jest",

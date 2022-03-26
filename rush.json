@@ -45,6 +45,11 @@
       "packageName": "@just-web/command",
       "projectFolder": "just-web/command",
       "reviewCategory": "libraries"
+    },
+    {
+      "packageName": "@just-web/command-react",
+      "projectFolder": "components/command-react",
+      "reviewCategory": "libraries"
     }
   ],
   "repository": {

@@ -7,6 +7,7 @@
     "build": "vite build",
     "build:watch": "vite build",
     "clean": "rimraf lib",
+    "coverage": "jest --coverage",
     "depcheck": "depcheck",
     "dev": "vite",
     "lint": "eslint --ext=ts,tsx,js .",

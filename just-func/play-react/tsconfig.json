@@ -10,8 +10,9 @@
       "@types/jest"
     ],
     "paths": {
-      "@justland/command": ["../../just-web/command"],
-      "@justland/platform": ["../../just-web/platform"]
+      "@just-web/command": ["../../just-web/command"],
+      "@just-web/command-react": ["../../just-web/command-react"],
+      "@just-web/platform": ["../../just-web/platform"]
     },
     "allowJs": true,
     "skipLibCheck": true,

@@ -4,7 +4,7 @@
   "packages": [
     {
       "name": "@babel/core",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@babel/plugin-proposal-class-properties",
@@ -12,19 +12,19 @@
     },
     {
       "name": "@babel/plugin-proposal-nullish-coalescing-operator",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@babel/plugin-proposal-optional-chaining",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@babel/plugin-syntax-flow",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@babel/plugin-transform-react-jsx",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@babel/plugin-transform-runtime",
@@ -32,19 +32,27 @@
     },
     {
       "name": "@babel/preset-env",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@babel/preset-es2015",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@babel/preset-typescript",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@just-web/command",
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@just-web/command-react",
       "allowedCategories": [ "production" ]
     },
     {
       "name": "@just-web/platform",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@size-limit/preset-small-lib",
@@ -52,35 +60,35 @@
     },
     {
       "name": "@storybook/addon-actions",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/addon-essentials",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/addon-interactions",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/addon-links",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/addon-storyshots",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/addon-storyshots-puppeteer",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/addon-storysource",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/builder-webpack5",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/html",
@@ -88,47 +96,47 @@
     },
     {
       "name": "@storybook/manager-webpack5",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/node-logger",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/preset-create-react-app",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/react",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@storybook/testing-library",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@testing-library/dom",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@testing-library/jest-dom",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@testing-library/react",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@testing-library/user-event",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "autoprefixer",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "babel-loader",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "babel-preset-solid",
@@ -136,11 +144,19 @@
     },
     {
       "name": "chromatic",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "copyfiles",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "cross-env",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "css-loader",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "depcheck",
@@ -152,7 +168,7 @@
     },
     {
       "name": "eslint-config-react-app",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-harmony",
@@ -160,7 +176,7 @@
     },
     {
       "name": "eslint-plugin-storybook",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-yml",
@@ -172,11 +188,15 @@
     },
     {
       "name": "identity-obj-proxy",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "jest",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "jest-esm-transformer",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "jest-validate",
@@ -204,35 +224,43 @@
     },
     {
       "name": "postcss",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "preact",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "puppeteer",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "rc-util",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "react",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "react-app-rewired",
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "react-command-palette",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "react-dom",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "react-refresh",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "react-scripts",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "rimraf",
@@ -260,11 +288,11 @@
     },
     {
       "name": "storybook-css-modules-preset",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "style-loader",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "tinykeys",
@@ -272,7 +300,7 @@
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "type-plus",
@@ -292,11 +320,11 @@
     },
     {
       "name": "web-vitals",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "webpack",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     }
   ]
 }
