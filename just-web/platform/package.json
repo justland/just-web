@@ -2,7 +2,8 @@
   "name": "@justland/platform",
   "version": "0.1.0",
   "description": "All about platform - where the code is executed",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "eslint --ext=ts,tsx,js .",
