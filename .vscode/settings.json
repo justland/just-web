@@ -9,6 +9,9 @@
     "TTFB",
     "vite"
   ],
+  "eslint.validate": [
+    "yaml"
+  ],
   "files.associations": {
     "**/common/config/rush/*.json": "jsonc",
     "common/git-hooks/*": "shell",

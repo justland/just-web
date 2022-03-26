@@ -1,0 +1,9 @@
+ignores:
+  - "@babel/plugin-syntax-flow"
+  - "@babel/plugin-transform-react-jsx"
+  - "@storybook-*"
+  - "@size-limit/*"
+  - "@types/jest"
+  - "@typescript-eslint/parser"
+  - size-limit
+skip-missing: true
