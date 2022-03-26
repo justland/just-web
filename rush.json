@@ -38,12 +38,12 @@
     },
     {
       "packageName": "@just-web/platform",
-      "projectFolder": "just-web/platform",
+      "projectFolder": "frameworks/platform",
       "reviewCategory": "libraries"
     },
     {
       "packageName": "@just-web/command",
-      "projectFolder": "just-web/command",
+      "projectFolder": "frameworks/command",
       "reviewCategory": "libraries"
     },
     {
