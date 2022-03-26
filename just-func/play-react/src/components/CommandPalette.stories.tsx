@@ -27,7 +27,7 @@ const keyCmd = cmd({
 const macCmd = cmd({
   description: 'Simple command',
   id: 'core.simpleCommand',
-  mac: 'ctrl+s'
+  mac: 'cmd+s'
 })
 
 export const NoCommand = () => <Story commands={[]} />
@@ -36,6 +36,10 @@ export const OneCommand = () => <Story commands={[simpleCmd]} />
 
 export const WithOneKey = () => <Story commands={[keyCmd, keyCmd, keyCmd]} />
 
-export const WithKeyInMac = () => <Story
+export const WithOverrideKeyInMac = () => <Story
   commands={[macCmd, macCmd, macCmd]}
+  ctx={{ isMacOS: () => true }} />
+
+export const WithoutOverrideKeyInMac = () => <Story
+  commands={[keyCmd, keyCmd]}
   ctx={{ isMacOS: () => true }} />
