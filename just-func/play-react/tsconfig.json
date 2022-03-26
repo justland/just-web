@@ -9,6 +9,9 @@
     "types": [
       "@types/jest"
     ],
+    "paths": {
+      "@justland/platform": ["../../just-web/platform"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

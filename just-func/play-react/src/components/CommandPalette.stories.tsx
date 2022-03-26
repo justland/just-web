@@ -30,3 +30,17 @@ export const WithOneKey = () => <Story commands={[{
   command: 'core.simpleCommand',
   key: 'ctrl+s'
 }]} />
+
+export const WithKeyInMac = () => <Story commands={[{
+  title: 'Simple command',
+  command: 'core.simpleCommand',
+  mac: 'cmd+s'
+}, {
+  title: 'Simple command',
+  command: 'core.simpleCommand',
+  mac: 'cmd+s'
+}, {
+  title: 'Simple command',
+  command: 'core.simpleCommand',
+  mac: 'cmd+s'
+}]} ctx={{ isMacOS: () => true }} />

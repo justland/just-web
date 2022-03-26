@@ -1,18 +1,23 @@
 import { FC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
-import { PartialPick } from 'type-plus'
+import { PartialPick, required } from 'type-plus'
 import { Command, KeyBinding } from '../commands'
 import styles from './CommandPalette.module.css'
+import { isMacOS } from '@justland/platform'
+
+export interface CommandPaletteCtx { isMacOS: typeof isMacOS }
 
 export interface CommandPaletteProps {
+  ctx?: Partial<CommandPaletteCtx>,
   commands: Array<Command & PartialPick<KeyBinding, 'key'>>
 }
 
-function toPaletteCommands(cmds: CommandPaletteProps['commands']) {
+function toPaletteCommands(cmds: CommandPaletteProps['commands'], ctx: CommandPaletteCtx) {
+  const m = ctx.isMacOS()
   return cmds.map(c => ({
     name: c.title,
-    key: c.key,
+    key: m ? c.mac : c.key,
     command: () => alert(JSON.stringify({ type: 'COMMAND_INVOKE', payload: c.command }))
   }))
 }
@@ -24,7 +29,8 @@ const RenderCommand: FC<{ name: string, key?: string }> =
   </div>
 
 const CommandPalette: FC<CommandPaletteProps> = (props) => {
-  const commands = toPaletteCommands(props.commands)
+  const ctx = required({ isMacOS }, props.ctx)
+  const commands = toPaletteCommands(props.commands, ctx)
   return <CP
     commands={commands}
     closeOnSelect={true}
