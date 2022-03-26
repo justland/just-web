@@ -67,7 +67,7 @@ importers:
       storybook-css-modules-preset: ~1.1.1
       style-loader: ~3.3.1
       ts-jest: ^27.1.3
-      type-plus: ~4.4.0
+      type-plus: ~4.4.1
       typescript: ^4.6.2
       web-vitals: ^2.1.4
       webpack: ^5.70.0
@@ -76,7 +76,7 @@ importers:
       react: 17.0.2
       react-command-palette: 0.17.1_react-dom@17.0.2+react@17.0.2
       react-dom: 17.0.2_react@17.0.2
-      type-plus: 4.4.0
+      type-plus: 4.4.1
       web-vitals: 2.1.4
     devDependencies:
       '@babel/core': 7.17.8
@@ -236,12 +236,12 @@ importers:
       rimraf: ~3.0.2
       size-limit: ^7.0.8
       standard-log: ~6.2.6
-      type-plus: ~4.4.0
+      type-plus: ~4.4.1
       typescript: ^4.6.2
     dependencies:
       platform: 1.3.6
       standard-log: 6.2.6
-      type-plus: 4.4.0
+      type-plus: 4.4.1
     devDependencies:
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
@@ -278,11 +278,11 @@ importers:
       platform: ~1.3.6
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      type-plus: ~4.4.0
+      type-plus: ~4.4.1
       typescript: ^4.6.2
     dependencies:
       platform: 1.3.6
-      type-plus: 4.4.0
+      type-plus: 4.4.1
     devDependencies:
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
@@ -6625,7 +6625,7 @@ packages:
   /@vue/compiler-core/3.2.31:
     resolution: {integrity: sha512-aKno00qoA4o+V/kR6i/pE+aP+esng5siNAVQ422TkBNM6qA4veXiZbSe8OTXHXquEi/f6Akc+nLfB4JGfe4/WQ==}
     dependencies:
-      '@babel/parser': 7.17.8
+      '@babel/parser': 7.16.4
       '@vue/shared': 3.2.31
       estree-walker: 2.0.2
       source-map: 0.6.1
@@ -6641,7 +6641,7 @@ packages:
   /@vue/compiler-sfc/3.2.31:
     resolution: {integrity: sha512-748adc9msSPGzXgibHiO6T7RWgfnDcVQD+VVwYgSsyyY8Ans64tALHZANrKtOzvkwznV/F4H7OAod/jIlp/dkQ==}
     dependencies:
-      '@babel/parser': 7.17.8
+      '@babel/parser': 7.16.4
       '@vue/compiler-core': 3.2.31
       '@vue/compiler-dom': 3.2.31
       '@vue/compiler-ssr': 3.2.31
@@ -6663,7 +6663,7 @@ packages:
   /@vue/reactivity-transform/3.2.31:
     resolution: {integrity: sha512-uS4l4z/W7wXdI+Va5pgVxBJ345wyGFKvpPYtdSgvfJfX/x2Ymm6ophQlXXB6acqGHtXuBqNyyO3zVp9b1r0MOA==}
     dependencies:
-      '@babel/parser': 7.17.8
+      '@babel/parser': 7.16.4
       '@vue/compiler-core': 3.2.31
       '@vue/shared': 3.2.31
       estree-walker: 2.0.2
@@ -17372,7 +17372,7 @@ packages:
       iso-error: 4.1.2
       ms: 2.1.3
       tslib: 2.3.1
-      type-plus: 4.4.0
+      type-plus: 4.4.1
       upper-case: 2.0.2
     dev: false
 
@@ -18212,8 +18212,8 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /type-plus/4.4.0:
-    resolution: {integrity: sha512-v67rWmjXRgJPy/RHgVreZ/Sc2uB4uyw3nAMIdatUK8dxn5ubx4ZIGagUsqPFXJCf9f+WWJBJXZoyGosN3XW/eQ==}
+  /type-plus/4.4.1:
+    resolution: {integrity: sha512-ptpIn3WrB2cypg26/U39M9BhI8PeBcE70DtMVi9RFByJ8QzGtBC6wqK04VZcdi7z4JQZzKVkMNdsSPVIRpX2FA==}
     dependencies:
       tersify: 3.8.2
       unpartial: 0.6.4
