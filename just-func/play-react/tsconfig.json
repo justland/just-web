@@ -10,6 +10,7 @@
       "@types/jest"
     ],
     "paths": {
+      "@justland/command": ["../../just-web/command"],
       "@justland/platform": ["../../just-web/platform"]
     },
     "allowJs": true,
