@@ -1,10 +1,10 @@
+import { isMacOS } from '@just-web/platform'
 import { FC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
 import { PartialPick, required } from 'type-plus'
 import { Command, KeyBinding } from '../commands'
 import styles from './CommandPalette.module.css'
-import { isMacOS } from '@justland/platform'
 
 export interface CommandPaletteCtx { isMacOS: typeof isMacOS }
 

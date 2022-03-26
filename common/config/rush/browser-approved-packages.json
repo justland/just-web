@@ -39,7 +39,7 @@
       "allowedCategories": [ "production" ]
     },
     {
-      "name": "@justland/platform",
+      "name": "@just-web/platform",
       "allowedCategories": [ "production" ]
     },
     {
