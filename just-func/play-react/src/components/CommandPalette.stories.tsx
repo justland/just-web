@@ -1,4 +1,4 @@
-import { Command, KeyBinding } from '@just-web/command'
+import { Command, KeyBinding, registerCommand } from '@just-web/command'
 import { FC } from 'react'
 import { stub, Stub } from 'type-plus'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
@@ -17,18 +17,22 @@ function cmd(input: Stub<Command & KeyBinding>) {
 }
 
 const simpleCmd = cmd({ id: 'core.simpleCommand', description: 'Simple command' })
+registerCommand(simpleCmd.id, simpleCmd)
 
 const keyCmd = cmd({
   description: 'Simple command',
   id: 'core.simpleCommand',
   key: 'ctrl+s'
 })
+registerCommand(keyCmd.id, keyCmd)
 
 const macCmd = cmd({
   description: 'Simple command',
   id: 'core.simpleCommand',
+  key: 'ctrl+s',
   mac: 'cmd+s'
 })
+registerCommand(macCmd.id, macCmd)
 
 export const NoCommand = () => <Story commands={[]} />
 
