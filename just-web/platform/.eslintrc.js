@@ -5,7 +5,8 @@ module.exports = {
     'jest': true
   },
   'extends': [
-    'plugin:harmony/latest'
+    'plugin:harmony/latest',
+    'plugin:yml/standard'
   ],
   'overrides': [
     {

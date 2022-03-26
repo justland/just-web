@@ -40,6 +40,12 @@
       "commandKind": "bulk",
       "summary": "linting",
       "enableParallelism": true
+    },
+    {
+      "name": "verify",
+      "commandKind": "bulk",
+      "summary": "verify all projects",
+      "enableParallelism": true
     }
   ],
   "parameters": [
