@@ -251,6 +251,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "standard-log",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "storybook-css-modules-preset",
       "allowedCategories": [ "production" ]
     },
