@@ -5,6 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": [
+      "DOM",
       "es2015"
     ],
     "module": "esnext",
