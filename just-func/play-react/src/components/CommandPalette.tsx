@@ -25,9 +25,9 @@ function toPaletteCommands(cmds: CommandPaletteProps['commands'], ctx: CommandPa
 }
 
 const RenderCommand: FC<{ name: string, key?: string }> =
-  command => <div className={styles['suggestion']}>
-    <span className={styles['name']}>{command.name}</span>
-    {command.key && <span className={styles['key']}>{command.key}</span>}
+  command => <div className={styles.suggestion}>
+    <span className={styles.name}>{command.name}</span>
+    {command.key && <span className={styles.key}>{command.key}</span>}
   </div>
 
 const CommandPalette: FC<CommandPaletteProps> = (props) => {
@@ -38,7 +38,7 @@ const CommandPalette: FC<CommandPaletteProps> = (props) => {
     closeOnSelect={true}
     open={true}
     hotKeys={'ctrl+p'}
-    theme={{ ...theme, trigger: styles['command-palette-trigger'] }}
+    theme={{ ...theme, trigger: styles.trigger }}
     renderCommand={RenderCommand}
   />
 }
