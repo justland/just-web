@@ -15,14 +15,12 @@
     "verify": "run-p build:verify lint depcheck test"
   },
   "dependencies": {
-    "platform": "~1.3.6",
     "standard-log": "~6.2.6",
     "type-plus": "~4.4.1"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
     "@types/jest": "^27.4.1",
-    "@types/platform": "~1.3.4",
     "depcheck": "~1.4.3",
     "eslint": "^8.11.0",
     "eslint-plugin-harmony": "^6.0.0",
