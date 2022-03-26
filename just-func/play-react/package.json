@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
-    "build:verify": "run-s clean build",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf lib",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
@@ -16,7 +15,8 @@
     "test": "react-scripts test --watchAll=false",
     "test:visual": "react-scripts test -c jest.config.visual.js",
     "test:watch": "react-scripts test",
-    "verify": "run-p build:verify lint depcheck test"
+    "verify": "run-p build lint depcheck test",
+    "verify:build": "run-s clean build"
   },
   "browserslist": {
     "production": [
