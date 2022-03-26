@@ -1,14 +1,13 @@
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { stub } from 'type-plus'
-import { invokeCommand, registerCommand } from '.'
-import { CommandRegistration } from './commands'
-import { commands } from './store'
+import { clearCommands, CommandRegistration, invokeCommand, registerCommand } from '.'
+import { getCommands } from './commands'
 
 let reporter: MemoryLogReporter
 beforeEach(() => reporter = configForTest().reporter)
 
 describe('registerCommand()', () => {
-  beforeEach(() => commands.clear())
+  beforeEach(clearCommands)
 
   test('register a command', () => {
     registerCommand('just-web.commandPalette', {
@@ -25,7 +24,7 @@ describe('registerCommand()', () => {
 })
 
 describe('invokeCommand()', () => {
-  beforeEach(() => commands.clear())
+  beforeEach(clearCommands)
 
   test('invoke not registered command emits an error', () => {
     invokeCommand('not-exist')
@@ -35,8 +34,26 @@ describe('invokeCommand()', () => {
 
   test('invoke command', () => {
     let called = false
-    registerCommand('command1', stub<CommandRegistration>({ handler: () => called = true }))
+    const cmd = stub<CommandRegistration>({ handler: () => called = true })
+    console.log('invoke command', cmd)
+    registerCommand('command1', cmd)
     invokeCommand('command1')
     expect(called).toBe(true)
+  })
+})
+
+describe('getCommands', () => {
+  beforeEach(clearCommands)
+
+  test('empty at the beginning', () => {
+    const cmds = getCommands()
+    expect(cmds).toEqual([])
+  })
+
+  test('get registered commands', () => {
+    registerCommand('cmd1', stub<CommandRegistration>())
+    registerCommand('cmd2', stub<CommandRegistration>())
+    const cmds = getCommands()
+    expect(cmds).toEqual([{ id: 'cmd1' }, { id: 'cmd2' }])
   })
 })

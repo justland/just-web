@@ -148,6 +148,7 @@ importers:
       eslint: ^8.11.0
       eslint-plugin-harmony: ^6.0.0
       eslint-plugin-yml: ~0.14.0
+      immutable: ~4.0.0
       jest: ^27.5.1
       jest-validate: ^27.5.1
       jest-watch-suspend: ^1.1.2
@@ -160,6 +161,7 @@ importers:
       type-plus: ~4.4.1
       typescript: ^4.6.2
     dependencies:
+      immutable: 4.0.0
       standard-log: 6.2.6
       type-plus: 4.4.2
     devDependencies:
@@ -11863,7 +11865,6 @@ packages:
 
   /immutable/4.0.0:
     resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==}
-    dev: true
 
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
