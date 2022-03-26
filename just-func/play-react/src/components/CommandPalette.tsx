@@ -17,7 +17,7 @@ function toPaletteCommands(cmds: CommandPaletteProps['commands'], ctx: CommandPa
   const m = ctx.isMacOS()
   return cmds.map(c => ({
     name: c.id,
-    key: m ? c.mac : c.key,
+    key: m ? c.mac ?? c.key : c.key,
     command: () => alert(JSON.stringify({ type: 'COMMAND_INVOKE', payload: c.id }))
   }))
 }
