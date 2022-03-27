@@ -47,6 +47,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@just-web/app",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@just-web/command",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -324,7 +328,7 @@
     },
     {
       "name": "type-plus",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "typescript",
