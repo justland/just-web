@@ -39,7 +39,7 @@
     "react-scripts/**/eslint-config-react-app": "7.0.0"
   },
   "dependencies": {
-    "@just-web/command": "workspace:*",
+    "@just-web/commands": "workspace:*",
     "@just-web/platform": "workspace:*",
     "react": "~17.0.2",
     "react-command-palette": "~0.17.1",

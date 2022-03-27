@@ -14,7 +14,6 @@ export function registerCommand(id: string, command: CommandRegistration) {
     return
   }
   const cmd = { ...command, id }
-  console.log('register', command, cmd)
   commands = commands.set(id, cmd)
 }
 

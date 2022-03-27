@@ -2,4 +2,4 @@ ignores:
   - "@size-limit/*"
   - "@types/jest"
   - "@typescript-eslint/parser"
-  - "size-limit"
+  - size-limit

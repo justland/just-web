@@ -42,8 +42,8 @@
       "reviewCategory": "libraries"
     },
     {
-      "packageName": "@just-web/command",
-      "projectFolder": "frameworks/command",
+      "packageName": "@just-web/commands",
+      "projectFolder": "frameworks/commands",
       "reviewCategory": "libraries"
     },
     {
