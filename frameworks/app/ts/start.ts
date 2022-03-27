@@ -1,18 +1,19 @@
+import { navigate, registerRoute } from '@just-web/routes'
 import { required } from 'type-plus'
 import { log } from './log'
 
+const defaultCtx = {
+  routes: { navigate, registerRoute }
+}
 export namespace start {
-  export type Ctx = {
-    routes: { navigate(route: string): void }
-  }
+  export type Ctx = typeof defaultCtx
 }
-const defaultCtx: start.Ctx = {
-  routes: {
-    navigate(route: string) { log.notice(`navigate: ${route}`) }
-  }
-}
+
 export function start(options = {}, ctx?: start.Ctx) {
-  ctx = required(defaultCtx, ctx)
+  const { routes } = required(defaultCtx, ctx)
   log.notice('application starts')
-  ctx.routes.navigate('/')
+
+  // TODO: validate app to make sure it has the minimum implementation,
+  // such as handling `/` and `/error`
+  routes.navigate('/')
 }
