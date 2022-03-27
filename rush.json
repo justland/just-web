@@ -47,6 +47,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/errors",
+      "projectFolder": "frameworks/errors",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/testing",
       "projectFolder": "tools/testing",
       "reviewCategory": "tools"
