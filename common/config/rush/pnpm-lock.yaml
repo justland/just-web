@@ -143,9 +143,9 @@ importers:
   ../../frameworks/app:
     specifiers:
       '@just-web/routes': workspace:*
+      '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
       '@types/jest': ^27.4.1
-      cross-env: ~7.0.3
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-plugin-harmony: ^6.0.0
@@ -166,9 +166,9 @@ importers:
       standard-log: 6.2.6
       type-plus: 4.4.2
     devDependencies:
+      '@just-web/testing': link:../../tools/testing
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
-      cross-env: 7.0.3
       depcheck: 1.4.3
       eslint: 8.12.0
       eslint-plugin-harmony: 6.0.0_eslint@8.12.0+typescript@4.6.3
@@ -185,6 +185,7 @@ importers:
 
   ../../frameworks/commands:
     specifiers:
+      '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
       '@types/jest': ^27.4.1
       depcheck: ~1.4.3
@@ -208,6 +209,7 @@ importers:
       standard-log: 6.2.6
       type-plus: 4.4.2
     devDependencies:
+      '@just-web/testing': link:../../tools/testing
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
       depcheck: 1.4.3
@@ -267,6 +269,7 @@ importers:
 
   ../../frameworks/routes:
     specifiers:
+      '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
       '@types/jest': ^27.4.1
       depcheck: ~1.4.3
@@ -288,6 +291,7 @@ importers:
       standard-log: 6.2.6
       type-plus: 4.4.2
     devDependencies:
+      '@just-web/testing': link:../../tools/testing
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
       depcheck: 1.4.3
@@ -509,6 +513,45 @@ importers:
       vite: 2.8.6
       vite-plugin-solid: 2.2.6
       webpack: 5.70.0
+
+  ../../tools/testing:
+    specifiers:
+      '@size-limit/preset-small-lib': ^7.0.8
+      '@types/jest': ^27.4.1
+      depcheck: ~1.4.3
+      eslint: ^8.11.0
+      eslint-plugin-harmony: ^6.0.0
+      eslint-plugin-yml: ~0.14.0
+      jest: ^27.5.1
+      jest-validate: ^27.5.1
+      jest-watch-suspend: ^1.1.2
+      jest-watch-toggle-config: ^2.0.1
+      jest-watch-typeahead: ^1.0.0
+      npm-run-all: ^4.1.5
+      rimraf: ~3.0.2
+      size-limit: ^7.0.8
+      standard-log: ~6.2.6
+      type-plus: ~4.4.1
+      typescript: ^4.6.2
+    dependencies:
+      standard-log: 6.2.6
+    devDependencies:
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@types/jest': 27.4.1
+      depcheck: 1.4.3
+      eslint: 8.12.0
+      eslint-plugin-harmony: 6.0.0_eslint@8.12.0+typescript@4.6.3
+      eslint-plugin-yml: 0.14.0_eslint@8.12.0
+      jest: 27.5.1
+      jest-validate: 27.5.1
+      jest-watch-suspend: 1.1.2_jest@27.5.1
+      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
+      jest-watch-typeahead: 1.0.0_jest@27.5.1
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      size-limit: 7.0.8
+      type-plus: 4.4.2
+      typescript: 4.6.3
 
 packages:
 
@@ -18186,7 +18229,6 @@ packages:
       acorn: 8.7.0
       is-buffer: 2.0.5
       unpartial: 0.6.4
-    dev: false
 
   /test-exclude/6.0.0:
     resolution: {integrity: sha512-cAGWPIyOHU6zlmg88jwm7VRyXnMN7iV68OGAbYDk/Mh/xC/pzVPlQtY6ngoIH/5/tciuhGfvESU8GrHrcxD56w==}
@@ -18475,7 +18517,6 @@ packages:
     dependencies:
       tersify: 3.8.2
       unpartial: 0.6.4
-    dev: false
 
   /typedarray-to-buffer/3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}

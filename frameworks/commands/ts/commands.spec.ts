@@ -1,7 +1,7 @@
+import { assertLog } from '@just-web/testing'
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { stub } from 'type-plus'
 import { clearCommands, CommandRegistration, getCommands, invokeCommand, registerCommand } from '.'
-import { assertLog } from './assertLog'
 
 let reporter: MemoryLogReporter
 beforeEach(() => reporter = configForTest().reporter)

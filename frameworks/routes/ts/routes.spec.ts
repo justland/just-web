@@ -1,6 +1,6 @@
+import { assertLog } from '@just-web/testing'
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { registerRoute } from '.'
-import { assertLog } from './assertLog'
 import { clearRoutes, hasRoute, navigate, validateRoutes } from './routes'
 
 let reporter: MemoryLogReporter

@@ -20,6 +20,7 @@
     "type-plus": "~4.4.1"
   },
   "devDependencies": {
+    "@just-web/testing": "workspace:*",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@types/jest": "^27.4.1",
     "depcheck": "~1.4.3",

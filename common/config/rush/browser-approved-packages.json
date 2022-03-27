@@ -67,8 +67,12 @@
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "@size-limit/preset-small-lib",
+      "name": "@just-web/testing",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@size-limit/preset-small-lib",
+      "allowedCategories": [ "libraries", "tools" ]
     },
     {
       "name": "@storybook/addon-actions",
@@ -172,11 +176,11 @@
     },
     {
       "name": "depcheck",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "eslint-config-react-app",
@@ -184,7 +188,7 @@
     },
     {
       "name": "eslint-plugin-harmony",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "eslint-plugin-storybook",
@@ -192,7 +196,7 @@
     },
     {
       "name": "eslint-plugin-yml",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "fuse.js",
@@ -208,7 +212,7 @@
     },
     {
       "name": "jest",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "jest-esm-transformer",
@@ -216,23 +220,23 @@
     },
     {
       "name": "jest-validate",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "jest-watch-suspend",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "jest-watch-toggle-config",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "jest-watch-typeahead",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "npm-run-all",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "platform",
@@ -280,11 +284,11 @@
     },
     {
       "name": "rimraf",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "size-limit",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "libraries", "tools" ]
     },
     {
       "name": "solid-command-palette",
@@ -300,7 +304,7 @@
     },
     {
       "name": "standard-log",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "libraries", "tools" ]
     },
     {
       "name": "storybook-css-modules-preset",
@@ -324,7 +328,7 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "vite",
