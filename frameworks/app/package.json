@@ -9,7 +9,7 @@
     "clean": "rimraf lib",
     "coverage": "jest --coverage",
     "depcheck": "depcheck",
-    "lint": "eslint --ext=ts,tsx,js .",
+    "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
     "test": "jest",
     "test:watch": "jest --watch",
     "verify": "run-p build lint depcheck test",
