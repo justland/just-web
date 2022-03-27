@@ -42,6 +42,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/app",
+      "projectFolder": "frameworks/app",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/commands",
       "projectFolder": "frameworks/commands",
       "reviewCategory": "libraries"

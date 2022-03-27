@@ -1,0 +1,44 @@
+{
+  "name": "@just-web/app",
+  "version": "0.1.0",
+  "description": "just-web app",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf lib",
+    "coverage": "jest --coverage",
+    "depcheck": "depcheck",
+    "lint": "eslint --ext=ts,tsx,js .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "verify": "run-p build lint depcheck test",
+    "verify:build": "run-s clean build"
+  },
+  "dependencies": {
+    "standard-log": "~6.2.6",
+    "type-plus": "~4.4.1"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/jest": "^27.4.1",
+    "depcheck": "~1.4.3",
+    "eslint": "^8.11.0",
+    "eslint-plugin-harmony": "^6.0.0",
+    "eslint-plugin-yml": "~0.14.0",
+    "jest": "^27.5.1",
+    "jest-validate": "^27.5.1",
+    "jest-watch-suspend": "^1.1.2",
+    "jest-watch-toggle-config": "^2.0.1",
+    "jest-watch-typeahead": "^1.0.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "~3.0.2",
+    "size-limit": "^7.0.8",
+    "typescript": "^4.6.2"
+  },
+  "size-limit": [
+    {
+      "limit": "15 kb"
+    }
+  ]
+}
