@@ -51,6 +51,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@just-web/commands",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@just-web/platform",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -189,6 +193,10 @@
     {
       "name": "identity-obj-proxy",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "immutable",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "jest",

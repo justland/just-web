@@ -1,4 +1,4 @@
-import { Command, invokeCommand, KeyBinding } from '@just-web/command'
+import { Command, invokeCommand, KeyBinding } from '@just-web/commands'
 import { isMacOS } from '@just-web/platform'
 import { FC } from 'react'
 import CP from 'react-command-palette'

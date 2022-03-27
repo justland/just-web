@@ -1,5 +1,5 @@
 {
-  "name": "@just-web/command",
+  "name": "@just-web/commands",
   "version": "0.1.0",
   "description": "just-web command system",
   "main": "lib/index.js",

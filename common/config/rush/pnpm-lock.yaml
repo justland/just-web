@@ -12,7 +12,7 @@ importers:
       '@babel/plugin-transform-react-jsx': ~7.17.3
       '@babel/preset-env': ~7.16.11
       '@babel/preset-typescript': ~7.16.7
-      '@just-web/command': workspace:*
+      '@just-web/commands': workspace:*
       '@just-web/platform': workspace:*
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
@@ -73,7 +73,7 @@ importers:
       typescript: ^4.6.2
       webpack: ^5.70.0
     dependencies:
-      '@just-web/command': link:../../frameworks/command
+      '@just-web/commands': link:../../frameworks/commands
       '@just-web/platform': link:../../frameworks/platform
       react: 17.0.2
       react-command-palette: 0.17.1_react-dom@17.0.2+react@17.0.2
@@ -140,7 +140,7 @@ importers:
       typescript: 4.6.3
       webpack: 5.70.0
 
-  ../../frameworks/command:
+  ../../frameworks/commands:
     specifiers:
       '@size-limit/preset-small-lib': ^7.0.8
       '@types/jest': ^27.4.1

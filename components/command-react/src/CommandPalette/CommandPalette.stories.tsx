@@ -1,4 +1,4 @@
-import { Command, KeyBinding, registerCommand } from '@just-web/command'
+import { Command, KeyBinding, registerCommand } from '@just-web/commands'
 import { FC } from 'react'
 import { stub } from 'type-plus'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'

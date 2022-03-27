@@ -35,7 +35,6 @@ describe('invokeCommand()', () => {
   test('invoke command', () => {
     let called = false
     const cmd = stub<CommandRegistration>({ handler: () => called = true })
-    console.log('invoke command', cmd)
     registerCommand('command1', cmd)
     invokeCommand('command1')
     expect(called).toBe(true)
