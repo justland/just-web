@@ -1,2 +1,2 @@
-
-export * from './start'
+import { app } from './app'
+export default app
