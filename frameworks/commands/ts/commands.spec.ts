@@ -1,7 +1,7 @@
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { stub } from 'type-plus'
-import { clearCommands, CommandRegistration, invokeCommand, registerCommand } from '.'
-import { getCommands } from './commands'
+import { clearCommands, CommandRegistration, getCommands, invokeCommand, registerCommand } from '.'
+import { assertLog } from './assertLog'
 
 let reporter: MemoryLogReporter
 beforeEach(() => reporter = configForTest().reporter)
@@ -16,10 +16,10 @@ describe('registerCommand()', () => {
     })
   })
 
-  test('emit warning if registering with existing id', () => {
+  test('log a warning if registering with existing id', () => {
     registerCommand('command1', stub<CommandRegistration>())
     registerCommand('command1', stub<CommandRegistration>())
-    expect(reporter.getLogMessageWithLevel()).toEqual(`(WARN) Registering an already registered command: 'command1'`)
+    assertLog(reporter, `(WARN) Registering an already registered command: 'command1'`)
   })
 })
 
@@ -29,7 +29,7 @@ describe('invokeCommand()', () => {
   test('invoke not registered command emits an error', () => {
     invokeCommand('not-exist')
 
-    expect(reporter.getLogMessageWithLevel()).toEqual(`(ERROR) Invoking not registered command: 'not-exist'`)
+    assertLog(reporter, `(ERROR) Invoking not registered command: 'not-exist'`)
   })
 
   test('invoke command', () => {
