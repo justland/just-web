@@ -52,6 +52,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/routes",
+      "projectFolder": "frameworks/routes",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/command-react",
       "projectFolder": "components/command-react",
       "reviewCategory": "libraries"
