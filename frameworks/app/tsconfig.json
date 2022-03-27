@@ -8,6 +8,9 @@
       "DOM",
       "es2015"
     ],
+    "paths": {
+      "@just-web/routes": ["../routes"]
+    },
     "module": "esnext",
     "moduleResolution": "node",
     "newLine": "LF",
