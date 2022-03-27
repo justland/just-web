@@ -5,7 +5,11 @@ import { assertLog } from './assertLog'
 let reporter: MemoryLogReporter
 beforeAll(() => reporter = configForTest().reporter)
 
-test.skip('needs to register route for /', () => {
+test('needs to register route for /', () => {
   app.start()
-  assertLog(reporter, `(ERROR) application needs to at least handle '/'`)
+  assertLog(reporter,
+    `(NOTICE) application starts`,
+    `(ERROR) route '/' is required`,
+    `(ERROR) route '/error' is required`
+  )
 })

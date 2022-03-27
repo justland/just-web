@@ -26,3 +26,21 @@ export function registerRoute(route: string, handler: () => void) {
 export function hasRoute(route: string) {
   return routes.has(route)
 }
+
+export function clearRoutes() {
+  routes.clear()
+}
+
+export async function validateRoutes() {
+  let ready = true
+  if (!routes.has('/')) {
+    log.error(`route '/' is required`)
+    ready = false
+  }
+  if (!routes.has('/error')) {
+    log.error(`route '/error' is required`)
+    ready = false
+  }
+
+  return ready
+}

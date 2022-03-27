@@ -1,7 +1,7 @@
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { registerRoute } from '.'
 import { assertLog } from './assertLog'
-import { hasRoute, navigate } from './routes'
+import { clearRoutes, hasRoute, navigate, validateRoutes } from './routes'
 
 let reporter: MemoryLogReporter
 beforeEach(() => reporter = configForTest().reporter)
@@ -35,5 +35,21 @@ describe('navigate()', () => {
     registerRoute('/route1', () => called = true)
     navigate('/route1')
     expect(called).toBe(true)
+  })
+})
+
+
+describe('validateRoutes()', () => {
+  beforeEach(clearRoutes)
+
+  test(`route '/' and '/error' are required`, async () => {
+    const a = await validateRoutes()
+    expect(a).toBe(false)
+
+    assertLog(
+      reporter,
+      `(ERROR) route '/' is required`,
+      `(ERROR) route '/error' is required`
+    )
   })
 })
