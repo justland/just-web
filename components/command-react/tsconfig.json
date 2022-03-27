@@ -17,14 +17,6 @@
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "outDir": "lib",
-    "paths": {
-      "@just-web/command": [
-        "../../just-web/command"
-      ],
-      "@just-web/platform": [
-        "../../just-web/platform"
-      ]
-    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
