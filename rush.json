@@ -47,6 +47,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/testing",
+      "projectFolder": "tools/testing",
+      "reviewCategory": "tools"
+    },
+    {
       "packageName": "@just-web/commands",
       "projectFolder": "frameworks/commands",
       "reviewCategory": "libraries"

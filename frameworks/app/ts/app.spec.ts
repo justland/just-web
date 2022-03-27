@@ -1,6 +1,6 @@
+import { assertLog } from '@just-web/testing'
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { app } from './app'
-import { assertLog } from './assertLog'
 
 let reporter: MemoryLogReporter
 beforeAll(() => reporter = configForTest().reporter)
