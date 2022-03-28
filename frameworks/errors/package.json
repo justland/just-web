@@ -16,8 +16,12 @@
     "verify:build": "run-s clean build"
   },
   "dependencies": {
+    "iso-error": "~4.1.2",
+    "type-plus": "~4.4.1"
   },
   "devDependencies": {
+    "@babel/core": "~7.17.8",
+    "@babel/plugin-transform-runtime": "~7.17.0",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@types/jest": "^27.4.1",
     "depcheck": "~1.4.3",

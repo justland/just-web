@@ -4,7 +4,7 @@
   "packages": [
     {
       "name": "@babel/core",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "@babel/plugin-proposal-class-properties",
@@ -28,7 +28,7 @@
     },
     {
       "name": "@babel/plugin-transform-runtime",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "@babel/preset-env",
@@ -60,6 +60,10 @@
     },
     {
       "name": "@just-web/commands",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@just-web/errors",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -212,6 +216,10 @@
     },
     {
       "name": "immutable",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "iso-error",
       "allowedCategories": [ "libraries" ]
     },
     {
