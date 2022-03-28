@@ -10,7 +10,7 @@
     "coverage": "jest --coverage",
     "depcheck": "depcheck",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
-    "test": "jest",
+    "test": "jest 2>&1",
     "test:watch": "jest --watch",
     "verify": "run-p build lint depcheck test",
     "verify:build": "run-s clean build"

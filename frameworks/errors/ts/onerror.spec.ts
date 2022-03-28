@@ -4,7 +4,7 @@ import { stub } from 'type-plus'
 import { registerOnErrorHandler } from './onerror'
 
 test('capture error', () => {
-  const [errors, setErrors] = createState<ModuleError[]>([])
+  const [errors, setErrors, onChange] = createState<ModuleError[]>([])
 
   const ctx: registerOnErrorHandler.Ctx = { window: {} } as any
   registerOnErrorHandler({
@@ -13,8 +13,11 @@ test('capture error', () => {
     preventDefault: false
   }, stub<registerOnErrorHandler.Ctx>(ctx))
 
+  let actual: ModuleError[]
+
+  onChange(v => actual = v)
   ctx.window.onerror!('some error occurred')
 
-  expect(errors.length).toBe(1)
-  expect(errors[0].message).toBe('some error occurred')
+  expect(actual!.length).toBe(1)
+  expect(actual![0].message).toBe('some error occurred')
 })

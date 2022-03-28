@@ -13,6 +13,5 @@ export class BrowserError extends JustWebError {
     public colno?: number,
     error?: Error) {
     super(event.toString(), { cause: error })
-
   }
 }

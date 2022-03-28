@@ -13,7 +13,7 @@
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 6006 -s public",
-    "test": "react-app-rewired test --watchAll=false",
+    "test": "react-app-rewired test --watchAll=false 2>&1",
     "test:visual": "cross-env VISUAL_TEST=1 react-app-rewired test --watchAll=false",
     "test:watch": "react-app-rewired test",
     "verify": "run-p build lint depcheck test",
