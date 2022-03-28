@@ -1,10 +1,17 @@
+import { createState } from '@just-web/states'
+import type { ModuleError } from 'iso-error'
 import { stub } from 'type-plus'
-import { errors } from './errors'
 import { registerOnErrorHandler } from './onerror'
 
 test('capture error', () => {
+  const [errors, setErrors] = createState<ModuleError[]>([])
+
   const ctx: registerOnErrorHandler.Ctx = { window: {} } as any
-  registerOnErrorHandler(false, stub<registerOnErrorHandler.Ctx>(ctx))
+  registerOnErrorHandler({
+    errors,
+    setErrors,
+    preventDefault: false
+  }, stub<registerOnErrorHandler.Ctx>(ctx))
 
   ctx.window.onerror!('some error occurred')
 

@@ -16,5 +16,3 @@ export class BrowserError extends JustWebError {
 
   }
 }
-
-export const errors: ModuleError[] = []

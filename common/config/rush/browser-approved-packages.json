@@ -75,6 +75,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@just-web/states",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@just-web/testing",
       "allowedCategories": [ "libraries" ]
     },
@@ -213,6 +217,10 @@
     {
       "name": "identity-obj-proxy",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "immer",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "immutable",
