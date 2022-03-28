@@ -1,3 +1,4 @@
+import produce from 'immer'
 import { createState } from './state'
 
 test('returns initial value', () => {
@@ -16,4 +17,11 @@ test('setValue triggers onChange with new and prev value', () => {
 
   expect(newValue!).toEqual([1, 2, 4])
   expect(oldValue!).toEqual([1, 2, 3])
+})
+
+test('setValue will not trigger onChange if the value does not change', () => {
+  const [value, setValue, onChange] = createState([1, 2, 3])
+
+  onChange(() => { throw 'should not trigger' })
+  setValue(produce(value, v => { v[0] = 1 }))
 })
