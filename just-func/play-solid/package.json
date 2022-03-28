@@ -14,7 +14,7 @@
     "serve": "vite preview",
     "start": "vite",
     "storybook": "start-storybook -p 6006",
-    "test": "jest",
+    "test": "jest 2>&1",
     "test:watch": "jest --watch",
     "verify": "run-p build lint depcheck test",
     "verify:build": "run-s clean build"

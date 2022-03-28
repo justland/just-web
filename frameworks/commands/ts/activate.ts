@@ -7,9 +7,7 @@ import { Command } from './types'
  */
 export function activate() {
   // TODO: handle when user uses ES5 only and does not support `Map`
-  const [commands, setCommands, onChange] = createState<Map<string, Command>>(
-    store.getCommands()
-  )
+  const [commands, setCommands, onChange] = createState<Map<string, Command>>(store.get())
 
   store.activate(commands, setCommands, onChange)
   return { onChange }
