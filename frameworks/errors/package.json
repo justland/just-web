@@ -16,8 +16,10 @@
     "verify:build": "run-s clean build"
   },
   "dependencies": {
+    "@just-web/states": "workspace:*",
     "iso-error": "~4.1.2",
-    "type-plus": "~4.4.1"
+    "type-plus": "~4.4.1",
+    "immer": "~9.0.12"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

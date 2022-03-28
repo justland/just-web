@@ -1,1 +1,2 @@
-export const empty = {}
+export { enableAllPlugins, enableES5, enableMapSet, enablePatches } from 'immer'
+export * from './state'
