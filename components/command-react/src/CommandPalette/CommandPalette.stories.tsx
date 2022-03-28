@@ -1,7 +1,10 @@
+import app from '@just-web/app'
 import { Command, KeyBinding, registerCommand } from '@just-web/commands'
 import { FC } from 'react'
 import { stub } from 'type-plus'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
+
+app.states.enableMapSet()
 
 export default {
   component: CommandPalette
@@ -20,15 +23,15 @@ const simpleCmd = cmd({ id: 'core.simpleCommand', description: 'Simple command' 
 registerCommand(simpleCmd.id, simpleCmd)
 
 const keyCmd = cmd({
-  description: 'Simple command',
-  id: 'core.simpleCommand',
+  description: 'Command with key',
+  id: 'core.keyedCommand',
   key: 'ctrl+s'
 })
 registerCommand(keyCmd.id, keyCmd)
 
 const macCmd = cmd({
-  description: 'Simple command',
-  id: 'core.simpleCommand',
+  description: 'Command with mac key override',
+  id: 'core.macCommand',
   key: 'ctrl+s',
   mac: 'cmd+s'
 })
@@ -38,12 +41,12 @@ export const NoCommand = () => <Story commands={[]} />
 
 export const OneCommand = () => <Story commands={[simpleCmd]} />
 
-export const WithOneKey = () => <Story commands={[keyCmd, keyCmd, keyCmd]} />
+export const WithKey = () => <Story commands={[keyCmd]} />
 
-export const WithOverrideKeyInMac = () => <Story
-  commands={[macCmd, macCmd, macCmd]}
+export const OverrideMacCommandInMac = () => <Story
+  commands={[keyCmd, macCmd]}
   ctx={{ isMacOS: () => true }} />
 
-export const WithoutOverrideKeyInMac = () => <Story
-  commands={[keyCmd, keyCmd]}
-  ctx={{ isMacOS: () => true }} />
+export const OverrideMacCommandInWindow = () => <Story
+  commands={[keyCmd, macCmd]}
+  ctx={{ isMacOS: () => false }} />

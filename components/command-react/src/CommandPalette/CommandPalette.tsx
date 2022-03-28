@@ -18,7 +18,7 @@ export interface CommandPaletteProps {
 function toPaletteCommands(cmds: CommandPaletteProps['commands'], ctx: CommandPaletteCtx) {
   const m = ctx.isMacOS()
   return cmds.map(c => ({
-    name: c.id,
+    name: c.description,
     key: m ? c.mac ?? c.key : c.key,
     command: () => invokeCommand(c.id)
   }))

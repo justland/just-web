@@ -48,7 +48,7 @@
     },
     {
       "name": "@just-web/app",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@just-web/command",
