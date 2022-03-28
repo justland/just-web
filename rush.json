@@ -52,6 +52,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/states",
+      "projectFolder": "frameworks/states",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/testing",
       "projectFolder": "tools/testing",
       "reviewCategory": "tools"
