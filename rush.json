@@ -47,6 +47,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/contributes",
+      "projectFolder": "frameworks/contributes",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/errors",
       "projectFolder": "frameworks/errors",
       "reviewCategory": "libraries"
