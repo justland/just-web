@@ -1,7 +1,7 @@
 
 export interface Command {
   /**
-   * The command id. e.g. `just-web.commandPalette`
+   * The command id. e.g. `just-web.showCommandPalette`
    */
   id: string,
   description: string,

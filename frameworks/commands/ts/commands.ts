@@ -17,8 +17,7 @@ export function registerCommand(id: string, command: CommandRegistration) {
     log.warn(`Registering an already registered command: '${id}'`)
     return
   }
-  const cmd = { ...command, id }
-  store.set(produce(commands, m => { m[id] = cmd }))
+  store.set(produce(commands, m => { m[id] = { ...command, id } }))
 }
 
 export function invokeCommand(id: string) {
@@ -30,7 +29,5 @@ export function invokeCommand(id: string) {
 
 export function clearCommands() {
   log.trace('clearCommands')
-  store.set(produce(
-    store.get(),
-    () => Object.create(null)))
+  store.set(produce(store.get(), () => Object.create(null)))
 }
