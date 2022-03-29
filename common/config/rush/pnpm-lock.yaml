@@ -14,6 +14,7 @@ importers:
       '@babel/preset-env': ~7.16.11
       '@babel/preset-typescript': ~7.16.7
       '@just-web/commands': workspace:*
+      '@just-web/contributes': workspace:*
       '@just-web/platform': workspace:*
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
@@ -75,6 +76,7 @@ importers:
       webpack: ^5.70.0
     dependencies:
       '@just-web/commands': link:../../frameworks/commands
+      '@just-web/contributes': link:../../frameworks/contributes
       '@just-web/platform': link:../../frameworks/platform
       react: 17.0.2
       react-command-palette: 0.17.1_react-dom@17.0.2+react@17.0.2
@@ -247,7 +249,6 @@ importers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
       '@just-web/states': workspace:*
-      '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
       '@types/jest': ^27.4.1
       depcheck: ~1.4.3
@@ -268,7 +269,6 @@ importers:
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
-      '@just-web/testing': link:../../tools/testing
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
       depcheck: 1.4.3
@@ -318,6 +318,53 @@ importers:
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
+      depcheck: 1.4.3
+      eslint: 8.12.0
+      eslint-plugin-harmony: 6.0.0_eslint@8.12.0+typescript@4.6.3
+      eslint-plugin-yml: 0.14.0_eslint@8.12.0
+      jest: 27.5.1
+      jest-validate: 27.5.1
+      jest-watch-suspend: 1.1.2_jest@27.5.1
+      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
+      jest-watch-typeahead: 1.0.0_jest@27.5.1
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      size-limit: 7.0.8
+      typescript: 4.6.3
+
+  ../../frameworks/format:
+    specifiers:
+      '@babel/core': ~7.17.8
+      '@babel/plugin-transform-runtime': ~7.17.0
+      '@size-limit/preset-small-lib': ^7.0.8
+      '@types/jest': ^27.4.1
+      '@types/platform': ~1.3.4
+      depcheck: ~1.4.3
+      eslint: ^8.11.0
+      eslint-plugin-harmony: ^6.0.0
+      eslint-plugin-yml: ~0.14.0
+      jest: ^27.5.1
+      jest-validate: ^27.5.1
+      jest-watch-suspend: ^1.1.2
+      jest-watch-toggle-config: ^2.0.1
+      jest-watch-typeahead: ^1.0.0
+      npm-run-all: ^4.1.5
+      platform: ~1.3.6
+      rimraf: ~3.0.2
+      sentence-case: ~3.0.4
+      size-limit: ^7.0.8
+      type-plus: ~4.4.1
+      typescript: ^4.6.2
+    dependencies:
+      platform: 1.3.6
+      sentence-case: 3.0.4
+      type-plus: 4.4.2
+    devDependencies:
+      '@babel/core': 7.17.8
+      '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@types/jest': 27.4.1
+      '@types/platform': 1.3.4
       depcheck: 1.4.3
       eslint: 8.12.0
       eslint-plugin-harmony: 6.0.0_eslint@8.12.0+typescript@4.6.3
@@ -13753,7 +13800,6 @@ packages:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
       tslib: 2.3.1
-    dev: true
 
   /lowlight/1.20.0:
     resolution: {integrity: sha512-8Ktj+prEb1RoCPkEOrPMYUN/nCggB7qAWe3a7OpMjWQkh3l2RD5wKRQ+o8Q8YuI9RG/xs95waaI/E6ym/7NsTw==}
@@ -14286,7 +14332,6 @@ packages:
     dependencies:
       lower-case: 2.0.2
       tslib: 2.3.1
-    dev: true
 
   /node-dir/0.1.17:
     resolution: {integrity: sha1-X1Zl2TNRM1yqvvjxxVRRbPXx5OU=}
@@ -17403,6 +17448,14 @@ packages:
       statuses: 1.5.0
     dev: true
 
+  /sentence-case/3.0.4:
+    resolution: {integrity: sha512-8LS0JInaQMCRoQ7YUytAo/xUu5W2XnQxV2HI/6uM6U7CITS1RqPElr30V6uIqyMKM9lJGRVFy5/4CuzcixNYSg==}
+    dependencies:
+      no-case: 3.0.4
+      tslib: 2.3.1
+      upper-case-first: 2.0.2
+    dev: false
+
   /serialize-javascript/4.0.0:
     resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
     dependencies:
@@ -18881,6 +18934,12 @@ packages:
     resolution: {integrity: sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg==}
     engines: {node: '>=4'}
     dev: true
+
+  /upper-case-first/2.0.2:
+    resolution: {integrity: sha512-514ppYHBaKwfJRK/pNC6c/OxfGa0obSnAl106u97Ed0I625Nin96KAjttZF6ZL3e1XLtphxnqrOi9iWgm+u+bg==}
+    dependencies:
+      tslib: 2.3.1
+    dev: false
 
   /upper-case/2.0.2:
     resolution: {integrity: sha512-KgdgDGJt2TpuwBUIjgG6lzw2GWFRCW9Qkfkiv0DxqHHLYJHmtmdUIKcZd8rHgFSjopVTlw6ggzCm1b8MFQwikg==}
