@@ -1,8 +1,10 @@
 import { start } from './start'
-import { getStore } from './optionsStore'
+import * as onerror from './onerror'
+
+jest.mock('./onerror')
 
 test('by default browser error prevent default is true', async () => {
   await start()
-  const store = getStore()
-  expect(store.browserErrors.preventDefault).toBe(true)
+
+  expect(onerror.registerOnErrorHandler).toBeCalledWith({ preventDefault: true })
 })
