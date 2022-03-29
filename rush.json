@@ -57,6 +57,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/format",
+      "projectFolder": "frameworks/format",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/states",
       "projectFolder": "frameworks/states",
       "reviewCategory": "libraries"

@@ -63,6 +63,14 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@just-web/contributes",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@just-web/contributions",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@just-web/errors",
       "allowedCategories": [ "libraries" ]
     },
