@@ -2,22 +2,17 @@
 
 State management for `@just-web/app` applications.
 
-You normally will not reference this library directly.
+`@just-web/states` expect the value is immutable.
 
-Instead, access its API through `@just-web/app`:
+It uses [`Object.is()`](https://www.jstips.co/en/javascript/why-you-should-use-Object.is()-in-equality-comparison/) (similar to strict comparison `===`) to detect changes.
+
+You can use a library such as [`immer`](https://github.com/immerjs/immer) to manage immutability.
+
+You typically use this library through `@just-web/app`:
 
 ```ts
 import app from '@just-web/app'
 
-app.states.enableES5()
-
-// other configurations...
-
-app.start()
+const [value, setValue, onChange] = app.states.createState(...)
+const store = app.states.createStore(...)
 ```
-
-`@just-web/states` internally use [`immer`](https://github.com/immerjs/immer) for immutability.
-
-It exposes the feature methods from `immer`.
-If your application has specific needs,
-call the corresponding method to enable them.

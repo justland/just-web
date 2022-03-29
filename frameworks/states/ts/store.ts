@@ -1,17 +1,15 @@
-import { OnStateChange, SetState } from './state'
+import { createState } from './state'
 
+/**
+ * creates a object style store to track a value and its changes.
+ */
 export function createStore<T>(value: T) {
-  let setter: SetState<T> = v => value = v
+  const state = createState(value)
+  const [, set, onChange] = state
+  onChange(v => state[0] = v)
   return {
-    get() { return value },
-    set(value: T) { setter(value) },
-    activate(
-      v: T,
-      setValue: SetState<T>,
-      onChange: OnStateChange<T>) {
-      value = v
-      onChange(v => value = v)
-      setter = setValue
-    }
+    get() { return state[0] },
+    set,
+    onChange
   }
 }

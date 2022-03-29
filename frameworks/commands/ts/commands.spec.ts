@@ -1,4 +1,3 @@
-import { enableMapSet } from '@just-web/states'
 import { assertLog } from '@just-web/testing'
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { compose, stub } from 'type-plus'
@@ -9,8 +8,6 @@ import {
 
 let reporter: MemoryLogReporter
 
-beforeAll(enableMapSet)
-
 beforeEach(compose(() => reporter = configForTest().reporter, clearCommands))
 
 
@@ -18,7 +15,7 @@ describe('registerCommand()', () => {
   test('can register before activate()', () => {
     registerCommand('command1', stub<CommandRegistration>())
     const cmds = getCommands()
-    expect(cmds.size).toBe(1)
+    expect(Object.keys(cmds).length).toBe(1)
   })
   describe('after activate()', () => {
     beforeEach(activate)
@@ -40,21 +37,21 @@ describe('registerCommand()', () => {
 describe('getCommands()', () => {
   test('return empty Map before activate', () => {
     const cmds = getCommands()
-    expect(cmds.size).toBe(0)
+    expect(Object.keys(cmds).length).toBe(0)
   })
   describe('after activate()', () => {
     beforeEach(activate)
 
     test('empty at the beginning', () => {
       const cmds = getCommands()
-      expect(cmds.size).toEqual(0)
+      expect(Object.keys(cmds).length).toEqual(0)
     })
 
     test('get registered commands', () => {
       registerCommand('cmd1', stub<CommandRegistration>())
       registerCommand('cmd2', stub<CommandRegistration>())
       const cmds = getCommands()
-      expect(Array.from(cmds.values())).toEqual([{ id: 'cmd1' }, { id: 'cmd2' }])
+      expect(Object.keys(cmds).map(k => cmds[k])).toEqual([{ id: 'cmd1' }, { id: 'cmd2' }])
     })
   })
 })

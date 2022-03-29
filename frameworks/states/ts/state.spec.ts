@@ -1,4 +1,3 @@
-import produce from 'immer'
 import { createState } from './state'
 
 test('returns initial value', () => {
@@ -23,5 +22,5 @@ test('setValue will not trigger onChange if the value does not change', () => {
   const [value, setValue, onChange] = createState([1, 2, 3])
 
   onChange(() => { throw 'should not trigger' })
-  setValue(produce(value, v => { v[0] = 1 }))
+  setValue(value)
 })

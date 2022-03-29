@@ -16,8 +16,6 @@
     "verify:build": "run-s clean build"
   },
   "dependencies": {
-    "immer": "~9.0.12",
-    "type-plus": "~4.4.1"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

@@ -13,17 +13,17 @@ export function getCommands() {
 export function registerCommand(id: string, command: CommandRegistration) {
   log.trace('registerCommand', id)
   const commands = store.get()
-  if (commands.has(id)) {
+  if (commands[id]) {
     log.warn(`Registering an already registered command: '${id}'`)
     return
   }
   const cmd = { ...command, id }
-  store.set(produce(commands, m => m.set(id, cmd)))
+  store.set(produce(commands, m => { m[id] = cmd }))
 }
 
 export function invokeCommand(id: string) {
   log.trace('invokeCommand', id)
-  const cmd = store.get().get(id)
+  const cmd = store.get()[id]
   cmd ? cmd.handler() : log.error(`Invoking not registered command: '${id}'`)
 }
 
@@ -32,5 +32,5 @@ export function clearCommands() {
   log.trace('clearCommands')
   store.set(produce(
     store.get(),
-    (m: Map<string, Command>) => void m.clear()))
+    () => Object.create(null)))
 }

@@ -1,10 +1,7 @@
-import app from '@just-web/app'
 import { Command, KeyBinding, registerCommand } from '@just-web/commands'
 import { FC } from 'react'
 import { stub } from 'type-plus'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
-
-app.states.enableMapSet()
 
 export default {
   component: CommandPalette
