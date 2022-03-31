@@ -1,8 +1,8 @@
 import { assertLog } from '@just-web/testing'
 import { configForTest, MemoryLogReporter } from 'standard-log'
-import { compose, stub } from 'type-plus'
+import { compose } from 'type-plus'
 import {
-  activate, clearCommands, CommandRegistration,
+  activate, clearCommands,
   getCommands, invokeCommand, registerCommand
 } from '.'
 
@@ -13,22 +13,19 @@ beforeEach(compose(() => reporter = configForTest().reporter, clearCommands))
 
 describe('registerCommand()', () => {
   test('can register before activate()', () => {
-    registerCommand('command1', stub<CommandRegistration>())
+    registerCommand('command1', () => { })
     const cmds = getCommands()
     expect(Object.keys(cmds).length).toBe(1)
   })
   describe('after activate()', () => {
     beforeEach(activate)
     test('register a command', () => {
-      registerCommand('just-web.commandPalette', {
-        description: 'Open Command Palette',
-        handler() { }
-      })
+      registerCommand('just-web.commandPalette', () => { })
     })
 
     test('log a warning if registering with existing id', () => {
-      registerCommand('command1', stub<CommandRegistration>())
-      registerCommand('command1', stub<CommandRegistration>())
+      registerCommand('command1', () => { })
+      registerCommand('command1', () => { })
       assertLog(reporter, `(WARN) Registering an already registered command: 'command1'`)
     })
   })
@@ -48,10 +45,10 @@ describe('getCommands()', () => {
     })
 
     test('get registered commands', () => {
-      registerCommand('cmd1', stub<CommandRegistration>())
-      registerCommand('cmd2', stub<CommandRegistration>())
+      registerCommand('cmd1', () => { })
+      registerCommand('cmd2', () => { })
       const cmds = getCommands()
-      expect(Object.keys(cmds).map(k => cmds[k])).toEqual([{ id: 'cmd1' }, { id: 'cmd2' }])
+      expect(Object.keys(cmds)).toEqual(['cmd1', 'cmd2'])
     })
   })
 })
@@ -66,10 +63,10 @@ describe('invokeCommand()', () => {
     })
 
     test('invoke command', () => {
-      const cmd = stub<CommandRegistration>({ handler: jest.fn() })
-      registerCommand('command1', cmd)
+      const fn = jest.fn()
+      registerCommand('command1', fn)
       invokeCommand('command1')
-      expect(cmd.handler).toHaveBeenCalledTimes(1)
+      expect(fn).toHaveBeenCalledTimes(1)
     })
   })
 })

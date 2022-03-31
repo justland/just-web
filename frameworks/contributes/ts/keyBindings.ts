@@ -1,5 +1,5 @@
 import { createStore } from '@just-web/states'
-
+import { record } from 'type-plus'
 
 export interface KeyBinding {
   /**
@@ -16,4 +16,4 @@ export interface KeyBinding {
   mac?: string
 }
 
-export const keyBindings = createStore<KeyBinding[]>([])
+export const keyBindings = createStore<Record<string, KeyBinding>>(record())

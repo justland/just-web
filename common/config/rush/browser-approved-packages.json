@@ -75,6 +75,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@just-web/format",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@just-web/platform",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -263,6 +267,10 @@
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
+      "name": "npm-check-updates",
+      "allowedCategories": [ "libraries", "production", "tools" ]
+    },
+    {
       "name": "npm-run-all",
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
@@ -313,6 +321,10 @@
     {
       "name": "rimraf",
       "allowedCategories": [ "libraries", "production", "tools" ]
+    },
+    {
+      "name": "sentence-case",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "size-limit",

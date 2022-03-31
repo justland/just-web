@@ -16,6 +16,7 @@ ignores:
   - jest-watch-suspend
   - jest-watch-toggle-config
   - jest-watch-typeahead
+  - npm-check-updates
   - postcss
   - react-refresh
   - size-limit

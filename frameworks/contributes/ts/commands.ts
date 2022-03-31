@@ -1,10 +1,11 @@
 import { createStore } from '@just-web/states'
+import { record } from 'type-plus'
 
 export interface Command {
   /**
    * The command id. e.g. `just-web.showCommandPalette`
    */
-  id: string,
+  command: string,
   /**
    * Name of the command such as `Show command palette`.
    * If not specified,
@@ -19,4 +20,4 @@ export interface Command {
   description?: string
 }
 
-export const commands = createStore<Command[]>([])
+export const commands = createStore<Record<string, Command>>(record())

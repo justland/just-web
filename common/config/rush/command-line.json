@@ -28,6 +28,12 @@
       "watchForChanges": true
     },
     {
+      "name": "ncu",
+      "commandKind": "bulk",
+      "summary": "run npm-check-updates on projects",
+      "enableParallelism": true
+    },
+    {
       "name": "test",
       "commandKind": "bulk",
       "summary": "Test projects",

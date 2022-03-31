@@ -1,4 +1,7 @@
-node_modules
+!.depcheckrc.yml
+!.storybook
+build
 dist*
 lib*
+node_modules
 out*

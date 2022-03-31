@@ -5,11 +5,12 @@ import { createState } from './state'
  */
 export function createStore<T>(value: T) {
   const state = createState(value)
-  const [, set, onChange] = state
+  const [, set, onChange, reset] = state
   onChange(v => state[0] = v)
   return {
     get() { return state[0] },
     set,
-    onChange
+    onChange,
+    reset
   }
 }

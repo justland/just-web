@@ -1,29 +1,25 @@
 import produce from 'immer'
-import { Omit } from 'type-plus'
-import { store } from './store'
 import { log } from './log'
-import { Command } from './types'
-
-export type CommandRegistration = Omit<Command, 'id'>
+import { store } from './store'
 
 export function getCommands() {
   return store.get()
 }
 
-export function registerCommand(id: string, command: CommandRegistration) {
+export function registerCommand(id: string, handler: () => void) {
   log.trace('registerCommand', id)
   const commands = store.get()
   if (commands[id]) {
     log.warn(`Registering an already registered command: '${id}'`)
     return
   }
-  store.set(produce(commands, m => { m[id] = { ...command, id } }))
+  store.set(produce(commands, m => { m[id] = handler }))
 }
 
 export function invokeCommand(id: string) {
   log.trace('invokeCommand', id)
-  const cmd = store.get()[id]
-  cmd ? cmd.handler() : log.error(`Invoking not registered command: '${id}'`)
+  const handler = store.get()[id]
+  handler ? handler() : log.error(`Invoking not registered command: '${id}'`)
 }
 
 
