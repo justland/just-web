@@ -16,4 +16,4 @@ export interface KeyBinding {
   mac?: string
 }
 
-export const keyBindings = createStore<Record<string, KeyBinding>>(record())
+export const keyBindings = createStore(record<string, KeyBinding>())

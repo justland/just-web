@@ -20,4 +20,4 @@ export interface Command {
   description?: string
 }
 
-export const commands = createStore<Record<string, Command>>(record())
+export const commands = createStore(record<string, Command>())
