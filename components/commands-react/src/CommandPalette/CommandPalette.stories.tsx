@@ -1,4 +1,4 @@
-import { registerCommand } from '@just-web/commands'
+import { handleCommand } from '@just-web/commands'
 import { commands, Command, KeyBinding, keyBindings } from '@just-web/contributes'
 import { FC } from 'react'
 import { produce } from 'immer'
@@ -11,7 +11,7 @@ export default {
 
 function addCommand(...inputs: Array<RequiredPick<stub.Param<Command & KeyBinding>, 'command'>>) {
   inputs.forEach(input => {
-    registerCommand(input.command, () => { alert(input.command) })
+    handleCommand(input.command, () => { alert(input.command) })
     commands.set(produce(commands.get(), cmds => {
       cmds[input.command] = pick(input, 'command', 'name', 'description')
     }))

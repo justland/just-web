@@ -6,11 +6,14 @@ export function getCommands() {
   return store.get()
 }
 
-export function registerCommand(command: string, handler: () => void) {
-  log.trace('registerCommand', command)
+/**
+ * handles command defined in `contributes` by the app and plugins.
+ */
+export function handleCommand(command: string, handler: () => void) {
+  log.trace('handleCommand', command)
   const commands = store.get()
   if (commands[command]) {
-    log.warn(`Registering an already registered command: '${command}'`)
+    log.warn(`Registering a handler for an already registered command: '${command}'`)
     return
   }
   store.set(produce(commands, m => { m[command] = handler }))
@@ -21,7 +24,6 @@ export function invokeCommand(command: string) {
   const handler = store.get()[command]
   handler ? handler() : log.error(`Invoking not registered command: '${command}'`)
 }
-
 
 export function clearCommands() {
   log.trace('clearCommands')
