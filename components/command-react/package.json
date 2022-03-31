@@ -5,7 +5,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "run-s build:ts copy:css",
-    "build-storybook": "build-storybook -s public",
+    "build:storybook": "build-storybook",
     "build:ts": "tsc",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
     "clean": "rimraf lib",
@@ -15,7 +15,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
     "start": "react-scripts start",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "start-storybook -p 6006",
     "test": "react-app-rewired test --watchAll=false 2>&1",
     "test:visual": "cross-env VISUAL_TEST=1 react-app-rewired test --watchAll=false 2>&1",
     "test:watch": "react-app-rewired test",
