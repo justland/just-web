@@ -115,6 +115,10 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@storybook/addon-postcss",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@storybook/addon-storyshots",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -281,6 +285,10 @@
     {
       "name": "postcss",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "postcss-flexbugs-fixes",
+      "allowedCategories": [ "production" ]
     },
     {
       "name": "preact",
