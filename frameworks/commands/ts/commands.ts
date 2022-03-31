@@ -25,5 +25,5 @@ export function invokeCommand(id: string) {
 
 export function clearCommands() {
   log.trace('clearCommands')
-  store.set(produce(store.get(), () => Object.create(null)))
+  store.reset()
 }
