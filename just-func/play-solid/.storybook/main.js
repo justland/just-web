@@ -4,6 +4,14 @@ module.exports = {
   ],
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-links'
+    '@storybook/addon-links',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss')
+        }
+      }
+    }
   ]
 }
