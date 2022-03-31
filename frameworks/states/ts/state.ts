@@ -11,21 +11,29 @@ export interface OnStateChange<T> {
   (handler: StateChangeHandler<T>): void
 }
 
+export interface ResetState {
+  (): void
+}
+
 /**
  * creates a functional style state to track changes of a value.
  */
-export function createState<T>(value: T): [T, SetState<T>, OnStateChange<T>] {
+export function createState<T>(init: T):
+  [T, SetState<T>, OnStateChange<T>, ResetState] {
   const handlers: StateChangeHandler<T>[] = []
+  let value = init
+  function set(newValue: T) {
+    if (Object.is(value, newValue)) return
 
+    const old = value
+    value = newValue
+    handlers.forEach(h => h(newValue, old))
+    return
+  }
   return [
     value,
-    (newValue: T) => {
-      if (Object.is(value, newValue)) return
-
-      const old = value
-      value = newValue
-      handlers.forEach(h => h(newValue, old))
-    },
-    (handler: StateChangeHandler<T>) => { handlers.push(handler) }
+    set,
+    (handler: StateChangeHandler<T>) => { handlers.push(handler) },
+    () => set(init)
   ]
 }

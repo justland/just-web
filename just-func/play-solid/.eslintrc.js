@@ -1,30 +1,32 @@
 module.exports = {
-  'env': {
-    'node': true,
-    'es6': true,
-    'jest': true
+  env: {
+    node: true,
+    es6: true,
+    browser: true,
+    jest: true
   },
-  'extends': [
-    'plugin:harmony/latest'
+  extends: [
+    'plugin:harmony/latest',
+    'plugin:yml/standard',
   ],
-  'overrides': [
+  overrides: [
     {
-      'extends': [
+      extends: [
         'plugin:harmony/ts-recommended'
       ],
-      'files': [
+      files: [
         '*.ts',
         '*.tsx'
       ]
     },
     {
-      'files': [
+      files: [
         '**/*.stories.*'
       ],
-      'rules': {
+      rules: {
         'import/no-anonymous-default-export': 'off'
       }
     }
   ],
-  'root': true
+  root: true
 }

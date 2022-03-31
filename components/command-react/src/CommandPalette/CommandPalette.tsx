@@ -1,27 +1,34 @@
-import { Command, invokeCommand, KeyBinding } from '@just-web/commands'
+import { Command, commands, KeyBinding, keyBindings } from '@just-web/contributes'
+import { sentenceCase } from '@just-web/format'
 import { isMacOS } from '@just-web/platform'
 import { FC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
-import { Omit, required } from 'type-plus'
+import { mapKey, required } from 'type-plus'
 import styles from './CommandPalette.module.css'
 
-export interface CommandPaletteCtx { isMacOS: typeof isMacOS }
-
-export type CommandPaletteCommand = Omit<Command, 'handler'> & Omit<KeyBinding, 'when'>
-
-export interface CommandPaletteProps {
-  ctx?: Partial<CommandPaletteCtx>,
-  commands: Array<CommandPaletteCommand>
+export interface CommandPaletteCtx {
+  commands: typeof commands,
+  isMacOS: typeof isMacOS,
+  keyBindings: typeof keyBindings
 }
 
-function toPaletteCommands(cmds: CommandPaletteProps['commands'], ctx: CommandPaletteCtx) {
+export type CommandPaletteCommand = Command & KeyBinding
+
+export interface CommandPaletteProps {
+  ctx?: Partial<CommandPaletteCtx>
+}
+
+function getCommands(ctx: CommandPaletteCtx) {
   const m = ctx.isMacOS()
-  return cmds.map(c => ({
-    name: c.description,
-    key: m ? c.mac ?? c.key : c.key,
-    command: () => invokeCommand(c.id)
-  }))
+  const cmds = ctx.commands.get()
+  const kbs = ctx.keyBindings.get()
+  return mapKey(cmds, cmdKey => {
+    const c = cmds[cmdKey]
+    const r = { ...c, name: c.name ?? sentenceCase(c.command.split('.', 2)[1]) }
+    const k = kbs[cmdKey]
+    return k ? { ...r, key: m ? k.mac ?? k.key : k.key } : r
+  })
 }
 
 const RenderCommand: FC<{ name: string, key?: string }> =
@@ -30,9 +37,11 @@ const RenderCommand: FC<{ name: string, key?: string }> =
     {command.key && <span className={styles.key}>{command.key}</span>}
   </div>
 
+const defaultCtx = { isMacOS, commands, keyBindings }
+
 const CommandPalette: FC<CommandPaletteProps> = (props) => {
-  const ctx = required({ isMacOS }, props.ctx)
-  const commands = toPaletteCommands(props.commands, ctx)
+  const ctx = required(defaultCtx, props.ctx)
+  const commands = getCommands(ctx)
   return <CP
     commands={commands}
     closeOnSelect={true}

@@ -1,49 +1,85 @@
-import { Command, KeyBinding, registerCommand } from '@just-web/commands'
+import { registerCommand } from '@just-web/commands'
+import { commands, Command, KeyBinding, keyBindings } from '@just-web/contributes'
 import { FC } from 'react'
-import { stub } from 'type-plus'
+import { produce } from 'immer'
+import { pick, record, RequiredPick, stub } from 'type-plus'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
 
 export default {
   component: CommandPalette
 }
 
-const Story: FC<CommandPaletteProps> = ({ commands, ...args }) => <>
-  <div>ctrl+p to show the command palette</div>
-  <CommandPalette commands={commands} {...args} />
-</>
-
-function cmd(input: stub.Param<Command & KeyBinding>) {
-  return stub<Command & KeyBinding>({ handler() { alert(input.id) }, ...input })
+function addCommand(...inputs: Array<RequiredPick<stub.Param<Command & KeyBinding>, 'command'>>) {
+  inputs.forEach(input => {
+    registerCommand(input.command, () => { alert(input.command) })
+    commands.set(produce(commands.get(), cmds => {
+      cmds[input.command] = pick(input, 'command', 'name', 'description')
+    }))
+    if (input.key || input.mac) {
+      keyBindings.set(produce(keyBindings.get(), kbs => {
+        kbs[input.command] = pick(input, 'command', 'key', 'mac')
+      }))
+    }
+  })
 }
 
-const simpleCmd = cmd({ id: 'core.simpleCommand', description: 'Simple command' })
-registerCommand(simpleCmd.id, simpleCmd)
+function reset() {
+  commands.set(record())
+  keyBindings.set(record())
+}
 
-const keyCmd = cmd({
-  description: 'Command with key',
-  id: 'core.keyedCommand',
+const simpleCmd = { command: 'core.simpleCommand' }
+const keyedCmd = {
+  command: 'core.keyedCommand',
+  name: 'Command with key',
   key: 'ctrl+s'
-})
-registerCommand(keyCmd.id, keyCmd)
-
-const macCmd = cmd({
-  description: 'Command with mac key override',
-  id: 'core.macCommand',
+}
+const macCmd = {
+  command: 'core.macCommand',
+  name: 'Command with mac key override',
   key: 'ctrl+s',
   mac: 'cmd+s'
-})
-registerCommand(macCmd.id, macCmd)
+}
+const macOnlyCmd = {
+  command: 'core.macOnlyCommand',
+  name: 'Command with only mac key',
+  mac: 'cmd+s'
+}
 
-export const NoCommand = () => <Story commands={[]} />
 
-export const OneCommand = () => <Story commands={[simpleCmd]} />
+const Story: FC<CommandPaletteProps> = ({ ...args }) => {
+  return <>
+    <div>ctrl+p to show the command palette</div>
+    <CommandPalette {...args} />
+  </>
+}
 
-export const WithKey = () => <Story commands={[keyCmd]} />
+export const NoCommand = () => {
+  reset()
+  return <Story ctx={{ commands, keyBindings }} />
+}
 
-export const OverrideMacCommandInMac = () => <Story
-  commands={[keyCmd, macCmd]}
-  ctx={{ isMacOS: () => true }} />
 
-export const OverrideMacCommandInWindow = () => <Story
-  commands={[keyCmd, macCmd]}
-  ctx={{ isMacOS: () => false }} />
+export const OneCommand = () => {
+  reset()
+  addCommand(simpleCmd)
+  return <Story />
+}
+
+export const WithKey = () => {
+  reset()
+  addCommand(keyedCmd)
+  return <Story />
+}
+
+export const OverrideMacCommandInMac = () => {
+  reset()
+  addCommand(simpleCmd, keyedCmd, macCmd, macOnlyCmd)
+  return <Story ctx={{ isMacOS: () => true }} />
+}
+
+export const OverrideMacCommandInWindow = () => {
+  reset()
+  addCommand(simpleCmd, keyedCmd, macCmd, macOnlyCmd)
+  return <Story ctx={{ isMacOS: () => false }} />
+}

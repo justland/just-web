@@ -24,3 +24,13 @@ test('setValue will not trigger onChange if the value does not change', () => {
   onChange(() => { throw 'should not trigger' })
   setValue(value)
 })
+
+test('reset() to the original value', () => {
+  const [,set,on,reset] = createState(1)
+
+  let a: number
+  on(v => a = v)
+  set(3)
+  reset()
+  expect(a!).toBe(1)
+})
