@@ -1,3 +1,4 @@
+import { invokeCommand } from '@just-web/commands'
 import { Command, commands, KeyBinding, keyBindings } from '@just-web/contributes'
 import { sentenceCase } from '@just-web/format'
 import { isMacOS } from '@just-web/platform'
@@ -25,7 +26,11 @@ function getCommands(ctx: CommandPaletteCtx) {
   const kbs = ctx.keyBindings.get()
   return mapKey(cmds, cmdKey => {
     const c = cmds[cmdKey]
-    const r = { ...c, name: c.name ?? sentenceCase(c.command.split('.', 2)[1]) }
+    const r = {
+      ...c,
+      name: c.name ?? sentenceCase(c.command.split('.', 2)[1]),
+      command: () => invokeCommand(c.command)
+    }
     const k = kbs[cmdKey]
     return k ? { ...r, key: m ? k.mac ?? k.key : k.key } : r
   })
