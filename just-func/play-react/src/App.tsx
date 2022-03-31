@@ -1,6 +1,6 @@
 import logo from './logo.svg'
 import './App.css'
-import { CommandPalette } from '@just-web/command-react'
+import { CommandPalette } from '@just-web/commands-react'
 
 function App() {
   return (<>

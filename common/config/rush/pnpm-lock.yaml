@@ -5,7 +5,7 @@ importers:
   .:
     specifiers: {}
 
-  ../../components/command-react:
+  ../../components/commands-react:
     specifiers:
       '@babel/core': ~7.17.8
       '@babel/plugin-syntax-flow': ~7.16.7
@@ -538,7 +538,7 @@ importers:
       '@babel/preset-env': ~7.16.11
       '@babel/preset-typescript': ~7.16.7
       '@just-web/app': workspace:*
-      '@just-web/command-react': workspace:*
+      '@just-web/commands-react': workspace:*
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
       '@storybook/addon-interactions': ^6.4.19
@@ -597,7 +597,7 @@ importers:
       webpack: ^5.70.0
     dependencies:
       '@just-web/app': link:../../frameworks/app
-      '@just-web/command-react': link:../../components/command-react
+      '@just-web/commands-react': link:../../components/commands-react
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       web-vitals: 2.1.4
