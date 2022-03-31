@@ -6,20 +6,20 @@ export function getCommands() {
   return store.get()
 }
 
-export function registerCommand(id: string, handler: () => void) {
-  log.trace('registerCommand', id)
+export function registerCommand(command: string, handler: () => void) {
+  log.trace('registerCommand', command)
   const commands = store.get()
-  if (commands[id]) {
-    log.warn(`Registering an already registered command: '${id}'`)
+  if (commands[command]) {
+    log.warn(`Registering an already registered command: '${command}'`)
     return
   }
-  store.set(produce(commands, m => { m[id] = handler }))
+  store.set(produce(commands, m => { m[command] = handler }))
 }
 
-export function invokeCommand(id: string) {
-  log.trace('invokeCommand', id)
-  const handler = store.get()[id]
-  handler ? handler() : log.error(`Invoking not registered command: '${id}'`)
+export function invokeCommand(command: string) {
+  log.trace('invokeCommand', command)
+  const handler = store.get()[command]
+  handler ? handler() : log.error(`Invoking not registered command: '${command}'`)
 }
 
 
