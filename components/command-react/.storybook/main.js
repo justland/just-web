@@ -18,5 +18,6 @@ module.exports = {
   framework: '@storybook/react',
   core: {
     builder: 'webpack5'
-  }
+  },
+  staticDirs: ['../public']
 };
