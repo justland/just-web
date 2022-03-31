@@ -1,11 +1,11 @@
 ignores:
-  - "@storybook/addon-essentials"
-  - "@storybook/addon-links"
+  - "@storybook/*"
   - babel-loader
   - eslint-plugin-yml
   - fuse.js
   - identity-obj-proxy
   - npm-check-updates
+  - postcss-loader
   - react
   - react-dom
   - solid-command-palette

@@ -1,5 +1,6 @@
 {
-  "name": "@just-web/command-react",
+  "name": "@just-web/commands-react",
+  "description": "@just-web/commands UI components in react",
   "version": "0.1.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

@@ -51,23 +51,15 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
-      "name": "@just-web/command",
-      "allowedCategories": [ "libraries", "production" ]
-    },
-    {
-      "name": "@just-web/command-react",
-      "allowedCategories": [ "production" ]
-    },
-    {
       "name": "@just-web/commands",
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "@just-web/contributes",
-      "allowedCategories": [ "libraries" ]
+      "name": "@just-web/commands-react",
+      "allowedCategories": [ "production" ]
     },
     {
-      "name": "@just-web/contributions",
+      "name": "@just-web/contributes",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -288,6 +280,10 @@
     },
     {
       "name": "postcss-flexbugs-fixes",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "postcss-loader",
       "allowedCategories": [ "production" ]
     },
     {
