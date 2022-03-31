@@ -3,7 +3,7 @@ import { configForTest, MemoryLogReporter } from 'standard-log'
 import { compose } from 'type-plus'
 import {
   activate, clearCommands,
-  getCommands, invokeCommand, registerCommand
+  getCommands, invokeCommand, handleCommand
 } from '.'
 
 let reporter: MemoryLogReporter
@@ -11,22 +11,22 @@ let reporter: MemoryLogReporter
 beforeEach(compose(() => reporter = configForTest().reporter, clearCommands))
 
 
-describe('registerCommand()', () => {
+describe('handleCommand()', () => {
   test('can register before activate()', () => {
-    registerCommand('command1', () => { })
+    handleCommand('command1', () => { })
     const cmds = getCommands()
     expect(Object.keys(cmds).length).toBe(1)
   })
   describe('after activate()', () => {
     beforeEach(activate)
     test('register a command', () => {
-      registerCommand('just-web.commandPalette', () => { })
+      handleCommand('just-web.commandPalette', () => { })
     })
 
     test('log a warning if registering with existing id', () => {
-      registerCommand('command1', () => { })
-      registerCommand('command1', () => { })
-      assertLog(reporter, `(WARN) Registering an already registered command: 'command1'`)
+      handleCommand('command1', () => { })
+      handleCommand('command1', () => { })
+      assertLog(reporter, `(WARN) Registering a handler for an already registered command: 'command1'`)
     })
   })
 })
@@ -45,8 +45,8 @@ describe('getCommands()', () => {
     })
 
     test('get registered commands', () => {
-      registerCommand('cmd1', () => { })
-      registerCommand('cmd2', () => { })
+      handleCommand('cmd1', () => { })
+      handleCommand('cmd2', () => { })
       const cmds = getCommands()
       expect(Object.keys(cmds)).toEqual(['cmd1', 'cmd2'])
     })
@@ -64,7 +64,7 @@ describe('invokeCommand()', () => {
 
     test('invoke command', () => {
       const fn = jest.fn()
-      registerCommand('command1', fn)
+      handleCommand('command1', fn)
       invokeCommand('command1')
       expect(fn).toHaveBeenCalledTimes(1)
     })
