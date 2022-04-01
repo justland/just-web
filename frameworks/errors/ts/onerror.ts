@@ -1,7 +1,8 @@
+import { Store } from '@just-web/states'
 import { produce } from 'immer'
+import { ModuleError } from 'iso-error'
 import { required } from 'type-plus'
 import { BrowserError } from './errors'
-import { errorStore } from './errorStore'
 
 export namespace registerOnErrorHandler {
   export interface Ctx {
@@ -9,18 +10,19 @@ export namespace registerOnErrorHandler {
   }
 
   export interface Options {
+    errors: Store<ModuleError[]>,
     preventDefault: boolean
   }
 }
 
 export function registerOnErrorHandler(
-  { preventDefault }: registerOnErrorHandler.Options,
+  { errors, preventDefault }: registerOnErrorHandler.Options,
   ctx?: registerOnErrorHandler.Ctx
 ) {
   const { window: win } = required({ window }, ctx)
   win.onerror = function justwebOnError(event, source, lineno, colno, error) {
-    errorStore.set(produce(
-      errorStore.get(),
+    errors.set(produce(
+      errors.get(),
       errors => void errors.push(
         new BrowserError(event, source, lineno, colno, error)
       )))
