@@ -1,13 +1,20 @@
-import { record } from 'type-plus'
+import { KeyTypes, record } from 'type-plus'
 import { createStore } from './store'
 
-export function createRegistry<T>(init?: Record<string | symbol, T>) {
-  const store = createStore(record<string | symbol, T>(init))
+export function createRegistry<T, K extends KeyTypes = string | symbol>(init?: Record<K, T>) {
+  const store = createStore(record<K, T>(init))
   return {
     ...store,
-    size() {
+    keys() {
       const r = store.get()
-      return Object.keys(r).length + Object.getOwnPropertySymbols(r).length
+      return [...Object.keys(r), ...Object.getOwnPropertySymbols(r)]
+    },
+    size() {
+      return this.keys().length
+    },
+    list(): T[] {
+      const r = store.get()
+      return this.keys().map(k => (r as any)[k])
     }
   }
 }
