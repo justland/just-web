@@ -16,3 +16,19 @@ test('key of the init record can be symbol', () => {
   expect(a.size()).toBe(2)
   expect(a.get()[s]).toBe('s')
 })
+
+describe('keys()', () => {
+  test('get both string and symbol keys', () => {
+    const s = Symbol()
+    const a = createRegistry({ [s]: 's', b: 'b' })
+    expect(a.keys()).toEqual(['b', s])
+  })
+})
+
+describe('list()', () => {
+  test('list all values', () => {
+    const s = Symbol()
+    const a = createRegistry({ [s]: 's', b: 'b' })
+    expect(a.list()).toEqual(['b', 's'])
+  })
+})
