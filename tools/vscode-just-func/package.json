@@ -1,25 +1,36 @@
 {
-    "name": "vscode-just-func",
-    "displayName": "vscode-just-func",
-    "description": "",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.66.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "vscode-just-func",
+  "displayName": "vscode-just-func",
+  "version": "0.0.1",
+  "description": "",
+  "categories": [
+    "Programming Languages"
+  ],
+  "scripts": {
+    "build": "echo no build step"
+  },
+  "contributes": {
+    "grammars": [
+      {
+        "language": "just-func",
+        "scopeName": "",
+        "path": "./syntaxes/just-func.tmLanguage.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "just-func",
-            "aliases": ["just-func"],
-            "extensions": [".jf"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "just-func",
-            "scopeName": "",
-            "path": "./syntaxes/just-func.tmLanguage.json"
-        }]
-    }
+    "languages": [
+      {
+        "id": "just-func",
+        "aliases": [
+          "just-func"
+        ],
+        "extensions": [
+          ".jf"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "engines": {
+    "vscode": "^1.66.0"
+  }
 }
