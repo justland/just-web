@@ -11,7 +11,7 @@
     ],
     "paths": {
       "@just-web/command": ["../../just-web/command"],
-      "@just-web/commands-react": ["../../just-web/commands-react"],
+      "@just-web/react-commands": ["../../just-web/react-commands"],
       "@just-web/platform": ["../../just-web/platform"]
     },
     "allowJs": true,

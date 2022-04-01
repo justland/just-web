@@ -55,7 +55,7 @@
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "@just-web/commands-react",
+      "name": "@just-web/react-commands",
       "allowedCategories": [ "production" ]
     },
     {

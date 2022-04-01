@@ -82,8 +82,8 @@
       "reviewCategory": "libraries"
     },
     {
-      "packageName": "@just-web/commands-react",
-      "projectFolder": "components/commands-react",
+      "packageName": "@just-web/react-commands",
+      "projectFolder": "components/react-commands",
       "reviewCategory": "libraries"
     }
   ],
