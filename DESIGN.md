@@ -28,11 +28,11 @@ This command will be the same no matter if the plugin UI is written in `React` o
 
 We need to see if there are different kinds of plugins:
 
-`@just-web/commands-react`:
+`@just-web/react-commands`:
 
 - is this a plugin? Or it is just a component/UI library?
 - maybe `@just-web/commands` is the "plugin", while it is a core piece of the application.
-- the end application decides to use `@just-web/commands-react` or `@just-web/commands-solid` to handle the `just-web.showCommandPalette`,
+- the end application decides to use `@just-web/react-commands` or `@just-web/commands-solid` to handle the `just-web.showCommandPalette`,
 - where it controls how the component is rendered specifically.
 - For example, the application can handle it by rendering it using `ReactDOM.render()` directly, or
 - it can dispatch a redux action which change the state and render the command palette
