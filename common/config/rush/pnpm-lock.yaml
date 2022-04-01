@@ -265,6 +265,7 @@ importers:
       eslint: ^8.11.0
       eslint-plugin-harmony: ^6.0.0
       eslint-plugin-yml: ~0.14.0
+      immer: ~9.0.12
       jest: ^27.5.1
       jest-validate: ^27.5.1
       jest-watch-suspend: ^1.1.2
@@ -278,6 +279,7 @@ importers:
       typescript: ^4.6.2
     dependencies:
       '@just-web/states': link:../states
+      immer: 9.0.12
       type-plus: 4.6.2
     devDependencies:
       '@babel/core': 7.17.8
@@ -553,7 +555,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
+      type-plus: ~4.6.2
       typescript: ^4.6.2
+    dependencies:
+      type-plus: 4.6.2
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
