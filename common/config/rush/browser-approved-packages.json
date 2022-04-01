@@ -55,10 +55,6 @@
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "@just-web/react-commands",
-      "allowedCategories": [ "production" ]
-    },
-    {
       "name": "@just-web/contributes",
       "allowedCategories": [ "libraries" ]
     },
@@ -75,11 +71,19 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@just-web/react-commands",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@just-web/routes",
       "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@just-web/states",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@just-web/stores",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -167,6 +171,18 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@typescript-eslint/eslint-plugin",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@vscode/test-electron",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "autoprefixer",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -223,6 +239,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "glob",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "identity-obj-proxy",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -261,6 +281,10 @@
     {
       "name": "jest-watch-typeahead",
       "allowedCategories": [ "libraries", "production", "tools" ]
+    },
+    {
+      "name": "mocha",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "npm-check-updates",

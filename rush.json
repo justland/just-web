@@ -90,6 +90,16 @@
       "packageName": "@just-web/react-commands",
       "projectFolder": "components/react-commands",
       "reviewCategory": "libraries"
+    },
+    {
+      "packageName": "vscode-just-func",
+      "projectFolder": "tools/vscode-just-func",
+      "reviewCategory": "libraries"
+    },
+    {
+      "packageName": "vscode-just-web",
+      "projectFolder": "tools/vscode-just-web",
+      "reviewCategory": "libraries"
     }
   ],
   "repository": {
