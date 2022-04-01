@@ -1,8 +1,10 @@
 # design
 
-`@just-web` is based on a plugin architecture.
+`@just-web` is an application framework with strong plugin support.
 
-And it is heavily inspired by vscode extension system.
+The plugin architecture is heavily inspired by VSCode extension system.
+
+On top of that, it follows the best practice of clean architecture and component design principles to make sure it is easy to use and easy to extend.
 
 ## plugin
 
@@ -12,7 +14,7 @@ The plugin defines its `contributions`.
 This contribution info should be available before the plugin is activated.
 
 Think of the "readme" page of VSCode extension.
-VSCode get all these meta data and render the "readme" page of the extension,
+VSCode gets the plugin's meta data and renders the "readme" page of the extension,
 before the extension even installed.
 
 Application can get all `contributions` through `@just-web/contributes`,
@@ -42,3 +44,13 @@ So, while optional, it is good to let the app query what contributions are avail
 
 Another point is whether if the command can be handled more than one time.
 My gut feeling is that it should not be allowed.
+
+The application here means the app or app specific plugins.
+i.e. application specific logic
+
+This means there are two kinds of plugins:
+
+- application agnostic plugin
+- application specific plugin
+
+Application agnostic plugin should delegate how it is being used to the app or app specific plugins.
