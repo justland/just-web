@@ -1,0 +1,25 @@
+{
+    "name": "vscode-just-func",
+    "displayName": "vscode-just-func",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.66.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "just-func",
+            "aliases": ["just-func"],
+            "extensions": [".jf"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "just-func",
+            "scopeName": "",
+            "path": "./syntaxes/just-func.tmLanguage.json"
+        }]
+    }
+}

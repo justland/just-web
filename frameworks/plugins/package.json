@@ -16,6 +16,8 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
+    "@just-web/states": "workspace:*",
+    "type-plus": "~4.6.2"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
