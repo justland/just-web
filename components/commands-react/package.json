@@ -20,8 +20,8 @@
     "test": "react-app-rewired test --watchAll=false 2>&1",
     "test:visual": "cross-env VISUAL_TEST=1 react-app-rewired test --watchAll=false 2>&1",
     "test:watch": "react-app-rewired test",
-    "verify": "run-p build lint depcheck test",
-    "verify:build": "run-s clean build",
+    "verify": "run-p build lint coverage",
+    "verify:build": "run-s clean build depcheck",
     "verify:test": "run-s test test:visual"
   },
   "browserslist": {

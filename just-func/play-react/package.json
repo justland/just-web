@@ -7,7 +7,7 @@
     "build:storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
     "clean": "rimraf lib",
-    "coverage": "react-scripts test --watchAll=false --coverage",
+    "coverage": "react-app-rewired test --watchAll=false --coverage 2>&1",
     "depcheck": "depcheck",
     "eject": "react-scripts eject",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
@@ -16,8 +16,8 @@
     "test": "react-app-rewired test --watchAll=false 2>&1",
     "test:visual": "cross-env VISUAL_TEST=1 react-app-rewired test --watchAll=false",
     "test:watch": "react-app-rewired test",
-    "verify": "run-p build lint depcheck test",
-    "verify:build": "run-s clean build",
+    "verify": "run-p build lint coverage",
+    "verify:build": "run-s clean build depcheck",
     "verify:test": "run-s test test:visual"
   },
   "browserslist": {

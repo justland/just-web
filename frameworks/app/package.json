@@ -7,13 +7,13 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf lib",
-    "coverage": "jest --coverage",
+    "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
     "test": "jest 2>&1",
     "test:watch": "jest --watch",
-    "verify": "run-p build lint depcheck test",
-    "verify:build": "run-s clean build"
+    "verify": "run-p build lint coverage",
+    "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
     "@just-web/errors": "workspace:*",
