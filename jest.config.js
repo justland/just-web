@@ -4,8 +4,10 @@ module.exports = {
     '!<rootDir>/ts/bin.[jt]s'
   ],
   projects: [
+    'components/*',
+    'frameworks/*',
     'just-func/*',
-    'just-web/*'
+    'tools/*',
   ],
   watchPlugins: [
     'jest-watch-suspend',

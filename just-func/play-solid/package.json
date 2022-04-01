@@ -7,7 +7,7 @@
     "build": "vite build",
     "build:watch": "vite build",
     "clean": "rimraf lib",
-    "coverage": "jest --coverage",
+    "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",
     "dev": "vite",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
@@ -16,8 +16,8 @@
     "storybook": "start-storybook -p 6006",
     "test": "jest 2>&1",
     "test:watch": "jest --watch",
-    "verify": "run-p build lint depcheck test",
-    "verify:build": "run-s clean build"
+    "verify": "run-p build lint coverage",
+    "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
     "fuse.js": "~6.5.3",
