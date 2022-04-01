@@ -1,4 +1,4 @@
-import { createRegistry } from './registry'
+import { createRegistry } from '.'
 
 test('create empty registry', () => {
   const a = createRegistry()
