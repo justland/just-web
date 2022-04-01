@@ -21,13 +21,13 @@ export interface ResetState {
 export function createState<T>(init: T):
   [T, SetState<T>, OnStateChange<T>, ResetState] {
   const handlers: StateChangeHandler<T>[] = []
-  let value = init
+  let value = Object.freeze(init)
   function set(newValue: T) {
     if (Object.is(value, newValue)) return
 
     const old = value
-    value = newValue
-    handlers.forEach(h => h(newValue, old))
+    value = Object.freeze(newValue)
+    handlers.forEach(h => h(value, old))
     return
   }
   return [
