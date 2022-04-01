@@ -10,13 +10,6 @@
       "shellCommand": "commitlint"
     },
     {
-      "name": "changefiles",
-      "commandKind": "global",
-      "summary": "",
-      "autoinstallerName": "rush-changemanager",
-      "shellCommand": "node common/scripts/rush-changefiles.js"
-    },
-    {
       "name": "build:watch",
       "commandKind": "bulk",
       "summary": "Build projects and watch for changes",
