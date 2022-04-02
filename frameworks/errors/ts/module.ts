@@ -1,5 +1,4 @@
-import { createStore } from '@just-web/states'
-import { ModuleError } from 'iso-error'
+import { createErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
 
 export namespace start {
@@ -11,7 +10,7 @@ export namespace start {
 }
 
 export async function start(options: start.Options) {
-  const errors = createStore<ModuleError[]>([])
+  const errors = createErrorStore()
   registerOnErrorHandler({
     errors,
     preventDefault: options.browserErrors?.preventDefault ?? true

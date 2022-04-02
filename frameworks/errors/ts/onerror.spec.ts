@@ -1,17 +1,16 @@
-import { createStore } from '@just-web/states'
-import { ModuleError } from 'iso-error'
 import { stub } from 'type-plus'
+import { createErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
 
 test('capture error', () => {
   const ctx: registerOnErrorHandler.Ctx = { window: {} } as any
-  const errors = createStore<ModuleError[]>([])
+  const errors = createErrorStore()
   registerOnErrorHandler({
     errors,
     preventDefault: false
   }, stub<registerOnErrorHandler.Ctx>(ctx))
 
-  let actual: ModuleError[]
+  let actual: Error[]
 
   errors.onChange(v => actual = v)
   ctx.window.onerror!('some error occurred')

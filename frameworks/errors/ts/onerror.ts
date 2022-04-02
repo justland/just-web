@@ -1,8 +1,7 @@
-import { Store } from '@just-web/states'
 import { produce } from 'immer'
-import { ModuleError } from 'iso-error'
 import { required } from 'type-plus'
 import { BrowserError } from './errors'
+import { ErrorStore } from './errorStore'
 
 export namespace registerOnErrorHandler {
   export interface Ctx {
@@ -10,7 +9,7 @@ export namespace registerOnErrorHandler {
   }
 
   export interface Options {
-    errors: Store<ModuleError[]>,
+    errors: ErrorStore,
     preventDefault: boolean
   }
 }
