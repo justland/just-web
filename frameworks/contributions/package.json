@@ -1,5 +1,5 @@
 {
-  "name": "@just-web/contributes",
+  "name": "@just-web/contributions",
   "version": "0.1.0",
   "description": "just-web contributions store",
   "main": "lib/index.js",

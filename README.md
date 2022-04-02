@@ -18,7 +18,7 @@ Here are a short summary about each module inside `@just-web`:
 - [`@just-web/app`](frameworks/app/README.md): entry point of `@just-web` application framework.
 - `@just-web/plugin`: provide API for `@just-web` plugins
 - [`@just-web/commands`](frameworks/commands/README.md): manages commands throughout the application.
-- [`@just-web/contributes`](frameworks/contributes/README.md): manages application and plugins capabilities.
+- [`@just-web/contributions`](frameworks/contributes/README.md): manages application and plugins capabilities.
 - [`@just-web/errors`](frameworks/errors/README.md): centralized error capture and reporting module.
 - [`@just-web/format`](frameworks/format/README.md): formatting values to pass between the app and external systems.
 - [`@just-web/platform`](frameworks/platform/README.md): interface to the platfrom running the application.

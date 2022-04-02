@@ -52,8 +52,8 @@
       "reviewCategory": "libraries"
     },
     {
-      "packageName": "@just-web/contributes",
-      "projectFolder": "frameworks/contributes",
+      "packageName": "@just-web/contributions",
+      "projectFolder": "frameworks/contributions",
       "reviewCategory": "libraries"
     },
     {

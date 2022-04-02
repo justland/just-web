@@ -17,7 +17,7 @@ Think of the "readme" page of VSCode extension.
 VSCode gets the plugin's meta data and renders the "readme" page of the extension,
 before the extension even installed.
 
-Application can get all `contributions` through `@just-web/contributes`,
+Application can get all `contributions` through `@just-web/contributions`,
 meaning the plugin do not need to provide that in runtime.
 
 ### Commands
@@ -91,7 +91,7 @@ Load time initiation = global variable = singleton.
 Anyone can access it directly:
 
 ```ts
-import { commands } from '@just-web/contributes'
+import { commands } from '@just-web/contributions'
 
 commands.reset()
 ```

@@ -1,5 +1,5 @@
 import { handleCommand } from '@just-web/commands'
-import { commands, Command, KeyBinding, keyBindings } from '@just-web/contributes'
+import { commands, Command, KeyBinding, keyBindings } from '@just-web/contributions'
 import { FC } from 'react'
 import { produce } from 'immer'
 import { pick, record, RequiredPick, stub } from 'type-plus'

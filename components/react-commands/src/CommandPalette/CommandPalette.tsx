@@ -1,5 +1,5 @@
 import { invokeCommand } from '@just-web/commands'
-import { Command, commands, KeyBinding, keyBindings } from '@just-web/contributes'
+import { Command, commands, KeyBinding, keyBindings } from '@just-web/contributions'
 import { sentenceCase } from '@just-web/format'
 import { isMacOS } from '@just-web/platform'
 import { FC } from 'react'
