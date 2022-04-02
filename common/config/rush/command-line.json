@@ -50,13 +50,15 @@
       "name": "depcheck",
       "commandKind": "bulk",
       "summary": "depcheck all projects",
-      "enableParallelism": true
+      "enableParallelism": true,
+      "incremental": true
     },
     {
       "name": "lint",
       "commandKind": "bulk",
       "summary": "lint all projects",
-      "enableParallelism": true
+      "enableParallelism": true,
+      "incremental": true
     },
     {
       "name": "verify",

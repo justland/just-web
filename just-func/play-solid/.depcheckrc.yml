@@ -1,5 +1,6 @@
 ignores:
   - "@storybook/*"
+  - "@typescript-eslint/parser"
   - babel-loader
   - eslint-plugin-yml
   - fuse.js
