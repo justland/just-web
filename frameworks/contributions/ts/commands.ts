@@ -1,4 +1,4 @@
-import { adder, createRegistry } from '@just-web/states'
+import { Adder, adder, createRegistry, Registry } from '@just-web/states'
 import { log } from './log'
 
 export interface CommandContribution {
@@ -20,13 +20,19 @@ export interface CommandContribution {
   description?: string
 }
 
+export interface CommandContributionRegistry extends Registry<CommandContribution> {
+  add: Adder<CommandContribution>
+}
+
 export namespace commandContributionRegistry {
   export interface Options {
     commands: Record<string, CommandContribution>,
   }
 }
 
-export function commandContributionRegistry(options: commandContributionRegistry.Options) {
+export function commandContributionRegistry(
+  options: commandContributionRegistry.Options
+): CommandContributionRegistry {
   const registry = createRegistry<CommandContribution>(options.commands)
   return {
     ...registry,

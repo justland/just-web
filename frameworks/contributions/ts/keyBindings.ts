@@ -1,4 +1,4 @@
-import { adder, createRegistry } from '@just-web/states'
+import { Adder, adder, createRegistry, Registry } from '@just-web/states'
 import { log } from './log'
 
 export interface KeyBindingContribution {
@@ -16,13 +16,19 @@ export interface KeyBindingContribution {
   mac?: string
 }
 
+export interface KeyBindingContributionRegistry extends Registry<KeyBindingContribution> {
+  add: Adder<KeyBindingContribution>
+}
+
 export namespace keyBindingRegistry {
   export interface Options {
     keyBindings: Record<string, KeyBindingContribution>,
   }
 }
 
-export function keyBindingRegistry(options: keyBindingRegistry.Options) {
+export function keyBindingRegistry(
+  options: keyBindingRegistry.Options
+): KeyBindingContributionRegistry {
   const registry = createRegistry<KeyBindingContribution>(options.keyBindings)
   return {
     ...registry,
