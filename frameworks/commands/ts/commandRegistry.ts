@@ -24,7 +24,8 @@ export function commandRegistry(options: commandRegistry.Options) {
      */
     register(command: string, handler: CommandHandler) {
       log.trace('register', command)
-      if (!~contributions.commands.keys().indexOf(command))
+
+      if (!contributions.commands.keys().includes(command))
         return log.error(`Registering an unknown command: ${command}`)
 
       const commands = registry.get()
