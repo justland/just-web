@@ -54,3 +54,47 @@ This means there are two kinds of plugins:
 - application specific plugin
 
 Application agnostic plugin should delegate how it is being used to the app or app specific plugins.
+
+## VSCode Extension Architecture
+
+In this section we will talk about how VSCode extension is designed and architected.
+
+### Extension Context vs vscode
+
+```ts
+import * as vscode from 'vscode'
+
+export function activate(context: vscode.ExtensionContext) {
+  vscode.commands.registerCommand(...)
+}
+```
+
+- `context` contains contextual information/feature about the extension itself.
+- `vscode.*` contains external system (`vscode`) related resources.
+
+## Functional vs Object Oriented
+
+```ts
+export const commands = createStore(record())
+
+// vs
+export class Commands {
+  private commands = createStore(record())
+  get(command: string) {
+    return this.commands.get()[command]
+  }
+}
+```
+
+Load time initiation = global variable = singleton.
+
+Anyone can access it directly:
+
+```ts
+import { commands } from '@just-web/contributes'
+
+commands.reset()
+```
+
+Even if we do not expose it directly,
+we still need to provide a backdoor to reset it for testing purposes.

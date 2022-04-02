@@ -3,6 +3,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@algolia/client-search",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@babel/core",
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
@@ -41,6 +45,18 @@
     {
       "name": "@babel/preset-typescript",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@docusaurus/core",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@docusaurus/module-type-aliases",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@docusaurus/preset-classic",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@jest-web/routes",
@@ -88,6 +104,10 @@
     },
     {
       "name": "@just-web/testing",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@mdx-js/react",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -171,6 +191,10 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@tsconfig/docusaurus",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@typescript-eslint/eslint-plugin",
       "allowedCategories": [ "libraries" ]
     },
@@ -197,6 +221,10 @@
     {
       "name": "chromatic",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "clsx",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "copyfiles",
@@ -313,6 +341,10 @@
     {
       "name": "preact",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "prism-react-renderer",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "puppeteer",

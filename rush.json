@@ -100,6 +100,16 @@
       "packageName": "vscode-just-web",
       "projectFolder": "tools/vscode-just-web",
       "reviewCategory": "libraries"
+    },
+    {
+      "packageName": "@just-web/designs",
+      "projectFolder": "docs/designs",
+      "reviewCategory": "libraries"
+    },
+    {
+      "packageName": "@just-web/handbook",
+      "projectFolder": "docs/handbook",
+      "reviewCategory": "libraries"
     }
   ],
   "repository": {
