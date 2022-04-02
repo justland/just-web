@@ -1,17 +1,16 @@
-import { createStore } from '@just-web/states'
-import { record } from 'type-plus'
-import { Command, KeyBinding } from './types'
+import { commandContributionRegistry } from './commands'
+import { keyBindingRegistry } from './keyBindings'
 
 export namespace start {
   export interface Options {
-    commands: Record<string, Command>,
-    keyBindings: Record<string, KeyBinding>
+    commands: commandContributionRegistry.Options['commands'],
+    keyBindings: keyBindingRegistry.Options['keyBindings']
   }
 }
 
 export async function start(options: start.Options) {
-  const commands = createStore(record<string, Command>(options.commands))
-  const keyBindings = createStore(record<string, KeyBinding>(options.keyBindings))
+  const commands = commandContributionRegistry(options)
+  const keyBindings = keyBindingRegistry(options)
 
   return { commands, keyBindings }
 }
