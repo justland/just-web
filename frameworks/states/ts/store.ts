@@ -2,10 +2,13 @@ import produce, { Draft } from 'immer'
 import { KeyTypes, Pick } from 'type-plus'
 import { createState, OnStateChange, ResetState, SetState } from './state'
 
-export interface Store<T> {
+export interface ReadonlyStore<T> {
   get(): T,
-  set: SetState<T>,
   onChange: OnStateChange<T>,
+}
+
+export interface Store<T> extends ReadonlyStore<T> {
+  set: SetState<T>,
   reset: ResetState
 }
 
