@@ -17,6 +17,7 @@ importers:
       '@just-web/contributes': workspace:*
       '@just-web/format': workspace:*
       '@just-web/platform': workspace:*
+      '@just-web/states': workspace:*
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
       '@storybook/addon-interactions': ^6.4.19
@@ -93,6 +94,7 @@ importers:
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
       '@babel/preset-env': 7.16.11_@babel+core@7.17.8
       '@babel/preset-typescript': 7.16.7_@babel+core@7.17.8
+      '@just-web/states': link:../../frameworks/states
       '@storybook/addon-actions': 6.4.19_b5d7bf22a7b46dd4876f0e926ab0c987
       '@storybook/addon-essentials': 6.4.19_f72d7a33c75c2a2c2bf0425679c53114
       '@storybook/addon-interactions': 6.4.19_06e58ee1c3bc0bac6ddfac36ab8ee0a6
@@ -297,6 +299,51 @@ importers:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
       '@just-web/testing': link:../../tools/testing
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@types/jest': 27.4.1
+      depcheck: 1.4.3
+      eslint: 8.12.0
+      eslint-plugin-harmony: 6.0.0_eslint@8.12.0+typescript@4.6.3
+      eslint-plugin-yml: 0.14.0_eslint@8.12.0
+      jest: 27.5.1
+      jest-validate: 27.5.1
+      jest-watch-suspend: 1.1.2_jest@27.5.1
+      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
+      jest-watch-typeahead: 1.0.0_jest@27.5.1
+      npm-check-updates: 12.5.4
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      size-limit: 7.0.8
+      typescript: 4.6.3
+
+  ../../frameworks/contexts:
+    specifiers:
+      '@babel/core': ~7.17.8
+      '@babel/plugin-transform-runtime': ~7.17.0
+      '@just-web/commands': workspace:*
+      '@just-web/contributes': workspace:*
+      '@size-limit/preset-small-lib': ^7.0.8
+      '@types/jest': ^27.4.1
+      depcheck: ~1.4.3
+      eslint: ^8.11.0
+      eslint-plugin-harmony: ^6.0.0
+      eslint-plugin-yml: ~0.14.0
+      jest: ^27.5.1
+      jest-validate: ^27.5.1
+      jest-watch-suspend: ^1.1.2
+      jest-watch-toggle-config: ^2.0.1
+      jest-watch-typeahead: ^1.0.0
+      npm-check-updates: ~12.5.4
+      npm-run-all: ^4.1.5
+      rimraf: ~3.0.2
+      size-limit: ^7.0.8
+      typescript: ^4.6.3
+    dependencies:
+      '@just-web/commands': link:../commands
+      '@just-web/contributes': link:../contributes
+    devDependencies:
+      '@babel/core': 7.17.8
+      '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
       depcheck: 1.4.3
