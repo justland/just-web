@@ -1,4 +1,4 @@
-import { buildAdd, createRegistry } from '@just-web/states'
+import { adder, createRegistry } from '@just-web/states'
 import { log } from './log'
 
 export interface CommandContribution {
@@ -30,7 +30,7 @@ export function commandContributionRegistry(options: commandContributionRegistry
   const registry = createRegistry<CommandContribution>(options.commands)
   return {
     ...registry,
-    add: buildAdd(registry, function (r, cmd) {
+    add: adder(registry, function (r, cmd) {
       const key = cmd.command
       if (r[key]) return log.error(`Registering a duplicate command contribution, ignored: ${key}`)
       r[key] = cmd
