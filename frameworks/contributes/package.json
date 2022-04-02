@@ -18,11 +18,13 @@
   "dependencies": {
     "@just-web/states": "workspace:*",
     "immer": "~9.0.12",
+    "standard-log": "~6.2.6",
     "type-plus": "~4.7.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
     "@babel/plugin-transform-runtime": "~7.17.0",
+    "@just-web/testing": "workspace:*",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@types/jest": "^27.4.1",
     "depcheck": "~1.4.3",
