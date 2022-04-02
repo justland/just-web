@@ -319,6 +319,7 @@ importers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
       '@just-web/states': workspace:*
+      '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
       '@types/jest': ^27.4.1
       depcheck: ~1.4.3
@@ -335,15 +336,18 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
+      standard-log: ~6.2.6
       type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       '@just-web/states': link:../states
       immer: 9.0.12
+      standard-log: 6.2.6
       type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
+      '@just-web/testing': link:../../tools/testing
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
       depcheck: 1.4.3
@@ -606,6 +610,7 @@ importers:
       eslint: ^8.11.0
       eslint-plugin-harmony: ^6.0.0
       eslint-plugin-yml: ~0.14.0
+      immer: ~9.0.12
       jest: ^27.5.1
       jest-validate: ^27.5.1
       jest-watch-suspend: ^1.1.2
@@ -618,6 +623,7 @@ importers:
       type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
+      immer: 9.0.12
       type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
