@@ -1,8 +1,21 @@
 import { commandContributionRegistry } from '@just-web/contributes'
 import { createRegistry } from '@just-web/states'
 import produce from 'immer'
+import { pick } from 'type-plus'
 import { log } from './log'
 import { CommandHandler } from './types'
+
+export interface ReadonlyCommandRegistry {
+  invoke(command: string): void,
+  keys(): string[]
+}
+
+export interface CommandRegistry extends ReadonlyCommandRegistry {
+  /**
+   * register handler for specified command.
+   */
+  register(command: string, handler: CommandHandler): void
+}
 
 export namespace commandRegistry {
   export interface Options {
@@ -40,7 +53,10 @@ export function commandRegistry(options: commandRegistry.Options) {
       const handler = registry.get()[command]
       handler ? handler() : log.error(`Invoking not registered command: '${command}'`)
     },
-    keys: registry.keys.bind(registry),
-    onChange: registry.onChange.bind(registry)
+    keys: registry.keys.bind(registry)
   }
+}
+
+export function toReadonly(s: CommandRegistry): ReadonlyCommandRegistry {
+  return pick(s, 'invoke', 'keys')
 }
