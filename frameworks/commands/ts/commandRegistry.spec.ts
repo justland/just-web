@@ -2,7 +2,7 @@ import { CommandContribution, commandContributionRegistry } from '@just-web/cont
 import { assertLog } from '@just-web/testing'
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { isType, stub } from 'type-plus'
-import { commandRegistry, ReadonlyCommandRegistry, toReadonly } from './commandRegistry'
+import { commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
 
 let reporter: MemoryLogReporter
 
@@ -83,10 +83,10 @@ describe('invoke()', () => {
   })
 })
 
-describe('toReadonly()', () => {
+describe('toReadonlyCommandRegistry()', () => {
   test('', () => {
     const registry = commandRegistry(stubOptions())
-    const a = toReadonly(registry)
+    const a = toReadonlyCommandRegistry(registry)
 
     isType.equal<true, ReadonlyCommandRegistry, typeof a>()
     expect(Object.keys(a)).toEqual(['invoke', 'keys'])
