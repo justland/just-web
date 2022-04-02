@@ -5,7 +5,7 @@ import { createStore } from './store'
 describe('adder()', () => {
   test('creates an add function for store', () => {
     const store = createStore<string[]>([])
-    const add = adder(store, (array, entry: string) => { array.push(entry) })
+    const add = adder(store, (array, entry) => { array.push(entry) })
     add('a', 'b')
     expect(store.get()).toEqual(['a', 'b'])
   })

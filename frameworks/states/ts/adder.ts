@@ -1,5 +1,5 @@
 import produce, { Draft } from 'immer'
-import { KeyTypes, Pick } from 'type-plus'
+import { ArrayValue, KeyTypes, Pick } from 'type-plus'
 import { Store } from './store'
 
 export interface Adder<T> {
@@ -9,10 +9,10 @@ export interface Adder<T> {
 /**
  * builds an adder function for a store or registry
  */
-export function adder<T, A extends Array<T>, S extends Store<A>>(
+export function adder<A extends Array<any>, S extends Store<A>>(
   store: Pick<S, 'get' | 'set'>,
-  addEntry: (record: Draft<A>, entry: T) => void
-): Adder<T>
+  addEntry: (record: Draft<A>, entry: ArrayValue<A>) => void
+): Adder<ArrayValue<A>>
 export function adder<T, K extends KeyTypes, S extends Store<Record<K, T>>>(
   store: Pick<S, 'get' | 'set'>,
   addEntry: (record: Draft<Record<K, T>>, entry: T) => void
