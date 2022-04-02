@@ -1,4 +1,4 @@
-import { buildAdd, createStore } from './store'
+import { createStore } from './store'
 
 describe('createStore()', () => {
   test('get() returns initial value', () => {
@@ -29,18 +29,5 @@ describe('createStore()', () => {
     const store = createStore(NaN)
     store.onChange(() => { throw 'should not reach' })
     store.set(NaN)
-  })
-})
-
-describe('buildAdd()', () => {
-  test('creates an add function', () => {
-    const store = createStore<Record<string, { key: string, value: number }>>({})
-    const add = buildAdd(store, (record, entry) => record[entry.key] = entry)
-    add({ key: 'a', value: 1 }, { key: 'b', value: 2 })
-
-    expect(store.get()).toEqual({
-      a: { key: 'a', value: 1 },
-      b: { key: 'b', value: 2 }
-    })
   })
 })

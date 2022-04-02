@@ -1,4 +1,4 @@
-import { buildAdd, createRegistry } from '@just-web/states'
+import { adder, createRegistry } from '@just-web/states'
 import { log } from './log'
 
 export interface KeyBindingContribution {
@@ -26,7 +26,7 @@ export function keyBindingRegistry(options: keyBindingRegistry.Options) {
   const registry = createRegistry<KeyBindingContribution>(options.keyBindings)
   return {
     ...registry,
-    add: buildAdd(registry, function (r, kb) {
+    add: adder(registry, function (r, kb) {
       const key = kb.command
       if (r[key]) return log.warn(`Registering a duplicate key binding contribution, ignored: ${key}`)
       r[key] = kb
