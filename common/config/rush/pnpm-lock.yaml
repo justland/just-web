@@ -74,7 +74,7 @@ importers:
       storybook-css-modules-preset: ~1.1.1
       style-loader: ~3.3.1
       ts-jest: ^27.1.3
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
       webpack: ^5.70.0
     dependencies:
@@ -85,7 +85,7 @@ importers:
       react: 17.0.2
       react-command-palette: 0.17.1_react-dom@17.0.2+react@17.0.2
       react-dom: 17.0.2_react@17.0.2
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-syntax-flow': 7.16.7_@babel+core@7.17.8
@@ -232,14 +232,14 @@ importers:
       rimraf: ~3.0.2
       size-limit: ^7.0.8
       standard-log: ~6.2.6
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       '@just-web/errors': link:../errors
       '@just-web/routes': link:../routes
       '@just-web/states': link:../states
       standard-log: 6.2.6
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -265,6 +265,7 @@ importers:
     specifiers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
+      '@just-web/contributes': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
@@ -284,13 +285,14 @@ importers:
       rimraf: ~3.0.2
       size-limit: ^7.0.8
       standard-log: ~6.2.6
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
+      '@just-web/contributes': link:../contributes
       '@just-web/states': link:../states
       immer: 9.0.12
       standard-log: 6.2.6
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -333,12 +335,12 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       '@just-web/states': link:../states
       immer: 9.0.12
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -381,13 +383,13 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       '@just-web/states': link:../states
       immer: 9.0.12
       iso-error: 4.1.2
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -472,11 +474,11 @@ importers:
       platform: ~1.3.6
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       platform: 1.3.6
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -518,11 +520,11 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       '@just-web/states': link:../states
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -566,13 +568,13 @@ importers:
       rimraf: ~3.0.2
       size-limit: ^7.0.8
       standard-log: ~6.2.6
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       '@just-web/states': link:../states
       immer: 9.0.12
       standard-log: 6.2.6
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -613,10 +615,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
-      type-plus: 4.6.2
+      type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -881,7 +883,7 @@ importers:
       rimraf: ~3.0.2
       size-limit: ^7.0.8
       standard-log: ~6.2.6
-      type-plus: ~4.6.2
+      type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       standard-log: 6.2.6
@@ -903,7 +905,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      type-plus: 4.6.2
+      type-plus: 4.7.0
       typescript: 4.6.3
 
   ../../tools/vscode-just-func:
@@ -20383,7 +20385,7 @@ packages:
       iso-error: 4.1.2
       ms: 2.1.3
       tslib: 2.3.1
-      type-plus: 4.6.2
+      type-plus: 4.7.0
       upper-case: 2.0.2
     dev: false
 
@@ -21248,8 +21250,8 @@ packages:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  /type-plus/4.6.2:
-    resolution: {integrity: sha512-T949ZEqSmaUkS/QEbUKo5Lk3f3sQeEnlh7pZLnocL1FKMnCb1t2L0J35KFGJAQ0b2OcPR8aU5TBqX62YwLh2uw==}
+  /type-plus/4.7.0:
+    resolution: {integrity: sha512-HCMlO6uV93MEwqxWUHAW1jewQCCd/r9PKiqyvQejm9LMz5FYxLOaiE+MD5x9V/3c6GMuoLfcnHZg4ltvOjlI/A==}
     dependencies:
       tersify: 3.8.2
       unpartial: 0.6.4
