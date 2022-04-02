@@ -1,4 +1,3 @@
 
-export * from './activate'
-export * from './commands'
+export * from './module'
 export type { Command } from './types'

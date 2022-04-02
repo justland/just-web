@@ -16,7 +16,10 @@ module.exports = {
       'files': [
         '*.ts',
         '*.tsx'
-      ]
+      ],
+      rules: {
+        '@typescript-eslint/no-empty-interface': 'off'
+      }
     }
   ],
   'root': true
