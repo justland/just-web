@@ -1,4 +1,4 @@
-import { commandContributionRegistry } from '@just-web/contributions'
+import { CommandContributionRegistry } from '@just-web/contributions'
 import { createRegistry } from '@just-web/states'
 import produce from 'immer'
 import { pick } from 'type-plus'
@@ -21,7 +21,7 @@ export namespace commandRegistry {
   export interface Options {
     commands: Record<string, CommandHandler>,
     contributions: {
-      commands: ReturnType<typeof commandContributionRegistry>
+      commands: CommandContributionRegistry
     }
   }
 }
@@ -57,6 +57,6 @@ export function commandRegistry(options: commandRegistry.Options) {
   }
 }
 
-export function toReadonly(s: CommandRegistry): ReadonlyCommandRegistry {
+export function toReadonlyCommandRegistry(s: CommandRegistry): ReadonlyCommandRegistry {
   return pick(s, 'invoke', 'keys')
 }

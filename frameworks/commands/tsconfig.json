@@ -8,7 +8,7 @@
       "DOM",
       "ES2020"
     ],
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "newLine": "LF",
     "noUnusedLocals": true,
