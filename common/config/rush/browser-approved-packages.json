@@ -196,11 +196,11 @@
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "@vscode/test-electron",
@@ -244,6 +244,10 @@
     },
     {
       "name": "eslint",
+      "allowedCategories": [ "libraries", "production", "tools" ]
+    },
+    {
+      "name": "eslint-config-prettier",
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {

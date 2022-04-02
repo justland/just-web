@@ -8,6 +8,7 @@ export namespace start {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export async function start(options: start.Options) {
   const commands = commandContributionRegistry(options)
   const keyBindings = keyBindingRegistry(options)

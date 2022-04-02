@@ -7,7 +7,8 @@
     "Programming Languages"
   ],
   "scripts": {
-    "build": "echo no build step"
+    "build": "echo no build step",
+    "lint": "echo no lint"
   },
   "contributes": {
     "grammars": [
@@ -29,6 +30,13 @@
         "configuration": "./language-configuration.json"
       }
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "~8.5.0",
+    "typescript": "^4.6.3"
   },
   "engines": {
     "vscode": "^1.66.0"
