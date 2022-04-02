@@ -1,4 +1,4 @@
-import { commandContributionRegistry } from '@just-web/contributes'
+import { commandContributionRegistry } from '@just-web/contributions'
 import { createRegistry } from '@just-web/states'
 import produce from 'immer'
 import { pick } from 'type-plus'

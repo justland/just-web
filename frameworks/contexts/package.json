@@ -15,7 +15,7 @@
     "verify": "run-p build lint coverage",
     "verify:build": "run-s clean build depcheck"
   },
-  "dependencies": {"@just-web/commands":"workspace:*","@just-web/contributes":"workspace:*"
+  "dependencies": {"@just-web/commands":"workspace:*","@just-web/contributions":"workspace:*"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

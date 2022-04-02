@@ -1,4 +1,4 @@
-import { CommandContribution, commandContributionRegistry } from '@just-web/contributes'
+import { CommandContribution, commandContributionRegistry } from '@just-web/contributions'
 import { assertLog } from '@just-web/testing'
 import { configForTest, MemoryLogReporter } from 'standard-log'
 import { isType, stub } from 'type-plus'

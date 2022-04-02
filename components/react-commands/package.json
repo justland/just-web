@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@just-web/commands": "workspace:*",
-    "@just-web/contributes": "workspace:*",
+    "@just-web/contributions": "workspace:*",
     "@just-web/format": "workspace:*",
     "@just-web/platform": "workspace:*",
     "react": "~17.0.2",

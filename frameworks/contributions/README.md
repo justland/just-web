@@ -1,4 +1,4 @@
-# @just-web/contributes
+# @just-web/contributions
 
 `@just-web` contribution stores.
 
