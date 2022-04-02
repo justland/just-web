@@ -20,9 +20,9 @@ export interface CommandContribution {
   description?: string
 }
 
-export interface ReadonlyCommandContributionRegistry extends ReadonlyRegistry<CommandContribution> { }
+export interface ReadonlyCommandContributionRegistry extends ReadonlyRegistry<string, CommandContribution> { }
 
-export interface CommandContributionRegistry extends Registry<CommandContribution> {
+export interface CommandContributionRegistry extends Registry<string, CommandContribution> {
   add: Adder<CommandContribution>
 }
 
@@ -35,7 +35,7 @@ export namespace commandContributionRegistry {
 export function commandContributionRegistry(
   options: commandContributionRegistry.Options
 ): CommandContributionRegistry {
-  const registry = createRegistry<CommandContribution>(options.commands)
+  const registry = createRegistry<string, CommandContribution>(options.commands)
   return {
     ...registry,
     add: adder(registry, function (r, cmd) {

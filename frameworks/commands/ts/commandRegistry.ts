@@ -29,7 +29,7 @@ export namespace commandRegistry {
 export function commandRegistry(options: commandRegistry.Options) {
   const { contributions } = options
 
-  const registry = createRegistry<() => void, string>(options.commands)
+  const registry = createRegistry<string, () => void>(options.commands)
 
   return {
     /**

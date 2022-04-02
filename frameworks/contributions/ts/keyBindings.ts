@@ -17,11 +17,11 @@ export interface KeyBindingContribution {
 }
 
 export interface ReadonlyKeyBindingContributionRegistry
-  extends ReadonlyRegistry<KeyBindingContribution> {
+  extends ReadonlyRegistry<string, KeyBindingContribution> {
 }
 
 export interface KeyBindingContributionRegistry
-  extends Registry<KeyBindingContribution> {
+  extends Registry<string, KeyBindingContribution> {
   add: Adder<KeyBindingContribution>
 }
 
@@ -34,7 +34,7 @@ export namespace keyBindingRegistry {
 export function keyBindingRegistry(
   options: keyBindingRegistry.Options
 ): KeyBindingContributionRegistry {
-  const registry = createRegistry<KeyBindingContribution>(options.keyBindings)
+  const registry = createRegistry<string, KeyBindingContribution>(options.keyBindings)
   return {
     ...registry,
     add: adder(registry, function (r, kb) {
