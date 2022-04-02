@@ -11,12 +11,15 @@ module.exports = {
   'overrides': [
     {
       'extends': [
-        'plugin:harmony/ts-recommended'
+        'plugin:harmony/ts-recommended-type-check'
       ],
       'files': [
         '*.ts',
         '*.tsx'
-      ]
+      ],
+      parserOptions: {
+        project: 'tsconfig.json'
+      }
     }
   ],
   'root': true

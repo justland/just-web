@@ -11,14 +11,14 @@ module.exports = {
   'overrides': [
     {
       'extends': [
-        'plugin:harmony/ts-recommended'
+        'plugin:harmony/ts-recommended-type-check'
       ],
       'files': [
         '*.ts',
         '*.tsx'
       ],
-      rules: {
-        '@typescript-eslint/no-empty-interface': 'off'
+      parserOptions: {
+        project: 'tsconfig.json'
       }
     }
   ],
