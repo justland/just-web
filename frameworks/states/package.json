@@ -16,7 +16,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "type-plus": "~4.6.2"
+    "type-plus": "~4.7.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

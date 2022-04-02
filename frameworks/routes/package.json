@@ -18,7 +18,7 @@
   "dependencies": {
     "@just-web/states": "workspace:*",
     "standard-log": "~6.2.6",
-    "type-plus": "~4.6.2",
+    "type-plus": "~4.7.0",
     "immer": "~9.0.12"
   },
   "devDependencies": {
