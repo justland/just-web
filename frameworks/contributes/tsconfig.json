@@ -8,7 +8,7 @@
       "DOM",
       "es2015"
     ],
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "newLine": "LF",
     "noUnusedLocals": true,
