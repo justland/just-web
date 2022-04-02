@@ -1,4 +1,4 @@
-import { Adder, adder, createRegistry, Registry } from '@just-web/states'
+import { Adder, adder, createRegistry, ReadonlyRegistry, Registry } from '@just-web/states'
 import { log } from './log'
 
 export interface CommandContribution {
@@ -19,6 +19,8 @@ export interface CommandContribution {
    */
   description?: string
 }
+
+export interface ReadonlyCommandContributionRegistry extends ReadonlyRegistry<CommandContribution> { }
 
 export interface CommandContributionRegistry extends Registry<CommandContribution> {
   add: Adder<CommandContribution>

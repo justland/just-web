@@ -1,4 +1,4 @@
-import { Adder, adder, createRegistry, Registry } from '@just-web/states'
+import { Adder, adder, createRegistry, ReadonlyRegistry, Registry } from '@just-web/states'
 import { log } from './log'
 
 export interface KeyBindingContribution {
@@ -16,7 +16,12 @@ export interface KeyBindingContribution {
   mac?: string
 }
 
-export interface KeyBindingContributionRegistry extends Registry<KeyBindingContribution> {
+export interface ReadonlyKeyBindingContributionRegistry
+  extends ReadonlyRegistry<KeyBindingContribution> {
+}
+
+export interface KeyBindingContributionRegistry
+  extends Registry<KeyBindingContribution> {
   add: Adder<KeyBindingContribution>
 }
 
