@@ -1,2 +1,3 @@
-export * from './commands'
-export * from './keyBindings'
+export * from './module'
+export type { Command, KeyBinding } from './types'
+
