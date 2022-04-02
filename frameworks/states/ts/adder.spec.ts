@@ -11,7 +11,7 @@ describe('adder()', () => {
   })
 
   test('creates an add function for registry', () => {
-    const store = createRegistry<{ key: string, value: number }>({})
+    const store = createRegistry<string, { key: string, value: number }>({})
     const add = adder(store, (record, entry) => record[entry.key] = entry)
     add({ key: 'a', value: 1 }, { key: 'b', value: 2 })
 

@@ -4,7 +4,14 @@ import { createStore, ReadonlyStore } from './store'
 import { toReadonly } from './toReadonly'
 
 describe('toReadonly()', () => {
-  test('for store', () => {
+  test('for scalar store', () => {
+    const s = createStore(1)
+    const r = toReadonly(s)
+
+    expect(Object.keys(r)).toEqual(['get', 'onChange'])
+    isType.equal<true, ReadonlyStore<number>, typeof r>()
+  })
+  test('for record store', () => {
     const s = createStore({ a: 1 })
     const r = toReadonly(s)
 
@@ -16,6 +23,6 @@ describe('toReadonly()', () => {
     const r = toReadonly(s)
 
     expect(Object.keys(r)).toEqual(['get', 'onChange'])
-    isType.equal<true, ReadonlyRegistry<number, string | symbol>, typeof r>()
+    isType.equal<true, ReadonlyRegistry<string, number>, typeof r>()
   })
 })
