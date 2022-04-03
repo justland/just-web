@@ -4,9 +4,9 @@ Error capturing and reporting module.
 
 It captures both user and system errors and make them available for the application.
 
-This is a `@just-web` core module and should not be referenced directly.
+This is a `@just-web` core module.
 
-You can access its functionality through `@just-web/app` and `@just-web/contexts`.
+The runtime functionality is available through `@just-web/app` and `@just-web/contexts`.
 
 ## Setup
 
