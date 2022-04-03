@@ -67,6 +67,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/repo-config",
+      "projectFolder": "tools/repo-config",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/states",
       "projectFolder": "frameworks/states",
       "reviewCategory": "libraries"
