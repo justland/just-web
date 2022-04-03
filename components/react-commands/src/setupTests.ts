@@ -5,9 +5,10 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer'
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom'
+import { ReactPortal } from 'react'
 import ReactDOM from 'react-dom'
 
-ReactDOM.createPortal = node => node as any
+ReactDOM.createPortal = node => node as ReactPortal
 // jest.mock('rc-util/lib/Portal')
 
 if (process.env.VISUAL_TEST)
