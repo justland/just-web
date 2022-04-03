@@ -1,6 +1,7 @@
-import { KeyTypes, record, Widen } from 'type-plus'
+import { KeyTypes, pick, record, Widen } from 'type-plus'
 import { OnStateChange, ResetState, SetState } from './state'
 import { createStore } from './store'
+
 export interface ReadonlyRegistry<K extends KeyTypes, T> {
   get(): Record<K, T>,
   onChange: OnStateChange<Record<K, T>>,
@@ -33,4 +34,8 @@ export function createRegistry<
       return this.keys().map(k => (r as any)[k])
     }
   }
+}
+
+export function toReadonlyRegistry<S extends Registry<any, any>>(registry: S): S extends Registry<infer K, infer T> ? ReadonlyRegistry<K, T> : never {
+  return pick(registry, 'get', 'onChange', 'keys', 'size', 'list') as any
 }

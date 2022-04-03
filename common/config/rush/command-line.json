@@ -61,6 +61,12 @@
       "incremental": true
     },
     {
+      "name": "test:watch",
+      "commandKind": "bulk",
+      "summary": "test watch all projects",
+      "enableParallelism": true
+    },
+    {
       "name": "verify",
       "commandKind": "bulk",
       "summary": "verify all projects",

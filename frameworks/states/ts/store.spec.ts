@@ -1,4 +1,5 @@
-import { createStore } from './store'
+import { isType } from 'type-plus'
+import { createStore, ReadonlyStore, toReadonlyStore } from './store'
 
 describe('createStore()', () => {
   test('get() returns initial value', () => {
@@ -29,5 +30,22 @@ describe('createStore()', () => {
     const store = createStore(NaN)
     store.onChange(() => { throw 'should not reach' })
     store.set(NaN)
+  })
+})
+
+describe('toReadonly()', () => {
+  test('for scalar store', () => {
+    const s = createStore(1)
+    const r = toReadonlyStore(s)
+
+    expect(Object.keys(r)).toEqual(['get', 'onChange'])
+    isType.equal<true, ReadonlyStore<number>, typeof r>()
+  })
+  test('for record store', () => {
+    const s = createStore({ a: 1 })
+    const r = toReadonlyStore(s)
+
+    expect(Object.keys(r)).toEqual(['get', 'onChange'])
+    isType.equal<true, ReadonlyStore<{ a: number }>, typeof r>()
   })
 })

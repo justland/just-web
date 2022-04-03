@@ -9,11 +9,11 @@ export namespace start {
   }
 }
 
-export async function start(options: start.Options) {
+export async function start(options?: start.Options) {
   const errors = createErrorStore()
   registerOnErrorHandler({
     errors,
-    preventDefault: options.browserErrors?.preventDefault ?? true
+    preventDefault: options?.browserErrors?.preventDefault ?? true
   })
   return { errors }
 }

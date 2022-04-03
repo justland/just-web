@@ -9,7 +9,9 @@
   "scripts": {
     "build": "echo no build step",
     "depcheck": "echo no depcheck yet",
-    "lint": "echo no lint"
+    "lint": "echo no lint",
+    "test": "echo no test yet",
+    "verify": "echo no verify"
   },
   "contributes": {
     "grammars": [

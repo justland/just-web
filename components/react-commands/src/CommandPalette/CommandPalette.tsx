@@ -1,35 +1,30 @@
-import { invokeCommand } from '@just-web/commands'
-import { Command, commands, KeyBinding, keyBindings } from '@just-web/contributions'
+import { ReadonlyContext } from '@just-web/contexts'
+import { CommandContribution, KeyBindingContribution } from '@just-web/contributions'
 import { sentenceCase } from '@just-web/format'
 import { isMacOS } from '@just-web/platform'
 import { FC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
 import { mapKey, required } from 'type-plus'
+import { getContext } from '../context'
 import styles from './CommandPalette.module.css'
 
-export interface CommandPaletteCtx {
-  commands: typeof commands,
-  isMacOS: typeof isMacOS,
-  keyBindings: typeof keyBindings
-}
-
-export type CommandPaletteCommand = Command & KeyBinding
+export type CommandPaletteCommand = CommandContribution & KeyBindingContribution
 
 export interface CommandPaletteProps {
-  ctx?: Partial<CommandPaletteCtx>
+  ctx?: ReadonlyContext
 }
 
-function getCommands(ctx: CommandPaletteCtx) {
-  const m = ctx.isMacOS()
-  const cmds = ctx.commands.get()
-  const kbs = ctx.keyBindings.get()
+function getCommands(ctx: ReadonlyContext) {
+  const m = ctx.platform.isMacOS()
+  const cmds = ctx.contributions.commands.get()
+  const kbs = ctx.contributions.keyBindings.get()
   return mapKey(cmds, cmdKey => {
     const c = cmds[cmdKey]
     const r = {
       ...c,
       name: c.name ?? sentenceCase(c.command.split('.', 2)[1]),
-      command: () => invokeCommand(c.command)
+      command: () => ctx.commands.registry.invoke(c.command)
     }
     const k = kbs[cmdKey]
     return k ? { ...r, key: m ? k.mac ?? k.key : k.key } : r
@@ -42,10 +37,9 @@ const RenderCommand: FC<{ name: string, key?: string }> =
     {command.key && <span className={styles.key}>{command.key}</span>}
   </div>
 
-const defaultCtx = { isMacOS, commands, keyBindings }
 
 const CommandPalette: FC<CommandPaletteProps> = (props) => {
-  const ctx = required(defaultCtx, props.ctx)
+  const ctx = required(getContext(), props.ctx)
   const commands = getCommands(ctx)
   return <CP
     commands={commands}

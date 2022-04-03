@@ -1,3 +1,4 @@
+import { pick } from 'type-plus'
 import { createState, OnStateChange, ResetState, SetState } from './state'
 
 export interface ReadonlyStore<T> {
@@ -23,4 +24,8 @@ export function createStore<T>(value: T): Store<T> {
     onChange,
     reset
   }
+}
+
+export function toReadonlyStore<S extends Store<any>>(store: S): S extends Store<infer T> ? ReadonlyStore<T> : never {
+  return pick(store, 'get', 'onChange') as any
 }

@@ -1,34 +1,30 @@
-import { handleCommand } from '@just-web/commands'
-import { commands, Command, KeyBinding, keyBindings } from '@just-web/contributions'
+import { Context, createContext, toReadonlyContext } from '@just-web/contexts'
 import { FC } from 'react'
-import { produce } from 'immer'
-import { pick, record, RequiredPick, stub } from 'type-plus'
+import { setContext } from '../context'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
 
 export default {
   component: CommandPalette
 }
 
-function addCommand(...inputs: Array<RequiredPick<stub.Param<Command & KeyBinding>, 'command'>>) {
-  inputs.forEach(input => {
-    handleCommand(input.command, () => { alert(input.command) })
-    commands.set(produce(commands.get(), cmds => {
-      cmds[input.command] = pick(input, 'command', 'name', 'description')
-    }))
-    if (input.key || input.mac) {
-      keyBindings.set(produce(keyBindings.get(), kbs => {
-        kbs[input.command] = pick(input, 'command', 'key', 'mac')
-      }))
+interface Contribution {
+  command: string,
+  name?: string,
+  key?: string,
+  mac?: string
+}
+
+function addCommand(ctx: Context, ...inputs: Array<Contribution>) {
+  inputs.forEach(entry => {
+    ctx.contributions.commands.add({ command: entry.command, description: entry.name })
+    ctx.commands.registry.register(entry.command, () => { alert(entry.command) })
+    if (entry.key || entry.mac) {
+      ctx.contributions.keyBindings.add(entry)
     }
   })
 }
 
-function reset() {
-  commands.set(record())
-  keyBindings.set(record())
-}
-
-const simpleCmd = { command: 'core.simpleCommand' }
+const simpleCmd: Contribution = { command: 'core.simpleCommand' }
 const keyedCmd = {
   command: 'core.keyedCommand',
   name: 'Command with key',
@@ -55,31 +51,42 @@ const Story: FC<CommandPaletteProps> = ({ ...args }) => {
 }
 
 export const NoCommand = () => {
-  reset()
-  return <Story ctx={{ commands, keyBindings }} />
+  const context = createContext()
+  setContext(toReadonlyContext(context))
+  return <Story />
 }
 
 
 export const OneCommand = () => {
-  reset()
-  addCommand(simpleCmd)
+  const context = createContext()
+  addCommand(context, simpleCmd)
+  setContext(toReadonlyContext(context))
   return <Story />
 }
 
 export const WithKey = () => {
-  reset()
-  addCommand(keyedCmd)
+  const context = createContext()
+  addCommand(context, keyedCmd)
+  setContext(toReadonlyContext(context))
   return <Story />
 }
 
 export const OverrideMacCommandInMac = () => {
-  reset()
-  addCommand(simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  return <Story ctx={{ isMacOS: () => true }} />
+  const context = createContext()
+  context.platform = {
+    isMacOS: () => true
+  }
+  addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
+  setContext(toReadonlyContext(context))
+  return <Story />
 }
 
 export const OverrideMacCommandInWindow = () => {
-  reset()
-  addCommand(simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  return <Story ctx={{ isMacOS: () => false }} />
+  const context = createContext()
+  context.platform = {
+    isMacOS: () => false
+  }
+  addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
+  setContext(toReadonlyContext(context))
+  return <Story />
 }
