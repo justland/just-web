@@ -10,6 +10,7 @@
     "pnpm",
     "pnpmfile",
     "TTFB",
+    "unshift",
     "vite"
   ],
   "eslint.validate": [

@@ -1,4 +1,3 @@
-
 export interface SetState<T> {
   (value: T): void
 }

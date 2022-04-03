@@ -20,6 +20,8 @@ export function createRegistry<
   T,
   >(init?: Record<K, T>): Registry<Widen<K>, T> {
   const store = createStore<Record<Widen<K>, T>>(record(init))
+  const x=new Map()
+  x.values
   return {
     ...store,
     keys() {
