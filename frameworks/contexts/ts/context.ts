@@ -1,12 +1,15 @@
-import { commandRegistry, CommandRegistry } from '@just-web/commands'
-import * as platform from '@just-web/platform'
+import { commandRegistry, CommandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from '@just-web/commands'
 import {
   commandContributionRegistry,
   CommandContributionRegistry,
   KeyBindingContributionRegistry,
-  keyBindingRegistry
+  keyBindingRegistry, ReadonlyCommandContributionRegistry,
+  ReadonlyKeyBindingContributionRegistry
 } from '@just-web/contributions'
-import { createErrorStore, ErrorStore } from '@just-web/errors'
+import { createErrorStore, ErrorStore, ReadonlyErrorStore, toReadonlyErrorStore } from '@just-web/errors'
+import * as platform from '@just-web/platform'
+import * as states from '@just-web/states'
+import { toReadonlyRegistry } from '@just-web/states'
 import { record } from 'type-plus'
 
 export interface Context {
@@ -20,8 +23,26 @@ export interface Context {
   errors: {
     store: ErrorStore
   },
-  platform: typeof platform
+  platform: typeof platform,
+  states: typeof states
 }
+
+export interface ReadonlyContext {
+  commands: {
+    registry: ReadonlyCommandRegistry
+  },
+  contributions: {
+    commands: ReadonlyCommandContributionRegistry,
+    keyBindings: ReadonlyKeyBindingContributionRegistry
+  },
+  errors: {
+    store: ReadonlyErrorStore
+  },
+  platform: Context['platform'],
+  states: Context['states']
+}
+
+let readonlyContext: ReadonlyContext
 
 export namespace createContext {
   export interface Options {
@@ -53,10 +74,38 @@ export function createContext(options?: createContext.Options): Context {
     })
   }
 
-  return {
+  const context = {
     commands,
     contributions,
     errors,
-    platform
+    platform,
+    states
   }
+
+  // setup global `readonlyContext` whenever `createContext` is called.
+  // doing this here because the application does not required to call `toReadonlyContext`
+  readonlyContext = toReadonlyContext(context)
+
+  return context
+}
+
+export function toReadonlyContext(context: Context): ReadonlyContext {
+  return {
+    commands: {
+      registry: toReadonlyCommandRegistry(context.commands.registry)
+    },
+    contributions: {
+      commands: toReadonlyRegistry(context.contributions.commands),
+      keyBindings: toReadonlyRegistry(context.contributions.keyBindings)
+    },
+    errors: {
+      store: toReadonlyErrorStore(context.errors.store)
+    },
+    platform: context.platform,
+    states: context.states
+  }
+}
+
+export function getReadonlyContext() {
+  return readonlyContext
 }
