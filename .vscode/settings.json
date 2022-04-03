@@ -3,6 +3,7 @@
     "clsx",
     "cmds",
     "codeql",
+    "depcheckrc",
     "filenamify",
     "immer",
     "mdbook",

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "outDir": "lib",
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "stripInternal": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true
+  },
+  "include": [
+    "ts",
+    "typings"
+, "babel.config.js", "jest.config.js", "jest.config.jsdom.js", "tsconfig.esm.json"  ]
+}
