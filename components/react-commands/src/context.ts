@@ -1,6 +1,6 @@
-import { ReadonlyContext } from '@just-web/contexts'
+import { Context } from '@just-web/contexts'
 
-let ctx: ReadonlyContext
+let ctx: Context
 
-export function setContext(context: ReadonlyContext) { ctx = context }
+export function setContext(context: Context) { ctx = context }
 export function getContext() { return ctx }

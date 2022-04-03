@@ -82,14 +82,12 @@ export function createContext(options?: createContext.Options): Context {
     states
   }
 
-  // setup global `readonlyContext` whenever `createContext` is called.
-  // doing this here because the application does not required to call `toReadonlyContext`
   readonlyContext = toReadonlyContext(context)
 
   return context
 }
 
-export function toReadonlyContext(context: Context): ReadonlyContext {
+function toReadonlyContext(context: Context): ReadonlyContext {
   return {
     commands: {
       registry: toReadonlyCommandRegistry(context.commands.registry)

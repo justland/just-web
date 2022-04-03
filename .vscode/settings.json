@@ -3,6 +3,7 @@
     "clsx",
     "cmds",
     "codeql",
+    "filenamify",
     "immer",
     "mdbook",
     "noreply",

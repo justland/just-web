@@ -12,31 +12,24 @@
 ```tsx
 import { getReadonlyContext } from '@just-app/contexts'
 
-const ErrorList = () => {
+function work() {
   const context = getReadonlyContext()
-
-  const errors = context.errors.store.get()
-  if (errors.length > 0) {
-    return <ul>
-      {errors.map(e => (<li>e.toString()</li>))}
-    </ul>
-  } else {
-    return <span>no errors</span>
-  }
 }
-export default ErrorList
 ```
 
 Note that you cannot call `getReadonlyContext()` at load time.
 The application needs to start before the context is available.
 
-Even when using `ReadonlyContext`, you can still add errors to the system.
+## Context
+
+Plugin's `activate` function will receive a `context` from the application.
+
+Plugin can use it to interact with the system.
 
 ```ts
-import { getReadonlyContext } from '@just-web/contexts'
+import { Context } from '@just-web/contexts'
 
-function doSomething() {
-  const ctx = getReadonlyContext()
-  ctx.errors.store.add(new Error('something went wrong'))
+export function activate(context: Context) {
+  // code away
 }
 ```
