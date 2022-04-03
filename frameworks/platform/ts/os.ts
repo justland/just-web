@@ -1,7 +1,15 @@
 import platform from 'platform'
 
-export type Platform = typeof platform
+export namespace isMacOS {
+  export interface Ctx {
+    platform: {
+      os?: {
+        family?: string
+      }
+    }
+  }
+}
 
-export function isMacOS(ctx: { platform: Platform } = { platform }) {
+export function isMacOS(ctx: isMacOS.Ctx = { platform }) {
   return ctx.platform.os?.family === 'OS X'
 }
