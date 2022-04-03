@@ -1,5 +1,4 @@
-import { createContext, toReadonlyContext } from '.'
-import { getReadonlyContext } from './context'
+import { createContext, getReadonlyContext } from '.'
 
 describe('createContext()', () => {
   test('create context without any option', () => {
@@ -15,17 +14,6 @@ describe('createContext()', () => {
 })
 
 describe('toReadonlyContext()', () => {
-  test('create context without any option', () => {
-    const context = toReadonlyContext(createContext())
-
-    expect(context).toBeDefined()
-    expect(context.errors.store.get()).toEqual([])
-    expect(context.commands.registry.keys()).toEqual([])
-    expect(context.contributions.commands.keys()).toEqual([])
-    expect(context.contributions.keyBindings.keys()).toEqual([])
-    expect(context.platform).toBeDefined()
-    expect(context.states).toBeDefined()
-  })
 })
 
 describe('getReadonlyContext()', () => {
@@ -35,4 +23,16 @@ describe('getReadonlyContext()', () => {
     expect(a).toBeDefined()
   })
   test.todo('log an error when calling it before calling createContext')
+  test('create context without any option', () => {
+    createContext()
+    const context = getReadonlyContext()
+
+    expect(context).toBeDefined()
+    expect(context.errors.store.get()).toEqual([])
+    expect(context.commands.registry.keys()).toEqual([])
+    expect(context.contributions.commands.keys()).toEqual([])
+    expect(context.contributions.keyBindings.keys()).toEqual([])
+    expect(context.platform).toBeDefined()
+    expect(context.states).toBeDefined()
+  })
 })

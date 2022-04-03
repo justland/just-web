@@ -2,7 +2,6 @@
 
 Platform abstraction module.
 
-
 ## TODO
 
 - 💡 persist states to `localStorage` and `sessionStorage`.

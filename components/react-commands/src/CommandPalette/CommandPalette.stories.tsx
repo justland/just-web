@@ -1,4 +1,4 @@
-import { Context, createContext, toReadonlyContext } from '@just-web/contexts'
+import { Context, createContext } from '@just-web/contexts'
 import { FC } from 'react'
 import { setContext } from '../context'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
@@ -52,7 +52,7 @@ const Story: FC<CommandPaletteProps> = ({ ...args }) => {
 
 export const NoCommand = () => {
   const context = createContext()
-  setContext(toReadonlyContext(context))
+  setContext(context)
   return <Story />
 }
 
@@ -60,14 +60,14 @@ export const NoCommand = () => {
 export const OneCommand = () => {
   const context = createContext()
   addCommand(context, simpleCmd)
-  setContext(toReadonlyContext(context))
+  setContext(context)
   return <Story />
 }
 
 export const WithKey = () => {
   const context = createContext()
   addCommand(context, keyedCmd)
-  setContext(toReadonlyContext(context))
+  setContext(context)
   return <Story />
 }
 
@@ -77,7 +77,7 @@ export const OverrideMacCommandInMac = () => {
     isMacOS: () => true
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  setContext(toReadonlyContext(context))
+  setContext(context)
   return <Story />
 }
 
@@ -87,6 +87,6 @@ export const OverrideMacCommandInWindow = () => {
     isMacOS: () => false
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  setContext(toReadonlyContext(context))
+  setContext(context)
   return <Story />
 }

@@ -42,6 +42,8 @@ function activate(ctx: Context) {
 }
 ```
 
+Note that even in `ReadonlyContext`, you can still add errors to the system.
+
 ## Access through `@just-web/app`
 
 `app` expose everything `contexts` exposes, so accessing `errors` is straightforward:
