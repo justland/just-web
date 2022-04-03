@@ -1,7 +1,6 @@
 import { ReadonlyContext } from '@just-web/contexts'
 import { CommandContribution, KeyBindingContribution } from '@just-web/contributions'
 import { sentenceCase } from '@just-web/format'
-import { isMacOS } from '@just-web/platform'
 import { FC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
@@ -31,11 +30,12 @@ function getCommands(ctx: ReadonlyContext) {
   })
 }
 
-const RenderCommand: FC<{ name: string, key?: string }> =
-  command => <div className={styles.suggestion}>
+const RenderCommand: FC<{ name: string, key?: string }> = command => (
+  <div className={styles.suggestion}>
     <span className={styles.name}>{command.name}</span>
     {command.key && <span className={styles.key}>{command.key}</span>}
   </div>
+)
 
 
 const CommandPalette: FC<CommandPaletteProps> = (props) => {
