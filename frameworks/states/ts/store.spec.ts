@@ -22,14 +22,21 @@ describe('createStore()', () => {
     let actual: unknown
     store.onChange(v => actual = v)
 
-    store.set({ a: 2 })
-    expect(actual).toEqual({ a: 2 })
+    const value = { a: 2 }
+    store.set(value)
+    expect(actual).toStrictEqual(value)
   })
 
   test('NaN -> NaN does not trigger onChange()', () => {
     const store = createStore(NaN)
     store.onChange(() => { throw 'should not reach' })
     store.set(NaN)
+  })
+
+  test('NaN -> number works as expected', () => {
+    const store = createStore(NaN)
+    store.set(123)
+    expect(store.get()).toBe(123)
   })
 })
 
@@ -42,10 +49,19 @@ describe('toReadonly()', () => {
     isType.equal<true, ReadonlyStore<number>, typeof r>()
   })
   test('for record store', () => {
+    // `createStore(record({ a: 1 }))` is better
+    // but use object literal as an example because it is more common
     const s = createStore({ a: 1 })
     const r = toReadonlyStore(s)
 
     expect(Object.keys(r)).toEqual(['get', 'onChange'])
     isType.equal<true, ReadonlyStore<{ a: number }>, typeof r>()
+  })
+  test('for array store', () => {
+    const s = createStore([1, 2])
+    const r = toReadonlyStore(s)
+
+    expect(Object.keys(r)).toEqual(['get', 'onChange'])
+    isType.equal<true, ReadonlyStore<number[]>, typeof r>()
   })
 })

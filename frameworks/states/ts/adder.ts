@@ -28,3 +28,11 @@ export function adder<T, K extends KeyTypes = string | symbol>(
     ))
   }
 }
+
+export function push<A extends Array<any>>(record: Draft<A>, entry: ArrayValue<A>) {
+  record.push(entry)
+}
+
+export function unshift<A extends Array<any>>(record: Draft<A>, entry: ArrayValue<A>) {
+  record.unshift(entry)
+}
