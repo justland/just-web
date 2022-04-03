@@ -40,6 +40,7 @@
     "react-scripts/**/eslint-config-react-app": "7.0.0"
   },
   "dependencies": {
+    "@just-web/contexts": "workspace:*",
     "@just-web/commands": "workspace:*",
     "@just-web/contributions": "workspace:*",
     "@just-web/format": "workspace:*",

@@ -71,6 +71,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@just-web/contexts",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@just-web/contributions",
       "allowedCategories": [ "libraries" ]
     },
