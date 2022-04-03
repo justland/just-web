@@ -1,14 +1,14 @@
 import { stub } from 'type-plus'
-import { isMacOS, Platform } from './os'
+import { isMacOS } from './os'
 
 describe('isMac()', () => {
   test(`'OS X' is mac`, () => {
-    const platform = stub<Platform>({ os: { family: 'OS X' } })
-    expect(isMacOS({ platform })).toEqual(true)
+    const ctx = stub<isMacOS.Ctx>({ platform: { os: { family: 'OS X' } } })
+    expect(isMacOS(ctx)).toEqual(true)
   })
 
   test('`Windows` is not mac', () => {
-    const platform = stub<Platform>({ os: { family: 'Windows' } })
-    expect(isMacOS({ platform })).toEqual(false)
+    const ctx = stub<isMacOS.Ctx>({ platform: { os: { family: 'Windows' } } })
+    expect(isMacOS(ctx)).toEqual(false)
   })
 })
