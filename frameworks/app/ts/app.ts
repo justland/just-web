@@ -1,10 +1,16 @@
+import '@just-web/commands'
+import { createContext } from '@just-web/contexts'
+import '@just-web/contributions'
+import '@just-web/platform'
+import '@just-web/states'
 import { registerRoute } from '@just-web/routes'
-import { BrowserError, JustWebError } from '@just-web/errors'
 import { start } from './start'
-import * as states from '@just-web/states'
+
+// TODO: configure context with basic settings
+const context = createContext()
+
 export const app = {
-  errors: { BrowserError, JustWebError },
+  ...context,
   routes: { registerRoute },
-  states,
   start
 }
