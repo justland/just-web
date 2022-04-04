@@ -65,7 +65,7 @@ function toReadonlyContext(context: Context): ReadonlyContext {
       keyBindings: statesModule.toReadonlyRegistry(context.contributions.keyBindings)
     },
     errors: {
-      ...pick(errorsModule, 'BrowserError', 'JustWebError'),
+      ...context.errors,
       ...errorsModule.toReadonlyErrorStore(context.errors)
     },
     platform: context.platform,
