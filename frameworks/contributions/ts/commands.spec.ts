@@ -1,5 +1,5 @@
+import { configForTest, MemoryLogReporter } from '@just-web/log'
 import { assertLog } from '@just-web/testing'
-import { configForTest, MemoryLogReporter } from 'standard-log'
 import { commandContributionRegistry } from './commands'
 
 let reporter: MemoryLogReporter
