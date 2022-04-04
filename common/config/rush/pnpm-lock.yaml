@@ -293,6 +293,7 @@ importers:
       '@just-web/commands': workspace:*
       '@just-web/contributions': workspace:*
       '@just-web/errors': workspace:*
+      '@just-web/log': workspace:*
       '@just-web/platform': workspace:*
       '@just-web/states': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
@@ -319,6 +320,7 @@ importers:
       '@just-web/commands': link:../commands
       '@just-web/contributions': link:../contributions
       '@just-web/errors': link:../errors
+      '@just-web/log': link:../log
       '@just-web/platform': link:../platform
       '@just-web/states': link:../states
       type-plus: 4.7.0
