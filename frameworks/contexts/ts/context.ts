@@ -4,6 +4,7 @@ import * as errorsModule from '@just-web/errors'
 import * as platformModule from '@just-web/platform'
 import * as statesModule from '@just-web/states'
 import { pick } from 'type-plus'
+import { log } from './log'
 
 export interface Context {
   commands: commandsModule.Module,
@@ -32,6 +33,7 @@ export namespace createContext {
 }
 
 export function createContext(options?: createContext.Options): Context {
+  log.notice('createContext()');
   const contributions: Context['contributions'] = contributionsModule.start(options?.contributions)
 
   const context = {
