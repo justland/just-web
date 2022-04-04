@@ -17,6 +17,9 @@
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "outDir": "lib",
+    "paths": {
+      "@just-web/contexts": ["../../frameworks/contexts"]
+    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,

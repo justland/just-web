@@ -16,7 +16,10 @@ module.exports = {
       'files': [
         '*.ts',
         '*.tsx'
-      ]
+      ],
+      rules: {
+        '@typescript-eslint/require-await': 'off'
+      }
     }
   ],
   'root': true

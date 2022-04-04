@@ -1,4 +1,5 @@
 import { Adder, adder, createRegistry, ReadonlyRegistry, Registry } from '@just-web/states'
+import { record } from 'type-plus'
 import { log } from './log'
 
 export interface KeyBindingContribution {
@@ -27,14 +28,14 @@ export interface KeyBindingContributionRegistry
 
 export namespace keyBindingRegistry {
   export interface Options {
-    keyBindings: Record<string, KeyBindingContribution>,
+    keyBindings?: Record<string, KeyBindingContribution>,
   }
 }
 
 export function keyBindingRegistry(
-  options: keyBindingRegistry.Options
+  options?: keyBindingRegistry.Options
 ): KeyBindingContributionRegistry {
-  const registry = createRegistry<string, KeyBindingContribution>(options.keyBindings)
+  const registry = createRegistry<string, KeyBindingContribution>(options?.keyBindings ?? record())
   return {
     ...registry,
     add: adder(registry, function (r, kb) {

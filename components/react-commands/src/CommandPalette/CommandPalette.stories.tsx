@@ -56,7 +56,6 @@ export const NoCommand = () => {
   return <Story />
 }
 
-
 export const OneCommand = () => {
   const context = createContext()
   addCommand(context, simpleCmd)
