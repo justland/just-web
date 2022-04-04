@@ -23,7 +23,7 @@ Framework modules:
 - [`@just-web/contributions`](frameworks/contributes/README.md): manages application and plugins capabilities.
 - [`@just-web/errors`](frameworks/errors/README.md): centralized error capture and reporting module.
 - [`@just-web/format`](frameworks/format/README.md): formatting values to pass between the app and external systems.
-- [`@just-web/log`](frameworks/logs/README.md): logging module.
+- [`@just-web/log`](frameworks/log/README.md): logging module.
 - [`@just-web/platform`](frameworks/platform/README.md): interface to the platfrom running the application.
 - [`@just-web/plugins`](frameworks/plugins/README.md): provide API for `@just-web` plugins
 - [`@just-web/routes`](frameworks/routes/README.md): routing module for SPA, MPA, and external application/services.

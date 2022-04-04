@@ -1,0 +1,10 @@
+{
+  "extends": "@just-web/repo-config/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lib"
+  },
+  "include": [
+    "ts",
+    "typings"
+  ]
+}
