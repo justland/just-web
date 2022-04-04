@@ -29,16 +29,16 @@ import { getReadonlyContext, Context, ReadonlyContext } from '@just-web/contexts
 
 function work() {
   const ctx = getReadonlyContext()
-  ctx.errors.store.add(new Error('something went wrong'))
+  ctx.errors.add(new Error('something went wrong'))
 }
 
 function activate(ctx: ReadonlyContext) {
-  ctx.errors.store.add(new Error('something went wrong'))
+  ctx.errors.add(new Error('something went wrong'))
 }
 
 // for plugins with write access
 function activate(ctx: Context) {
-  ctx.errors.store.add(new Error('something went wrong'))
+  ctx.errors.add(new Error('something went wrong'))
 }
 ```
 
@@ -51,7 +51,7 @@ Note that even in `ReadonlyContext`, you can still add errors to the system.
 ```ts
 import app from '@jest-web/app'
 
-app.errors.store.add(new Error('something went wrong'))
+app.errors.add(new Error('something went wrong'))
 ```
 
 ## ErrorStore

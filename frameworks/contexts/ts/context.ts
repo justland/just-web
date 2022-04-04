@@ -20,9 +20,7 @@ export interface Context {
     commands: CommandContributionRegistry,
     keyBindings: KeyBindingContributionRegistry
   },
-  errors: {
-    store: ErrorStore
-  },
+  errors: ErrorStore,
   platform: typeof platform,
   states: typeof states
 }
@@ -35,9 +33,7 @@ export interface ReadonlyContext {
     commands: ReadonlyCommandContributionRegistry,
     keyBindings: ReadonlyKeyBindingContributionRegistry
   },
-  errors: {
-    store: ReadonlyErrorStore
-  },
+  errors: ReadonlyErrorStore,
   platform: Context['platform'],
   states: Context['states']
 }
@@ -56,9 +52,8 @@ export namespace createContext {
 
 export function createContext(options?: createContext.Options): Context {
 
-  const errors: Context['errors'] = {
-    store: createErrorStore()
-  }
+  const errors: Context['errors'] = createErrorStore()
+
   const contributions: Context['contributions'] = {
     commands: commandContributionRegistry(options?.contributions ?? {
       commands: record()
@@ -96,9 +91,7 @@ function toReadonlyContext(context: Context): ReadonlyContext {
       commands: toReadonlyRegistry(context.contributions.commands),
       keyBindings: toReadonlyRegistry(context.contributions.keyBindings)
     },
-    errors: {
-      store: toReadonlyErrorStore(context.errors.store)
-    },
+    errors: toReadonlyErrorStore(context.errors),
     platform: context.platform,
     states: context.states
   }
