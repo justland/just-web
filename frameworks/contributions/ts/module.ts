@@ -1,15 +1,23 @@
-import { commandContributionRegistry } from './commands'
-import { keyBindingRegistry } from './keyBindings'
+import { CommandContributionRegistry, commandContributionRegistry, ReadonlyCommandContributionRegistry } from './commands'
+import { KeyBindingContributionRegistry, keyBindingRegistry, ReadonlyKeyBindingContributionRegistry } from './keyBindings'
 
-export namespace start {
-  export interface Options {
-    commands: commandContributionRegistry.Options['commands'],
-    keyBindings: keyBindingRegistry.Options['keyBindings']
-  }
+export interface Module {
+  commands: CommandContributionRegistry,
+  keyBindings: KeyBindingContributionRegistry
+}
+
+export interface ReadonlyModule {
+  commands: ReadonlyCommandContributionRegistry,
+  keyBindings: ReadonlyKeyBindingContributionRegistry
+}
+
+export interface ModuleOptions {
+  commands: commandContributionRegistry.Options['commands'],
+  keyBindings: keyBindingRegistry.Options['keyBindings']
 }
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export async function start(options: start.Options) {
+export function start(options?: ModuleOptions): Module {
   const commands = commandContributionRegistry(options)
   const keyBindings = keyBindingRegistry(options)
 

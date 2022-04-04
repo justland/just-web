@@ -1,4 +1,5 @@
 import { Adder, adder, createRegistry, ReadonlyRegistry, Registry } from '@just-web/states'
+import { record } from 'type-plus'
 import { log } from './log'
 
 export interface CommandContribution {
@@ -28,14 +29,14 @@ export interface CommandContributionRegistry extends Registry<string, CommandCon
 
 export namespace commandContributionRegistry {
   export interface Options {
-    commands: Record<string, CommandContribution>,
+    commands?: Record<string, CommandContribution>,
   }
 }
 
 export function commandContributionRegistry(
-  options: commandContributionRegistry.Options
+  options?: commandContributionRegistry.Options
 ): CommandContributionRegistry {
-  const registry = createRegistry<string, CommandContribution>(options.commands)
+  const registry = createRegistry<string, CommandContribution>(options?.commands ?? record())
   return {
     ...registry,
     add: adder(registry, function (r, cmd) {

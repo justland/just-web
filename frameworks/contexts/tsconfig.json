@@ -14,6 +14,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "outDir": "lib",
+    "paths": {
+      "@just-web/commands": ["../commands"]
+    },
     "removeComments": true,
     "sourceMap": true,
     "strict": true,

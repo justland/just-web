@@ -19,7 +19,7 @@ export interface CommandRegistry extends ReadonlyCommandRegistry {
 
 export namespace commandRegistry {
   export interface Options {
-    commands: Record<string, CommandHandler>,
+    commands?: Record<string, CommandHandler>,
     contributions: {
       commands: CommandContributionRegistry
     }

@@ -1,8 +1,8 @@
 import { start } from './module'
 
 describe('start()', () => {
-  test('returns commands', async () => {
-    const { commands, keyBindings } = await start({ commands: {}, keyBindings: {} })
+  test('returns commands', () => {
+    const { commands, keyBindings } = start({ commands: {}, keyBindings: {} })
     expect(commands).toBeDefined()
     expect(keyBindings).toBeDefined()
   })

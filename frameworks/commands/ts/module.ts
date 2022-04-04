@@ -1,9 +1,14 @@
-import { commandRegistry } from './commandRegistry'
+import { CommandRegistry, commandRegistry, ReadonlyCommandRegistry } from './commandRegistry'
 
-export namespace start {
-  export interface Options extends commandRegistry.Options { }
+export interface Module {
+  registry: CommandRegistry
 }
 
-export function start(options: start.Options) {
-  return { commands: commandRegistry(options) }
+export interface ReadonlyModule {
+  registry: ReadonlyCommandRegistry
+}
+export interface ModuleOptions extends commandRegistry.Options { }
+
+export function start(options: ModuleOptions): Module {
+  return { registry: commandRegistry(options) }
 }

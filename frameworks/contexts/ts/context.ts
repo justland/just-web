@@ -1,40 +1,22 @@
-import { commandRegistry, CommandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from '@just-web/commands'
-import {
-  commandContributionRegistry,
-  CommandContributionRegistry,
-  KeyBindingContributionRegistry,
-  keyBindingRegistry, ReadonlyCommandContributionRegistry,
-  ReadonlyKeyBindingContributionRegistry
-} from '@just-web/contributions'
-import * as errors from '@just-web/errors'
-import * as platform from '@just-web/platform'
-import * as states from '@just-web/states'
-import { pick, record } from 'type-plus'
+import * as commandsModule from '@just-web/commands'
+import * as contributionsModule from '@just-web/contributions'
+import * as errorsModule from '@just-web/errors'
+import * as platformModule from '@just-web/platform'
+import * as statesModule from '@just-web/states'
+import { pick } from 'type-plus'
 
 export interface Context {
-  commands: {
-    registry: CommandRegistry
-  },
-  contributions: {
-    commands: CommandContributionRegistry,
-    keyBindings: KeyBindingContributionRegistry
-  },
-  errors: Pick<typeof errors, 'BrowserError' | 'JustWebError'>
-  & errors.ErrorStore,
-  platform: typeof platform,
-  states: typeof states
+  commands: commandsModule.Module,
+  contributions: contributionsModule.Module,
+  errors: errorsModule.Module,
+  platform: typeof platformModule,
+  states: typeof statesModule
 }
 
 export interface ReadonlyContext {
-  commands: {
-    registry: ReadonlyCommandRegistry
-  },
-  contributions: {
-    commands: ReadonlyCommandContributionRegistry,
-    keyBindings: ReadonlyKeyBindingContributionRegistry
-  },
-  errors: Pick<typeof errors, 'BrowserError' | 'JustWebError'>
-  & errors.ReadonlyErrorStore,
+  commands: commandsModule.ReadonlyModule,
+  contributions: contributionsModule.ReadonlyModule,
+  errors: errorsModule.ReadonlyModule,
   platform: Context['platform'],
   states: Context['states']
 }
@@ -43,39 +25,27 @@ let readonlyContext: ReadonlyContext
 
 export namespace createContext {
   export interface Options {
-    contributions: {
-      commands: commandContributionRegistry.Options['commands'],
-      keyBindings: keyBindingRegistry.Options['keyBindings']
-    },
-    commands: commandRegistry.Options['commands']
+    contributions: contributionsModule.ModuleOptions,
+    commands: commandsModule.ModuleOptions,
+    errors: errorsModule.ModuleOptions
   }
 }
 
 export function createContext(options?: createContext.Options): Context {
-  const contributions: Context['contributions'] = {
-    commands: commandContributionRegistry(options?.contributions ?? {
-      commands: record()
-    }),
-    keyBindings: keyBindingRegistry(options?.contributions ?? {
-      keyBindings: record()
-    })
-  }
-  const commands: Context['commands'] = {
-    registry: commandRegistry({
-      commands: options?.commands ?? record(),
-      contributions
-    })
-  }
+  const contributions: Context['contributions'] = contributionsModule.start(options?.contributions)
 
   const context = {
-    commands,
+    commands: commandsModule.start({
+      ...options?.commands,
+      contributions
+    }),
     contributions,
     errors: {
-      ...pick(errors, 'BrowserError', 'JustWebError'),
-      ...errors.createErrorStore()
+      ...pick(errorsModule, 'BrowserError', 'JustWebError'),
+      ...errorsModule.createErrorStore()
     },
-    platform,
-    states
+    platform: platformModule,
+    states: statesModule
   }
 
   readonlyContext = toReadonlyContext(context)
@@ -86,15 +56,15 @@ export function createContext(options?: createContext.Options): Context {
 function toReadonlyContext(context: Context): ReadonlyContext {
   return {
     commands: {
-      registry: toReadonlyCommandRegistry(context.commands.registry)
+      registry: commandsModule.toReadonlyCommandRegistry(context.commands.registry)
     },
     contributions: {
-      commands: states.toReadonlyRegistry(context.contributions.commands),
-      keyBindings: states.toReadonlyRegistry(context.contributions.keyBindings)
+      commands: statesModule.toReadonlyRegistry(context.contributions.commands),
+      keyBindings: statesModule.toReadonlyRegistry(context.contributions.keyBindings)
     },
     errors: {
-      ...pick(errors, 'BrowserError', 'JustWebError'),
-      ...errors.toReadonlyErrorStore(context.errors)
+      ...pick(errorsModule, 'BrowserError', 'JustWebError'),
+      ...errorsModule.toReadonlyErrorStore(context.errors)
     },
     platform: context.platform,
     states: context.states

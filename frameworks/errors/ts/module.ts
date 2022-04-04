@@ -1,19 +1,22 @@
-import { createErrorStore } from './errorStore'
+import * as errorClasses from './errors'
+import { createErrorStore, ErrorStore, ReadonlyErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
 
-export namespace start {
-  export interface Options {
-    browserErrors?: {
-      preventDefault: boolean
-    }
+export type Module = (typeof errorClasses) & ErrorStore
+
+export type ReadonlyModule = (typeof errorClasses) & ReadonlyErrorStore
+
+export interface ModuleOptions {
+  browserErrors?: {
+    preventDefault: boolean
   }
 }
 
-export async function start(options?: start.Options) {
+export function start(options?: ModuleOptions): Module {
   const errors = createErrorStore()
   registerOnErrorHandler({
     errors,
     preventDefault: options?.browserErrors?.preventDefault ?? true
   })
-  return { errors }
+  return Object.assign(errors, errorClasses)
 }

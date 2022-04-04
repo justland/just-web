@@ -54,6 +54,12 @@
       "incremental": true
     },
     {
+      "name": "storybook",
+      "commandKind": "bulk",
+      "summary": "start storybook",
+      "enableParallelism": false
+    },
+    {
       "name": "lint",
       "commandKind": "bulk",
       "summary": "lint all projects",
