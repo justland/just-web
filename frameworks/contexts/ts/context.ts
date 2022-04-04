@@ -3,7 +3,6 @@ import * as contributionsModule from '@just-web/contributions'
 import * as errorsModule from '@just-web/errors'
 import * as platformModule from '@just-web/platform'
 import * as statesModule from '@just-web/states'
-import { pick } from 'type-plus'
 import { log } from './log'
 
 export interface Context {
@@ -33,7 +32,7 @@ export namespace createContext {
 }
 
 export function createContext(options?: createContext.Options): Context {
-  log.notice('createContext()');
+  log.notice('createContext()')
   const contributions: Context['contributions'] = contributionsModule.start(options?.contributions)
 
   const context = {
@@ -42,10 +41,7 @@ export function createContext(options?: createContext.Options): Context {
       contributions
     }),
     contributions,
-    errors: {
-      ...pick(errorsModule, 'BrowserError', 'JustWebError'),
-      ...errorsModule.createErrorStore()
-    },
+    errors: errorsModule.start(options?.errors),
     platform: platformModule,
     states: statesModule
   }
@@ -57,17 +53,9 @@ export function createContext(options?: createContext.Options): Context {
 
 function toReadonlyContext(context: Context): ReadonlyContext {
   return {
-    commands: {
-      registry: commandsModule.toReadonlyCommandRegistry(context.commands.registry)
-    },
-    contributions: {
-      commands: statesModule.toReadonlyRegistry(context.contributions.commands),
-      keyBindings: statesModule.toReadonlyRegistry(context.contributions.keyBindings)
-    },
-    errors: {
-      ...context.errors,
-      ...errorsModule.toReadonlyErrorStore(context.errors)
-    },
+    commands: commandsModule.toReadonly(context.commands),
+    contributions: contributionsModule.toReadonly(context.contributions),
+    errors: errorsModule.toReadonly(context.errors),
     platform: context.platform,
     states: context.states
   }

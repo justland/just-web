@@ -1,3 +1,4 @@
+import { toReadonlyRegistry } from '@just-web/states'
 import { CommandContributionRegistry, commandContributionRegistry, ReadonlyCommandContributionRegistry } from './commands'
 import { KeyBindingContributionRegistry, keyBindingRegistry, ReadonlyKeyBindingContributionRegistry } from './keyBindings'
 
@@ -24,3 +25,9 @@ export function start(options?: ModuleOptions): Module {
   return { commands, keyBindings }
 }
 
+export function toReadonly(module: Module): ReadonlyModule {
+  return {
+    commands: toReadonlyRegistry(module.commands),
+    keyBindings: toReadonlyRegistry(module.keyBindings)
+  }
+}

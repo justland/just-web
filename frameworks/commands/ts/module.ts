@@ -1,4 +1,4 @@
-import { CommandRegistry, commandRegistry, ReadonlyCommandRegistry } from './commandRegistry'
+import { CommandRegistry, commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
 
 export interface Module {
   registry: CommandRegistry
@@ -11,4 +11,10 @@ export interface ModuleOptions extends commandRegistry.Options { }
 
 export function start(options: ModuleOptions): Module {
   return { registry: commandRegistry(options) }
+}
+
+export function toReadonly(module: Module): ReadonlyModule {
+  return {
+    registry: toReadonlyCommandRegistry(module.registry)
+  }
 }
