@@ -67,6 +67,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/log",
+      "projectFolder": "frameworks/log",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/repo-config",
       "projectFolder": "tools/repo-config",
       "reviewCategory": "libraries"

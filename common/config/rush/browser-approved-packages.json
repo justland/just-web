@@ -95,6 +95,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@just-web/repo-config",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@just-web/routes",
       "allowedCategories": [ "libraries" ]
     },
