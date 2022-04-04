@@ -2,6 +2,8 @@
 
 `@just-web` logging module.
 
+## Usage
+
 When trying to write some logs,
 reference and use this library directly:
 
@@ -25,20 +27,24 @@ import app from `@just-web/app`
 
 function work() {
   const ctx = getReadonlyContext()
-  ctx.log.onAdd(log => doSomethingWithTheLogEntry(log))
-
-  app.log.onAdd(log => doSomethingWithTheLogEntry(log))
+  // Not implemented, in design phrase
+  ctx.log.onAdd(doSomethingWithTheLogEntry)
+  app.log.onAdd(doSomethingWithTheLogEntry)
 
   // TBD
   app.log.config(options)
+  // or
   app.start({ log: logOptions })
 }
 ```
 
+## Responsibilities
+
+- ❌ should not provide any lifecycle management
+  - It is handled in `@just-web/app`
+
 ## TODO
 
-🔍 add `RemoteReporter` to send logs to a service
-🔍
-🔍 should `register.keys()` returns an iterator instead of array?
-🔍 should `register` adds `values()` that returns an iterator?
-🔍 should `register.list()` renamed to `values()` and returns an iterator?
+- 🔍 add `ProxyReporter` to receive new log entries
+  - any sanitization before the handlers are called?
+- 🔍 add `RemoteReporter` to send logs to a service
