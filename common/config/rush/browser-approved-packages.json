@@ -87,6 +87,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@just-web/log",
+      "allowedCategories": [ "libraries", "tools" ]
+    },
+    {
       "name": "@just-web/platform",
       "allowedCategories": [ "libraries", "production" ]
     },

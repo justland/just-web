@@ -1,4 +1,4 @@
-import { createMemoryLogReporter } from 'standard-log'
+import { createMemoryLogReporter } from '@just-web/log'
 import { isType } from 'type-plus'
 import { assertLog } from './log'
 

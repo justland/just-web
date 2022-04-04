@@ -1,6 +1,6 @@
 import { CommandContribution, commandContributionRegistry } from '@just-web/contributions'
+import { configForTest, MemoryLogReporter } from '@just-web/log'
 import { assertLog } from '@just-web/testing'
-import { configForTest, MemoryLogReporter } from 'standard-log'
 import { isType, stub } from 'type-plus'
 import { commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
 

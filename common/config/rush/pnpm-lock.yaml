@@ -222,6 +222,7 @@ importers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
       '@just-web/contributions': workspace:*
+      '@just-web/log': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
@@ -243,14 +244,13 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      standard-log: ~6.2.6
       type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
       '@just-web/contributions': link:../contributions
+      '@just-web/log': link:../log
       '@just-web/states': link:../states
       immer: 9.0.12
-      standard-log: 6.2.6
       type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
@@ -339,6 +339,7 @@ importers:
     specifiers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
+      '@just-web/log': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
@@ -359,11 +360,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      standard-log: ~6.2.6
       typescript: ^4.6.3
     dependencies:
+      '@just-web/log': link:../log
       '@just-web/states': link:../states
-      standard-log: 6.2.6
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
@@ -651,6 +651,7 @@ importers:
     specifiers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
+      '@just-web/log': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
@@ -672,13 +673,12 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      standard-log: ~6.2.6
       type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
+      '@just-web/log': link:../log
       '@just-web/states': link:../states
       immer: 9.0.12
-      standard-log: 6.2.6
       type-plus: 4.7.0
     devDependencies:
       '@babel/core': 7.17.8
@@ -1044,6 +1044,7 @@ importers:
     specifiers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
+      '@just-web/log': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
@@ -1062,11 +1063,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ^7.0.8
-      standard-log: ~6.2.6
       type-plus: ~4.7.0
       typescript: ^4.6.3
     dependencies:
-      standard-log: 6.2.6
+      '@just-web/log': link:../../frameworks/log
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
