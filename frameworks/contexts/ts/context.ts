@@ -9,7 +9,7 @@ export interface Context {
   commands: commandsModule.Module,
   contributions: contributionsModule.Module,
   errors: errorsModule.Module,
-  platform: typeof platformModule,
+  platform: platformModule.Module,
   states: typeof statesModule
 }
 
@@ -17,7 +17,7 @@ export interface ReadonlyContext {
   commands: commandsModule.ReadonlyModule,
   contributions: contributionsModule.ReadonlyModule,
   errors: errorsModule.ReadonlyModule,
-  platform: Context['platform'],
+  platform: platformModule.ReadonlyModule,
   states: Context['states']
 }
 
@@ -33,16 +33,17 @@ export namespace createContext {
 
 export function createContext(options?: createContext.Options): Context {
   log.notice('createContext()')
-  const contributions: Context['contributions'] = contributionsModule.start(options?.contributions)
+  const contributions = contributionsModule.start(options?.contributions)
+  const commands = commandsModule.start({
+    ...options?.commands,
+    contributions
+  })
 
   const context = {
-    commands: commandsModule.start({
-      ...options?.commands,
-      contributions
-    }),
+    commands,
     contributions,
     errors: errorsModule.start(options?.errors),
-    platform: platformModule,
+    platform: platformModule.start({ contributions, commands }),
     states: statesModule
   }
 
@@ -56,7 +57,7 @@ function toReadonlyContext(context: Context): ReadonlyContext {
     commands: commandsModule.toReadonly(context.commands),
     contributions: contributionsModule.toReadonly(context.contributions),
     errors: errorsModule.toReadonly(context.errors),
-    platform: context.platform,
+    platform: platformModule.toReadonly(context.platform),
     states: context.states
   }
 }

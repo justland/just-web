@@ -73,6 +73,7 @@ export const WithKey = () => {
 export const OverrideMacCommandInMac = () => {
   const context = createContext()
   context.platform = {
+    ...context.platform,
     isMacOS: () => true
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
@@ -83,6 +84,7 @@ export const OverrideMacCommandInMac = () => {
 export const OverrideMacCommandInWindow = () => {
   const context = createContext()
   context.platform = {
+    ...context.platform,
     isMacOS: () => false
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
