@@ -1,2 +1,2 @@
-import { app } from './app'
-export default app
+import { createApp } from './app'
+export default createApp

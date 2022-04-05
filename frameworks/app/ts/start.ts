@@ -1,6 +1,5 @@
 import * as errorsModule from '@just-web/errors'
 import { navigate, registerRoute, validateRoutes } from '@just-web/routes'
-import { config, ConfigOptions } from 'standard-log'
 import { required } from 'type-plus'
 import { log } from './log'
 const defaultCtx = {
@@ -10,14 +9,12 @@ export namespace start {
   export type Ctx = typeof defaultCtx
   export interface Options {
     errors?: errorsModule.ModuleOptions,
-    log?: Partial<ConfigOptions>
   }
 }
 
 export async function start(options?: start.Options, ctx?: start.Ctx) {
   const { routes } = required(defaultCtx, ctx)
   const { errors } = required({}, options)
-  config(options?.log)
 
   log.notice('application starts')
   errorsModule.start(errors)

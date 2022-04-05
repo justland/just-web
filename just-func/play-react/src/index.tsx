@@ -1,10 +1,11 @@
-import app from '@just-web/app'
+import createApp from '@just-web/app'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 
+const app = createApp()
 app.routes.registerRoute('/', () => {
   ReactDOM.render(
     <React.StrictMode>
