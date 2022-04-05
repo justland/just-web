@@ -331,6 +331,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "mousetrap",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "npm-check-updates",
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
