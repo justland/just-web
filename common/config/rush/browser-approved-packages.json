@@ -95,6 +95,10 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@just-web/plugins",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@just-web/react-commands",
       "allowedCategories": [ "production" ]
     },
