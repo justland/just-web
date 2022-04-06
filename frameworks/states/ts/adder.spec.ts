@@ -1,4 +1,4 @@
-import { adder, push, unshift } from './adder'
+import { adder, push, unshift, withAdder } from './adder'
 import { createRegistry } from './registry'
 import { createStore } from './store'
 
@@ -33,5 +33,23 @@ describe('adder()', () => {
       a: { key: 'a', value: 1 },
       b: { key: 'b', value: 2 }
     })
+  })
+})
+
+describe('withAdder()', () => {
+  test('for array store', () => {
+    const store = withAdder(
+      createStore<string[]>([]),
+      (array, entry) => { array.push(entry) })
+    store.add('a', 'b')
+    expect(store.get()).toEqual(['a', 'b'])
+  })
+
+  test('for record registry', () => {
+    const store = withAdder(
+      createRegistry<string, { a: string }>(),
+      (record, entry) => { record[entry.a] = entry })
+    store.add({ a: 'x' }, { a: 'y' })
+    expect(store.get()).toEqual({ 'x': { 'a': 'x' }, 'y': { 'a': 'y' } })
   })
 })
