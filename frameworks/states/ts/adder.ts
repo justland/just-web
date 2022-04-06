@@ -29,6 +29,24 @@ export function adder<T, K extends KeyTypes = string | symbol>(
   }
 }
 
+export function withAdder<A extends Array<any>, S extends Store<A>>(
+  store: Pick<S, 'get' | 'set'>,
+  addEntry: (record: Draft<A>, entry: ArrayValue<A>) => void
+): S & { add: Adder<ArrayValue<A>> }
+export function withAdder<T, K extends KeyTypes, S extends Store<Record<K, T>>>(
+  store: Pick<S, 'get' | 'set'>,
+  addEntry: (record: Draft<Record<K, T>>, entry: T) => void
+): S & { add: Adder<T> }
+export function withAdder<T, K extends KeyTypes = string | symbol>(
+  store: Pick<Store<Record<K, T>>, 'get' | 'set'>,
+  addEntry: (record: Draft<Record<K, T>>, entry: T) => void
+) {
+  return {
+    ...store,
+    add: adder(store, addEntry)
+  }
+}
+
 export function push<A extends Array<any>>(record: Draft<A>, entry: ArrayValue<A>) {
   record.push(entry)
 }
