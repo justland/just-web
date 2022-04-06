@@ -4,12 +4,10 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
-// import * as reactCommandsModule from '@just-web/react-commands'
+import * as reactCommandsModule from '@just-web/react-commands'
 
 const app = createApp()
-// app.loadModule(reactCommandsModule)
-// app.loadRemoteModule(url)
-// app.registerModule({})
+app.addPlugin(reactCommandsModule)
 
 app.routes.registerRoute('/', () => {
   ReactDOM.render(

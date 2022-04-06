@@ -10,6 +10,10 @@ export interface ReadonlyModule {
 export interface ModuleOptions extends commandRegistry.Options { }
 
 export function create(options: ModuleOptions): Module {
+  options.contributions.commands.add({
+    command: 'just-web.showCommandPalette',
+    description: 'Show command palette'
+  })
   return { registry: commandRegistry(options) }
 }
 

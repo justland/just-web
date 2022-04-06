@@ -168,6 +168,7 @@ importers:
       '@just-web/errors': workspace:*
       '@just-web/log': workspace:*
       '@just-web/platform': workspace:*
+      '@just-web/plugins': workspace:*
       '@just-web/routes': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
@@ -199,6 +200,7 @@ importers:
       '@just-web/errors': link:../errors
       '@just-web/log': link:../log
       '@just-web/platform': link:../platform
+      '@just-web/plugins': link:../plugins
       '@just-web/routes': link:../routes
       '@just-web/states': link:../states
       standard-log: 7.0.2
