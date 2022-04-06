@@ -5,9 +5,9 @@ import { createApp } from './app'
 let reporter: MemoryLogReporter
 beforeEach(() => reporter = configForTest().reporter)
 
-test('needs to register route for /', () => {
+test('needs to register route for /', async () => {
   const app = createApp()
-  app.start()
+  await app.start()
   assertLog(reporter,
     `(NOTICE) application starts`,
     `(ERROR) route '/' is required`,
