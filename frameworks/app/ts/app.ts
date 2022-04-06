@@ -2,10 +2,12 @@ import '@just-web/commands'
 import { create } from '@just-web/contexts'
 import '@just-web/contributions'
 import '@just-web/platform'
-import { registerRoute } from '@just-web/routes'
+import * as pluginsModule from '@just-web/plugins'
+import { navigate, registerRoute, validateRoutes } from '@just-web/routes'
 import '@just-web/states'
 import { config, ConfigOptions } from 'standard-log'
-import { start } from './start'
+import { required } from 'type-plus'
+import { log } from './log'
 
 export namespace createApp {
   export interface Options extends create.Options {
@@ -13,11 +15,34 @@ export namespace createApp {
   }
 }
 
+const defaultCtx = {
+  routes: { navigate, registerRoute }
+}
+export namespace start {
+  export type Ctx = typeof defaultCtx
+  export interface Options {
+  }
+}
+
 export function createApp(options?: createApp.Options) {
   config(options?.log)
+  const context = create(options)
+
   return {
+    ...context,
     ...create(options),
+    ...pluginsModule.create(),
     routes: { registerRoute },
-    start
+    async start(options?: start.Options, ctx?: start.Ctx) {
+      const { routes } = required(defaultCtx, ctx)
+
+      log.notice('application starts')
+      await pluginsModule.start({ context })
+
+      // TODO: validate app to make sure it has the minimum implementation,
+      // such as handling `/` and `/error`
+      if (!await validateRoutes()) return
+      routes.navigate('/')
+    }
   }
 }

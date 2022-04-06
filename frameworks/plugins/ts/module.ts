@@ -1,8 +1,12 @@
 import { Context } from '@just-web/contexts'
 import { Adder, createStore, push, Store, withAdder } from '@just-web/states'
 
+export interface PluginModule {
+  activate(context: Context): void | Promise<void>
+}
+
 export interface Module {
-  loadingPlugins: Promise<void[]>
+  addPlugin(plugin: PluginModule): void
 }
 
 export interface ReadonlyModule {
@@ -13,17 +17,14 @@ export interface ModuleOptions {
   context: Context
 }
 
-export interface PluginModule {
-  activate(context: Context): Promise<void>
-}
 let plugins: Store<PluginModule[]> & {
   add: Adder<PluginModule>
 }
 
-export function createContext() {
+export function create(): Module {
   plugins = withAdder(createStore<PluginModule[]>([]), push)
   return {
-    loadPlugin(module: PluginModule) {
+    addPlugin(module: PluginModule) {
       plugins.add(module)
     }
   }
@@ -37,7 +38,7 @@ function activatePlugin(context: Context, plugin: PluginModule) {
   return plugin.activate(context)
 }
 
-export function start(options: ModuleOptions): Module {
+export function start(options: ModuleOptions) {
   return {
     loadingPlugins: activatePlugins(options.context)
   }

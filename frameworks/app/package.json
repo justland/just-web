@@ -25,7 +25,8 @@
     "@just-web/routes": "workspace:*",
     "@just-web/states": "workspace:*",
     "standard-log": "~7.0.2",
-    "type-plus": "~4.7.0"
+    "type-plus": "~4.7.0",
+    "@just-web/plugins": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
