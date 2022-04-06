@@ -17,8 +17,7 @@ export interface ModuleOptions {
   keyBindings: keyBindingRegistry.Options['keyBindings']
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export function start(options?: ModuleOptions): Module {
+export function create(options?: ModuleOptions): Module {
   const commands = commandContributionRegistry(options)
   const keyBindings = keyBindingRegistry(options)
 

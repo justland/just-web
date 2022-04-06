@@ -12,7 +12,7 @@ export interface ModuleOptions {
   }
 }
 
-export function start(options?: ModuleOptions): Module {
+export function create(options?: ModuleOptions): Module {
   const errors = createErrorStore()
   registerOnErrorHandler({
     errors,

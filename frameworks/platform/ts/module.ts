@@ -7,7 +7,7 @@ export type ReadonlyModule = (typeof os)
 export interface ModuleOptions extends startKeyBindings.Options {
 }
 
-export function start(options: ModuleOptions): Module {
+export function create(options: ModuleOptions): Module {
   startKeyBindings(options)
   return os
 }

@@ -17,7 +17,7 @@ export async function start(options?: start.Options, ctx?: start.Ctx) {
   const { errors } = required({}, options)
 
   log.notice('application starts')
-  errorsModule.start(errors)
+  errorsModule.create(errors)
 
   // TODO: validate app to make sure it has the minimum implementation,
   // such as handling `/` and `/error`

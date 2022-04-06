@@ -9,7 +9,7 @@ export interface ReadonlyModule {
 }
 export interface ModuleOptions extends commandRegistry.Options { }
 
-export function start(options: ModuleOptions): Module {
+export function create(options: ModuleOptions): Module {
   return { registry: commandRegistry(options) }
 }
 

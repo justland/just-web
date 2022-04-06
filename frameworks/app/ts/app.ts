@@ -1,5 +1,5 @@
 import '@just-web/commands'
-import { createContext } from '@just-web/contexts'
+import { create } from '@just-web/contexts'
 import '@just-web/contributions'
 import '@just-web/platform'
 import { registerRoute } from '@just-web/routes'
@@ -8,7 +8,7 @@ import { config, ConfigOptions } from 'standard-log'
 import { start } from './start'
 
 export namespace createApp {
-  export interface Options extends createContext.Options {
+  export interface Options extends create.Options {
     log?: Partial<ConfigOptions>
   }
 }
@@ -16,7 +16,7 @@ export namespace createApp {
 export function createApp(options?: createApp.Options) {
   config(options?.log)
   return {
-    ...createContext(options),
+    ...create(options),
     routes: { registerRoute },
     start
   }
