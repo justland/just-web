@@ -1,4 +1,4 @@
-import { Context, createContext } from '@just-web/contexts'
+import { Context, create } from '@just-web/contexts'
 import { FC } from 'react'
 import { setContext } from '../context'
 import CommandPalette, { CommandPaletteProps } from './CommandPalette'
@@ -51,27 +51,27 @@ const Story: FC<CommandPaletteProps> = ({ ...args }) => {
 }
 
 export const NoCommand = () => {
-  const context = createContext()
+  const context = create()
   setContext(context)
   return <Story />
 }
 
 export const OneCommand = () => {
-  const context = createContext()
+  const context = create()
   addCommand(context, simpleCmd)
   setContext(context)
   return <Story />
 }
 
 export const WithKey = () => {
-  const context = createContext()
+  const context = create()
   addCommand(context, keyedCmd)
   setContext(context)
   return <Story />
 }
 
 export const OverrideMacCommandInMac = () => {
-  const context = createContext()
+  const context = create()
   context.platform = {
     ...context.platform,
     isMacOS: () => true
@@ -82,7 +82,7 @@ export const OverrideMacCommandInMac = () => {
 }
 
 export const OverrideMacCommandInWindow = () => {
-  const context = createContext()
+  const context = create()
   context.platform = {
     ...context.platform,
     isMacOS: () => false

@@ -1,8 +1,8 @@
-import { createContext, getReadonlyContext } from '.'
+import { create, getReadonlyContext } from '.'
 
 describe('createContext()', () => {
   test('create context without any option', () => {
-    const context = createContext()
+    const context = create()
     expect(context).toBeDefined()
     expect(context.errors.get()).toEqual([])
     expect(context.commands.registry.keys()).toEqual([])
@@ -18,13 +18,13 @@ describe('toReadonlyContext()', () => {
 
 describe('getReadonlyContext()', () => {
   test('available after calling createContext()', () => {
-    createContext()
+    create()
     const a = getReadonlyContext()
     expect(a).toBeDefined()
   })
   test.todo('log an error when calling it before calling createContext')
   test('create context without any option', () => {
-    createContext()
+    create()
     const context = getReadonlyContext()
 
     expect(context).toBeDefined()

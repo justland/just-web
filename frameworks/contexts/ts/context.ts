@@ -21,7 +21,7 @@ export interface ReadonlyContext {
   states: Context['states']
 }
 
-export namespace createContext {
+export namespace create {
   export interface Options {
     contributions: contributionsModule.ModuleOptions,
     commands: commandsModule.ModuleOptions,
@@ -31,10 +31,10 @@ export namespace createContext {
 
 let readonlyContext: ReadonlyContext
 
-export function createContext(options?: createContext.Options): Context {
+export function create(options?: create.Options): Context {
   log.trace('createContext()')
-  const contributions = contributionsModule.start(options?.contributions)
-  const commands = commandsModule.start({
+  const contributions = contributionsModule.create(options?.contributions)
+  const commands = commandsModule.create({
     ...options?.commands,
     contributions
   })
@@ -42,17 +42,17 @@ export function createContext(options?: createContext.Options): Context {
   const context = {
     commands,
     contributions,
-    errors: errorsModule.start(options?.errors),
-    platform: platformModule.start({ contributions, commands }),
+    errors: errorsModule.create(options?.errors),
+    platform: platformModule.create({ contributions, commands }),
     states: statesModule
   }
 
-  readonlyContext = toReadonlyContext(context)
+  readonlyContext = toReadonly(context)
 
   return context
 }
 
-function toReadonlyContext(context: Context): ReadonlyContext {
+function toReadonly(context: Context): ReadonlyContext {
   return {
     commands: commandsModule.toReadonly(context.commands),
     contributions: contributionsModule.toReadonly(context.contributions),
