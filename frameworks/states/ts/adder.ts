@@ -6,6 +6,10 @@ export interface Adder<T> {
   (...entries: T[]): void
 }
 
+export interface WithAdder<T> {
+  add: Adder<T>
+}
+
 /**
  * builds an adder function for a store or registry
  */
@@ -32,11 +36,11 @@ export function adder<T, K extends KeyTypes = string | symbol>(
 export function withAdder<A extends Array<any>, S extends Store<A>>(
   store: Pick<S, 'get' | 'set'>,
   addEntry: (record: Draft<A>, entry: ArrayValue<A>) => void
-): S & { add: Adder<ArrayValue<A>> }
+): S & WithAdder<ArrayValue<A>>
 export function withAdder<T, K extends KeyTypes, S extends Store<Record<K, T>>>(
   store: Pick<S, 'get' | 'set'>,
   addEntry: (record: Draft<Record<K, T>>, entry: T) => void
-): S & { add: Adder<T> }
+): S & WithAdder<T>
 export function withAdder<T, K extends KeyTypes = string | symbol>(
   store: Pick<Store<Record<K, T>>, 'get' | 'set'>,
   addEntry: (record: Draft<Record<K, T>>, entry: T) => void
