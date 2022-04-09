@@ -4,12 +4,13 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
-import * as reactCommandsModule from '@just-web/react-commands'
 
 const app = createApp()
-app.addPlugin(reactCommandsModule)
 
-app.routes.registerRoute('/', () => {
+app.routes.registerRoute('/', async () => {
+  const reactCommandsModule = await import('@just-web/react-commands')
+  app.addPlugin(reactCommandsModule)
+
   ReactDOM.render(
     <React.StrictMode>
       <App />
