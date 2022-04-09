@@ -1,5 +1,5 @@
 {
-  "name": "just-func-play-solid",
+  "name": "@just-func/play-solid",
   "version": "0.0.0",
   "description": "",
   "license": "MIT",
@@ -34,8 +34,8 @@
     "@babel/plugin-transform-runtime": "~7.17.0",
     "@babel/preset-env": "~7.16.11",
     "@babel/preset-typescript": "~7.16.7",
-    "@storybook/addon-essentials": "^6.4.19",
-    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addon-essentials": "~6.4.19",
+    "@storybook/addon-links": "~6.4.19",
     "@storybook/addon-postcss": "~2.0.0",
     "@storybook/html": "~6.4.19",
     "@types/jest": "^27.4.1",

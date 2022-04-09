@@ -4,7 +4,7 @@ import { sentenceCase } from '@just-web/format'
 import { FC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
-import { mapKey, required } from 'type-plus'
+import { required } from 'type-plus'
 import { getContext } from '../context'
 import styles from './CommandPalette.module.css'
 
@@ -18,16 +18,17 @@ function getCommands(ctx: ReadonlyContext) {
   const m = ctx.platform.isMacOS()
   const cmds = ctx.contributions.commands.get()
   const kbs = ctx.contributions.keyBindings.get()
-  return mapKey(cmds, cmdKey => {
-    const c = cmds[cmdKey]
-    const r = {
-      ...c,
-      name: c.name ?? sentenceCase(c.command.split('.', 2)[1]),
-      command: () => ctx.commands.registry.invoke(c.command)
-    }
-    const k = kbs[cmdKey]
-    return k ? { ...r, key: m ? k.mac ?? k.key : k.key } : r
-  })
+  return Object.values(cmds)
+    .filter(c => c.commandPalette !== false)
+    .map(c => {
+      const r = {
+        ...c,
+        name: c.name ?? sentenceCase(c.command.split('.', 2)[1]),
+        command: () => ctx.commands.registry.invoke(c.command)
+      }
+      const k = kbs[c.command]
+      return k ? { ...r, key: m ? k.mac ?? k.key : k.key } : r
+    })
 }
 
 const RenderCommand: FC<{ name: string, key?: string }> = command => (

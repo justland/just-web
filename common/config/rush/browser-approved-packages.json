@@ -163,7 +163,23 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@storybook/addons",
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@storybook/api",
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
       "name": "@storybook/builder-webpack5",
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@storybook/components",
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@storybook/core-events",
       "allowedCategories": [ "libraries", "production" ]
     },
     {
@@ -188,6 +204,10 @@
     },
     {
       "name": "@storybook/testing-library",
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@storybook/theming",
       "allowedCategories": [ "libraries", "production" ]
     },
     {
@@ -432,6 +452,10 @@
     },
     {
       "name": "storybook-css-modules-preset",
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "storybook-dark-mode",
       "allowedCategories": [ "libraries", "production" ]
     },
     {

@@ -27,12 +27,12 @@
   "projectFolderMinDepth": 2,
   "projects": [
     {
-      "packageName": "just-func-play-solid",
+      "packageName": "@just-func/play-solid",
       "projectFolder": "just-func/play-solid",
       "reviewCategory": "production"
     },
     {
-      "packageName": "just-func-play-react",
+      "packageName": "@just-func/play-react",
       "projectFolder": "just-func/play-react",
       "reviewCategory": "production"
     },

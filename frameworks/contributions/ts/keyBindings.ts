@@ -1,4 +1,4 @@
-import { Adder, adder, createRegistry, ReadonlyRegistry, Registry } from '@just-web/states'
+import { createRegistry, ReadonlyRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
 import { record } from 'type-plus'
 import { log } from './log'
 
@@ -18,13 +18,10 @@ export interface KeyBindingContribution {
 }
 
 export interface ReadonlyKeyBindingContributionRegistry
-  extends ReadonlyRegistry<string, KeyBindingContribution> {
-}
+  extends ReadonlyRegistry<string, KeyBindingContribution> { }
 
 export interface KeyBindingContributionRegistry
-  extends Registry<string, KeyBindingContribution> {
-  add: Adder<KeyBindingContribution>
-}
+  extends Registry<string, KeyBindingContribution>, WithAdder<KeyBindingContribution> { }
 
 export namespace keyBindingRegistry {
   export interface Options {
@@ -35,13 +32,11 @@ export namespace keyBindingRegistry {
 export function keyBindingRegistry(
   options?: keyBindingRegistry.Options
 ): KeyBindingContributionRegistry {
-  const registry = createRegistry<string, KeyBindingContribution>(options?.keyBindings ?? record())
-  return {
-    ...registry,
-    add: adder(registry, function (r, kb) {
+  return withAdder(
+    createRegistry<string, KeyBindingContribution>(options?.keyBindings ?? record()),
+    function (r, kb) {
       const key = kb.command
       if (r[key]) return log.warn(`Registering a duplicate key binding contribution, ignored: ${key}`)
       r[key] = kb
     })
-  }
 }

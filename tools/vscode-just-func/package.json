@@ -8,9 +8,11 @@
   ],
   "scripts": {
     "build": "echo no build step",
+    "build:watch": "echo no build watch",
     "depcheck": "echo no depcheck yet",
     "lint": "echo no lint",
     "test": "echo no test yet",
+    "test:watch": "echo no test watch",
     "verify": "echo no verify"
   },
   "contributes": {
