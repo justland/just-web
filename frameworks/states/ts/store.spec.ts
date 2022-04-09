@@ -27,6 +27,20 @@ describe('createStore()', () => {
     expect(actual).toStrictEqual(value)
   })
 
+  test('update() by modify', () => {
+    const store = createStore({ a: 1 })
+    store.update(s => { s.a = 2 })
+    const a = store.get()
+    expect(a).toEqual({ a: 2 })
+  })
+
+  test('update() by return', () => {
+    const store = createStore({ a: 1 })
+    store.update(() => ({ a: 2 }))
+    const a = store.get()
+    expect(a).toEqual({ a: 2 })
+  })
+
   test('NaN -> NaN does not trigger onChange()', () => {
     const store = createStore(NaN)
     store.onChange(() => { throw 'should not reach' })
