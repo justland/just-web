@@ -16,6 +16,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
     "outDir": "lib",
     "paths": {
       "@just-web/contexts": ["../../frameworks/contexts"]

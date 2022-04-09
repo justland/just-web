@@ -135,6 +135,10 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@storybook/addon-console",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@storybook/addon-essentials",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -187,6 +191,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@storybook/jest",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@storybook/manager-webpack5",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -201,6 +209,10 @@
     {
       "name": "@storybook/react",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@storybook/test-runner",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@storybook/testing-library",
@@ -331,7 +343,19 @@
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
+      "name": "jest-circus",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "jest-environment-node",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "jest-esm-transformer",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "jest-runner",
       "allowedCategories": [ "libraries" ]
     },
     {

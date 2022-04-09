@@ -1,7 +1,7 @@
 import { Context } from '@just-web/contexts'
+import { produce } from 'immer'
 import { setContext } from './context'
 import { createStore, getStore } from './store'
-import { produce } from 'immer'
 /**
  * right now this module does not need to be a plugin.
  * Doing this just as an plugin example
