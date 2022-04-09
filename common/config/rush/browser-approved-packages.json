@@ -59,6 +59,14 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@docusaurus/theme-classic",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@docusaurus/types",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@jest-web/routes",
       "allowedCategories": [ "libraries" ]
     },
