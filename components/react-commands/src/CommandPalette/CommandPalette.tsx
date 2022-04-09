@@ -1,11 +1,13 @@
 import { ReadonlyContext } from '@just-web/contexts'
 import { CommandContribution, KeyBindingContribution } from '@just-web/contributions'
 import { sentenceCase } from '@just-web/format'
-import { FC } from 'react'
+import produce from 'immer'
+import { FC, useState } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
 import { required } from 'type-plus'
 import { getContext } from '../context'
+import { getStore } from '../store'
 import styles from './CommandPalette.module.css'
 
 export type CommandPaletteCommand = CommandContribution & KeyBindingContribution
@@ -42,12 +44,18 @@ const RenderCommand: FC<{ name: string, key?: string }> = command => (
 const CommandPalette: FC<CommandPaletteProps> = (props) => {
   const ctx = required(getContext(), props.ctx)
   const commands = getCommands(ctx)
+  const [open, setOpen] = useState(false)
+
+  const store = getStore()
+  store.onChange(s => setOpen(s.openCommandPalette))
+  const onRequestClose = () => store.set(produce(store.get(), s => { s.openCommandPalette = false }))
+
   return <CP
     commands={commands}
     closeOnSelect={true}
-    open={true}
-    hotKeys={'ctrl+p'}
+    open={open}
     theme={{ ...theme, trigger: styles.trigger }}
+    onRequestClose={onRequestClose}
     renderCommand={RenderCommand}
   />
 }

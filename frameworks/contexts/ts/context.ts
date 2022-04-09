@@ -5,6 +5,8 @@ import * as platformModule from '@just-web/platform'
 import * as statesModule from '@just-web/states'
 import { log } from './log'
 
+export type { Adder, OnStateChange, ReadonlyRegistry, ReadonlyStore, Registry, ResetState, SetState, StateChangeHandler, Store, WithAdder } from '@just-web/states'
+
 export interface Context {
   commands: commandsModule.Module,
   contributions: contributionsModule.Module,
