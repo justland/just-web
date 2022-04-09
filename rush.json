@@ -24,8 +24,13 @@
   },
   "pnpmVersion": "6.32.3",
   "projectFolderMaxDepth": 2,
-  "projectFolderMinDepth": 2,
+  "projectFolderMinDepth": 1,
   "projects": [
+    {
+      "packageName": "@just-web/github-pages",
+      "projectFolder": "docs/github-pages",
+      "reviewCategory": "libraries"
+    },
     {
       "packageName": "@just-func/play-solid",
       "projectFolder": "just-func/play-solid",

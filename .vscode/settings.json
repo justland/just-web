@@ -11,6 +11,7 @@
     "npmjs",
     "pnpm",
     "pnpmfile",
+    "rushx",
     "TTFB",
     "unshift",
     "vite"
