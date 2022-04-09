@@ -1,5 +1,4 @@
 import { Context } from '@just-web/contexts'
-import { produce } from 'immer'
 import { setContext } from './context'
 import { createStore, getStore } from './store'
 /**
@@ -11,6 +10,6 @@ export function activate(context: Context) {
   createStore(context)
   context.commands.registry.register('just-web.showCommandPalette', () => {
     const store = getStore()
-    store.set(produce(store.get(), s => { s.openCommandPalette = true }))
+    store.update(s => { s.openCommandPalette = true })
   })
 }

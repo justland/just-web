@@ -1,7 +1,6 @@
 import { ReadonlyContext } from '@just-web/contexts'
-import { CommandContribution, KeyBindingContribution } from '@just-web/contributions'
+import type { CommandContribution, KeyBindingContribution } from '@just-web/contributions'
 import { sentenceCase } from '@just-web/format'
-import produce from 'immer'
 import { FC, useState } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
@@ -40,7 +39,6 @@ const RenderCommand: FC<{ name: string, key?: string }> = command => (
   </div>
 )
 
-
 const CommandPalette: FC<CommandPaletteProps> = (props) => {
   const ctx = required(getContext(), props.ctx)
   const commands = getCommands(ctx)
@@ -48,7 +46,7 @@ const CommandPalette: FC<CommandPaletteProps> = (props) => {
 
   const store = getStore()
   store.onChange(s => setOpen(s.openCommandPalette))
-  const onRequestClose = () => store.set(produce(store.get(), s => { s.openCommandPalette = false }))
+  const onRequestClose = () => store.update(s => { s.openCommandPalette = false })
 
   return <CP
     commands={commands}
