@@ -30,7 +30,6 @@ export function createApp(options?: createApp.Options) {
 
   return {
     ...context,
-    ...create(options),
     ...pluginsModule.create(),
     routes: { registerRoute },
     async start(options?: start.Options, ctx?: start.Ctx) {
