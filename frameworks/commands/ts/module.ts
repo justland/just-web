@@ -12,7 +12,12 @@ export interface ModuleOptions extends commandRegistry.Options { }
 export function create(options: ModuleOptions): Module {
   options.contributions.commands.add({
     command: 'just-web.showCommandPalette',
-    description: 'Show command palette'
+    commandPalette: false
+  })
+  options.contributions.keyBindings.add({
+    command: 'just-web.showCommandPalette',
+    key: 'ctrl+p',
+    mac: 'cmd+p'
   })
   return { registry: commandRegistry(options) }
 }

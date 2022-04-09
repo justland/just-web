@@ -56,7 +56,7 @@
     {
       "name": "storybook",
       "commandKind": "bulk",
-      "summary": "start storybook",
+      "summary": "run storybook",
       "enableParallelism": false
     },
     {
@@ -70,7 +70,9 @@
       "name": "test:watch",
       "commandKind": "bulk",
       "summary": "test watch all projects",
-      "enableParallelism": true
+      "incremental": true,
+      "enableParallelism": true,
+      "watchForChanges": true
     },
     {
       "name": "verify",

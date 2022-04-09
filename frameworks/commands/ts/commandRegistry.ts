@@ -1,4 +1,4 @@
-import { CommandContributionRegistry } from '@just-web/contributions'
+import { CommandContributionRegistry, KeyBindingContributionRegistry } from '@just-web/contributions'
 import { createRegistry } from '@just-web/states'
 import produce from 'immer'
 import { pick } from 'type-plus'
@@ -21,7 +21,8 @@ export namespace commandRegistry {
   export interface Options {
     commands?: Record<string, CommandHandler>,
     contributions: {
-      commands: CommandContributionRegistry
+      commands: CommandContributionRegistry,
+      keyBindings: KeyBindingContributionRegistry
     }
   }
 }

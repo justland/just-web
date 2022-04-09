@@ -7,4 +7,7 @@ import { setContext } from './context'
  */
 export function activate(context: Context) {
   setContext(context)
+  context.commands.registry.register('just-web.showCommandPalette', () => {
+    alert('showCommand invoked')
+  })
 }
