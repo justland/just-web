@@ -1,3 +1,4 @@
+import produce from 'immer'
 import { pick } from 'type-plus'
 import { createState, OnStateChange, ResetState, SetState } from './state'
 
@@ -8,6 +9,7 @@ export interface ReadonlyStore<T> {
 
 export interface Store<T> extends ReadonlyStore<T> {
   set: SetState<T>,
+  update: (handler: (draft: T) => T | void) => void,
   reset: ResetState
 }
 
@@ -18,9 +20,11 @@ export function createStore<T>(value: T): Store<T> {
   const state = createState(value)
   const [, set, onChange, reset] = state
   onChange(v => state[0] = v)
+
   return {
     get() { return state[0] },
     set,
+    update(handler) { set(produce(state[0], handler)) },
     onChange,
     reset
   }
