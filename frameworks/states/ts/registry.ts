@@ -12,6 +12,7 @@ export interface ReadonlyRegistry<K extends KeyTypes, T> {
 
 export interface Registry<K extends KeyTypes, T> extends ReadonlyRegistry<K, T> {
   set: SetState<Record<K, T>>,
+  update: (handler: (draft: Record<K, T>) => Record<K, T> | void) => void,
   reset: ResetState
 }
 
