@@ -40,7 +40,10 @@ function bindKey(commandRegistry: CommandRegistry, keyBinding: KeyBindingContrib
     }
     else {
       keys[key] = true
-      Mousetrap.bind(key, () => commandRegistry.invoke(keyBinding.command))
+      Mousetrap.bind(key, () => {
+        commandRegistry.invoke(keyBinding.command)
+        return false
+      })
     }
   }
 }
