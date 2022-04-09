@@ -6,12 +6,22 @@ module.exports = {
   'extends': [
     'react-app',
     'react-app/jest',
-    'plugin:storybook/recommended',
-    'plugin:harmony/ts-recommended',
     'plugin:yml/standard',
   ],
   'overrides': [
     {
+      extends: [
+        'plugin:harmony/ts-recommended'
+      ],
+      files: [
+        '*.ts',
+        '*.tsx'
+      ],
+    },
+    {
+      extends: [
+        'plugin:storybook/recommended'
+      ],
       'files': [
         '**/*.stories.*'
       ],

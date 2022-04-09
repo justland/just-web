@@ -16,6 +16,9 @@ module.exports = {
     '@storybook/preset-create-react-app',
     'storybook-dark-mode',
   ],
+  features: {
+    interactionsDebugger: true,
+  },
   framework: '@storybook/react',
   core: {
     builder: 'webpack5'

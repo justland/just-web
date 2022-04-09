@@ -1,7 +1,9 @@
 import { Context, create } from '@just-web/contexts'
-import { FC } from 'react'
-import { setContext } from '../context'
-import CommandPalette, { CommandPaletteProps } from './CommandPalette'
+import { ComponentStory } from '@storybook/react'
+import Mousetrap from 'mousetrap'
+import { activate } from '../module'
+import CommandPalette from './CommandPalette'
+
 
 export default {
   component: CommandPalette
@@ -42,8 +44,7 @@ const macOnlyCmd = {
   mac: 'cmd+s'
 }
 
-
-const Story: FC<CommandPaletteProps> = ({ ...args }) => {
+const Story: ComponentStory<typeof CommandPalette> = ({ ...args }) => {
   return <>
     <div>ctrl+p to show the command palette</div>
     <CommandPalette {...args} />
@@ -52,22 +53,34 @@ const Story: FC<CommandPaletteProps> = ({ ...args }) => {
 
 export const NoCommand = () => {
   const context = create()
-  setContext(context)
+  activate(context)
   return <Story />
+}
+
+NoCommand.play = async () => {
+  Mousetrap.trigger('ctrl+p')
 }
 
 export const OneCommand = () => {
   const context = create()
   addCommand(context, simpleCmd)
-  setContext(context)
+  activate(context)
   return <Story />
+}
+
+OneCommand.play = async () => {
+  Mousetrap.trigger('ctrl+p')
 }
 
 export const WithKey = () => {
   const context = create()
   addCommand(context, keyedCmd)
-  setContext(context)
+  activate(context)
   return <Story />
+}
+
+WithKey.play = async () => {
+  Mousetrap.trigger('ctrl+p')
 }
 
 export const OverrideMacCommandInMac = () => {
@@ -77,8 +90,12 @@ export const OverrideMacCommandInMac = () => {
     isMacOS: () => true
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  setContext(context)
+  activate(context)
   return <Story />
+}
+
+OverrideMacCommandInMac.play = async () => {
+  Mousetrap.trigger('ctrl+p')
 }
 
 export const OverrideMacCommandInWindow = () => {
@@ -88,6 +105,10 @@ export const OverrideMacCommandInWindow = () => {
     isMacOS: () => false
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  setContext(context)
+  activate(context)
   return <Story />
+}
+
+OverrideMacCommandInWindow.play = async () => {
+  Mousetrap.trigger('ctrl+p')
 }
