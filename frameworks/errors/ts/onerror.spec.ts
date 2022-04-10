@@ -3,12 +3,12 @@ import { createErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
 
 test('capture error', () => {
-  const ctx: registerOnErrorHandler.Ctx = { window: {} } as any
+  const ctx = stub<registerOnErrorHandler.Ctx>({ window: {} })
   const errors = createErrorStore()
   registerOnErrorHandler({
     errors,
     preventDefault: false
-  }, stub<registerOnErrorHandler.Ctx>(ctx))
+  }, ctx)
 
   let actual: Error[]
 
