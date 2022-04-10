@@ -71,7 +71,7 @@
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "@just-web/app",
+      "name": "just-web",
       "allowedCategories": [ "libraries", "production" ]
     },
     {

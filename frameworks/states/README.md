@@ -12,15 +12,15 @@ It uses [`Object.is()`](https://www.jstips.co/en/javascript/why-you-should-use-O
 You can use a library such as [`immer`](https://github.com/immerjs/immer) to manage immutability.
 
 This is a `@just-web` library, meaning you can access it directly.
-It is also exposed through `@just-web/app` and `@just-web/contexts` for convenience.
+It is also exposed through `just-web` and `@just-web/contexts` for convenience.
 
 ## How to access
 
-Access it directly, through `@just-web/app` or `@just-web/contexts`:
+Access it directly, through `just-web` or `@just-web/contexts`:
 
 ```ts
 import { createStore } from '@just-web/states'
-import app from '@just-web/app`
+import app from 'just-web`
 import { getReadonlyContext, Context } from '@just-web/contexts'
 
 function work() {
