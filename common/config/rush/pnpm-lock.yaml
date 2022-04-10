@@ -221,77 +221,6 @@ importers:
       '@types/react': 17.0.43
       typescript: 4.6.3
 
-  ../../frameworks/app:
-    specifiers:
-      '@babel/core': ~7.17.8
-      '@babel/plugin-transform-runtime': ~7.17.0
-      '@just-web/commands': workspace:*
-      '@just-web/contexts': workspace:*
-      '@just-web/contributions': workspace:*
-      '@just-web/errors': workspace:*
-      '@just-web/log': workspace:*
-      '@just-web/platform': workspace:*
-      '@just-web/plugins': workspace:*
-      '@just-web/routes': workspace:*
-      '@just-web/states': workspace:*
-      '@just-web/testing': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
-      '@types/jest': ^27.4.1
-      '@typescript-eslint/eslint-plugin': ^5.16.0
-      '@typescript-eslint/parser': ^5.16.0
-      depcheck: ~1.4.3
-      eslint: ^8.11.0
-      eslint-config-prettier: ~8.5.0
-      eslint-plugin-harmony: ^6.0.2
-      eslint-plugin-yml: ~0.14.0
-      jest: ^27.5.1
-      jest-validate: ^27.5.1
-      jest-watch-suspend: ^1.1.2
-      jest-watch-toggle-config: ^2.0.1
-      jest-watch-typeahead: ^1.0.0
-      npm-check-updates: ~12.5.4
-      npm-run-all: ^4.1.5
-      rimraf: ~3.0.2
-      size-limit: ^7.0.8
-      standard-log: ~7.0.2
-      type-plus: ~4.7.0
-      typescript: ^4.6.3
-    dependencies:
-      '@just-web/commands': link:../commands
-      '@just-web/contexts': link:../contexts
-      '@just-web/contributions': link:../contributions
-      '@just-web/errors': link:../errors
-      '@just-web/log': link:../log
-      '@just-web/platform': link:../platform
-      '@just-web/plugins': link:../plugins
-      '@just-web/routes': link:../routes
-      '@just-web/states': link:../states
-      standard-log: 7.0.2
-      type-plus: 4.7.0
-    devDependencies:
-      '@babel/core': 7.17.8
-      '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
-      '@just-web/testing': link:../../tools/testing
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
-      '@types/jest': 27.4.1
-      '@typescript-eslint/eslint-plugin': 5.17.0_689ff565753ecf7c3328c07fad067df5
-      '@typescript-eslint/parser': 5.17.0_eslint@8.12.0+typescript@4.6.3
-      depcheck: 1.4.3
-      eslint: 8.12.0
-      eslint-config-prettier: 8.5.0_eslint@8.12.0
-      eslint-plugin-harmony: 6.0.2_81f4fcf2f254d1eebf73ee40fec62474
-      eslint-plugin-yml: 0.14.0_eslint@8.12.0
-      jest: 27.5.1
-      jest-validate: 27.5.1
-      jest-watch-suspend: 1.1.2_jest@27.5.1
-      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
-      jest-watch-typeahead: 1.0.0_jest@27.5.1
-      npm-check-updates: 12.5.4
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      size-limit: 7.0.8
-      typescript: 4.6.3
-
   ../../frameworks/commands:
     specifiers:
       '@babel/core': ~7.17.8
@@ -856,7 +785,6 @@ importers:
       '@babel/plugin-transform-runtime': ~7.17.0
       '@babel/preset-env': ~7.16.11
       '@babel/preset-typescript': ~7.16.7
-      '@just-web/app': workspace:*
       '@just-web/contexts': workspace:*
       '@just-web/react-commands': workspace:*
       '@storybook/addon-actions': ~6.4.19
@@ -906,6 +834,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^1.0.0
+      just-web: workspace:*
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       postcss: ~8.4.12
@@ -925,9 +854,9 @@ importers:
       web-vitals: ^2.1.4
       webpack: ^5.70.0
     dependencies:
-      '@just-web/app': link:../../frameworks/app
       '@just-web/contexts': link:../../frameworks/contexts
       '@just-web/react-commands': link:../../components/react-commands
+      just-web: link:../../just-web
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       web-vitals: 2.1.4
@@ -1097,6 +1026,77 @@ importers:
       vite: 2.8.6
       vite-plugin-solid: 2.2.6
       webpack: 5.70.0
+
+  ../../just-web:
+    specifiers:
+      '@babel/core': ~7.17.8
+      '@babel/plugin-transform-runtime': ~7.17.0
+      '@just-web/commands': workspace:*
+      '@just-web/contexts': workspace:*
+      '@just-web/contributions': workspace:*
+      '@just-web/errors': workspace:*
+      '@just-web/log': workspace:*
+      '@just-web/platform': workspace:*
+      '@just-web/plugins': workspace:*
+      '@just-web/routes': workspace:*
+      '@just-web/states': workspace:*
+      '@just-web/testing': workspace:*
+      '@size-limit/preset-small-lib': ^7.0.8
+      '@types/jest': ^27.4.1
+      '@typescript-eslint/eslint-plugin': ^5.16.0
+      '@typescript-eslint/parser': ^5.16.0
+      depcheck: ~1.4.3
+      eslint: ^8.11.0
+      eslint-config-prettier: ~8.5.0
+      eslint-plugin-harmony: ^6.0.2
+      eslint-plugin-yml: ~0.14.0
+      jest: ^27.5.1
+      jest-validate: ^27.5.1
+      jest-watch-suspend: ^1.1.2
+      jest-watch-toggle-config: ^2.0.1
+      jest-watch-typeahead: ^1.0.0
+      npm-check-updates: ~12.5.4
+      npm-run-all: ^4.1.5
+      rimraf: ~3.0.2
+      size-limit: ^7.0.8
+      standard-log: ~7.0.2
+      type-plus: ~4.7.0
+      typescript: ^4.6.3
+    dependencies:
+      '@just-web/commands': link:../frameworks/commands
+      '@just-web/contexts': link:../frameworks/contexts
+      '@just-web/contributions': link:../frameworks/contributions
+      '@just-web/errors': link:../frameworks/errors
+      '@just-web/log': link:../frameworks/log
+      '@just-web/platform': link:../frameworks/platform
+      '@just-web/plugins': link:../frameworks/plugins
+      '@just-web/routes': link:../frameworks/routes
+      '@just-web/states': link:../frameworks/states
+      standard-log: 7.0.2
+      type-plus: 4.7.0
+    devDependencies:
+      '@babel/core': 7.17.8
+      '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
+      '@just-web/testing': link:../tools/testing
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@types/jest': 27.4.1
+      '@typescript-eslint/eslint-plugin': 5.17.0_689ff565753ecf7c3328c07fad067df5
+      '@typescript-eslint/parser': 5.17.0_eslint@8.12.0+typescript@4.6.3
+      depcheck: 1.4.3
+      eslint: 8.12.0
+      eslint-config-prettier: 8.5.0_eslint@8.12.0
+      eslint-plugin-harmony: 6.0.2_81f4fcf2f254d1eebf73ee40fec62474
+      eslint-plugin-yml: 0.14.0_eslint@8.12.0
+      jest: 27.5.1
+      jest-validate: 27.5.1
+      jest-watch-suspend: 1.1.2_jest@27.5.1
+      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
+      jest-watch-typeahead: 1.0.0_jest@27.5.1
+      npm-check-updates: 12.5.4
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      size-limit: 7.0.8
+      typescript: 4.6.3
 
   ../../tools/repo-config:
     specifiers:

@@ -17,7 +17,7 @@ Here are a short summary about each module inside `@just-web`:
 
 Framework modules:
 
-- [`@just-web/app`](frameworks/app/README.md): entry point of `@just-web` application framework.
+- [`just-web`](frameworks/app/README.md): entry point of `@just-web` application framework.
 - [`@just-web/commands`](frameworks/commands/README.md): manages commands throughout the application.
 - [`@just-web/contexts`](frameworks/contexts/README.md): provides application contexts to components and plugins.
 - [`@just-web/contributions`](frameworks/contributes/README.md): manages application and plugins capabilities.

@@ -19,11 +19,11 @@ function work() {
 ```
 
 If you want to manipulate or configure the log system,
-api is available in `@just-web/contexts` and `@just-web/app`:
+api is available in `@just-web/contexts` and `just-web`:
 
 ```ts
 import { getReadonlyContext } from '@just-web/contexts'
-import app from `@just-web/app`
+import app from `just-web`
 
 function work() {
   const ctx = getReadonlyContext()
@@ -41,7 +41,7 @@ function work() {
 ## Responsibilities
 
 - ❌ should not provide any lifecycle management
-  - It is handled in `@just-web/app`
+  - It is handled in `just-web`
 
 ## TODO
 

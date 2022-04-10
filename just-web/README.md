@@ -1,4 +1,4 @@
-# @just-web/app
+# just-web
 
 The `@just-web` application.
 

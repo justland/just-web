@@ -1,7 +1,7 @@
 {
-  "name": "@just-web/app",
+  "name": "just-web",
   "version": "0.1.0",
-  "description": "just-web app",
+  "description": "Just a web application framework",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -22,11 +22,11 @@
     "@just-web/errors": "workspace:*",
     "@just-web/log": "workspace:*",
     "@just-web/platform": "workspace:*",
+    "@just-web/plugins": "workspace:*",
     "@just-web/routes": "workspace:*",
     "@just-web/states": "workspace:*",
     "standard-log": "~7.0.2",
-    "type-plus": "~4.7.0",
-    "@just-web/plugins": "workspace:*"
+    "type-plus": "~4.7.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

@@ -6,12 +6,12 @@ It captures both user and system errors and make them available for the applicat
 
 This is a `@just-web` core module.
 
-The runtime functionality is available through `@just-web/app` and `@just-web/contexts`.
+The runtime functionality is available through `just-web` and `@just-web/contexts`.
 
 ## Setup
 
 ```ts
-import app from '@just-web/app`
+import app from 'just-web`
 
 // tbd
 app.errors.start(options)
@@ -44,7 +44,7 @@ function activate(ctx: Context) {
 
 Note that even in `ReadonlyContext`, you can still add errors to the system.
 
-## Access through `@just-web/app`
+## Access through `just-web`
 
 `app` expose everything `contexts` exposes, so accessing `errors` is straightforward:
 
