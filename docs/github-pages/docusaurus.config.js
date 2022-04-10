@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'just-web',
   tagline: 'A clean application framework',
-  url: 'https://justland.github.io/just-web/',
-  baseUrl: '/',
+  url: 'https://justland.github.io',
+  baseUrl: 'just-web/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
