@@ -5,10 +5,11 @@ import { registerOnErrorHandler } from './onerror'
 test('capture error', () => {
   const ctx = stub<registerOnErrorHandler.Ctx>({ window: {} })
   const errors = createErrorStore()
+  registerOnErrorHandler.ctx = ctx
   registerOnErrorHandler({
     errors,
-    preventDefault: false
-  }, ctx)
+    preventDefault: true
+  })
 
   let actual: Error[]
 
