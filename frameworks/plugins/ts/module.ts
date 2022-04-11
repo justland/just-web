@@ -21,30 +21,20 @@ let plugins: Store<PluginModule[]> & {
   add: Adder<PluginModule>
 }
 
-let ctx: Context
+const loading: Array<Promise<void> | void> = []
 
-export function create(): Module {
+export function create(options: ModuleOptions): Module {
   plugins = withAdder(createStore<PluginModule[]>([]), push)
   return {
     addPlugin(plugin: PluginModule) {
       plugins.add(plugin)
-      if (ctx) {
-        activatePlugin(ctx, plugin)
-      }
+      loading.push(plugin.activate(options.context))
     },
   }
 }
-function activatePlugins(context: Context) {
-  ctx = context
-  return Promise.all(plugins.get().map(p => activatePlugin(context, p)))
-}
 
-function activatePlugin(context: Context, plugin: PluginModule) {
-  return plugin.activate(context)
-}
-
-export function start(options: ModuleOptions) {
+export function start() {
   return {
-    loadingPlugins: activatePlugins(options.context)
+    loadingPlugins: Promise.all(loading)
   }
 }
