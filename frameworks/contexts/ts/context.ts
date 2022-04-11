@@ -1,6 +1,6 @@
 import * as commandsModule from '@just-web/commands'
 import * as contributionsModule from '@just-web/contributions'
-import * as errorsModule from '@just-web/errors'
+import { createErrorsContext, ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import * as platformModule from '@just-web/platform'
 import * as statesModule from '@just-web/states'
 import { log } from './log'
@@ -10,7 +10,7 @@ export type { Adder, OnStateChange, ReadonlyRegistry, ReadonlyStore, Registry, R
 export interface Context {
   commands: commandsModule.Module,
   contributions: contributionsModule.Module,
-  errors: errorsModule.Module,
+  errors: ErrorsContext,
   platform: platformModule.Module,
   states: typeof statesModule
 }
@@ -18,7 +18,7 @@ export interface Context {
 export interface ReadonlyContext {
   commands: commandsModule.ReadonlyModule,
   contributions: contributionsModule.ReadonlyModule,
-  errors: errorsModule.ReadonlyModule,
+  errors: ErrorsContext,
   platform: platformModule.ReadonlyModule,
   states: Context['states']
 }
@@ -27,7 +27,7 @@ export namespace create {
   export interface Options {
     contributions: contributionsModule.ModuleOptions,
     commands: commandsModule.ModuleOptions,
-    errors: errorsModule.ModuleOptions
+    errors: ErrorsContextOptions
   }
 }
 
@@ -44,7 +44,7 @@ export function create(options?: create.Options): Context {
   const context = {
     commands,
     contributions,
-    errors: errorsModule.create(options?.errors),
+    errors: createErrorsContext(options?.errors),
     platform: platformModule.create({ contributions, commands }),
     states: statesModule
   }
@@ -58,7 +58,7 @@ function toReadonly(context: Context): ReadonlyContext {
   return {
     commands: commandsModule.toReadonly(context.commands),
     contributions: contributionsModule.toReadonly(context.contributions),
-    errors: errorsModule.toReadonly(context.errors),
+    errors: context.errors,
     platform: platformModule.toReadonly(context.platform),
     states: context.states
   }

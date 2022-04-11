@@ -78,6 +78,7 @@
       "name": "verify",
       "commandKind": "bulk",
       "summary": "verify all projects",
+      "incremental": true,
       "enableParallelism": true
     }
   ],
