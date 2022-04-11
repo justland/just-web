@@ -30,13 +30,13 @@ export function createApp(options?: createApp.Options) {
 
   return {
     ...context,
-    ...pluginsModule.create(),
+    ...pluginsModule.create({ context }),
     routes: { registerRoute },
     async start(options?: start.Options, ctx?: start.Ctx) {
       const { routes } = required(defaultCtx, ctx)
 
       log.notice('application starts')
-      await pluginsModule.start({ context })
+      await pluginsModule.start()
 
       // TODO: validate app to make sure it has the minimum implementation,
       // such as handling `/` and `/error`
