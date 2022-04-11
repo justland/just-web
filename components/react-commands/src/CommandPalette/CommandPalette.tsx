@@ -5,7 +5,6 @@ import { FC, useState } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
 import { required } from 'type-plus'
-import { getContext } from '../context'
 import { getStore } from '../store'
 import styles from './CommandPalette.module.css'
 
@@ -40,11 +39,11 @@ const RenderCommand: FC<{ name: string, key?: string }> = command => (
 )
 
 const CommandPalette: FC<CommandPaletteProps> = (props) => {
-  const ctx = required(getContext(), props.ctx)
+  const store = getStore()
+  const ctx = required(store.get().context, props.ctx)
   const commands = getCommands(ctx)
   const [open, setOpen] = useState(false)
 
-  const store = getStore()
   store.onChange(s => setOpen(s.openCommandPalette))
   const onRequestClose = () => store.update(s => { s.openCommandPalette = false })
 
