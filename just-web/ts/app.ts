@@ -30,7 +30,7 @@ export function createApp(options?: createApp.Options) {
 
   return {
     ...context,
-    ...pluginsModule.create({ context }),
+    ...pluginsModule.createPluginsContext({ context }),
     routes: { registerRoute },
     async start(options?: start.Options, ctx?: start.Ctx) {
       const { routes } = required(defaultCtx, ctx)

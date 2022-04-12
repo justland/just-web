@@ -5,15 +5,15 @@ export interface PluginModule {
   activate(context: Context): void | Promise<void>
 }
 
-export interface Module {
+export interface PluginsContext {
   addPlugin(plugin: PluginModule): void
 }
 
-export interface ReadonlyModule {
+export interface ReadonlyPluginsContext {
 
 }
 
-export interface ModuleOptions {
+export interface PluginsContextOptions {
   context: Context
 }
 
@@ -23,7 +23,7 @@ let plugins: Store<PluginModule[]> & {
 
 const loading: Array<Promise<void> | void> = []
 
-export function create(options: ModuleOptions): Module {
+export function createPluginsContext(options: PluginsContextOptions): PluginsContext {
   plugins = withAdder(createStore<PluginModule[]>([]), push)
   return {
     addPlugin(plugin: PluginModule) {

@@ -64,6 +64,9 @@ function toReadonly(context: Context): ReadonlyContext {
   }
 }
 
+/**
+ * @deprecated to be removed
+ */
 export function getReadonlyContext() {
   if (!readonlyContext) log.warn(`getReadonlyContext() cannot be called during load time.`)
   return readonlyContext
