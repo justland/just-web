@@ -3,7 +3,7 @@ import { KeyBindingContribution, KeyBindingContributionRegistry } from '@just-we
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
 import { log } from './log'
-import { isMacOS } from './os'
+import { isMac } from './os'
 
 export namespace startKeyBindings {
   export interface Options {
@@ -25,7 +25,7 @@ export function startKeyBindings(options: startKeyBindings.Options) {
 
   keyBindings.list().forEach(keybinding => bindKey(commandRegistry, keybinding))
   keyBindings.onChange((value) => {
-    // TODO: with `immer` patch support we can only update the delta
+    // TODO: use `immer` patch support to only update the delta
     Mousetrap.reset()
     keys = record()
     forEachKey(value, name => bindKey(commandRegistry, value[name]))
@@ -46,6 +46,6 @@ function bindKey(commandRegistry: CommandRegistry, keyBinding: KeyBindingContrib
 }
 
 function getKey(keyBinding: KeyBindingContribution) {
-  if (isMacOS()) return keyBinding.mac ?? keyBinding.key
+  if (isMac()) return keyBinding.mac ?? keyBinding.key
   return keyBinding.key
 }

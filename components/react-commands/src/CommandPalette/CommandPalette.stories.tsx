@@ -87,7 +87,7 @@ export const OverrideMacCommandInMac = () => {
   const context = create()
   context.platform = {
     ...context.platform,
-    isMacOS: () => true
+    isMac: () => true
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
   activate(context)
@@ -102,7 +102,7 @@ export const OverrideMacCommandInWindow = () => {
   const context = create()
   context.platform = {
     ...context.platform,
-    isMacOS: () => false
+    isMac: () => false
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
   activate(context)
