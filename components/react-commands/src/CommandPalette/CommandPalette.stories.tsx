@@ -1,4 +1,4 @@
-import { Context, create } from '@just-web/contexts'
+import { Context, createContext } from '@just-web/contexts'
 import { ComponentStory } from '@storybook/react'
 import Mousetrap from 'mousetrap'
 import { activate } from '../module'
@@ -52,7 +52,7 @@ const Story: ComponentStory<typeof CommandPalette> = ({ ...args }) => {
 }
 
 export const NoCommand = () => {
-  const context = create()
+  const context = createContext()
   activate(context)
   return <Story />
 }
@@ -62,7 +62,7 @@ NoCommand.play = async () => {
 }
 
 export const OneCommand = () => {
-  const context = create()
+  const context = createContext()
   addCommand(context, simpleCmd)
   activate(context)
   return <Story />
@@ -73,7 +73,7 @@ OneCommand.play = async () => {
 }
 
 export const WithKey = () => {
-  const context = create()
+  const context = createContext()
   addCommand(context, keyedCmd)
   activate(context)
   return <Story />
@@ -84,7 +84,7 @@ WithKey.play = async () => {
 }
 
 export const OverrideMacCommandInMac = () => {
-  const context = create()
+  const context = createContext()
   context.platform = {
     ...context.platform,
     isMac: () => true
@@ -99,7 +99,7 @@ OverrideMacCommandInMac.play = async () => {
 }
 
 export const OverrideMacCommandInWindow = () => {
-  const context = create()
+  const context = createContext()
   context.platform = {
     ...context.platform,
     isMac: () => false

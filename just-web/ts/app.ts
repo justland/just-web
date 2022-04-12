@@ -1,5 +1,5 @@
 import '@just-web/commands'
-import { create } from '@just-web/contexts'
+import { createContext } from '@just-web/contexts'
 import '@just-web/contributions'
 import * as platformModule from '@just-web/platform'
 import * as pluginsModule from '@just-web/plugins'
@@ -10,7 +10,7 @@ import { required } from 'type-plus'
 import { log } from './log'
 
 export namespace createApp {
-  export interface Options extends create.Options {
+  export interface Options extends createContext.Options {
     log?: Partial<ConfigOptions>
   }
 }
@@ -26,7 +26,7 @@ export namespace start {
 
 export function createApp(options?: createApp.Options) {
   config(options?.log)
-  const context = create(options)
+  const context = createContext(options)
 
   return {
     ...context,
