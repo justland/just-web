@@ -1,4 +1,4 @@
 
 export * from './commandRegistry'
-export * from './module'
+export * from './context'
 export type { Command } from './types'

@@ -8,7 +8,7 @@ import { log } from './log'
 export type { Adder, OnStateChange, ReadonlyRegistry, ReadonlyStore, Registry, ResetState, SetState, StateChangeHandler, Store, WithAdder } from '@just-web/states'
 
 export interface Context {
-  commands: commandsModule.Module,
+  commands: commandsModule.CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
   platform: platformModule.Module,
@@ -16,7 +16,7 @@ export interface Context {
 }
 
 export interface ReadonlyContext {
-  commands: commandsModule.ReadonlyModule,
+  commands: commandsModule.ReadonlyCommandsContext,
   contributions: ReadonlyContributionsContext,
   errors: ErrorsContext,
   platform: platformModule.ReadonlyModule,
@@ -26,7 +26,7 @@ export interface ReadonlyContext {
 export namespace create {
   export interface Options {
     contributions: ContributionsContextOptions,
-    commands: commandsModule.ModuleOptions,
+    commands: commandsModule.CommandsContextOptions,
     errors: ErrorsContextOptions
   }
 }
@@ -36,7 +36,7 @@ let readonlyContext: ReadonlyContext
 export function create(options?: create.Options): Context {
   log.trace('createContext()')
   const contributions = createContributionsContext(options?.contributions)
-  const commands = commandsModule.create({
+  const commands = commandsModule.createCommandsContext({
     ...options?.commands,
     contributions
   })
@@ -56,7 +56,7 @@ export function create(options?: create.Options): Context {
 
 function toReadonly(context: Context): ReadonlyContext {
   return {
-    commands: commandsModule.toReadonly(context.commands),
+    commands: commandsModule.toReadonlyCommandsContext(context.commands),
     contributions: toReadonlyContributionsContext(context.contributions),
     errors: context.errors,
     platform: platformModule.toReadonly(context.platform),
