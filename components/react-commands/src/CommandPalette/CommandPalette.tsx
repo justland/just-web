@@ -15,7 +15,7 @@ export interface CommandPaletteProps {
 }
 
 function getCommands(ctx: ReadonlyContext) {
-  const m = ctx.platform.isMacOS()
+  const m = ctx.platform.isMac()
   const cmds = ctx.contributions.commands.get()
   const kbs = ctx.contributions.keyBindings.get()
   return Object.values(cmds)

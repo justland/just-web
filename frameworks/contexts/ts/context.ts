@@ -11,7 +11,7 @@ export interface Context {
   commands: commandsModule.CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
-  platform: platformModule.Module,
+  platform: platformModule.PlatformContext,
   states: typeof statesModule
 }
 
@@ -19,7 +19,7 @@ export interface ReadonlyContext {
   commands: commandsModule.ReadonlyCommandsContext,
   contributions: ReadonlyContributionsContext,
   errors: ErrorsContext,
-  platform: platformModule.ReadonlyModule,
+  platform: platformModule.ReadonlyPlatformContext,
   states: Context['states']
 }
 
@@ -45,7 +45,7 @@ export function create(options?: create.Options): Context {
     commands,
     contributions,
     errors: createErrorsContext(options?.errors),
-    platform: platformModule.create({ contributions, commands }),
+    platform: platformModule.createContext(),
     states: statesModule
   }
 
@@ -59,7 +59,7 @@ function toReadonly(context: Context): ReadonlyContext {
     commands: commandsModule.toReadonlyCommandsContext(context.commands),
     contributions: toReadonlyContributionsContext(context.contributions),
     errors: context.errors,
-    platform: platformModule.toReadonly(context.platform),
+    platform: platformModule.toReadonlyContext(context.platform),
     states: context.states
   }
 }

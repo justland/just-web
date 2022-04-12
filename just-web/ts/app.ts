@@ -1,7 +1,7 @@
 import '@just-web/commands'
 import { create } from '@just-web/contexts'
 import '@just-web/contributions'
-import '@just-web/platform'
+import * as platformModule from '@just-web/platform'
 import * as pluginsModule from '@just-web/plugins'
 import { navigate, registerRoute, validateRoutes } from '@just-web/routes'
 import '@just-web/states'
@@ -37,7 +37,7 @@ export function createApp(options?: createApp.Options) {
 
       log.notice('application starts')
       await pluginsModule.start()
-
+      await platformModule.start(context)
       // TODO: validate app to make sure it has the minimum implementation,
       // such as handling `/` and `/error`
       if (!await validateRoutes()) return
