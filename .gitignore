@@ -69,3 +69,4 @@ common/autoinstallers/*/.npmrc
 
 # project specific
 just-func/*/dist
+.nowhere

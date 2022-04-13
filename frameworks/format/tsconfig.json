@@ -1,25 +1,7 @@
 {
+  "extends": "@just-web/repo-config/config/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "declarationMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "DOM",
-      "ES2020"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "newLine": "LF",
-    "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "outDir": "lib",
-    "removeComments": true,
-    "sourceMap": true,
-    "strict": true,
-    "stripInternal": true,
-    "target": "ES2020",
-    "useDefineForClassFields": true,
+    "outDir": "lib"
   },
   "include": [
     "ts",

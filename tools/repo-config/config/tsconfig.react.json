@@ -2,6 +2,7 @@
   "extends": "./tsconfig.browser.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false
