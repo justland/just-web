@@ -1,7 +1,11 @@
 {
+  "files": [],
   "references": [
     {
-      "path": "tools/repo-config"
+      "path": "just-func/play-react"
+    },
+    {
+      "path": "just-func/play-solid"
     }
   ]
 }

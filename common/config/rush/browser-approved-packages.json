@@ -71,10 +71,6 @@
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "just-web",
-      "allowedCategories": [ "libraries", "production" ]
-    },
-    {
       "name": "@just-web/commands",
       "allowedCategories": [ "libraries" ]
     },
@@ -112,7 +108,7 @@
     },
     {
       "name": "@just-web/repo-config",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
       "name": "@just-web/routes",
@@ -381,6 +377,10 @@
     {
       "name": "jest-watch-typeahead",
       "allowedCategories": [ "libraries", "production", "tools" ]
+    },
+    {
+      "name": "just-web",
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "mocha",

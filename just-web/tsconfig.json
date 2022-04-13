@@ -1,26 +1,40 @@
 {
+  "extends": "@just-web/repo-config/config/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "declarationMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "DOM",
-      "ES2020"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "newLine": "LF",
-    "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "outDir": "lib",
-    "removeComments": true,
-    "sourceMap": true,
-    "strict": true,
-    "stripInternal": true,
-    "target": "ES2020",
-    "useDefineForClassFields": true,
+    "outDir": "lib"
   },
+  "references": [
+    {
+      "path": "../frameworks/commands"
+    },
+    {
+      "path": "../frameworks/contexts"
+    },
+    {
+      "path": "../frameworks/contributions"
+    },
+    {
+      "path": "../frameworks/errors"
+    },
+    {
+      "path": "../frameworks/log"
+    },
+    {
+      "path": "../frameworks/platform"
+    },
+    {
+      "path": "../frameworks/plugins"
+    },
+    {
+      "path": "../frameworks/routes"
+    },
+    {
+      "path": "../frameworks/states"
+    },
+    {
+      "path": "../tools/testing"
+    }
+  ],
   "include": [
     "ts",
     "typings"
