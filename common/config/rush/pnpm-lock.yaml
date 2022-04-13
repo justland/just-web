@@ -730,6 +730,7 @@ importers:
     specifiers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
+      '@just-web/repo-config': workspace:*
       '@size-limit/preset-small-lib': ^7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
@@ -757,6 +758,7 @@ importers:
     devDependencies:
       '@babel/core': 7.17.8
       '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.8
+      '@just-web/repo-config': link:../../tools/repo-config
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.4.1
       '@typescript-eslint/eslint-plugin': 5.17.0_689ff565753ecf7c3328c07fad067df5
