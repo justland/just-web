@@ -20,6 +20,12 @@ npm install -g pnpm
 corepack enable
 ```
 
+If you already have `corepack` and the `pnpm` version is outdated:
+
+```sh
+corepack prepare pnpm@x.y.z --activate
+```
+
 ## Setup
 
 ```sh

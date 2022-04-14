@@ -22,7 +22,7 @@
     "@just-web/log": "workspace:*",
     "@just-web/platform": "workspace:*",
     "@just-web/states": "workspace:*",
-    "type-plus": "~4.7.0"
+    "type-plus": "~4.9.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

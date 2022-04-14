@@ -20,7 +20,7 @@
     "@just-web/log": "workspace:*",
     "@just-web/states": "workspace:*",
     "immer": "~9.0.12",
-    "type-plus": "~4.7.0"
+    "type-plus": "~4.9.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
