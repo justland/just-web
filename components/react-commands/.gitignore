@@ -25,3 +25,4 @@ yarn-error.log*
 # project specfiic
 lib
 storybook-static
+tsconfig.tsbuildinfo

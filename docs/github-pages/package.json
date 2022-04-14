@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "docusaurus build",
-    "clear": "docusaurus clear",
+    "clean": "docusaurus clear",
     "coverage": "echo no test",
     "depcheck": "echo no depcheck",
     "deploy": "docusaurus deploy",

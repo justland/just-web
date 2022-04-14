@@ -1,5 +1,5 @@
 {
-  "extends": "@just-web/repo-config/config/tsconfig.react.json",
+  "extends": "@just-web/repo-config/config/tsconfig.jsx.json",
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",

@@ -1,8 +1,6 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.settings.json",
   "compilerOptions": {
-    "composite": true,
-    "incremental": true,
     "lib": [
       "DOM",
       "ES2020"
