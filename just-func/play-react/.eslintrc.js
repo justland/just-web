@@ -1,24 +1,45 @@
+const path = require('path')
+
 module.exports = {
-  'env': {
-    'es6': true,
-    'jest': true
+  env: {
+    es6: true,
+    jest: true
   },
-  'extends': [
+  extends: [
     'react-app',
     'react-app/jest',
-    'plugin:storybook/recommended',
-    'plugin:harmony/ts-recommended',
+    'plugin:harmony/latest',
     'plugin:yml/standard',
   ],
-  'overrides': [
+  overrides: [
     {
-      'files': [
+      extends: [
+        'plugin:harmony/ts-recommended-type-check'
+      ],
+      files: [
+        '*.ts',
+        '*.tsx'
+      ],
+      parserOptions: {
+        project: path.resolve(__dirname, './tsconfig.json')
+      },
+      rules: {
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/require-await': 'off',
+      }
+    },
+    {
+      extends: [
+        'plugin:storybook/recommended'
+      ],
+      files: [
         '**/*.stories.*'
       ],
-      'rules': {
-        'import/no-anonymous-default-export': 'off'
+      rules: {
+        '@typescript-eslint/await-thenable': 'off',
+        'import/no-anonymous-default-export': 'off',
       }
     }
   ],
-  'root': true
-};
+  root: true
+}

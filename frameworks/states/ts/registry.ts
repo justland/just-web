@@ -33,11 +33,12 @@ export function createRegistry<
     },
     list(): T[] {
       const r = store.get()
-      return this.keys().map(k => (r as any)[k])
+      return this.keys().map(k => r[k])
     }
   }
 }
 
 export function toReadonlyRegistry<S extends Registry<any, any>>(registry: S): S extends Registry<infer K, infer T> ? ReadonlyRegistry<K, T> : never {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return pick(registry, 'get', 'onChange', 'keys', 'size', 'list') as any
 }

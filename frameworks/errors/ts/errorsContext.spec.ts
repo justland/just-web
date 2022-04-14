@@ -7,7 +7,7 @@ test('by default browser error prevent default is false', () => {
   registerOnErrorHandler.ctx = ctx
 
   createErrorsContext()
-  const a = ctx.window.onerror!('some error occurred')
+  const a = ctx.window.onerror!('some error occurred') as boolean
   expect(a).toBe(false)
 })
 
@@ -16,7 +16,7 @@ test('set preventDefault to true', () => {
   registerOnErrorHandler.ctx = ctx
 
   createErrorsContext({ preventDefault: true })
-  const a = ctx.window.onerror!('some error occurred')
+  const a = ctx.window.onerror!('some error occurred') as boolean
   expect(a).toBe(true)
 })
 

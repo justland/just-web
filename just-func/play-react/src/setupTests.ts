@@ -7,6 +7,7 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer'
 import '@testing-library/jest-dom'
 import ReactDOM from 'react-dom'
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 ReactDOM.createPortal = node => node as any
 // jest.mock('rc-util/lib/Portal')
 

@@ -31,5 +31,6 @@ export function createStore<T>(value: T): Store<T> {
 }
 
 export function toReadonlyStore<S extends Store<any>>(store: S): S extends Store<infer T> ? ReadonlyStore<T> : never {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return pick(store, 'get', 'onChange') as any
 }
