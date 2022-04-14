@@ -1,4 +1,4 @@
-import createApp from 'just-web'
+import createApp from '@just-web/app'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'

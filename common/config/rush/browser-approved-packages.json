@@ -71,6 +71,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@just-web/app",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@just-web/commands",
       "allowedCategories": [ "libraries" ]
     },
