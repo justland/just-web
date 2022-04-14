@@ -1,7 +1,7 @@
 import { ReadonlyContext } from '@just-web/contexts'
 import type { CommandContribution, KeyBindingContribution } from '@just-web/contributions'
 import { sentenceCase } from '@just-web/format'
-import { FC, useState } from 'react'
+import { useState, VFC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
 import { required } from 'type-plus'
@@ -31,14 +31,14 @@ function getCommands(ctx: ReadonlyContext) {
     })
 }
 
-const RenderCommand: FC<{ name: string, key?: string }> = command => (
+const RenderCommand: VFC<{ name: string, key?: string }> = command => (
   <div className={styles.suggestion}>
     <span className={styles.name}>{command.name}</span>
     {command.key && <span className={styles.key}>{command.key}</span>}
   </div>
 )
 
-const CommandPalette: FC<CommandPaletteProps> = (props) => {
+const CommandPalette: VFC<CommandPaletteProps> = (props) => {
   const store = getStore()
   const ctx = required(store.get().context, props.ctx)
   const commands = getCommands(ctx)
