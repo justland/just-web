@@ -1,5 +1,5 @@
 {
-  "name": "just-web",
+  "name": "@just-web/app",
   "version": "0.1.0",
   "description": "Just a web application framework",
   "main": "lib/index.js",
