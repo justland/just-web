@@ -48,3 +48,4 @@ docs
 esm
 lib*
 out*
+tsconfig.tsbuildinfo

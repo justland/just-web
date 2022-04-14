@@ -1,7 +1,8 @@
 {
-  "extends": "@just-web/repo-config/config/tsconfig.json",
+  "extends": "@just-web/repo-config/config/tsconfig.settings.json",
   "compilerOptions": {
-    "outDir": "lib"
+    "outDir": "lib",
+    "rootDir": "ts"
   },
   "include": [
     "ts",

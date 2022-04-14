@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.browser.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noFallthroughCasesInSwitch": true,
+    // due to the quality of types on UI components,
+    // and the limitation on higher-order generics,
+    // turn off `noImplicitAny` to make it easy to develop.
+    "noImplicitAny": false
+  }
+}

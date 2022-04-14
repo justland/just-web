@@ -10,6 +10,7 @@
   "scripts": {
     "build": "tsc -p ./",
     "build:watch": "tsc -p ./",
+    "clean": "echo no clean job",
     "depcheck": "echo no depcheck yet",
     "lint": "eslint ts --ext ts",
     "pretest": "npm run compile && npm run lint",
