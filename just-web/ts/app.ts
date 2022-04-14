@@ -36,8 +36,8 @@ export function createApp(options?: createApp.Options) {
       const { routes } = required(defaultCtx, ctx)
 
       log.notice('application starts')
-      await pluginsModule.start()
-      await platformModule.start(context)
+      await pluginsModule.start().loadingPlugins
+      platformModule.start(context)
       // TODO: validate app to make sure it has the minimum implementation,
       // such as handling `/` and `/error`
       if (!await validateRoutes()) return

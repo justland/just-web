@@ -27,9 +27,5 @@
   "include": [
     "ts",
     "typings"
-  ],
-  "exclude": [
-    "**/*.spec.ts",
-    "**/*.stories.tsx"
   ]
 }

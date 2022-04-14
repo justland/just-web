@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals'
 
 const app = createApp()
 
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.routes.registerRoute('/', async () => {
   const reactCommandsModule = await import('@just-web/react-commands')
   app.addPlugin(reactCommandsModule)
@@ -31,4 +32,6 @@ app.routes.registerRoute('/error', () => {
   )
 })
 
-app.start()
+void (async () => {
+  await app.start()
+})()

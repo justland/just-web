@@ -1,23 +1,28 @@
+const path = require('path')
+
 module.exports = {
-  'env': {
-    'node': true,
-    'es6': true,
-    'jest': true
+  env: {
+    node: true,
+    es6: true,
+    jest: true
   },
-  'extends': [
+  extends: [
     'plugin:harmony/latest',
     'plugin:yml/standard'
   ],
-  'overrides': [
+  overrides: [
     {
-      'extends': [
-        'plugin:harmony/ts-recommended'
+      extends: [
+        'plugin:harmony/ts-recommended-type-check'
       ],
-      'files': [
+      files: [
         '*.ts',
         '*.tsx'
-      ]
+      ],
+      parserOptions: {
+        project: path.resolve(__dirname, './tsconfig.json')
+      }
     }
   ],
-  'root': true
+  root: true
 }
