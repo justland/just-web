@@ -27,12 +27,18 @@ export function createState<T>(init: T):
     const old = value
     value = Object.freeze(newValue)
     handlers.forEach(h => h(value, old))
-    return
   }
+
+  function onChange(handler: StateChangeHandler<T>) {
+    handlers.push(handler)
+  }
+
+  function reset() { set(init) }
+
   return [
     value,
     set,
-    (handler: StateChangeHandler<T>) => { handlers.push(handler) },
-    () => set(init)
+    onChange,
+    reset
   ]
 }
