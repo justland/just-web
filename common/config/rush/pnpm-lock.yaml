@@ -1247,6 +1247,8 @@ importers:
       eslint-config-prettier: ~8.5.0
       glob: ^7.2.0
       mocha: ^9.2.2
+      npm-run-all: ^4.1.5
+      rimraf: ~3.0.2
       typescript: ^4.6.3
     devDependencies:
       '@types/glob': 7.2.0
@@ -1260,6 +1262,8 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.12.0
       glob: 7.2.0
       mocha: 9.2.2
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
       typescript: 4.6.3
 
 packages:

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "vite build",
     "build:watch": "vite build",
-    "clean": "rimraf lib",
+    "clean": "rimraf lib *.tsbuildinfo",
     "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",
     "dev": "vite",

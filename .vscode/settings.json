@@ -12,6 +12,7 @@
     "pnpm",
     "pnpmfile",
     "rushx",
+    "tsbuildinfo",
     "TTFB",
     "unshift",
     "vite"

@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf lib",
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
     "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",

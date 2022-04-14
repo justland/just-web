@@ -1,5 +1,4 @@
 {
-  "extends": "@just-web/repo-config/config/tsconfig.jsx.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "lib": [
@@ -8,24 +7,26 @@
       "esnext"
     ],
     "outDir": "lib",
+    "rootDir": "src",
     "skipLibCheck": true,
     "types": [
       "@types/jest"
     ]
   },
+  "extends": "@just-web/repo-config/config/tsconfig.jsx.json",
   "include": [
     "src",
     "typings"
   ],
   "references": [
     {
-      "path": "../../just-web"
+      "path": "../../just-web/tsconfig.build.json"
     },
     {
-      "path": "../../frameworks/contexts"
+      "path": "../../frameworks/contexts/tsconfig.build.json"
     },
     {
-      "path": "../../components/react-commands"
+      "path": "../../components/react-commands/tsconfig.build.json"
     }
   ]
 }
