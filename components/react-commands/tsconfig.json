@@ -6,13 +6,13 @@
   },
   "references": [
     {
-      "path": "../../frameworks/contexts"
+      "path": "../../frameworks/contexts/tsconfig.build.json"
     },
     {
-      "path": "../../frameworks/format"
+      "path": "../../frameworks/format/tsconfig.build.json"
     },
     {
-      "path": "../../frameworks/contributions"
+      "path": "../../frameworks/contributions/tsconfig.build.json"
     }
   ],
   "include": [

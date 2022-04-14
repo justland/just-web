@@ -7,9 +7,9 @@
   "scripts": {
     "build": "run-s build:ts copy:css",
     "build:storybook": "build-storybook",
-    "build:ts": "tsc",
+    "build:ts": "tsc -p tsconfig.build.json",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
-    "clean": "rimraf lib",
+    "clean": "rimraf lib *.tsbuildinfo",
     "copy:css": "copyfiles -u 1 src/**/*.css lib/",
     "coverage": "react-app-rewired test --watchAll=false --coverage 2>&1",
     "depcheck": "depcheck",

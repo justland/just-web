@@ -1,0 +1,18 @@
+{
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.stories.tsx"
+  ],
+  "extends": "./tsconfig.json",
+  "references": [
+    {
+      "path": "../../just-web/tsconfig.build.json"
+    },
+    {
+      "path": "../../frameworks/contexts/tsconfig.build.json"
+    },
+    {
+      "path": "../../components/react-commands/tsconfig.build.json"
+    }
+  ]
+}

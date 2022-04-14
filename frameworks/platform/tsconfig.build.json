@@ -1,12 +1,8 @@
 {
-  "extends": "@just-web/repo-config/config/tsconfig.settings.json",
-  "compilerOptions": {
-    "outDir": "lib",
-    "rootDir": "ts"
-  },
+  "extends": "./tsconfig.json",
   "references": [
     {
-      "path": "../states/tsconfig.build.json"
+      "path": "../commands/tsconfig.build.json"
     },
     {
       "path": "../log/tsconfig.build.json"
@@ -18,8 +14,8 @@
       "path": "../../tools/testing/tsconfig.build.json"
     }
   ],
-  "include": [
-    "ts",
-    "typings"
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.stories.tsx"
   ]
 }

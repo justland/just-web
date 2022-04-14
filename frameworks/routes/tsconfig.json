@@ -6,13 +6,13 @@
   },
   "references": [
     {
-      "path": "../states"
+      "path": "../states/tsconfig.build.json"
     },
     {
-      "path": "../log"
+      "path": "../log/tsconfig.build.json"
     },
     {
-      "path": "../../tools/testing"
+      "path": "../../tools/testing/tsconfig.build.json"
     }
   ],
   "include": [
