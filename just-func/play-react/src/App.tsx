@@ -1,6 +1,17 @@
 import logo from './logo.svg'
 import './App.css'
-import { CommandPalette } from '@just-web/react-commands'
+import { lazy, Suspense } from 'react'
+import { getStore } from './store'
+
+const CommandPalette = lazy(async () => {
+  console.info('loading')
+  const reactCommandsModule = await import('@just-web/react-commands')
+  const s = getStore()
+  await s.app.addPlugin(reactCommandsModule)
+  return {
+    default: reactCommandsModule.CommandPalette
+  }
+})
 
 function App() {
   return (<>
@@ -20,7 +31,9 @@ function App() {
         </a>
       </header>
     </div>
-    <CommandPalette />
+    <Suspense fallback={<div>Loading...</div>}>
+      <CommandPalette />
+    </Suspense>
   </>
   )
 }

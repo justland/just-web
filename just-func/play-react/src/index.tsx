@@ -4,14 +4,13 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
+import { setStore } from './store'
 
 const app = createApp()
+setStore({ app })
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-app.routes.registerRoute('/', async () => {
-  const reactCommandsModule = await import('@just-web/react-commands')
-  app.addPlugin(reactCommandsModule)
-
+app.routes.registerRoute('/', () => {
   ReactDOM.render(
     <React.StrictMode>
       <App />

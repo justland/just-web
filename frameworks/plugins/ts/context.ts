@@ -6,11 +6,10 @@ export interface PluginModule {
 }
 
 export interface PluginsContext {
-  addPlugin(plugin: PluginModule): void
+  addPlugin(plugin: PluginModule): Promise<void>
 }
 
 export interface ReadonlyPluginsContext {
-
 }
 
 export interface PluginsContextOptions {
@@ -28,7 +27,9 @@ export function createPluginsContext(options: PluginsContextOptions): PluginsCon
   return {
     addPlugin(plugin: PluginModule) {
       plugins.add(plugin)
-      loading.push(plugin.activate(options.context))
+      const p = Promise.resolve(plugin.activate(options.context)).then(() => { })
+      loading.push(p)
+      return p
     },
   }
 }
