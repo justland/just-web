@@ -1,8 +1,9 @@
 import '@just-web/commands'
-import { createContext } from '@just-web/contexts'
+import { Context, createContext } from '@just-web/contexts'
 import '@just-web/contributions'
 import * as platformModule from '@just-web/platform'
 import * as pluginsModule from '@just-web/plugins'
+import { PluginsContext } from '@just-web/plugins'
 import { navigate, registerRoute, validateRoutes } from '@just-web/routes'
 import '@just-web/states'
 import { config, ConfigOptions } from 'standard-log'
@@ -24,6 +25,8 @@ export namespace start {
   }
 }
 
+export interface AppContext extends Context, PluginsContext { }
+
 export function createApp(options?: createApp.Options) {
   config(options?.log)
   const context = createContext(options)
@@ -32,7 +35,7 @@ export function createApp(options?: createApp.Options) {
     ...context,
     ...pluginsModule.createPluginsContext({ context }),
     routes: { registerRoute },
-    async start(options?: start.Options, ctx?: start.Ctx) {
+    async start(_options?: start.Options, ctx?: start.Ctx) {
       const { routes } = required(defaultCtx, ctx)
 
       log.notice('application starts')
