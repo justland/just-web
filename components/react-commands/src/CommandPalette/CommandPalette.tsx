@@ -24,7 +24,7 @@ function getCommands(ctx: ReadonlyContext) {
       const r = {
         ...c,
         name: c.name ?? sentenceCase(c.command.split('.', 2)[1]),
-        command: () => ctx.commands.registry.invoke(c.command)
+        command: () => ctx.commands.invoke(c.command)
       }
       const k = kbs[c.command]
       return k ? { ...r, key: m ? k.mac ?? k.key : k.key } : r

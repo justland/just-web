@@ -3,7 +3,7 @@ import { createStore } from './store'
 
 export function activate(context: Context) {
   const store = createStore(context)
-  context.commands.registry.register(
+  context.commands.register(
     'just-web.showCommandPalette',
     () => store.update(s => { s.openCommandPalette = true })
   )
