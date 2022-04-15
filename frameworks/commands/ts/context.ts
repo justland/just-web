@@ -1,11 +1,9 @@
 import { CommandRegistry, commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
 
-export interface CommandsContext {
-  registry: CommandRegistry
+export interface CommandsContext extends CommandRegistry {
 }
 
-export interface ReadonlyCommandsContext {
-  registry: ReadonlyCommandRegistry
+export interface ReadonlyCommandsContext extends ReadonlyCommandRegistry {
 }
 
 export interface CommandsContextOptions extends commandRegistry.Options { }
@@ -20,11 +18,12 @@ export function createCommandsContext(options: CommandsContextOptions): Commands
     key: 'ctrl+p',
     mac: 'cmd+p'
   })
-  return { registry: commandRegistry(options) }
+  return { ...commandRegistry(options) }
 }
 
 export function toReadonlyCommandsContext(module: CommandsContext): ReadonlyCommandsContext {
   return {
-    registry: toReadonlyCommandRegistry(module.registry)
+    ...module,
+    ...toReadonlyCommandRegistry(module)
   }
 }

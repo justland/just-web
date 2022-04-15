@@ -1,4 +1,4 @@
-import { CommandRegistry } from '@just-web/commands'
+import { CommandRegistry, CommandsContext } from '@just-web/commands'
 import { KeyBindingContribution, KeyBindingContributionRegistry } from '@just-web/contributions'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
@@ -7,9 +7,7 @@ import { isMac } from './os'
 
 export namespace startKeyBindings {
   export interface Options {
-    commands: {
-      registry: CommandRegistry
-    },
+    commands: CommandsContext,
     contributions: {
       keyBindings: KeyBindingContributionRegistry
     }
@@ -18,17 +16,17 @@ export namespace startKeyBindings {
 
 let keys: Record<string, boolean>
 export function startKeyBindings(options: startKeyBindings.Options) {
-  const commandRegistry = options.commands.registry
+  const commandContext = options.commands
   const keyBindings = options.contributions.keyBindings
 
   keys = record()
 
-  keyBindings.list().forEach(keybinding => bindKey(commandRegistry, keybinding))
+  keyBindings.list().forEach(keybinding => bindKey(commandContext, keybinding))
   keyBindings.onChange((value) => {
     // TODO: use `immer` patch support to only update the delta
     Mousetrap.reset()
     keys = record()
-    forEachKey(value, name => bindKey(commandRegistry, value[name]))
+    forEachKey(value, name => bindKey(commandContext, value[name]))
   })
 }
 
