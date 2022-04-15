@@ -1,0 +1,39 @@
+{
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.stories.tsx"
+  ],
+  "extends": "./tsconfig.json",
+  "references": [
+    {
+      "path": "../commands/tsconfig.build.json"
+    },
+    {
+      "path": "../contexts/tsconfig.build.json"
+    },
+    {
+      "path": "../contributions/tsconfig.build.json"
+    },
+    {
+      "path": "../errors/tsconfig.build.json"
+    },
+    {
+      "path": "../log/tsconfig.build.json"
+    },
+    {
+      "path": "../platform/tsconfig.build.json"
+    },
+    {
+      "path": "../plugins/tsconfig.build.json"
+    },
+    {
+      "path": "../routes/tsconfig.build.json"
+    },
+    {
+      "path": "../states/tsconfig.build.json"
+    },
+    {
+      "path": "../../tools/testing/tsconfig.build.json"
+    }
+  ]
+}

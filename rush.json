@@ -48,7 +48,7 @@
     },
     {
       "packageName": "@just-web/app",
-      "projectFolder": "just-web",
+      "projectFolder": "frameworks/app",
       "reviewCategory": "libraries"
     },
     {
