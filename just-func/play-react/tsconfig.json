@@ -20,7 +20,7 @@
   ],
   "references": [
     {
-      "path": "../../just-web/tsconfig.build.json"
+      "path": "../../frameworks/app/tsconfig.build.json"
     },
     {
       "path": "../../frameworks/contexts/tsconfig.build.json"
