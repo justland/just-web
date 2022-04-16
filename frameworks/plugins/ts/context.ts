@@ -1,12 +1,14 @@
 import { Context } from '@just-web/contexts'
 import { Adder, createStore, push, Store, withAdder } from '@just-web/states'
+import { forEachKey } from 'type-plus'
+import { JustWebError } from '../../contexts/node_modules/@just-web/errors/ts'
 
-export interface PluginModule {
-  activate(context: Context): void | Promise<void>
+export interface PluginModule<M> {
+  activate(context: Context): Promise<M>
 }
 
-export interface PluginsContext {
-  addPlugin(plugin: PluginModule): Promise<void>
+export interface PluginsContext<A> {
+  addPlugin<M>(this: A, plugin: PluginModule<M>): Promise<A & M>
 }
 
 export interface ReadonlyPluginsContext {
@@ -16,18 +18,27 @@ export interface PluginsContextOptions {
   context: Context
 }
 
-let plugins: Store<PluginModule[]> & {
-  add: Adder<PluginModule>
+let plugins: Store<PluginModule<any>[]> & {
+  add: Adder<PluginModule<any>>
 }
 
-const loading: Array<Promise<void> | void> = []
+const loading: Array<Promise<any>> = []
 
-export function createPluginsContext(options: PluginsContextOptions): PluginsContext {
-  plugins = withAdder(createStore<PluginModule[]>([]), push)
+export function createPluginsContext<A>(options: PluginsContextOptions): PluginsContext<A> {
+  plugins = withAdder(createStore<PluginModule<any>[]>([]), push)
   return {
-    addPlugin(plugin: PluginModule) {
+    async addPlugin(plugin) {
       plugins.add(plugin)
-      const p = Promise.resolve(plugin.activate(options.context)).then(() => { })
+      const p = plugin.activate(options.context)
+        .then(m => {
+          const keys = Object.keys(this)
+          forEachKey(m, k => {
+            if (typeof k === 'string' && keys.includes(k)) {
+              throw new JustWebError(`unable to load plugin: it is overriding an existing property '${k}'`)
+            }
+          })
+          return { ...this, ...m }
+        })
       loading.push(p)
       return p
     },

@@ -19,7 +19,7 @@ interface Contribution {
 function addCommand(ctx: Context, ...inputs: Array<Contribution>) {
   inputs.forEach(entry => {
     ctx.contributions.commands.add({ command: entry.command, description: entry.name })
-    ctx.commands.registry.register(entry.command, () => { alert(entry.command) })
+    ctx.commands.register(entry.command, () => { alert(entry.command) })
     if (entry.key || entry.mac) {
       ctx.contributions.keyBindings.add(entry)
     }
@@ -51,9 +51,9 @@ const Story: ComponentStory<typeof CommandPalette> = ({ ...args }) => {
   </>
 }
 
-export const NoCommand = () => {
+export const NoCommand = async () => {
   const context = createContext()
-  activate(context)
+  await activate(context)
   return <Story />
 }
 
@@ -61,10 +61,10 @@ NoCommand.play = async () => {
   Mousetrap.trigger('ctrl+p')
 }
 
-export const OneCommand = () => {
+export const OneCommand = async () => {
   const context = createContext()
   addCommand(context, simpleCmd)
-  activate(context)
+  await activate(context)
   return <Story />
 }
 
@@ -72,10 +72,10 @@ OneCommand.play = async () => {
   Mousetrap.trigger('ctrl+p')
 }
 
-export const WithKey = () => {
+export const WithKey = async () => {
   const context = createContext()
   addCommand(context, keyedCmd)
-  activate(context)
+  await activate(context)
   return <Story />
 }
 
@@ -83,14 +83,14 @@ WithKey.play = async () => {
   Mousetrap.trigger('ctrl+p')
 }
 
-export const OverrideMacCommandInMac = () => {
+export const OverrideMacCommandInMac = async () => {
   const context = createContext()
   context.platform = {
     ...context.platform,
     isMac: () => true
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  activate(context)
+  await activate(context)
   return <Story />
 }
 
@@ -98,14 +98,14 @@ OverrideMacCommandInMac.play = async () => {
   Mousetrap.trigger('ctrl+p')
 }
 
-export const OverrideMacCommandInWindow = () => {
+export const OverrideMacCommandInWindow = async () => {
   const context = createContext()
   context.platform = {
     ...context.platform,
     isMac: () => false
   }
   addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  activate(context)
+  await activate(context)
   return <Story />
 }
 

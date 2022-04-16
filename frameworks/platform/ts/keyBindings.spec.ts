@@ -13,13 +13,12 @@ function stubOptions(...stubCommands: StubCommand[]) {
     commands: commandContributionRegistry(),
     keyBindings: keyBindingRegistry()
   }
-  const commands = {
-    registry: commandRegistry({ contributions })
-  }
+  const commands = commandRegistry({ contributions })
+
   stubCommands.forEach(stubCommand => {
     contributions.commands.add(stubCommand)
     contributions.keyBindings.add(stubCommand)
-    commands.registry.register(
+    commands.register(
       stubCommand.command,
       () => stubCommand.handler(stubCommand))
   })

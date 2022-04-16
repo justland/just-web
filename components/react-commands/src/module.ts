@@ -1,7 +1,7 @@
 import { Context, createStore } from '@just-web/contexts'
 import { setStore, State } from './store'
 
-export function activate(context: Context) {
+export async function activate(context: Context) {
   const store = setStore(createStore<State>({
     context,
     openCommandPalette: false

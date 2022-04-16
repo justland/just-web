@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "react-app-rewired build",
+    "build:watch": "echo no build:watch",
     "build:storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
     "clean": "rimraf lib *.tsbuildinfo",
@@ -39,6 +40,7 @@
     "@just-web/app": "workspace:*",
     "@just-web/contexts": "workspace:*",
     "@just-web/react-commands": "workspace:*",
+    "@just-web/routes": "workspace:*",
     "react": "~17.0.2",
     "react-dom": "~17.0.2",
     "web-vitals": "^2.1.4"

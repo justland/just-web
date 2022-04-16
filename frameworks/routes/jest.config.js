@@ -8,7 +8,7 @@ module.exports = {
   roots: [
     '<rootDir>/ts',
   ],
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   testMatch: ['**/?(*.)+(spec|test|integrate|accept|system|unit).[jt]s?(x)'],
   watchPlugins: [
     'jest-watch-suspend',

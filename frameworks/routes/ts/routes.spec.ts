@@ -1,38 +1,49 @@
-import { configForTest, MemoryLogReporter } from '@just-web/log'
+import { configForTest, createContext, MemoryLogReporter } from '@just-web/contexts'
 import { assertLog } from '@just-web/testing'
-import { registerRoute } from '.'
-import { clearRoutes, hasRoute, navigate, validateRoutes } from './routes'
+import { activate } from './module'
+import { clearRoutes, hasRoute, validateRoutes } from './routes'
 
 let reporter: MemoryLogReporter
 beforeEach(() => reporter = configForTest().reporter)
 
+function activateModule() {
+  const context = createContext()
+  return activate(context)
+}
+
+
 describe('registerRoute()', () => {
-  test('register a route', () => {
-    registerRoute('/', () => { /* for SPA, here is where we render the app */ })
+  test('register a route', async () => {
+    const { routes: { register } } = await activateModule()
+    register('/', () => { /* for SPA, here is where we render the app */ })
   })
 
-  test('log an error if registering an already registered route', () => {
-    registerRoute('/debug', () => { })
-    registerRoute('/debug', () => { })
+  test('log an error if registering an already registered route', async () => {
+    const { routes: { register } } = await activateModule()
+    register('/debug', () => { })
+    register('/debug', () => { })
     assertLog(reporter, `(ERROR) Registering an already registered route: '/debug'`)
   })
 
-  test('returns an unregister function', () => {
-    const unregister = registerRoute('/abc', () => { })
+  test('returns an unregister function', async () => {
+    const { routes: { register } } = await activateModule()
+    const unregister = register('/abc', () => { })
     unregister()
     expect(hasRoute('/abc')).toBe(false)
   })
 })
 
 describe('navigate()', () => {
-  test('navigate to an unknown route logs an error', () => {
+  test('navigate to an unknown route logs an error', async () => {
+    const { routes: { navigate } } = await activateModule()
     navigate('/not-exist')
     assertLog(reporter, `(ERROR) navigate target not found: '/not-exist'`)
   })
 
-  test('navigate route', () => {
+  test('navigate route', async () => {
+    const { routes: { register, navigate } } = await activateModule()
     let called = false
-    registerRoute('/route1', () => called = true)
+    register('/route1', () => called = true)
     navigate('/route1')
     expect(called).toBe(true)
   })
