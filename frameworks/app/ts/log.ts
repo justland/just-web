@@ -1,3 +1,3 @@
 import { getLogger } from '@just-web/log'
 
-export const log = getLogger('just-web')
+export const log = getLogger('@just-web/app')
