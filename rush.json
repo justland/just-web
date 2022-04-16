@@ -103,7 +103,7 @@
     },
     {
       "packageName": "@just-web/routes",
-      "projectFolder": "frameworks/routes",
+      "projectFolder": "plugins/routes",
       "reviewCategory": "libraries"
     },
     {

@@ -27,7 +27,7 @@
       "path": "../plugins/tsconfig.build.json"
     },
     {
-      "path": "../routes/tsconfig.build.json"
+      "path": "../../plugins/routes/tsconfig.build.json"
     },
     {
       "path": "../states/tsconfig.build.json"
