@@ -467,6 +467,10 @@
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
+      "name": "satisfier",
+      "allowedCategories": [ "tools" ]
+    },
+    {
       "name": "sentence-case",
       "allowedCategories": [ "libraries" ]
     },
