@@ -38,7 +38,6 @@
   },
   "dependencies": {
     "@just-web/app": "workspace:*",
-    "@just-web/contexts": "workspace:*",
     "@just-web/react-commands": "workspace:*",
     "@just-web/routes": "workspace:*",
     "react": "~17.0.2",

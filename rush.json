@@ -97,11 +97,6 @@
       "reviewCategory": "libraries"
     },
     {
-      "packageName": "@just-web/plugins",
-      "projectFolder": "frameworks/plugins",
-      "reviewCategory": "libraries"
-    },
-    {
       "packageName": "@just-web/routes",
       "projectFolder": "plugins/routes",
       "reviewCategory": "libraries"
