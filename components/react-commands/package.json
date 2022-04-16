@@ -106,7 +106,6 @@
     "eslint-plugin-storybook": "^0.5.7",
     "eslint-plugin-yml": "~0.14.0",
     "identity-obj-proxy": "~3.0.0",
-    "immer": "~9.0.12",
     "jest": "^27.5.1",
     "jest-circus": "~27.5.1",
     "jest-environment-node": "~27.5.1",

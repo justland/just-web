@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@just-web/contexts": "workspace:*",
-    "@just-web/errors": "workspace:*",
     "@just-web/states": "workspace:*",
     "type-plus": "~4.9.0"
   },

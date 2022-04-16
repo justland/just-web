@@ -31,9 +31,6 @@
       "path": "../plugins/tsconfig.build.json"
     },
     {
-      "path": "../routes/tsconfig.build.json"
-    },
-    {
       "path": "../states/tsconfig.build.json"
     },
     {
