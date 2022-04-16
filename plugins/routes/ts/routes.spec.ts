@@ -1,5 +1,5 @@
 import { configForTest, createContext, MemoryLogReporter } from '@just-web/app'
-import { assertLog } from '@just-web/testing'
+import { logEqual } from '@just-web/testing'
 import { activate } from './module'
 import { clearRoutes, hasRoute, validateRoutes } from './routes'
 
@@ -22,7 +22,7 @@ describe('registerRoute()', () => {
     const { routes: { register } } = await activateModule()
     register('/debug', () => { })
     register('/debug', () => { })
-    assertLog(reporter, `(ERROR) Registering an already registered route: '/debug'`)
+    logEqual(reporter, `(ERROR) Registering an already registered route: '/debug'`)
   })
 
   test('returns an unregister function', async () => {
@@ -37,7 +37,7 @@ describe('navigate()', () => {
   test('navigate to an unknown route logs an error', async () => {
     const { routes: { navigate } } = await activateModule()
     navigate('/not-exist')
-    assertLog(reporter, `(ERROR) navigate target not found: '/not-exist'`)
+    logEqual(reporter, `(ERROR) navigate target not found: '/not-exist'`)
   })
 
   test('navigate route', async () => {
@@ -57,7 +57,7 @@ describe('validateRoutes()', () => {
     const a = await validateRoutes()
     expect(a).toBe(false)
 
-    assertLog(
+    logEqual(
       reporter,
       `(ERROR) route '/' is required`,
       `(ERROR) route '/error' is required`

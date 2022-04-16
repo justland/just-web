@@ -1,7 +1,7 @@
 import { commandRegistry } from '@just-web/commands'
 import { CommandContribution, commandContributionRegistry, KeyBindingContribution, keyBindingRegistry } from '@just-web/contributions'
 import { configForTest, MemoryLogReporter } from '@just-web/log'
-import { assertLog } from '@just-web/testing'
+import { logEqual } from '@just-web/testing'
 import mousetrap from 'mousetrap'
 import { startKeyBindings } from './keyBindings'
 
@@ -60,5 +60,5 @@ test('emit warning for duplicate key binding', () => {
   })
   startKeyBindings(options)
 
-  assertLog(reporter, '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j')
+  logEqual(reporter, '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j')
 })
