@@ -20,7 +20,6 @@
     "@just-web/contributions": "workspace:*",
     "@just-web/log": "workspace:*",
     "@just-web/states": "workspace:*",
-    "immer": "~9.0.12",
     "type-plus": "~4.9.0"
   },
   "devDependencies": {
