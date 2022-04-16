@@ -7,7 +7,6 @@ describe('createContext()', () => {
     expect(context.commands).toBeDefined()
     expect(context.contributions).toBeDefined()
     expect(context.platform).toBeDefined()
-    expect(context.states).toBeDefined()
   })
 })
 
@@ -29,6 +28,5 @@ describe('getReadonlyContext()', () => {
     expect(context.commands).toBeDefined()
     expect(context.contributions).toBeDefined()
     expect(context.platform).toBeDefined()
-    expect(context.states).toBeDefined()
   })
 })
