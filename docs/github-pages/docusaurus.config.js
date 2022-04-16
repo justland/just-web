@@ -60,9 +60,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'designs/intro',
+            docId: 'contribute/intro',
             position: 'left',
-            label: 'Designs',
+            label: 'Contribute',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {

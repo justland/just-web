@@ -4,7 +4,6 @@ import { lazy, Suspense } from 'react'
 import { getStore } from './store'
 
 const CommandPalette = lazy(async () => {
-  console.info('loading')
   const reactCommandsModule = await import('@just-web/react-commands')
   const s = getStore().get()
   await s.app.addPlugin(reactCommandsModule)

@@ -1,0 +1,8 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qjust-web\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qapps: actual applications that drives the development of just-web.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qcomponents: UI component plugins written in React, SolidJS, etc.\ndocs: Documentation about just-web.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qframeworks: Framework packages that build the fundation of just-web.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qplugins: 🚧 Plugin packages for various tech stacks.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qpresets: 🚧 customized app for specific tech stacks.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qtools: Tools and utility packages for developing just-web, plugins, and applications.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qadder\\E$"}

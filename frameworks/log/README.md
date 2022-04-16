@@ -1,50 +1,43 @@
 # @just-web/log
 
-`@just-web` logging module.
+[`@just-web/log`] provides a consistent logging API to `@just-web` applications.
+
+It supports customization with runtime protection, sanitization, remote reporting, log level control, etc.
+
+This is a core module of `@just-web`.
+You do not need to reference this module directly.
+
+The features of this module are exposed through [`@just-web/app`] and [`@just-web/context`].
 
 ## Usage
 
-When trying to write some logs,
-reference and use this library directly:
+Import from [`@just-web/app`] (for application) or [`@just-web/contexts`] (for plugins) to write logs:
 
 ```ts
-import { log, getLogger } from '@just-web/log'
+import { log, getLogger } from '@just-web/app' // or `@just-web/contexts`
 
 function work() {
+  // ad-hoc logging
   log.info('module', 'some log message')
 
+  // create a custom logger
   const myLog = getLogger('module')
   myLog.info('some log message')
 }
 ```
 
-If you want to manipulate or configure the log system,
-api is available in `@just-web/contexts` and `just-web`:
+Configure when creating the application:
 
 ```ts
-import { getReadonlyContext } from '@just-web/contexts'
-import app from `just-web`
+import { createApp } from '@just-web/app'
 
-function work() {
-  const ctx = getReadonlyContext()
-  // Not implemented, in design phrase
-  ctx.log.onAdd(doSomethingWithTheLogEntry)
-  app.log.onAdd(doSomethingWithTheLogEntry)
-
-  // TBD
-  app.log.config(options)
-  // or
-  app.start({ log: logOptions })
-}
+const app = createApp({
+  log: { /* log options */ }
+})
 ```
 
-## Responsibilities
+Please refer to the `handbook` to learn more about it.
 
-- ❌ should not provide any lifecycle management
-  - It is handled in `just-web`
-
-## TODO
-
-- 🔍 add `ProxyReporter` to receive new log entries
-  - any sanitization before the handlers are called?
-- 🔍 add `RemoteReporter` to send logs to a service
+[`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
+[`@just-web/contexts`]: https://github.com/justland/just-web/tree/main/frameworks/contexts
+[`@just-web/log`]: https://github.com/justland/just-web/tree/main/frameworks/log

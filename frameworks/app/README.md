@@ -1,11 +1,44 @@
-# just-web
+# @just-web/app
 
-The `@just-web` application.
+The entry point of `@just-web` application framework.
 
-This is the module to create an `@just-web` app for your application.
+## Install
 
-It exposes all options and API to interact with the app.
+```sh
+# npm
+npm install @just-web/app
 
-## TODO
+# yarn
+yarn add @just-web/app
 
-- dynamic import of plugins (v2)
+# pnpm
+pnpm install @just-web/app
+
+#rush
+rush add -p @just-web/app
+```
+
+## Basic usage
+
+Using a simple [React] app as an example:
+
+```ts
+import { createApp } from '@just-web/app'
+import ReactDOM from 'react-dom'
+import App from './App'
+
+void (async () => {
+  const app = createApp()
+  app.addPlugin(...)
+  await app.start()
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    <React.StrictMode>,
+    document.getElementById('root')
+  )
+})
+```
+
+[React]: https://reactjs.org/
