@@ -17,7 +17,9 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "@just-web/log": "workspace:*"
+    "@just-web/log": "workspace:*",
+    "assertron": "~9.0.5",
+    "satisfier": "~5.1.2"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
