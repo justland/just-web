@@ -23,7 +23,7 @@ npm install @just-web/app
 For plugin development:
 
 ```sh
-npm install --save-peer @just-web/contexts
+npm install --save-peer @just-web/app
 ```
 
 ## Components

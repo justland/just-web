@@ -13,9 +13,6 @@
       "path": "../commands/tsconfig.build.json"
     },
     {
-      "path": "../contexts/tsconfig.build.json"
-    },
-    {
       "path": "../contributions/tsconfig.build.json"
     },
     {

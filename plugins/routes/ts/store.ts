@@ -1,6 +1,5 @@
-import { Context, createStore, Store } from '@just-web/contexts'
-import { record } from 'type-plus'
-
+import { Context, Store } from '@just-web/app'
+import { RoutesConfigOptions } from './types'
 
 export interface Route {
   (): void
@@ -8,16 +7,14 @@ export interface Route {
 
 export interface ModuleStore {
   context: Context,
+  config: RoutesConfigOptions,
   routes: Record<string, Route>
 }
 
 let store: Store<ModuleStore>
 
-export function setStore(context: Context) {
-  store = createStore<ModuleStore>({
-    context,
-    routes: record()
-  })
+export function setStore(s: Store<ModuleStore>) {
+  store = s
 }
 
 export function getStore() {

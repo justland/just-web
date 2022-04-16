@@ -17,7 +17,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "@just-web/contexts": "workspace:*",
+    "@just-web/app": "workspace:*",
     "type-plus": "~4.9.0"
   },
   "devDependencies": {

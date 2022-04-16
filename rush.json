@@ -52,11 +52,6 @@
       "reviewCategory": "libraries"
     },
     {
-      "packageName": "@just-web/contexts",
-      "projectFolder": "frameworks/contexts",
-      "reviewCategory": "libraries"
-    },
-    {
       "packageName": "@just-web/contributions",
       "projectFolder": "frameworks/contributions",
       "reviewCategory": "libraries"

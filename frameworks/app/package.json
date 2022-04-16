@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@just-web/commands": "workspace:*",
-    "@just-web/contexts": "workspace:*",
     "@just-web/contributions": "workspace:*",
     "@just-web/errors": "workspace:*",
     "@just-web/log": "workspace:*",

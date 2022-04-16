@@ -5,15 +5,16 @@
 Currently, there are two kinds of contexts: `Context` and `ReadonlyContext`.
 
 In the future, `Context` will be more fine-grain and provide only the functionalities required by a particular plugin.
-Each plugin will indicate what functionalities it needs and the application assess that information.
+Each plugin will indicate what functionalities it needs,
+and the application can assess that information.
 
-## accessing context
+## Accessing context
 
 The (requested) context will be given to the plugin through the `activate` function:
 
 ```ts
 // index.ts
-import type { Context } '@just-web/contexts'
+import type { Context } '@just-web/app'
 
 export function activate(context: Context) {
   // ..snip..
@@ -29,7 +30,7 @@ The plugin can save the context locally and access it from its logics and compon
 To test the plugin logics or components which uses the context,
 there are several ways to do it.
 
-- dependency injection
+- Dependency injection
 - seam injection
 - module mock
 
@@ -43,7 +44,7 @@ In this section, we are going to take a look at these other approaches and under
 Singleton context:
 
 ```tsx
-import { getContext } from '@just-web/contexts'
+import { getContext } from '@just-web/app'
 
 const Component = () => {
   const ctx = getContext()

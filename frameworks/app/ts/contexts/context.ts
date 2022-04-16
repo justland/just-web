@@ -2,14 +2,7 @@ import * as commandsModule from '@just-web/commands'
 import { ContributionsContext, ContributionsContextOptions, createContributionsContext, ReadonlyContributionsContext, toReadonlyContributionsContext } from '@just-web/contributions'
 import { createErrorsContext, ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import * as platformModule from '@just-web/platform'
-import { log } from './log'
-
-export type { ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
-
-export type {
-  Adder, OnStateChange, ReadonlyRegistry, ReadonlyStore,
-  Registry, ResetState, SetState, StateChangeHandler, Store, WithAdder
-} from '@just-web/states'
+import { log } from '../log'
 
 export interface Context {
   commands: commandsModule.CommandsContext,

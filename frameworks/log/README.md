@@ -7,14 +7,14 @@ It supports customization with runtime protection, sanitization, remote reportin
 This is a core module of `@just-web`.
 You do not need to reference this module directly.
 
-The features of this module are exposed through [`@just-web/app`] and [`@just-web/context`].
+The features of this module are exposed through [`@just-web/app`].
 
 ## Usage
 
-Import from [`@just-web/app`] (for application) or [`@just-web/contexts`] (for plugins) to write logs:
+Import from [`@just-web/app`] to write logs:
 
 ```ts
-import { log, getLogger } from '@just-web/app' // or `@just-web/contexts`
+import { log, getLogger } from '@just-web/app'
 
 function work() {
   // ad-hoc logging
@@ -39,5 +39,4 @@ const app = createApp({
 Please refer to the `handbook` to learn more about it.
 
 [`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
-[`@just-web/contexts`]: https://github.com/justland/just-web/tree/main/frameworks/contexts
 [`@just-web/log`]: https://github.com/justland/just-web/tree/main/frameworks/log

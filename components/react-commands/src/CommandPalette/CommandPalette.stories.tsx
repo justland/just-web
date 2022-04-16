@@ -1,4 +1,4 @@
-import { Context, createContext } from '@just-web/contexts'
+import { Context, createContext } from '@just-web/app'
 import { ComponentStory } from '@storybook/react'
 import Mousetrap from 'mousetrap'
 import { lazy, Suspense } from 'react'

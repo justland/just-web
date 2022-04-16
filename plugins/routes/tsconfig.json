@@ -6,7 +6,7 @@
   },
   "references": [
     {
-      "path": "../../frameworks/contexts/tsconfig.build.json"
+      "path": "../../frameworks/app/tsconfig.build.json"
     },
     {
       "path": "../../frameworks/states/tsconfig.build.json"
