@@ -556,7 +556,6 @@ importers:
       eslint-config-prettier: ~8.5.0
       eslint-plugin-harmony: ^6.0.2
       eslint-plugin-yml: ~0.14.0
-      immer: ~9.0.12
       jest: ^27.5.1
       jest-validate: ^27.5.1
       jest-watch-suspend: ^1.1.2
@@ -572,7 +571,6 @@ importers:
       '@just-web/contributions': link:../contributions
       '@just-web/log': link:../log
       '@just-web/states': link:../states
-      immer: 9.0.12
       type-plus: 4.9.0
     devDependencies:
       '@babel/core': 7.17.9

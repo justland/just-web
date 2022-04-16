@@ -1,6 +1,5 @@
 import { CommandContributionRegistry, KeyBindingContributionRegistry } from '@just-web/contributions'
 import { createRegistry } from '@just-web/states'
-import produce from 'immer'
 import { pick } from 'type-plus'
 import { log } from './log'
 import { CommandHandler } from './types'
@@ -47,7 +46,7 @@ export function commandRegistry(options: commandRegistry.Options) {
         log.warn(`Registering a duplicate command, ignored: ${command}`)
         return
       }
-      registry.set(produce(commands, m => { m[command] = handler }))
+      registry.update(m => { m[command] = handler })
     },
     invoke(command: string) {
       log.trace('invoke', command)
