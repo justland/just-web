@@ -20,13 +20,10 @@
   ],
   "references": [
     {
-      "path": "../../../frameworks/app/tsconfig.build.json"
+      "path": "../../../frameworks/app"
     },
     {
-      "path": "../../../frameworks/contexts/tsconfig.build.json"
-    },
-    {
-      "path": "../../../components/react-commands/tsconfig.build.json"
+      "path": "../../../components/react-commands"
     }
   ]
 }

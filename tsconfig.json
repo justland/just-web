@@ -6,6 +6,9 @@
     },
     {
       "path": "apps/just-func/play-solid"
+    },
+    {
+      "path": "plugins/routes"
     }
   ]
 }
