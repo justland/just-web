@@ -1,35 +1,62 @@
 # @just-web/contexts
 
-`@just-web/contexts` provides an API where components and plugins can interact with the application.
+[`@just-web/contexts`] provides APIs for components and plugins to interact with the application.
 
-## Usage
+## Install
 
-## getReadonlyContext
+```sh
+# npm
+npm install @just-web/contexts
 
-`getReadonlyContext()` returns a `ReadonlyContext` after the application is started
-(i.e. `createContext()` is called).
+# yarn
+yarn add @just-web/contexts
 
-```tsx
-import { getReadonlyContext } from '@just-app/contexts'
+# pnpm
+pnpm install @just-web/contexts
 
-function work() {
-  const context = getReadonlyContext()
-}
+#rush
+rush add -p @just-web/contexts
 ```
 
-Note that you cannot call `getReadonlyContext()` at load time.
-The application needs to start before the context is available.
+## Basic usage
 
-## Context
-
-Plugin's `activate` function will receive a `context` from the application.
-
-Plugin can use it to interact with the system.
+Here is an example on how [`@just-web/react-commands`] registers a command handler and updates its internal state:
 
 ```ts
 import { Context } from '@just-web/contexts'
+import { createStore } from './store'
 
 export function activate(context: Context) {
-  // code away
+  const store = createStore(context)
+  context.commands.register(
+    'just-web.showCommandPalette',
+    () => store.update(s => { s.openCommandPalette = true })
+  )
+}
+
+// ./store.ts
+import { Context, Store } from '@just-web/contexts'
+
+export interface State {
+  // Including the context so that it can be accessed anywhere within the package.
+  context: Context,
+  openCommandPalette: boolean
+}
+
+let store: Store<State>
+
+export function createStore(context: Context) {
+  return store = context.states.createStore<State>({
+    context,
+    openCommandPalette: false
+  })
+}
+
+export function getStore() {
+  return store
 }
 ```
+
+[`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
+[`@just-web/contexts`]: https://github.com/justland/just-web/tree/main/frameworks/contexts
+[`@just-web/react-commands`]: https://github.com/justland/just-web/tree/main/components/react-commands

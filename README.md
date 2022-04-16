@@ -1,42 +1,60 @@
 # just-web
 
-`@just-web` is a UI library agnostic web application framework.
+`@just-web` is plugin-based application framework.
 
-You can use it to build web application using technology of your choice: `React`, `SolidJS`, `redux`, `mobx` etc.
+As a good framework, it defers making decisions as much as possible.
+Meaning you have the freedom to choose your tech stacks or even changing them as the landscape of web development changes.
 
-This repository is setup as a monorepo containing applications in `@justland` using `@just-web`.
+You can use:
 
-They serve as direct consumers of `@just-web` to drive the implementation.
+- `React`, `Vue.js`, `SolidJS`, `Svelte`, etc. as your rendering library,
+- `redux` or `mobx` or anything else as your application state management,
+- `axios` or `cross-fetch` or vanilla fetch as your fetching mechanism,
+- ...and so on.
 
-- [`@just-func/play-react`](just-func/play-react/README.md): `just-func` playground written with `React`.
-- [`@just-func/play-solid`](just-func/play-solid/README.md): `just-func` playground written with `SolidJS`.
+## Installing
 
-## modules
+For application development:
 
-Here are a short summary about each module inside `@just-web`:
+```sh
+npm install @just-web/app
+```
 
-Framework modules:
+For plugin development:
 
-- [`just-web`](frameworks/app/README.md): entry point of `@just-web` application framework.
-- [`@just-web/commands`](frameworks/commands/README.md): manages commands throughout the application.
-- [`@just-web/contexts`](frameworks/contexts/README.md): provides application contexts to components and plugins.
-- [`@just-web/contributions`](frameworks/contributes/README.md): manages application and plugins capabilities.
-- [`@just-web/errors`](frameworks/errors/README.md): centralized error capture and reporting module.
-- [`@just-web/format`](frameworks/format/README.md): formatting values to pass between the app and external systems.
-- [`@just-web/log`](frameworks/log/README.md): logging module.
-- [`@just-web/platform`](frameworks/platform/README.md): interface to the platfrom running the application.
-- [`@just-web/plugins`](frameworks/plugins/README.md): provide API for `@just-web` plugins
-- [`@just-web/routes`](frameworks/routes/README.md): routing module for SPA, MPA, and external application/services.
-- [`@just-web/states`](frameworks/states/README.md): state management module.
+```sh
+npm install --save-peer @just-web/contexts
+```
 
-Component modules:
+## Components
 
-- [`@just-web/react-commands`](components/react-commands/README.md): React components to the `@just-web/commands` module.
+Components refer to UI components.
 
-Tooling:
+Here are the components provided in this repository:
 
-- [`@just-web/testing`](tools/testing/README.md): testing utility module.
+- [`@just-web/react-commands`]: [`React`] components to the [`@just-web/commands`] module.
+
+## Plugins
+
+Here are the plugins provided in this repository:
+
+- [`@just-web/routes`]: provides routing capability.
+
+## Tools
+
+`@just-web` provides some tools to make it easier for you to develop your application:
+
+- `@just-web/create`: 🚧 `@just-web` initializer package (for `npm create`) to scaffold your project.
+- [`@just-web/repo-scripts`]: provides scripts and default configs to help to maintain your repository.
+- [`@just-web/testing`]: testing utility module.
 
 ## Contribute
 
 Please check out the [contributing guide](./CONTRIBUTING.md)
+
+[`@just-web/commands`]: https://github.com/justland/just-web/tree/main/frameworks/commands
+[`@just-web/react-commands`]: https://github.com/justland/just-web/tree/main/components/react-commands
+[`@just-web/routes`]: https://github.com/justland/just-web/tree/main/plugins/routes
+[`@just-web/repo-scripts`]: https://github.com/justland/just-web/tree/main/tools/repo-scripts
+[`@just-web/testing`]: https://github.com/justland/just-web/tree/main/tools/testing
+[`React`]: https://reactjs.org/

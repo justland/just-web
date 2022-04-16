@@ -1,15 +1,11 @@
 # @just-web/format
 
-`@just-web` library to format value before it goes out to external systems.
+[`@just-web/format`] provides API to format values before passing them to external systems.
 
-The responsibilities of this library are:
+It is used internally for things such as:
 
-- Format text value to various formats requested by the application
-- Various sanitization: string, url, filename, html, query, xml, etc
+- Various sanitization: string, URL, filename, HTML, query, XML, etc.
 - Localization
+- Render formatting: sentence case, title case, etc.
 
-## TODO
-
-- localization (`localized-string`?)
-- filename (`filenamify`, `sanitize-filename`)
-- html (`xss`)
+It utilizes the plugin system so that applications can replace the formatting with different implementation to suit their needs.

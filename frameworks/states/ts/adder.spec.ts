@@ -46,10 +46,10 @@ describe('withAdder()', () => {
   })
 
   test('for record registry', () => {
-    const store = withAdder(
+    const registry = withAdder(
       createRegistry<string, { a: string }>(),
       (record, entry) => { record[entry.a] = entry })
-    store.add({ a: 'x' }, { a: 'y' })
-    expect(store.get()).toEqual({ 'x': { 'a': 'x' }, 'y': { 'a': 'y' } })
+    registry.add({ a: 'x' }, { a: 'y' })
+    expect(registry.get()).toEqual({ 'x': { 'a': 'x' }, 'y': { 'a': 'y' } })
   })
 })
