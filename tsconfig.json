@@ -2,10 +2,10 @@
   "files": [],
   "references": [
     {
-      "path": "just-func/play-react"
+      "path": "apps/just-func/play-react"
     },
     {
-      "path": "just-func/play-solid"
+      "path": "apps/just-func/play-solid"
     }
   ]
 }

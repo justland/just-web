@@ -1,7 +1,7 @@
 import { Context, JustWebError } from '@just-web/contexts'
 import { Adder, createStore, push, Store, withAdder } from '@just-web/states'
 import { forEachKey } from 'type-plus'
-import { log } from './log'
+import { log } from '../log'
 
 export interface PluginModule<M> {
   activate(context: Context): Promise<M>,
@@ -48,7 +48,7 @@ export function createPluginsContext<A>(options: PluginsContextOptions): Plugins
   }
 }
 
-export async function start() {
+export async function startPlugins() {
   await Promise.all(loading)
   log.notice('loading plugins...completed')
   await Promise.all(plugins.get().map(p => {

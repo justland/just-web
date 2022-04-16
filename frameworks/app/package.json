@@ -23,9 +23,9 @@
     "@just-web/errors": "workspace:*",
     "@just-web/log": "workspace:*",
     "@just-web/platform": "workspace:*",
-    "@just-web/plugins": "workspace:*",
     "@just-web/states": "workspace:*",
-    "standard-log": "~7.0.2"
+    "standard-log": "~7.0.2",
+    "type-plus": "~4.9.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

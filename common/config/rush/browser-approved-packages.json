@@ -111,6 +111,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@just-web/repo-config",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@just-web/repo-scripts",
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
