@@ -1,7 +1,6 @@
 import { Context } from '@just-web/contexts'
-import { setStore } from './store'
 import * as routes from './routes'
-import { log } from './log'
+import { setStore } from './store'
 
 export interface RoutesContext {
   routes: typeof routes
@@ -24,8 +23,5 @@ const defaultStartOptions: RoutesStartOptions = {
 }
 
 export async function start(options = defaultStartOptions) {
-  return Promise.resolve().then(() => {
-    log.info('nav?')
-    routes.navigate(options.initialRoute)
-  })
+  routes.navigate(options.initialRoute)
 }
