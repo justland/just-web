@@ -6,6 +6,9 @@
   },
   "references": [
     {
+      "path": "../contexts/tsconfig.build.json"
+    },
+    {
       "path": "../states/tsconfig.build.json"
     },
     {

@@ -4,7 +4,12 @@ import { createErrorsContext, ErrorsContext, ErrorsContextOptions } from '@just-
 import * as platformModule from '@just-web/platform'
 import { log } from './log'
 
-export type { Adder, OnStateChange, ReadonlyRegistry, ReadonlyStore, Registry, ResetState, SetState, StateChangeHandler, Store, WithAdder } from '@just-web/states'
+export type { ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
+
+export type {
+  Adder, OnStateChange, ReadonlyRegistry, ReadonlyStore,
+  Registry, ResetState, SetState, StateChangeHandler, Store, WithAdder
+} from '@just-web/states'
 
 export interface Context {
   commands: commandsModule.CommandsContext,

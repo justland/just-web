@@ -116,7 +116,7 @@
     },
     {
       "name": "@just-web/routes",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@just-web/states",

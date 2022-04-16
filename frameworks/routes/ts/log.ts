@@ -1,3 +1,3 @@
-import { getLogger } from '@just-web/log'
+import { getLogger } from '@just-web/contexts'
 
 export const log = getLogger('@just-web/routes')

@@ -1,29 +1,27 @@
-import { createStore } from '@just-web/states'
-import produce from 'immer'
 import { record } from 'type-plus'
 import { log } from './log'
-
-export interface Route {
-  (): void
-}
-
-export const routes = createStore<Record<string, Route>>(record())
+import { getStore } from './store'
 
 export function navigate(route: string) {
-  const r = routes.get()[route]
+  const r = getStore().get().routes[route]
   if (!r) log.error(`navigate target not found: '${route}'`)
-  else r()
+  else {
+    log.notice(`navigate to: '${route}'`)
+    r()
+  }
 }
 
-export function registerRoute(route: string, handler: () => void) {
+export function register(route: string, handler: () => void) {
   if (hasRoute(route)) {
     log.error(`Registering an already registered route: '${route}'`)
     return () => { }
   }
 
-  routes.set(produce(routes.get(), r => { r[route] = handler }))
+  const store = getStore()
+  store.update(s => { s.routes[route] = handler })
+
   return () => {
-    routes.set(produce(routes.get(), r => { delete r[route] }))
+    store.update(s => { delete s.routes[route] })
   }
 }
 /**
@@ -31,11 +29,11 @@ export function registerRoute(route: string, handler: () => void) {
  * This is used mostly for testing purposes
  */
 export function hasRoute(route: string) {
-  return !!routes.get()[route]
+  return !!getStore().get().routes[route]
 }
 
 export function clearRoutes() {
-  routes.set(record())
+  getStore().update(s => { s.routes = record() })
 }
 
 export async function validateRoutes() {

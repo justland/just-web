@@ -6,6 +6,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "build:watch": "tsc -p tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
     "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",
@@ -16,8 +17,8 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
+    "@just-web/contexts": "workspace:*",
     "@just-web/log": "workspace:*",
-    "@just-web/states": "workspace:*",
     "immer": "~9.0.12",
     "type-plus": "~4.9.0"
   },
