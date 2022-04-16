@@ -1,5 +1,5 @@
 import { configForTest, MemoryLogReporter } from '@just-web/log'
-import { assertLog } from '@just-web/testing'
+import { logEqual } from '@just-web/testing'
 import { keyBindingRegistry } from './keyBindings'
 
 let reporter: MemoryLogReporter
@@ -23,7 +23,7 @@ describe('add()', () => {
     store.add(cmd1)
     store.add(cmd2)
 
-    assertLog(reporter, '(WARN) Registering a duplicate key binding contribution, ignored: a')
+    logEqual(reporter, '(WARN) Registering a duplicate key binding contribution, ignored: a')
 
     const a = store.get()['a']
     expect(a).toBe(cmd1)

@@ -1,6 +1,6 @@
 import { CommandContribution, commandContributionRegistry } from '@just-web/contributions'
 import { configForTest, MemoryLogReporter } from '@just-web/log'
-import { assertLog } from '@just-web/testing'
+import { logEqual } from '@just-web/testing'
 import { isType, stub } from 'type-plus'
 import { commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
 
@@ -25,7 +25,7 @@ describe('register()', () => {
     const r = commandRegistry(stubOptions())
     r.register('some.unknownCommand', () => { })
 
-    assertLog(reporter, `(ERROR) Registering an unknown command: some.unknownCommand`)
+    logEqual(reporter, `(ERROR) Registering an unknown command: some.unknownCommand`)
   })
 
   test('register a command', () => {
@@ -43,7 +43,7 @@ describe('register()', () => {
     const r = commandRegistry(options)
     r.register('just-web.showCommandPalette', () => { })
     r.register('just-web.showCommandPalette', () => { })
-    assertLog(reporter, `(WARN) Registering a duplicate command, ignored: just-web.showCommandPalette`)
+    logEqual(reporter, `(WARN) Registering a duplicate command, ignored: just-web.showCommandPalette`)
   })
 })
 
@@ -71,7 +71,7 @@ describe('invoke()', () => {
     const r = commandRegistry(stubOptions())
     r.invoke('not-exist')
 
-    assertLog(reporter, `(ERROR) Invoking not registered command: 'not-exist'`)
+    logEqual(reporter, `(ERROR) Invoking not registered command: 'not-exist'`)
   })
 
   test('invoke command', () => {

@@ -1,14 +1,14 @@
 import { configForTest, getLogger, MemoryLogReporter } from '@just-web/log'
 import { isType } from 'type-plus'
-import { assertLog, logMatchSome } from './log'
+import { logEqual, logMatchSome } from './log'
 
 let reporter: MemoryLogReporter
 beforeEach(() => reporter = configForTest().reporter)
 
-describe('assertLog()', () => {
+describe('logEqual()', () => {
   test('require at least one line of expected message', () => {
-    assertLog(reporter, '')
-    isType.equal<true, string, Parameters<typeof assertLog>[1]>()
+    logEqual(reporter, '')
+    isType.equal<true, string, Parameters<typeof logEqual>[1]>()
   })
 })
 
