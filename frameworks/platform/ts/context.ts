@@ -21,6 +21,6 @@ export namespace start {
   export interface Options extends startKeyBindings.Options { }
 }
 
-export function start(options: start.Options) {
+export async function start(options: start.Options) {
   startKeyBindings(options)
 }

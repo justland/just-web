@@ -14,4 +14,14 @@ describe('addPlugin()', () => {
     })).rejects
       .toEqual(new JustWebError(`unable to load plugin: it is overriding an existing property 'abc'`))
   })
+
+  test('plugin.activate() can return nothing', async () => {
+    const context = createContext()
+    const m = createPluginsContext({ context })
+    let called = false
+    await m.addPlugin({
+      async activate() { called = true}
+    })
+    expect(called).toBe(true)
+  })
 })

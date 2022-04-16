@@ -27,8 +27,8 @@ export function createApp(options?: createApp.Options): AppContext {
     ...pluginsModule.createPluginsContext({ context }),
     async start() {
       log.notice('application starts')
-      await pluginsModule.start().loadingPlugins
-      platformModule.start(context)
+      await platformModule.start(context)
+      await pluginsModule.start()
     }
   }
 }
