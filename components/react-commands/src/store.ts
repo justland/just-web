@@ -1,4 +1,4 @@
-import { Context, Store } from '@just-web/contexts'
+import { Context, Store } from '@just-web/app'
 
 export interface State {
   context: Context,

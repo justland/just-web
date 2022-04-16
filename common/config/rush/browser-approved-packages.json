@@ -72,15 +72,11 @@
     },
     {
       "name": "@just-web/app",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@just-web/commands",
       "allowedCategories": [ "libraries" ]
-    },
-    {
-      "name": "@just-web/contexts",
-      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@just-web/contributions",
@@ -265,6 +261,10 @@
     {
       "name": "@vscode/test-electron",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "assertron",
+      "allowedCategories": [ "tools" ]
     },
     {
       "name": "autoprefixer",

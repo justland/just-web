@@ -1,4 +1,4 @@
-import { configForTest, createContext, MemoryLogReporter } from '@just-web/contexts'
+import { configForTest, createContext, MemoryLogReporter } from '@just-web/app'
 import { assertLog } from '@just-web/testing'
 import { activate } from './module'
 import { clearRoutes, hasRoute, validateRoutes } from './routes'

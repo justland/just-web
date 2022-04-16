@@ -1,4 +1,4 @@
-import { createContext, JustWebError } from '@just-web/contexts'
+import { createContext, JustWebError } from '..'
 import { asAny } from 'type-plus'
 import { createPluginsContext } from './context'
 

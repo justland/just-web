@@ -1,4 +1,4 @@
-import { ReadonlyContext } from '@just-web/contexts'
+import { Context } from '@just-web/app'
 import type { CommandContribution, KeyBindingContribution } from '@just-web/contributions'
 import { sentenceCase } from '@just-web/format'
 import { useState, VFC } from 'react'
@@ -11,10 +11,10 @@ import styles from './CommandPalette.module.css'
 export type CommandPaletteCommand = CommandContribution & KeyBindingContribution
 
 export interface CommandPaletteProps {
-  ctx?: ReadonlyContext
+  ctx?: Context
 }
 
-function getCommands(ctx: ReadonlyContext) {
+function getCommands(ctx: Context) {
   const m = ctx.platform.isMac()
   const cmds = ctx.contributions.commands.get()
   const kbs = ctx.contributions.keyBindings.get()

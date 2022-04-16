@@ -9,9 +9,6 @@
       "path": "../commands/tsconfig.build.json"
     },
     {
-      "path": "../contexts/tsconfig.build.json"
-    },
-    {
       "path": "../contributions/tsconfig.build.json"
     },
     {
@@ -22,9 +19,6 @@
     },
     {
       "path": "../platform/tsconfig.build.json"
-    },
-    {
-      "path": "../../plugins/routes/tsconfig.build.json"
     },
     {
       "path": "../states/tsconfig.build.json"

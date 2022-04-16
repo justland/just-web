@@ -1,4 +1,4 @@
-import { Context, createStore } from '@just-web/contexts'
+import { Context, createStore } from '@just-web/app'
 import { setStore, State } from './store'
 
 export async function activate(context: Context) {

@@ -1,4 +1,4 @@
-import { createContext, getReadonlyContext } from '.'
+import { createContext, getReadonlyContext } from './context'
 
 describe('createContext()', () => {
   test('create context without any option', () => {

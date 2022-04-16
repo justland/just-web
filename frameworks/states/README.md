@@ -5,7 +5,7 @@
 This is a core module of `@just-web`.
 You do not need to reference this module directly.
 
-The features of this module are exposed through [`@just-web/app`] and [`@just-web/contexts`].
+The features of this module are exposed through [`@just-web/app`].
 
 `@just-web` modules, as well as default plugins and components,
 use this to manage their states.
@@ -169,7 +169,6 @@ registry.add({ key: 'y', value: 2 }, { key: 'z', value: 999 })
 - 🔍 should `register` adds `values()` that returns an iterator?
 
 [`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
-[`@just-web/contexts`]: https://github.com/justland/just-web/tree/main/frameworks/contexts
 [`@just-web/states`]: https://github.com/justland/just-web/tree/main/frameworks/states
 [`immer`]: https://github.com/immerjs/immer
 [`Object.is()`]: https://www.jstips.co/en/javascript/why-you-should-use-Object.is()-in-equality-comparison/
