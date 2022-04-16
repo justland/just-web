@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "docusaurus build",
+    "build:watch": "docusaurus build",
     "clean": "docusaurus clear",
     "coverage": "echo no test",
     "depcheck": "echo no depcheck",
