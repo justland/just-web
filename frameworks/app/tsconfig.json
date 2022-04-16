@@ -3,7 +3,7 @@
     "outDir": "lib",
     "rootDir": "ts"
   },
-  "extends": "@just-web/repo-config/config/tsconfig.settings.json",
+  "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
   "include": [
     "ts",
     "typings"

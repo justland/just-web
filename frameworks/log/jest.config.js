@@ -1,1 +1,1 @@
-module.exports = require('@just-web/repo-config/jest.config')
+module.exports = require('@just-web/repo-scripts/jest.config')

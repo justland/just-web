@@ -1,1 +1,1 @@
-module.exports = require('@just-web/repo-config/babel.config')
+module.exports = require('@just-web/repo-scripts/babel.config')

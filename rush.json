@@ -23,8 +23,8 @@
     "useWorkspaces": true
   },
   "pnpmVersion": "6.32.7",
-  "projectFolderMaxDepth": 2,
-  "projectFolderMinDepth": 1,
+  "projectFolderMaxDepth": 3,
+  "projectFolderMinDepth": 2,
   "projects": [
     {
       "packageName": "@just-web/github-pages",
@@ -33,12 +33,12 @@
     },
     {
       "packageName": "@just-func/play-solid",
-      "projectFolder": "just-func/play-solid",
+      "projectFolder": "apps/just-func/play-solid",
       "reviewCategory": "production"
     },
     {
       "packageName": "@just-func/play-react",
-      "projectFolder": "just-func/play-react",
+      "projectFolder": "apps/just-func/play-react",
       "reviewCategory": "production"
     },
     {
@@ -77,8 +77,8 @@
       "reviewCategory": "libraries"
     },
     {
-      "packageName": "@just-web/repo-config",
-      "projectFolder": "tools/repo-config",
+      "packageName": "@just-web/repo-scripts",
+      "projectFolder": "tools/repo-scripts",
       "reviewCategory": "libraries"
     },
     {
