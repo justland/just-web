@@ -1,14 +1,14 @@
 module.exports = {
-  'env': {
-    'es6': true,
-    'jest': true
+  env: {
+    es6: true,
+    jest: true
   },
-  'extends': [
+  extends: [
     'react-app',
     'react-app/jest',
     'plugin:yml/standard',
   ],
-  'overrides': [
+  overrides: [
     {
       extends: [
         'plugin:harmony/ts-recommended'
@@ -22,13 +22,13 @@ module.exports = {
       extends: [
         'plugin:storybook/recommended'
       ],
-      'files': [
+      files: [
         '**/*.stories.*'
       ],
-      'rules': {
+      rules: {
         'import/no-anonymous-default-export': 'off'
       }
     }
   ],
-  'root': true
+  root: true
 };
