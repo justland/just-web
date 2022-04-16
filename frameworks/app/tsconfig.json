@@ -10,25 +10,25 @@
   ],
   "references": [
     {
-      "path": "../commands/tsconfig.build.json"
+      "path": "../../frameworks/commands"
     },
     {
-      "path": "../contributions/tsconfig.build.json"
+      "path": "../../frameworks/contributions"
     },
     {
-      "path": "../errors/tsconfig.build.json"
+      "path": "../../frameworks/errors"
     },
     {
-      "path": "../log/tsconfig.build.json"
+      "path": "../../frameworks/log"
     },
     {
-      "path": "../platform/tsconfig.build.json"
+      "path": "../../frameworks/platform"
     },
     {
-      "path": "../states/tsconfig.build.json"
+      "path": "../../frameworks/states"
     },
     {
-      "path": "../../tools/testing/tsconfig.build.json"
+      "path": "../../tools/testing"
     }
   ]
 }
