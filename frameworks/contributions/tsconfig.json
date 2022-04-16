@@ -1,5 +1,5 @@
 {
-  "extends": "@just-web/repo-config/config/tsconfig.settings.json",
+  "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
   "compilerOptions": {
     "outDir": "lib",
     "rootDir": "ts"

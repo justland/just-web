@@ -13,7 +13,7 @@
       "@types/jest"
     ]
   },
-  "extends": "@just-web/repo-config/config/tsconfig.jsx.json",
+  "extends": "@just-web/repo-scripts/config/tsconfig.jsx.json",
   "include": [
     "src",
     "typings"

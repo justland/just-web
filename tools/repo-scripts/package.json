@@ -1,5 +1,5 @@
 {
-  "name": "@just-web/repo-config",
+  "name": "@just-web/repo-scripts",
   "version": "0.1.0",
   "description": "just-web shared repository config and scripts",
   "main": "lib/index.js",
