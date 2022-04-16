@@ -4,22 +4,20 @@ ignores:
   - "@storybook/*"
   - "@testing-library/*"
   - "@size-limit/*"
-  - "@types/jest"
-  - "@types/node"
-  - "@types/platform"
+  - "@types/*"
   - "@typescript-eslint/parser"
   - autoprefixer
   - babel-loader
   - css-loader
   - identity-obj-proxy
-  - jest-validate
-  - jest-watch-suspend
-  - jest-watch-toggle-config
-  - jest-watch-typeahead
+  - jest-*
   - npm-check-updates
+  - preact
+  - puppeteer
   - postcss
   - react-refresh
   - size-limit
+  - storybook-dark-mode
   - storybook-css-modules-preset
   - style-loader
   - ts-jest

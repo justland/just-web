@@ -1,5 +1,8 @@
 ignores:
+  - "@babel/plugin-syntax-flow"
+  - "@babel/plugin-transform-react-jsx"
   - "@storybook/*"
+  - "@testing-library/*"
   - "@typescript-eslint/parser"
   - babel-loader
   - eslint-plugin-yml

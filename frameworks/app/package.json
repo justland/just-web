@@ -24,16 +24,13 @@
     "@just-web/log": "workspace:*",
     "@just-web/platform": "workspace:*",
     "@just-web/plugins": "workspace:*",
-    "@just-web/routes": "workspace:*",
     "@just-web/states": "workspace:*",
-    "standard-log": "~7.0.2",
-    "type-plus": "~4.9.0"
+    "standard-log": "~7.0.2"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
     "@babel/plugin-transform-runtime": "~7.17.0",
     "@just-web/repo-scripts": "workspace:*",
-    "@just-web/testing": "workspace:*",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
