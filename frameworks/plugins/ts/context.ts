@@ -1,9 +1,11 @@
 import { Context, JustWebError } from '@just-web/contexts'
 import { Adder, createStore, push, Store, withAdder } from '@just-web/states'
 import { forEachKey } from 'type-plus'
+import { log } from './log'
 
 export interface PluginModule<M> {
-  activate(context: Context): Promise<M>
+  activate(context: Context): Promise<M>,
+  start?: () => Promise<void>
 }
 
 export interface PluginsContext<A> {
@@ -30,6 +32,8 @@ export function createPluginsContext<A>(options: PluginsContextOptions): Plugins
       plugins.add(plugin)
       const p = plugin.activate(options.context)
         .then(m => {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+          if (!m) return this as any
           const keys = Object.keys(this)
           forEachKey(m, k => {
             if (typeof k === 'string' && keys.includes(k)) {
@@ -44,8 +48,11 @@ export function createPluginsContext<A>(options: PluginsContextOptions): Plugins
   }
 }
 
-export function start() {
-  return {
-    loadingPlugins: Promise.all(loading)
-  }
+export async function start() {
+  await Promise.all(loading)
+  log.notice('loading plugins...completed')
+  await Promise.all(plugins.get().map(p => {
+    if (p.start) return p.start()
+  }))
+  log.notice('start plugins...completed')
 }
