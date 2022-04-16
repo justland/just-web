@@ -6,13 +6,13 @@
   "extends": "./tsconfig.json",
   "references": [
     {
-      "path": "../../frameworks/app/tsconfig.build.json"
+      "path": "../../../frameworks/app/tsconfig.build.json"
     },
     {
-      "path": "../../frameworks/contexts/tsconfig.build.json"
+      "path": "../../../frameworks/contexts/tsconfig.build.json"
     },
     {
-      "path": "../../components/react-commands/tsconfig.build.json"
+      "path": "../../../components/react-commands/tsconfig.build.json"
     }
   ]
 }
