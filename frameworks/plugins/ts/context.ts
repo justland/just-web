@@ -1,7 +1,6 @@
-import { Context } from '@just-web/contexts'
+import { Context, JustWebError } from '@just-web/contexts'
 import { Adder, createStore, push, Store, withAdder } from '@just-web/states'
 import { forEachKey } from 'type-plus'
-import { JustWebError } from '../../contexts/node_modules/@just-web/errors/ts'
 
 export interface PluginModule<M> {
   activate(context: Context): Promise<M>
