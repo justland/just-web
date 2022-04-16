@@ -7,11 +7,8 @@ export interface State {
 
 let store: Store<State>
 
-export function createStore(context: Context) {
-  return store = context.states.createStore<State>({
-    context,
-    openCommandPalette: false
-  })
+export function setStore(s: Store<State>) {
+  return store = s
 }
 
 export function getStore() {

@@ -2,7 +2,6 @@ import * as commandsModule from '@just-web/commands'
 import { ContributionsContext, ContributionsContextOptions, createContributionsContext, ReadonlyContributionsContext, toReadonlyContributionsContext } from '@just-web/contributions'
 import { createErrorsContext, ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import * as platformModule from '@just-web/platform'
-import * as statesModule from '@just-web/states'
 import { log } from './log'
 
 export type { Adder, OnStateChange, ReadonlyRegistry, ReadonlyStore, Registry, ResetState, SetState, StateChangeHandler, Store, WithAdder } from '@just-web/states'
@@ -12,7 +11,6 @@ export interface Context {
   contributions: ContributionsContext,
   errors: ErrorsContext,
   platform: platformModule.PlatformContext,
-  states: typeof statesModule
 }
 
 export interface ReadonlyContext {
@@ -20,7 +18,6 @@ export interface ReadonlyContext {
   contributions: ReadonlyContributionsContext,
   errors: ErrorsContext,
   platform: platformModule.ReadonlyPlatformContext,
-  states: Context['states']
 }
 
 export namespace createContext {
@@ -45,8 +42,7 @@ export function createContext(options?: createContext.Options): Context {
     commands,
     contributions,
     errors: createErrorsContext(options?.errors),
-    platform: platformModule.createContext(),
-    states: statesModule
+    platform: platformModule.createContext()
   }
 
   readonlyContext = toReadonly(context)
@@ -60,7 +56,6 @@ function toReadonly(context: Context): ReadonlyContext {
     contributions: toReadonlyContributionsContext(context.contributions),
     errors: context.errors,
     platform: platformModule.toReadonlyContext(context.platform),
-    states: context.states
   }
 }
 
