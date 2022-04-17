@@ -106,6 +106,6 @@
     "defaultBranch": "main",
     "url": "https://github.com/justland/just-web"
   },
-  "rushVersion": "5.63.0",
+  "rushVersion": "5.66.2",
   "variants": []
 }
