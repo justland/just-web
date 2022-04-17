@@ -1,10 +1,10 @@
 import { getStore } from '../store'
 
-export function createDocument() {
+export function createDocument(name?: string) {
   const store = getStore()
   store.update(s => {
     s.documents.push({
-      name: createDocumentName(),
+      name: name ?? createDocumentName(),
       content: ''
     })
   })
