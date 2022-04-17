@@ -30,7 +30,7 @@ export namespace createContext {
 let readonlyContext: ReadonlyContext
 
 export function createContext(options?: RecursivePartial<createContext.Options>): Context {
-  log.trace('createContext()')
+  log.trace('create context')
   const contributions = createContributionsContext(options?.contributions)
   const commands = commandsModule.createCommandsContext({
     ...options?.commands,
