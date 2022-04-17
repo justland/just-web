@@ -17,7 +17,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "standard-log": "~7.0.2"
+    "standard-log": "~7.0.3"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
