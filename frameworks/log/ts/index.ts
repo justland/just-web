@@ -8,3 +8,5 @@ export type {
   LogLevel, LogMethod, LogMethodNames, LogReporter,
   LogReporterOptions, MemoryLogReporter
 } from 'standard-log'
+
+export * from './context'
