@@ -13,6 +13,7 @@ module.exports = {
         'jest-watch-toggle-config', { 'setting': 'collectCoverage' },
       ],
     ]
+    config.setupFilesAfterEnv = ['<rootDir>/src/jest-setup.ts']
     return config
   }
 }
