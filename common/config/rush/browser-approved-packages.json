@@ -67,6 +67,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@headlessui/react",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@jest-web/routes",
       "allowedCategories": [ "libraries" ]
     },
@@ -517,6 +521,10 @@
     {
       "name": "style-loader",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "tailwindcss",
+      "allowedCategories": [ "production" ]
     },
     {
       "name": "tinykeys",

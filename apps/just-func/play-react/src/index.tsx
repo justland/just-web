@@ -1,15 +1,15 @@
-import createApp, { createStore } from '@just-web/app'
+import createApp from '@just-web/app'
 import * as routes from '@just-web/routes'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
-import { setStore } from './store'
+import { createAppStore } from './store'
 
 void (async () => {
   const app = await createApp().addPlugin(routes)
-  setStore(createStore({ app }))
+  createAppStore(app)
 
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   app.routes.register('/', () => {
