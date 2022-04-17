@@ -22,7 +22,7 @@
     "strictPeerDependencies": true,
     "useWorkspaces": true
   },
-  "pnpmVersion": "6.32.7",
+  "pnpmVersion": "6.32.8",
   "projectFolderMaxDepth": 3,
   "projectFolderMinDepth": 2,
   "projects": [
