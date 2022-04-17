@@ -9,7 +9,7 @@ export interface ErrorsContextOptions {
    * Prevents the default event handler of `onerror` to be fired.
    * @see https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror
    */
-  preventDefault: boolean
+  preventDefault?: boolean
 }
 
 export function createErrorsContext(options?: ErrorsContextOptions): ErrorsContext {

@@ -1,4 +1,5 @@
 import { startKeyBindings } from './keyBindings'
+import { log } from './log'
 import { isMac } from './os'
 
 export interface PlatformContext {
@@ -22,5 +23,6 @@ export namespace start {
 }
 
 export async function start(options: start.Options) {
+  log.trace('start')
   startKeyBindings(options)
 }
