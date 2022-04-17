@@ -50,6 +50,7 @@ importers:
       autoprefixer: ~10.4.4
       babel-loader: ~8.2.3
       chromatic: ~6.5.3
+      codemirror: ~5.65.2
       css-loader: ~6.7.1
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -71,6 +72,7 @@ importers:
       puppeteer: ~3.0.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
+      react-codemirror2-react-17: ~1.0.0
       react-dom: ~17.0.2
       react-refresh: 0.11.0
       react-scripts: 5.0.0
@@ -86,7 +88,9 @@ importers:
       '@just-web/app': link:../../../frameworks/app
       '@just-web/react-commands': link:../../../components/react-commands
       '@just-web/routes': link:../../../plugins/routes
+      codemirror: 5.65.2
       react: 17.0.2
+      react-codemirror2-react-17: 1.0.0_codemirror@5.65.2+react@17.0.2
       react-dom: 17.0.2_react@17.0.2
       web-vitals: 2.1.4
     devDependencies:
@@ -10254,6 +10258,10 @@ packages:
       q: 1.5.1
     dev: true
 
+  /codemirror/5.65.2:
+    resolution: {integrity: sha512-SZM4Zq7XEC8Fhroqe3LxbEEX1zUPWH1wMr5zxiBuiUF64iYOUH/JI88v4tBag8MiBS8B8gRv8O1pPXGYXQ4ErA==}
+    dev: false
+
   /collapse-white-space/1.0.6:
     resolution: {integrity: sha512-jEovNnrhMuqyCcjfEJA56v0Xq8SkIoPKDyaHahwo3POf4qcSXqMYuwNcOTzp74vTsR9Tn08z4MxWqAhcekogkQ==}
 
@@ -18522,6 +18530,16 @@ packages:
       lodash.curry: 4.1.1
       lodash.flow: 3.5.0
       pure-color: 1.3.0
+    dev: false
+
+  /react-codemirror2-react-17/1.0.0_codemirror@5.65.2+react@17.0.2:
+    resolution: {integrity: sha512-IAJozcvfiYo14s7C4KS0roMHHzZpClPuJb7VblhoEE8bOebMGkHj+FnjBX30dqNGL1rCNHr9KPYarFI7CJsjtg==}
+    peerDependencies:
+      codemirror: 5.x
+      react: ^17.0.1
+    dependencies:
+      codemirror: 5.65.2
+      react: 17.0.2
     dev: false
 
   /react-colorful/5.5.1_react-dom@16.14.0+react@16.14.0:

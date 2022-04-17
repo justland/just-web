@@ -2,11 +2,16 @@ import logo from './logo.svg'
 import './App.css'
 import { lazy, Suspense } from 'react'
 import { getStore } from './store'
+// import Editor from './components/Editor/Editor'
 
 const CommandPalette = lazy(async () => {
   const reactCommandsModule = await import('@just-web/react-commands')
-  const s = getStore().get()
-  await s.app.addPlugin(reactCommandsModule)
+  const { app } = getStore().get()
+  await app.addPlugin(reactCommandsModule)
+
+  // app.contributions.commands.add({
+  //   command: 'app.new'
+  // })
   return {
     default: reactCommandsModule.CommandPalette
   }
@@ -29,6 +34,7 @@ function App() {
           Learn React
         </a>
       </header>
+      {/* <Editor /> */}
     </div>
     <Suspense fallback={<div>Loading...</div>}>
       <CommandPalette />

@@ -287,6 +287,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "codemirror",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "copyfiles",
       "allowedCategories": [ "libraries" ]
     },
@@ -445,6 +449,14 @@
     {
       "name": "react-app-rewired",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "react-codemirror2",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "react-codemirror2-react-17",
+      "allowedCategories": [ "production" ]
     },
     {
       "name": "react-command-palette",
