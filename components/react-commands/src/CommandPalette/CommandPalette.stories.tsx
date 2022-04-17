@@ -1,8 +1,7 @@
-import { Context, createContext } from '@just-web/app'
+import { AppContext, Context, createTestApp, logLevels } from '@just-web/app'
 import { ComponentStory } from '@storybook/react'
 import Mousetrap from 'mousetrap'
-import { lazy, Suspense } from 'react'
-import { activate } from '../module'
+import * as module from '../module'
 import CommandPalette from './CommandPalette'
 
 
@@ -31,18 +30,18 @@ const simpleCmd: Contribution = { command: 'core.simpleCommand' }
 const keyedCmd = {
   command: 'core.keyedCommand',
   name: 'Command with key',
-  key: 'ctrl+s'
+  key: 'ctrl+k'
 }
 const macCmd = {
   command: 'core.macCommand',
   name: 'Command with mac key override',
-  key: 'ctrl+s',
-  mac: 'cmd+s'
+  key: 'ctrl+m',
+  mac: 'cmd+m'
 }
 const macOnlyCmd = {
   command: 'core.macOnlyCommand',
   name: 'Command with only mac key',
-  mac: 'cmd+s'
+  mac: 'cmd+o'
 }
 
 const Story: ComponentStory<typeof CommandPalette> = ({ ...args }) => {
@@ -52,89 +51,64 @@ const Story: ComponentStory<typeof CommandPalette> = ({ ...args }) => {
   </>
 }
 
-export const NoCommand = () => {
-  const context = createContext()
-  const Lazy = lazy(async () => {
-    await activate(context)
-    return { default: Story }
-  })
-  return <Suspense fallback={<div>...loading...</div>}>
-    <Lazy />
-  </Suspense>
+async function loadApp(setupApp?: (app: AppContext) => void) {
+  let app = createTestApp({ log: { logLevel: logLevels.all } })
+  setupApp?.(app)
+  app = await app.addPlugin(module)
+  await app.start()
+  return {}
 }
+
+export const NoCommand = Story.bind({})
+NoCommand.loaders = [
+  async () => loadApp()
+]
 
 NoCommand.play = () => {
   Mousetrap.trigger('ctrl+p')
 }
 
-export const OneCommand = () => {
-  const context = createContext()
-  addCommand(context, simpleCmd)
-  const Lazy = lazy(async () => {
-    await activate(context)
-    return { default: Story }
-  })
-  return <Suspense fallback={<div>...loading...</div>}>
-    <Lazy />
-  </Suspense>
-}
+export const OneCommand = Story.bind({})
 
+OneCommand.loaders = [
+  async () => loadApp(app => addCommand(app, simpleCmd))
+]
 OneCommand.play = () => {
   Mousetrap.trigger('ctrl+p')
 }
 
-export const WithKey = () => {
-  const context = createContext()
-  addCommand(context, keyedCmd)
-  const Lazy = lazy(async () => {
-    await activate(context)
-    return { default: Story }
-  })
-  return <Suspense fallback={<div>...loading...</div>}>
-    <Lazy />
-  </Suspense>
-}
-
+export const WithKey = Story.bind({})
+WithKey.loaders = [
+  async () => loadApp(app => addCommand(app, keyedCmd))
+]
 WithKey.play = () => {
   Mousetrap.trigger('ctrl+p')
 }
 
-export const OverrideMacCommandInMac = () => {
-  const context = createContext()
-  context.platform = {
-    ...context.platform,
-    isMac: () => true
-  }
-  addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  const Lazy = lazy(async () => {
-    await activate(context)
-    return { default: Story }
+export const OverrideMacCommandInMac = Story.bind({})
+OverrideMacCommandInMac.loaders = [
+  async () => loadApp(app => {
+    app.platform = {
+      ...app.platform,
+      isMac: () => true
+    }
+    addCommand(app, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
   })
-  return <Suspense fallback={<div>...loading...</div>}>
-    <Lazy />
-  </Suspense>
-}
-
+]
 OverrideMacCommandInMac.play = () => {
   Mousetrap.trigger('ctrl+p')
 }
 
-export const OverrideMacCommandInWindow = () => {
-  const context = createContext()
-  context.platform = {
-    ...context.platform,
-    isMac: () => false
-  }
-  addCommand(context, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  const Lazy = lazy(async () => {
-    await activate(context)
-    return { default: Story }
+export const OverrideMacCommandInWindow = Story.bind({})
+OverrideMacCommandInWindow.loaders = [
+  async () => loadApp(app => {
+    app.platform = {
+      ...app.platform,
+      isMac: () => false
+    }
+    addCommand(app, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
   })
-  return <Suspense fallback={<div>...loading...</div>}>
-    <Lazy />
-  </Suspense>
-}
-
+]
 OverrideMacCommandInWindow.play = () => {
   Mousetrap.trigger('ctrl+p')
 }
