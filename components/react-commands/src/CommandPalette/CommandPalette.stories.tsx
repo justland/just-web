@@ -4,7 +4,6 @@ import Mousetrap from 'mousetrap'
 import * as module from '../module'
 import CommandPalette from './CommandPalette'
 
-
 export default {
   component: CommandPalette
 }
