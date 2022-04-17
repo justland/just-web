@@ -23,7 +23,7 @@
     "@just-web/log": "workspace:*",
     "@just-web/platform": "workspace:*",
     "@just-web/states": "workspace:*",
-    "standard-log": "~7.0.2",
+    "standard-log": "~7.0.3",
     "type-plus": "~4.9.0"
   },
   "devDependencies": {
