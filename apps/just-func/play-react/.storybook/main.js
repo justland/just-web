@@ -20,5 +20,8 @@ module.exports = {
   core: {
     builder: 'webpack5'
   },
-  staticDirs: ['../public']
+  staticDirs: ['../public'],
+  typescript: {
+    check: false
+  }
 };
