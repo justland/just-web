@@ -2,7 +2,8 @@ import '@just-web/commands'
 import '@just-web/contributions'
 import * as platformModule from '@just-web/platform'
 import '@just-web/states'
-import { config, ConfigOptions } from 'standard-log'
+import { config, ConfigOptions, logLevels } from 'standard-log'
+import { requiredDeep } from 'type-plus'
 import { Context, createContext } from './contexts/context'
 import { log } from './log'
 import { createPluginsContext, PluginsContext, startPlugins } from './plugins/context'
@@ -23,13 +24,26 @@ export function createApp(options?: createApp.Options): AppContext {
   config(options?.log)
   const context = createContext(options)
 
-  return {
-    ...context,
+  return Object.assign(context, {
     ...createPluginsContext({ context }),
     async start() {
       log.notice('application starts')
-      await platformModule.start(context)
       await startPlugins()
+      await platformModule.start(context)
     }
-  }
+  })
+}
+
+export function createTestApp(options?: createApp.Options): AppContext {
+  config(requiredDeep({ mode: 'test', logLevel: logLevels.debug }, options?.log))
+  const context = createContext(options)
+
+  return Object.assign(context, {
+    ...createPluginsContext({ context }),
+    async start() {
+      log.notice('application starts')
+      await startPlugins()
+      await platformModule.start(context)
+    }
+  })
 }

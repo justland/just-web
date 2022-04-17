@@ -1,4 +1,5 @@
 import { CommandRegistry, commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
+import { log } from './log'
 
 export interface CommandsContext extends CommandRegistry {
 }
@@ -9,6 +10,7 @@ export interface ReadonlyCommandsContext extends ReadonlyCommandRegistry {
 export interface CommandsContextOptions extends commandRegistry.Options { }
 
 export function createCommandsContext(options: CommandsContextOptions): CommandsContext {
+  log.trace('create context')
   options.contributions.commands.add({
     command: 'just-web.showCommandPalette',
     commandPalette: false

@@ -13,8 +13,8 @@ export interface ReadonlyContributionsContext {
 }
 
 export interface ContributionsContextOptions {
-  commands: commandContributionRegistry.Options['commands'],
-  keyBindings: keyBindingRegistry.Options['keyBindings']
+  commands?: commandContributionRegistry.Options['commands'],
+  keyBindings?: keyBindingRegistry.Options['keyBindings']
 }
 
 export function createContributionsContext(options?: ContributionsContextOptions): ContributionsContext {

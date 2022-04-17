@@ -2,6 +2,7 @@ import * as commandsModule from '@just-web/commands'
 import { ContributionsContext, ContributionsContextOptions, createContributionsContext, ReadonlyContributionsContext, toReadonlyContributionsContext } from '@just-web/contributions'
 import { createErrorsContext, ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import * as platformModule from '@just-web/platform'
+import { RecursivePartial } from 'type-plus'
 import { log } from '../log'
 
 export interface Context {
@@ -20,15 +21,15 @@ export interface ReadonlyContext {
 
 export namespace createContext {
   export interface Options {
-    contributions: ContributionsContextOptions,
-    commands: commandsModule.CommandsContextOptions,
-    errors: ErrorsContextOptions
+    contributions?: ContributionsContextOptions,
+    commands?: commandsModule.CommandsContextOptions,
+    errors?: ErrorsContextOptions
   }
 }
 
 let readonlyContext: ReadonlyContext
 
-export function createContext(options?: createContext.Options): Context {
+export function createContext(options?: RecursivePartial<createContext.Options>): Context {
   log.trace('createContext()')
   const contributions = createContributionsContext(options?.contributions)
   const commands = commandsModule.createCommandsContext({
