@@ -30,6 +30,7 @@ export function createState<T>(init: T):
   }
 
   function onChange(handler: StateChangeHandler<T>) {
+    if (handlers.includes(handler)) return
     handlers.push(handler)
   }
 
