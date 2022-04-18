@@ -35,7 +35,7 @@ export function createApp(options?: createApp.Options): AppContext {
   })
 }
 
-export interface TestAppContext extends Context, TestLogContext, PluginsContext<AppContext> {
+export interface TestAppContext extends Context, TestLogContext, PluginsContext<TestAppContext> {
   start(): Promise<void>
 }
 
