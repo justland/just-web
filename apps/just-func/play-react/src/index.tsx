@@ -1,15 +1,24 @@
-import createApp from '@just-web/app'
+import createApp, { logLevels } from '@just-web/app'
 import * as routes from '@just-web/routes'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
+import { createDocument } from './document/createDocument'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 import { createAppStore } from './store'
 
 void (async () => {
-  const app = await createApp().addPlugin(routes)
+  const app = await createApp({ log: { logLevel: logLevels.all } })
+    .addPlugin(routes)
   createAppStore(app)
+
+  app.contributions.commands.add({
+    command: 'app.newDocument',
+    name: 'Create a new document'
+  })
+
+  app.commands.register('app.newDocument', () => createDocument())
 
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   app.routes.register('/', () => {

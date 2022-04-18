@@ -11,7 +11,6 @@ const MainBackdrop = () => {
   return <div className={styles.main_backdrop}>
     <img src={logo} className={styles.logo} alt="logo" />
     <p>
-      Press <code>ctrl+n</code> to create a new document.<br />
       Press <code>{formatKeyBinding(showCommandPalette!).key}</code> to open command palette.
     </p>
     <a

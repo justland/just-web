@@ -1,4 +1,4 @@
-import { AppContext, Context, createTestApp, logLevels } from '@just-web/app'
+import { Context, createTestApp, logLevels, TestAppContext } from '@just-web/app'
 import { ComponentStory } from '@storybook/react'
 import Mousetrap from 'mousetrap'
 import * as module from '../module'
@@ -50,7 +50,7 @@ const Story: ComponentStory<typeof CommandPalette> = ({ ...args }) => {
   </>
 }
 
-async function loadApp(setupApp?: (app: AppContext) => void) {
+async function loadApp(setupApp?: (app: TestAppContext) => void) {
   let app = createTestApp({ log: { logLevel: logLevels.all } })
   setupApp?.(app)
   app = await app.addPlugin(module)
