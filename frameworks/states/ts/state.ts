@@ -1,3 +1,5 @@
+import { stateLog } from './logs'
+
 export interface SetState<T> {
   (value: T): void
 }
@@ -26,11 +28,13 @@ export function createState<T>(init: T):
 
     const old = value
     value = Object.freeze(newValue)
+    stateLog.planck(`state changed:`, old, value)
     handlers.forEach(h => h(value, old))
   }
 
   function onChange(handler: StateChangeHandler<T>) {
     if (handlers.includes(handler)) return
+    stateLog.trace(`new onChange handler: ${handler.toString()}`)
     handlers.push(handler)
   }
 

@@ -93,13 +93,14 @@ test('onChange handler called once per change', async () => {
   }
 
   renderer.create(<Counter />)
-  await act(() => store.update(s => { s.counter++ }))
-  await act(() => store.update(s => { s.counter++ }))
-  await act(() => store.update(s => { s.counter++ }))
-  await act(() => store.update(s => { s.counter++ }))
-  await act(() => store.update(s => { s.counter++ }))
+  act(() => store.update(s => { s.counter++ }))
+  act(() => store.update(s => { s.counter++ }))
+  act(() => store.update(s => { s.counter++ }))
+  act(() => store.update(s => { s.counter++ }))
+  act(() => store.update(s => { s.counter++ }))
 
-  const count = reporter.getLogMessageWithLevel().split('\n')
-    .filter(m => m === `(PLANCK) useStore: onChange triggered`).length
+  const messages = reporter.getLogMessageWithLevel().split('\n')
+  console.info(messages)
+  const count = messages.filter(m => m === `(PLANCK) useStore: onChange triggered`).length
   expect(count).toBe(5)
 })

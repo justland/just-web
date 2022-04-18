@@ -37,7 +37,6 @@
     "@babel/preset-env": "~7.16.11",
     "@babel/preset-typescript": "~7.16.7",
     "@just-web/app": "workspace:*",
-    "@just-web/react-commands": "workspace:*",
     "@just-web/repo-scripts": "workspace:*",
     "@size-limit/preset-small-lib": "~7.0.8",
     "@storybook/addon-actions": "~6.4.19",

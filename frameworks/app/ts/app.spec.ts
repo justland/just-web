@@ -1,5 +1,5 @@
+import { logLevels } from '@just-web/log'
 import { logMatchSome } from '@just-web/testing'
-import { logLevels } from 'standard-log'
 import createApp, { createTestApp } from '.'
 
 describe('createApp()', () => {

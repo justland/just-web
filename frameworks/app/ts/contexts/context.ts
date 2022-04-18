@@ -1,5 +1,8 @@
 import * as commandsModule from '@just-web/commands'
-import { ContributionsContext, ContributionsContextOptions, createContributionsContext, ReadonlyContributionsContext, toReadonlyContributionsContext } from '@just-web/contributions'
+import {
+  ContributionsContext, ContributionsContextOptions, createContributionsContext,
+  ReadonlyContributionsContext, toReadonlyContributionsContext
+} from '@just-web/contributions'
 import { createErrorsContext, ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import * as platformModule from '@just-web/platform'
 import { RecursivePartial } from 'type-plus'

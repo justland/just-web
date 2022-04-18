@@ -1,6 +1,7 @@
 import type { CommandContribution, Context, KeyBindingContribution } from '@just-web/app'
 import { formatCommand, formatKeyBinding } from '@just-web/app'
-import { useState, VFC } from 'react'
+import { useStore } from '@just-web/react'
+import { VFC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
 import { required } from 'type-plus'
@@ -38,12 +39,11 @@ const RenderCommand: VFC<{ name: string, key?: string }> = command => (
 
 const CommandPalette: VFC<CommandPaletteProps> = (props) => {
   const store = getStore()
-  const ctx = required(store.get().context, props.ctx)
-  const commands = getCommands(ctx)
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useStore(store, s => s.openCommandPalette, s => { s.openCommandPalette = open })
 
-  store.onChange(s => setOpen(s.openCommandPalette))
-  const onRequestClose = () => store.update(s => { s.openCommandPalette = false })
+  const commands = open ? getCommands(required(store.get().context, props.ctx)) : []
+
+  const onRequestClose = () => setOpen(false)
 
   return <CP
     commands={commands}
