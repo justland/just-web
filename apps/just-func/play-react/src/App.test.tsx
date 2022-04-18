@@ -1,10 +1,11 @@
-import { createApp } from '@just-web/app'
-import * as reactCommandsModule from '@just-web/react-commands'
+import { createTestApp } from '@just-web/app'
 import { render, screen } from '@testing-library/react'
 import App from './App'
+import { createAppStore } from './store'
 
 test('renders learn react link', async () => {
-  const app = await createApp().addPlugin(reactCommandsModule)
+  const app = createTestApp()
+  createAppStore(app as any)
   await app.start()
   render(<App />)
   const linkElement = screen.getByText(/learn react/i)
