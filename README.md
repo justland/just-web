@@ -30,7 +30,7 @@ npm install --save-peer @just-web/app
 
 Libraries are additional packages that you can use for specific scenarios.
 
-- [`@just-web/react`]: [`React`] development utilities.
+- [`@just-web/react`]: additional utilities when using [`@just-web`] with [`React`].
 
 ## Components
 
@@ -58,6 +58,7 @@ Here are the plugins provided in this repository:
 
 Please check out the [contributing guide](./CONTRIBUTING.md)
 
+[`@just-web`]: https://github.com/justland/just-web
 [`@just-web/commands`]: https://github.com/justland/just-web/tree/main/frameworks/commands
 [`@just-web/react`]: https://github.com/justland/just-web/tree/main/libraries/react
 [`@just-web/react-commands`]: https://github.com/justland/just-web/tree/main/components/react-commands

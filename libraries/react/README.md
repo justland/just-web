@@ -1,6 +1,6 @@
 # @just-web/react <!-- omit in toc -->
 
-[`@just-web/react`] provides additional tools to use [`@just-web`] with [`React`].
+[`@just-web/react`] provides additional utilities when using [`@just-web`] with [`React`].
 
 ## Install <!-- omit in toc -->
 
