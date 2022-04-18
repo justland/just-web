@@ -10,6 +10,7 @@ import { log } from './log'
 import { createPluginsContext, PluginsContext, startPlugins } from './plugins/context'
 
 export * from './contexts/context'
+export type { PluginModule } from './plugins/context'
 
 export namespace createApp {
   export interface Options extends createContext.Options {
@@ -52,7 +53,7 @@ export function createTestApp(options?: createTestApp.Options): TestAppContext {
 
   return Object.assign(context, {
     ...logContext,
-    ...createPluginsContext({ context }),
+    ...createPluginsContext<TestAppContext>({ context }),
     async start() {
       log.notice('application starts')
       await startPlugins()

@@ -3,8 +3,7 @@ import { useEffect } from 'react'
 import renderer, { act, ReactTestRendererJSON } from 'react-test-renderer'
 import { useStore } from '.'
 
-
-test("state value updates as store updates", () => {
+test('state value updates as store updates', async () => {
   const store = createStore({ counter: 0 })
 
   const Counter = () => {
@@ -21,7 +20,7 @@ test("state value updates as store updates", () => {
     </div>
   `)
 
-  act(() => store.update(s => { s.counter++ }))
+  await act(() => store.update(s => { s.counter++ }))
 
   tree = c.toJSON()
   expect(tree).toMatchInlineSnapshot(`
@@ -31,7 +30,7 @@ test("state value updates as store updates", () => {
   `)
 })
 
-test('specify update function', () => {
+test('specify update function', async () => {
   const store = createStore({ counter: 0 })
 
   const Counter = () => {
@@ -46,13 +45,13 @@ test('specify update function', () => {
   }
 
   const c = renderer.create(<Counter />)
-  let tree = c.toJSON() as ReactTestRendererJSON[]
-  act(() => tree[1].props.onClick())
+  const tree = c.toJSON() as ReactTestRendererJSON[]
+  await act(() => tree[1].props.onClick())
 
   expect(store.get().counter).toBe(1)
 })
 
-test("useEffect to update store", () => {
+test('useEffect to update store', async () => {
   const store = createStore({ counter: 0 })
 
   const Counter = () => {
@@ -71,8 +70,8 @@ test("useEffect to update store", () => {
   }
 
   const c = renderer.create(<Counter />)
-  let tree = c.toJSON() as ReactTestRendererJSON[]
-  act(() => tree[1].props.onClick())
+  const tree = c.toJSON() as ReactTestRendererJSON[]
+  await act(() => tree[1].props.onClick())
 
   expect(store.get().counter).toBe(1)
 })

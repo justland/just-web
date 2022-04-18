@@ -962,6 +962,7 @@ importers:
       '@babel/preset-env': ~7.16.11
       '@babel/preset-typescript': ~7.16.7
       '@just-web/app': workspace:*
+      '@just-web/react-commands': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
       '@storybook/addon-actions': ~6.4.19
@@ -1048,6 +1049,7 @@ importers:
       '@babel/preset-env': 7.16.11_@babel+core@7.17.9
       '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
       '@just-web/app': link:../../frameworks/app
+      '@just-web/react-commands': link:../../components/react-commands
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@storybook/addon-actions': 6.4.22_b49bddbe4b905ced4713cb857cca91fa

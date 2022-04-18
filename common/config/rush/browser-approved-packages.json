@@ -107,8 +107,12 @@
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "@just-web/react-commands",
+      "name": "@just-web/react",
       "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@just-web/react-commands",
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@just-web/repo-config",
