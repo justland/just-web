@@ -1,6 +1,6 @@
 # @just-web/react <!-- omit in toc -->
 
-[`@just-web/react`] provides additional tools to use `@just-web` with [`React`].
+[`@just-web/react`] provides additional tools to use [`@just-web`] with [`React`].
 
 ## Install <!-- omit in toc -->
 
@@ -20,10 +20,10 @@ rush add -p @just-web/react
 
 ## Features <!-- omit in toc -->
 
-- [lazyImport](#lazyimport)
-- [useStore](#usestore)
+- [`lazyImport`](#lazyimport)
+- [`useStore`](#usestore)
 
-## [lazyImport]
+## [`lazyImport`]
 
 Imports a component module and get lazy load the component within.
 
@@ -42,7 +42,7 @@ const MyComp = () => {
 }
 ```
 
-## [useStore]
+## [`useStore`]
 
 ```tsx
 import { createStore } from '@just-web/app'
@@ -57,8 +57,9 @@ const Component = () => {
 }
 ```
 
+[`@just-web`]: https://github.com/justland/just-web
 [`@just-web/react`]: https://github.com/justland/just-web/tree/main/frameworks/react
 [`@just-web/states`]: https://github.com/justland/just-web/tree/main/frameworks/states
-[React]: https://reactjs.org/
-[useStore]: https://github.com/justland/just-web/blob/main/libraries/react/src/useStore.ts
-[lazyImport]: https://github.com/justland/just-web/blob/main/libraries/react/src/lazyImport.ts
+[`React`]: https://reactjs.org/
+[`useStore`]: https://github.com/justland/just-web/blob/main/libraries/react/src/useStore.ts
+[`lazyImport`]: https://github.com/justland/just-web/blob/main/libraries/react/src/lazyImport.ts
