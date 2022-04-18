@@ -9,3 +9,5 @@ toReadonlyRegistry
 withAdder
 
 CommandPalette
+
+useStore
