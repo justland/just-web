@@ -43,6 +43,17 @@ module.exports = {
             '@typescript-eslint/await-thenable': 'off',
             'import/no-anonymous-default-export': 'off'
           }
+        },
+        {
+          files: [
+            '**/*.spec.*'
+          ],
+          rules: {
+            // mostly for snapshot testing
+            '@typescript-eslint/no-unsafe-assignment': 'off',
+            '@typescript-eslint/no-unsafe-call': 'off',
+            '@typescript-eslint/no-unsafe-return': 'off',
+          }
         }
       ],
       root: true

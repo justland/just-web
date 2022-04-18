@@ -1,5 +1,7 @@
 module.exports = {
   jest(config) {
+    const esModules = ['@just-web/react-commands']
+    esModules.forEach(m => config.moduleNameMapper[m] = 'identity-obj-proxy')
     // config.roots = ['<rootDir>/ts']
     config.testMatch = [
       '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}'

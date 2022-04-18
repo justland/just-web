@@ -13,8 +13,6 @@ export function useStore<S, V>(
   : [value: V, setvalue: (v: V | ((v: V) => V)) => void] {
   const [value, setValue] = useState(getValue(store.get()))
   store.onChange(s => setValue(getValue(s)))
-  if (updateValue) {
-    useEffect(() => store.update(updateValue), [value])
-  }
+  useEffect(() => updateValue && store.update(updateValue), [store, updateValue, value])
   return [value, setValue]
 }

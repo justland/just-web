@@ -15,7 +15,7 @@ const UseStore: VFC<{ store: Store<{ counter: number }> }> = ({ store }) => {
 
 const UseEffect: VFC<{ store: Store<{ counter: number }> }> = ({ store }) => {
   const [value, setValue] = useStore(store, s => s.counter)
-  useEffect(() => store.update(s => { s.counter = value }), [value])
+  useEffect(() => store.update(s => { s.counter = value }), [store, value])
   return <>
     <div>{value}</div>
     <div>{store.get().counter} - this will lack behind when using setValue, expected</div>

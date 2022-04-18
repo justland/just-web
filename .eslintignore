@@ -2,6 +2,5 @@
 !.storybook
 build
 dist*
-lib*
 node_modules
 out*

@@ -6,7 +6,8 @@
     ".git/objects",
     ".vscode",
     ".vscode-insiders",
-    "__snapshots__"
+    "__snapshots__",
+    "pnpm-lock.yaml"
   ],
   "cSpell.words": [
     "clsx",
