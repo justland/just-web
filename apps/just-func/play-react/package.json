@@ -39,6 +39,7 @@
   "dependencies": {
     "@headlessui/react": "~1.5.0",
     "@just-web/app": "workspace:*",
+    "@just-web/react": "workspace:*",
     "@just-web/react-commands": "workspace:*",
     "@just-web/routes": "workspace:*",
     "codemirror": "~5.65.2",
