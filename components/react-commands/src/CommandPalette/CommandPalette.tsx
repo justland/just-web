@@ -1,6 +1,5 @@
-import { Context } from '@just-web/app'
-import type { CommandContribution, KeyBindingContribution } from '@just-web/contributions'
-import { sentenceCase } from '@just-web/format'
+import type { CommandContribution, Context, KeyBindingContribution } from '@just-web/app'
+import { formatCommand, formatKeyBinding } from '@just-web/app'
 import { useState, VFC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
@@ -15,7 +14,6 @@ export interface CommandPaletteProps {
 }
 
 function getCommands(ctx: Context) {
-  const m = ctx.platform.isMac()
   const cmds = ctx.contributions.commands.get()
   const kbs = ctx.contributions.keyBindings.get()
   return Object.values(cmds)
@@ -23,11 +21,11 @@ function getCommands(ctx: Context) {
     .map(c => {
       const r = {
         ...c,
-        name: c.name ?? sentenceCase(c.command.split('.', 2)[1]),
+        name: formatCommand(c).name,
         command: () => ctx.commands.invoke(c.command)
       }
       const k = kbs[c.command]
-      return k ? { ...r, key: m ? k.mac ?? k.key : k.key } : r
+      return k ? { ...r, key: formatKeyBinding(k).key } : r
     })
 }
 
