@@ -1,6 +1,6 @@
 # just-web
 
-`@just-web` is plugin-based application framework.
+`@just-web` is a plugin-based application framework.
 
 As a good framework, it defers making decisions as much as possible.
 Meaning you have the freedom to choose your tech stacks or even changing them as the landscape of web development changes.
@@ -8,7 +8,7 @@ Meaning you have the freedom to choose your tech stacks or even changing them as
 You can use:
 
 - `React`, `Vue.js`, `SolidJS`, `Svelte`, etc. as your rendering library,
-- `redux` or `mobx` or anything else as your application state management,
+- `redux` or `mobx` or anything else to manage your application state,
 - `axios` or `cross-fetch` or vanilla fetch as your fetching mechanism,
 - ...and so on.
 
