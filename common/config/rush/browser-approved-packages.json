@@ -108,7 +108,7 @@
     },
     {
       "name": "@just-web/react",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@just-web/react-commands",

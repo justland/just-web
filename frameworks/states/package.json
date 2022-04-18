@@ -17,6 +17,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
+    "@just-web/log": "workspace:*",
     "immer": "~9.0.12",
     "type-plus": "~4.9.0"
   },
