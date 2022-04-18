@@ -20,12 +20,12 @@ rush add -p @just-web/react
 
 ## Features <!-- omit in toc -->
 
-- [`lazyImport`](#lazyimport)
-- [`useStore`](#usestore)
+- [lazyImport](#lazyimport)
+- [useStore](#usestore)
 
-## [`lazyImport`]
+## lazyImport
 
-Imports a component module and get lazy load the component within.
+[`lazyImport`] imports a component module and get lazy load the component within.
 
 ```tsx
 const app = createTestApp()
@@ -42,7 +42,9 @@ const MyComp = () => {
 }
 ```
 
-## [`useStore`]
+## useStore
+
+[`useStore`] pick out a value in the `store` for `useState()`.
 
 ```tsx
 import { createStore } from '@just-web/app'
