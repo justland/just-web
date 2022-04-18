@@ -1,5 +1,6 @@
 import { Store } from '@just-web/app'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { log } from './log'
 
 /**
  * Use a value in the store for `useState()`.
@@ -12,7 +13,10 @@ export function useStore<S, V>(
   updateValue?: (draft: S) => void | S)
   : [value: V, setvalue: (v: V | ((v: V) => V)) => void] {
   const [value, setValue] = useState(getValue(store.get()))
-  store.onChange(s => setValue(getValue(s)))
-  useEffect(() => updateValue && store.update(updateValue), [store, updateValue, value])
+  store.onChange(useCallback(s => {
+    log.planck('useStore: onChange triggered')
+    setValue(getValue(s))
+  }, []))
+  useEffect(() => updateValue && store.update(updateValue), [value])
   return [value, setValue]
 }
