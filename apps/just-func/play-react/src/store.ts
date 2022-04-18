@@ -22,3 +22,7 @@ export function createAppStore<A extends App = App>(app: A) {
 export function getStore<A extends App = App>() {
   return s as Store<AppStore<A>>
 }
+
+export function getStoreValue<A extends App = App>() {
+  return s.get() as AppStore<A>
+}
