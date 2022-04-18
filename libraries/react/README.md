@@ -20,9 +20,29 @@ rush add -p @just-web/react
 
 ## Features <!-- omit in toc -->
 
+- [lazyImport](#lazyimport)
 - [useStore](#usestore)
 
-## useStore
+## [lazyImport]
+
+Imports a component module and get lazy load the component within.
+
+```tsx
+const app = createTestApp()
+
+const MyComp = () => {
+  const CommandPalette = lazyImport(
+    () => app,
+    () => import('@just-web/react-commands'),
+    m => m.CommandPalette)
+
+  return <Suspense fallback={<div>loading...</div>}>
+    <CommandPalette />
+  </Suspense>
+}
+```
+
+## [useStore]
 
 ```tsx
 import { createStore } from '@just-web/app'
@@ -40,3 +60,5 @@ const Component = () => {
 [`@just-web/react`]: https://github.com/justland/just-web/tree/main/frameworks/react
 [`@just-web/states`]: https://github.com/justland/just-web/tree/main/frameworks/states
 [React]: https://reactjs.org/
+[useStore]: https://github.com/justland/just-web/blob/main/libraries/react/src/useStore.ts
+[lazyImport]: https://github.com/justland/just-web/blob/main/libraries/react/src/lazyImport.ts
