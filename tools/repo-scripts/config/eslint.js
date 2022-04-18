@@ -27,6 +27,9 @@ module.exports = {
           rules: {
             '@typescript-eslint/no-unsafe-assignment': 'off',
             '@typescript-eslint/require-await': 'off',
+            // this rule is overreaching.
+            // You should be good unit tests to catch any issue.
+            'react-hooks/exhaustive-deps': 'off'
           }
         },
         {
