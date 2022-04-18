@@ -1,0 +1,8 @@
+!.depcheckrc.yml
+!.storybook
+build
+dist*
+lib*
+node_modules
+out*
+storybook-static

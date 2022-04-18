@@ -5,10 +5,7 @@
       "path": "../../frameworks/app/tsconfig.build.json"
     },
     {
-      "path": "../../frameworks/format/tsconfig.build.json"
-    },
-    {
-      "path": "../../frameworks/contributions/tsconfig.build.json"
+      "path": "../../tools/repo-scripts/tsconfig.build.json"
     }
   ],
   "exclude": [

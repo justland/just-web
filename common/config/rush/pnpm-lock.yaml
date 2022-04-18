@@ -281,6 +281,7 @@ importers:
       '@babel/preset-typescript': ~7.16.7
       '@just-web/app': workspace:*
       '@just-web/repo-scripts': workspace:*
+      '@size-limit/preset-small-lib': ~7.0.8
       '@storybook/addon-actions': ~6.4.19
       '@storybook/addon-console': ~1.2.3
       '@storybook/addon-essentials': ~6.4.19
@@ -350,6 +351,7 @@ importers:
       react-refresh: 0.11.0
       react-scripts: 5.0.0
       rimraf: ~3.0.2
+      size-limit: ~7.0.8
       storybook-css-modules-preset: ~1.1.1
       storybook-dark-mode: ~1.0.9
       style-loader: ~3.3.1
@@ -371,6 +373,7 @@ importers:
       '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
       '@just-web/app': link:../../frameworks/app
       '@just-web/repo-scripts': link:../../tools/repo-scripts
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@storybook/addon-actions': 6.4.22_b49bddbe4b905ced4713cb857cca91fa
       '@storybook/addon-console': 1.2.3_@storybook+addon-actions@6.4.22
       '@storybook/addon-essentials': 6.4.22_983b7a4a359f29d5f5093dbc171e6e78
@@ -437,6 +440,7 @@ importers:
       react-refresh: 0.11.0
       react-scripts: 5.0.0_f1c39c7932ae146dac01b057f6da7da8
       rimraf: 3.0.2
+      size-limit: 7.0.8
       storybook-css-modules-preset: 1.1.1
       storybook-dark-mode: 1.0.9_960ebd552dfb7fae96157d4c34ba5814
       style-loader: 3.3.1_webpack@5.72.0
@@ -492,7 +496,7 @@ importers:
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -509,7 +513,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       standard-log: ~7.0.3
       type-plus: ~4.9.0
       typescript: ^4.6.3
@@ -557,7 +561,7 @@ importers:
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -574,7 +578,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       type-plus: ~4.9.0
       typescript: ^4.6.3
     dependencies:
@@ -615,7 +619,7 @@ importers:
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -632,7 +636,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       type-plus: ~4.9.0
       typescript: ^4.6.3
     dependencies:
@@ -670,7 +674,7 @@ importers:
       '@babel/plugin-transform-runtime': ~7.17.0
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -688,7 +692,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       type-plus: ~4.9.0
       typescript: ^4.6.3
     dependencies:
@@ -726,7 +730,7 @@ importers:
       '@just-web/contributions': workspace:*
       '@just-web/platform': workspace:*
       '@just-web/repo-scripts': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -744,7 +748,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       sentence-case: ~3.0.4
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       typescript: ^4.6.3
     dependencies:
       '@just-web/contributions': link:../contributions
@@ -779,7 +783,7 @@ importers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
       '@just-web/repo-scripts': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -796,7 +800,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       standard-log: ~7.0.3
       type-plus: ~4.9.0
       typescript: ^4.6.3
@@ -836,7 +840,7 @@ importers:
       '@just-web/log': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@just-web/testing': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@types/mousetrap': ~1.6.9
       '@types/platform': ~1.3.4
@@ -857,7 +861,7 @@ importers:
       npm-run-all: ^4.1.5
       platform: ~1.3.6
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       type-plus: ~4.9.0
       typescript: ^4.6.3
     dependencies:
@@ -899,7 +903,7 @@ importers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
       '@just-web/repo-scripts': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -917,7 +921,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       type-plus: ~4.9.0
       typescript: ^4.6.3
     dependencies:
@@ -947,6 +951,180 @@ importers:
       size-limit: 7.0.8
       typescript: 4.6.3
 
+  ../../libraries/react:
+    specifiers:
+      '@babel/core': ~7.17.8
+      '@babel/plugin-syntax-flow': ~7.16.7
+      '@babel/plugin-transform-react-jsx': ~7.17.3
+      '@babel/plugin-transform-runtime': ~7.17.0
+      '@babel/preset-env': ~7.16.11
+      '@babel/preset-typescript': ~7.16.7
+      '@just-web/app': workspace:*
+      '@just-web/repo-scripts': workspace:*
+      '@size-limit/preset-small-lib': ~7.0.8
+      '@storybook/addon-actions': ~6.4.19
+      '@storybook/addon-console': ~1.2.3
+      '@storybook/addon-essentials': ~6.4.19
+      '@storybook/addon-interactions': ~6.4.19
+      '@storybook/addon-links': ~6.4.19
+      '@storybook/addon-storyshots': ~6.4.19
+      '@storybook/addon-storyshots-puppeteer': ~6.4.19
+      '@storybook/addon-storysource': ~6.4.19
+      '@storybook/addons': ~6.4.20
+      '@storybook/api': ~6.4.20
+      '@storybook/builder-webpack5': ~6.4.19
+      '@storybook/components': ~6.4.20
+      '@storybook/core-events': ~6.4.20
+      '@storybook/jest': ~0.0.10
+      '@storybook/manager-webpack5': ~6.4.19
+      '@storybook/node-logger': ~6.4.19
+      '@storybook/preset-create-react-app': ^4.1.0
+      '@storybook/react': ~6.4.19
+      '@storybook/test-runner': ~0.0.5
+      '@storybook/testing-library': ^0.0.9
+      '@storybook/theming': ~6.4.20
+      '@testing-library/dom': ~8.11.3
+      '@testing-library/jest-dom': ^5.16.2
+      '@testing-library/react': ^12.1.4
+      '@testing-library/user-event': ^13.5.0
+      '@types/jest': ^27.4.1
+      '@types/mousetrap': ~1.6.9
+      '@types/node': ^16.11.26
+      '@types/platform': ~1.3.4
+      '@types/react': ^17.0.42
+      '@types/react-dom': ^17.0.14
+      '@types/react-test-renderer': ~17.0.2
+      '@types/testing-library__jest-dom': ~5.14.3
+      '@typescript-eslint/eslint-plugin': ^5.16.0
+      '@typescript-eslint/parser': ^5.16.0
+      autoprefixer: ~10.4.4
+      babel-loader: ~8.2.3
+      chromatic: ~6.5.3
+      copyfiles: ~2.4.1
+      cross-env: ~7.0.3
+      css-loader: ~6.7.1
+      depcheck: ~1.4.3
+      eslint: ^8.11.0
+      eslint-config-prettier: ~8.5.0
+      eslint-config-react-app: ~7.0.0
+      eslint-plugin-harmony: ^6.0.2
+      eslint-plugin-storybook: ^0.5.7
+      eslint-plugin-yml: ~0.14.0
+      identity-obj-proxy: ~3.0.0
+      jest: ^27.5.1
+      jest-circus: ~27.5.1
+      jest-environment-node: ~27.5.1
+      jest-runner: ~27.5.1
+      jest-validate: ^27.5.1
+      jest-watch-suspend: ^1.1.2
+      jest-watch-toggle-config: ^2.0.1
+      jest-watch-typeahead: ^1.0.0
+      npm-check-updates: ~12.5.4
+      npm-run-all: ^4.1.5
+      postcss: ~8.4.12
+      preact: ~10.6.6
+      puppeteer: ~3.0.0
+      react: ~17.0.2
+      react-app-rewired: ~2.2.1
+      react-dom: ~17.0.2
+      react-refresh: 0.11.0
+      react-scripts: 5.0.0
+      react-test-renderer: ~17.0.2
+      rimraf: ~3.0.2
+      size-limit: ~7.0.8
+      storybook-css-modules-preset: ~1.1.1
+      storybook-dark-mode: ~1.0.9
+      style-loader: ~3.3.1
+      ts-jest: ^27.1.3
+      typescript: ^4.6.3
+      webpack: ^5.70.0
+    devDependencies:
+      '@babel/core': 7.17.9
+      '@babel/plugin-syntax-flow': 7.16.7_@babel+core@7.17.9
+      '@babel/plugin-transform-react-jsx': 7.17.3_@babel+core@7.17.9
+      '@babel/plugin-transform-runtime': 7.17.0_@babel+core@7.17.9
+      '@babel/preset-env': 7.16.11_@babel+core@7.17.9
+      '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
+      '@just-web/app': link:../../frameworks/app
+      '@just-web/repo-scripts': link:../../tools/repo-scripts
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@storybook/addon-actions': 6.4.22_b49bddbe4b905ced4713cb857cca91fa
+      '@storybook/addon-console': 1.2.3_@storybook+addon-actions@6.4.22
+      '@storybook/addon-essentials': 6.4.22_983b7a4a359f29d5f5093dbc171e6e78
+      '@storybook/addon-interactions': 6.4.22_9cf2ba71fa64d8501eea95e7739ff464
+      '@storybook/addon-links': 6.4.22_react-dom@17.0.2+react@17.0.2
+      '@storybook/addon-storyshots': 6.4.22_d309c2f6442c7bb61ef962f1d18d5803
+      '@storybook/addon-storyshots-puppeteer': 6.4.22_b6549ea4b8f473080d2e1473afe380c0
+      '@storybook/addon-storysource': 6.4.22_b49bddbe4b905ced4713cb857cca91fa
+      '@storybook/addons': 6.4.22_react-dom@17.0.2+react@17.0.2
+      '@storybook/api': 6.4.22_react-dom@17.0.2+react@17.0.2
+      '@storybook/builder-webpack5': 6.4.22_9cf2ba71fa64d8501eea95e7739ff464
+      '@storybook/components': 6.4.22_b49bddbe4b905ced4713cb857cca91fa
+      '@storybook/core-events': 6.4.22
+      '@storybook/jest': 0.0.10_react-dom@17.0.2+react@17.0.2
+      '@storybook/manager-webpack5': 6.4.22_9cf2ba71fa64d8501eea95e7739ff464
+      '@storybook/node-logger': 6.4.22
+      '@storybook/preset-create-react-app': 4.1.0_d92c9974e89130360b96ff41e9097c36
+      '@storybook/react': 6.4.22_0672c48d244ffead0802d9d320e47aec
+      '@storybook/test-runner': 0.0.6_080f141f811206c3a8b6b7a01bb1193b
+      '@storybook/testing-library': 0.0.9_react-dom@17.0.2+react@17.0.2
+      '@storybook/theming': 6.4.22_react-dom@17.0.2+react@17.0.2
+      '@testing-library/dom': 8.11.4
+      '@testing-library/jest-dom': 5.16.4
+      '@testing-library/react': 12.1.5_react-dom@17.0.2+react@17.0.2
+      '@testing-library/user-event': 13.5.0_@testing-library+dom@8.11.4
+      '@types/jest': 27.4.1
+      '@types/mousetrap': 1.6.9
+      '@types/node': 16.11.27
+      '@types/platform': 1.3.4
+      '@types/react': 17.0.44
+      '@types/react-dom': 17.0.15
+      '@types/react-test-renderer': 17.0.2
+      '@types/testing-library__jest-dom': 5.14.3
+      '@typescript-eslint/eslint-plugin': 5.19.0_f34adc8488d2e4f014fe61432d70cbf2
+      '@typescript-eslint/parser': 5.19.0_eslint@8.13.0+typescript@4.6.3
+      autoprefixer: 10.4.4_postcss@8.4.12
+      babel-loader: 8.2.4_acba72ea4bf9d339cdfcd8f55cdb7006
+      chromatic: 6.5.4
+      copyfiles: 2.4.1
+      cross-env: 7.0.3
+      css-loader: 6.7.1_webpack@5.72.0
+      depcheck: 1.4.3
+      eslint: 8.13.0
+      eslint-config-prettier: 8.5.0_eslint@8.13.0
+      eslint-config-react-app: 7.0.1_f300f5261b29d771e6014ee8d8af2b73
+      eslint-plugin-harmony: 6.0.2_bd77e99a2ad53a7caa9234b5078db75a
+      eslint-plugin-storybook: 0.5.9_eslint@8.13.0+typescript@4.6.3
+      eslint-plugin-yml: 0.14.0_eslint@8.13.0
+      identity-obj-proxy: 3.0.0
+      jest: 27.5.1
+      jest-circus: 27.5.1
+      jest-environment-node: 27.5.1
+      jest-runner: 27.5.1
+      jest-validate: 27.5.1
+      jest-watch-suspend: 1.1.2_jest@27.5.1
+      jest-watch-toggle-config: 2.0.1_jest-validate@27.5.1+jest@27.5.1
+      jest-watch-typeahead: 1.0.0_jest@27.5.1
+      npm-check-updates: 12.5.9
+      npm-run-all: 4.1.5
+      postcss: 8.4.12
+      preact: 10.6.6
+      puppeteer: 3.0.4
+      react: 17.0.2
+      react-app-rewired: 2.2.1_react-scripts@5.0.0
+      react-dom: 17.0.2_react@17.0.2
+      react-refresh: 0.11.0
+      react-scripts: 5.0.0_f1c39c7932ae146dac01b057f6da7da8
+      react-test-renderer: 17.0.2_react@17.0.2
+      rimraf: 3.0.2
+      size-limit: 7.0.8
+      storybook-css-modules-preset: 1.1.1
+      storybook-dark-mode: 1.0.9_960ebd552dfb7fae96157d4c34ba5814
+      style-loader: 3.3.1_webpack@5.72.0
+      ts-jest: 27.1.4_1a7a295883fc72da5121c34ec472fa0c
+      typescript: 4.6.3
+      webpack: 5.72.0
+
   ../../plugins/routes:
     specifiers:
       '@babel/core': ~7.17.8
@@ -954,7 +1132,7 @@ importers:
       '@just-web/app': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@just-web/testing': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -971,7 +1149,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       type-plus: ~4.9.0
       typescript: ^4.6.3
     dependencies:
@@ -1006,7 +1184,7 @@ importers:
     specifiers:
       '@babel/core': ~7.17.8
       '@babel/plugin-transform-runtime': ~7.17.0
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -1023,7 +1201,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       typescript: ^4.6.3
     dependencies:
       '@babel/core': 7.17.9
@@ -1055,7 +1233,7 @@ importers:
       '@babel/plugin-transform-runtime': ~7.17.0
       '@just-web/log': workspace:*
       '@just-web/repo-scripts': workspace:*
-      '@size-limit/preset-small-lib': ^7.0.8
+      '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
@@ -1074,7 +1252,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       satisfier: ~5.1.2
-      size-limit: ^7.0.8
+      size-limit: ~7.0.8
       type-plus: ~4.9.0
       typescript: ^4.6.3
     dependencies:
@@ -8138,6 +8316,12 @@ packages:
 
   /@types/react-syntax-highlighter/11.0.5:
     resolution: {integrity: sha512-VIOi9i2Oj5XsmWWoB72p3KlZoEbdRAcechJa8Ztebw7bDl2YmR+odxIqhtJGp1q2EozHs02US+gzxJ9nuf56qg==}
+    dependencies:
+      '@types/react': 17.0.44
+    dev: true
+
+  /@types/react-test-renderer/17.0.2:
+    resolution: {integrity: sha512-+F1KONQTBHDBBhbHuT2GNydeMpPuviduXIVJRB7Y4nma4NR5DrTJfMMZ+jbhEHbpwL+Uqhs1WXh4KHiyrtYTPg==}
     dependencies:
       '@types/react': 17.0.44
     dev: true

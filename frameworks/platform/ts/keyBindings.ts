@@ -39,7 +39,12 @@ function bindKey(commandRegistry: CommandRegistry, keyBinding: KeyBindingContrib
     else {
       keys[key] = true
       log.trace(`binding: ${key} -> ${keyBinding.command}`)
-      Mousetrap.bind(key, () => (commandRegistry.invoke(keyBinding.command), false))
+      Mousetrap.bind(key, (e) => {
+        log.trace(`trigger ${key}`)
+        if (e.preventDefault) e.preventDefault()
+        commandRegistry.invoke(keyBinding.command)
+        return false
+      })
     }
   }
 }

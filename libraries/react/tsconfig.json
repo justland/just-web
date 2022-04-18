@@ -8,9 +8,6 @@
     {
       "path": "../../frameworks/app"
     },
-    {
-      "path": "../../tools/repo-scripts"
-    }
   ],
   "include": [
     "src",

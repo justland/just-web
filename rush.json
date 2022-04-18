@@ -92,6 +92,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/react",
+      "projectFolder": "libraries/react",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/routes",
       "projectFolder": "plugins/routes",
       "reviewCategory": "libraries"

@@ -1,7 +1,7 @@
 {
-  "name": "@just-web/react-commands",
+  "name": "@just-web/react",
   "version": "0.1.0",
-  "description": "@just-web/commands UI components in react",
+  "description": "Supporting library for using @just-web with React",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -11,7 +11,7 @@
     "build:watch": "tsc -p tsconfig.build.json",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy:css": "copyfiles -u 1 src/**/*.css lib/",
+    "copy:css": "copyfiles -u 1 ts/**/*.css lib/",
     "coverage": "react-app-rewired test --watchAll=false --coverage 2>&1",
     "depcheck": "depcheck",
     "eject": "react-scripts eject",
@@ -26,26 +26,8 @@
     "verify:build": "run-s clean build depcheck",
     "verify:test": "run-s test test:visual"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "resolutions": {
     "react-scripts/**/eslint-config-react-app": "7.0.0"
-  },
-  "dependencies": {
-    "react": "~17.0.2",
-    "react-command-palette": "~0.17.1",
-    "react-dom": "~17.0.2",
-    "type-plus": "~4.9.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
@@ -88,6 +70,7 @@
     "@types/platform": "~1.3.4",
     "@types/react": "^17.0.42",
     "@types/react-dom": "^17.0.14",
+    "@types/react-test-renderer": "~17.0.2",
     "@types/testing-library__jest-dom": "~5.14.3",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
@@ -113,15 +96,17 @@
     "jest-watch-suspend": "^1.1.2",
     "jest-watch-toggle-config": "^2.0.1",
     "jest-watch-typeahead": "^1.0.0",
-    "mousetrap": "~1.6.5",
     "npm-check-updates": "~12.5.4",
     "npm-run-all": "^4.1.5",
     "postcss": "~8.4.12",
     "preact": "~10.6.6",
     "puppeteer": "~3.0.0",
+    "react": "~17.0.2",
     "react-app-rewired": "~2.2.1",
+    "react-dom": "~17.0.2",
     "react-refresh": "0.11.0",
     "react-scripts": "5.0.0",
+    "react-test-renderer": "~17.0.2",
     "rimraf": "~3.0.2",
     "size-limit": "~7.0.8",
     "storybook-css-modules-preset": "~1.1.1",
@@ -132,7 +117,8 @@
     "webpack": "^5.70.0"
   },
   "peerDependencies": {
-    "@just-web/app": "workspace:*"
+    "@just-web/app": "workspace:*",
+    "react": ">= 16.8.0"
   },
   "size-limit": [
     {
