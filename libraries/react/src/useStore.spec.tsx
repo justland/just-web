@@ -23,7 +23,7 @@ test('state value updates as store updates', async () => {
     </div>
   `)
 
-  await act(() => store.update(s => { s.counter++ }))
+  act(() => store.update(s => { s.counter++ }))
 
   tree = c.toJSON()
   expect(tree).toMatchInlineSnapshot(`
@@ -49,7 +49,7 @@ test('specify update function', async () => {
 
   const c = renderer.create(<Counter />)
   const tree = c.toJSON() as ReactTestRendererJSON[]
-  await act(() => tree[1].props.onClick())
+  act(() => tree[1].props.onClick())
 
   expect(store.get().counter).toBe(1)
 })
@@ -74,7 +74,7 @@ test('useEffect to update store', async () => {
 
   const c = renderer.create(<Counter />)
   const tree = c.toJSON() as ReactTestRendererJSON[]
-  await act(() => tree[1].props.onClick())
+  act(() => tree[1].props.onClick())
 
   expect(store.get().counter).toBe(1)
 })
@@ -100,7 +100,6 @@ test('onChange handler called once per change', async () => {
   act(() => store.update(s => { s.counter++ }))
 
   const messages = reporter.getLogMessageWithLevel().split('\n')
-  console.info(messages)
-  const count = messages.filter(m => m === `(PLANCK) useStore: onChange triggered`).length
+  const count = messages.filter(m => /\(PLANCK\) onChange triggered/.test(m)).length
   expect(count).toBe(5)
 })

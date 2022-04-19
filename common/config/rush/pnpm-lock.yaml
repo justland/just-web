@@ -804,10 +804,12 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~7.0.8
       standard-log: ~7.1.0
+      tersify: ~3.8.3
       type-plus: ~4.9.0
       typescript: ^4.6.3
     dependencies:
       standard-log: 7.1.0
+      tersify: 3.8.3
       type-plus: 4.9.0
     devDependencies:
       '@babel/core': 7.17.9
@@ -9333,7 +9335,7 @@ packages:
       iso-error: 4.1.2
       path-equal: 1.1.3
       satisfier: 5.1.2
-      tersify: 3.8.2
+      tersify: 3.8.3
       tslib: 2.3.1
       type-plus: 4.9.0
     dev: false
@@ -19977,7 +19979,7 @@ packages:
   /satisfier/5.1.2:
     resolution: {integrity: sha512-8AxdPu5cFQKG/AjkzkE4HLDPYah6zohW+qyZiOHzLQix+/q74JP9xyEVlmIu8WPy/1Vmtm8x99d5L3Y0MLPHjg==}
     dependencies:
-      tersify: 3.8.2
+      tersify: 3.8.3
     dev: false
 
   /sax/1.2.4:
@@ -21198,8 +21200,8 @@ packages:
       source-map: 0.7.3
       source-map-support: 0.5.21
 
-  /tersify/3.8.2:
-    resolution: {integrity: sha512-VtcyrO7pb/tQAPZNMkNzRtmkz3smQpUQiOQXuoxLoAfN7W+ag9YxVlfs6c9hOEGotCD1HZQ1D4eoSeOQxI8mJA==}
+  /tersify/3.8.3:
+    resolution: {integrity: sha512-PX0+OE4CNak6lqDnao/wJNH72CXGgz5OKMsfFx+OYRcDjZmz/quXD+TirM2/kEUrm4WC0q6B/ww5Ig2rccyjbg==}
     dependencies:
       acorn: 8.7.0
       is-buffer: 2.0.5
@@ -21491,7 +21493,7 @@ packages:
   /type-plus/4.9.0:
     resolution: {integrity: sha512-MTG+1YG8+/UHS0cIiS2OvXup3AZHUYYTlgnHxwbeglhnyskWOOtuC4Q7iyL0Am3nioqaPGRZR2LddqlHIvRWFw==}
     dependencies:
-      tersify: 3.8.2
+      tersify: 3.8.3
       unpartial: 0.6.4
 
   /typedarray-to-buffer/3.1.5:

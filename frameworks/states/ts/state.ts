@@ -1,3 +1,4 @@
+import { tersify } from '@just-web/log'
 import { stateLog } from './logs'
 
 export interface SetState<T> {
@@ -34,7 +35,7 @@ export function createState<T>(init: T):
 
   function onChange(handler: StateChangeHandler<T>) {
     if (handlers.includes(handler)) return
-    stateLog.trace(`new onChange handler: ${handler.toString()}`)
+    stateLog.trace(`new onChange handler: ${tersify(handler)}`)
     handlers.push(handler)
   }
 

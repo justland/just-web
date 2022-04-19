@@ -23,6 +23,8 @@
     "pnpm",
     "pnpmfile",
     "rushx",
+    "tersified",
+    "tersify",
     "tsbuildinfo",
     "TTFB",
     "unshift",
