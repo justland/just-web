@@ -45,6 +45,21 @@ test('trigger command', () => {
   expect(invoked).toEqual(['show job'])
 })
 
+test('trigger cmd command', () => {
+  const invoked: string[] = []
+  const options = stubOptions({
+    command: 'just-test.showJob',
+    description: 'show job',
+    key: 'cmd+j',
+    handler(cmd) { invoked.push(cmd.description!) }
+  })
+  startKeyBindings(options)
+
+  // mousetrap takes `command+` instead of `cmd+`
+  mousetrap.trigger('command+j')
+  expect(invoked).toEqual(['show job'])
+})
+
 test('emit warning for duplicate key binding', () => {
   const options = stubOptions({
     command: 'just-test.showJob',
@@ -52,7 +67,6 @@ test('emit warning for duplicate key binding', () => {
     key: 'ctrl+j',
     handler() { }
   }, {
-
     command: 'just-test.diffJob',
     description: 'another command',
     key: 'ctrl+j',
