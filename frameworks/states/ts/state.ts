@@ -10,7 +10,7 @@ export interface StateChangeHandler<T> {
 }
 
 export interface OnStateChange<T> {
-  (handler: StateChangeHandler<T>): void
+  (handler: StateChangeHandler<T>): () => void
 }
 
 export interface ResetState {
@@ -34,9 +34,10 @@ export function createState<T>(init: T):
   }
 
   function onChange(handler: StateChangeHandler<T>) {
-    if (handlers.includes(handler)) return
+    if (handlers.includes(handler)) return () => { }
     stateLog.trace(`new onChange handler: ${tersify(handler)}`)
     handlers.push(handler)
+    return () => { handlers.splice(handlers.indexOf(handler), 1) }
   }
 
   function reset() { set(init) }
