@@ -39,7 +39,7 @@ function bindKey(commandRegistry: CommandRegistry, keyBinding: KeyBindingContrib
     else {
       keys[key] = true
       log.trace(`binding: ${key} -> ${keyBinding.command}`)
-      Mousetrap.bind(key, (e) => {
+      Mousetrap.bind(toMousetrapKey(key), (e) => {
         log.trace(`trigger ${key}`)
         if (e.preventDefault) e.preventDefault()
         commandRegistry.invoke(keyBinding.command)
@@ -52,4 +52,8 @@ function bindKey(commandRegistry: CommandRegistry, keyBinding: KeyBindingContrib
 function getKey(keyBinding: KeyBindingContribution) {
   if (isMac()) return keyBinding.mac ?? keyBinding.key
   return keyBinding.key
+}
+
+function toMousetrapKey(key: string) {
+  return key.replace(/cmd\+/, 'command+')
 }
