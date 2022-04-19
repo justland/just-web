@@ -535,6 +535,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "tersify",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "tinykeys",
       "allowedCategories": [ "production" ]
     },

@@ -1,4 +1,4 @@
-import { getLogger, logLevels, Store } from '@just-web/app'
+import { getLogger, Store, suppressLogs, tersify } from '@just-web/app'
 import { useCallback, useEffect, useState } from 'react'
 
 const log = getLogger('@just-web/react/useStore')
@@ -13,17 +13,18 @@ export function useStore<S, V>(
   getValue: (s: S) => V,
   updateValue?: (draft: S) => void | S)
   : [value: V, setvalue: (v: V | ((v: V) => V)) => void] {
-  log.trace(`for: ${getValue.toString()}`)
   const [value, setValue] = useState(getValue(store.get()))
   const stateLog = getLogger('@just-web/states/state')
-  const origLevel = stateLog.level
-  stateLog.level = logLevels.none
-  store.onChange(useCallback(s => {
+
+  // tersify `getValue` ahead of time so don't need to do `tersify` on every change
+  const tersifiedGetValue = tersify(getValue)
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  suppressLogs(() => store.onChange(useCallback(s => {
     const newValue = getValue(s)
-    log.planck(`useStore: onChange triggered`)
+    log.planck(`onChange triggered for: ${tersifiedGetValue}`)
     setValue(newValue)
-  }, []))
-  stateLog.level = origLevel
+  }, [])), stateLog)
 
   useEffect(() => updateValue && store.update(updateValue), [value])
   return [value, setValue]
