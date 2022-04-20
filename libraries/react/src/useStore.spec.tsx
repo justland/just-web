@@ -1,43 +1,50 @@
-import { createStore, createTestApp, logLevels, MemoryLogReporter } from '@just-web/app'
+import { createStore } from '@just-web/app'
 import { useEffect } from 'react'
-import renderer, { act, ReactTestRendererJSON } from 'react-test-renderer'
+import { act, create, ReactTestRendererJSON } from 'react-test-renderer'
 import { useStore } from '.'
 
-let reporter: MemoryLogReporter
-beforeEach(() => reporter = createTestApp({ log: { logLevel: logLevels.all } }).log.reporter)
-
-test('state value updates as store updates', async () => {
+test('each change from store will trigger state update', async () => {
   const store = createStore({ counter: 0 })
 
+  const values: number[] = []
   const Counter = () => {
     const [value] = useStore(store, s => s.counter)
-    return <div>{value}</div>
+    values.push(value)
+    return (
+      <>
+        <div>{value}</div>
+      </>
+    )
   }
 
-  const c = renderer.create(<Counter />)
+  create(<Counter />)
 
-  let tree = c.toJSON()
-  expect(tree).toMatchInlineSnapshot(`
-    <div>
-      0
-    </div>
-  `)
+  const increment = (s: { counter: number }) => { s.counter++ }
 
-  act(() => store.update(s => { s.counter++ }))
+  act(() => store.update(increment))
+  act(() => store.update(increment))
+  act(() => store.update(increment))
+  act(() => store.update(increment))
+  act(() => store.update(increment))
 
-  tree = c.toJSON()
-  expect(tree).toMatchInlineSnapshot(`
-    <div>
-      1
-    </div>
-  `)
+  expect(values).toEqual([0, 1, 2, 3, 4, 5])
 })
 
-test('specify update function', async () => {
+test('specifying updateStore then setState will trigger store changes', async () => {
   const store = createStore({ counter: 0 })
 
+  const values: number[] = []
+  const storeValues: number[] = []
+  store.onChange(s => storeValues.push(s.counter))
+
   const Counter = () => {
-    const [value, setValue] = useStore(store, s => s.counter, s => { s.counter = value })
+    const [value, setValue] = useStore(
+      store,
+      s => s.counter,
+      s => { s.counter = value }
+    )
+
+    values.push(value)
 
     return (
       <>
@@ -47,19 +54,30 @@ test('specify update function', async () => {
     )
   }
 
-  const c = renderer.create(<Counter />)
+  const c = create(<Counter />)
   const tree = c.toJSON() as ReactTestRendererJSON[]
-  act(() => tree[1].props.onClick())
+  const btn = tree[1]
+  const triggerClick = () => btn.props.onClick()
 
-  expect(store.get().counter).toBe(1)
+  act(triggerClick)
+  act(triggerClick)
+  act(triggerClick)
+  act(triggerClick)
+
+  expect(values).toEqual([0, 1, 2, 3, 4])
+  expect(storeValues).toEqual([1, 2, 3, 4])
 })
 
-test('useEffect to update store', async () => {
+test('can update by using useEffect in the component', async () => {
   const store = createStore({ counter: 0 })
+
+  const values: number[] = []
+  const storeValues: number[] = []
+  store.onChange(s => storeValues.push(s.counter))
 
   const Counter = () => {
     const [value, setValue] = useStore(store, s => s.counter)
-
+    values.push(value)
     useEffect(
       () => store.update(s => { s.counter = value }),
       [value]
@@ -72,19 +90,27 @@ test('useEffect to update store', async () => {
     )
   }
 
-  const c = renderer.create(<Counter />)
+  const c = create(<Counter />)
   const tree = c.toJSON() as ReactTestRendererJSON[]
-  act(() => tree[1].props.onClick())
+  const btn = tree[1]
+  const triggerClick = () => btn.props.onClick()
 
-  expect(store.get().counter).toBe(1)
+  act(triggerClick)
+  act(triggerClick)
+  act(triggerClick)
+  act(triggerClick)
+
+  expect(values).toEqual([0, 1, 2, 3, 4])
+  expect(storeValues).toEqual([1, 2, 3, 4])
 })
 
-test('onChange handler called once per change', async () => {
+test('store change with same value will not trigger render', async () => {
   const store = createStore({ counter: 0 })
 
+  const values: number[] = []
   const Counter = () => {
     const [value] = useStore(store, s => s.counter)
-
+    values.push(value)
     return (
       <>
         <div>{value}</div>
@@ -92,14 +118,9 @@ test('onChange handler called once per change', async () => {
     )
   }
 
-  renderer.create(<Counter />)
-  act(() => store.update(s => { s.counter++ }))
-  act(() => store.update(s => { s.counter++ }))
-  act(() => store.update(s => { s.counter++ }))
-  act(() => store.update(s => { s.counter++ }))
-  act(() => store.update(s => { s.counter++ }))
+  create(<Counter />)
 
-  const messages = reporter.getLogMessageWithLevel().split('\n')
-  const count = messages.filter(m => /\(PLANCK\) onChange triggered/.test(m)).length
-  expect(count).toBe(5)
+  act(() => store.update(s => s))
+
+  expect(values).toEqual([0])
 })

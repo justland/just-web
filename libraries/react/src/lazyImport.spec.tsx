@@ -1,21 +1,19 @@
-// import { createTestApp } from '@just-web/app'
-// import { Suspense } from 'react'
-// import renderer from 'react-test-renderer'
-// import { lazyImport } from './lazyImport'
+import '@testing-library/jest-dom'
+import { createTestApp } from '@just-web/app'
+import { Suspense } from 'react'
+import { render, screen } from '@testing-library/react'
+import { lazyImport } from './lazyImport'
 
-// Don't know how to test this yet.
-// will create circular deps
-test.skip('lazy import module', () => {
-  // const app = createTestApp()
-  // const CommandPalette = lazyImport(
-  //   () => app,
-  //   () => import('@just-web/react-commands'),
-  //   m => m.CommandPalette)
+test('lazy import module', async () => {
+  const app = createTestApp()
+  const Component = lazyImport(
+    () => app,
+    () => import('./dummyModule'),
+    m => m.Component)
 
-  // const c = renderer.create(<Suspense fallback={<div>loading...</div>}>
-  //   <CommandPalette />
-  // </Suspense>)
+  render(<Suspense fallback={<div>loading...</div>}>
+    <Component />
+  </Suspense>)
 
-  // const tree = c.toJSON()
-  // expect(tree).toBeDefined()
+  expect(await screen.findByText('dummy')).toBeInTheDocument()
 })

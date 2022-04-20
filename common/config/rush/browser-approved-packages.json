@@ -419,6 +419,10 @@
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
+      "name": "object-hash",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "platform",
       "allowedCategories": [ "libraries" ]
     },
