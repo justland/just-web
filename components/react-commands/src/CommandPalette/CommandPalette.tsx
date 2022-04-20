@@ -5,6 +5,7 @@ import { VFC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
 import { required } from 'type-plus'
+import { log } from '../log'
 import { getStore } from '../store'
 import styles from './CommandPalette.module.css'
 
@@ -41,6 +42,7 @@ const CommandPalette: VFC<CommandPaletteProps> = (props) => {
   const store = getStore()
   const [open, setOpen] = useStore(store, s => s.openCommandPalette, s => { s.openCommandPalette = open })
 
+  log.trace('rendering CommandPalette, open:', open)
   const commands = open ? getCommands(required(store.get().context, props.ctx)) : []
 
   const onRequestClose = () => setOpen(false)

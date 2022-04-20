@@ -53,11 +53,21 @@ import { useStore } from '@just-web/react'
 const store = createStore({ counter: 0 })
 
 const Component = () => {
-  const [counter, setCounter] = useStore(store, s => s.counter)
+  const [counter, setCounter] = useStore(
+    store,
+    // getState
+    s => s.counter,
+    // Optional: updateStore when state changes
+    s=>{ s.counter = counter }
+  )
 
   return <div>{counter}</div>
 }
 ```
+
+Note that `updateStore` is optional.
+If you want to keep the state internal to the component and update the store on demand,
+you can use `useEffect` to update the store yourself.
 
 [`@just-web`]: https://github.com/justland/just-web
 [`@just-web/react`]: https://github.com/justland/just-web/tree/main/frameworks/react
