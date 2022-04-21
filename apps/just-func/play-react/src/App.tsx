@@ -11,7 +11,7 @@ const CommandPalette = lazyImport(
 )
 function App() {
   const store = getStore()
-  const [hasDoc] = useStore(store, s => s.files.length !== 0)
+  const [hasDoc] = useStore(store, s => s.docs.length !== 0)
 
   return (<>
     <main className="bg-zinc-800 min-h-screen text-white">
