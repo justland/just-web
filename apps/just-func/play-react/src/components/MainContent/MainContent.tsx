@@ -1,13 +1,13 @@
 import { Tab } from '@headlessui/react'
 import { getLogger } from '@just-web/app'
 import { useStore } from '@just-web/react'
-import { getStore } from '../../store'
+import { store } from '../../docViews/store'
 
 const log = getLogger('MainContent')
 
 const MainContent = () => {
   log.trace('render')
-  const [views] = useStore(getStore(), s => s.openedViews)
+  const [views] = useStore(store, s => s.views)
 
   return <Tab.Group>
     <Tab.List className="bg-zinc-600">
