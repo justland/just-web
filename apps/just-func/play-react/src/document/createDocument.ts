@@ -1,18 +1,25 @@
-import { File, getStore } from '../store'
+import { Doc, DocView, getStore } from '../store'
 
 export function createDocument(name?: string) {
   const store = getStore()
   store.update(s => {
-    const file = {
-      name: name ?? createDocumentName(s.files),
+    const doc = {
+      name: name ?? createDocumentName(s.docs),
       content: ''
     }
-    s.files.push(file)
-    s.openedFilenames.push(file.name)
+    s.docs.push(doc)
+    s.openedViews.push(createDocView(doc))
   })
 }
 
-function createDocumentName(files: File[]) {
+function createDocView(doc: Doc): DocView {
+  return {
+    type: 'doc',
+    id: doc.name,
+    doc
+  }
+}
+function createDocumentName(files: Doc[]) {
   const names = files
     .map(d => d.name.match(/^Untitled-(\d+)$/)).filter(Boolean)
     .map(m => +m![1]).sort((a, b) => a - b)

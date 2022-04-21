@@ -1,17 +1,23 @@
 import { AppContext, createStore, Store } from '@just-web/app'
 import { RoutesContext } from '@just-web/routes'
 
-export interface File {
+export interface Doc {
   name: string,
   content: string
+}
+
+export interface DocView {
+  type: 'doc',
+  id: string,
+  doc: Doc
 }
 
 export interface App extends AppContext, RoutesContext { }
 
 export interface AppStore<A = App> {
   app: A,
-  files: File[],
-  openedFilenames: string[],
+  docs: Doc[],
+  openedViews: DocView[],
   counter: number
 }
 
@@ -20,8 +26,8 @@ let s: Store<AppStore<any>>
 export function createAppStore<A extends App = App>(app: A) {
   return s = createStore<AppStore<A>>({
     app,
-    files: [],
-    openedFilenames: [],
+    docs: [],
+    openedViews: [],
     counter: 0
   })
 }
