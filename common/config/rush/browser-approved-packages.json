@@ -491,6 +491,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "react-testing-library",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "rimraf",
       "allowedCategories": [ "libraries", "production", "tools" ]
     },

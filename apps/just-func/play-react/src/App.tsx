@@ -1,8 +1,7 @@
 import { lazyImport, useStore } from '@just-web/react'
 import { Suspense } from 'react'
-import './App.css'
 import MainBackdrop from './components/MainBackdrop/MainBackdrop'
-import MainPanel from './components/MainPanel/MainPanel'
+import MainContent from './components/MainContent/MainContent'
 import { getStore, getStoreValue } from './store'
 
 const CommandPalette = lazyImport(
@@ -12,11 +11,11 @@ const CommandPalette = lazyImport(
 )
 function App() {
   const store = getStore()
-  const [hasDoc] = useStore(store, s => s.documents.length !== 0)
+  const [hasDoc] = useStore(store, s => s.files.length !== 0)
 
   return (<>
-    <main className="App-main">
-      {hasDoc ? <MainPanel /> : <MainBackdrop />}
+    <main className="bg-zinc-800 min-h-screen text-white">
+      {hasDoc ? <MainContent /> : <MainBackdrop />}
     </main>
     <Suspense fallback={<div>Loading...</div>}>
       <CommandPalette />

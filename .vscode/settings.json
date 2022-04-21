@@ -28,15 +28,17 @@
     "tsbuildinfo",
     "TTFB",
     "unshift",
-    "vite"
+    "vite",
+    "vmin"
   ],
   "eslint.validate": [
     "yaml"
   ],
   "files.associations": {
     "**/common/config/rush/*.json": "jsonc",
+    "*.scss": "postcss",
     "common/git-hooks/*": "shell",
-    "rush.json": "jsonc"
+    "rush.json": "jsonc",
   },
   "json.schemas": [
     {

@@ -14,7 +14,8 @@
     "yzhang.markdown-all-in-one",
     "davidanson.vscode-markdownlint",
     "pkief.material-icon-theme",
-    "unional.vscode-sort-package-json"
+    "unional.vscode-sort-package-json",
+    "bradlc.vscode-tailwindcss"
   ],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
