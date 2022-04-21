@@ -1,23 +1,16 @@
-import { Doc, DocView, getStore } from '../store'
+import { store } from './store'
+import { Doc } from './types'
 
 export function createDocument(name?: string) {
-  const store = getStore()
+  let doc: Doc
   store.update(s => {
-    const doc = {
+    doc = {
       name: name ?? createDocumentName(s.docs),
       content: ''
     }
     s.docs.push(doc)
-    s.openedViews.push(createDocView(doc))
   })
-}
-
-function createDocView(doc: Doc): DocView {
-  return {
-    type: 'doc',
-    id: doc.name,
-    doc
-  }
+  return doc!
 }
 function createDocumentName(files: Doc[]) {
   const names = files
@@ -27,3 +20,4 @@ function createDocumentName(files: Doc[]) {
   const i = (firstAvailable !== -1 ? firstAvailable : names.length) + 1
   return `Untitled-${i}`
 }
+

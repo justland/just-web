@@ -3,7 +3,8 @@ import * as routes from '@just-web/routes'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { createDocument } from './document/createDocument'
+import { createDocument } from './docs/createDocument'
+import { createDocView } from './docViews/createDocView'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 import { createAppStore } from './store'
@@ -18,7 +19,10 @@ void (async () => {
     name: 'Create a new document'
   })
 
-  app.commands.register('app.newDocument', () => createDocument())
+  app.commands.register('app.newDocument', () => {
+    const doc = createDocument()
+    createDocView(doc)
+  })
 
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   app.routes.register('/', () => {
