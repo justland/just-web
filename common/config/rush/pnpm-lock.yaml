@@ -737,7 +737,7 @@ importers:
       '@types/node': ^16.11.26
       '@typescript-eslint/eslint-plugin': ^5.16.0
       '@typescript-eslint/parser': ^5.16.0
-      '@unional/events-plus': ~1.1.0
+      '@unional/events-plus': ~2.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
@@ -757,7 +757,7 @@ importers:
       typescript: ^4.6.3
     dependencies:
       '@just-web/log': link:../log
-      '@unional/events-plus': 1.1.0
+      '@unional/events-plus': 2.0.0
       eventemitter3: 4.0.7
       type-plus: 4.9.0
     devDependencies:
@@ -8738,8 +8738,8 @@ packages:
       '@typescript-eslint/types': 5.23.0
       eslint-visitor-keys: 3.3.0
 
-  /@unional/events-plus/1.1.0:
-    resolution: {integrity: sha512-fTODrskFyzGtbMFgcyUly43N6OM/tG7VUOOE03kLpennUA8C3vl5EeMFxqll9J4qavi/3TXfQukA69lWCNA93A==}
+  /@unional/events-plus/2.0.0:
+    resolution: {integrity: sha512-W9Th9ZB0M+Ru/FmGkNcU3ZYtlNzuJ1723uMFZIcczSpYOSVBi5pSzFXyrQyJI4XPD1rLAYFEO9K1zs8Tp5AFUw==}
     dependencies:
       '@just-func/types': 0.1.0
     dev: false
