@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "references": [
     {
-      "path": "../states/tsconfig.build.json"
+      "path": "../../frameworks/states/tsconfig.build.json"
     }
   ],
   "exclude": [

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { createDocument } from './docs/createDocument'
 import { createDocView } from './docViews/createDocView'
-import './index.css'
+import './styles.css'
 import reportWebVitals from './reportWebVitals'
 import { createAppStore } from './store'
 

@@ -18,8 +18,7 @@ export interface Registry<K extends KeyTypes, T> extends ReadonlyRegistry<K, T> 
 
 export function createRegistry<
   K extends KeyTypes,
-  T,
-  >(init?: Record<K, T>): Registry<Widen<K>, T> {
+  T>(init?: Record<K, T>): Registry<Widen<K>, T> {
   const store = createStore<Record<Widen<K>, T>>(record(init))
 
   return {

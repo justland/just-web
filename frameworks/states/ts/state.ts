@@ -20,8 +20,7 @@ export interface ResetState {
 /**
  * creates a functional style state to track changes of a value.
  */
-export function createState<T>(init: T):
-  [T, SetState<T>, OnStateChange<T>, ResetState] {
+export function createState<T>(init: T): [T, SetState<T>, OnStateChange<T>, ResetState] {
   const handlers: StateChangeHandler<T>[] = []
   let value = Object.freeze(init)
   function set(newValue: T) {
