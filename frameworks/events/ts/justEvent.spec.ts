@@ -1,5 +1,4 @@
-import { justEvent } from '.'
-import { createEventsContext } from './eventsContext'
+import { createEventsContext, justEvent } from '.'
 
 it('can create just event', () => {
   const addEvent = justEvent('add')
