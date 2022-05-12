@@ -1,7 +1,7 @@
 import { configForTest, MemoryLogReporter } from '@just-web/log'
-import { EventEmitter } from 'node:events'
 import { logMatchSome } from '@just-web/testing'
-import { createEventsContext } from './eventsContext'
+import { EventEmitter } from 'node:events'
+import { createEventsContext } from '.'
 
 let reporter: MemoryLogReporter
 beforeAll(() => reporter = configForTest().reporter)
