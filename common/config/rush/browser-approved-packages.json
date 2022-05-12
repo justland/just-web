@@ -267,6 +267,10 @@
       "allowedCategories": [ "libraries", "production", "tools" ]
     },
     {
+      "name": "@unional/events-plus",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@vscode/test-electron",
       "allowedCategories": [ "libraries" ]
     },
@@ -337,6 +341,14 @@
     {
       "name": "eslint-plugin-yml",
       "allowedCategories": [ "libraries", "production", "tools" ]
+    },
+    {
+      "name": "eventemitter3",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "fsa-emitter",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "fuse.js",

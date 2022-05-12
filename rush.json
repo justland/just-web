@@ -62,6 +62,11 @@
       "reviewCategory": "libraries"
     },
     {
+      "packageName": "@just-web/events",
+      "projectFolder": "frameworks/events",
+      "reviewCategory": "libraries"
+    },
+    {
       "packageName": "@just-web/format",
       "projectFolder": "frameworks/format",
       "reviewCategory": "libraries"

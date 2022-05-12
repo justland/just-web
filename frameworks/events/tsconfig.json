@@ -1,0 +1,16 @@
+{
+  "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
+  "compilerOptions": {
+    "outDir": "lib",
+    "rootDir": "ts"
+  },
+  "references": [
+    {
+      "path": "../../frameworks/log"
+    }
+  ],
+  "include": [
+    "ts",
+    "typings"
+  ]
+}
