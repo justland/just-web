@@ -1,11 +1,8 @@
-import { createTestApp, Store, TestLogContext } from '@just-web/app'
-import { stub } from 'type-plus'
-import { App, AppStore, createAppStore } from '../store'
 import { createDocument } from './createDocument'
+import { store } from './store'
 
-let store: Store<AppStore<App & TestLogContext>>
 beforeEach(async () => {
-  store = createAppStore(stub<App & TestLogContext>(createTestApp()))
+  store.reset()
 })
 
 describe('createDocument()', () => {
