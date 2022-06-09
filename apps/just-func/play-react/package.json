@@ -15,7 +15,7 @@
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 6006",
-    "tailwind:css": "tailwind -i ./src/styles.css -o ./build/output.css",
+    "tailwind:css": "tailwind -i ./src/styles.css -o ./build/output.css 2>&1",
     "tailwind:css:watch": "tailwind -i ./src/styles.css -o ./build/output.css --watch",
     "test": "react-app-rewired test --watchAll=false 2>&1",
     "test:visual": "cross-env VISUAL_TEST=1 react-app-rewired test --watchAll=false",
