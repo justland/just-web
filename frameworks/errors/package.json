@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@just-web/states": "workspace:*",
-    "iso-error": "~4.1.2",
-    "type-plus": "~4.9.0"
+    "iso-error": "~4.3.5",
+    "type-plus": "~4.10.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

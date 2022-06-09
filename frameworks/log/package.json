@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "standard-log": "~7.1.0",
-    "type-plus": "~4.9.0",
+    "type-plus": "~4.10.0",
     "tersify": "~3.8.3"
   },
   "devDependencies": {

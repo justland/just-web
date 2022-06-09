@@ -1,0 +1,8 @@
+name: pull-request
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  code:
+    uses: justland/.github/.github/workflows/pnpm-verify-cross-platform.yml@main
