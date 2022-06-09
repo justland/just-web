@@ -4,6 +4,13 @@
   "description": "Supporting library for using @just-web with React",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "!**/*.spec.*",
+    "!**/*.stories.*",
+    "!*/dummyModule.*"
+  ],
   "scripts": {
     "build": "run-s build:ts copy:css",
     "build:storybook": "build-storybook",
