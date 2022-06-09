@@ -4,9 +4,11 @@ module.exports = {
     '!<rootDir>/ts/bin.[jt]s'
   ],
   projects: [
+    'apps/*',
     'components/*',
     'frameworks/*',
-    'just-func/*',
+    'libraries/*',
+    'plugins/*',
     'tools/*',
   ],
   watchPlugins: [
