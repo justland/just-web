@@ -1,0 +1,8 @@
+packages:
+  - apps/*/*
+  - components/*
+  - docs/*
+  - frameworks/*
+  - libraries/*
+  - plugins/*
+  - tools/*

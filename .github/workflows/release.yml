@@ -1,0 +1,13 @@
+name: release
+on:
+  push:
+    branches: [main]
+
+jobs:
+  code:
+    uses: justland/.github/.github/workflows/pnpm-verify-cross-platform.yml@main
+
+  release:
+    uses: justland/.github/.github/workflows/pnpm-release-changeset.yml@main
+    needs: code
+    secrets: inherit

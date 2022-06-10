@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "lib": [
+      "DOM",
+      "ES2019",
+      "ES2021.Promise"
+    ],
     "outDir": "lib",
     "rootDir": "ts"
   },
