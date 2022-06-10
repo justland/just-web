@@ -8,7 +8,7 @@
     "bradlc.vscode-tailwindcss",
     "davidanson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
-    "drKnoxy.eslint-disable-snippets",
+    "drknoxy.eslint-disable-snippets",
     "editorconfig.editorconfig",
     "github.vscode-pull-request-github",
     "mhutchie.git-graph",
@@ -17,6 +17,7 @@
     "unional.vscode-sort-package-json",
     "webben.browserslist",
     "yzhang.markdown-all-in-one",
+    "redhat.vscode-yaml"
   ],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
