@@ -5,17 +5,18 @@
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
     "aaron-bond.better-comments",
-    "webben.browserslist",
-    "streetsidesoftware.code-spell-checker",
-    "editorconfig.editorconfig",
-    "dbaeumer.vscode-eslint",
-    "mhutchie.git-graph",
-    "github.vscode-pull-request-github",
-    "yzhang.markdown-all-in-one",
+    "bradlc.vscode-tailwindcss",
     "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "drKnoxy.eslint-disable-snippets",
+    "editorconfig.editorconfig",
+    "github.vscode-pull-request-github",
+    "mhutchie.git-graph",
     "pkief.material-icon-theme",
+    "streetsidesoftware.code-spell-checker",
     "unional.vscode-sort-package-json",
-    "bradlc.vscode-tailwindcss"
+    "webben.browserslist",
+    "yzhang.markdown-all-in-one",
   ],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [

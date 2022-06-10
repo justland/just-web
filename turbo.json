@@ -49,7 +49,11 @@
     "dev": {
       "cache": false
     },
-    "lint": {},
+    "lint": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
     "size": {
       "dependsOn": [
         "build"
