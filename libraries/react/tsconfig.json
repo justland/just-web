@@ -3,6 +3,7 @@
   "compilerOptions": {
     "lib": [
       "DOM",
+      "ES2015",
       "ES2021.Promise"
     ],
     "outDir": "lib",
