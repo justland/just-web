@@ -34,7 +34,7 @@
     "verify:test": "run-s test test:visual"
   },
   "resolutions": {
-    "react-scripts/**/eslint-config-react-app": "7.0.0"
+    "react-scripts/**/eslint-config-react-app": "7.0.1"
   },
   "dependencies": {
     "object-hash": "~3.0.0",

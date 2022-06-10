@@ -37,7 +37,7 @@
     ]
   },
   "resolutions": {
-    "react-scripts/**/eslint-config-react-app": "7.0.0"
+    "react-scripts/**/eslint-config-react-app": "7.0.1"
   },
   "dependencies": {
     "@headlessui/react": "~1.5.0",
