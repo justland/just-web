@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "app": "pnpm run --filter=@just-web/app",
     "build": "turbo run build",
     "clean": "turbo run clean",
     "coverage": "turbo run coverage",
@@ -19,7 +20,6 @@
     "depcheck": "turbo run depcheck",
     "dev": "turbo run dev --parallel",
     "postinstall": "husky install",
-    "just-func": "yarn workspace just-func",
     "lint": "turbo run lint",
     "nuke": "turbo run nuke",
     "nuke:local": "rimraf node_modules || true",
@@ -29,7 +29,7 @@
     "size": "turbo run size",
     "test": "turbo run test",
     "verify": "turbo run lint build coverage depcheck size",
-    "version": "changeset version && yarn install",
+    "version": "changeset version && pnpm install",
     "watch": "jest --watch"
   },
   "devDependencies": {
