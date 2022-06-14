@@ -104,7 +104,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       postcss: ~8.4.12
-      preact: ~10.6.6
+      preact: ~10.8.0
       puppeteer: ~3.0.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
@@ -141,7 +141,7 @@ importers:
       '@storybook/addon-essentials': 6.4.22_h2eot5cfclz5mxmwzzbzusat7y
       '@storybook/addon-interactions': 6.4.22_srgqujzuf6tmp26nmkjbjkgiri
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/addon-storyshots': 6.4.22_px47vu32rewoqgz756awfxexpy
+      '@storybook/addon-storyshots': 6.4.22_5cqenjw3mk6nicpzzmcz74cmxm
       '@storybook/addon-storyshots-puppeteer': 6.4.22_wzkj5jfy6rzqqdjocrz27y4aya
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -187,7 +187,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       postcss: 8.4.14
-      preact: 10.6.6
+      preact: 10.8.0
       puppeteer: 3.0.4
       react-app-rewired: 2.2.1_react-scripts@5.0.0
       react-refresh: 0.11.0
@@ -371,7 +371,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       postcss: ~8.4.12
-      preact: ~10.6.6
+      preact: ~10.8.0
       puppeteer: ~3.0.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
@@ -406,7 +406,7 @@ importers:
       '@storybook/addon-essentials': 6.4.22_h2eot5cfclz5mxmwzzbzusat7y
       '@storybook/addon-interactions': 6.4.22_srgqujzuf6tmp26nmkjbjkgiri
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/addon-storyshots': 6.4.22_px47vu32rewoqgz756awfxexpy
+      '@storybook/addon-storyshots': 6.4.22_5cqenjw3mk6nicpzzmcz74cmxm
       '@storybook/addon-storyshots-puppeteer': 6.4.22_wzkj5jfy6rzqqdjocrz27y4aya
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -461,7 +461,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       postcss: 8.4.14
-      preact: 10.6.6
+      preact: 10.8.0
       puppeteer: 3.0.4
       react-app-rewired: 2.2.1_react-scripts@5.0.0
       react-refresh: 0.11.0
@@ -1108,7 +1108,7 @@ importers:
       npm-run-all: ^4.1.5
       object-hash: ~3.0.0
       postcss: ~8.4.12
-      preact: ~10.6.6
+      preact: ~10.8.0
       puppeteer: ~3.0.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
@@ -1139,7 +1139,7 @@ importers:
       '@storybook/addon-essentials': 6.4.22_7rnluektvtga2ysbyuzr5wfmca
       '@storybook/addon-interactions': 6.4.22_srgqujzuf6tmp26nmkjbjkgiri
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/addon-storyshots': 6.4.22_px47vu32rewoqgz756awfxexpy
+      '@storybook/addon-storyshots': 6.4.22_5cqenjw3mk6nicpzzmcz74cmxm
       '@storybook/addon-storyshots-puppeteer': 6.4.22_wzkj5jfy6rzqqdjocrz27y4aya
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -1195,7 +1195,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       postcss: 8.4.14
-      preact: 10.6.6
+      preact: 10.8.0
       puppeteer: 3.0.4
       react: 17.0.2
       react-app-rewired: 2.2.1_react-scripts@5.0.0
@@ -8636,7 +8636,7 @@ packages:
         optional: true
     dependencies:
       '@axe-core/puppeteer': 4.4.2_puppeteer@3.0.4
-      '@storybook/addon-storyshots': 6.4.22_px47vu32rewoqgz756awfxexpy
+      '@storybook/addon-storyshots': 6.4.22_5cqenjw3mk6nicpzzmcz74cmxm
       '@storybook/csf': 0.0.2--canary.87bc651.0
       '@storybook/node-logger': 6.4.22
       '@types/jest-image-snapshot': 4.3.1
@@ -8648,7 +8648,7 @@ packages:
       - jest
     dev: true
 
-  /@storybook/addon-storyshots/6.4.22_px47vu32rewoqgz756awfxexpy:
+  /@storybook/addon-storyshots/6.4.22_5cqenjw3mk6nicpzzmcz74cmxm:
     resolution: {integrity: sha512-9u+uigHH4khxHB18z1TOau+RKpLo/8tdhvKVqgjy6pr3FSsgp+JyoI+ubDtgWAWFHQ0Zhh5MBWNDmPOo5pwBdA==}
     peerDependencies:
       '@angular/core': '>=6.0.0'
@@ -8716,8 +8716,8 @@ packages:
       global: 4.4.0
       jest: 27.5.1
       jest-specific-snapshot: 4.0.0_jest@27.5.1
-      preact: 10.6.6
-      preact-render-to-string: 5.2.0_preact@10.6.6
+      preact: 10.8.0
+      preact-render-to-string: 5.2.0_preact@10.8.0
       pretty-format: 26.6.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -12131,7 +12131,7 @@ packages:
   /@types/jest-image-snapshot/4.3.1:
     resolution: {integrity: sha512-WDdUruGF14C53axe/mNDgQP2YIhtcwXrwmmVP8eOGyfNTVD+FbxWjWR7RTU+lzEy4K6V6+z7nkVDm/auI/r3xQ==}
     dependencies:
-      '@types/jest': 27.5.2
+      '@types/jest': 28.1.1
       '@types/pixelmatch': 5.2.4
       ssim.js: 3.5.0
     dev: true
@@ -14063,6 +14063,7 @@ packages:
 
   /bindings/1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    requiresBuild: true
     dependencies:
       file-uri-to-path: 1.0.0
     dev: true
@@ -17501,6 +17502,7 @@ packages:
 
   /file-uri-to-path/1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -21653,6 +21655,7 @@ packages:
 
   /nan/2.16.0:
     resolution: {integrity: sha512-UdAqHyFngu7TfQKsCBgAA6pWDkT8MAO7d0jyOecVhN5354xbLqdn8mV9Tat9gepAupm0bt2DbeaSC8vS52MuFA==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -23640,17 +23643,17 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  /preact-render-to-string/5.2.0_preact@10.6.6:
+  /preact-render-to-string/5.2.0_preact@10.8.0:
     resolution: {integrity: sha512-+RGwSW78Cl+NsZRUbFW1MGB++didsfqRk+IyRVTaqy+3OjtpKK/6HgBtfszUX0YXMfo41k2iaQSseAHGKEwrbg==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.6.6
+      preact: 10.8.0
       pretty-format: 3.8.0
     dev: true
 
-  /preact/10.6.6:
-    resolution: {integrity: sha512-dgxpTFV2vs4vizwKohYKkk7g7rmp1wOOcfd4Tz3IB3Wi+ivZzsn/SpeKJhRENSE+n8sUfsAl4S3HiCVT923ABw==}
+  /preact/10.8.0:
+    resolution: {integrity: sha512-2yXIS/h/UP5go0rBKesZqx0LuScqjECtH5pq8SQu3t6X2XNUWjCY4pcViUttDu3qX6NMxGiA/RuxOZd00QLCzg==}
     dev: true
 
   /preferred-pm/3.0.3:
