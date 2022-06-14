@@ -1041,8 +1041,8 @@ importers:
 
   libraries/react:
     specifiers:
-      '@babel/plugin-syntax-flow': 7.14.5
-      '@babel/plugin-transform-react-jsx': 7.14.9
+      '@babel/plugin-syntax-flow': ^7.14.5
+      '@babel/plugin-transform-react-jsx': ^7.14.9
       '@just-web/app': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
@@ -1129,8 +1129,8 @@ importers:
       object-hash: 3.0.0
       type-plus: 4.10.0
     devDependencies:
-      '@babel/plugin-syntax-flow': 7.14.5_@babel+core@7.18.2
-      '@babel/plugin-transform-react-jsx': 7.14.9_@babel+core@7.18.2
+      '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.2
+      '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.2
       '@just-web/app': link:../../frameworks/app
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
@@ -1179,7 +1179,7 @@ importers:
       depcheck: 1.4.3
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
-      eslint-config-react-app: 7.0.1_v6aajix6p7nyqvoh4ttobqpvfe
+      eslint-config-react-app: 7.0.1_4rc56z5fax4oqw3p4i35tgxzqy
       eslint-plugin-harmony: 7.1.0_54hpn7xh2ceqbtb6hkdvwjmgjq
       eslint-plugin-storybook: 0.5.12_ud6rd4xtew5bv4yhvkvu24pzm4
       eslint-plugin-yml: 0.14.0_eslint@8.17.0
@@ -1201,7 +1201,7 @@ importers:
       react-app-rewired: 2.2.1_react-scripts@5.0.0
       react-dom: 17.0.2_react@17.0.2
       react-refresh: 0.11.0
-      react-scripts: 5.0.0_eaurtpoiy5juszyywu4dolsqku
+      react-scripts: 5.0.0_4uoisveqwib7q7f4dvpuvvsyry
       react-test-renderer: 17.0.2_react@17.0.2
       rimraf: 3.0.2
       size-limit: 7.0.8
@@ -2499,16 +2499,6 @@ packages:
       '@babel/core': 7.18.2
       '@babel/helper-plugin-utils': 7.17.12
 
-  /@babel/plugin-syntax-flow/7.14.5_@babel+core@7.18.2:
-    resolution: {integrity: sha512-9WK5ZwKCdWHxVuU13XNT6X73FGmutAXeor5lGFq6qhOFtMFUF4jkbijuyUdZZlpYq6E2hZeZf/u3959X9wsv0Q==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.18.2
-      '@babel/helper-plugin-utils': 7.17.12
-    dev: true
-
   /@babel/plugin-syntax-flow/7.16.7_@babel+core@7.17.12:
     resolution: {integrity: sha512-UDo3YGQO0jH6ytzVwgSLv9i/CzMcUjbKenL67dTrAZPPv6GFAtDhe6jqnvmoKzC/7htNTohhos+onPtDMqJwaQ==}
     engines: {node: '>=6.9.0'}
@@ -3369,20 +3359,6 @@ packages:
     dependencies:
       '@babel/core': 7.18.2
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.2
-
-  /@babel/plugin-transform-react-jsx/7.14.9_@babel+core@7.18.2:
-    resolution: {integrity: sha512-30PeETvS+AeD1f58i1OVyoDlVYQhap/K20ZrMjLmmzmC2AYR/G43D4sdJAaDAqCD3MYpSWbmrz3kES158QSLjw==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.18.2
-      '@babel/helper-annotate-as-pure': 7.16.7
-      '@babel/helper-module-imports': 7.16.7
-      '@babel/helper-plugin-utils': 7.17.12
-      '@babel/plugin-syntax-jsx': 7.17.12_@babel+core@7.18.2
-      '@babel/types': 7.18.4
-    dev: true
 
   /@babel/plugin-transform-react-jsx/7.17.12_@babel+core@7.17.12:
     resolution: {integrity: sha512-Lcaw8bxd1DKht3thfD4A12dqo1X16he1Lm8rIv8sTwjAYNInRS1qHa9aJoqvzpscItXvftKDCfaEQzwoVyXpEQ==}
@@ -9709,7 +9685,7 @@ packages:
       '@types/babel__core': 7.1.19
       babel-plugin-react-docgen: 4.2.1
       pnp-webpack-plugin: 1.7.0_typescript@4.7.3
-      react-scripts: 5.0.0_eaurtpoiy5juszyywu4dolsqku
+      react-scripts: 5.0.0_4uoisveqwib7q7f4dvpuvvsyry
       semver: 7.3.7
     transitivePeerDependencies:
       - '@types/webpack'
@@ -15212,6 +15188,41 @@ packages:
     dependencies:
       eslint: 8.17.0
 
+  /eslint-config-react-app/7.0.1_4rc56z5fax4oqw3p4i35tgxzqy:
+    resolution: {integrity: sha512-K6rNzvkIeHaTd8m/QEh1Zko0KI7BACWkkneSs6s9cKZC/J27X3eZR6Upt1jkmZ/4FK+XUOPPxMEN7+lbUXfSlA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      eslint: ^8.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@babel/core': 7.17.12
+      '@babel/eslint-parser': 7.18.2_ed4dhiomhck5n3zhis4r47nxjq
+      '@rushstack/eslint-patch': 1.1.3
+      '@typescript-eslint/eslint-plugin': 5.27.1_aq7uryhocdbvbqum33pitcm3y4
+      '@typescript-eslint/parser': 5.27.1_ud6rd4xtew5bv4yhvkvu24pzm4
+      babel-preset-react-app: 10.0.1
+      confusing-browser-globals: 1.0.11
+      eslint: 8.17.0
+      eslint-plugin-flowtype: 8.0.3_v2ctlfbhh7shyrvw6vzmad7cia
+      eslint-plugin-import: 2.26.0_pv5w3e62ssxduf5aiwxbc3knra
+      eslint-plugin-jest: 25.7.0_62bgout4vf5dhfmuky7kuqlgle
+      eslint-plugin-jsx-a11y: 6.5.1_eslint@8.17.0
+      eslint-plugin-react: 7.30.0_eslint@8.17.0
+      eslint-plugin-react-hooks: 4.5.0_eslint@8.17.0
+      eslint-plugin-testing-library: 5.5.1_ud6rd4xtew5bv4yhvkvu24pzm4
+      typescript: 4.7.3
+    transitivePeerDependencies:
+      - '@babel/plugin-syntax-flow'
+      - '@babel/plugin-transform-react-jsx'
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - jest
+      - supports-color
+    dev: true
+
   /eslint-config-react-app/7.0.1_mzovy755srfz3xqrc3mbmo4fam:
     resolution: {integrity: sha512-K6rNzvkIeHaTd8m/QEh1Zko0KI7BACWkkneSs6s9cKZC/J27X3eZR6Upt1jkmZ/4FK+XUOPPxMEN7+lbUXfSlA==}
     engines: {node: '>=14.0.0'}
@@ -15231,41 +15242,6 @@ packages:
       confusing-browser-globals: 1.0.11
       eslint: 8.17.0
       eslint-plugin-flowtype: 8.0.3_hoa2dj5uolk3hij7t5s45bncpm
-      eslint-plugin-import: 2.26.0_pv5w3e62ssxduf5aiwxbc3knra
-      eslint-plugin-jest: 25.7.0_62bgout4vf5dhfmuky7kuqlgle
-      eslint-plugin-jsx-a11y: 6.5.1_eslint@8.17.0
-      eslint-plugin-react: 7.30.0_eslint@8.17.0
-      eslint-plugin-react-hooks: 4.5.0_eslint@8.17.0
-      eslint-plugin-testing-library: 5.5.1_ud6rd4xtew5bv4yhvkvu24pzm4
-      typescript: 4.7.3
-    transitivePeerDependencies:
-      - '@babel/plugin-syntax-flow'
-      - '@babel/plugin-transform-react-jsx'
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - jest
-      - supports-color
-    dev: true
-
-  /eslint-config-react-app/7.0.1_v6aajix6p7nyqvoh4ttobqpvfe:
-    resolution: {integrity: sha512-K6rNzvkIeHaTd8m/QEh1Zko0KI7BACWkkneSs6s9cKZC/J27X3eZR6Upt1jkmZ/4FK+XUOPPxMEN7+lbUXfSlA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      eslint: ^8.0.0
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@babel/core': 7.17.12
-      '@babel/eslint-parser': 7.18.2_ed4dhiomhck5n3zhis4r47nxjq
-      '@rushstack/eslint-patch': 1.1.3
-      '@typescript-eslint/eslint-plugin': 5.27.1_aq7uryhocdbvbqum33pitcm3y4
-      '@typescript-eslint/parser': 5.27.1_ud6rd4xtew5bv4yhvkvu24pzm4
-      babel-preset-react-app: 10.0.1
-      confusing-browser-globals: 1.0.11
-      eslint: 8.17.0
-      eslint-plugin-flowtype: 8.0.3_hvaegylpd7usj5n2exhtna4sc4
       eslint-plugin-import: 2.26.0_pv5w3e62ssxduf5aiwxbc3knra
       eslint-plugin-jest: 25.7.0_62bgout4vf5dhfmuky7kuqlgle
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.17.0
@@ -15332,7 +15308,7 @@ packages:
       string-natural-compare: 3.0.1
     dev: true
 
-  /eslint-plugin-flowtype/8.0.3_hvaegylpd7usj5n2exhtna4sc4:
+  /eslint-plugin-flowtype/8.0.3_v2ctlfbhh7shyrvw6vzmad7cia:
     resolution: {integrity: sha512-dX8l6qUL6O+fYPtpNRideCFSpmWOUVx5QcaGLVqe/vlDiBSe4vYljDWDETwnyFzpl7By/WVIu6rcrniCgH9BqQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -15340,8 +15316,8 @@ packages:
       '@babel/plugin-transform-react-jsx': ^7.14.9
       eslint: ^8.1.0
     dependencies:
-      '@babel/plugin-syntax-flow': 7.14.5_@babel+core@7.18.2
-      '@babel/plugin-transform-react-jsx': 7.14.9_@babel+core@7.18.2
+      '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.2
+      '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.2
       eslint: 8.17.0
       lodash: 4.17.21
       string-natural-compare: 3.0.1
@@ -22636,7 +22612,7 @@ packages:
     peerDependencies:
       react-scripts: '>=2.1.3'
     dependencies:
-      react-scripts: 5.0.0_eaurtpoiy5juszyywu4dolsqku
+      react-scripts: 5.0.0_4uoisveqwib7q7f4dvpuvvsyry
       semver: 5.7.1
     dev: true
 
@@ -23109,7 +23085,7 @@ packages:
       react: 17.0.2
     dev: true
 
-  /react-scripts/5.0.0_e2huo5htrzccbhbu7zqfyybmaq:
+  /react-scripts/5.0.0_4uoisveqwib7q7f4dvpuvvsyry:
     resolution: {integrity: sha512-3i0L2CyIlROz7mxETEdfif6Sfhh9Lfpzi10CtcGs1emDQStmZfWjJbAIMtRD0opVUjQuFWqHZyRZ9PPzKCFxWg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -23136,7 +23112,7 @@ packages:
       dotenv: 10.0.0
       dotenv-expand: 5.1.0
       eslint: 8.17.0
-      eslint-config-react-app: 7.0.1_mzovy755srfz3xqrc3mbmo4fam
+      eslint-config-react-app: 7.0.1_4rc56z5fax4oqw3p4i35tgxzqy
       eslint-webpack-plugin: 3.1.1_343ofyucgikfuivzmoigeg5v2u
       file-loader: 6.2.0_webpack@5.73.0
       fs-extra: 10.1.0
@@ -23205,7 +23181,7 @@ packages:
       - webpack-plugin-serve
     dev: true
 
-  /react-scripts/5.0.0_eaurtpoiy5juszyywu4dolsqku:
+  /react-scripts/5.0.0_e2huo5htrzccbhbu7zqfyybmaq:
     resolution: {integrity: sha512-3i0L2CyIlROz7mxETEdfif6Sfhh9Lfpzi10CtcGs1emDQStmZfWjJbAIMtRD0opVUjQuFWqHZyRZ9PPzKCFxWg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -23232,7 +23208,7 @@ packages:
       dotenv: 10.0.0
       dotenv-expand: 5.1.0
       eslint: 8.17.0
-      eslint-config-react-app: 7.0.1_v6aajix6p7nyqvoh4ttobqpvfe
+      eslint-config-react-app: 7.0.1_mzovy755srfz3xqrc3mbmo4fam
       eslint-webpack-plugin: 3.1.1_343ofyucgikfuivzmoigeg5v2u
       file-loader: 6.2.0_webpack@5.73.0
       fs-extra: 10.1.0
