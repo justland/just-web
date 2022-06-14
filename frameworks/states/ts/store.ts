@@ -1,4 +1,4 @@
-import { getLogger, logLevels } from '@just-web/log'
+import { getLogger, logLevels, LogMethodNames } from '@just-web/log'
 import produce from 'immer'
 import { pick } from 'type-plus'
 import { createState, OnStateChange, ResetState, SetState } from './state'
@@ -22,7 +22,7 @@ export function createStore<T>(value: T): Store<T> {
   const [, set, onChange, reset] = state
   onChange(
     v => state[0] = v,
-    { logger: getLogger('noop', { level: logLevels.none }) }
+    { logger: getLogger<LogMethodNames>('noop', { level: logLevels.none }) }
   )
 
   return {
