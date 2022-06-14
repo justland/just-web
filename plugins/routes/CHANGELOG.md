@@ -1,5 +1,16 @@
 # @just-web/routes
 
+## 0.2.0
+
+### Minor Changes
+
+- b056a08: Add micro-app support
+
+### Patch Changes
+
+- Updated dependencies [b056a08]
+  - @just-web/app@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes

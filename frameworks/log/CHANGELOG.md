@@ -1,5 +1,11 @@
 # @just-web/log
 
+## 0.2.0
+
+### Minor Changes
+
+- b056a08: Add micro-app support
+
 ## 0.1.1
 
 ### Patch Changes
