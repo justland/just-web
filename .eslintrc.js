@@ -3,5 +3,5 @@ const path = require('path')
 
 module.exports = {
   ...library(path.resolve(__dirname, 'tsconfig.json')),
-  plugins: ['@typescript-eslint']
+  plugins: ['@typescript-eslint/eslint-plugin']
 }
