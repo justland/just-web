@@ -1,4 +1,6 @@
 ignores:
+  - "@babel/plugin-syntax-flow"
+  - "@babel/plugin-transform-react-jsx"
   - "@just-web/repo-scripts"
   - "@storybook/*"
   - "@testing-library/*"
