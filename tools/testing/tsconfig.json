@@ -8,6 +8,11 @@
     "outDir": "lib",
     "rootDir": "ts"
   },
+  "references": [
+    {
+      "path": "../../frameworks/log"
+    }
+  ],
   "include": [
     "ts",
     "typings"

@@ -3,5 +3,10 @@
     "**/*.spec.ts",
     "**/*.stories.tsx"
   ],
+  "references": [
+    {
+      "path": "../../frameworks/log/tsconfig.build.json"
+    }
+  ],
   "extends": "./tsconfig.json"
 }

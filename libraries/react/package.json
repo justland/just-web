@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "object-hash": "~3.0.0",
-    "type-plus": "~4.10.0"
+    "type-plus": "^4.10.0"
   },
   "devDependencies": {
     "@just-web/app": "workspace:*",

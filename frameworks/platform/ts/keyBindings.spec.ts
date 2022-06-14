@@ -1,19 +1,22 @@
 import { commandRegistry } from '@just-web/commands'
 import { CommandContribution, commandContributionRegistry, KeyBindingContribution, keyBindingRegistry } from '@just-web/contributions'
-import { configForTest, MemoryLogReporter } from '@just-web/log'
+import { createTestLogContext } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import mousetrap from 'mousetrap'
+import { createPlatformContext } from './context'
 import { startKeyBindings } from './keyBindings'
 
 interface StubCommand extends KeyBindingContribution, CommandContribution {
   handler(command: KeyBindingContribution & CommandContribution): void
 }
-function stubOptions(...stubCommands: StubCommand[]) {
+function setupTest(...stubCommands: StubCommand[]) {
+  const logContext = createTestLogContext()
+
   const contributions = {
-    commands: commandContributionRegistry(),
-    keyBindings: keyBindingRegistry()
+    commands: commandContributionRegistry({ logContext }),
+    keyBindings: keyBindingRegistry({ logContext })
   }
-  const commands = commandRegistry({ contributions })
+  const commands = commandRegistry({ contributions, logContext })
 
   stubCommands.forEach(stubCommand => {
     contributions.commands.add(stubCommand)
@@ -22,22 +25,23 @@ function stubOptions(...stubCommands: StubCommand[]) {
       stubCommand.command,
       () => stubCommand.handler(stubCommand))
   })
-  return { commands, contributions }
+  return {
+    logContext,
+    commands,
+    contributions,
+    platform: createPlatformContext()
+  }
 }
 
-let reporter: MemoryLogReporter
-beforeEach(() => {
-  mousetrap.reset()
-  reporter = configForTest().reporter
-})
+beforeEach(() => { mousetrap.reset() })
 
 test('trigger command', () => {
   const invoked: string[] = []
-  const options = stubOptions({
+  const options = setupTest({
     command: 'just-test.showJob',
     description: 'show job',
     key: 'ctrl+j',
-    handler(cmd) { invoked.push(cmd.description!) }
+    handler(cmd) { invoked.push(cmd.description!) },
   })
   startKeyBindings(options)
 
@@ -47,7 +51,7 @@ test('trigger command', () => {
 
 test('trigger cmd command', () => {
   const invoked: string[] = []
-  const options = stubOptions({
+  const options = setupTest({
     command: 'just-test.showJob',
     description: 'show job',
     key: 'cmd+j',
@@ -61,7 +65,7 @@ test('trigger cmd command', () => {
 })
 
 test('emit warning for duplicate key binding', () => {
-  const options = stubOptions({
+  const options = setupTest({
     command: 'just-test.showJob',
     description: 'show job',
     key: 'ctrl+j',
@@ -74,5 +78,5 @@ test('emit warning for duplicate key binding', () => {
   })
   startKeyBindings(options)
 
-  logEqual(reporter, '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j')
+  logEqual(options.logContext.reporter, '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j')
 })

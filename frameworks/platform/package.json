@@ -22,7 +22,7 @@
     "@just-web/log": "workspace:*",
     "mousetrap": "~1.6.5",
     "platform": "~1.3.6",
-    "type-plus": "~4.10.0"
+    "type-plus": "^4.10.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

@@ -1,5 +1,5 @@
-import { MemoryLogReporter } from '@just-web/log'
-import a from 'assertron'
+import type { MemoryLogReporter } from '@just-web/log'
+import { a } from 'assertron'
 import { some } from 'satisfier'
 
 export function logEqual(reporter: MemoryLogReporter, expectedMessage: string, ...expectedMessages: string[]): void

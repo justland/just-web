@@ -1,18 +1,19 @@
 import * as commandsModule from '@just-web/commands'
+import { CommandsContextOptions } from '@just-web/commands'
 import {
   ContributionsContext, ContributionsContextOptions, createContributionsContext,
-  ReadonlyContributionsContext, toReadonlyContributionsContext
+  ReadonlyContributionsContext
 } from '@just-web/contributions'
 import { createErrorsContext, ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
+import { LogContext, LogOptions } from '@just-web/log'
 import * as platformModule from '@just-web/platform'
-import { RecursivePartial } from 'type-plus'
-import { log } from '../log'
 
 export interface Context {
   commands: commandsModule.CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
   platform: platformModule.PlatformContext,
+  logContext: LogContext
 }
 
 export interface ReadonlyContext {
@@ -20,51 +21,43 @@ export interface ReadonlyContext {
   contributions: ReadonlyContributionsContext,
   errors: ErrorsContext,
   platform: platformModule.ReadonlyPlatformContext,
+  logContext: LogContext
 }
 
 export namespace createContext {
   export interface Options {
+    log?: LogOptions,
     contributions?: ContributionsContextOptions,
-    commands?: commandsModule.CommandsContextOptions,
-    errors?: ErrorsContextOptions
+    commands?: CommandsContextOptions,
+    errors?: ErrorsContextOptions,
   }
 }
 
-let readonlyContext: ReadonlyContext
-
-export function createContext(options?: RecursivePartial<createContext.Options>): Context {
+export function createContext({ logContext }: { logContext: LogContext }, options?: createContext.Options): Context {
+  const log = logContext.getLogger('@just-web/app')
   log.trace('create context')
-  const contributions = createContributionsContext(options?.contributions)
-  const commands = commandsModule.createCommandsContext({
-    ...options?.commands,
-    contributions
-  })
+
+  const contributions = createContributionsContext({ logContext }, options?.contributions)
+
+  const commands = commandsModule.createCommandsContext({ contributions, logContext }, options?.commands)
 
   const context = {
+    logContext,
     commands,
     contributions,
     errors: createErrorsContext(options?.errors),
-    platform: platformModule.createContext()
+    platform: platformModule.createPlatformContext()
   }
-
-  readonlyContext = toReadonly(context)
 
   return context
 }
 
-function toReadonly(context: Context): ReadonlyContext {
-  return {
-    commands: commandsModule.toReadonlyCommandsContext(context.commands),
-    contributions: toReadonlyContributionsContext(context.contributions),
-    errors: context.errors,
-    platform: platformModule.toReadonlyContext(context.platform),
-  }
-}
-
-/**
- * @deprecated to be removed
- */
-export function getReadonlyContext() {
-  if (!readonlyContext) log.warn(`getReadonlyContext() cannot be called during load time.`)
-  return readonlyContext
-}
+// function toReadonly(context: Context): ReadonlyContext {
+//   return {
+//     logContext: context.logContext,
+//     commands: commandsModule.toReadonlyCommandsContext(context.commands),
+//     contributions: toReadonlyContributionsContext(context.contributions),
+//     errors: context.errors,
+//     platform: platformModule.toReadonlyContext(context.platform),
+//   }
+// }

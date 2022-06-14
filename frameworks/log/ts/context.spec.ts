@@ -1,11 +1,10 @@
-import { configForTest, logLevels, MemoryLogReporter } from 'standard-log'
+import { createMemoryLogReporter, logLevels } from 'standard-log'
 import { createLogContext, createTestLogContext } from '.'
 
 describe('createLogContext()', () => {
-  let reporter: MemoryLogReporter
-  beforeEach(() => reporter = configForTest(logLevels.all).reporter)
   test('emit trace message', () => {
-    createLogContext()
+    const reporter = createMemoryLogReporter()
+    createLogContext({ name: 'test-app' }, { logLevel: logLevels.all, reporters: [reporter] })
 
     expect(reporter.getLogMessageWithLevel()).toEqual('(TRACE) create log context')
   })
@@ -13,8 +12,8 @@ describe('createLogContext()', () => {
 
 describe('createTestLogContext()', () => {
   test('returns memory reporter', () => {
-    const { log } = createTestLogContext({ logLevel: logLevels.all })
+    const { reporter } = createTestLogContext(undefined, { logLevel: logLevels.all })
 
-    expect(log.reporter.getLogMessageWithLevel()).toEqual('(TRACE) create test log context')
+    expect(reporter.getLogMessageWithLevel()).toEqual('(TRACE) create test log context')
   })
 })

@@ -1,12 +1,12 @@
 import platform from 'platform'
 
-export interface PlatformCtx {
+export interface Ctx {
   os?: {
     family?: string
   }
 }
-export const platformCtx = platform as PlatformCtx
+export const ctx: Ctx = platform
 
 export function isMac() {
-  return platformCtx.os?.family === 'OS X'
+  return ctx.os?.family === 'OS X'
 }

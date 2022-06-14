@@ -1,12 +1,15 @@
-import { CommandRegistry, CommandsContext } from '@just-web/commands'
-import { KeyBindingContribution, KeyBindingContributionRegistry } from '@just-web/contributions'
+import type { CommandsContext } from '@just-web/commands'
+import type { KeyBindingContribution, KeyBindingContributionRegistry } from '@just-web/contributions'
+import type { LogContext } from '@just-web/log'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
-import { log } from './log'
 import { isMac } from './os'
+import type { PlatformContext } from './types'
 
 export namespace startKeyBindings {
   export interface Options {
+    logContext: LogContext,
+    platform: PlatformContext,
     commands: CommandsContext,
     contributions: {
       keyBindings: KeyBindingContributionRegistry
@@ -16,23 +19,23 @@ export namespace startKeyBindings {
 
 let keys: Record<string, boolean>
 export function startKeyBindings(options: startKeyBindings.Options) {
-  const commandContext = options.commands
   const keyBindings = options.contributions.keyBindings
 
   keys = record()
 
-  keyBindings.list().forEach(keybinding => bindKey(commandContext, keybinding))
+  keyBindings.list().forEach(keybinding => bindKey(options, keybinding))
   keyBindings.onChange((value) => {
     // TODO: use `immer` patch support to only update the delta
     Mousetrap.reset()
     keys = record()
-    forEachKey(value, name => bindKey(commandContext, value[name]))
+    forEachKey(value, name => bindKey(options, value[name]))
   })
 }
 
-function bindKey(commandRegistry: CommandRegistry, keyBinding: KeyBindingContribution) {
+function bindKey({ logContext, commands }: startKeyBindings.Options, keyBinding: KeyBindingContribution) {
   const key = getKey(keyBinding)
   if (key) {
+    const log = logContext.getLogger('@just-web/platform')
     if (keys[key]) {
       log.warn(`Registering a duplicate key binding, ignored: ${keyBinding.command} - ${key}`)
     }
@@ -42,7 +45,7 @@ function bindKey(commandRegistry: CommandRegistry, keyBinding: KeyBindingContrib
       Mousetrap.bind(toMousetrapKey(key), (e) => {
         log.trace(`trigger ${key}`)
         if (e.preventDefault) e.preventDefault()
-        commandRegistry.invoke(keyBinding.command)
+        commands.invoke(keyBinding.command)
         return false
       })
     }

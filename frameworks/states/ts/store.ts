@@ -1,7 +1,6 @@
-import { suppressLogs } from '@just-web/log'
+import { getLogger, logLevels } from '@just-web/log'
 import produce from 'immer'
 import { pick } from 'type-plus'
-import { stateLog } from './logs'
 import { createState, OnStateChange, ResetState, SetState } from './state'
 
 export interface ReadonlyStore<T> {
@@ -21,7 +20,10 @@ export interface Store<T> extends ReadonlyStore<T> {
 export function createStore<T>(value: T): Store<T> {
   const state = createState(value)
   const [, set, onChange, reset] = state
-  suppressLogs(() => onChange(v => state[0] = v), stateLog)
+  onChange(
+    v => state[0] = v,
+    { logger: getLogger('noop', { level: logLevels.none }) }
+  )
 
   return {
     get() { return state[0] },

@@ -1,21 +1,21 @@
-import { configForTest, MemoryLogReporter } from '@just-web/log'
+import { createTestLogContext } from '@just-web/log'
 import { logMatchSome } from '@just-web/testing'
 import { EventEmitter } from 'node:events'
 import { createEventsContext } from '.'
 
-let reporter: MemoryLogReporter
-beforeAll(() => reporter = configForTest().reporter)
 
 it('traps error created by listener', () => {
-  const { emitter } = createEventsContext()
+  const logContext = createTestLogContext()
+  const { emitter } = createEventsContext({ logContext })
   emitter.addListener('event', () => { throw new Error('from listener') })
   emitter.emit('event')
 
-  logMatchSome(reporter, '(ERROR) Error: from listener')
+  logMatchSome(logContext.reporter, '(ERROR) Error: from listener')
 })
 
 it('can specify to use a different event emitter', () => {
-  const { emitter } = createEventsContext({ emitter: new EventEmitter() })
+  const logContext = createTestLogContext()
+  const { emitter } = createEventsContext({ logContext, emitter: new EventEmitter() })
   let called = false
   emitter.addListener('event', () => called = true)
   emitter.emit('event')

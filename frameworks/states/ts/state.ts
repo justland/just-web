@@ -1,8 +1,10 @@
-import { tersify } from '@just-web/log'
-import { stateLog } from './logs'
+import { getLogger, Logger } from '@just-web/log'
+import { tersify } from 'tersify'
+
+export const stateLog = getLogger('@just-web/states:state')
 
 export interface SetState<T> {
-  (value: T): void
+  (value: T, meta?: { logger?: Logger }): void
 }
 
 export interface StateChangeHandler<T> {
@@ -10,7 +12,7 @@ export interface StateChangeHandler<T> {
 }
 
 export interface OnStateChange<T> {
-  (handler: StateChangeHandler<T>): () => void
+  (handler: StateChangeHandler<T>, meta?: { logger?: Logger }): () => void
 }
 
 export interface ResetState {
@@ -23,18 +25,20 @@ export interface ResetState {
 export function createState<T>(init: T): [T, SetState<T>, OnStateChange<T>, ResetState] {
   const handlers: StateChangeHandler<T>[] = []
   let value = Object.freeze(init)
-  function set(newValue: T) {
+  function set(newValue: T, meta?: { logger?: Logger }) {
     if (Object.is(value, newValue)) return
 
     const old = value
     value = Object.freeze(newValue)
-    stateLog.planck(`state changed:`, old, value)
+    const log = meta?.logger ?? stateLog
+    log.planck(`state changed:`, old, value)
     handlers.forEach(h => h(value, old))
   }
 
-  function onChange(handler: StateChangeHandler<T>) {
+  function onChange(handler: StateChangeHandler<T>, meta?: { logger?: Logger }) {
     if (handlers.includes(handler)) return () => { }
-    stateLog.trace(`new onChange handler: ${tersify(handler)}`)
+    const log = meta?.logger ?? stateLog
+    log.trace(`new onChange handler: ${tersify(handler)}`)
     handlers.push(handler)
     return () => { handlers.splice(handlers.indexOf(handler), 1) }
   }

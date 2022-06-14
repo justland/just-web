@@ -1,16 +1,8 @@
 import { startKeyBindings } from './keyBindings'
-import { log } from './log'
 import { isMac } from './os'
+import type { PlatformContext, ReadonlyPlatformContext } from './types'
 
-export interface PlatformContext {
-  isMac: typeof isMac
-}
-
-export interface ReadonlyPlatformContext {
-  isMac: typeof isMac
-}
-
-export function createContext(): PlatformContext {
+export function createPlatformContext(): PlatformContext {
   return { isMac }
 }
 
@@ -19,10 +11,13 @@ export function toReadonlyContext(module: PlatformContext): ReadonlyPlatformCont
 }
 
 export namespace start {
-  export interface Options extends startKeyBindings.Options { }
+  export interface Options extends startKeyBindings.Options {
+    platform: PlatformContext
+  }
 }
 
 export async function start(options: start.Options) {
+  const log = options.logContext.getLogger('@just-web/platform')
   log.trace('start')
   startKeyBindings(options)
 }

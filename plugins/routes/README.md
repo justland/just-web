@@ -28,7 +28,7 @@ import { createApp } from '@just-web/app'
 import * as routes from '@just-web/routes'
 
 void (async () => {
-  const app = await createApp()
+  const app = await createApp({ name: 'my-awesome-app' })
     .addPlugin(routes)
   app.routes.register('/', () => { ... })
   app.routes.register('/error', () => { ... })

@@ -1,2 +1,3 @@
 export * from './context'
-export * from './os'
+export { isMac } from './os'
+export * from './types'
