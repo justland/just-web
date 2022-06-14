@@ -1,4 +1,4 @@
-import { CommandContribution } from '@just-web/contributions'
+import type { CommandContribution } from '@just-web/contributions'
 import { sentenceCase } from 'sentence-case'
 
 export function formatCommand(cmd: CommandContribution) {

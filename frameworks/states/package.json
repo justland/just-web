@@ -18,8 +18,9 @@
   },
   "dependencies": {
     "@just-web/log": "workspace:*",
-    "immer": "~9.0.12",
-    "type-plus": "~4.10.0"
+    "immer": "~9.0.14",
+    "tersify": "^3.10.2",
+    "type-plus": "^4.10.0"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",

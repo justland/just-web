@@ -5,3 +5,7 @@ export interface RoutesConfigOptions {
    */
   initialRoute: string
 }
+
+export interface Route {
+  (): void
+}

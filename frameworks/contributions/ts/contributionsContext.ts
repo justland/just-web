@@ -1,26 +1,19 @@
+import { LogContext } from '@just-web/log'
 import { toReadonlyRegistry } from '@just-web/states'
-import { CommandContributionRegistry, commandContributionRegistry, ReadonlyCommandContributionRegistry } from './commands'
-import { KeyBindingContributionRegistry, keyBindingRegistry, ReadonlyKeyBindingContributionRegistry } from './keyBindings'
-
-export interface ContributionsContext {
-  commands: CommandContributionRegistry,
-  keyBindings: KeyBindingContributionRegistry
-}
-
-export interface ReadonlyContributionsContext {
-  commands: ReadonlyCommandContributionRegistry,
-  keyBindings: ReadonlyKeyBindingContributionRegistry
-}
+import { commandContributionRegistry } from './commands'
+import { keyBindingRegistry } from './keyBindings'
+import { ContributionsContext, ReadonlyContributionsContext } from './types'
 
 export interface ContributionsContextOptions {
   commands?: commandContributionRegistry.Options['commands'],
   keyBindings?: keyBindingRegistry.Options['keyBindings']
 }
 
-export function createContributionsContext(options?: ContributionsContextOptions): ContributionsContext {
-  const commands = commandContributionRegistry(options)
-  const keyBindings = keyBindingRegistry(options)
-
+export function createContributionsContext(
+  context: { logContext: LogContext },
+  options?: ContributionsContextOptions): ContributionsContext {
+  const commands = commandContributionRegistry(context, options)
+  const keyBindings = keyBindingRegistry(context, options)
   return { commands, keyBindings }
 }
 

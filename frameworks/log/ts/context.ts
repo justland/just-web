@@ -1,40 +1,44 @@
 import {
-  captureLogs, config, ConfigOptions, createMemoryLogReporter,
-  logLevels, MemoryLogReporter
+  createMemoryLogReporter, createStandardLog,
+  logLevels, LogMethodNames, MemoryLogReporter, StandardLog, StandardLogOptions
 } from 'standard-log'
 import { requiredDeep } from 'type-plus'
-import { log } from './log'
 
-export interface LogOptions extends Partial<ConfigOptions> { }
-
-export function createLogContext(options?: LogOptions) {
-  config(options)
-
-  log.trace('create log context')
+export interface LogContext<N extends string = LogMethodNames> extends StandardLog<N> {
 }
 
-export interface TestLogContext {
-  log: {
-    captureLogs: typeof captureLogs,
-    reporter: MemoryLogReporter
+export interface LogOptions<N extends string = LogMethodNames> extends StandardLogOptions<N> {
+}
+
+export function createLogContext<N extends string = LogMethodNames>({ name }: { name: string }, options?: LogOptions<N>): LogContext<N> {
+  const sl = createStandardLog<N>(options)
+  const log = sl.getLogger(`${name}:@just-web/log`)
+  log.trace('create log context')
+  return {
+    ...sl,
+    getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) }
   }
 }
 
-export interface TestLogOptions extends Partial<Omit<ConfigOptions, 'reporters'>> { }
+export interface TestLogContext<N extends string = LogMethodNames> extends LogContext<N> {
+  reporter: MemoryLogReporter
+}
 
-export function createTestLogContext(options?: TestLogOptions): TestLogContext {
+export interface TestLogOptions<N extends string = LogMethodNames> extends Partial<Omit<StandardLogOptions<N>, 'reporters'>> { }
+
+export function createTestLogContext<N extends string = LogMethodNames>(ctx?: { name?: string }, options?: TestLogOptions<N>): TestLogContext<N> {
+  const name = ctx?.name ?? 'test'
   const reporter = createMemoryLogReporter()
-  config(requiredDeep({
-    mode: 'test',
+  const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
     logLevel: logLevels.debug,
     reporters: [reporter]
   }, options))
 
+  const log = sl.getLogger(`${name}:@just-web/log`)
   log.trace('create test log context')
   return {
-    log: {
-      captureLogs,
-      reporter
-    }
+    ...sl,
+    getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) },
+    reporter
   }
 }

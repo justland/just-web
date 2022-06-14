@@ -1,6 +1,6 @@
+import { LogContext } from '@just-web/log'
 import { createRegistry, ReadonlyRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
 import { record } from 'type-plus'
-import { log } from './log'
 
 export interface KeyBindingContribution {
   /**
@@ -30,12 +30,14 @@ export namespace keyBindingRegistry {
 }
 
 export function keyBindingRegistry(
-  options?: keyBindingRegistry.Options
+  { logContext }: { logContext: LogContext },
+  options?: keyBindingRegistry.Options,
 ): KeyBindingContributionRegistry {
   return withAdder(
     createRegistry<string, KeyBindingContribution>(options?.keyBindings ?? record()),
     function (r, kb) {
       const key = kb.command
+      const log = logContext.getLogger('@just-web/contributions')
       if (r[key]) return log.warn(`Registering a duplicate key binding contribution, ignored: ${key}`)
       r[key] = kb
     })

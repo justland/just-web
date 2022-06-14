@@ -1,12 +1,14 @@
 export {
-  configForTest, createMemoryLogReporter, getLogger, InvalidEnvVar, InvalidId,
-  logLevels, ProhibitedDuringProduction, StandardLogError, suppressLogs
+  createConsoleLogReporter, createMemoryLogReporter, createStandardLogForTest,
+  createTimestampFormatter, formatLogLevel, getLogger, InvalidId, logLevels,
+  plainLogFormatter, StandardLogError, suppressLogs,
+  toConsoleMethod, toLogLevel, toLogLevelName, toMessageWithLevel
 } from 'standard-log'
 export type {
-  ConfigOptions,
-  LogEntry, LogFilter, LogFormatter, LogFunction, Logger,
+  ConsoleLogFormatter, ConsoleLogReporter, ConsoleLogReporterOptions,
+  LogEntry, LogFilter, LogFormatter, LogFunction, Logger, LoggerOptions,
   LogLevel, LogMethod, LogMethodNames, LogReporter,
-  LogReporterOptions, MemoryLogReporter
+  LogReporterOptions, MemoryLogReporter, StandardLog, StandardLogOptions, TimestampFormat
 } from 'standard-log'
-export * from 'tersify'
 export * from './context'
+

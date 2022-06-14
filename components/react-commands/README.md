@@ -28,7 +28,7 @@ import { createApp } from '@just-web/app'
 import * as reactCommandModule from '@just-web/react-commands'
 
 void (async () => {
-  const app = await createApp()
+  const app = await createApp({ name: 'my-app' })
     .addPlugin(reactCommandModule)
   await app.start()
 })()

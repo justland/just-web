@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react'
 import { lazyImport } from './lazyImport'
 
 test('lazy import module', async () => {
-  const app = createTestApp()
+  const app = createTestApp({ name: 'test' })
   const Component = lazyImport(
     () => app,
     () => import('./dummyModule'),

@@ -1,8 +1,8 @@
-import { AppContext, PluginModule } from '@just-web/app'
+import type { AppContext, PluginModule } from '@just-web/app'
 import { ComponentType, lazy } from 'react'
 
 export function lazyImport<
-  M extends PluginModule<any>,
+  M extends PluginModule<any, any>,
   C extends ComponentType<any>
 >(
   getApp: () => Pick<AppContext, 'addPlugin'>,

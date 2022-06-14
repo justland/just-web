@@ -167,6 +167,8 @@ registry.add({ key: 'y', value: 2 }, { key: 'z', value: 999 })
 
 - 🔍 should `register.keys()` returns an iterator instead of array?
 - 🔍 should `register` adds `values()` that returns an iterator?
+- 🔍 if not using context, this package may be re-classify as library instead of framework\
+  the only question at the moment is about logging
 
 [`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
 [`@just-web/states`]: https://github.com/justland/just-web/tree/main/frameworks/states

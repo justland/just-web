@@ -1,7 +1,7 @@
-import { CommandContributionRegistry, KeyBindingContributionRegistry } from '@just-web/contributions'
+import { ContributionsContext } from '@just-web/contributions'
+import { LogContext } from '@just-web/log'
 import { createRegistry } from '@just-web/states'
 import { pick } from 'type-plus'
-import { log } from './log'
 import { CommandHandler } from './types'
 
 export interface ReadonlyCommandRegistry {
@@ -19,17 +19,23 @@ export interface CommandRegistry extends ReadonlyCommandRegistry {
 export namespace commandRegistry {
   export interface Options {
     commands?: Record<string, CommandHandler>,
-    contributions: {
-      commands: CommandContributionRegistry,
-      keyBindings: KeyBindingContributionRegistry
-    }
+    // contributions: {
+    //   commands: CommandContributionRegistry,
+    //   keyBindings: KeyBindingContributionRegistry
+    // }
+  }
+  export interface Context {
+    logContext: LogContext,
+    contributions: ContributionsContext
   }
 }
 
-export function commandRegistry(options: commandRegistry.Options) {
-  const { contributions } = options
+export function commandRegistry(
+  { contributions, logContext }: commandRegistry.Context,
+  options?: commandRegistry.Options) {
+  const log = logContext.getLogger('@just-web/commands')
 
-  const registry = createRegistry<string, () => void>(options.commands)
+  const registry = createRegistry<string, () => void>(options?.commands)
 
   return {
     /**
