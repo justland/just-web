@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "standard-log": "^9.1.4",
-    "type-plus": "^4.10.1"
+    "type-plus": "^4.10.2"
   },
   "devDependencies": {
     "@babel/core": "~7.17.12",
