@@ -12,16 +12,16 @@ export interface Context {
   commands: commandsModule.CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
+  log: LogContext,
   platform: platformModule.PlatformContext,
-  logContext: LogContext
 }
 
 export interface ReadonlyContext {
   commands: commandsModule.ReadonlyCommandsContext,
   contributions: ReadonlyContributionsContext,
   errors: ErrorsContext,
+  log: LogContext,
   platform: platformModule.ReadonlyPlatformContext,
-  logContext: LogContext
 }
 
 export namespace createContext {
@@ -42,7 +42,7 @@ export function createContext({ logContext }: { logContext: LogContext }, option
   const commands = commandsModule.createCommandsContext({ contributions, logContext }, options?.commands)
 
   const context = {
-    logContext,
+    log: logContext,
     commands,
     contributions,
     errors: createErrorsContext(options?.errors),

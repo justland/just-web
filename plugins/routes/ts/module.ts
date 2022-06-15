@@ -85,7 +85,7 @@ export async function start(
 }
 
 function getLogger(store: Store<ModuleStore>) {
-  return store.get().context.logContext.getLogger('@just-web/routes')
+  return store.get().context.log.getLogger('@just-web/routes')
 }
 
 /**

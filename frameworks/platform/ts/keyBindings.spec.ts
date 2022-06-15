@@ -26,7 +26,7 @@ function setupTest(...stubCommands: StubCommand[]) {
       () => stubCommand.handler(stubCommand))
   })
   return {
-    logContext,
+    log: logContext,
     commands,
     contributions,
     platform: createPlatformContext()
@@ -78,5 +78,5 @@ test('emit warning for duplicate key binding', () => {
   })
   startKeyBindings(options)
 
-  logEqual(options.logContext.reporter, '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j')
+  logEqual(options.log.reporter, '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j')
 })
