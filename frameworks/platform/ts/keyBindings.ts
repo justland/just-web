@@ -8,7 +8,7 @@ import type { PlatformContext } from './types'
 
 export namespace startKeyBindings {
   export interface Options {
-    logContext: LogContext,
+    log: LogContext,
     platform: PlatformContext,
     commands: CommandsContext,
     contributions: {
@@ -32,7 +32,7 @@ export function startKeyBindings(options: startKeyBindings.Options) {
   })
 }
 
-function bindKey({ logContext, commands }: startKeyBindings.Options, keyBinding: KeyBindingContribution) {
+function bindKey({ log: logContext, commands }: startKeyBindings.Options, keyBinding: KeyBindingContribution) {
   const key = getKey(keyBinding)
   if (key) {
     const log = logContext.getLogger('@just-web/platform')

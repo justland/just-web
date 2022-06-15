@@ -29,7 +29,7 @@ export function createApp(options: createApp.Options): AppContext {
   return Object.assign(context, {
     ...pluginContext,
     async start() {
-      const log = logContext.getLogger('@just-web/app')
+      const log = context.log.getLogger('@just-web/app')
       log.notice('application starts')
       await startPlugins({ logger: log, loading })
       await platformModule.start(context)

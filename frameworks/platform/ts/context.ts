@@ -17,7 +17,7 @@ export namespace start {
 }
 
 export async function start(options: start.Options) {
-  const log = options.logContext.getLogger('@just-web/platform')
+  const log = options.log.getLogger('@just-web/platform')
   log.trace('start')
   startKeyBindings(options)
 }
