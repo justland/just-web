@@ -11,6 +11,7 @@
     "depcheck": "depcheck",
     "dev": "vite",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
+    "sb": "start-storybook -p 6006",
     "serve": "vite preview",
     "start": "vite",
     "storybook": "start-storybook -p 6006",

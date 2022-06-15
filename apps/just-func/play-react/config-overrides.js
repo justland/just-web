@@ -1,4 +1,8 @@
 module.exports = {
+  webpack(config) {
+    console.info(config)
+    return config
+  },
   jest(config) {
     const esModules = ['react-command-palette/dist/themes']
     esModules.forEach(m => config.moduleNameMapper[m] = 'identity-obj-proxy')
