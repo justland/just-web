@@ -1,6 +1,6 @@
 {
   "name": "@just-web/states",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "State management for just-web application",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

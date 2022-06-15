@@ -1,5 +1,17 @@
 # @just-web/routes
 
+## 0.2.1
+
+### Patch Changes
+
+- e8671c1: Rename `logContext` to `log` to match other props in the application.
+
+  Update deps to fix bundling.
+  `play-react` is not working again.
+
+- Updated dependencies [e8671c1]
+  - @just-web/app@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

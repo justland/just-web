@@ -1,5 +1,12 @@
 # @just-web/events
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [e8671c1]
+  - @just-web/log@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

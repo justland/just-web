@@ -1,6 +1,6 @@
 {
   "name": "@just-web/routes",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "just-web routes library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
