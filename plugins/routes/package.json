@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@just-web/app": "workspace:*",
-    "type-plus": "^4.10.0"
+    "type-plus": "^4.10.2"
   },
   "devDependencies": {
     "@babel/core": "~7.17.8",
