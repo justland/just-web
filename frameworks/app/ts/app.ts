@@ -1,66 +1,84 @@
 import '@just-web/commands'
+import { CommandsContextOptions, createCommandsContext } from '@just-web/commands'
 import '@just-web/contributions'
-import { createLogContext, createTestLogContext, LogOptions, TestLogContext } from '@just-web/log'
+import { ContributionsContextOptions, createContributionsContext } from '@just-web/contributions'
+import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
+import { createLogContext, createTestLogContext, LogOptions, TestLogOptions } from '@just-web/log'
 import * as platformModule from '@just-web/platform'
 import '@just-web/states'
-import { Omit } from 'type-plus'
-import { Context, createContext } from './contexts/context'
+import { Context, createContext, TestContext } from './contexts/context'
 import { createPluginsClosure, PluginsContext, startPlugins } from './plugins/context'
 
-export * from './contexts/context'
+export type { Context, TestContext } from './contexts/context'
 export type { PluginModule } from './plugins/context'
-
-export namespace createApp {
-  export interface Options extends createContext.Options {
-    name: string,
-    log?: LogOptions
-  }
-}
 
 export interface AppContext extends Context, PluginsContext<AppContext> {
   start(): Promise<void>
 }
 
-export function createApp(options: createApp.Options): AppContext {
-  const logContext = createLogContext(options, options.log)
+export namespace createApp {
+  export type Options = {
+    name: string,
+    log?: LogOptions,
+    contributions?: ContributionsContextOptions,
+    commands?: CommandsContextOptions,
+    errors?: ErrorsContextOptions,
+  }
+}
 
-  const context = createContext({ logContext }, options)
+export function createApp(options: createApp.Options): AppContext {
+  const log = createLogContext(options, options.log)
+  const contributions = createContributionsContext({ logContext: log }, options?.contributions)
+
+  const commands = createCommandsContext({ contributions, logContext: log }, options?.commands)
+
+  const context = {
+    log: log,
+    commands,
+    contributions,
+    errors: createErrorsContext(options?.errors),
+    platform: platformModule.createPlatformContext()
+  }
   const [pluginContext, { loading }] = createPluginsClosure({ context })
   return Object.assign(context, {
     ...pluginContext,
     async start() {
-      const log = context.log.getLogger('@just-web/app')
-      log.notice('application starts')
-      await startPlugins({ logger: log, loading })
+      const logger = context.log.getLogger('@just-web/app')
+      logger.notice('application starts')
+      await startPlugins({ logger: logger, loading })
       await platformModule.start(context)
     }
   })
 }
 
-export interface TestAppContext extends Context, TestLogContext, PluginsContext<TestAppContext> {
+export interface TestAppContext extends TestContext, PluginsContext<TestAppContext> {
   start(): Promise<void>
 }
 
 export namespace createTestApp {
-  export interface Options extends createContext.Options {
+  export type Options = {
     name?: string,
-    log?: Omit<LogOptions, 'reporters'>
+    log?: TestLogOptions,
+    contributions?: ContributionsContextOptions,
+    commands?: CommandsContextOptions,
+    errors?: ErrorsContextOptions,
   }
 }
 
 export function createTestApp(options?: createTestApp.Options): TestAppContext {
-  const logContext = createTestLogContext(options, options?.log)
+  const log = createTestLogContext(options, options?.log)
 
-  const log = logContext.getLogger('@just-web/app')
-  const context = createContext({ logContext }, options)
+  const context = createContext({ log }, options)
+
   const [pluginContext, { loading }] = createPluginsClosure({ context })
 
   return Object.assign(context, {
-    ...logContext,
+    log,
     ...pluginContext,
     async start() {
-      log.notice('application starts')
-      await startPlugins({ logger: log, loading })
+      const logger = log.getLogger('@just-web/app')
+      logger.notice('application starts')
+      await startPlugins({ logger: logger, loading })
       await platformModule.start(context)
     }
   })

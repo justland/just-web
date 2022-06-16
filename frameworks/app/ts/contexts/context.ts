@@ -1,27 +1,29 @@
-import * as commandsModule from '@just-web/commands'
-import { CommandsContextOptions } from '@just-web/commands'
-import {
-  ContributionsContext, ContributionsContextOptions, createContributionsContext,
-  ReadonlyContributionsContext
+import type { CommandsContext } from '@just-web/commands'
+import { CommandsContextOptions, createCommandsContext } from '@just-web/commands'
+import type {
+  ContributionsContext
 } from '@just-web/contributions'
-import { createErrorsContext, ErrorsContext, ErrorsContextOptions } from '@just-web/errors'
-import { LogContext, LogOptions } from '@just-web/log'
-import * as platformModule from '@just-web/platform'
+import { ContributionsContextOptions, createContributionsContext } from '@just-web/contributions'
+import type { ErrorsContext } from '@just-web/errors'
+import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
+import type { LogContext, LogOptions, TestLogContext } from '@just-web/log'
+import type { PlatformContext } from '@just-web/platform'
+import { createPlatformContext } from '@just-web/platform'
 
 export interface Context {
-  commands: commandsModule.CommandsContext,
+  commands: CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
   log: LogContext,
-  platform: platformModule.PlatformContext,
+  platform: PlatformContext,
 }
 
-export interface ReadonlyContext {
-  commands: commandsModule.ReadonlyCommandsContext,
-  contributions: ReadonlyContributionsContext,
+export interface TestContext {
+  commands: CommandsContext,
+  contributions: ContributionsContext,
   errors: ErrorsContext,
-  log: LogContext,
-  platform: platformModule.ReadonlyPlatformContext,
+  log: TestLogContext,
+  platform: PlatformContext,
 }
 
 export namespace createContext {
@@ -33,31 +35,18 @@ export namespace createContext {
   }
 }
 
-export function createContext({ logContext }: { logContext: LogContext }, options?: createContext.Options): Context {
-  const log = logContext.getLogger('@just-web/app')
-  log.trace('create context')
+export function createContext({ log }: { log: LogContext }, options?: createContext.Options): Context {
+  const contributions = createContributionsContext({ logContext: log }, options?.contributions)
 
-  const contributions = createContributionsContext({ logContext }, options?.contributions)
-
-  const commands = commandsModule.createCommandsContext({ contributions, logContext }, options?.commands)
+  const commands = createCommandsContext({ contributions, logContext: log }, options?.commands)
 
   const context = {
-    log: logContext,
+    log,
     commands,
     contributions,
     errors: createErrorsContext(options?.errors),
-    platform: platformModule.createPlatformContext()
+    platform: createPlatformContext()
   }
 
   return context
 }
-
-// function toReadonly(context: Context): ReadonlyContext {
-//   return {
-//     logContext: context.logContext,
-//     commands: commandsModule.toReadonlyCommandsContext(context.commands),
-//     contributions: toReadonlyContributionsContext(context.contributions),
-//     errors: context.errors,
-//     platform: platformModule.toReadonlyContext(context.platform),
-//   }
-// }

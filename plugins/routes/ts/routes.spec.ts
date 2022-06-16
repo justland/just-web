@@ -1,47 +1,46 @@
-import { createContext, createTestLogContext } from '@just-web/app'
+import { createTestApp } from '@just-web/app'
 import { logEqual } from '@just-web/testing'
 import { activate } from './module'
 
 async function setupTest() {
-  const logContext = createTestLogContext()
-  const context = createContext({ logContext })
-  return [logContext, await activate(context)] as const
+  const app = createTestApp()
+  return app.addPlugin({ activate })
 }
 
 
 describe('registerRoute()', () => {
   test('register a route', async () => {
-    const [, [{ routes: { register } }]] = await setupTest()
-    register('/', () => { /* for SPA, here is where we render the app */ })
+    const app = await setupTest()
+    app.routes.register('/', () => { /* for SPA, here is where we render the app */ })
   })
 
   test('log an error if registering an already registered route', async () => {
-    const [{ reporter }, [{ routes: { register } }]] = await setupTest()
-    register('/debug', () => { })
-    register('/debug', () => { })
-    logEqual(reporter, `(ERROR) Registering an already registered route: '/debug'`)
+    const app = await setupTest()
+    app.routes.register('/debug', () => { })
+    app.routes.register('/debug', () => { })
+    logEqual(app.log.reporter, `(ERROR) Registering an already registered route: '/debug'`)
   })
 
   test('returns an unregister function', async () => {
-    const [, [{ routes: { register, hasRoute } }]] = await setupTest()
-    const unregister = register('/abc', () => { })
+    const app = await setupTest()
+    const unregister = app.routes.register('/abc', () => { })
     unregister()
-    expect(hasRoute('/abc')).toBe(false)
+    expect(app.routes.hasRoute('/abc')).toBe(false)
   })
 })
 
 describe('navigate()', () => {
   test('navigate to an unknown route logs an error', async () => {
-    const [{ reporter }, [{ routes: { navigate } }]] = await setupTest()
-    navigate('/not-exist')
-    logEqual(reporter, `(ERROR) navigate target not found: '/not-exist'`)
+    const app = await setupTest()
+    app.routes.navigate('/not-exist')
+    logEqual(app.log.reporter, `(ERROR) navigate target not found: '/not-exist'`)
   })
 
   test('navigate route', async () => {
-    const [, [{ routes: { register, navigate } }]] = await setupTest()
+    const app = await setupTest()
     let called = false
-    register('/route1', () => called = true)
-    navigate('/route1')
+    app.routes.register('/route1', () => called = true)
+    app.routes.navigate('/route1')
     expect(called).toBe(true)
   })
 })
@@ -49,12 +48,12 @@ describe('navigate()', () => {
 
 describe('validateRoutes()', () => {
   test(`route '/' and '/error' are required`, async () => {
-    const [{ reporter }, [{ routes: { validateRoutes } }]] = await setupTest()
-    const a = await validateRoutes()
+    const app = await setupTest()
+    const a = await app.routes.validateRoutes()
     expect(a).toBe(false)
 
     logEqual(
-      reporter,
+      app.log.reporter,
       `(ERROR) route '/' is required`,
       `(ERROR) route '/error' is required`
     )

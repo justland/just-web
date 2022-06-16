@@ -45,9 +45,9 @@ describe('createApp()', () => {
 })
 
 describe('createTestApp()', () => {
-  test('has reporter in log (using createTestLogContext())', () => {
-    const app = createTestApp({ name: 'test', log: { logLevel: logLevels.all } })
-
-    logMatchSome(app.reporter, '(TRACE) create test log context')
+  it('can specify log options', () => {
+    const app = createTestApp({ log: { logLevel: logLevels.all } })
+    expect(app.log.logLevel).toBe(logLevels.all)
+    logMatchSome(app.log.reporter, '(TRACE) create test log context')
   })
 })
