@@ -760,7 +760,7 @@ importers:
       '@types/node': ^16.11.26
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
-      '@unional/events-plus': ~2.0.0
+      '@unional/events-plus': ~2.1.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
@@ -779,7 +779,7 @@ importers:
       typescript: ^4.7.3
     dependencies:
       '@just-web/log': link:../log
-      '@unional/events-plus': 2.0.1
+      '@unional/events-plus': 2.1.0
       eventemitter3: 4.0.7
     devDependencies:
       '@babel/core': 7.18.5
@@ -7324,6 +7324,12 @@ packages:
       type-plus: 4.10.2
     dev: false
 
+  /@just-func/types/0.2.1:
+    resolution: {integrity: sha512-NHhnteq2kwQkgJcBOp3jLdIvV3zZvjVuXEBqkqkefmyS2I0XEKWGXlBQz/37N7IGZrnnG9fvd4PAAYoQ7AjkyA==}
+    dependencies:
+      type-plus: 4.10.2
+    dev: false
+
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
 
@@ -12428,10 +12434,10 @@ packages:
       '@typescript-eslint/types': 5.28.0
       eslint-visitor-keys: 3.3.0
 
-  /@unional/events-plus/2.0.1:
-    resolution: {integrity: sha512-oaSiU2R2tA2UW7A74BkfOj6YmGlq3rOSzjebohCuPCQHhEMf+gn3Z8BTid1mlhqQKk018vr7S3E4fy00FQeyBA==}
+  /@unional/events-plus/2.1.0:
+    resolution: {integrity: sha512-iRTqDjZW4eUfLMDlMaf826m2OtKENSuv81sQazIaLBuryP65b370HiS5SuuJtYgl3TOik9+X6oC3JD+VvXD8OA==}
     dependencies:
-      '@just-func/types': 0.2.0
+      '@just-func/types': 0.2.1
     dev: false
 
   /@vue/compiler-core/3.2.37:
