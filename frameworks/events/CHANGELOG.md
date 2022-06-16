@@ -1,5 +1,11 @@
 # @just-web/events
 
+## 0.2.2
+
+### Patch Changes
+
+- 8b3eee7: Update `events-plus`
+
 ## 0.2.1
 
 ### Patch Changes

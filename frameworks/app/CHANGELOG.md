@@ -1,5 +1,13 @@
 # @just-web/app
 
+## 0.2.2
+
+### Patch Changes
+
+- 8b3eee7: Remove `createContext()` from export.
+
+  Plugins should use `createTestApp()` for testing
+
 ## 0.2.1
 
 ### Patch Changes
