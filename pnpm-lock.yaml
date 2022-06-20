@@ -525,6 +525,7 @@ importers:
       '@just-web/testing': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
+      '@types/ramda': ^0.28.14
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
       depcheck: ~1.4.3
@@ -539,6 +540,7 @@ importers:
       jest-watch-typeahead: ^1.0.0
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
+      ramda: ^0.28.0
       rimraf: ~3.0.2
       size-limit: ~7.0.8
       type-plus: ^4.10.2
@@ -559,6 +561,7 @@ importers:
       '@just-web/testing': link:../../tools/testing
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.5.2
+      '@types/ramda': 0.28.14
       '@typescript-eslint/eslint-plugin': 5.28.0_7yumg2qjgbp7maccqlfhx2vudu
       '@typescript-eslint/parser': 5.28.0_ud6rd4xtew5bv4yhvkvu24pzm4
       depcheck: 1.4.3
@@ -573,6 +576,7 @@ importers:
       jest-watch-typeahead: 1.1.0_jest@27.5.1
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
+      ramda: 0.28.0
       rimraf: 3.0.2
       size-limit: 7.0.8
       typescript: 4.7.3
@@ -12066,6 +12070,12 @@ packages:
 
   /@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
+
+  /@types/ramda/0.28.14:
+    resolution: {integrity: sha512-hLgAeKxS5MpIEROaIRHscFqWf+V04CB+A0Kq+OjnTs1fEGHXEs4aeOhXIRovAPe6PfWYKHEwEkVIYWf98OjxnA==}
+    dependencies:
+      ts-toolbelt: 6.15.5
+    dev: true
 
   /@types/range-parser/1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
@@ -26830,6 +26840,10 @@ packages:
         optional: true
     dependencies:
       typescript: 4.7.3
+    dev: true
+
+  /ts-toolbelt/6.15.5:
+    resolution: {integrity: sha512-FZIXf1ksVyLcfr7M317jbB67XFJhOO1YqdTcuGaq9q5jLUoTikukZ+98TPjKiP2jC5CgmYdWWYs0s2nLSU0/1A==}
     dev: true
 
   /ts-toolbelt/9.6.0:

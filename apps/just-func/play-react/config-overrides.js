@@ -1,6 +1,6 @@
 module.exports = {
   webpack(config) {
-    console.info(config)
+    // console.info(config)
     return config
   },
   jest(config) {

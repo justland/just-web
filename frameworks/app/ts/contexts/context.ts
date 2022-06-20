@@ -9,8 +9,10 @@ import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import type { LogContext, LogOptions, TestLogContext } from '@just-web/log'
 import type { PlatformContext } from '@just-web/platform'
 import { createPlatformContext } from '@just-web/platform'
+import { ctx } from '../ctx'
 
 export interface Context {
+  appID: string,
   commands: CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
@@ -19,6 +21,7 @@ export interface Context {
 }
 
 export interface TestContext {
+  appID: string,
   commands: CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
@@ -41,6 +44,7 @@ export function createContext({ log }: { log: LogContext }, options?: createCont
   const commands = createCommandsContext({ contributions, logContext: log }, options?.commands)
 
   const context = {
+    appID: ctx.genAppID(),
     log,
     commands,
     contributions,
