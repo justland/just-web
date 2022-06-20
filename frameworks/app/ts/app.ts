@@ -7,15 +7,15 @@ import { createLogContext, createTestLogContext, LogOptions, TestLogOptions } fr
 import * as platformModule from '@just-web/platform'
 import '@just-web/states'
 import { Context, createContext, TestContext } from './contexts/context'
+import { ctx } from './ctx'
 import { createPluginsClosure, PluginsContext, startPlugins } from './plugins/context'
 
 export type { Context, TestContext } from './contexts/context'
 export type { PluginModule } from './plugins/context'
 
-export interface AppContext extends Context, PluginsContext<AppContext> {
+export interface AppContext extends Context, PluginsContext {
   start(): Promise<void>
 }
-
 export namespace createApp {
   export type Options = {
     name: string,
@@ -33,6 +33,7 @@ export function createApp(options: createApp.Options): AppContext {
   const commands = createCommandsContext({ contributions, logContext: log }, options?.commands)
 
   const context = {
+    appID: ctx.genAppID(),
     log: log,
     commands,
     contributions,
@@ -51,7 +52,7 @@ export function createApp(options: createApp.Options): AppContext {
   })
 }
 
-export interface TestAppContext extends TestContext, PluginsContext<TestAppContext> {
+export interface TestAppContext extends TestContext, PluginsContext {
   start(): Promise<void>
 }
 
@@ -73,6 +74,7 @@ export function createTestApp(options?: createTestApp.Options): TestAppContext {
   const [pluginContext, { loading }] = createPluginsClosure({ context })
 
   return Object.assign(context, {
+    appID: ctx.genAppID(),
     log,
     ...pluginContext,
     async start() {

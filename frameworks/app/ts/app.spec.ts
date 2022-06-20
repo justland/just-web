@@ -1,22 +1,29 @@
 import { logLevels } from '@just-web/log'
 import { logMatchSome } from '@just-web/testing'
+import { range } from 'ramda'
+import { record } from 'type-plus'
 import createApp, { createTestApp } from '.'
 
 describe('createApp()', () => {
-  // will be removed. The app and context will be frozen
-  test('modifying app would affect context received by plugin', async () => {
-    const expected = () => true
-    const app = createApp({ name: 'test', log: {} })
-    app.platform.isMac = expected
-    let actual
-    await app.addPlugin({
-      async activate(ctx) {
-        actual = ctx.platform.isMac
-      }
-    })
-    expect(actual).toBe(expected)
+  it('comes with a random appID', () => {
+    const x = range(0, 100)
+      .map(() => createApp({ name: 'random' }).appID)
+      .reduce((p, v) => (p[v] = true, p), record())
+
+    expect(Object.keys(x).length).toBe(100)
   })
-  test.todo('modifying context in plugin will not affect app')
+
+  test('appID is 15 chars long', () => {
+    range(0, 100).forEach(() => expect(createApp({ name: 'x' }).appID.length).toEqual(15))
+  })
+
+  it.todo('is frozen')
+
+  describe('addPlugin()', () => {
+    it('throws if the plugin try to add property coliding with existing context', async () => {
+
+    })
+  })
 
   it('send startContext to start()', async () => {
     const app = await createTestApp().addPlugin({

@@ -9,11 +9,11 @@ export interface PluginModule<C, S> {
   start?: (startContext: S) => Promise<void>
 }
 
-export interface PluginsContext<A> {
-  addPlugin<C, S>(this: A, plugin: PluginModule<C, S>): C extends object ? Promise<A & C> : Promise<A>
+export interface PluginsContext {
+  addPlugin<A, C, S>(this: A, plugin: PluginModule<C, S>): C extends object ? Promise<A & C> : Promise<A>
 }
 
-export type PluginsClosure<A> = readonly [PluginsContext<A>, { loading: Array<Promise<[PluginModule<any, any>, any]>> }]
+export type PluginsClosure = readonly [PluginsContext, { loading: Array<Promise<[PluginModule<any, any>, any]>> }]
 
 export interface ReadonlyPluginsContext {
 }
@@ -22,7 +22,7 @@ export interface PluginsContextOptions {
   context: Context
 }
 
-export function createPluginsClosure<A>(options: PluginsContextOptions): PluginsClosure<A> {
+export function createPluginsClosure(options: PluginsContextOptions): PluginsClosure {
   const loading: Array<Promise<[PluginModule<any, any>, any]>> = []
   const plugins = withAdder(createStore<PluginModule<any, any>[]>([]), push)
   const pluginsContext = {
