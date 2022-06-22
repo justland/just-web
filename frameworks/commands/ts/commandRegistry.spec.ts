@@ -45,7 +45,10 @@ describe('register()', () => {
     const { contributions, logContext } = setupTest()
     contributions.commands.add({ command: 'just-web.editFile', description: 'a' })
     const r = commandRegistry({ contributions, logContext })
-    r.register('just-web.editFile', (file: string) => console.info(`editing ${file}`))
+    let actual: string
+    r.register('just-web.editFile', (file: string) => actual = `editing ${file}`)
+    r.invoke('just-web.editFile', 'abc.txt')
+    expect(actual!).toEqual('editing abc.txt')
   })
 })
 
