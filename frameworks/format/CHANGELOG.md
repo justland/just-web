@@ -1,5 +1,11 @@
 # @just-web/format
 
+## 0.2.2
+
+### Patch Changes
+
+- @just-web/platform@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

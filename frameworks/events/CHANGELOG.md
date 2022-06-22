@@ -1,5 +1,11 @@
 # @just-web/events
 
+## 0.2.3
+
+### Patch Changes
+
+- 4d6dcf5: Update `@unional/events-plus`
+
 ## 0.2.2
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @just-web/platform
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [4d6dcf5]
+  - @just-web/commands@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

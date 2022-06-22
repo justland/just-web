@@ -1,5 +1,15 @@
 # @just-web/app
 
+## 0.2.3
+
+### Patch Changes
+
+- 88ee900: adjust `addPlugin` generics
+- Updated dependencies [4d6dcf5]
+  - @just-web/commands@0.2.2
+  - @just-web/platform@0.2.2
+  - @just-web/format@0.2.2
+
 ## 0.2.2
 
 ### Patch Changes

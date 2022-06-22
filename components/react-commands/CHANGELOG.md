@@ -1,5 +1,13 @@
 # @just-web/react-commands
 
+## 1.0.3
+
+### Patch Changes
+
+- Updated dependencies [88ee900]
+  - @just-web/app@0.2.3
+  - @just-web/react@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes
