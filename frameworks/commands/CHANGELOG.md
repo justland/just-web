@@ -1,5 +1,11 @@
 # @just-web/commands
 
+## 0.2.2
+
+### Patch Changes
+
+- 4d6dcf5: Support commands with arguments.
+
 ## 0.2.1
 
 ### Patch Changes
