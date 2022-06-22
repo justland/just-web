@@ -71,16 +71,7 @@
       ]
     },
     "verify": {
-      "inputs": [
-        "ts/*.ts",
-        "ts/*.tsx",
-        "ts/**/*.ts",
-        "ts/**/*.tsx"
-      ],
-      "outputs": [
-        "coverage/**",
-        "lib/**"
-      ]
+      "cache": false
     },
     "watch": {
       "dependsOn": [

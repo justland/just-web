@@ -41,7 +41,7 @@
     "react-commands": "pnpm run --filter=@just-web/react-commands",
     "size": "turbo run size",
     "test": "turbo run test",
-    "verify": "turbo run lint build coverage depcheck size",
+    "verify": "turbo run build lint coverage depcheck size",
     "version": "changeset version && pnpm install",
     "watch": "jest --watch"
   },
