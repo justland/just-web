@@ -35,7 +35,7 @@ export function commandRegistry(
   options?: commandRegistry.Options) {
   const log = logContext.getLogger('@just-web/commands')
 
-  const registry = createRegistry<string, () => void>(options?.commands)
+  const registry = createRegistry<string, (...args: any[]) => void>(options?.commands)
 
   return {
     /**
@@ -54,10 +54,10 @@ export function commandRegistry(
       }
       registry.update(m => { m[command] = handler })
     },
-    invoke(command: string) {
+    invoke(command: string, ...args: any[]) {
       log.trace('invoke', command)
       const handler = registry.get()[command]
-      handler ? handler() : log.error(`Invoking not registered command: '${command}'`)
+      handler ? handler(...args) : log.error(`Invoking not registered command: '${command}'`)
     },
     keys: registry.keys.bind(registry)
   }

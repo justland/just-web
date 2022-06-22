@@ -1,6 +1,6 @@
 
 export interface CommandHandler {
-  (): void
+  (...args: any[]): void
 }
 
 export interface Command {

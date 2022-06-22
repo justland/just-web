@@ -40,6 +40,13 @@ describe('register()', () => {
     r.register('just-web.showCommandPalette', () => { })
     logEqual(logContext.reporter, `(WARN) Registering a duplicate command, ignored: just-web.showCommandPalette`)
   })
+
+  it('can register a command taking params', () => {
+    const { contributions, logContext } = setupTest()
+    contributions.commands.add({ command: 'just-web.editFile', description: 'a' })
+    const r = commandRegistry({ contributions, logContext })
+    r.register('just-web.editFile', (file: string) => console.info(`editing ${file}`))
+  })
 })
 
 describe('keys()', () => {
@@ -79,6 +86,15 @@ describe('invoke()', () => {
     r.register('command1', fn)
     r.invoke('command1')
     expect(fn).toHaveBeenCalledTimes(1)
+  })
+
+  it('can invoke command with arguments', () => {
+    const fn = jest.fn()
+    const { contributions, logContext } = setupTest({ command: 'command1', description: 'a' })
+    const r = commandRegistry({ contributions, logContext })
+    r.register('command1', fn)
+    r.invoke('command1', 1)
+    expect(fn).toHaveBeenCalledWith(1)
   })
 })
 
