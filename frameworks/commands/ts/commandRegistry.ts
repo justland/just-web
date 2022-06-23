@@ -5,7 +5,7 @@ import { pick } from 'type-plus'
 import { CommandHandler } from './types'
 
 export interface ReadonlyCommandRegistry {
-  invoke(command: string): void,
+  invoke(command: string, ...args: any[]): void,
   keys(): string[]
 }
 
@@ -32,7 +32,7 @@ export namespace commandRegistry {
 
 export function commandRegistry(
   { contributions, logContext }: commandRegistry.Context,
-  options?: commandRegistry.Options) {
+  options?: commandRegistry.Options): CommandRegistry {
   const log = logContext.getLogger('@just-web/commands')
 
   const registry = createRegistry<string, (...args: any[]) => void>(options?.commands)
