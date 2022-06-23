@@ -1,5 +1,11 @@
 # @just-web/commands
 
+## 0.2.3
+
+### Patch Changes
+
+- 454bd7c: fix `invoke()` type
+
 ## 0.2.2
 
 ### Patch Changes

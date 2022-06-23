@@ -1,5 +1,11 @@
 # @just-web/routes
 
+## 0.2.4
+
+### Patch Changes
+
+- @just-web/app@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes
