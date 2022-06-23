@@ -25,13 +25,14 @@ function getChangeSource(store: Store<any>, getState: AnyFunction, updateStore: 
 /**
  * Use a value in the store for `useState()`.
  * @param getState a function to get the value to be used in `useState()`.
- * @param updateStore optional function to update the value automatically when the state changes.
+ * @param updateStore optional function to update the store value when the state changes.
+ * This is the same as calling `setValue()` by yourself.
  */
 export function useStore<S, V>(
   store: Store<S>,
   getState: (s: S) => V,
   updateStore?: (draft: S, value: V) => void | S)
-  : [value: V, setvalue: (v: V | ((v: V) => V)) => void] {
+  : [value: V, setValue: (value: V | ((value: V) => V)) => void] {
   const shared: ChangeSource = getChangeSource(store, getState, updateStore)
 
   const [value, setValue] = useState(getState(store.get()))
