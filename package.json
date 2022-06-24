@@ -24,7 +24,7 @@
     "errors": "pnpm --filter=@just-web/errors",
     "events": "pnpm --filter=@just-web/events",
     "format": "pnpm --filter=@just-web/format",
-    "log": "pnpm run --filter=@just-web/log",
+    "log": "pnpm --filter=@just-web/log",
     "platform": "pnpm --filter=@just-web/platform",
     "play-react": "pnpm --filter=@just-func/play-react",
     "play-solid": "pnpm --filter=@just-func/play-solid",
