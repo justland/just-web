@@ -1,5 +1,12 @@
 # @just-web/routes
 
+## 0.2.5
+
+### Patch Changes
+
+- Updated dependencies [d3e0770]
+  - @just-web/app@0.2.5
+
 ## 0.2.4
 
 ### Patch Changes

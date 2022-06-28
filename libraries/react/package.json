@@ -1,6 +1,6 @@
 {
   "name": "@just-web/react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Supporting library for using @just-web with React",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
