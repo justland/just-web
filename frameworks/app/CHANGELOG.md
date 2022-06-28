@@ -1,5 +1,14 @@
 # @just-web/app
 
+## 0.2.5
+
+### Patch Changes
+
+- d3e0770: Fix plugin module becomes frozen issue.
+
+  The plugin module was added to an unused `Store`,
+  which as a store value, it becomes deeply frozen.
+
 ## 0.2.4
 
 ### Patch Changes

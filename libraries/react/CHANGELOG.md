@@ -1,5 +1,12 @@
 # @just-web/react
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [d3e0770]
+  - @just-web/app@0.2.5
+
 ## 1.0.4
 
 ### Patch Changes
