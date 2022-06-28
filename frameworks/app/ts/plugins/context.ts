@@ -1,6 +1,5 @@
 import { JustWebError } from '@just-web/errors'
 import type { Logger } from '@just-web/log'
-import { createStore, push, withAdder } from '@just-web/states'
 import { forEachKey } from 'type-plus'
 import type { Context } from '../contexts/context'
 
@@ -24,10 +23,8 @@ export interface PluginsContextOptions {
 
 export function createPluginsClosure(options: PluginsContextOptions): PluginsClosure {
   const loading: Array<Promise<[PluginModule<any, any>, any]>> = []
-  const plugins = withAdder(createStore<PluginModule<any, any>[]>([]), push)
   const pluginsContext = {
     async addPlugin(plugin: PluginModule<any, any>) {
-      plugins.add(plugin)
       const p = plugin.activate(options.context)
       loading.push(p.then(result => [plugin, result?.[1]]))
       return p.then((result) => {
