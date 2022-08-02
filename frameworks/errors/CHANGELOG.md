@@ -1,5 +1,12 @@
 # @just-web/errors
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [862b5a8]
+  - @just-web/states@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

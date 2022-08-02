@@ -1,5 +1,12 @@
 # @just-web/react-commands
 
+## 1.0.6
+
+### Patch Changes
+
+- @just-web/app@0.2.6
+- @just-web/react@1.0.6
+
 ## 1.0.5
 
 ### Patch Changes
