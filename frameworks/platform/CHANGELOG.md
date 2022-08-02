@@ -1,5 +1,12 @@
 # @just-web/platform
 
+## 0.2.5
+
+### Patch Changes
+
+- @just-web/commands@0.2.5
+- @just-web/contributions@0.2.3
+
 ## 0.2.4
 
 ### Patch Changes
