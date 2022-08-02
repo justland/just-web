@@ -24,12 +24,12 @@ export interface ResetState {
  */
 export function createState<T>(init: T): [T, SetState<T>, OnStateChange<T>, ResetState] {
   const handlers: StateChangeHandler<T>[] = []
-  let value = Object.freeze(clone(init))
+  let value = Object.freeze(init)
   function set(newValue: T, meta?: { logger?: Logger }) {
     if (Object.is(value, newValue)) return
 
     const old = value
-    value = Object.freeze(clone(newValue))
+    value = Object.freeze(newValue)
     const log = meta?.logger ?? stateLog
     log.planck(`state changed:`, old, value)
     handlers.forEach(h => h(value, old))
@@ -51,12 +51,4 @@ export function createState<T>(init: T): [T, SetState<T>, OnStateChange<T>, Rese
     onChange,
     reset
   ]
-}
-
-function clone<T>(init: T): T {
-  return (Array.isArray(init)
-    ? [...init]
-    : ((init !== null && typeof init === 'object')
-      ? { ...init }
-      : init)) as unknown as T
 }

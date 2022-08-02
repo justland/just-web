@@ -6,24 +6,10 @@ test('returns initial value', () => {
   expect(value).toEqual([1, 2, 3])
 })
 
-test('init array value is not frozen', () => {
+test('init value is freezed', () => {
   const init = [1, 2, 3]
   createState(init)
-  init[3] = 4
-})
-
-test('init object value is not frozen', () => {
-  const init = { a: 1, b: 2 }
-  createState(init)
-  init.a = 3
-})
-
-test('init value can be scalar values', () => {
-  createState(0)
-  createState(true)
-  createState('a')
-  createState(null)
-  createState(undefined)
+  expect(() => init[3] = 4).toThrow()
 })
 
 test('value is freezed', () => {
@@ -69,13 +55,4 @@ test('onChange() will register handler only once', () => {
   set(2)
 
   expect(count).toBe(1)
-})
-
-test('new value is not frozen', () => {
-  const [, set, onChange] = createState({ a: 1 })
-  const newValue = { a: 2 }
-
-  set(newValue)
-  onChange(() => { throw new Error('should not reach') })
-  newValue.a = 3
 })
