@@ -1,5 +1,17 @@
 # @just-web/app
 
+## 0.2.7
+
+### Patch Changes
+
+- Updated dependencies [4215e3c]
+  - @just-web/states@0.2.3
+  - @just-web/commands@0.2.5
+  - @just-web/contributions@0.2.3
+  - @just-web/errors@0.2.3
+  - @just-web/platform@0.2.5
+  - @just-web/format@0.2.5
+
 ## 0.2.6
 
 ### Patch Changes
