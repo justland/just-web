@@ -1,5 +1,14 @@
 # @just-web/platform
 
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies [c99cfc2]
+  - @just-web/log@0.2.2
+  - @just-web/commands@0.2.4
+  - @just-web/contributions@0.2.2
+
 ## 0.2.3
 
 ### Patch Changes

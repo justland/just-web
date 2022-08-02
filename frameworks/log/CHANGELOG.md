@@ -1,5 +1,11 @@
 # @just-web/log
 
+## 0.2.2
+
+### Patch Changes
+
+- c99cfc2: add `justLog()`
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@just-web/commands",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "just-web command system",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -1,5 +1,12 @@
 # @just-web/testing
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [c99cfc2]
+  - @just-web/log@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
