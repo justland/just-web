@@ -835,6 +835,7 @@ importers:
     specifiers:
       '@babel/core': ~7.18.0
       '@babel/plugin-transform-runtime': ~7.18.0
+      '@just-func/types': ^0.2.1
       '@just-web/repo-scripts': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.5.2
@@ -854,11 +855,12 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      standard-log: ^9.1.4
+      standard-log: ^9.1.7
       type-plus: ^4.10.2
       typescript: ^4.7.4
     dependencies:
-      standard-log: 9.1.4
+      '@just-func/types': 0.2.1
+      standard-log: 9.1.7
       type-plus: 4.10.2
     devDependencies:
       '@babel/core': 7.18.5
@@ -5262,13 +5264,6 @@ packages:
       '@jridgewell/resolve-uri': 3.0.7
       '@jridgewell/sourcemap-codec': 1.4.13
     dev: true
-
-  /@just-func/types/0.2.0:
-    resolution: {integrity: sha512-qPgOdfP+Vqn9flqeva9dMFkQ1V3ykMDmLCzmWUMTgXntsCAAkxl04Kb499pFbIU6vnNIQgbb1S4FN74q4/Zezg==}
-    engines: {node: '>= 14.19'}
-    dependencies:
-      type-plus: 4.10.2
-    dev: false
 
   /@just-func/types/0.2.1:
     resolution: {integrity: sha512-NHhnteq2kwQkgJcBOp3jLdIvV3zZvjVuXEBqkqkefmyS2I0XEKWGXlBQz/37N7IGZrnnG9fvd4PAAYoQ7AjkyA==}
@@ -23179,10 +23174,10 @@ packages:
     resolution: {integrity: sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==}
     dev: true
 
-  /standard-log/9.1.4:
-    resolution: {integrity: sha512-9+nYWC10DluVGxdN/EXhGf8tm/9C57WqNL3TqblNydcMFUxcn8Z2IAM/W9RPVlgYOlaAlpczuq2kOMWr1Q1zhg==}
+  /standard-log/9.1.7:
+    resolution: {integrity: sha512-M9L6xbu+gGXaPs9bGBE7u9r2jYe45L6cXzdFCvGH4ijSJ6Jzn9YPZz4VVGAVbqUASLaGiNhVjdh1AtDgTdukrA==}
     dependencies:
-      '@just-func/types': 0.2.0
+      '@just-func/types': 0.2.1
       iso-error: 4.3.5
       ms: 2.1.3
       type-plus: 4.10.2
