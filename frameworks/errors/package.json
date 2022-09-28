@@ -4,9 +4,13 @@
   "description": "just-web errors module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "!**/*.spec.*"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "build:watch": "tsc -p tsconfig.build.json",
+    "build": "tsc",
+    "build:watch": "tsc -w",
     "clean": "rimraf lib *.tsbuildinfo",
     "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",

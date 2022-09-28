@@ -11,18 +11,19 @@
     ".eslint*",
     "babel*",
     "jest*",
-    "tsconfig.*"
+    "tsconfig.*",
+    "!**/*.spec.*"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "build:watch": "tsc -p tsconfig.build.json",
+    "build": "tsc",
+    "build:watch": "tsc -w",
     "clean": "rimraf lib *.tsbuildinfo",
     "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
     "test": "jest 2>&1",
     "test:watch": "jest --watch",
-    "verify": "run-p build lint coverage",
+    "verify": "run-p build lint coverage depcheck",
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
