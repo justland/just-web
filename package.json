@@ -37,7 +37,6 @@
     "postinstall": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
-    "prepare": "husky install",
     "react-commands": "pnpm --filter=@just-web/react-commands",
     "size": "turbo run size",
     "test": "turbo run test",
