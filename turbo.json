@@ -1,24 +1,9 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "baseBranch": "origin/main",
   "pipeline": {
     "build": {
       "dependsOn": [
         "^build"
-      ],
-      "inputs": [
-        "ts/*.ts",
-        "ts/*.tsx",
-        "ts/**/*.ts",
-        "ts/**/*.tsx",
-        "!ts/*.spec.ts",
-        "!ts/*.spec.tsx",
-        "!ts/**/*.spec.ts",
-        "!ts/**/*.spec.tsx",
-        "!ts/*.stories.ts",
-        "!ts/*.stories.tsx",
-        "!ts/**/*.stories.ts",
-        "!ts/**/*.stories.tsx"
       ],
       "outputs": [
         "lib/**"
@@ -30,12 +15,6 @@
     "coverage": {
       "dependsOn": [
         "^build"
-      ],
-      "inputs": [
-        "ts/*.ts",
-        "ts/*.tsx",
-        "ts/**/*.ts",
-        "ts/**/*.tsx"
       ],
       "outputs": [
         "coverage/**"
@@ -62,26 +41,6 @@
     "test": {
       "dependsOn": [
         "^build"
-      ],
-      "inputs": [
-        "ts/*.ts",
-        "ts/*.tsx",
-        "ts/**/*.ts",
-        "ts/**/*.tsx"
-      ]
-    },
-    "verify": {
-      "cache": false
-    },
-    "watch": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "ts/*.ts",
-        "ts/*.tsx",
-        "ts/**/*.ts",
-        "ts/**/*.tsx"
       ]
     }
   }
