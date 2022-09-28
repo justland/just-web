@@ -1295,7 +1295,7 @@ importers:
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
-      assertron: ^9.2.5
+      assertron: ^10.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
@@ -1315,7 +1315,7 @@ importers:
       typescript: ^4.7.4
     dependencies:
       '@just-web/log': link:../../frameworks/log
-      assertron: 9.2.5
+      assertron: 10.0.0
       satisfier: 5.2.2
     devDependencies:
       '@babel/core': 7.18.5
@@ -12804,12 +12804,12 @@ packages:
       util: 0.10.3
     dev: true
 
-  /assertron/9.2.5:
-    resolution: {integrity: sha512-K1UX8W+6dkWW9obv7N/RIFpOK2ZrT4ukVNbfb3mTDravbHIZPbdc4NoyyA8UDuGqScnBfGhFn09dkihw6dZ3Wg==}
+  /assertron/10.0.0:
+    resolution: {integrity: sha512-u4bl3Yrj5rEtYr0FoSAyK9CUKxUv/N8dd+kts5FNkXHuFqjwJi4BxN8rMNyrS3FmCKdRv0FBwP/YNDtSNN0AnA==}
+    engines: {node: '>= 10'}
     dependencies:
-      is-node: 1.0.2
       is-promise: 4.0.0
-      iso-error: 4.3.5
+      iso-error: 4.3.8
       path-equal: 1.2.2
       satisfier: 5.2.2
       tersify: 3.10.2
@@ -18371,11 +18371,6 @@ packages:
   /is-negative-zero/2.0.2:
     resolution: {integrity: sha512-dqJvarLawXsFbNDeJW7zAz8ItJ9cd28YufuuFzh0G8pNHjJMnY08Dv7sYX2uF5UpQOwieAeOExEYAWWfu7ZZUA==}
     engines: {node: '>= 0.4'}
-
-  /is-node/1.0.2:
-    resolution: {integrity: sha512-U37UdVWHNH1wDFmlSauKRDL1nhaCVRIH1FoaZN94eGJvU832sjMHEO/4AITAkOT0aRD7oA1Fovn7PeNCHiqz0w==}
-    engines: {node: '>= 0.10'}
-    dev: false
 
   /is-npm/5.0.0:
     resolution: {integrity: sha512-WW/rQLOazUq+ST/bCAVBp/2oMERWLsR7OrKyt052dNDk4DHcDE0/7QSXITlmi+VBcV13DfIbysG3tZJm5RfdBA==}
