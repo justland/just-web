@@ -51,6 +51,7 @@
     "@types/eslint": "^8.4.3",
     "@types/jest": "^28.1.1",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@just-web/repo-scripts": "workspace:*",
     "eslint": "^8.17.0",
     "eslint-plugin-harmony": "^7.1.0",
     "husky": "^8.0.1",
