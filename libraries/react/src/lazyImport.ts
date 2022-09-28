@@ -11,8 +11,7 @@ export function lazyImport<
 ): React.LazyExoticComponent<C> {
   return lazy(async () => {
     const m = await importPlugin() as unknown as M
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-    await (getApp() as any).addPlugin(m)
+    await getApp().addPlugin(m)
 
     return { default: getComponent(m) }
   })
