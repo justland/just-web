@@ -16,7 +16,7 @@ function setupTest(...stubCommands: StubCommand[]) {
     commands: commandContributionRegistry({ logContext }),
     keyBindings: keyBindingRegistry({ logContext })
   }
-  const commands = commandRegistry({ contributions, logContext })
+  const commands = commandRegistry({ logContext })
 
   stubCommands.forEach(stubCommand => {
     contributions.commands.add(stubCommand)
