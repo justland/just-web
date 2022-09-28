@@ -15,27 +15,17 @@ function setupTest(...commands: CommandContribution[]) {
 }
 
 describe('register()', () => {
-  test('register an unknown command', () => {
-    const { logContext, contributions } = setupTest()
-    const r = commandRegistry({ contributions, logContext })
-    r.register('some.unknownCommand', () => { })
+  it('registers a new command', () => {
+    const { logContext } = setupTest()
+    const r = commandRegistry({ logContext })
+    r.register('some.Command', () => { })
 
-    logEqual(logContext.reporter, `(ERROR) Registering an unknown command: some.unknownCommand`)
+    expect(r.keys()).toEqual(['some.Command'])
   })
 
-  test('register a command', () => {
-    const { contributions, logContext } = setupTest()
-    contributions.commands.add({ command: 'just-web.showCommandPalette', description: 'a' })
-    const r = commandRegistry({ contributions, logContext })
-    r.register('just-web.showCommandPalette', () => { })
-
-    expect(r.keys()).toEqual(['just-web.showCommandPalette'])
-  })
-
-  test('log a warning if registering with existing id', () => {
-    const { contributions, logContext } = setupTest()
-    contributions.commands.add({ command: 'just-web.showCommandPalette', description: 'a' })
-    const r = commandRegistry({ contributions, logContext })
+  it('emits a warning if registering a command with existing id', () => {
+    const { logContext } = setupTest()
+    const r = commandRegistry({ logContext })
     r.register('just-web.showCommandPalette', () => { })
     r.register('just-web.showCommandPalette', () => { })
     logEqual(logContext.reporter, `(WARN) Registering a duplicate command, ignored: just-web.showCommandPalette`)
@@ -44,7 +34,7 @@ describe('register()', () => {
   it('can register a command taking params', () => {
     const { contributions, logContext } = setupTest()
     contributions.commands.add({ command: 'just-web.editFile', description: 'a' })
-    const r = commandRegistry({ contributions, logContext })
+    const r = commandRegistry({ logContext })
     let actual: string
     r.register('just-web.editFile', (file: string) => actual = `editing ${file}`)
     r.invoke('just-web.editFile', 'abc.txt')
@@ -54,18 +44,16 @@ describe('register()', () => {
 
 describe('keys()', () => {
   test('empty to begin with', () => {
-    const { contributions, logContext } = setupTest()
-    const r = commandRegistry({ contributions, logContext })
+    const r = commandRegistry(setupTest())
     const cmds = r.keys()
     expect(cmds.length).toBe(0)
   })
 
   test('get registered commands', () => {
-    const { contributions, logContext } = setupTest(
+    const r = commandRegistry(setupTest(
       { command: 'cmd1', description: 'cmd1' },
       { command: 'cmd2', description: 'cmd2' }
-    )
-    const r = commandRegistry({ contributions, logContext })
+    ))
     r.register('cmd1', () => { })
     r.register('cmd2', () => { })
     const cmds = r.keys()
@@ -75,8 +63,8 @@ describe('keys()', () => {
 
 describe('invoke()', () => {
   test('invoke not registered command emits an error', () => {
-    const { contributions, logContext } = setupTest()
-    const r = commandRegistry({ contributions, logContext })
+    const { logContext } = setupTest()
+    const r = commandRegistry({ logContext })
     r.invoke('not-exist')
 
     logEqual(logContext.reporter, `(ERROR) Invoking not registered command: 'not-exist'`)
@@ -84,8 +72,7 @@ describe('invoke()', () => {
 
   test('invoke command', () => {
     const fn = jest.fn()
-    const { contributions, logContext } = setupTest({ command: 'command1', description: 'a' })
-    const r = commandRegistry({ contributions, logContext })
+    const r = commandRegistry(setupTest({ command: 'command1', description: 'a' }))
     r.register('command1', fn)
     r.invoke('command1')
     expect(fn).toHaveBeenCalledTimes(1)
@@ -93,8 +80,7 @@ describe('invoke()', () => {
 
   it('can invoke command with arguments', () => {
     const fn = jest.fn()
-    const { contributions, logContext } = setupTest({ command: 'command1', description: 'a' })
-    const r = commandRegistry({ contributions, logContext })
+    const r = commandRegistry(setupTest({ command: 'command1', description: 'a' }))
     r.register('command1', fn)
     r.invoke('command1', 1)
     expect(fn).toHaveBeenCalledWith(1)
@@ -103,8 +89,7 @@ describe('invoke()', () => {
 
 describe('toReadonlyCommandRegistry()', () => {
   test('', () => {
-    const { contributions, logContext } = setupTest()
-    const registry = commandRegistry({ contributions, logContext })
+    const registry = commandRegistry(setupTest())
     const a = toReadonlyCommandRegistry(registry)
 
     isType.equal<true, ReadonlyCommandRegistry, typeof a>()
