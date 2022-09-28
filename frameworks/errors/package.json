@@ -19,7 +19,7 @@
   "dependencies": {
     "@just-web/states": "workspace:*",
     "iso-error": "~4.3.5",
-    "type-plus": "^4.10.2"
+    "type-plus": "^4.13.1"
   },
   "devDependencies": {
     "@babel/core": "~7.18.0",

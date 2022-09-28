@@ -19,7 +19,7 @@
   "dependencies": {
     "@just-func/types": "^0.2.1",
     "standard-log": "^10.0.0",
-    "type-plus": "^4.10.2"
+    "type-plus": "^4.13.1"
   },
   "devDependencies": {
     "@babel/core": "~7.18.0",

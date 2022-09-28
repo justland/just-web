@@ -20,7 +20,7 @@
     "@just-web/contributions": "workspace:*",
     "@just-web/log": "workspace:*",
     "@just-web/states": "workspace:*",
-    "type-plus": "^4.10.2"
+    "type-plus": "^4.13.1"
   },
   "devDependencies": {
     "@babel/core": "~7.18.0",
