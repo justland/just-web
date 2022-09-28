@@ -11,10 +11,12 @@
   ],
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf lib *.tsbuildinfo",
+    "clean": "rimraf coverage lib *.tsbuildinfo",
     "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
+    "nuke": "run-s clean nuke:local",
+    "nuke:local": "rimraf node_modules || true",
     "test": "jest 2>&1",
     "test:watch": "jest --watch",
     "verify": "run-p build lint coverage depcheck",

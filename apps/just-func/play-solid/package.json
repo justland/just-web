@@ -6,18 +6,20 @@
   "scripts": {
     "build": "vite build",
     "build:watch": "vite build",
-    "clean": "rimraf lib *.tsbuildinfo",
+    "clean": "rimraf coverage lib *.tsbuildinfo",
     "coverage": "jest --coverage 2>&1",
     "depcheck": "depcheck",
     "dev": "vite",
     "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
+    "nuke": "run-s clean nuke:local",
+    "nuke:local": "rimraf node_modules || true",
     "sb": "start-storybook -p 6006",
     "serve": "vite preview",
     "start": "vite",
     "storybook": "start-storybook -p 6006",
     "test": "jest 2>&1",
     "test:watch": "jest --watch",
-    "verify": "run-p build lint coverage",
+    "verify": "run-p build lint coverage depcheck",
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {

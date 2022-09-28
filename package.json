@@ -29,7 +29,7 @@
     "play-react": "pnpm --filter=@just-func/play-react",
     "play-solid": "pnpm --filter=@just-func/play-solid",
     "lint": "turbo run lint",
-    "nuke": "turbo run nuke",
+    "nuke": "turbo run nuke && pnpm nuke:local",
     "nuke:local": "rimraf node_modules || true",
     "react": "pnpm --filter=@just-web/react",
     "repo-scripts": "pnpm --filter=@just-web/repo-scripts",
