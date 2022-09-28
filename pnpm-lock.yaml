@@ -855,12 +855,12 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      standard-log: ^9.1.7
+      standard-log: ^10.0.0
       type-plus: ^4.10.2
       typescript: ^4.7.4
     dependencies:
       '@just-func/types': 0.2.1
-      standard-log: 9.1.7
+      standard-log: 10.0.0
       type-plus: 4.10.2
     devDependencies:
       '@babel/core': 7.18.5
@@ -23174,13 +23174,13 @@ packages:
     resolution: {integrity: sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==}
     dev: true
 
-  /standard-log/9.1.7:
-    resolution: {integrity: sha512-M9L6xbu+gGXaPs9bGBE7u9r2jYe45L6cXzdFCvGH4ijSJ6Jzn9YPZz4VVGAVbqUASLaGiNhVjdh1AtDgTdukrA==}
+  /standard-log/10.0.0:
+    resolution: {integrity: sha512-WhQtjA3e8UMk7zjSobOJm42NyvrqjgNkk7Y1a/KLco+q0YQ6vgjZqgmLFYIrQLylHfUAaHr0aWhAMMG4MWVi0A==}
     dependencies:
       '@just-func/types': 0.2.1
       iso-error: 4.3.5
       ms: 2.1.3
-      type-plus: 4.10.2
+      type-plus: 4.13.1
       upper-case: 2.0.2
     dev: false
 
@@ -24319,6 +24319,13 @@ packages:
       tersify: 3.10.2
       unpartial: 0.7.5
 
+  /type-plus/4.13.1:
+    resolution: {integrity: sha512-Kz7dyl3b6J6AM6WUoyEA5z45OzW310ituEaCwFEmLThTIzg0sAJieUzbLwiWE0kjaLAQpOYRY23/YQhOz3g6vQ==}
+    dependencies:
+      tersify: 3.10.2
+      unpartial: 1.0.4
+    dev: false
+
   /typedarray-to-buffer/3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
     dependencies:
@@ -24492,6 +24499,11 @@ packages:
   /unpartial/0.7.5:
     resolution: {integrity: sha512-02G/AkbF7MkgaEOAJmCe7P0UYzJVkMkAIU5YEJsO5QmDX7vkqyNctVi1gPm8YLVlGo5T/Qe/hYA66AuliEKBag==}
     engines: {node: '>=6'}
+
+  /unpartial/1.0.4:
+    resolution: {integrity: sha512-xY8319WOQcRDRVFWvTty2YJXKvM8XRPehqWZUd7k/BatpbuitI4Jd+2xlwjTZbZScSvT75TnUsUmy5uwFa3o0g==}
+    engines: {node: '>=6'}
+    dev: false
 
   /unpipe/1.0.0:
     resolution: {integrity: sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=}
