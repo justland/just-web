@@ -4,11 +4,16 @@
   "description": "@just-web/commands UI components in react",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "files": [
+    "lib",
+    "!**/*.spec.*",
+    "!**/*.stories.*"
+  ],
   "scripts": {
     "build": "run-s build:ts copy:css",
     "build:storybook": "build-storybook",
-    "build:ts": "tsc -p tsconfig.build.json",
-    "build:watch": "tsc -p tsconfig.build.json",
+    "build:ts": "tsc",
+    "build:watch": "tsc -w",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
     "clean": "rimraf lib *.tsbuildinfo",
     "copy:css": "copyfiles -u 1 src/**/*.css lib/",

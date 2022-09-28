@@ -8,7 +8,46 @@
       "path": "apps/just-func/play-solid"
     },
     {
+      "path": "components/react-commands"
+    },
+    {
+      "path": "frameworks/app"
+    },
+    {
+      "path": "frameworks/commands"
+    },
+    {
+      "path": "frameworks/contributions"
+    },
+    {
+      "path": "frameworks/errors"
+    },
+    {
+      "path": "frameworks/events"
+    },
+    {
+      "path": "frameworks/format"
+    },
+    {
+      "path": "frameworks/log"
+    },
+    {
+      "path": "frameworks/platform"
+    },
+    {
+      "path": "frameworks/states"
+    },
+    {
+      "path": "libraries/react"
+    },
+    {
       "path": "plugins/routes"
+    },
+    {
+      "path": "tools/repo-scripts"
+    },
+    {
+      "path": "tools/testing"
     }
   ]
 }
