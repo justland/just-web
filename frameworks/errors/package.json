@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@just-web/states": "workspace:*",
-    "iso-error": "~4.3.5",
+    "iso-error": "~4.3.8",
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
