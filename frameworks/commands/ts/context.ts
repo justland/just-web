@@ -31,7 +31,7 @@ export function createCommandsContext(
     key: 'ctrl+p',
     mac: 'cmd+p'
   })
-  return { ...commandRegistry({ contributions, logContext }, options) }
+  return { ...commandRegistry({ logContext }, options) }
 }
 
 export function toReadonlyCommandsContext(module: CommandsContext): ReadonlyCommandsContext {
