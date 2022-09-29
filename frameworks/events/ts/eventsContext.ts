@@ -8,19 +8,21 @@ export interface EventsContext {
 }
 
 export type EventsContextOptions = {
-  emitter?: EventEmitterLike
+  options?: {
+    emitter?: EventEmitterLike
+  }
 } & LogContext
 
 export const activate = defineActivate(async (ctx: EventsContextOptions) => {
   const log = ctx.log.getLogger('@just-web/events')
-  const emitter = trapError(ctx?.emitter || new EventEmitter(), log)
+  const emitter = trapError(ctx.options?.emitter || new EventEmitter(), log)
 
   return [{ emitter }]
 })
 
-export function createEventsContext(options: EventsContextOptions) {
-  const log = options.log.getLogger('@just-web/events')
-  const emitter = trapError(options?.emitter || new EventEmitter(), log)
+export function createEventsContext(ctx: EventsContextOptions) {
+  const log = ctx.log.getLogger('@just-web/events')
+  const emitter = trapError(ctx.options?.emitter || new EventEmitter(), log)
 
   return { emitter }
 }
