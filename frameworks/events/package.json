@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@just-web/log": "workspace:*",
+    "@just-web/types": "workspace:*",
     "@unional/events-plus": "~2.2.0",
     "eventemitter3": "~4.0.7"
   },

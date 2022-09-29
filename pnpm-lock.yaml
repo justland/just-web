@@ -726,6 +726,7 @@ importers:
       '@just-web/log': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@just-web/testing': workspace:*
+      '@just-web/types': workspace:^0.2.2
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@types/node': ^16.11.26
@@ -750,6 +751,7 @@ importers:
       typescript: ^4.7.4
     dependencies:
       '@just-web/log': link:../log
+      '@just-web/types': link:../types
       '@unional/events-plus': 2.2.0
       eventemitter3: 4.0.7
     devDependencies:
