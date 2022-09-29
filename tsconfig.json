@@ -32,6 +32,9 @@
       "path": "frameworks/platform"
     },
     {
+      "path": "frameworks/types"
+    },
+    {
       "path": "libraries/format"
     },
     {
