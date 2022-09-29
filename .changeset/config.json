@@ -3,7 +3,19 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "title": "chore: version packages",
-  "fixed": [],
+  "fixed": [
+    [
+      "@just-web/app",
+      "@just-web/commands",
+      "@just-web/contributions",
+      "@just-web/errors",
+      "@just-web/events",
+      "@just-web/log",
+      "@just-web/platform",
+      "@just-web/states",
+      "@just-web/format"
+    ]
+  ],
   "linked": [],
   "access": "public",
   "baseBranch": "main",

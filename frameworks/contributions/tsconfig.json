@@ -10,10 +10,10 @@
   },
   "references": [
     {
-      "path": "../../frameworks/states"
+      "path": "../../frameworks/log"
     },
     {
-      "path": "../../frameworks/log"
+      "path": "../../libraries/states"
     },
     {
       "path": "../../tools/testing"

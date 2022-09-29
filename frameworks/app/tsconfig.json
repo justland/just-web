@@ -30,7 +30,7 @@
       "path": "../../frameworks/platform"
     },
     {
-      "path": "../../frameworks/states"
+      "path": "../../libraries/states"
     },
     {
       "path": "../../tools/testing"

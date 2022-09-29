@@ -1,6 +1,6 @@
 # @just-web/platform
 
-[`@just-web/platform`] is a platform abstraction layer about the environment where the `@just-web` application is running on.
+[`@just-web/platform`] is a platform abstraction layer about the environment where the `@just-web` application runs on.
 
 This is a core module of `@just-web`.
 You do not need to reference this module directly.
