@@ -12,7 +12,7 @@ describe('createLogContext()', () => {
 
 describe('createTestLogContext()', () => {
   test('returns memory reporter', () => {
-    const { reporter } = createTestLogContext(undefined, { logLevel: logLevels.all })
+    const { log: { reporter } } = createTestLogContext(undefined, { log: { logLevel: logLevels.all } })
 
     expect(reporter.getLogMessageWithLevel()).toEqual('(TRACE) create test log context')
   })

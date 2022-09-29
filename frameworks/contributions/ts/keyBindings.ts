@@ -30,14 +30,14 @@ export namespace keyBindingRegistry {
 }
 
 export function keyBindingRegistry(
-  { logContext }: { logContext: LogContext },
+  ctx: LogContext,
   options?: keyBindingRegistry.Options,
 ): KeyBindingContributionRegistry {
   return withAdder(
     createRegistry<string, KeyBindingContribution>(options?.keyBindings ?? record()),
     function (r, kb) {
       const key = kb.command
-      const log = logContext.getLogger('@just-web/contributions')
+      const log = ctx.log.getLogger('@just-web/contributions')
       if (r[key]) return log.warn(`Registering a duplicate key binding contribution, ignored: ${key}`)
       r[key] = kb
     })

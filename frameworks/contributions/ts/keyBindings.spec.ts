@@ -4,8 +4,8 @@ import { keyBindingRegistry } from './keyBindings'
 
 describe('add()', () => {
   test('add a new command', () => {
-    const logContext = createTestLogContext()
-    const store = keyBindingRegistry({ logContext })
+    const ctx = createTestLogContext()
+    const store = keyBindingRegistry(ctx)
     const cmd = { command: 'a', key: 'ctrl+r' }
     store.add(cmd)
     const a = store.get()['a']
@@ -14,22 +14,22 @@ describe('add()', () => {
   })
 
   test('add existing command logs an warning and ignore', () => {
-    const logContext = createTestLogContext()
-    const store = keyBindingRegistry({ logContext })
+    const ctx = createTestLogContext()
+    const store = keyBindingRegistry(ctx)
     const cmd1 = { command: 'a', key: 'ctrl+r' }
     const cmd2 = { command: 'a', key: 'ctrl+r' }
     store.add(cmd1)
     store.add(cmd2)
 
-    logEqual(logContext.reporter, '(WARN) Registering a duplicate key binding contribution, ignored: a')
+    logEqual(ctx.log.reporter, '(WARN) Registering a duplicate key binding contribution, ignored: a')
 
     const a = store.get()['a']
     expect(a).toBe(cmd1)
   })
 
   test('add multiple commands', () => {
-    const logContext = createTestLogContext()
-    const store = keyBindingRegistry({ logContext })
+    const ctx = createTestLogContext()
+    const store = keyBindingRegistry(ctx)
     const cmd1 = { command: 'a', key: 'ctrl+r' }
     const cmd2 = { command: 'b', key: 'ctrl+r' }
     store.add(cmd1, cmd2)

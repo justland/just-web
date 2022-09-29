@@ -33,23 +33,22 @@ export interface CommandContributionRegistry
   extends Registry<string, CommandContribution>, WithAdder<CommandContribution> { }
 
 export namespace commandContributionRegistry {
-  export interface Context {
-    logContext: LogContext
-  }
+  export type Context = LogContext
+
   export interface Options {
     commands?: Record<string, CommandContribution>,
   }
 }
 
 export function commandContributionRegistry(
-  { logContext }: commandContributionRegistry.Context,
+  ctx: commandContributionRegistry.Context,
   options?: commandContributionRegistry.Options,
 ): CommandContributionRegistry {
   return withAdder(
     createRegistry<string, CommandContribution>(options?.commands ?? record()),
     function (r, cmd) {
       const key = cmd.command
-      const log = logContext.getLogger('@just-web/contributions')
+      const log = ctx.log.getLogger('@just-web/contributions')
       if (r[key]) return log.error(`Registering a duplicate command contribution, ignored: ${key}`)
       r[key] = cmd
     })

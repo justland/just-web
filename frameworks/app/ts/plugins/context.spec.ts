@@ -6,7 +6,7 @@ import { createPluginsClosure } from './context'
 
 describe('addPlugin()', () => {
   test('throw error if a plugin has the same property as the context (app)', async () => {
-    const context = createContext({ log: createTestLogContext() })
+    const context = createContext(createTestLogContext())
     const [m] = createPluginsClosure({ context })
     asAny(m).abc = {}
 
@@ -17,7 +17,7 @@ describe('addPlugin()', () => {
   })
 
   test('plugin.activate() can return nothing', async () => {
-    const context = createContext({ log: createTestLogContext() })
+    const context = createContext(createTestLogContext())
     const [m] = createPluginsClosure({ context })
     let called = false
     await m.addPlugin({

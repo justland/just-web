@@ -7,14 +7,13 @@ import { isMac } from './os'
 import type { PlatformContext } from './types'
 
 export namespace startKeyBindings {
-  export interface Options {
-    log: LogContext,
+  export type Options = {
     platform: PlatformContext,
     commands: CommandsContext,
     contributions: {
       keyBindings: KeyBindingContributionRegistry
     }
-  }
+  } & LogContext
 }
 
 let keys: Record<string, boolean>
