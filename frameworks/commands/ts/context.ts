@@ -1,5 +1,6 @@
 import { ContributionsContext } from '@just-web/contributions'
 import { LogContext } from '@just-web/log'
+import { defineActivate } from '@just-web/types'
 import { CommandRegistry, commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
 
 export interface CommandsContext extends CommandRegistry {
@@ -14,6 +15,21 @@ export namespace createCommandsContext {
     contributions: ContributionsContext
   } & LogContext
 }
+
+export const activate = defineActivate(async (ctx: createCommandsContext.Context & { options?: CommandsContextOptions }) => {
+  const log = ctx.log.getLogger('@just-web/commands')
+  log.trace('create context')
+  ctx.contributions.commands.add({
+    command: 'just-web.showCommandPalette',
+    commandPalette: false
+  })
+  ctx.contributions.keyBindings.add({
+    command: 'just-web.showCommandPalette',
+    key: 'ctrl+p',
+    mac: 'cmd+p'
+  })
+  return [{ ...commandRegistry(ctx, ctx.options) }]
+})
 
 export function createCommandsContext(
   { contributions, log }: createCommandsContext.Context,

@@ -557,6 +557,7 @@ importers:
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
+      '@just-web/types': workspace:^0.2.2
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -581,6 +582,7 @@ importers:
       '@just-web/contributions': link:../contributions
       '@just-web/log': link:../log
       '@just-web/states': link:../../libraries/states
+      '@just-web/types': link:../types
       type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.18.5
@@ -615,6 +617,7 @@ importers:
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
+      '@just-web/types': workspace:^0.2.2
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -638,6 +641,7 @@ importers:
     dependencies:
       '@just-web/log': link:../log
       '@just-web/states': link:../../libraries/states
+      '@just-web/types': link:../types
       type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.18.5
