@@ -1,8 +1,6 @@
-import '@just-web/commands'
-import { CommandsContextOptions, createCommandsContext } from '@just-web/commands'
-import '@just-web/contributions'
-import { ContributionsContextOptions, createContributionsContext } from '@just-web/contributions'
-import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
+import * as commandsModule from '@just-web/commands'
+import * as contributionsModule from '@just-web/contributions'
+import * as errorsModule from '@just-web/errors'
 import * as logModule from '@just-web/log'
 import * as platformModule from '@just-web/platform'
 import { Context, createContext, TestContext } from './contexts/context'
@@ -18,23 +16,23 @@ export interface AppContext extends Context, PluginsContext {
 export namespace createApp {
   export type Options = {
     name: string,
-    contributions?: ContributionsContextOptions,
-    commands?: CommandsContextOptions,
-    errors?: ErrorsContextOptions,
+    contributions?: contributionsModule.ContributionsContextOptions,
+    commands?: commandsModule.CommandsContextOptions,
+    errors?: errorsModule.ErrorsContextOptions,
   } & logModule.LogOptions
 }
 
 export function createApp(options: createApp.Options): AppContext {
   const logcontext = logModule.createLogContext({ name: options.name, options })
-  const contributions = createContributionsContext(logcontext, options?.contributions)
-  const commands = createCommandsContext({ contributions, ...logcontext }, options?.commands)
+  const contributions = contributionsModule.createContributionsContext(logcontext, options?.contributions)
+  const commands = commandsModule.createCommandsContext({ contributions, ...logcontext }, options?.commands)
 
   const context = {
     appID: ctx.genAppID(),
     ...logcontext,
     commands,
     contributions,
-    errors: createErrorsContext(options?.errors),
+    errors: errorsModule.createErrorsContext(options?.errors),
     platform: platformModule.createPlatformContext()
   }
   const [pluginContext, { loading }] = createPluginsClosure({ context })
@@ -56,9 +54,9 @@ export interface TestAppContext extends TestContext, PluginsContext {
 export namespace createTestApp {
   export type Options = {
     name?: string,
-    contributions?: ContributionsContextOptions,
-    commands?: CommandsContextOptions,
-    errors?: ErrorsContextOptions,
+    contributions?: contributionsModule.ContributionsContextOptions,
+    commands?: commandsModule.CommandsContextOptions,
+    errors?: errorsModule.ErrorsContextOptions,
   } & logModule.TestLogOptions
 }
 
