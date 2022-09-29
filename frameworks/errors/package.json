@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@just-web/states": "workspace:*",
+    "@just-web/types": "workspace:*",
     "iso-error": "~4.3.8",
     "type-plus": "^4.13.1"
   },
