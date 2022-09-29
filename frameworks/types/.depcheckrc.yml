@@ -1,0 +1,6 @@
+ignores:
+  - "@size-limit/*"
+  - "@types/jest"
+  - "@typescript-eslint/parser"
+  - npm-check-updates
+  - size-limit
