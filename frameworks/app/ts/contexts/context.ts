@@ -30,12 +30,11 @@ export interface TestContext {
 }
 
 export namespace createContext {
-  export interface Options {
-    log?: LogOptions,
+  export type Options = {
     contributions?: ContributionsContextOptions,
     commands?: CommandsContextOptions,
     errors?: ErrorsContextOptions,
-  }
+  } & LogOptions
 }
 
 export function createContext({ log }: { log: LogContext }, options?: createContext.Options): Context {

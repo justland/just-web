@@ -786,6 +786,7 @@ importers:
       '@babel/plugin-transform-runtime': ~7.18.0
       '@just-func/types': ^0.2.1
       '@just-web/repo-scripts': workspace:*
+      '@just-web/types': workspace:^0.2.2
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.5.2
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -809,6 +810,7 @@ importers:
       typescript: ^4.7.4
     dependencies:
       '@just-func/types': 0.2.1
+      '@just-web/types': link:../types
       standard-log: 10.0.0
       type-plus: 4.13.1
     devDependencies:

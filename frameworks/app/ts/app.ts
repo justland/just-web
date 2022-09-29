@@ -3,7 +3,7 @@ import { CommandsContextOptions, createCommandsContext } from '@just-web/command
 import '@just-web/contributions'
 import { ContributionsContextOptions, createContributionsContext } from '@just-web/contributions'
 import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
-import { createLogContext, createTestLogContext, LogOptions, TestLogOptions } from '@just-web/log'
+import * as logModule from '@just-web/log'
 import * as platformModule from '@just-web/platform'
 import { Context, createContext, TestContext } from './contexts/context'
 import { ctx } from './app.ctx'
@@ -18,15 +18,14 @@ export interface AppContext extends Context, PluginsContext {
 export namespace createApp {
   export type Options = {
     name: string,
-    log?: LogOptions,
     contributions?: ContributionsContextOptions,
     commands?: CommandsContextOptions,
     errors?: ErrorsContextOptions,
-  }
+  } & logModule.LogOptions
 }
 
 export function createApp(options: createApp.Options): AppContext {
-  const log = createLogContext(options, options.log)
+  const log = logModule.createLogContext({ name: options.name, options })
   const contributions = createContributionsContext({ logContext: log }, options?.contributions)
 
   const commands = createCommandsContext({ contributions, logContext: log }, options?.commands)
@@ -58,7 +57,7 @@ export interface TestAppContext extends TestContext, PluginsContext {
 export namespace createTestApp {
   export type Options = {
     name?: string,
-    log?: TestLogOptions,
+    log?: logModule.TestLogOptions,
     contributions?: ContributionsContextOptions,
     commands?: CommandsContextOptions,
     errors?: ErrorsContextOptions,
@@ -66,7 +65,7 @@ export namespace createTestApp {
 }
 
 export function createTestApp(options?: createTestApp.Options): TestAppContext {
-  const log = createTestLogContext(options, options?.log)
+  const log = logModule.createTestLogContext(options, options?.log)
 
   const context = createContext({ log }, options)
 
