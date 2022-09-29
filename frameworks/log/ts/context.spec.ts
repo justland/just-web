@@ -4,7 +4,7 @@ import { createLogContext, createTestLogContext } from '.'
 describe('createLogContext()', () => {
   test('emit trace message', () => {
     const reporter = createMemoryLogReporter()
-    createLogContext({ name: 'test-app' }, { logLevel: logLevels.all, reporters: [reporter] })
+    createLogContext({ name: 'test-app', options: { log: { logLevel: logLevels.all, reporters: [reporter] } } })
 
     expect(reporter.getLogMessageWithLevel()).toEqual('(TRACE) create log context')
   })

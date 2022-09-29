@@ -1,17 +1,32 @@
+import { defineActivate } from '@just-web/types'
 import {
-  createMemoryLogReporter, createStandardLog,
-  logLevels, LogMethodNames, MemoryLogReporter, StandardLog, StandardLogOptions
+  createMemoryLogReporter, createStandardLog, logLevels, LogMethodNames, MemoryLogReporter, StandardLog, StandardLogOptions
 } from 'standard-log'
 import { requiredDeep } from 'type-plus'
 
 export interface LogContext<N extends string = LogMethodNames> extends StandardLog<N> {
 }
 
-export interface LogOptions<N extends string = LogMethodNames> extends StandardLogOptions<N> {
+export type LogOptions<N extends string = LogMethodNames> = {
+  log?: StandardLogOptions<N>
 }
 
-export function createLogContext<N extends string = LogMethodNames>({ name }: { name: string }, options?: LogOptions<N>): LogContext<N> {
-  const sl = createStandardLog<N>(options)
+export const activate = defineActivate(async <N extends string = LogMethodNames>(
+  { name, options }: { name: string, options?: LogOptions<N> }
+): Promise<[LogContext<N>]> => {
+  const sl = createStandardLog<N>(options?.log)
+  const log = sl.getLogger(`${name}:@just-web/log`)
+  log.trace('create log context')
+  return [{
+    ...sl,
+    getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) }
+  }]
+})
+
+export function createLogContext<N extends string = LogMethodNames>(
+  { name, options }: { name: string, options?: LogOptions<N> },
+): LogContext<N> {
+  const sl = createStandardLog<N>(options?.log)
   const log = sl.getLogger(`${name}:@just-web/log`)
   log.trace('create log context')
   return {
