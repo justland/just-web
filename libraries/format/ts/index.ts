@@ -1,3 +1,3 @@
 export * from './command'
-export { formatKeyBinding } from './keyBinding'
+export * from './keyBinding'
 export * from './sentenceCase'

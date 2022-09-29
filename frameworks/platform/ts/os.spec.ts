@@ -1,14 +1,15 @@
 import { stub } from 'type-plus'
-import { ctx, Ctx, isMac } from './os'
+import { isMac } from './os'
+import { ctx } from './os.ctx'
 
 describe('isMac()', () => {
   test(`'OS X' is mac`, () => {
-    ctx.os = stub<Ctx['os']>({ family: 'OS X' })
+    ctx.os = stub<ctx.OperatingSystem>({ family: 'OS X' })
     expect(isMac()).toEqual(true)
   })
 
   test('`Windows` is not mac', () => {
-    ctx.os = stub<Ctx['os']>({ family: 'Windows' })
+    ctx.os = stub<ctx.OperatingSystem>({ family: 'Windows' })
     expect(isMac()).toEqual(false)
   })
 })
