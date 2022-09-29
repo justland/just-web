@@ -6,7 +6,7 @@
   },
   "references": [
     {
-      "path": "../../frameworks/states"
+      "path": "../../libraries/states"
     }
   ],
   "include": [

@@ -9,7 +9,7 @@ import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import type { LogContext, LogOptions, TestLogContext } from '@just-web/log'
 import type { PlatformContext } from '@just-web/platform'
 import { createPlatformContext } from '@just-web/platform'
-import { ctx } from '../ctx'
+import { ctx } from '../app.ctx'
 
 export interface Context {
   appID: string,

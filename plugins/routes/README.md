@@ -1,6 +1,6 @@
 # @just-web/routes
 
-[`@just-web/routes`] is a plugin that provide routing capability.
+[`@just-web/routes`] is a plugin that provides client side routing capability.
 
 ## Install
 

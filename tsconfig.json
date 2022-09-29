@@ -26,16 +26,16 @@
       "path": "frameworks/events"
     },
     {
-      "path": "frameworks/format"
-    },
-    {
       "path": "frameworks/log"
     },
     {
       "path": "frameworks/platform"
     },
     {
-      "path": "frameworks/states"
+      "path": "libraries/format"
+    },
+    {
+      "path": "libraries/states"
     },
     {
       "path": "libraries/react"

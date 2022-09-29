@@ -5,9 +5,8 @@ import { ContributionsContextOptions, createContributionsContext } from '@just-w
 import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import { createLogContext, createTestLogContext, LogOptions, TestLogOptions } from '@just-web/log'
 import * as platformModule from '@just-web/platform'
-import '@just-web/states'
 import { Context, createContext, TestContext } from './contexts/context'
-import { ctx } from './ctx'
+import { ctx } from './app.ctx'
 import { createPluginsClosure, PluginsContext, startPlugins } from './plugins/context'
 
 export type { Context, TestContext } from './contexts/context'

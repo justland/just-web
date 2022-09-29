@@ -11,13 +11,13 @@
   },
   "references": [
     {
-      "path": "../../frameworks/states"
-    },
-    {
       "path": "../../frameworks/log"
     },
     {
       "path": "../../frameworks/contributions"
+    },
+    {
+      "path": "../../libraries/states"
     },
     {
       "path": "../../tools/testing"
