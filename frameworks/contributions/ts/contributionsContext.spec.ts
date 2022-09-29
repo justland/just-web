@@ -3,9 +3,9 @@ import { createContributionsContext } from './contributionsContext'
 
 describe('createContributionsContext()', () => {
   test('returns commands', () => {
-    const logContext = createLogContext({ name: 'test' })
+    const ctx = createLogContext({ name: 'test' })
     const { commands, keyBindings } = createContributionsContext(
-      { logContext },
+      ctx,
       { commands: {}, keyBindings: {} })
     expect(commands).toBeDefined()
     expect(keyBindings).toBeDefined()

@@ -7,24 +7,24 @@ beforeEach(() => ctx = createTestLogContext())
 
 describe('logEqual()', () => {
   test('require at least one line of expected message', () => {
-    logEqual(ctx.reporter, '')
+    logEqual(ctx.log.reporter, '')
     isType.equal<true, string, Parameters<typeof logEqual>[1]>()
   })
 })
 
 describe('logMatchSome()', () => {
   test('match one', () => {
-    const log = ctx.getLogger('match one')
+    const log = ctx.log.getLogger('match one')
     log.info('first')
     log.info('second')
     log.info('third')
-    logMatchSome(ctx.reporter, '(INFO) second')
+    logMatchSome(ctx.log.reporter, '(INFO) second')
   })
   test('match multiple', () => {
-    const log = ctx.getLogger('match multi')
+    const log = ctx.log.getLogger('match multi')
     log.info('first')
     log.info('second')
     log.info('third')
-    logMatchSome(ctx.reporter, '(INFO) second', '(INFO) third')
+    logMatchSome(ctx.log.reporter, '(INFO) second', '(INFO) third')
   })
 })

@@ -10,18 +10,17 @@ export interface ReadonlyCommandsContext extends ReadonlyCommandRegistry {
 
 export interface CommandsContextOptions extends commandRegistry.Options { }
 export namespace createCommandsContext {
-  export interface Context {
-    logContext: LogContext,
+  export type Context = {
     contributions: ContributionsContext
-  }
+  } & LogContext
 }
 
 export function createCommandsContext(
-  { contributions, logContext }: createCommandsContext.Context,
+  { contributions, log }: createCommandsContext.Context,
   options?: CommandsContextOptions
 ): CommandsContext {
-  const log = logContext.getLogger('@just-web/commands')
-  log.trace('create context')
+  const logger = log.getLogger('@just-web/commands')
+  logger.trace('create context')
   contributions.commands.add({
     command: 'just-web.showCommandPalette',
     commandPalette: false
@@ -31,7 +30,7 @@ export function createCommandsContext(
     key: 'ctrl+p',
     mac: 'cmd+p'
   })
-  return { ...commandRegistry({ logContext }, options) }
+  return { ...commandRegistry({ log }, options) }
 }
 
 export function toReadonlyCommandsContext(module: CommandsContext): ReadonlyCommandsContext {

@@ -10,13 +10,13 @@ interface StubCommand extends KeyBindingContribution, CommandContribution {
   handler(command: KeyBindingContribution & CommandContribution): void
 }
 function setupTest(...stubCommands: StubCommand[]) {
-  const logContext = createTestLogContext()
+  const ctx = createTestLogContext()
 
   const contributions = {
-    commands: commandContributionRegistry({ logContext }),
-    keyBindings: keyBindingRegistry({ logContext })
+    commands: commandContributionRegistry(ctx),
+    keyBindings: keyBindingRegistry(ctx)
   }
-  const commands = commandRegistry({ logContext })
+  const commands = commandRegistry(ctx)
 
   stubCommands.forEach(stubCommand => {
     contributions.commands.add(stubCommand)
@@ -26,7 +26,7 @@ function setupTest(...stubCommands: StubCommand[]) {
       () => stubCommand.handler(stubCommand))
   })
   return {
-    log: logContext,
+    ...ctx,
     commands,
     contributions,
     platform: createPlatformContext()

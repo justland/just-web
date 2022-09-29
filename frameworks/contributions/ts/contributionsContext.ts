@@ -10,7 +10,7 @@ export interface ContributionsContextOptions {
 }
 
 export function createContributionsContext(
-  context: { logContext: LogContext },
+  context: LogContext,
   options?: ContributionsContextOptions): ContributionsContext {
   const commands = commandContributionRegistry(context, options)
   const keyBindings = keyBindingRegistry(context, options)

@@ -5,36 +5,36 @@ import { isType } from 'type-plus'
 import { commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
 
 function setupTest(...commands: CommandContribution[]) {
-  const logContext = createTestLogContext()
-  const contributions = createContributionsContext({ logContext }, {
+  const ctx = createTestLogContext()
+  const contributions = createContributionsContext(ctx, {
     commands: commands.reduce<Record<string, CommandContribution>>(
       (p, cmd) => (p[cmd.command] = cmd, p),
       {})
   })
-  return { contributions, logContext }
+  return { ...ctx, contributions }
 }
 
 describe('register()', () => {
   it('registers a new command', () => {
-    const { logContext } = setupTest()
-    const r = commandRegistry({ logContext })
+    const ctx = setupTest()
+    const r = commandRegistry(ctx)
     r.register('some.Command', () => { })
 
     expect(r.keys()).toEqual(['some.Command'])
   })
 
   it('emits a warning if registering a command with existing id', () => {
-    const { logContext } = setupTest()
-    const r = commandRegistry({ logContext })
+    const ctx = setupTest()
+    const r = commandRegistry(ctx)
     r.register('just-web.showCommandPalette', () => { })
     r.register('just-web.showCommandPalette', () => { })
-    logEqual(logContext.reporter, `(WARN) Registering a duplicate command, ignored: just-web.showCommandPalette`)
+    logEqual(ctx.log.reporter, `(WARN) Registering a duplicate command, ignored: just-web.showCommandPalette`)
   })
 
   it('can register a command taking params', () => {
-    const { contributions, logContext } = setupTest()
-    contributions.commands.add({ command: 'just-web.editFile', description: 'a' })
-    const r = commandRegistry({ logContext })
+    const ctx = setupTest()
+    ctx.contributions.commands.add({ command: 'just-web.editFile', description: 'a' })
+    const r = commandRegistry(ctx)
     let actual: string
     r.register('just-web.editFile', (file: string) => actual = `editing ${file}`)
     r.invoke('just-web.editFile', 'abc.txt')
@@ -63,11 +63,11 @@ describe('keys()', () => {
 
 describe('invoke()', () => {
   test('invoke not registered command emits an error', () => {
-    const { logContext } = setupTest()
-    const r = commandRegistry({ logContext })
+    const ctx = setupTest()
+    const r = commandRegistry(ctx)
     r.invoke('not-exist')
 
-    logEqual(logContext.reporter, `(ERROR) Invoking not registered command: 'not-exist'`)
+    logEqual(ctx.log.reporter, `(ERROR) Invoking not registered command: 'not-exist'`)
   })
 
   test('invoke command', () => {

@@ -25,14 +25,13 @@ export namespace createApp {
 }
 
 export function createApp(options: createApp.Options): AppContext {
-  const log = logModule.createLogContext({ name: options.name, options })
-  const contributions = createContributionsContext({ logContext: log }, options?.contributions)
-
-  const commands = createCommandsContext({ contributions, logContext: log }, options?.commands)
+  const logcontext = logModule.createLogContext({ name: options.name, options })
+  const contributions = createContributionsContext(logcontext, options?.contributions)
+  const commands = createCommandsContext({ contributions, ...logcontext }, options?.commands)
 
   const context = {
     appID: ctx.genAppID(),
-    log: log,
+    ...logcontext,
     commands,
     contributions,
     errors: createErrorsContext(options?.errors),
@@ -57,26 +56,25 @@ export interface TestAppContext extends TestContext, PluginsContext {
 export namespace createTestApp {
   export type Options = {
     name?: string,
-    log?: logModule.TestLogOptions,
     contributions?: ContributionsContextOptions,
     commands?: CommandsContextOptions,
     errors?: ErrorsContextOptions,
-  }
+  } & logModule.TestLogOptions
 }
 
 export function createTestApp(options?: createTestApp.Options): TestAppContext {
-  const log = logModule.createTestLogContext(options, options?.log)
+  const logContext = logModule.createTestLogContext(options, options)
 
-  const context = createContext({ log }, options)
+  const context = createContext(logContext, options)
 
   const [pluginContext, { loading }] = createPluginsClosure({ context })
 
   return Object.assign(context, {
     appID: ctx.genAppID(),
-    log,
+    ...logContext,
     ...pluginContext,
     async start() {
-      const logger = log.getLogger('@just-web/app')
+      const logger = logContext.log.getLogger('@just-web/app')
       logger.notice('application starts')
       await startPlugins({ logger: logger, loading })
       await platformModule.start(context)

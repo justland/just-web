@@ -11,23 +11,21 @@ import type { PlatformContext } from '@just-web/platform'
 import { createPlatformContext } from '@just-web/platform'
 import { ctx } from '../app.ctx'
 
-export interface Context {
+export type Context = {
   appID: string,
   commands: CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
-  log: LogContext,
   platform: PlatformContext,
-}
+} & LogContext
 
-export interface TestContext {
+export type TestContext = {
   appID: string,
   commands: CommandsContext,
   contributions: ContributionsContext,
   errors: ErrorsContext,
-  log: TestLogContext,
   platform: PlatformContext,
-}
+} & TestLogContext
 
 export namespace createContext {
   export type Options = {
@@ -37,10 +35,10 @@ export namespace createContext {
   } & LogOptions
 }
 
-export function createContext({ log }: { log: LogContext }, options?: createContext.Options): Context {
-  const contributions = createContributionsContext({ logContext: log }, options?.contributions)
+export function createContext({ log }: LogContext, options?: createContext.Options): Context {
+  const contributions = createContributionsContext({ log }, options?.contributions)
 
-  const commands = createCommandsContext({ contributions, logContext: log }, options?.commands)
+  const commands = createCommandsContext({ contributions, log }, options?.commands)
 
   const context = {
     appID: ctx.genAppID(),

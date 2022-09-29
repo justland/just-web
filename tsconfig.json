@@ -29,10 +29,10 @@
       "path": "frameworks/log"
     },
     {
-      "path": "frameworks/platform"
+      "path": "frameworks/types"
     },
     {
-      "path": "frameworks/types"
+      "path": "frameworks/platform"
     },
     {
       "path": "libraries/format"
