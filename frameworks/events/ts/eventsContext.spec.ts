@@ -15,7 +15,7 @@ it('traps error created by listener', () => {
 
 it('can specify to use a different event emitter', () => {
   const ctx = createTestLogContext()
-  const { emitter } = createEventsContext({ ...ctx, emitter: new EventEmitter() })
+  const { emitter } = createEventsContext({ ...ctx, options: { emitter: new EventEmitter() } })
   let called = false
   emitter.addListener('event', () => called = true)
   emitter.emit('event')
