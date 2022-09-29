@@ -1,11 +1,4 @@
-import platform from 'platform'
-
-export interface Ctx {
-  os?: {
-    family?: string
-  }
-}
-export const ctx: Ctx = platform
+import { ctx } from './os.ctx'
 
 export function isMac() {
   return ctx.os?.family === 'OS X'

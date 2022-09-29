@@ -1,7 +1,5 @@
 import type { KeyBindingContribution } from '@just-web/contributions'
-import { isMac } from '@just-web/platform'
-
-export const ctx = { isMac }
+import { ctx } from './keyBinding.ctx'
 
 export function formatKeyBinding(keyBinding: KeyBindingContribution) {
   const m = ctx.isMac()

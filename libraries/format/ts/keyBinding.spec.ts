@@ -1,4 +1,5 @@
-import { ctx, formatKeyBinding } from './keyBinding'
+import { formatKeyBinding } from './keyBinding'
+import { ctx } from './keyBinding.ctx'
 
 describe('formatKeyBinding()', () => {
   test(`in mac returns 'mac' key if defined`, () => {
