@@ -14,6 +14,8 @@
   "scripts": {
     "app": "pnpm --filter=@just-web/app",
     "build": "turbo run build",
+    "browser": "pnpm --filter=@just-web/browser",
+    "browser-contributions": "pnpm --filter=@just-web/browser-contributions",
     "clean": "turbo run clean",
     "commands": "pnpm --filter=@just-web/commands",
     "contributions": "pnpm --filter=@just-web/contributions",
@@ -34,6 +36,7 @@
     "react-commands": "pnpm --filter=@just-web/react-commands",
     "react": "pnpm --filter=@just-web/react",
     "repo-scripts": "pnpm --filter=@just-web/repo-scripts",
+    "routes": "pnpm --filter=@just-web/routes",
     "size": "turbo run size",
     "states": "pnpm --filter=@just-web/states",
     "test": "turbo run test",

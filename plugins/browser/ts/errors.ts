@@ -1,12 +1,12 @@
 import { IsoError, ModuleError } from 'iso-error'
 
-export class JustWebError extends ModuleError {
+export class JustWebBrowserError extends ModuleError {
   constructor(message: string, options?: IsoError.Options) {
-    super('@just-web/errors', message, options)
+    super('@just-web/browser', message, options)
   }
 }
 
-export class BrowserError extends JustWebError {
+export class BrowserError extends JustWebBrowserError {
   constructor(event: string | Event,
     public source?: string,
     public lineno?: number,

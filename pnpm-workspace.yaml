@@ -4,4 +4,5 @@ packages:
   - frameworks/*
   - libraries/*
   - plugins/*
+  - presets/*
   - tools/*

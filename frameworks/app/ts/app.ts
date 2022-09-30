@@ -1,8 +1,8 @@
 import * as commandsModule from '@just-web/commands'
 import * as contributionsModule from '@just-web/contributions'
-import * as errorsModule from '@just-web/errors'
 import * as logModule from '@just-web/log'
 import * as platformModule from '@just-web/platform'
+import * as browserModule from '@just-web/browser'
 import { ctx } from './app.ctx'
 import { Context, createContext, TestContext } from './contexts/context'
 import { createPluginsClosure, PluginsContext, startPlugins } from './plugins/context'
@@ -16,11 +16,13 @@ export interface AppContext extends Context, PluginsContext {
 export namespace createApp {
   export type Options = {
     name: string,
-    errors?: errorsModule.ErrorsContextOptions,
   } & logModule.LogOptions
     & commandsModule.CommandsOptions
     & contributionsModule.ContributionsOptions
+    & browserModule.BrowserOptions
 }
+
+
 
 export function createApp(options: createApp.Options): AppContext {
   const logcontext = logModule.createLogContext({ name: options.name, options })
@@ -31,7 +33,7 @@ export function createApp(options: createApp.Options): AppContext {
     ...logcontext,
     ...commands,
     ...contributionsContext,
-    ...errorsModule.createErrorsContext(options?.errors),
+    ...browserModule.createErrorsContext({ options }),
     platform: platformModule.createPlatformContext()
   }
   const [pluginContext, { loading }] = createPluginsClosure({ context })
@@ -53,10 +55,10 @@ export interface TestAppContext extends TestContext, PluginsContext {
 export namespace createTestApp {
   export type Options = {
     name?: string,
-    errors?: errorsModule.ErrorsContextOptions,
   } & logModule.TestLogOptions
     & commandsModule.CommandsOptions
     & contributionsModule.ContributionsOptions
+    & browserModule.BrowserOptions
 }
 
 export function createTestApp(options?: createTestApp.Options): TestAppContext {
