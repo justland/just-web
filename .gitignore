@@ -65,5 +65,25 @@ common/autoinstallers/*/.npmrc
 .heft
 
 # project specific
-just-func/*/dist
 .nowhere
+apps/*/*/*.tsbuildinfo
+apps/*/*/coverage
+apps/*/*/lib
+components/*/*.tsbuildinfo
+components/*/coverage
+components/*/lib
+frameworks/*/*.tsbuildinfo
+frameworks/*/coverage
+frameworks/*/lib
+libraries/*/*.tsbuildinfo
+libraries/*/coverage
+libraries/*/lib
+plugins/*/*.tsbuildinfo
+plugins/*/coverage
+plugins/*/lib
+presets/*/*.tsbuildinfo
+presets/*/coverage
+presets/*/lib
+tools/*/*.tsbuildinfo
+tools/*/coverage
+tools/*/lib
