@@ -3,7 +3,9 @@ import * as errorClasses from './errors'
 import { createErrorStore, ReadonlyErrorStore, toReadonlyErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
 
-export type ErrorsContext = (typeof errorClasses) & ReadonlyErrorStore
+export type ErrorsContext = {
+  errors: (typeof errorClasses) & ReadonlyErrorStore
+}
 
 export interface ErrorsContextOptions {
   /**
@@ -13,13 +15,15 @@ export interface ErrorsContextOptions {
   preventDefault?: boolean
 }
 
-export const initialize = defineInitialize(async (ctx: { options?: ErrorsContextOptions }) => {
+export const initialize = defineInitialize(async (ctx: { options?: ErrorsContextOptions }): Promise<[ErrorsContext]> => {
   const errors = createErrorStore()
   registerOnErrorHandler({
     errors,
     preventDefault: ctx.options?.preventDefault ?? false
   })
-  return [Object.assign(toReadonlyErrorStore(errors), errorClasses)]
+  return [{
+    errors: Object.assign(toReadonlyErrorStore(errors), errorClasses)
+  }]
 })
 
 export function createErrorsContext(options?: ErrorsContextOptions): ErrorsContext {
@@ -28,5 +32,7 @@ export function createErrorsContext(options?: ErrorsContextOptions): ErrorsConte
     errors,
     preventDefault: options?.preventDefault ?? false
   })
-  return Object.assign(toReadonlyErrorStore(errors), errorClasses)
+  return {
+    errors: Object.assign(toReadonlyErrorStore(errors), errorClasses)
+  }
 }

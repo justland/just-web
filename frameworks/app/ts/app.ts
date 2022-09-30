@@ -31,7 +31,7 @@ export function createApp(options: createApp.Options): AppContext {
     ...logcontext,
     ...commands,
     ...contributionsContext,
-    errors: errorsModule.createErrorsContext(options?.errors),
+    ...errorsModule.createErrorsContext(options?.errors),
     platform: platformModule.createPlatformContext()
   }
   const [pluginContext, { loading }] = createPluginsClosure({ context })

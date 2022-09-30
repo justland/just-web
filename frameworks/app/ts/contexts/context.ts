@@ -10,19 +10,15 @@ import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import type { LogContext, LogOptions, TestLogContext } from '@just-web/log'
 import type { PlatformContext } from '@just-web/platform'
 import { createPlatformContext } from '@just-web/platform'
+import { LeftJoin } from 'type-plus'
 import { ctx } from '../app.ctx'
 
 export type Context = {
   appID: string,
-  errors: ErrorsContext,
   platform: PlatformContext,
-} & LogContext & ContributionsContext & CommandsContext
+} & LogContext & ContributionsContext & CommandsContext & ErrorsContext
 
-export type TestContext = {
-  appID: string,
-  errors: ErrorsContext,
-  platform: PlatformContext,
-} & TestLogContext & ContributionsContext & CommandsContext
+export type TestContext = LeftJoin<Context, TestLogContext>
 
 export namespace createContext {
   export type Options = {
@@ -40,7 +36,7 @@ export function createContext({ log }: LogContext, options?: createContext.Optio
     log,
     ...commands,
     ...contributions,
-    errors: createErrorsContext(options?.errors),
+    ...createErrorsContext(options?.errors),
     platform: createPlatformContext()
   }
 
