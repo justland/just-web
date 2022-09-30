@@ -7,6 +7,11 @@
 //   start<StartContext extends Record<string | symbol, any>>(context: StartContext): Promise<void>
 // }
 
+/**
+ * This PluginModule namespace describes the key exports within your module.
+ * The `_B`/`_C` are function overload which you can ignore.
+ * You can also expose other exports which the consuming code can reference them directly by importing your module.
+ */
 export namespace PluginModule {
   /**
    * `initialize()` function gets the `context` it needs from the application,
@@ -19,9 +24,29 @@ export namespace PluginModule {
    */
   export type initialize<
     in NeedContext extends Record<string | symbol, any>,
-    out PluginContext extends Record<string | symbol, any>,
-    out StartContext extends Record<string | symbol, any>
-    > = (context: NeedContext) => Promise<[PluginContext?, StartContext?]>
+    PluginContext extends Record<string | symbol, any> | undefined,
+    StartContext extends Record<string | symbol, any> | undefined
+    > = (context: NeedContext) => Promise<[PluginContext, StartContext?]>
+  export type initialize_B<
+    in NeedContext extends Record<string | symbol, any>,
+    StartContext extends Record<string | symbol, any> | undefined
+    > = (context: NeedContext) => Promise<[undefined, StartContext?]>
+  export type initialize_C<
+    in NeedContext extends Record<string | symbol, any>
+    > = (context: NeedContext) => Promise<[]>
+
+  export type initializeForTest<
+    in NeedContext extends Record<string | symbol, any>,
+    PluginContext extends Record<string | symbol, any> | undefined,
+    StartContext extends Record<string | symbol, any> | undefined
+    > = (context?: NeedContext) => Promise<[PluginContext, StartContext?]>
+  export type initializeForTest_B<
+    in NeedContext extends Record<string | symbol, any>,
+    StartContext extends Record<string | symbol, any> | undefined
+    > = (context?: NeedContext) => Promise<[undefined, StartContext?]>
+  export type initializeForTest_C<
+    in NeedContext extends Record<string | symbol, any>
+    > = (context?: NeedContext) => Promise<[]>
 
   /**
    * `start()` function is an optional function that if present,
@@ -49,9 +74,64 @@ export function defineInitialize<
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>
->(initialize: PluginModule.initialize<NeedContext, PluginContext, StartContext>) {
+>(
+  initialize: PluginModule.initialize<NeedContext, PluginContext, StartContext>
+): typeof initialize
+export function defineInitialize<
+  NeedContext extends Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any>
+>(
+  initialize: PluginModule.initialize_B<NeedContext, StartContext>
+): typeof initialize
+export function defineInitialize<
+  NeedContext extends Record<string | symbol, any>
+>(
+  initialize: PluginModule.initialize_C<NeedContext>
+): typeof initialize
+export function defineInitialize<
+  NeedContext extends Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any>
+>(
+  initialize:
+    PluginModule.initialize<NeedContext, PluginContext, StartContext> |
+    PluginModule.initialize_B<NeedContext, StartContext> |
+    PluginModule.initialize_C<NeedContext>
+) {
   return initialize
 }
+
+export function defineInitializeForTest<
+  NeedContext extends Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any>
+>(
+  initialize: PluginModule.initializeForTest<NeedContext, PluginContext, StartContext>
+): typeof initialize
+export function defineInitializeForTest<
+  NeedContext extends Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any>
+>(
+  initialize: PluginModule.initializeForTest_B<NeedContext, StartContext>
+): typeof initialize
+export function defineInitializeForTest<
+  NeedContext extends Record<string | symbol, any>
+>(
+  initialize: PluginModule.initializeForTest_C<NeedContext>
+): typeof initialize
+export function defineInitializeForTest<
+  NeedContext extends Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any>
+>(
+  initialize:
+    PluginModule.initialize<NeedContext, PluginContext, StartContext> |
+    PluginModule.initialize_B<NeedContext, StartContext> |
+    PluginModule.initialize_C<NeedContext>
+) {
+  return initialize
+}
+
 
 /**
  * Typed helper to define the `start()` function.
