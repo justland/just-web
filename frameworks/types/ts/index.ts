@@ -132,7 +132,6 @@ export function defineInitializeForTest<
   return initialize
 }
 
-
 /**
  * Typed helper to define the `start()` function.
  *
@@ -145,4 +144,29 @@ export function defineStart<
   StartContext extends Record<string | symbol, any>
 >(start: PluginModule.start<StartContext>) {
   return start
+}
+
+export type PluginModule<
+  NeedContext extends Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any>
+  > = {
+    init: PluginModule.initialize<NeedContext, PluginContext, StartContext> |
+    PluginModule.initialize_B<NeedContext, StartContext> |
+    PluginModule.initialize_C<NeedContext>,
+    start?: PluginModule.start<StartContext>,
+    initForTest?: PluginModule.initializeForTest<NeedContext, PluginContext, StartContext> |
+    PluginModule.initializeForTest_B<NeedContext, StartContext> |
+    PluginModule.initializeForTest_C<NeedContext>,
+  }
+
+/**
+ * Typed helper to define a just-web plugin.
+ */
+export function definePlugin<
+  NeedContext extends Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any>
+>(plugin: PluginModule<NeedContext, PluginContext, StartContext>) {
+  return plugin
 }

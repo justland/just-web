@@ -1,6 +1,6 @@
-import { defineInitialize, defineStart } from '.'
+import { defineInitialize, definePlugin, defineStart } from '.'
 
-describe('defineInitialize()', () => {
+describe(defineInitialize.name, () => {
   it('accepts async function returning a PluginContext', async () => {
     const i = defineInitialize(async () => ([{ a: 1 }]))
     expect(await i({})).toEqual([{ a: 1 }])
@@ -22,8 +22,15 @@ describe('defineInitialize()', () => {
   })
 })
 
-describe('defineStart()', () => {
+describe(defineStart.name, () => {
   it('accepts async function without StartContext', async () => {
     defineStart(async () => { })
+  })
+})
+
+describe(definePlugin.name, () => {
+  it('requires the `init()` function', () => {
+    definePlugin({ init: async () => ([]) })
+    definePlugin({ async init() { return [] } })
   })
 })
