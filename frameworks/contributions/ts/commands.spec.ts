@@ -1,6 +1,21 @@
-import { createTestLogContext } from '@just-web/log'
+import { createTestLogContext, initializeForTest } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { commandContributionRegistry } from './commands'
+
+async function setupTest(options?: commandContributionRegistry.Options) {
+  const [logctx] = await initializeForTest()
+  return [commandContributionRegistry(logctx, options), logctx.log] as const
+}
+
+it('creates as empty registory', async () => {
+  const [r] = await setupTest()
+  expect(r.keys()).toEqual([])
+})
+
+it('creates with prefilled command contributions', async () => {
+  const [r] = await setupTest([{ command: 'some.command' }])
+  expect(r.keys()).toEqual(['some.command'])
+})
 
 describe('add()', () => {
   test('add a new command', () => {

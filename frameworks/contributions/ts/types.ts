@@ -2,11 +2,15 @@ import { CommandContributionRegistry, ReadonlyCommandContributionRegistry } from
 import { KeyBindingContributionRegistry, ReadonlyKeyBindingContributionRegistry } from './keyBindings'
 
 export interface ContributionsContext {
-  commands: CommandContributionRegistry,
-  keyBindings: KeyBindingContributionRegistry
+  contributions: {
+    commands: CommandContributionRegistry,
+    keyBindings: KeyBindingContributionRegistry
+  }
 }
 
 export interface ReadonlyContributionsContext {
-  commands: ReadonlyCommandContributionRegistry,
-  keyBindings: ReadonlyKeyBindingContributionRegistry
+  contributions: {
+    commands: ReadonlyCommandContributionRegistry,
+    keyBindings: ReadonlyKeyBindingContributionRegistry
+  }
 }

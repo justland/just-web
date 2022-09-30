@@ -16,7 +16,7 @@ export interface CommandRegistry extends ReadonlyCommandRegistry {
 }
 
 export namespace commandRegistry {
-  export interface Options { commands?: Record<string, CommandHandler> }
+  export type Options = Record<string, CommandHandler>
   export type Context = LogContext
 }
 
@@ -25,7 +25,7 @@ export function commandRegistry(
   options?: commandRegistry.Options): CommandRegistry {
   const logger = log.getLogger('@just-web/commands')
 
-  const registry = createRegistry<string, (...args: any[]) => void>(options?.commands)
+  const registry = createRegistry<string, (...args: any[]) => void>(options)
 
   return {
     /**

@@ -10,8 +10,10 @@ import reportWebVitals from './reportWebVitals'
 import { createAppStore } from './store'
 
 void (async () => {
-  const app = await createApp({ name: 'test', log: { logLevel: logLevels.all } })
-    .addPlugin(routes)
+  const app = await createApp({
+    name: 'test',
+    log: { logLevel: logLevels.all }
+  }).addPlugin(routes)
   createAppStore(app)
 
   app.contributions.commands.add({
