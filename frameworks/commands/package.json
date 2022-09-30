@@ -26,7 +26,8 @@
     "@just-web/contributions": "workspace:*",
     "@just-web/log": "workspace:*",
     "@just-web/states": "workspace:*",
-    "@just-web/types": "workspace:*"
+    "@just-web/types": "workspace:*",
+    "type-plus": "^4.13.1"
   },
   "devDependencies": {
     "@babel/core": "~7.18.0",

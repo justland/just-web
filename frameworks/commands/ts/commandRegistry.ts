@@ -1,18 +1,25 @@
-import { LogContext } from '@just-web/log'
+import type { LogContext } from '@just-web/log'
 import { createRegistry } from '@just-web/states'
-import { CommandHandler } from './types'
+import type { AnyFunction } from 'type-plus'
 
 export interface CommandRegistry {
   /**
-   * register handler for specified command.
+   * register handler for the specified command.
    */
-  register(command: string, handler: CommandHandler): void,
+  register(command: string, handler: AnyFunction): void,
+  /**
+   * invoke a registered command.
+   * @param args arguments for the command
+   */
   invoke(command: string, ...args: any[]): void,
+  /**
+   * Gets all registered command names.
+   */
   keys(): string[]
 }
 
 export namespace commandRegistry {
-  export type Options = Record<string, CommandHandler>
+  export type Options = Record<string, AnyFunction>
   export type Context = LogContext
 }
 
@@ -27,7 +34,7 @@ export function commandRegistry(
     /**
      * register handler for specified command.
      */
-    register(command: string, handler: CommandHandler) {
+    register(command: string, handler: AnyFunction) {
       logger.trace('register', command)
 
       const commands = registry.get()
