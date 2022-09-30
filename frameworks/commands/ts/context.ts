@@ -9,14 +9,15 @@ export interface CommandsContext extends CommandRegistry {
 export interface ReadonlyCommandsContext extends ReadonlyCommandRegistry {
 }
 
-export interface CommandsContextOptions extends commandRegistry.Options { }
+export type CommandsOptions = { commands?: commandRegistry.Options }
+
 export namespace createCommandsContext {
   export type Context = {
-    contributions: ContributionsContext
-  } & LogContext
+    options?: CommandsOptions
+  } & LogContext & ContributionsContext
 }
 
-export const initialize = defineInitialize(async (ctx: createCommandsContext.Context & { options?: CommandsContextOptions }) => {
+export const initialize = defineInitialize(async (ctx: createCommandsContext.Context) => {
   const log = ctx.log.getLogger('@just-web/commands')
   log.trace('create context')
   ctx.contributions.commands.add({
@@ -28,25 +29,22 @@ export const initialize = defineInitialize(async (ctx: createCommandsContext.Con
     key: 'ctrl+p',
     mac: 'cmd+p'
   })
-  return [{ ...commandRegistry(ctx, ctx.options) }]
+  return [{ commands: commandRegistry(ctx, ctx.options?.commands) }]
 })
 
-export function createCommandsContext(
-  { contributions, log }: createCommandsContext.Context,
-  options?: CommandsContextOptions
-): CommandsContext {
-  const logger = log.getLogger('@just-web/commands')
+export function createCommandsContext(ctx: createCommandsContext.Context): CommandsContext {
+  const logger = ctx.log.getLogger('@just-web/commands')
   logger.trace('create context')
-  contributions.commands.add({
+  ctx.contributions.commands.add({
     command: 'just-web.showCommandPalette',
     commandPalette: false
   })
-  contributions.keyBindings.add({
+  ctx.contributions.keyBindings.add({
     command: 'just-web.showCommandPalette',
     key: 'ctrl+p',
     mac: 'cmd+p'
   })
-  return { ...commandRegistry({ log }, options) }
+  return { ...commandRegistry(ctx, ctx.options?.commands) }
 }
 
 export function toReadonlyCommandsContext(module: CommandsContext): ReadonlyCommandsContext {

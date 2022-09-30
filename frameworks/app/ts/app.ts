@@ -3,8 +3,8 @@ import * as contributionsModule from '@just-web/contributions'
 import * as errorsModule from '@just-web/errors'
 import * as logModule from '@just-web/log'
 import * as platformModule from '@just-web/platform'
-import { Context, createContext, TestContext } from './contexts/context'
 import { ctx } from './app.ctx'
+import { Context, createContext, TestContext } from './contexts/context'
 import { createPluginsClosure, PluginsContext, startPlugins } from './plugins/context'
 
 export type { Context, TestContext } from './contexts/context'
@@ -17,21 +17,19 @@ export namespace createApp {
   export type Options = {
     name: string,
     contributions?: contributionsModule.ContributionsContextOptions,
-    commands?: commandsModule.CommandsContextOptions,
     errors?: errorsModule.ErrorsContextOptions,
-  } & logModule.LogOptions
+  } & logModule.LogOptions & commandsModule.CommandsOptions
 }
 
 export function createApp(options: createApp.Options): AppContext {
   const logcontext = logModule.createLogContext({ name: options.name, options })
-  const contributions = contributionsModule.createContributionsContext(logcontext, options?.contributions)
-  const commands = commandsModule.createCommandsContext({ contributions, ...logcontext }, options?.commands)
-
+  const contributionsContext = contributionsModule.createContributionsContext(logcontext, options?.contributions)
+  const commands = commandsModule.createCommandsContext({ options, ...contributionsContext, ...logcontext })
   const context = {
     appID: ctx.genAppID(),
     ...logcontext,
     commands,
-    contributions,
+    ...contributionsContext,
     errors: errorsModule.createErrorsContext(options?.errors),
     platform: platformModule.createPlatformContext()
   }
@@ -55,9 +53,8 @@ export namespace createTestApp {
   export type Options = {
     name?: string,
     contributions?: contributionsModule.ContributionsContextOptions,
-    commands?: commandsModule.CommandsContextOptions,
     errors?: errorsModule.ErrorsContextOptions,
-  } & logModule.TestLogOptions
+  } & logModule.TestLogOptions & commandsModule.CommandsOptions
 }
 
 export function createTestApp(options?: createTestApp.Options): TestAppContext {

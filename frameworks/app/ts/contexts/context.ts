@@ -1,5 +1,5 @@
 import type { CommandsContext } from '@just-web/commands'
-import { CommandsContextOptions, createCommandsContext } from '@just-web/commands'
+import { CommandsOptions, createCommandsContext } from '@just-web/commands'
 import type {
   ContributionsContext
 } from '@just-web/contributions'
@@ -14,37 +14,34 @@ import { ctx } from '../app.ctx'
 export type Context = {
   appID: string,
   commands: CommandsContext,
-  contributions: ContributionsContext,
   errors: ErrorsContext,
   platform: PlatformContext,
-} & LogContext
+} & LogContext & ContributionsContext
 
 export type TestContext = {
   appID: string,
   commands: CommandsContext,
-  contributions: ContributionsContext,
   errors: ErrorsContext,
   platform: PlatformContext,
-} & TestLogContext
+} & TestLogContext & ContributionsContext
 
 export namespace createContext {
   export type Options = {
     contributions?: ContributionsContextOptions,
-    commands?: CommandsContextOptions,
     errors?: ErrorsContextOptions,
-  } & LogOptions
+  } & LogOptions & CommandsOptions
 }
 
 export function createContext({ log }: LogContext, options?: createContext.Options): Context {
   const contributions = createContributionsContext({ log }, options?.contributions)
 
-  const commands = createCommandsContext({ contributions, log }, options?.commands)
+  const commands = createCommandsContext({ ...contributions, log, options })
 
   const context = {
     appID: ctx.genAppID(),
     log,
     commands,
-    contributions,
+    ...contributions,
     errors: createErrorsContext(options?.errors),
     platform: createPlatformContext()
   }

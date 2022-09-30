@@ -35,9 +35,7 @@ export interface CommandContributionRegistry
 export namespace commandContributionRegistry {
   export type Context = LogContext
 
-  export interface Options {
-    commands?: Record<string, CommandContribution>,
-  }
+  export type Options = Array<CommandContribution>
 }
 
 export function commandContributionRegistry(
@@ -45,11 +43,18 @@ export function commandContributionRegistry(
   options?: commandContributionRegistry.Options,
 ): CommandContributionRegistry {
   return withAdder(
-    createRegistry<string, CommandContribution>(options?.commands ?? record()),
+    createRegistry<string, CommandContribution>(getInitRecord(options)),
     function (r, cmd) {
       const key = cmd.command
       const log = ctx.log.getLogger('@just-web/contributions')
       if (r[key]) return log.error(`Registering a duplicate command contribution, ignored: ${key}`)
       r[key] = cmd
     })
+}
+
+function getInitRecord(options?: commandContributionRegistry.Options) {
+  return (options ?? []).reduce((p, c) => {
+    p[c.command] = c
+    return p
+  }, record<string, CommandContribution>())
 }

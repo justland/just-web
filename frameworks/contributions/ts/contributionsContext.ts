@@ -6,27 +6,29 @@ import { keyBindingRegistry } from './keyBindings'
 import { ContributionsContext, ReadonlyContributionsContext } from './types'
 
 export interface ContributionsContextOptions {
-  commands?: commandContributionRegistry.Options['commands'],
+  commands?: commandContributionRegistry.Options,
   keyBindings?: keyBindingRegistry.Options['keyBindings']
 }
 
 export const initialize = defineInitialize(async (ctx: LogContext & { options?: ContributionsContextOptions }) => {
-  const commands = commandContributionRegistry(ctx, ctx.options)
+  const commands = commandContributionRegistry(ctx, ctx.options?.commands)
   const keyBindings = keyBindingRegistry(ctx, ctx.options)
-  return [{ commands, keyBindings }]
+  return [{ contributions: { commands, keyBindings } }]
 })
 
 export function createContributionsContext(
   context: LogContext,
   options?: ContributionsContextOptions): ContributionsContext {
-  const commands = commandContributionRegistry(context, options)
+  const commands = commandContributionRegistry(context, options?.commands)
   const keyBindings = keyBindingRegistry(context, options)
-  return { commands, keyBindings }
+  return { contributions: { commands, keyBindings } }
 }
 
-export function toReadonlyContributionsContext(module: ContributionsContext): ReadonlyContributionsContext {
+export function toReadonlyContributionsContext({ contributions }: ContributionsContext): ReadonlyContributionsContext {
   return {
-    commands: toReadonlyRegistry(module.commands),
-    keyBindings: toReadonlyRegistry(module.keyBindings)
+    contributions: {
+      commands: toReadonlyRegistry(contributions.commands),
+      keyBindings: toReadonlyRegistry(contributions.keyBindings)
+    }
   }
 }
