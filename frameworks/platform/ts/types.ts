@@ -1,4 +1,4 @@
 
 export interface PlatformContext {
-  isMac: () =>boolean
+  isMac: () => boolean
 }

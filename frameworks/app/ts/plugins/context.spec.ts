@@ -1,7 +1,7 @@
 import { createTestLogContext } from '@just-web/log'
 import { asAny } from 'type-plus'
-import { JustWebError } from '..'
 import { createContext } from '../contexts/context'
+import { JustWebAppError } from '../errors'
 import { createPluginsClosure } from './context'
 
 describe('addPlugin()', () => {
@@ -13,7 +13,7 @@ describe('addPlugin()', () => {
     await expect(() => m.addPlugin({
       async activate() { return [{ abc: {} }] }
     })).rejects
-      .toEqual(new JustWebError(`unable to load plugin: it is overriding an existing property 'abc'`))
+      .toEqual(new JustWebAppError(`unable to load plugin: it is overriding an existing property 'abc'`))
   })
 
   test('plugin.activate() can return nothing', async () => {

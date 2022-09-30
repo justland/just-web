@@ -1,7 +1,7 @@
-import { JustWebError } from '@just-web/errors'
 import type { Logger } from '@just-web/log'
 import { forEachKey } from 'type-plus'
 import type { Context } from '../contexts/context'
+import { JustWebAppError } from '../errors'
 
 export interface PluginModule<C, S> {
   activate(context: Context): Promise<[C, S?] | void>,
@@ -33,7 +33,7 @@ export function createPluginsClosure(options: PluginsContextOptions): PluginsClo
         const keys = Object.keys(this)
         forEachKey(pluginContext, k => {
           if (typeof k === 'string' && keys.includes(k)) {
-            throw new JustWebError(
+            throw new JustWebAppError(
               `unable to load plugin: it is overriding an existing property '${k}'`,
               // eslint-disable-next-line @typescript-eslint/unbound-method
               { ssf: pluginsContext.addPlugin })

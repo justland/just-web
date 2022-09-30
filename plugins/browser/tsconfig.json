@@ -1,4 +1,5 @@
 {
+  "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
   "compilerOptions": {
     "lib": [
       "DOM",
@@ -8,11 +9,6 @@
     "outDir": "lib",
     "rootDir": "ts"
   },
-  "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
-  "include": [
-    "ts",
-    "typings"
-  ],
   "references": [
     {
       "path": "../../frameworks/commands"
@@ -21,19 +17,17 @@
       "path": "../../frameworks/contributions"
     },
     {
-      "path": "../../plugins/browser"
-    },
-    {
       "path": "../../frameworks/log"
-    },
-    {
-      "path": "../../frameworks/platform"
     },
     {
       "path": "../../libraries/states"
     },
     {
-      "path": "../../tools/testing"
+      "path": "../../frameworks/types"
     }
+  ],
+  "include": [
+    "ts",
+    "typings"
   ]
 }
