@@ -2,14 +2,10 @@ import { LogContext } from '@just-web/log'
 import { defineInitialize, defineStart } from '@just-web/types'
 import { startKeyBindings } from './keyBindings'
 import { isMac } from './os'
-import type { PlatformContext, ReadonlyPlatformContext } from './types'
+import type { PlatformContext } from './types'
 
 export function createPlatformContext(): PlatformContext {
   return { isMac }
-}
-
-export function toReadonlyContext(module: PlatformContext): ReadonlyPlatformContext {
-  return module
 }
 
 export const initialize = defineInitialize(async (ctx: LogContext) => ([{ isMac }, ctx]))

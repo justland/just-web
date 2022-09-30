@@ -14,9 +14,6 @@ export interface PluginsContext {
 
 export type PluginsClosure = readonly [PluginsContext, { loading: Array<Promise<[PluginModule<any, any>, any]>> }]
 
-export interface ReadonlyPluginsContext {
-}
-
 export interface PluginsContextOptions {
   context: Context
 }

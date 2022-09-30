@@ -1,5 +1,5 @@
 import { LogContext } from '@just-web/log'
-import { createRegistry, ReadonlyRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
+import { createRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
 import { record } from 'type-plus'
 
 export interface CommandContribution {
@@ -25,9 +25,6 @@ export interface CommandContribution {
    */
   commandPalette?: false
 }
-
-export interface ReadonlyCommandContributionRegistry
-  extends ReadonlyRegistry<string, CommandContribution> { }
 
 export interface CommandContributionRegistry
   extends Registry<string, CommandContribution>, WithAdder<CommandContribution> { }

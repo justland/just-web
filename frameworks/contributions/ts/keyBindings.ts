@@ -1,5 +1,5 @@
 import { LogContext } from '@just-web/log'
-import { createRegistry, ReadonlyRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
+import { createRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
 import { record } from 'type-plus'
 
 export type KeyBindingContribution = {
@@ -30,9 +30,6 @@ export type KeyBindingContribution = {
    */
   key?: undefined
 }
-
-export interface ReadonlyKeyBindingContributionRegistry
-  extends ReadonlyRegistry<string, KeyBindingContribution> { }
 
 export interface KeyBindingContributionRegistry
   extends Registry<string, KeyBindingContribution>, WithAdder<KeyBindingContribution> { }

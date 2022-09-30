@@ -1,18 +1,14 @@
 import { LogContext } from '@just-web/log'
 import { createRegistry } from '@just-web/states'
-import { pick } from 'type-plus'
 import { CommandHandler } from './types'
 
-export interface ReadonlyCommandRegistry {
-  invoke(command: string, ...args: any[]): void,
-  keys(): string[]
-}
-
-export interface CommandRegistry extends ReadonlyCommandRegistry {
+export interface CommandRegistry {
   /**
    * register handler for specified command.
    */
-  register(command: string, handler: CommandHandler): void
+  register(command: string, handler: CommandHandler): void,
+  invoke(command: string, ...args: any[]): void,
+  keys(): string[]
 }
 
 export namespace commandRegistry {
@@ -48,8 +44,4 @@ export function commandRegistry(
     },
     keys: registry.keys.bind(registry)
   }
-}
-
-export function toReadonlyCommandRegistry(s: CommandRegistry): ReadonlyCommandRegistry {
-  return pick(s, 'invoke', 'keys')
 }
