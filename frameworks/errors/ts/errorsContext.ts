@@ -1,4 +1,4 @@
-import { defineActivate } from '@just-web/types'
+import { defineInitialize } from '@just-web/types'
 import * as errorClasses from './errors'
 import { createErrorStore, ReadonlyErrorStore, toReadonlyErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
@@ -13,7 +13,7 @@ export interface ErrorsContextOptions {
   preventDefault?: boolean
 }
 
-export const activate = defineActivate(async (ctx: { options?: ErrorsContextOptions }) => {
+export const initialize = defineInitialize(async (ctx: { options?: ErrorsContextOptions }) => {
   const errors = createErrorStore()
   registerOnErrorHandler({
     errors,

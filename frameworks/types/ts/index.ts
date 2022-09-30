@@ -8,22 +8,42 @@
 // }
 
 export namespace PluginModule {
-  export type activate<
+  /**
+   * `initialize()` function gets the `context` it needs from the application,
+   * and returns two things:
+   *
+   * `PluginContext` which will be added to the application instance.
+   * `StartContext` which will be passed to the `start()` function if present.
+   *
+   * These types are inferred automatically so you don't need to specify them explicitly.
+   */
+  export type initialize<
     in NeedContext extends Record<string | symbol, any>,
-    out AdditionalContext extends Record<string | symbol, any>,
+    out PluginContext extends Record<string | symbol, any>,
     out StartContext extends Record<string | symbol, any>
-    > = (context: NeedContext) => Promise<[AdditionalContext, StartContext?]>
+    > = (context: NeedContext) => Promise<[PluginContext?, StartContext?]>
   export type start<
     in StartContext extends Record<string | symbol, any>
     > = (context: StartContext) => Promise<void>
 }
 
-export function defineActivate<
+/**
+ * Helper to define the `initialize()` function.
+ *
+ * `initialize()` function gets the `context` it needs from the application,
+ * and returns two things:
+ *
+ * `PluginContext` which will be added to the application instance.
+ * `StartContext` which will be passed to the `start()` function if present.
+ *
+ * These types are inferred automatically so you don't need to specify them explicitly.
+ */
+export function defineInitialize<
   NeedContext extends Record<string | symbol, any>,
-  AdditionalContext extends Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>
->(activate: PluginModule.activate<NeedContext, AdditionalContext, StartContext>) {
-  return activate
+>(initialize: PluginModule.initialize<NeedContext, PluginContext, StartContext>) {
+  return initialize
 }
 
 export function defineStart<
