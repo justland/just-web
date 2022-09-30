@@ -7,12 +7,12 @@ import { ContributionsContext, ReadonlyContributionsContext } from './types'
 
 export interface ContributionsContextOptions {
   commands?: commandContributionRegistry.Options,
-  keyBindings?: keyBindingRegistry.Options['keyBindings']
+  keyBindings?: keyBindingRegistry.Options
 }
 
 export const initialize = defineInitialize(async (ctx: LogContext & { options?: ContributionsContextOptions }) => {
   const commands = commandContributionRegistry(ctx, ctx.options?.commands)
-  const keyBindings = keyBindingRegistry(ctx, ctx.options)
+  const keyBindings = keyBindingRegistry(ctx, ctx.options?.keyBindings)
   return [{ contributions: { commands, keyBindings } }]
 })
 
@@ -20,7 +20,7 @@ export function createContributionsContext(
   context: LogContext,
   options?: ContributionsContextOptions): ContributionsContext {
   const commands = commandContributionRegistry(context, options?.commands)
-  const keyBindings = keyBindingRegistry(context, options)
+  const keyBindings = keyBindingRegistry(context, options?.keyBindings)
   return { contributions: { commands, keyBindings } }
 }
 
