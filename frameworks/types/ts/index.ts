@@ -22,13 +22,20 @@ export namespace PluginModule {
     out PluginContext extends Record<string | symbol, any>,
     out StartContext extends Record<string | symbol, any>
     > = (context: NeedContext) => Promise<[PluginContext?, StartContext?]>
+
+  /**
+   * `start()` function is an optional function that if present,
+   * will be invoked when the application starts.
+   *
+   * This is a good time to start or complete any work needed before the application is being used.
+   */
   export type start<
     in StartContext extends Record<string | symbol, any>
     > = (context: StartContext) => Promise<void>
 }
 
 /**
- * Helper to define the `initialize()` function.
+ * Typed helper to define the `initialize()` function.
  *
  * `initialize()` function gets the `context` it needs from the application,
  * and returns two things:
@@ -46,6 +53,14 @@ export function defineInitialize<
   return initialize
 }
 
+/**
+ * Typed helper to define the `start()` function.
+ *
+ * `start()` function is an optional function that if present,
+ * will be invoked when the application starts.
+ *
+ * This is a good time to start or complete any work needed before the application is being used.
+ */
 export function defineStart<
   StartContext extends Record<string | symbol, any>
 >(start: PluginModule.start<StartContext>) {
