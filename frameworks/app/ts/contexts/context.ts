@@ -14,17 +14,15 @@ import { ctx } from '../app.ctx'
 
 export type Context = {
   appID: string,
-  commands: CommandsContext,
   errors: ErrorsContext,
   platform: PlatformContext,
-} & LogContext & ContributionsContext
+} & LogContext & ContributionsContext & CommandsContext
 
 export type TestContext = {
   appID: string,
-  commands: CommandsContext,
   errors: ErrorsContext,
   platform: PlatformContext,
-} & TestLogContext & ContributionsContext
+} & TestLogContext & ContributionsContext & CommandsContext
 
 export namespace createContext {
   export type Options = {
@@ -40,7 +38,7 @@ export function createContext({ log }: LogContext, options?: createContext.Optio
   const context = {
     appID: ctx.genAppID(),
     log,
-    commands,
+    ...commands,
     ...contributions,
     errors: createErrorsContext(options?.errors),
     platform: createPlatformContext()

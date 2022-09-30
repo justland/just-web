@@ -9,11 +9,10 @@ import type { PlatformContext } from './types'
 export namespace startKeyBindings {
   export type Options = {
     platform: PlatformContext,
-    commands: CommandsContext,
     contributions: {
       keyBindings: KeyBindingContributionRegistry
     }
-  } & LogContext
+  } & LogContext & CommandsContext
 }
 
 let keys: Record<string, boolean>
