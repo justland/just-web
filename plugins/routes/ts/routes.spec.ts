@@ -1,10 +1,10 @@
 import { createTestApp } from '@just-web/app'
 import { logEqual } from '@just-web/testing'
-import { activate } from './module'
+import * as routesModule from './module'
 
 async function setupTest() {
   const app = createTestApp()
-  return app.addPlugin({ activate })
+  return app.addPlugin(routesModule)
 }
 
 

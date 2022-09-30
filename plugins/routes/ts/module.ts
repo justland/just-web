@@ -1,4 +1,6 @@
-import { Context, createStore, Store } from '@just-web/app'
+import { LogContext } from '@just-web/log'
+import { createStore, Store } from '@just-web/states'
+import { defineInitialize, defineStart } from '@just-web/types'
 import { record, requiredDeep } from 'type-plus'
 import type { Route, RoutesConfigOptions } from './types'
 
@@ -17,15 +19,16 @@ const defaultConfig: RoutesConfigOptions = {
   initialRoute: '/'
 }
 
-interface ModuleStore {
-  context: Context,
+type ModuleStore = {
   config: RoutesConfigOptions,
   routes: Record<string, Route>
-}
+} & LogContext
 
-export async function activate(context: Context) {
+export type StartContext = { store: Store<ModuleStore>, routeContext: RoutesContext }
+
+export const initialize = defineInitialize(async (ctx: LogContext): Promise<[RoutesContext, StartContext]> => {
   const store = createStore<ModuleStore>({
-    context,
+    ...ctx,
     config: defaultConfig,
     routes: record()
   })
@@ -75,17 +78,17 @@ export async function activate(context: Context) {
       }
     },
   }
-  return [routeContext, { store, routeContext }] as [RoutesContext, { store: Store<ModuleStore>, routeContext: RoutesContext }]
-}
+  return [routeContext, { store, routeContext }]
+})
 
-export async function start(
-  { store, routeContext }: { store: Store<ModuleStore>, routeContext: RoutesContext }
-) {
-  routeContext.routes.navigate(store.get().config.initialRoute)
-}
+export const activate = initialize
+
+export const start = defineStart(async (
+  { store, routeContext }: StartContext
+) => void routeContext.routes.navigate(store.get().config.initialRoute))
 
 function getLogger(store: Store<ModuleStore>) {
-  return store.get().context.log.getLogger('@just-web/routes')
+  return store.get().log.getLogger('@just-web/routes')
 }
 
 /**
