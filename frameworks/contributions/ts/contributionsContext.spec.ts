@@ -23,7 +23,9 @@ describe(initialize.name, () => {
     const [{ log }] = await initializeForTest()
     const [{ contributions }] = await initialize({
       log, options: {
-        commands: [{ command: 'a' }]
+        contributions: {
+          commands: [{ command: 'a' }]
+        }
       }
     })
     expect(contributions.commands.keys()).toEqual(['a'])

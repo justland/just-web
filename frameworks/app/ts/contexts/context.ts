@@ -1,9 +1,10 @@
 import type { CommandsContext } from '@just-web/commands'
 import { CommandsOptions, createCommandsContext } from '@just-web/commands'
 import type {
-  ContributionsContext
+  ContributionsContext,
+  ContributionsOptions
 } from '@just-web/contributions'
-import { ContributionsContextOptions, createContributionsContext } from '@just-web/contributions'
+import { createContributionsContext } from '@just-web/contributions'
 import type { ErrorsContext } from '@just-web/errors'
 import { createErrorsContext, ErrorsContextOptions } from '@just-web/errors'
 import type { LogContext, LogOptions, TestLogContext } from '@just-web/log'
@@ -27,13 +28,12 @@ export type TestContext = {
 
 export namespace createContext {
   export type Options = {
-    contributions?: ContributionsContextOptions,
     errors?: ErrorsContextOptions,
-  } & LogOptions & CommandsOptions
+  } & LogOptions & CommandsOptions & ContributionsOptions
 }
 
 export function createContext({ log }: LogContext, options?: createContext.Options): Context {
-  const contributions = createContributionsContext({ log }, options?.contributions)
+  const contributions = createContributionsContext({ log }, options)
 
   const commands = createCommandsContext({ ...contributions, log, options })
 
