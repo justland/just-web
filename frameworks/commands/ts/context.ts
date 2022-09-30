@@ -3,7 +3,8 @@ import { LogContext } from '@just-web/log'
 import { defineInitialize } from '@just-web/types'
 import { CommandRegistry, commandRegistry } from './commandRegistry'
 
-export interface CommandsContext extends CommandRegistry {
+export type CommandsContext = {
+  commands: CommandRegistry
 }
 
 export type CommandsOptions = { commands?: commandRegistry.Options }
@@ -14,7 +15,7 @@ export namespace createCommandsContext {
   } & LogContext & ContributionsContext
 }
 
-export const initialize = defineInitialize(async (ctx: createCommandsContext.Context) => {
+export const initialize = defineInitialize(async (ctx: createCommandsContext.Context): Promise<[CommandsContext]> => {
   const log = ctx.log.getLogger('@just-web/commands')
   log.trace('create context')
   ctx.contributions.commands.add({
@@ -41,5 +42,5 @@ export function createCommandsContext(ctx: createCommandsContext.Context): Comma
     key: 'ctrl+p',
     mac: 'cmd+p'
   })
-  return { ...commandRegistry(ctx, ctx.options?.commands) }
+  return { commands: commandRegistry(ctx, ctx.options?.commands) }
 }
