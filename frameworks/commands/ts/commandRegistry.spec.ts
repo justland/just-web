@@ -1,7 +1,6 @@
 import { initializeForTest } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
-import { isType } from 'type-plus'
-import { commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
+import { commandRegistry } from './commandRegistry'
 
 async function setupTest(options?: commandRegistry.Options) {
   const [logctx] = await initializeForTest()
@@ -88,15 +87,5 @@ describe('invoke()', () => {
     r.register('command1', fn)
     r.invoke('command1', 1)
     expect(fn).toHaveBeenCalledWith(1)
-  })
-})
-
-describe('toReadonlyCommandRegistry()', () => {
-  it('removes the register method', async () => {
-    const [r] = await setupTest()
-    const a = toReadonlyCommandRegistry(r)
-
-    isType.equal<true, ReadonlyCommandRegistry, typeof a>()
-    expect(Object.keys(a)).toEqual(['invoke', 'keys'])
   })
 })

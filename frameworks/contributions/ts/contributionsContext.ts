@@ -1,9 +1,8 @@
 import { LogContext } from '@just-web/log'
-import { toReadonlyRegistry } from '@just-web/states'
 import { defineInitialize } from '@just-web/types'
 import { commandContributionRegistry } from './commands'
 import { keyBindingRegistry } from './keyBindings'
-import { ContributionsContext, ReadonlyContributionsContext } from './types'
+import { ContributionsContext } from './types'
 
 export type ContributionsOptions = {
   contributions?: {
@@ -24,13 +23,4 @@ export function createContributionsContext(
   const commands = commandContributionRegistry(context, options?.contributions?.commands)
   const keyBindings = keyBindingRegistry(context, options?.contributions?.keyBindings)
   return { contributions: { commands, keyBindings } }
-}
-
-export function toReadonlyContributionsContext({ contributions }: ContributionsContext): ReadonlyContributionsContext {
-  return {
-    contributions: {
-      commands: toReadonlyRegistry(contributions.commands),
-      keyBindings: toReadonlyRegistry(contributions.keyBindings)
-    }
-  }
 }

@@ -1,12 +1,9 @@
 import { ContributionsContext } from '@just-web/contributions'
 import { LogContext } from '@just-web/log'
 import { defineInitialize } from '@just-web/types'
-import { CommandRegistry, commandRegistry, ReadonlyCommandRegistry, toReadonlyCommandRegistry } from './commandRegistry'
+import { CommandRegistry, commandRegistry } from './commandRegistry'
 
 export interface CommandsContext extends CommandRegistry {
-}
-
-export interface ReadonlyCommandsContext extends ReadonlyCommandRegistry {
 }
 
 export type CommandsOptions = { commands?: commandRegistry.Options }
@@ -45,11 +42,4 @@ export function createCommandsContext(ctx: createCommandsContext.Context): Comma
     mac: 'cmd+p'
   })
   return { ...commandRegistry(ctx, ctx.options?.commands) }
-}
-
-export function toReadonlyCommandsContext(module: CommandsContext): ReadonlyCommandsContext {
-  return {
-    ...module,
-    ...toReadonlyCommandRegistry(module)
-  }
 }

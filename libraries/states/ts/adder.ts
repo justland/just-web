@@ -1,6 +1,6 @@
 import produce, { Draft } from 'immer'
-import { ArrayValue, KeyTypes, Pick } from 'type-plus'
-import { Store } from './store'
+import type { ArrayValue, KeyTypes, Pick } from 'type-plus'
+import type { Store } from './store'
 
 export interface Adder<T> {
   (...entries: T[]): void
