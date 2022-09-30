@@ -1,4 +1,4 @@
-import { defineInitialize } from '@just-web/types'
+import { defineInitialize, defineInitializeForTest } from '@just-web/types'
 import {
   createMemoryLogReporter, createStandardLog, logLevels, LogMethodNames, MemoryLogReporter, StandardLog, StandardLogOptions
 } from 'standard-log'
@@ -47,6 +47,27 @@ export type TestLogContext<N extends string = LogMethodNames> = LogContext<N> & 
 export type TestLogOptions<N extends string = LogMethodNames> = {
   log?: Partial<Omit<StandardLogOptions<N>, 'reporters'>>
 }
+
+export const initializeForTest = defineInitializeForTest(async <N extends string = LogMethodNames>(
+  ctx?: { name: string, options?: LogOptions<N> }
+): Promise<[TestLogContext<N>]> => {
+  const name = ctx?.name ?? 'test'
+  const reporter = createMemoryLogReporter()
+  const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
+    logLevel: logLevels.debug,
+    reporters: [reporter]
+  }, ctx?.options?.log))
+
+  const log = sl.getLogger(`${name}:@just-web/log`)
+  log.trace('create test log context')
+  return [{
+    log: {
+      ...sl,
+      getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) },
+      reporter
+    }
+  }]
+})
 
 export function createTestLogContext<
   N extends string = LogMethodNames
