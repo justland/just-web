@@ -16,14 +16,15 @@ export interface AppContext extends Context, PluginsContext {
 export namespace createApp {
   export type Options = {
     name: string,
-    contributions?: contributionsModule.ContributionsContextOptions,
     errors?: errorsModule.ErrorsContextOptions,
-  } & logModule.LogOptions & commandsModule.CommandsOptions
+  } & logModule.LogOptions
+    & commandsModule.CommandsOptions
+    & contributionsModule.ContributionsOptions
 }
 
 export function createApp(options: createApp.Options): AppContext {
   const logcontext = logModule.createLogContext({ name: options.name, options })
-  const contributionsContext = contributionsModule.createContributionsContext(logcontext, options?.contributions)
+  const contributionsContext = contributionsModule.createContributionsContext(logcontext, options)
   const commands = commandsModule.createCommandsContext({ options, ...contributionsContext, ...logcontext })
   const context = {
     appID: ctx.genAppID(),
@@ -52,9 +53,10 @@ export interface TestAppContext extends TestContext, PluginsContext {
 export namespace createTestApp {
   export type Options = {
     name?: string,
-    contributions?: contributionsModule.ContributionsContextOptions,
     errors?: errorsModule.ErrorsContextOptions,
-  } & logModule.TestLogOptions & commandsModule.CommandsOptions
+  } & logModule.TestLogOptions
+    & commandsModule.CommandsOptions
+    & contributionsModule.ContributionsOptions
 }
 
 export function createTestApp(options?: createTestApp.Options): TestAppContext {
