@@ -6,9 +6,10 @@ import mousetrap from 'mousetrap'
 import { createPlatformContext } from './context'
 import { startKeyBindings } from './keyBindings'
 
-interface StubCommand extends KeyBindingContribution, CommandContribution {
+type StubCommand = KeyBindingContribution & CommandContribution & {
   handler(command: KeyBindingContribution & CommandContribution): void
 }
+
 function setupTest(...stubCommands: StubCommand[]) {
   const ctx = createTestLogContext()
 

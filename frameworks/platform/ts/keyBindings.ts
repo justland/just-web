@@ -1,5 +1,5 @@
 import type { CommandsContext } from '@just-web/commands'
-import type { KeyBindingContribution, KeyBindingContributionRegistry } from '@just-web/contributions'
+import { KeyBindingContribution, KeyBindingContributionRegistry } from '@just-web/contributions'
 import type { LogContext } from '@just-web/log'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
@@ -51,9 +51,9 @@ function bindKey({ log: logContext, commands }: startKeyBindings.Options, keyBin
   }
 }
 
-function getKey(keyBinding: KeyBindingContribution) {
-  if (isMac()) return keyBinding.mac ?? keyBinding.key
-  return keyBinding.key
+function getKey(keyBinding: any): string {
+  if (isMac()) return (keyBinding.mac ?? keyBinding.key) as string
+  return keyBinding.key as string
 }
 
 function toMousetrapKey(key: string) {

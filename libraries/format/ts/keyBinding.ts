@@ -5,6 +5,6 @@ export function formatKeyBinding(keyBinding: KeyBindingContribution) {
   const m = ctx.isMac()
   return {
     command: keyBinding.command,
-    key: m ? keyBinding.mac ?? keyBinding.key : keyBinding.key
+    key: (m ? keyBinding.mac ?? keyBinding.key : keyBinding.key) as string
   }
 }
