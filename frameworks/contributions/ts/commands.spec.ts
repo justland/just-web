@@ -1,4 +1,4 @@
-import { createTestLogContext, initializeForTest } from '@just-web/log'
+import { initializeForTest } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { commandContributionRegistry } from './commands'
 
@@ -18,33 +18,29 @@ it('creates with prefilled command contributions', async () => {
 })
 
 describe('add()', () => {
-  test('add a new command', () => {
-    const ctx = createTestLogContext()
-    const store = commandContributionRegistry(ctx)
+  it('adds a new command', async () => {
+    const [store] = await setupTest()
     const cmd = { command: 'a', description: 'a' }
     store.add(cmd)
     const a = store.get()['a']
 
     expect(a).toBe(cmd)
   })
-
-  test('add existing command logs and error and ignore', () => {
-    const ctx = createTestLogContext()
-    const store = commandContributionRegistry(ctx)
+  it('logs an error and ignore if a command with the name ID already exist', async () => {
+    const [store, log] = await setupTest()
     const cmd1 = { command: 'a', description: 'a' }
     const cmd2 = { command: 'a', description: 'a' }
     store.add(cmd1)
     store.add(cmd2)
 
-    logEqual(ctx.log.reporter, '(ERROR) Registering a duplicate command contribution, ignored: a')
+    logEqual(log.reporter, '(ERROR) Registering a duplicate command contribution, ignored: a')
 
     const a = store.get()['a']
     expect(a).toBe(cmd1)
   })
 
-  test('add multiple commands', () => {
-    const ctx = createTestLogContext()
-    const store = commandContributionRegistry(ctx)
+  it('adds multiple commands', async () => {
+    const [store] = await setupTest()
     const cmd1 = { command: 'a', description: 'a' }
     const cmd2 = { command: 'b', description: 'b' }
     store.add(cmd1, cmd2)
