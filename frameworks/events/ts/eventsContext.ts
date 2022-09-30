@@ -1,5 +1,5 @@
 import { LogContext, Logger } from '@just-web/log'
-import { defineActivate } from '@just-web/types'
+import { defineInitialize } from '@just-web/types'
 import { EventEmitterLike, trapError } from '@unional/events-plus'
 import { EventEmitter } from 'eventemitter3'
 
@@ -13,7 +13,7 @@ export type EventsContextOptions = {
   }
 } & LogContext
 
-export const activate = defineActivate(async (ctx: EventsContextOptions) => {
+export const initialize = defineInitialize(async (ctx: EventsContextOptions) => {
   const log = ctx.log.getLogger('@just-web/events')
   const emitter = trapError(ctx.options?.emitter || new EventEmitter(), log)
 

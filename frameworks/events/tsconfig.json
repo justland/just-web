@@ -12,6 +12,9 @@
   "references": [
     {
       "path": "../../frameworks/log"
+    },
+    {
+      "path": "../../frameworks/types"
     }
   ],
   "include": [
