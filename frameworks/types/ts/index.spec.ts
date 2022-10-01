@@ -77,7 +77,7 @@ describe(definePlugin.name, () => {
       isType.equal<true, (ctx: { a: number }) => void, typeof plugin.init>()
     })
 
-    it('links NeedContext for `init()` and `initForTest()`', async () => {
+    it('links NeedContext for `init()` and `initForTest()`', () => {
       const plugin = definePlugin({
         name: 'test-plugin',
         init(_: { a: number }) { },
@@ -113,6 +113,43 @@ describe(definePlugin.name, () => {
 
       isType.equal<true, (ctx: { a: number }) => void, typeof plugin.init>()
       isType.equal<true, (ctx: { a: number }) => [{ b: number }], typeof plugin.initForTest>()
+    })
+
+    it('with NeedContext, can specify `start()` with no StartContext', () => {
+      const plugin = definePlugin({
+        name: 'test-plugin',
+        init(_: { a: number }) { },
+        async start() { }
+      })
+
+      isType.equal<true, (ctx: { a: number }) => void, typeof plugin.init>()
+      isType.equal<true, () => Promise<void>, typeof plugin.start>()
+      isType.f<HasKey<typeof plugin, 'initForTest'>>()
+    })
+
+    it('can specify `start()` with no StartContext', () => {
+      const plugin = definePlugin({
+        name: 'test-plugin',
+        init() { },
+        async start() { }
+      })
+
+      isType.equal<true, (ctx: Record<string | symbol, any>) => void, typeof plugin.init>()
+      isType.equal<true, () => Promise<void>, typeof plugin.start>()
+      isType.f<HasKey<typeof plugin, 'initForTest'>>()
+    })
+
+    it('can specify `start()` with no StartContext along with `initForTest()`', () => {
+      const plugin = definePlugin({
+        name: 'test-plugin',
+        init() { },
+        initForTest() { },
+        async start() { }
+      })
+
+      isType.equal<true, (ctx: Record<string | symbol, any>) => void, typeof plugin.init>()
+      isType.equal<true, () => Promise<void>, typeof plugin.start>()
+      isType.equal<true, (ctx: Record<string | symbol, any>) => void, typeof plugin.initForTest>()
     })
   })
 
@@ -158,6 +195,44 @@ describe(definePlugin.name, () => {
       })
       isType.equal<true, (ctx: { a: number }) => [{ b: number }], typeof plugin.init>()
       isType.equal<true, (ctx: { a: number }) => [{ b: number, c: number }], typeof plugin.initForTest>()
+    })
+
+
+    it('with NeedContext, can specify `start()` with no StartContext', () => {
+      const plugin = definePlugin({
+        name: 'test-plugin',
+        init: (_: { a: number }) => [{ b: 1 }],
+        async start() { }
+      })
+
+      isType.equal<true, (ctx: { a: number }) => [{ b: number }], typeof plugin.init>()
+      isType.equal<true, () => Promise<void>, typeof plugin.start>()
+      isType.f<HasKey<typeof plugin, 'initForTest'>>()
+    })
+
+    it('can specify `start()` with no StartContext', () => {
+      const plugin = definePlugin({
+        name: 'test-plugin',
+        init: () => [{ b: 1 }],
+        async start() { }
+      })
+
+      isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }], typeof plugin.init>()
+      isType.equal<true, () => Promise<void>, typeof plugin.start>()
+      isType.f<HasKey<typeof plugin, 'initForTest'>>()
+    })
+
+    it('can specify `start()` with no StartContext along with `initForTest()`', () => {
+      const plugin = definePlugin({
+        name: 'test-plugin',
+        init: () => [{ b: 1 }],
+        initForTest: () => [{ b: 1 }],
+        async start() { }
+      })
+
+      isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }], typeof plugin.init>()
+      isType.equal<true, () => Promise<void>, typeof plugin.start>()
+      isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }], typeof plugin.initForTest>()
     })
   })
 
