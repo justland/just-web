@@ -1,5 +1,5 @@
 import { createMemoryLogReporter, logLevels } from 'standard-log'
-import plugin, { createLogContext, createTestLogContext } from '.'
+import plugin, { createLogContext, createTestLogContext } from './index'
 
 describe('createLogContext()', () => {
   test('emit trace message', () => {
@@ -18,7 +18,7 @@ describe('createTestLogContext()', () => {
   })
 })
 
-describe(`plugin.${plugin.init.name}`, () => {
+describe(`plugin.${plugin.init.name}()`, () => {
   it('exposes `log` in the PluginContext', () => {
     const [logContext] = plugin.init({ name: 'test-app', options: { log: { customLevels: { 'silly': 500 } } } })
 
@@ -32,7 +32,7 @@ describe(`plugin.${plugin.init.name}`, () => {
   })
 })
 
-describe(`plugins.${plugin.initForTest.name}`, () => {
+describe(`plugins.${plugin.initForTest.name}()`, () => {
   it('exposes reporter', () => {
     const [ctx] = plugin.initForTest()
 
