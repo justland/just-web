@@ -1,6 +1,10 @@
 import { ReadonlyErrorStore } from './errorStore'
+import { isMac } from './os'
 
 export interface BrowserContext {
+  os: {
+    isMac: typeof isMac
+  },
   browser: {
     errors: ReadonlyErrorStore
   }
