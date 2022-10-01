@@ -1,12 +1,11 @@
-import { createTestLogContext } from '@just-web/log'
-import { createEventsContext, justEvent } from '.'
+import logPlugin from '@just-web/log'
+import eventsPlugin, { justEvent } from '.'
 
-it('can create just event', () => {
+it('can create just event', async () => {
   const addEvent = justEvent('add')
+  const [ctx] = await logPlugin.initForTest()
+  const [{ emitter }] = await eventsPlugin.init(ctx)
 
-  const { emitter } = createEventsContext(
-    createTestLogContext()
-  )
   let called = false
   addEvent.listenTo(emitter, () => called = true)
   addEvent.emitBy(emitter)
