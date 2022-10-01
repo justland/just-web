@@ -1,4 +1,5 @@
-import { formatKeyBinding, getLogger } from '@just-web/app'
+import { formatKeyBinding } from '@just-web/contributions'
+import { getLogger } from '@just-web/log'
 import { getStoreValue } from '../../store'
 import logo from './logo.svg'
 

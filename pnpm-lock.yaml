@@ -51,6 +51,8 @@ importers:
       '@babel/plugin-transform-react-jsx': ~7.17.3
       '@headlessui/react': ~1.5.0
       '@just-web/app': workspace:*
+      '@just-web/contributions': workspace:^0.2.3
+      '@just-web/log': workspace:^0.2.2
       '@just-web/react': workspace:*
       '@just-web/react-commands': workspace:*
       '@just-web/repo-scripts': workspace:*
@@ -138,6 +140,8 @@ importers:
       '@babel/core': 7.18.5
       '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.5
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.5
+      '@just-web/contributions': link:../../../frameworks/contributions
+      '@just-web/log': link:../../../frameworks/log
       '@just-web/repo-scripts': link:../../../tools/repo-scripts
       '@storybook/addon-actions': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addon-essentials': 6.4.22_v3igqkcftwc67elnusckqkjztm
@@ -628,6 +632,7 @@ importers:
       '@babel/core': ~7.18.0
       '@babel/plugin-transform-runtime': ~7.18.0
       '@just-web/log': workspace:*
+      '@just-web/os': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
@@ -649,19 +654,22 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
+      sentence-case: ~3.0.4
       size-limit: ~7.0.8
       type-plus: ^4.13.1
       typescript: ^4.7.4
     dependencies:
-      '@just-web/log': link:../log
-      '@just-web/states': link:../../libraries/states
-      '@just-web/types': link:../types
+      sentence-case: 3.0.4
       type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.18.5
       '@babel/plugin-transform-runtime': 7.18.2_@babel+core@7.18.5
+      '@just-web/log': link:../log
+      '@just-web/os': link:../../plugins/os
       '@just-web/repo-scripts': link:../../tools/repo-scripts
+      '@just-web/states': link:../../libraries/states
       '@just-web/testing': link:../../tools/testing
+      '@just-web/types': link:../types
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.5.2
       '@typescript-eslint/eslint-plugin': 5.28.0_bwdgjzdjqqu6lnspjrilve2nye
@@ -7238,7 +7246,7 @@ packages:
       '@storybook/node-logger': 6.4.22
       '@storybook/postinstall': 6.4.22
       '@storybook/preview-web': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/react': 6.4.22_ffx552apspicr77y44rrkjfmfm
+      '@storybook/react': 6.4.22_l3s4irsikiydnencffk2zc66gq
       '@storybook/source-loader': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/store': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/theming': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -7860,7 +7868,7 @@ packages:
       '@storybook/core-client': 6.4.22_rme3cxzgjmyefwvomuzoypfkni
       '@storybook/core-common': 6.4.22_o6xja7a6erhupsrnyqkhrvz4h4
       '@storybook/csf': 0.0.2--canary.87bc651.0
-      '@storybook/react': 6.4.22_ffx552apspicr77y44rrkjfmfm
+      '@storybook/react': 6.4.22_l3s4irsikiydnencffk2zc66gq
       '@types/glob': 7.2.0
       '@types/jest': 26.0.24
       '@types/jest-specific-snapshot': 0.5.5

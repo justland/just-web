@@ -1,6 +1,7 @@
 import logPlugin from '@just-web/log'
 import { logEqual } from '@just-web/testing'
-import { keyBindingRegistry } from './keyBindings'
+import { formatKeyBinding, keyBindingRegistry } from '.'
+import { ctx } from './keyBinding.ctx'
 
 async function setupTest(options?: keyBindingRegistry.Options) {
   const [logctx] = await logPlugin.initForTest()
@@ -46,5 +47,36 @@ describe('add()', () => {
     store.add(cmd1, cmd2)
 
     expect(Object.keys(store.get()).length).toBe(2)
+  })
+})
+
+describe('formatKeyBinding()', () => {
+  test(`in mac returns 'mac' key if defined`, () => {
+    ctx.isMac = () => true
+    const a = formatKeyBinding({ command: 'someCommand', mac: 'cmd+p' })
+    expect(a).toEqual({
+      command: 'someCommand',
+      key: 'cmd+p'
+    })
+  })
+  test(`in mac returns 'key' if 'mac' not defined`, () => {
+    ctx.isMac = () => true
+    const a = formatKeyBinding({ command: 'someCommand', key: 'ctrl+p' })
+    expect(a).toEqual({
+      command: 'someCommand',
+      key: 'ctrl+p'
+    })
+  })
+  test(`not in mac returns 'key'`, () => {
+    ctx.isMac = () => false
+    const a = formatKeyBinding({
+      command: 'someCommand',
+      mac: 'cmd+p',
+      key: 'ctrl+p'
+    })
+    expect(a).toEqual({
+      command: 'someCommand',
+      key: 'ctrl+p'
+    })
   })
 })
