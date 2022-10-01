@@ -1,5 +1,5 @@
 import browserPlugin from '@just-web/browser'
-import { initialize as initCommands } from '@just-web/commands'
+import commandsPlugin from '@just-web/commands'
 import contributionsPlugin, {
   CommandContribution, KeyBindingContribution
 } from '@just-web/contributions'
@@ -15,7 +15,7 @@ type StubCommand = KeyBindingContribution & CommandContribution & {
 async function setupTest(...stubCommands: StubCommand[]) {
   const [{ log }] = await logPlugin.initForTest()
   const [{ contributions }] = await contributionsPlugin.init({ log })
-  const [{ commands }] = await initCommands({ log, contributions })
+  const [{ commands }] = await commandsPlugin.init({ log, contributions })
   const [{ browser, os }] = await browserPlugin.init({})
 
   stubCommands.forEach(stubCommand => {
