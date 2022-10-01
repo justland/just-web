@@ -1,8 +1,9 @@
+import * as browserModule from '@just-web/browser'
+import browserContributions from '@just-web/browser-contributions'
 import * as commandsModule from '@just-web/commands'
 import * as contributionsModule from '@just-web/contributions'
 import * as logModule from '@just-web/log'
-import * as browserModule from '@just-web/browser'
-import browserContributions from '@just-web/browser-contributions'
+import * as osModule from '@just-web/os'
 import { ctx } from './app.ctx'
 import { Context, createContext, TestContext } from './contexts/context'
 import { createPluginsClosure, PluginsContext, startPlugins } from './plugins/context'
@@ -28,11 +29,13 @@ export function createApp(options: createApp.Options): AppContext {
   const logcontext = logModule.createLogContext({ name: options.name, options })
   const contributionsContext = contributionsModule.createContributionsContext(logcontext, options)
   const commands = commandsModule.createCommandsContext({ options, ...contributionsContext, ...logcontext })
+  const os = osModule.createOSContext()
   const context = {
     appID: ctx.genAppID(),
     ...logcontext,
     ...commands,
     ...contributionsContext,
+    ...os,
     ...browserModule.createErrorsContext({ options })
   }
   const [pluginContext, { loading }] = createPluginsClosure({ context })

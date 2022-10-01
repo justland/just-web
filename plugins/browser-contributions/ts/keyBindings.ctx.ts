@@ -1,3 +1,3 @@
-import { isMac } from '@just-web/browser'
+import { isMac } from '@just-web/os'
 
 export const ctx = { isMac }

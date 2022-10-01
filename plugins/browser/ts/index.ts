@@ -1,11 +1,9 @@
 import { definePlugin } from '@just-web/types'
 import { createErrorStore, toReadonlyErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
-import { isMac } from './os'
 import type { BrowserContext, BrowserInitContext, BrowserOptions } from './types'
 
 export * from './errors'
-export * from './os'
 export { BrowserContext, BrowserInitContext, BrowserOptions }
 
 export default definePlugin({
@@ -19,8 +17,7 @@ export default definePlugin({
       preventDefault: ctx.options?.browser?.preventDefault ?? false
     })
     return [{
-      browser: { errors: toReadonlyErrorStore(errors) },
-      os: { isMac },
+      browser: { errors: toReadonlyErrorStore(errors) }
     }]
   }
 })
@@ -32,7 +29,6 @@ export function createErrorsContext(ctx?: BrowserInitContext): BrowserContext {
     preventDefault: ctx?.options?.browser?.preventDefault ?? false
   })
   return {
-    browser: { errors: toReadonlyErrorStore(errors) },
-    os: { isMac },
+    browser: { errors: toReadonlyErrorStore(errors) }
   }
 }
