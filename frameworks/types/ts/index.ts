@@ -300,10 +300,9 @@ export function definePlugin<
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>,
-  Plugin extends PluginModule_D<NeedContext, PluginContext, StartContext> |
-  PluginModule_C<NeedContext, StartContext> |
-  PluginModule_B<NeedContext, PluginContext> |
-  PluginModule_A<NeedContext>
->(plugin: Plugin) {
+  >(plugin: PluginModule_D<NeedContext, PluginContext, StartContext> |
+    PluginModule_C<NeedContext, StartContext> |
+    PluginModule_B<NeedContext, PluginContext> |
+    PluginModule_A<NeedContext>) {
   return plugin
 }
