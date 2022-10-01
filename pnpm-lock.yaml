@@ -509,7 +509,6 @@ importers:
       '@types/ramda': ^0.28.14
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
-      async-fp: ^8.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
@@ -536,7 +535,6 @@ importers:
       '@just-web/log': link:../log
       '@just-web/os': link:../../plugins/os
       '@just-web/states': link:../../libraries/states
-      async-fp: 8.0.0
       iso-error: 4.4.0
       type-plus: 4.13.1
     devDependencies:
@@ -11703,14 +11701,6 @@ packages:
       '@typescript-eslint/types': 5.38.1
       eslint-visitor-keys: 3.3.0
 
-  /@unional/async-context/8.0.0:
-    resolution: {integrity: sha512-SEqyYUnqcr4AdXbVQrsRaz/gB71ccC5RNuGwR1iVK3Sbl6ZCy++U0TUkk5ALPj270tM/fe61kM0VwwB9OcvMtg==}
-    engines: {node: '>= 14.16'}
-    dependencies:
-      iso-error: 4.4.0
-      type-plus: 4.13.1
-    dev: false
-
   /@unional/events-plus/2.2.0:
     resolution: {integrity: sha512-wIZx5I4e5PDWp4bFa+zRT4zktqR/wxzVRiVpWgjg23Fb9+SHkHsP62Bn6Wso4q2wPU0Uqg2rl1Tn8Kw//Ms7kQ==}
     dependencies:
@@ -12523,13 +12513,6 @@ packages:
     resolution: {integrity: sha512-z/WhQ5FPySLdvREByI2vZiTWwCnF0moMJ1hK9YQwDTHKh6I7/uSckMetoRGb5UBZPC1z0jlw+n/XCgjeH7y1AQ==}
     dev: true
     optional: true
-
-  /async-fp/8.0.0:
-    resolution: {integrity: sha512-OHoSUYVL0pp1lW3tmIkkYCk0hI547hE8DIh22dxzjmR/DwkbWrsWR8CuuJCsa5LXCagW8CTn32ZIFn5dNsPKxg==}
-    engines: {node: '>= 14.16'}
-    dependencies:
-      '@unional/async-context': 8.0.0
-    dev: false
 
   /async/3.2.4:
     resolution: {integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==}
