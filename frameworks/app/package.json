@@ -24,11 +24,11 @@
   },
   "dependencies": {
     "@just-web/browser": "workspace:*",
+    "@just-web/browser-contributions": "workspace:*",
     "@just-web/commands": "workspace:*",
     "@just-web/contributions": "workspace:*",
     "@just-web/format": "workspace:*",
     "@just-web/log": "workspace:*",
-    "@just-web/platform": "workspace:*",
     "@just-web/states": "workspace:*",
     "iso-error": "~4.3.8",
     "type-plus": "^4.13.1"

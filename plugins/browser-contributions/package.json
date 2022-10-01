@@ -1,7 +1,7 @@
 {
-  "name": "@just-web/platform",
-  "version": "0.2.5",
-  "description": "All about platform - where the code is executed",
+  "name": "@just-web/browser-contributions",
+  "version": "0.2.7",
+  "description": "browser implementation for @just-web/contributions",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -23,12 +23,12 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
+    "@just-web/browser": "workspace:*",
     "@just-web/commands": "workspace:*",
     "@just-web/contributions": "workspace:*",
     "@just-web/log": "workspace:*",
     "@just-web/types": "workspace:*",
     "mousetrap": "~1.6.5",
-    "platform": "~1.3.6",
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
@@ -39,7 +39,6 @@
     "@size-limit/preset-small-lib": "~7.0.8",
     "@types/jest": "^27.4.1",
     "@types/mousetrap": "~1.6.9",
-    "@types/platform": "~1.3.4",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "depcheck": "~1.4.3",

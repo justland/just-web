@@ -23,8 +23,8 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
+    "@just-web/browser": "workspace:*",
     "@just-web/contributions": "workspace:*",
-    "@just-web/platform": "workspace:*",
     "sentence-case": "~3.0.4"
   },
   "devDependencies": {
