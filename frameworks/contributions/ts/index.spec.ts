@@ -11,17 +11,17 @@ describe('createContributionsContext()', () => {
 })
 
 describe(`plugin.${contributionsPlugin.init.name}()`, () => {
-  it('returns contributions in PluginContext', async () => {
-    const [{ log }] = await logPlugin.initForTest()
-    const [{ contributions }] = await contributionsPlugin.init({ log })
+  it('returns contributions in PluginContext', () => {
+    const [{ log }] = logPlugin.initForTest()
+    const [{ contributions }] = contributionsPlugin.init({ log })
     expect(contributions).toBeDefined()
     expect(contributions.commands).toBeDefined()
     expect(contributions.keyBindings).toBeDefined()
   })
 
-  it('can prefill commands', async () => {
-    const [{ log }] = await logPlugin.initForTest()
-    const [{ contributions }] = await contributionsPlugin.init({
+  it('can prefill commands', () => {
+    const [{ log }] = logPlugin.initForTest()
+    const [{ contributions }] = contributionsPlugin.init({
       log, options: {
         contributions: {
           commands: [{ command: 'a' }]

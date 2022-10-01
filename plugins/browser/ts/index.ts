@@ -7,7 +7,8 @@ export * from './errors'
 export { BrowserContext, BrowserInitContext, BrowserOptions }
 
 export default definePlugin({
-  init: async (ctx: BrowserInitContext): Promise<[BrowserContext]> => {
+  name: '@just-web/browser',
+  init: (ctx: BrowserInitContext): [BrowserContext] => {
     const errors = createErrorStore()
     // Normally plugin should not do work during init.
     // However this is a special case as we want to listen to any error,

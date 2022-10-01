@@ -16,7 +16,8 @@ export type EventsContextOptions = {
 } & LogContext
 
 export default definePlugin({
-  init: async (ctx: EventsContextOptions) => {
+  name: '@just-web/events',
+  init: (ctx: EventsContextOptions) => {
     const log = ctx.log.getLogger('@just-web/events')
     const emitter = trapError(ctx.options?.emitter || new EventEmitter(), log)
 

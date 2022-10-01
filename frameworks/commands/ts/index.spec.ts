@@ -3,17 +3,17 @@ import contributionsPlugin from '@just-web/contributions'
 import commandsPlugin from '.'
 
 describe('initialize()', () => {
-  test('basic case', async () => {
-    const [{ log }] = await logPlugin.initForTest()
-    const [{ contributions }] = await contributionsPlugin.init({ log })
-    await commandsPlugin.init({ log, contributions })
+  test('basic case', () => {
+    const [{ log }] = logPlugin.initForTest()
+    const [{ contributions }] = contributionsPlugin.init({ log })
+    commandsPlugin.init({ log, contributions })
   })
 
-  it('supports predefined commands', async () => {
-    const [{ log }] = await logPlugin.initForTest()
-    const [{ contributions }] = await contributionsPlugin.init({ log })
+  it('supports predefined commands', () => {
+    const [{ log }] = logPlugin.initForTest()
+    const [{ contributions }] = contributionsPlugin.init({ log })
     const d = log.getLogger('test')
-    const [{ commands }] = await commandsPlugin.init({
+    const [{ commands }] = commandsPlugin.init({
       log, contributions, options: {
         commands: {
           'a': () => d.info('exec a'),

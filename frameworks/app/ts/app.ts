@@ -23,6 +23,15 @@ export namespace createApp {
     & browserModule.BrowserOptions
 }
 
+// export function createApp2(options: createApp.Options) {
+//   const appContext = new AsyncContext({ name: options.name, appID: ctx.genAppID(), options })
+//   const startContext = new AsyncContext()
+//   return {
+//     extend() { },
+//     async load() { },
+//     async start() { }
+//   }
+// }
 
 
 export function createApp(options: createApp.Options): AppContext {

@@ -16,7 +16,8 @@ export type ContributionsOptions = {
 }
 
 export default definePlugin({
-  init: async (ctx: LogContext & { options?: ContributionsOptions }) => {
+  name: '@just-web/contributions',
+  init: (ctx: LogContext & { options?: ContributionsOptions }) => {
     const commands = commandContributionRegistry(ctx, ctx.options?.contributions?.commands)
     const keyBindings = keyBindingRegistry(ctx, ctx.options?.contributions?.keyBindings)
     return [{ contributions: { commands, keyBindings } }]

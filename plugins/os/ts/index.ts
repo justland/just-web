@@ -6,11 +6,8 @@ export * from './os'
 export { OSContext }
 
 export default definePlugin({
-  init: async (): Promise<[OSContext]> => {
-    return [{
-      os: { isMac },
-    }]
-  }
+  name: '@just-web/os',
+  init: (): [OSContext] => [{ os: { isMac } }]
 })
 
 export function createOSContext() {

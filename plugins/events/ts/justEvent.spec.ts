@@ -1,10 +1,10 @@
 import logPlugin from '@just-web/log'
 import eventsPlugin, { justEvent } from '.'
 
-it('can create just event', async () => {
+it('can create just event', () => {
   const addEvent = justEvent('add')
-  const [ctx] = await logPlugin.initForTest()
-  const [{ emitter }] = await eventsPlugin.init(ctx)
+  const [ctx] = logPlugin.initForTest()
+  const [{ emitter }] = eventsPlugin.init(ctx)
 
   let called = false
   addEvent.listenTo(emitter, () => called = true)
