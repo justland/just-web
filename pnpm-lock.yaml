@@ -309,9 +309,14 @@ importers:
       '@babel/core': ~7.18.0
       '@babel/plugin-syntax-flow': ~7.17.0
       '@babel/plugin-transform-react-jsx': ~7.17.3
-      '@just-web/app': workspace:*
+      '@just-web/app': workspace:^0.2.7
+      '@just-web/commands': workspace:*
+      '@just-web/contributions': workspace:^0.2.3
+      '@just-web/log': workspace:^0.2.2
       '@just-web/react': workspace:*
       '@just-web/repo-scripts': workspace:*
+      '@just-web/states': workspace:*
+      '@just-web/types': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
       '@storybook/addon-actions': ~6.4.19
       '@storybook/addon-console': ~1.2.3
@@ -391,7 +396,12 @@ importers:
       typescript: ^4.7.4
       webpack: ^5.70.0
     dependencies:
+      '@just-web/commands': link:../../frameworks/commands
+      '@just-web/contributions': link:../../frameworks/contributions
+      '@just-web/log': link:../../frameworks/log
       '@just-web/react': link:../../libraries/react
+      '@just-web/states': link:../../libraries/states
+      '@just-web/types': link:../../frameworks/types
       react: 17.0.2
       react-command-palette: 0.17.1_sfoxds7t5ydpegc3knd667wn6m
       react-dom: 17.0.2_react@17.0.2
@@ -7171,7 +7181,7 @@ packages:
       '@storybook/node-logger': 6.4.22
       '@storybook/postinstall': 6.4.22
       '@storybook/preview-web': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/react': 6.4.22_ffx552apspicr77y44rrkjfmfm
+      '@storybook/react': 6.4.22_l3s4irsikiydnencffk2zc66gq
       '@storybook/source-loader': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/store': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/theming': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -7793,7 +7803,7 @@ packages:
       '@storybook/core-client': 6.4.22_rme3cxzgjmyefwvomuzoypfkni
       '@storybook/core-common': 6.4.22_o6xja7a6erhupsrnyqkhrvz4h4
       '@storybook/csf': 0.0.2--canary.87bc651.0
-      '@storybook/react': 6.4.22_ffx552apspicr77y44rrkjfmfm
+      '@storybook/react': 6.4.22_l3s4irsikiydnencffk2zc66gq
       '@types/glob': 7.2.0
       '@types/jest': 26.0.24
       '@types/jest-specific-snapshot': 0.5.5
@@ -23267,7 +23277,7 @@ packages:
     dependencies:
       object-assign: 4.1.1
       react: 17.0.2
-      react-is: 17.0.2
+      react-is: 18.2.0
     dev: true
 
   /react-sizeme/3.0.2:

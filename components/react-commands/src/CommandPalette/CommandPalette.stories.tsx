@@ -1,7 +1,10 @@
-import { Context, createTestApp, logLevels, TestAppContext } from '@just-web/app'
+import { createTestApp, TestAppContext } from '@just-web/app'
+import { CommandsContext } from '@just-web/commands'
+import { ContributionsContext } from '@just-web/contributions'
+import { logLevels } from '@just-web/log'
 import { ComponentStory } from '@storybook/react'
 import Mousetrap from 'mousetrap'
-import * as module from '../module'
+import * as module from '..'
 import CommandPalette from './CommandPalette'
 
 export default {
@@ -15,7 +18,7 @@ interface Contribution {
   mac?: string
 }
 
-function addCommand(ctx: Context, ...inputs: Array<Contribution>) {
+function addCommand(ctx: CommandsContext & ContributionsContext, ...inputs: Array<Contribution>) {
   inputs.forEach(entry => {
     ctx.contributions.commands.add({ command: entry.command, description: entry.name })
     ctx.commands.register(entry.command, () => { alert(entry.command) })
