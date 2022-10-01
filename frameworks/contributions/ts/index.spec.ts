@@ -1,5 +1,5 @@
 import logPlugin, { createLogContext } from '@just-web/log'
-import { createContributionsContext, initialize } from './contributionsContext'
+import contributionsPlugin, { createContributionsContext } from '.'
 
 describe('createContributionsContext()', () => {
   test('returns commands', () => {
@@ -10,10 +10,10 @@ describe('createContributionsContext()', () => {
   })
 })
 
-describe(initialize.name, () => {
+describe(`plugin.${contributionsPlugin.init.name}()`, () => {
   it('returns contributions in PluginContext', async () => {
     const [{ log }] = await logPlugin.initForTest()
-    const [{ contributions }] = await initialize({ log })
+    const [{ contributions }] = await contributionsPlugin.init({ log })
     expect(contributions).toBeDefined()
     expect(contributions.commands).toBeDefined()
     expect(contributions.keyBindings).toBeDefined()
@@ -21,7 +21,7 @@ describe(initialize.name, () => {
 
   it('can prefill commands', async () => {
     const [{ log }] = await logPlugin.initForTest()
-    const [{ contributions }] = await initialize({
+    const [{ contributions }] = await contributionsPlugin.init({
       log, options: {
         contributions: {
           commands: [{ command: 'a' }]

@@ -20,7 +20,7 @@
       "path": "frameworks/contributions"
     },
     {
-      "path": "frameworks/errors"
+      "path": "plugins/browser"
     },
     {
       "path": "frameworks/events"
@@ -32,7 +32,7 @@
       "path": "frameworks/types"
     },
     {
-      "path": "frameworks/platform"
+      "path": "plugins/browser-contributions"
     },
     {
       "path": "libraries/format"
