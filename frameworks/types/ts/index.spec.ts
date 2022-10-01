@@ -1,3 +1,4 @@
+import { createStandardLog, LogMethodNames, StandardLogOptions } from 'standard-log'
 import { HasKey, isType } from 'type-plus'
 import { defineInitialize, definePlugin, defineStart } from '.'
 
@@ -297,6 +298,30 @@ describe(definePlugin.name, () => {
 
       isType.equal<true, [{ x: number }], Parameters<typeof plugin.initForTest>>()
       isType.equal<true, Promise<[{ a: number, b: number }, { b: number }]>, ReturnType<typeof plugin.initForTest>>()
+    })
+  })
+
+  describe('others', () => {
+    it('with generic uses defineInit()', async () => {
+      // `definePlugin()` does not work with property level generics.
+      // so need to use `defineInit()` and `defineStart()` in this case.
+
+      // const plugin = definePlugin({
+      //   async init<N extends string = LogMethodNames>({ options }: { options: StandardLogOptions<N> }) {
+      //     const sl = createStandardLog<N>(options)
+      //     return [sl]
+      //   }
+      // })
+      const plugin = {
+        init: defineInitialize(async <N extends string = LogMethodNames>({ options }: { options: StandardLogOptions<N> }) => {
+          const sl = createStandardLog<N>(options)
+          return [sl]
+        })
+      }
+
+      const [sl] = await plugin.init({ options: { customLevels: { silly: 1000 } } })
+      const log = sl.getLogger('test')
+      expect(log.silly).toBeDefined()
     })
   })
 })

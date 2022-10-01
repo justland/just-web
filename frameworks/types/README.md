@@ -1,42 +1,54 @@
-# @just-web/log
+# @just-web/types
 
-[`@just-web/log`] provides a consistent logging API to `@just-web` applications.
+[`@just-web/types`] provides type definitions for `@just-web` modules.
 
-It supports customization with runtime protection, sanitization, remote reporting, log level control, etc.
+## Install
 
-This is a core module of `@just-web`.
-You do not need to reference this module directly.
+```sh
+# npm
+npm install @just-web/types
 
-The features of this module are exposed through [`@just-web/app`].
+# yarn
+yarn add @just-web/types
 
-## Usage
+# pnpm
+pnpm install @just-web/types
 
-Import from [`@just-web/app`] to write logs:
-
-```ts
-import { log, getLogger } from '@just-web/app'
-
-function work() {
-  // ad-hoc logging
-  log.info('module', 'some log message')
-
-  // create a custom logger
-  const myLog = getLogger('module')
-  myLog.info('some log message')
-}
+#rush
+rush add -p @just-web/types
 ```
 
-Configure when creating the application:
+## [`definePlugin()`]
+
+Use this helper function to define a plugin module.
+
+The result should be exported as the default export.
 
 ```ts
-import { createApp } from '@just-web/app'
+import { definePlugin } from '@just-web/types'
 
-const app = createApp({
-  log: { /* log options */ }
+export default definePlugin({
+  init: async () => []
 })
 ```
 
-Please refer to the `handbook` to learn more about it.
+It is strongly typed and should work for most scenarios.
 
-[`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
-[`@just-web/log`]: https://github.com/justland/just-web/tree/main/frameworks/log
+## [`defineInit()`]
+
+If your plugin adds feature to the app using generics,
+currently [`definePlugin()`] does not support that.
+
+Instead, you can use [`defineInit()`] and other individual helpers instead:
+
+```ts
+import { defineInit } from '@just-web/types'
+
+export default {
+  init: defineInit(async <N>(ctx: { n: N }) => [{ n }])
+}
+```
+
+[`@just-web/types`]: https://github.com/justland/just-web/tree/main/frameworks/types
+[`definePlugin()`]:  https://github.com/justland/just-web/tree/main/frameworks/types/ts/index.ts
+[`defineInit()`]:  https://github.com/justland/just-web/tree/main/frameworks/types/ts/index.ts
