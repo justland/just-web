@@ -7,12 +7,13 @@ import type {
 } from '@just-web/contributions'
 import { createContributionsContext } from '@just-web/contributions'
 import type { LogContext, LogOptions, TestLogContext } from '@just-web/log'
+import { createOSContext, OSContext } from '@just-web/os'
 import { LeftJoin } from 'type-plus'
 import { ctx } from '../app.ctx'
 
 export type Context = {
   appID: string,
-} & LogContext & ContributionsContext & CommandsContext & BrowserContext
+} & LogContext & ContributionsContext & CommandsContext & BrowserContext & OSContext
 
 export type TestContext = LeftJoin<Context, TestLogContext>
 
@@ -24,12 +25,14 @@ export function createContext({ log }: LogContext, options?: createContext.Optio
   const contributions = createContributionsContext({ log }, options)
 
   const commands = createCommandsContext({ ...contributions, log, options })
+  const os = createOSContext()
 
   const context = {
     appID: ctx.genAppID(),
     log,
     ...commands,
     ...contributions,
+    ...os,
     ...createErrorsContext({ options })
   }
 
