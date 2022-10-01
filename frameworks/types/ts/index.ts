@@ -33,7 +33,7 @@ export namespace PluginModule {
     > = (context: NeedContext) => Promise<[undefined, StartContext]>
   export type initialize_C<
     in NeedContext extends Record<string | symbol, any>
-    > = (context: NeedContext) => Promise<[]>
+    > = (context: NeedContext) => Promise<void>
 
   export type initializeForTest<
     in NeedContext extends Record<string | symbol, any>,
@@ -46,7 +46,7 @@ export namespace PluginModule {
     > = (context?: NeedContext) => Promise<[undefined, StartContext?]>
   export type initializeForTest_C<
     in NeedContext extends Record<string | symbol, any>
-    > = (context?: NeedContext) => Promise<[]>
+    > = (context?: NeedContext) => Promise<void>
 
   /**
    * `start()` function is an optional function that if present,
@@ -149,21 +149,21 @@ export function defineStart<
 export type PluginModule_A<
   NeedContext extends Record<string | symbol, any>
   > = {
-    init: (context: NeedContext) => Promise<[]>
+    init: (context: NeedContext) => Promise<void>
   }
 
 export type PluginModule_A_WithTest<
   NeedContext extends Record<string | symbol, any>
   > = {
-    init: (context: NeedContext) => Promise<[]>,
-    initForTest: (context: NeedContext) => Promise<[]>
+    init: (context: NeedContext) => Promise<void>,
+    initForTest: (context: NeedContext) => Promise<void>
   }
 
 export type PluginModule_A_WithTestContext<
   NeedContext extends Record<string | symbol, any>,
   TestPluginContext extends Record<string | symbol, any>
   > = {
-    init: (context: NeedContext) => Promise<[]>,
+    init: (context: NeedContext) => Promise<void>,
     initForTest: (context: NeedContext) => Promise<[TestPluginContext]>
   }
 
