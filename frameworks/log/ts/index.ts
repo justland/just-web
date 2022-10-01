@@ -82,9 +82,10 @@ export type TestLogOptions<N extends string = LogMethodNames> = {
 }
 
 export default {
-  init: defineInitialize(async<N extends string = LogMethodNames>(
+  name: '@just-web/log',
+  init: defineInitialize(<N extends string = LogMethodNames>(
     { name, options }: { name: string, options?: LogOptions<N> }
-  ): Promise<[LogContext<N>]> => {
+  ): [LogContext<N>] => {
     const sl = createStandardLog<N>(options?.log)
     const log = sl.getLogger(`${name}:@just-web/log`)
     log.trace('create log context')
@@ -95,9 +96,9 @@ export default {
       }
     }]
   }),
-  initForTest: defineInitializeForTest(async <N extends string = LogMethodNames>(
+  initForTest: defineInitializeForTest(<N extends string = LogMethodNames>(
     ctx?: { name: string, options?: LogOptions<N> }
-  ): Promise<[TestLogContext<N>]> => {
+  ): [TestLogContext<N>] => {
     const name = ctx?.name ?? 'test'
     const reporter = createMemoryLogReporter()
     const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({

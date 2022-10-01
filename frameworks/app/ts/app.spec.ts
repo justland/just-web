@@ -21,20 +21,19 @@ describe('createApp()', () => {
 
   describe('addPlugin()', () => {
     it('throws if the plugin try to add property coliding with existing context', async () => {
-
+      // const app = createApp({ name: 'a' })
     })
   })
 
   it('send startContext to start()', async () => {
     const app = await createTestApp().addPlugin({
       async activate() {
-        return [{}, { a: 1 }]
+        return [{ b: 1 }, { a: 1 }]
       },
       async start(startContext) {
         expect(startContext).toEqual({ a: 1 })
       }
     })
-
     await app.start()
   })
   it('can get undefined for no context', async () => {

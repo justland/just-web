@@ -2,19 +2,19 @@ import logPlugin from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { commandRegistry } from './commandRegistry'
 
-async function setupTest(options?: commandRegistry.Options) {
-  const [logctx] = await logPlugin.initForTest()
+function setupTest(options?: commandRegistry.Options) {
+  const [logctx] = logPlugin.initForTest()
   return [commandRegistry(logctx, options), logctx.log] as const
 }
 
-it('creates as an empty registry', async () => {
-  const [logctx] = await logPlugin.initForTest()
+it('creates as an empty registry', () => {
+  const [logctx] = logPlugin.initForTest()
   const r = commandRegistry(logctx)
   expect(r.keys()).toEqual([])
 })
 
-it('creates with default commands', async () => {
-  const [logctx] = await logPlugin.initForTest()
+it('creates with default commands', () => {
+  const [logctx] = logPlugin.initForTest()
   const log = logctx.log.getLogger('test')
   const r = commandRegistry(logctx, {
     a: () => log.info('exec a')
@@ -25,23 +25,23 @@ it('creates with default commands', async () => {
 })
 
 describe('register()', () => {
-  it('registers a new command', async () => {
-    const [r] = await setupTest()
+  it('registers a new command', () => {
+    const [r] = setupTest()
 
     r.register('some.Command', () => { })
 
     expect(r.keys()).toEqual(['some.Command'])
   })
 
-  it('emits a warning if registering a command with existing id', async () => {
-    const [r, log] = await setupTest()
+  it('emits a warning if registering a command with existing id', () => {
+    const [r, log] = setupTest()
     r.register('just-web.showCommandPalette', () => { })
     r.register('just-web.showCommandPalette', () => { })
     logEqual(log.reporter, `(WARN) Registering a duplicate command, ignored: just-web.showCommandPalette`)
   })
 
-  it('can register a command taking params', async () => {
-    const [r] = await setupTest()
+  it('can register a command taking params', () => {
+    const [r] = setupTest()
     let actual: string
     r.register('just-web.editFile', (file: string) => actual = `editing ${file}`)
     r.invoke('just-web.editFile', 'abc.txt')
@@ -50,14 +50,14 @@ describe('register()', () => {
 })
 
 describe('keys()', () => {
-  test('empty to begin with', async () => {
-    const [r] = await setupTest()
+  test('empty to begin with', () => {
+    const [r] = setupTest()
     const cmds = r.keys()
     expect(cmds.length).toBe(0)
   })
 
-  test('get registered commands', async () => {
-    const [r] = await setupTest()
+  test('get registered commands', () => {
+    const [r] = setupTest()
     r.register('cmd1', () => { })
     r.register('cmd2', () => { })
     const cmds = r.keys()
@@ -66,24 +66,24 @@ describe('keys()', () => {
 })
 
 describe('invoke()', () => {
-  test('invoke not registered command emits an error', async () => {
-    const [r, log] = await setupTest()
+  test('invoke not registered command emits an error', () => {
+    const [r, log] = setupTest()
     r.invoke('not-exist')
 
     logEqual(log.reporter, `(ERROR) Invoking not registered command: 'not-exist'`)
   })
 
-  test('invoke command', async () => {
+  test('invoke command', () => {
     const fn = jest.fn()
-    const [r] = await setupTest()
+    const [r] = setupTest()
     r.register('command1', fn)
     r.invoke('command1')
     expect(fn).toHaveBeenCalledTimes(1)
   })
 
-  it('can invoke command with arguments', async () => {
+  it('can invoke command with arguments', () => {
     const fn = jest.fn()
-    const [r] = await setupTest()
+    const [r] = setupTest()
     r.register('command1', fn)
     r.invoke('command1', 1)
     expect(fn).toHaveBeenCalledWith(1)

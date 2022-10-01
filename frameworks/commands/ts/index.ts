@@ -20,7 +20,8 @@ export namespace createCommandsContext {
 }
 
 export default definePlugin({
-  init: async (ctx: createCommandsContext.Context): Promise<[CommandsContext]> => {
+  name: '@just-web/commands',
+  init: (ctx: createCommandsContext.Context): [CommandsContext] => {
     const log = ctx.log.getLogger('@just-web/commands')
     log.trace('create context')
     ctx.contributions.commands.add({

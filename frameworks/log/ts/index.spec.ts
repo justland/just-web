@@ -19,22 +19,22 @@ describe('createTestLogContext()', () => {
 })
 
 describe(`plugin.${plugin.init.name}`, () => {
-  it('exposes `log` in the PluginContext', async () => {
-    const [logContext] = await plugin.init({ name: 'test-app', options: { log: { customLevels: { 'silly': 500 } } } })
+  it('exposes `log` in the PluginContext', () => {
+    const [logContext] = plugin.init({ name: 'test-app', options: { log: { customLevels: { 'silly': 500 } } } })
 
     const l = logContext.log.getLogger('test logger')
     l.silly(`what's up`)
   })
 
-  it('can configure log options', async () => {
-    const [ctx] = await plugin.init({ name: 'test-app', options: { log: { logLevel: logLevels.all } } })
+  it('can configure log options', () => {
+    const [ctx] = plugin.init({ name: 'test-app', options: { log: { logLevel: logLevels.all } } })
     expect(ctx.log.logLevel).toEqual(logLevels.all)
   })
 })
 
 describe(`plugins.${plugin.initForTest.name}`, () => {
-  it('exposes reporter', async () => {
-    const [ctx] = await plugin.initForTest()
+  it('exposes reporter', () => {
+    const [ctx] = plugin.initForTest()
 
     expect(ctx.log.reporter).toBeDefined()
   })

@@ -9,11 +9,11 @@ test('exports', () => {
 })
 
 describe('plugin', () => {
-  it('registers `just-web.showCommandPalette` handler', async () => {
-    const [{ log }] = await logPlugin.initForTest()
-    const [{ contributions }] = await contributionsPlugin.init({ log })
-    const [{ commands }] = await commandsPlugin.init({ log, contributions })
-    await plugin.init({ log, commands })
+  it('registers `just-web.showCommandPalette` handler', () => {
+    const [{ log }] = logPlugin.initForTest()
+    const [{ contributions }] = contributionsPlugin.init({ log })
+    const [{ commands }] = commandsPlugin.init({ log, contributions })
+    plugin.init({ log, commands })
     expect(commands.keys()).toEqual(['just-web.showCommandPalette'])
   })
 })

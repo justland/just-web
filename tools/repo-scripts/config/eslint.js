@@ -77,7 +77,7 @@ module.exports = {
       overrides: [
         {
           extends: [
-            'plugin:harmony/ts-recommended-type-check'
+            'plugin:harmony/ts-recommended'
           ],
           files: [
             '*.ts',

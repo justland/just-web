@@ -6,7 +6,8 @@ import type { BrowserContributionsInitContext, BrowserContributionsStartContext 
 export { BrowserContributionsInitContext, BrowserContributionsStartContext }
 
 export default definePlugin({
-  init: async (ctx: BrowserContributionsInitContext) => ([undefined, ctx]),
+  name: '@just-web/browser-contributions',
+  init: (ctx: BrowserContributionsInitContext) => [undefined, ctx],
   start: async (ctx: BrowserContributionsStartContext) => {
     const log = ctx.log.getLogger('@just-web/browser-contributions')
     log.trace('start')

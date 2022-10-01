@@ -2,7 +2,7 @@ import {
   createApp, createMemoryLogReporter
 } from '@just-web/app'
 import { logMatchSome } from '@just-web/testing'
-import * as routesModule from './module'
+import * as routesModule from '.'
 
 describe('start()', () => {
   test('configure initial route', async () => {
