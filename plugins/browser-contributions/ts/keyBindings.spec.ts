@@ -3,7 +3,7 @@ import { initialize as initCommands } from '@just-web/commands'
 import {
   CommandContribution, initialize as initContributions, KeyBindingContribution
 } from '@just-web/contributions'
-import { initializeForTest } from '@just-web/log'
+import logPlugin from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import mousetrap from 'mousetrap'
 import { startKeyBindings } from './keyBindings'
@@ -13,7 +13,7 @@ type StubCommand = KeyBindingContribution & CommandContribution & {
 }
 
 async function setupTest(...stubCommands: StubCommand[]) {
-  const [{ log }] = await initializeForTest()
+  const [{ log }] = await logPlugin.initForTest()
   const [{ contributions }] = await initContributions({ log })
   const [{ commands }] = await initCommands({ log, contributions })
   const [{ browser, os }] = await browserPlugin.init({})

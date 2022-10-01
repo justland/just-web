@@ -788,75 +788,6 @@ importers:
       size-limit: 7.0.8
       typescript: 4.7.4
 
-  frameworks/platform:
-    specifiers:
-      '@babel/core': ~7.18.0
-      '@babel/plugin-transform-runtime': ~7.18.0
-      '@just-web/commands': workspace:*
-      '@just-web/contributions': workspace:*
-      '@just-web/log': workspace:*
-      '@just-web/repo-scripts': workspace:*
-      '@just-web/testing': workspace:*
-      '@just-web/types': workspace:*
-      '@size-limit/preset-small-lib': ~7.0.8
-      '@types/jest': ^27.4.1
-      '@types/mousetrap': ~1.6.9
-      '@types/platform': ~1.3.4
-      '@typescript-eslint/eslint-plugin': ^5.28.0
-      '@typescript-eslint/parser': ^5.28.0
-      depcheck: ~1.4.3
-      eslint: ^8.11.0
-      eslint-config-prettier: ~8.5.0
-      eslint-plugin-harmony: ^7.0.0
-      eslint-plugin-yml: ~0.14.0
-      jest: ^27.5.1
-      jest-validate: ^27.5.1
-      jest-watch-suspend: ^1.1.2
-      jest-watch-toggle-config: ^2.0.1
-      jest-watch-typeahead: ^1.0.0
-      mousetrap: ~1.6.5
-      npm-check-updates: ~12.5.4
-      npm-run-all: ^4.1.5
-      platform: ~1.3.6
-      rimraf: ~3.0.2
-      size-limit: ~7.0.8
-      type-plus: ^4.13.1
-      typescript: ^4.7.4
-    dependencies:
-      '@just-web/commands': link:../commands
-      '@just-web/contributions': link:../contributions
-      '@just-web/log': link:../log
-      '@just-web/types': link:../types
-      mousetrap: 1.6.5
-      platform: 1.3.6
-      type-plus: 4.13.1
-    devDependencies:
-      '@babel/core': 7.18.5
-      '@babel/plugin-transform-runtime': 7.18.2_@babel+core@7.18.5
-      '@just-web/repo-scripts': link:../../tools/repo-scripts
-      '@just-web/testing': link:../../tools/testing
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
-      '@types/jest': 27.5.2
-      '@types/mousetrap': 1.6.9
-      '@types/platform': 1.3.4
-      '@typescript-eslint/eslint-plugin': 5.28.0_bwdgjzdjqqu6lnspjrilve2nye
-      '@typescript-eslint/parser': 5.28.0_n4lrrl552kqf5nk4rgej5xdcha
-      depcheck: 1.4.3
-      eslint: 8.17.0
-      eslint-config-prettier: 8.5.0_eslint@8.17.0
-      eslint-plugin-harmony: 7.1.0_r24eqxgq7ylgawlt6wd47ohkja
-      eslint-plugin-yml: 0.14.0_eslint@8.17.0
-      jest: 27.5.1
-      jest-validate: 27.5.1
-      jest-watch-suspend: 1.1.2_jest@27.5.1
-      jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
-      jest-watch-typeahead: 1.1.0_jest@27.5.1
-      npm-check-updates: 12.5.12
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      size-limit: 7.0.8
-      typescript: 4.7.4
-
   frameworks/types:
     specifiers:
       '@babel/core': ~7.18.0
@@ -880,6 +811,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
+      standard-log: ^10.1.0
       type-plus: ^4.13.1
       typescript: ^4.7.4
     devDependencies:
@@ -904,6 +836,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
+      standard-log: 10.1.0
       type-plus: 4.13.1
       typescript: 4.7.4
 
@@ -6531,7 +6464,6 @@ packages:
     resolution: {integrity: sha512-NHhnteq2kwQkgJcBOp3jLdIvV3zZvjVuXEBqkqkefmyS2I0XEKWGXlBQz/37N7IGZrnnG9fvd4PAAYoQ7AjkyA==}
     dependencies:
       type-plus: 4.13.1
-    dev: false
 
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
@@ -18196,7 +18128,6 @@ packages:
   /iso-error/4.3.8:
     resolution: {integrity: sha512-+8YKN8LRIV8FC9h62mdpQgOkeVfI/o4XZguNqCTHmXysGsFMJGeiosXkUYZyiQNbZOEw8g0czL0E596pp5E3+Q==}
     engines: {node: '>= 10'}
-    dev: false
 
   /isobject/2.1.0:
     resolution: {integrity: sha512-+OUdGJlgjOBZDfxnDjYYG6zp487z0JGNQq3cYQYg5f5hKR+syHMsaztzGeml/4kGG55CSpKSpWTY+jYGgsHLgA==}
@@ -24753,7 +24684,6 @@ packages:
       ms: 2.1.3
       type-plus: 4.13.1
       upper-case: 2.0.2
-    dev: false
 
   /state-toggle/1.0.3:
     resolution: {integrity: sha512-d/5Z4/2iiCnHw6Xzghyhb+GcmF89bxwgXG60wjIiZaxnymbyOmI8Hk4VqHXiVVp6u2ysaskFfXg3ekCj4WNftQ==}
@@ -26182,7 +26112,6 @@ packages:
     resolution: {integrity: sha512-KgdgDGJt2TpuwBUIjgG6lzw2GWFRCW9Qkfkiv0DxqHHLYJHmtmdUIKcZd8rHgFSjopVTlw6ggzCm1b8MFQwikg==}
     dependencies:
       tslib: 2.4.0
-    dev: false
 
   /uri-js/4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}

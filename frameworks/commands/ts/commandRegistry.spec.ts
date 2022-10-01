@@ -1,20 +1,20 @@
-import { initializeForTest } from '@just-web/log'
+import logPlugin from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { commandRegistry } from './commandRegistry'
 
 async function setupTest(options?: commandRegistry.Options) {
-  const [logctx] = await initializeForTest()
+  const [logctx] = await logPlugin.initForTest()
   return [commandRegistry(logctx, options), logctx.log] as const
 }
 
 it('creates as an empty registry', async () => {
-  const [logctx] = await initializeForTest()
+  const [logctx] = await logPlugin.initForTest()
   const r = commandRegistry(logctx)
   expect(r.keys()).toEqual([])
 })
 
 it('creates with default commands', async () => {
-  const [logctx] = await initializeForTest()
+  const [logctx] = await logPlugin.initForTest()
   const log = logctx.log.getLogger('test')
   const r = commandRegistry(logctx, {
     a: () => log.info('exec a')
