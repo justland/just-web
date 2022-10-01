@@ -1,22 +1,17 @@
+import { BrowserContext } from '@just-web/browser'
 import type { CommandsContext } from '@just-web/commands'
-import { KeyBindingContribution, KeyBindingContributionRegistry } from '@just-web/contributions'
+import { ContributionsContext, KeyBindingContribution } from '@just-web/contributions'
 import type { LogContext } from '@just-web/log'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
-import { isMac } from './os'
-import type { PlatformContext } from './types'
+import { ctx } from './keyBindings.ctx'
 
 export namespace startKeyBindings {
-  export type Options = {
-    platform: PlatformContext,
-    contributions: {
-      keyBindings: KeyBindingContributionRegistry
-    }
-  } & LogContext & CommandsContext
+  export type Param = BrowserContext & LogContext & ContributionsContext & CommandsContext
 }
 
 let keys: Record<string, boolean>
-export function startKeyBindings(options: startKeyBindings.Options) {
+export function startKeyBindings(options: startKeyBindings.Param) {
   const keyBindings = options.contributions.keyBindings
 
   keys = record()
@@ -30,10 +25,10 @@ export function startKeyBindings(options: startKeyBindings.Options) {
   })
 }
 
-function bindKey({ log: logContext, commands }: startKeyBindings.Options, keyBinding: KeyBindingContribution) {
+function bindKey({ log: logContext, commands }: startKeyBindings.Param, keyBinding: KeyBindingContribution) {
   const key = getKey(keyBinding)
   if (key) {
-    const log = logContext.getLogger('@just-web/platform')
+    const log = logContext.getLogger('@just-web/browser-contributions')
     if (keys[key]) {
       log.warn(`Registering a duplicate key binding, ignored: ${keyBinding.command} - ${key}`)
     }
@@ -51,7 +46,7 @@ function bindKey({ log: logContext, commands }: startKeyBindings.Options, keyBin
 }
 
 function getKey(keyBinding: any): string {
-  if (isMac()) return (keyBinding.mac ?? keyBinding.key) as string
+  if (ctx.isMac()) return (keyBinding.mac ?? keyBinding.key) as string
   return keyBinding.key as string
 }
 

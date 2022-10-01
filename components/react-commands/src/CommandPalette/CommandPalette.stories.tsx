@@ -87,8 +87,8 @@ WithKey.play = () => {
 export const OverrideMacCommandInMac = Story.bind({})
 OverrideMacCommandInMac.loaders = [
   async () => loadApp(app => {
-    app.platform = {
-      ...app.platform,
+    app.os = {
+      ...app.os,
       isMac: () => true
     }
     addCommand(app, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
@@ -101,9 +101,9 @@ OverrideMacCommandInMac.play = () => {
 export const OverrideMacCommandInWindow = Story.bind({})
 OverrideMacCommandInWindow.loaders = [
   async () => loadApp(app => {
-    app.platform = {
-      ...app.platform,
-      isMac: () => false
+    app.os = {
+      ...app.os,
+      isMac: () => true
     }
     addCommand(app, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
   })

@@ -11,7 +11,8 @@
       "@just-web/errors",
       "@just-web/events",
       "@just-web/log",
-      "@just-web/platform",
+      "@just-web/browser",
+      "@just-web/browser-contributions",
       "@just-web/states",
       "@just-web/format"
     ]

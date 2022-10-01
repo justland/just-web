@@ -1,23 +1,22 @@
-import { commandRegistry } from '@just-web/commands'
-import { CommandContribution, commandContributionRegistry, KeyBindingContribution, keyBindingRegistry } from '@just-web/contributions'
-import { createTestLogContext } from '@just-web/log'
+import browserPlugin from '@just-web/browser'
+import { initialize as initCommands } from '@just-web/commands'
+import {
+  CommandContribution, initialize as initContributions, KeyBindingContribution
+} from '@just-web/contributions'
+import { initializeForTest } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import mousetrap from 'mousetrap'
-import { createPlatformContext } from './context'
 import { startKeyBindings } from './keyBindings'
 
 type StubCommand = KeyBindingContribution & CommandContribution & {
   handler(command: KeyBindingContribution & CommandContribution): void
 }
 
-function setupTest(...stubCommands: StubCommand[]) {
-  const ctx = createTestLogContext()
-
-  const contributions = {
-    commands: commandContributionRegistry(ctx),
-    keyBindings: keyBindingRegistry(ctx)
-  }
-  const commands = commandRegistry(ctx)
+async function setupTest(...stubCommands: StubCommand[]) {
+  const [{ log }] = await initializeForTest()
+  const [{ contributions }] = await initContributions({ log })
+  const [{ commands }] = await initCommands({ log, contributions })
+  const [{ browser, os }] = await browserPlugin.init({})
 
   stubCommands.forEach(stubCommand => {
     contributions.commands.add(stubCommand)
@@ -27,18 +26,19 @@ function setupTest(...stubCommands: StubCommand[]) {
       () => stubCommand.handler(stubCommand))
   })
   return {
-    ...ctx,
+    browser,
+    os,
+    log,
     commands,
-    contributions,
-    platform: createPlatformContext()
+    contributions
   }
 }
 
 beforeEach(() => { mousetrap.reset() })
 
-test('trigger command', () => {
+test('trigger command', async () => {
   const invoked: string[] = []
-  const options = setupTest({
+  const options = await setupTest({
     command: 'just-test.showJob',
     description: 'show job',
     key: 'ctrl+j',
@@ -50,9 +50,9 @@ test('trigger command', () => {
   expect(invoked).toEqual(['show job'])
 })
 
-test('trigger cmd command', () => {
+test('trigger cmd command', async () => {
   const invoked: string[] = []
-  const options = setupTest({
+  const options = await setupTest({
     command: 'just-test.showJob',
     description: 'show job',
     key: 'cmd+j',
@@ -65,8 +65,8 @@ test('trigger cmd command', () => {
   expect(invoked).toEqual(['show job'])
 })
 
-test('emit warning for duplicate key binding', () => {
-  const options = setupTest({
+test('emit warning for duplicate key binding', async () => {
+  const options = await setupTest({
     command: 'just-test.showJob',
     description: 'show job',
     key: 'ctrl+j',

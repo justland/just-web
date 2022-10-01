@@ -11,16 +11,19 @@
   },
   "references": [
     {
+      "path": "../../plugins/browser"
+    },
+    {
       "path": "../../frameworks/commands"
+    },
+    {
+      "path": "../../frameworks/contributions"
     },
     {
       "path": "../../frameworks/log"
     },
     {
       "path": "../../frameworks/types"
-    },
-    {
-      "path": "../../frameworks/contributions"
     },
     {
       "path": "../../tools/testing"
