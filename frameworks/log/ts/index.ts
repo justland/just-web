@@ -1,11 +1,11 @@
-import { StackTraceMeta } from '@just-func/types'
+import type { StackTraceMeta } from '@just-func/types'
 import { defineInitialize, defineInitializeForTest } from '@just-web/types'
 import {
-  createMemoryLogReporter, createStandardLog, Logger,
-  logLevels, LogMethodNames, LogReporter, MemoryLogReporter,
-  ReporterFilter, StandardLog, StandardLogOptions
+  createMemoryLogReporter, createStandardLog, getLogger, Logger,
+  logLevels, LogMethodNames, LogReporter, ReporterFilter,
+  StandardLog, StandardLogForTest, StandardLogOptions
 } from 'standard-log'
-import { omit, requiredDeep } from 'type-plus'
+import { omit, Omit, requiredDeep } from 'type-plus'
 
 export {
   createConsoleLogReporter, createMemoryLogReporter, createStandardLogForTest,
@@ -66,19 +66,27 @@ export function justLog<N extends string = LogMethodNames>(param?: justLog.Param
 }
 
 export type LogContext<N extends string = LogMethodNames> = {
-  log: StandardLog<N>
+  log: StandardLog<N> & Omit<Logger<LogMethodNames | N>, 'id' | 'level' | 'write'>
 }
 
 export type LogOptions<N extends string = LogMethodNames> = {
   log?: StandardLogOptions<N>
 }
 
-export type TestLogContext<N extends string = LogMethodNames> = LogContext<N> & {
-  log: { reporter: MemoryLogReporter }
+export type TestLogContext<N extends string = LogMethodNames> = {
+  log: StandardLogForTest<N> & Omit<Logger<LogMethodNames | N>, 'id' | 'level' | 'write'>
 }
 
 export type TestLogOptions<N extends string = LogMethodNames> = {
   log?: Partial<Omit<StandardLogOptions<N>, 'reporters'>>
+}
+
+export function createPrefixedGetLogger<
+  N extends string = LogMethodNames
+>(context: LogContext<N>, prefix: string): typeof getLogger<N> {
+  return function getLogger(id, options) {
+    return context.log.getLogger(`${prefix}:${id}`, options)
+  }
 }
 
 export default {
@@ -88,10 +96,13 @@ export default {
   ): [LogContext<N>] => {
     const sl = createStandardLog<N>(options?.log)
     const log = sl.getLogger(`${name}:@just-web/log`)
-    log.trace('create log context')
+    log.trace('init')
+
+    const appLogger = sl.getLogger(name)
     return [{
       log: {
         ...sl,
+        ...omit(appLogger, 'id', 'level', 'write'),
         getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) }
       }
     }]
@@ -101,18 +112,20 @@ export default {
   ): [TestLogContext<N>] => {
     const name = ctx?.name ?? 'test'
     const reporter = createMemoryLogReporter()
-    const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
+    const sl = Object.assign(createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
       logLevel: logLevels.debug,
       reporters: [reporter]
-    }, ctx?.options?.log))
+    }, ctx?.options?.log)), { reporter })
 
     const log = sl.getLogger(`${name}:@just-web/log`)
     log.trace('create test log context')
+
+    const appLogger = sl.getLogger(name)
     return [{
       log: {
         ...sl,
-        getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) },
-        reporter
+        ...omit(appLogger, 'id', 'level', 'write'),
+        getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) }
       }
     }]
   })
@@ -124,9 +137,12 @@ export function createLogContext<N extends string = LogMethodNames>(
   const sl = createStandardLog<N>(options?.log)
   const log = sl.getLogger(`${name}:@just-web/log`)
   log.trace('create log context')
+  const appLogger = sl.getLogger(name)
+
   return {
     log: {
       ...sl,
+      ...omit(appLogger, 'id', 'level', 'write'),
       getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) }
     }
   }
@@ -137,18 +153,19 @@ export function createTestLogContext<
 >(ctx?: { name?: string }, options?: TestLogOptions<N>): TestLogContext<N> {
   const name = ctx?.name ?? 'test'
   const reporter = createMemoryLogReporter()
-  const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
+  const sl = Object.assign(createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
     logLevel: logLevels.debug,
     reporters: [reporter]
-  }, options?.log))
+  }, options?.log)), { reporter })
 
   const log = sl.getLogger(`${name}:@just-web/log`)
   log.trace('create test log context')
+  const appLogger = sl.getLogger(name)
   return {
     log: {
       ...sl,
-      getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) },
-      reporter
+      ...omit(appLogger, 'id', 'level', 'write'),
+      getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) }
     }
   }
 }

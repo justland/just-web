@@ -1,4 +1,4 @@
-import { createMemoryLogReporter, justLog } from '.'
+import { createMemoryLogReporter, justLog } from './index'
 
 it('can be created without params', () => {
   const jl = justLog()
