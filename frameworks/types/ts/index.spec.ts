@@ -19,8 +19,8 @@ describe(defineInitialize.name, () => {
   })
 
   it('accepts async function returns no context', async () => {
-    const i = defineInitialize(async () => ([]))
-    expect(await i({})).toEqual([])
+    const i = defineInitialize(async () => { })
+    expect(await i({})).toBeUndefined()
   })
 })
 
@@ -33,15 +33,15 @@ describe(defineStart.name, () => {
 describe(definePlugin.name, () => {
   describe('PluginModule_A: no PluginContext and StartContext', () => {
     it('requires only the init() function. NeedContext can be omitted', () => {
-      let plugin = definePlugin({ init: async () => ([]) })
-      plugin = definePlugin({ async init() { return [] } })
+      let plugin = definePlugin({ init: async () => { } })
+      plugin = definePlugin({ async init() { } })
 
       isType.equal<true, [Record<string | symbol, any>], Parameters<typeof plugin.init>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.init>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.init>>()
     })
 
     it('does not return plugin with initForTest if not specified', () => {
-      const plugin = definePlugin({ init: async (_: { a: number }) => ([]) })
+      const plugin = definePlugin({ init: async (_: { a: number }) => { } })
 
       isType.f<HasKey<typeof plugin, 'initForTest'>>()
     })
@@ -50,79 +50,75 @@ describe(definePlugin.name, () => {
       const plugin = definePlugin({
         async init(ctx) {
           isType.equal<true, Record<string | symbol, any>, typeof ctx>()
-          return []
         },
         async initForTest(ctx) {
           isType.equal<true, Record<string | symbol, any>, typeof ctx>()
-          return []
         }
       })
 
       isType.equal<true, [Record<string | symbol, any>], Parameters<typeof plugin.init>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.init>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.init>>()
 
       isType.equal<true, [Record<string | symbol, any>], Parameters<typeof plugin.initForTest>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.initForTest>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.initForTest>>()
     })
 
     it('defaults NeedContext to Record<string|symbol, any>', () => {
       const plugin = definePlugin({
         async init(ctx) {
           isType.equal<true, Record<string | symbol, any>, typeof ctx>()
-          return []
         }
       })
 
       isType.equal<true, [Record<string | symbol, any>], Parameters<typeof plugin.init>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.init>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.init>>()
     })
 
     it('can specify NeedContext', async () => {
-      const plugin = definePlugin({ async init(_: { a: number }) { return [] } })
+      const plugin = definePlugin({ async init(_: { a: number }) { } })
 
       isType.equal<true, [{ a: number }], Parameters<typeof plugin.init>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.init>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.init>>()
     })
 
     it('links NeedContext for `init()` and `initForTest()`', async () => {
       const plugin = definePlugin({
-        async init(_: { a: number }) { return [] },
+        async init(_: { a: number }) { },
         async initForTest(ctx) {
           isType.equal<true, { a: number }, typeof ctx>()
-          return []
         }
       })
 
       isType.equal<true, [{ a: number }], Parameters<typeof plugin.init>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.init>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.init>>()
 
       isType.equal<true, [{ a: number }], Parameters<typeof plugin.initForTest>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.initForTest>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.initForTest>>()
     })
 
     it('`initForTest()` can skip ctx', async () => {
       const plugin = definePlugin({
-        async init(_: { a: number }) { return [] },
-        async initForTest() { return [] }
+        async init(_: { a: number }) { },
+        async initForTest() { }
       })
 
       isType.equal<true, [{ a: number }], Parameters<typeof plugin.init>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.init>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.init>>()
 
       isType.equal<true, [{ a: number }], Parameters<typeof plugin.initForTest>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.initForTest>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.initForTest>>()
     })
 
     it('allows `initForTest()` to returns a TestPluginContext', () => {
       const plugin = definePlugin({
-        async init(_: { a: number }) { return [] },
+        async init(_: { a: number }) { },
         async initForTest(ctx) {
           isType.equal<true, { a: number }, typeof ctx>()
           return [{ b: 1 }]
         }
       })
       isType.equal<true, [{ a: number }], Parameters<typeof plugin.init>>()
-      isType.equal<true, Promise<[]>, ReturnType<typeof plugin.init>>()
+      isType.equal<true, Promise<void>, ReturnType<typeof plugin.init>>()
 
       isType.equal<true, [{ a: number }], Parameters<typeof plugin.initForTest>>()
       isType.equal<true, Promise<[{ b: number }]>, ReturnType<typeof plugin.initForTest>>()
