@@ -23,7 +23,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "iso-error": "~4.3.8",
+    "iso-error": "~4.4.0",
     "type-plus": "^4.13.1"
   },
   "devDependencies": {

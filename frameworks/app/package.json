@@ -30,7 +30,8 @@
     "@just-web/log": "workspace:*",
     "@just-web/os": "workspace:*",
     "@just-web/states": "workspace:*",
-    "iso-error": "~4.3.8",
+    "async-fp": "^8.0.0",
+    "iso-error": "~4.4.0",
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
