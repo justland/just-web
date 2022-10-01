@@ -1,9 +1,9 @@
-import { initializeForTest } from '@just-web/log'
+import logPlugin from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { keyBindingRegistry } from './keyBindings'
 
 async function setupTest(options?: keyBindingRegistry.Options) {
-  const [logctx] = await initializeForTest()
+  const [logctx] = await logPlugin.initForTest()
   return [keyBindingRegistry(logctx, options), logctx.log] as const
 }
 

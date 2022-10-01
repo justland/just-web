@@ -1,16 +1,16 @@
-import * as logModule from '@just-web/log'
+import logPlugin from '@just-web/log'
 import * as contributionsModule from '@just-web/contributions'
 import { initialize } from './context'
 
 describe('initialize()', () => {
   test('basic case', async () => {
-    const [{ log }] = await logModule.initializeForTest()
+    const [{ log }] = await logPlugin.initForTest()
     const [{ contributions }] = await contributionsModule.initialize({ log })
     await initialize({ log, contributions })
   })
 
   it('supports predefined commands', async () => {
-    const [{ log }] = await logModule.initializeForTest()
+    const [{ log }] = await logPlugin.initForTest()
     const [{ contributions }] = await contributionsModule.initialize({ log })
     const d = log.getLogger('test')
     const [{ commands }] = await initialize({

@@ -1,9 +1,9 @@
-import { initializeForTest } from '@just-web/log'
+import logPlugin from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { commandContributionRegistry } from './commands'
 
 async function setupTest(options?: commandContributionRegistry.Options) {
-  const [logctx] = await initializeForTest()
+  const [logctx] = await logPlugin.initForTest()
   return [commandContributionRegistry(logctx, options), logctx.log] as const
 }
 
