@@ -1,5 +1,7 @@
+
 import { LogContext } from '@just-web/log'
 import { createRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
+import { sentenceCase } from 'sentence-case'
 import { record } from 'type-plus'
 
 export interface CommandContribution {
@@ -54,4 +56,17 @@ function getInitRecord(options?: commandContributionRegistry.Options) {
     p[c.command] = c
     return p
   }, record<string, CommandContribution>())
+}
+
+export function formatCommand(cmd: CommandContribution) {
+  return {
+    command: cmd.command,
+    name: cmd.name ?? generateName(cmd.command),
+    description: cmd.description
+  }
+}
+
+function generateName(command: string) {
+  const i = command.indexOf('.')
+  return sentenceCase(command.slice(i))
 }

@@ -58,6 +58,8 @@
     "@babel/core": "~7.18.0",
     "@babel/plugin-syntax-flow": "~7.17.0",
     "@babel/plugin-transform-react-jsx": "~7.17.3",
+    "@just-web/contributions": "workspace:^0.2.3",
+    "@just-web/log": "workspace:^0.2.2",
     "@just-web/repo-scripts": "workspace:*",
     "@storybook/addon-actions": "~6.4.22",
     "@storybook/addon-essentials": "~6.4.22",

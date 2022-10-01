@@ -13,8 +13,7 @@
       "@just-web/log",
       "@just-web/browser",
       "@just-web/browser-contributions",
-      "@just-web/states",
-      "@just-web/format"
+      "@just-web/states"
     ]
   ],
   "linked": [],

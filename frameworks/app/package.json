@@ -27,7 +27,6 @@
     "@just-web/browser-contributions": "workspace:*",
     "@just-web/commands": "workspace:*",
     "@just-web/contributions": "workspace:*",
-    "@just-web/format": "workspace:*",
     "@just-web/log": "workspace:*",
     "@just-web/os": "workspace:*",
     "@just-web/states": "workspace:*",

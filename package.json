@@ -25,7 +25,6 @@
     "dev": "turbo run dev --parallel",
     "errors": "pnpm --filter=@just-web/errors",
     "events": "pnpm --filter=@just-web/events",
-    "format": "pnpm --filter=@just-web/format",
     "lint": "turbo run lint",
     "log": "pnpm --filter=@just-web/log",
     "nuke:local": "rimraf node_modules || true",

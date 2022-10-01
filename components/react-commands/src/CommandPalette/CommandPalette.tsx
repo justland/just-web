@@ -1,5 +1,5 @@
 import type { CommandContribution, Context, KeyBindingContribution } from '@just-web/app'
-import { formatCommand, formatKeyBinding } from '@just-web/app'
+import { formatCommand, formatKeyBinding } from '@just-web/contributions'
 import { useStore } from '@just-web/react'
 import { VFC } from 'react'
 import CP from 'react-command-palette'

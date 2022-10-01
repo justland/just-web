@@ -1,5 +1,6 @@
 import logPlugin from '@just-web/log'
 import { logEqual } from '@just-web/testing'
+import { formatCommand } from '.'
 import { commandContributionRegistry } from './commands'
 
 async function setupTest(options?: commandContributionRegistry.Options) {
@@ -46,5 +47,32 @@ describe('add()', () => {
     store.add(cmd1, cmd2)
 
     expect(Object.keys(store.get()).length).toBe(2)
+  })
+})
+
+describe('formatCommand()', () => {
+  const allDefinedCommand = {
+    command: 'app.someCommand',
+    name: 'Sing a song',
+    description: 'Jingle Bell'
+  }
+  test('use defined name', () => {
+    const a = formatCommand(allDefinedCommand)
+
+    expect(a).toEqual({
+      command: 'app.someCommand',
+      name: 'Sing a song',
+      description: 'Jingle Bell'
+    })
+  })
+
+  test('create name from command as sentence case, skipping first category', () => {
+    const a = formatCommand({ command: 'app.miku.singASong' })
+
+    expect(a).toEqual({
+      command: 'app.miku.singASong',
+      name: 'Miku sing a song',
+      description: undefined
+    })
   })
 })

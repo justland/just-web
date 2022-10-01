@@ -2,7 +2,6 @@ export type {
   CommandContribution,
   KeyBindingContribution
 } from '@just-web/contributions'
-export * from '@just-web/format'
 export * from '@just-web/log'
 export * from '@just-web/states'
 export * from './app'
