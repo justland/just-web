@@ -76,13 +76,12 @@ describe(`plugin.${plugin.init.name}()`, () => {
 })
 
 describe(`plugins.${plugin.initForTest.name}()`, () => {
-  it('logs everything and provides memory reporter', () => {
+  it('defaults logLevel to debug and provides memory reporter', () => {
     const [{ log }] = plugin.initForTest()
 
-    expect(log.logLevel).toEqual(logLevels.all)
+    expect(log.logLevel).toEqual(logLevels.debug)
     log.info('hello')
     expect(log.reporter.getLogMessages()).toEqual([
-      'initForTest',
       'hello'
     ])
   })

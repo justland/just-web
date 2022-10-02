@@ -113,7 +113,7 @@ export default {
     const name = ctx?.name ?? 'test'
     const reporter = createMemoryLogReporter()
     const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
-      logLevel: logLevels.all,
+      logLevel: logLevels.debug,
       reporters: [reporter]
     }, ctx?.log))
 
