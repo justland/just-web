@@ -1,3 +1,5 @@
+export type AppBaseContext = { name: string }
+
 /**
  * This PluginModule namespace describes the key exports within your module.
  * The `_B`/`_C` are function overload which you can ignore.

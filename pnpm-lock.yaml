@@ -507,11 +507,13 @@ importers:
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
       '@just-web/testing': workspace:*
+      '@just-web/types': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@types/ramda': ^0.28.14
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
+      assertron: ^10.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
@@ -538,6 +540,7 @@ importers:
       '@just-web/log': link:../log
       '@just-web/os': link:../../plugins/os
       '@just-web/states': link:../../libraries/states
+      '@just-web/types': link:../types
       iso-error: 4.4.0
       type-plus: 4.13.1
     devDependencies:
@@ -550,6 +553,7 @@ importers:
       '@types/ramda': 0.28.14
       '@typescript-eslint/eslint-plugin': 5.28.0_bwdgjzdjqqu6lnspjrilve2nye
       '@typescript-eslint/parser': 5.28.0_n4lrrl552kqf5nk4rgej5xdcha
+      assertron: 10.0.0
       depcheck: 1.4.3
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
@@ -12489,12 +12493,11 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       is-promise: 4.0.0
-      iso-error: 4.3.8
+      iso-error: 4.4.0
       path-equal: 1.2.2
       satisfier: 5.2.2
       tersify: 3.10.2
       type-plus: 4.13.1
-    dev: false
 
   /assign-symbols/1.0.0:
     resolution: {integrity: sha512-Q+JC7Whu8HhmTdBph/Tq59IoRtoy6KAm5zzPv00WdujX82lbAL8K7WVjne7vdCsAmbF4AYaDOPyO3k0kl8qIrw==}
@@ -18010,7 +18013,6 @@ packages:
 
   /is-promise/4.0.0:
     resolution: {integrity: sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==}
-    dev: false
 
   /is-regex/1.1.4:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
@@ -18145,7 +18147,6 @@ packages:
   /iso-error/4.4.0:
     resolution: {integrity: sha512-DRPiLihxUYhz4rMbfdzvm+l8ihd+d1QXClNa/SJk5HMrX93T5y7A7S+rwNOS+x2Tlzfc/IE0OrJhz/RyQ6s28Q==}
     engines: {node: '>= 10'}
-    dev: false
 
   /isobject/2.1.0:
     resolution: {integrity: sha512-+OUdGJlgjOBZDfxnDjYYG6zp487z0JGNQq3cYQYg5f5hKR+syHMsaztzGeml/4kGG55CSpKSpWTY+jYGgsHLgA==}
@@ -21324,7 +21325,6 @@ packages:
 
   /path-equal/1.2.2:
     resolution: {integrity: sha512-AUJvbcle1Zgb1TgtftHYknlrgrSYyI1ytrYgSbKUHSybwqUDnbD2cw9PIWivuMvsN+GTXmr/DRN4VBXpHG6aGg==}
-    dev: false
 
   /path-exists/3.0.0:
     resolution: {integrity: sha512-bpC7GYwiDYQ4wYLe+FA8lhRjhQCMcQGuSgGGqDkg/QerRWw9CmGRT0iSOVRSZJ29NMLZgIzqaljJ63oaL4NIJQ==}
@@ -24030,7 +24030,6 @@ packages:
     resolution: {integrity: sha512-VEMcWR7F9xCqWtmjt8HetuycNAPqP5MPcZrYTs+DshHNiE39jWLPjdZeTt/+bhh4ogge2OuktNOWTMcQHAOHcA==}
     dependencies:
       tersify: 3.10.2
-    dev: false
 
   /sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}

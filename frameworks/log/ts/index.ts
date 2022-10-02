@@ -1,5 +1,5 @@
 import type { StackTraceMeta } from '@just-func/types'
-import { defineInitialize, defineInitializeForTest } from '@just-web/types'
+import { AppBaseContext, defineInitialize, defineInitializeForTest } from '@just-web/types'
 import {
   createMemoryLogReporter, createStandardLog, DEFAULT_LOG_METHOD_NAMES, getLogger, Logger,
   logLevels, LogMethodNames, LogReporter, ReporterFilter,
@@ -92,30 +92,30 @@ export function createPrefixedGetLogger<
 export default {
   name: '@just-web/log',
   init: defineInitialize(<N extends string = LogMethodNames>(
-    { name, options }: { name: string, options?: LogOptions<N> }
+    ctx: AppBaseContext & LogOptions<N>
   ): [LogContext<N>] => {
-    const sl = createStandardLog<N>(options?.log)
-    sl.getLogger(`${name}:@just-web/log`).trace('init')
+    const sl = createStandardLog<N>(ctx.log)
+    sl.getLogger(`${ctx.name}:@just-web/log`).trace('init')
 
     const log = {
       ...sl,
-      getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) },
+      getLogger(id, options) { return sl.getLogger(`${ctx.name}:${id}`, options) },
     } as LogContext<N>['log']
 
-    const appLogger = sl.getLogger(name)
-    const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.log?.customLevels ?? {})).concat(['on', 'count'])
+    const appLogger = sl.getLogger(ctx.name)
+    const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(ctx?.log?.customLevels ?? {})).concat(['on', 'count'])
     logMethods.forEach(m => (log as any)[m] = (appLogger as any)[m].bind(appLogger))
     return [{ log }]
   }),
   initForTest: defineInitializeForTest(<N extends string = LogMethodNames>(
-    ctx?: { name: string, options?: LogOptions<N> }
+    ctx?: AppBaseContext & LogOptions<N>
   ): [TestLogContext<N>] => {
     const name = ctx?.name ?? 'test'
     const reporter = createMemoryLogReporter()
     const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
       logLevel: logLevels.all,
       reporters: [reporter]
-    }, ctx?.options?.log))
+    }, ctx?.log))
 
     sl.getLogger(`${name}:@just-web/log`).trace('initForTest')
 
@@ -125,7 +125,7 @@ export default {
     } as TestLogContext<N>['log']
 
     const appLogger = sl.getLogger(name)
-    const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(ctx?.options?.log?.customLevels ?? {})).concat(['on'])
+    const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(ctx?.log?.customLevels ?? {})).concat(['on'])
     logMethods.forEach(m => (log as any)[m] = (appLogger as any)[m].bind(appLogger))
     return [{ log: { ...log, reporter } }]
   })

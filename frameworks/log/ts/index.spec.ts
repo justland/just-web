@@ -23,7 +23,7 @@ describe(`plugin.${plugin.init.name}()`, () => {
     const reporter = createMemoryLogReporter()
     const [ctx] = plugin.init({
       name: 'test-app',
-      options: { log: { logLevel: logLevels.all, reporters: [reporter] } }
+      log: { logLevel: logLevels.all, reporters: [reporter] }
     })
     ctx.log.alert('alert')
     ctx.log.count('count')
@@ -58,7 +58,7 @@ describe(`plugin.${plugin.init.name}()`, () => {
     const reporter = createMemoryLogReporter()
     const [ctx] = plugin.init({
       name: 'test-app',
-      options: { log: { customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] } }
+      log: { customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] }
     })
 
     const l = ctx.log.getLogger('test logger')
