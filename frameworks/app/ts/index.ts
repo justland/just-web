@@ -4,5 +4,5 @@ export type {
 } from '@just-web/contributions'
 export * from '@just-web/log'
 export * from '@just-web/states'
-export * from './app'
-export { createApp as default } from './app'
+export * from './createApp'
+export { createApp as default } from './createApp'

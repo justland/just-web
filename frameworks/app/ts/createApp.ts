@@ -4,7 +4,7 @@ import * as commandsModule from '@just-web/commands'
 import * as contributionsModule from '@just-web/contributions'
 import * as logModule from '@just-web/log'
 import * as osModule from '@just-web/os'
-import { ctx } from './app.ctx'
+import { ctx } from './createApp.ctx'
 import { Context, createContext, TestContext } from './contexts/context'
 import { createPluginsClosure, PluginsContext, startPlugins } from './plugins/context'
 
