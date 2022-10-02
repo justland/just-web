@@ -1,6 +1,6 @@
 import { createStandardLog, LogMethodNames, StandardLogOptions } from 'standard-log'
 import { isType } from 'type-plus'
-import { defineInitialize, definePlugin, defineStart } from '.'
+import { defineInitialize, definePlugin, defineStart, StartContextBase } from '.'
 
 describe(defineInitialize.name, () => {
   it('accepts function returning a PluginContext', () => {
@@ -63,24 +63,29 @@ describe(definePlugin.name, () => {
       const plugin = definePlugin(() => ({
         name: 'test-plugin',
         init(_: { a: number }) { },
-        async start() { }
+        async start(ctx) {
+          isType.equal<false, any, typeof ctx>()
+        }
       }))
       const m = plugin()
 
       isType.equal<true, (ctx: { a: number }) => void, typeof m.init>()
-      isType.equal<true, () => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
     })
 
     it('can specify `start()` with no StartContext', () => {
       const plugin = definePlugin(() => ({
         name: 'test-plugin',
-        init() { },
-        async start() { }
+        init(_) { },
+        async start(ctx) {
+          isType.equal<false, any, typeof ctx>()
+          // isType.equal<true, StartContextBase, typeof ctx>()
+        }
       }))
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => void, typeof m.init>()
-      isType.equal<true, () => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
     })
   })
 
@@ -102,7 +107,7 @@ describe(definePlugin.name, () => {
       const m = plugin()
 
       isType.equal<true, (ctx: { a: number }) => [{ b: number }], typeof m.init>()
-      isType.equal<true, () => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
     })
 
     it('can specify `start()` with no StartContext', () => {
@@ -114,7 +119,7 @@ describe(definePlugin.name, () => {
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }], typeof m.init>()
-      isType.equal<true, () => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
     })
   })
 
@@ -123,12 +128,12 @@ describe(definePlugin.name, () => {
       const plugin = definePlugin(() => ({
         name: 'test-plugin',
         init: () => ([undefined, { s: 1 }]),
-        start: async (ctx) => isType.equal<true, { s: number }, typeof ctx>()
+        start: async (ctx) => isType.equal<true, StartContextBase & { s: number }, typeof ctx>()
       }))
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => [undefined, { s: number }], typeof m.init>()
-      isType.equal<true, (ctx: { s: number }) => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase & { s: number }) => Promise<void>, typeof m.start>()
     })
   })
 
@@ -137,12 +142,12 @@ describe(definePlugin.name, () => {
       const plugin = definePlugin(() => ({
         name: 'test-plugin',
         init: () => ([{ b: 1 }, { s: 1 }]),
-        start: async (ctx) => isType.equal<true, { s: number }, typeof ctx>()
+        start: async (ctx) => isType.equal<true, StartContextBase & { s: number }, typeof ctx>()
       }))
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }, { s: number }], typeof m.init>()
-      isType.equal<true, (ctx: { s: number }) => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase & { s: number }) => Promise<void>, typeof m.start>()
     })
   })
 

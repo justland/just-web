@@ -6,16 +6,16 @@ import type { BrowserContext, BrowserInitContext, BrowserOptions } from './types
 export * from './errors'
 export { BrowserContext, BrowserInitContext, BrowserOptions }
 
-export default definePlugin(() => ({
+export default definePlugin((options?: BrowserOptions) => ({
   name: '@just-web/browser',
-  init: (ctx: BrowserInitContext): [BrowserContext] => {
+  init: (): [BrowserContext] => {
     const errors = createErrorStore()
     // Normally plugin should not do work during init.
     // However this is a special case as we want to listen to any error,
     // including those occurs during the setup/loading phrase.
     registerOnErrorHandler({
       errors,
-      preventDefault: ctx.options?.browser?.preventDefault ?? false
+      preventDefault: options?.browser?.preventDefault ?? false
     })
     return [{
       browser: { errors: toReadonlyErrorStore(errors) }
