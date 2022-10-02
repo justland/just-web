@@ -17,8 +17,8 @@ export interface AppContext extends Context, PluginsContext {
 export namespace createApp {
   export type Options = {
     name: string,
-  } & logModule.LogOptions
-    & commandsModule.CommandsOptions
+    log?: logModule.LogOptions
+  } & commandsModule.CommandsOptions
     & contributionsModule.ContributionsOptions
     & browserModule.BrowserOptions
 }
@@ -54,7 +54,7 @@ export function createApp(options: createApp.Options): AppContext {
       const logger = context.log.getLogger('@just-web/app')
       logger.notice('application starts')
       await startPlugins({ logger: logger, loading })
-      await browserContributions.start(context)
+      await browserContributions().start(context)
     }
   })
 }
@@ -87,7 +87,7 @@ export function createTestApp(options?: createTestApp.Options): TestAppContext {
       const logger = logContext.log.getLogger('@just-web/app')
       logger.notice('application starts')
       await startPlugins({ logger: logger, loading })
-      await browserContributions.start(context)
+      await browserContributions().start(context)
     }
   })
 }

@@ -6,7 +6,7 @@ import type { BrowserContext, BrowserInitContext, BrowserOptions } from './types
 export * from './errors'
 export { BrowserContext, BrowserInitContext, BrowserOptions }
 
-export default definePlugin({
+export default definePlugin(() => ({
   name: '@just-web/browser',
   init: (ctx: BrowserInitContext): [BrowserContext] => {
     const errors = createErrorStore()
@@ -21,7 +21,7 @@ export default definePlugin({
       browser: { errors: toReadonlyErrorStore(errors) }
     }]
   }
-})
+}))
 
 export function createErrorsContext(ctx?: BrowserInitContext): BrowserContext {
   const errors = createErrorStore()

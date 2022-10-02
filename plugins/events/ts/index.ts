@@ -15,7 +15,7 @@ export type EventsContextOptions = {
   }
 } & LogContext
 
-export default definePlugin({
+export default definePlugin(() => ({
   name: '@just-web/events',
   init: (ctx: EventsContextOptions) => {
     const log = ctx.log.getLogger('@just-web/events')
@@ -23,4 +23,4 @@ export default definePlugin({
 
     return [{ emitter }]
   }
-})
+}))

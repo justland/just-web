@@ -1,4 +1,4 @@
-import logPlugin, { createLogContext } from '@just-web/log'
+import { createLogContext, logPluginForTest } from '@just-web/log'
 import contributionsPlugin, { createContributionsContext } from '.'
 
 describe('createContributionsContext()', () => {
@@ -10,18 +10,18 @@ describe('createContributionsContext()', () => {
   })
 })
 
-describe(`plugin.${contributionsPlugin.init.name}()`, () => {
+describe(`default().init()`, () => {
   it('returns contributions in PluginContext', () => {
-    const [{ log }] = logPlugin.initForTest()
-    const [{ contributions }] = contributionsPlugin.init({ log })
+    const [{ log }] = logPluginForTest().init()
+    const [{ contributions }] = contributionsPlugin().init({ log })
     expect(contributions).toBeDefined()
     expect(contributions.commands).toBeDefined()
     expect(contributions.keyBindings).toBeDefined()
   })
 
   it('can prefill commands', () => {
-    const [{ log }] = logPlugin.initForTest()
-    const [{ contributions }] = contributionsPlugin.init({
+    const [{ log }] = logPluginForTest().init()
+    const [{ contributions }] = contributionsPlugin().init({
       log, options: {
         contributions: {
           commands: [{ command: 'a' }]

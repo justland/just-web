@@ -1,10 +1,10 @@
-import logPlugin from '@just-web/log'
+import { logPluginForTest } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { formatCommand } from '.'
 import { commandContributionRegistry } from './commands'
 
 function setupTest(options?: commandContributionRegistry.Options) {
-  const [logctx] = logPlugin.initForTest()
+  const [logctx] = logPluginForTest().init()
   return [commandContributionRegistry(logctx, options), logctx.log] as const
 }
 

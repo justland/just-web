@@ -1,5 +1,5 @@
 import { createMemoryLogReporter, logLevels } from 'standard-log'
-import plugin, { createLogContext, createTestLogContext } from './index'
+import plugin, { createLogContext, createTestLogContext, logPluginForTest } from './index'
 
 describe('createLogContext()', () => {
   test('emit trace message', () => {
@@ -18,13 +18,11 @@ describe('createTestLogContext()', () => {
   })
 })
 
-describe(`plugin.${plugin.init.name}()`, () => {
+describe(`plugin().init()`, () => {
   it('provides app log methods', () => {
     const reporter = createMemoryLogReporter()
-    const [ctx] = plugin.init({
-      name: 'test-app',
-      log: { logLevel: logLevels.all, reporters: [reporter] }
-    })
+    const [ctx] = plugin({ logLevel: logLevels.all, reporters: [reporter] })
+      .init({ name: 'test-app' })
     ctx.log.alert('alert')
     ctx.log.count('count')
     ctx.log.count('count')
@@ -56,10 +54,8 @@ describe(`plugin.${plugin.init.name}()`, () => {
 
   it('can add custom levels', () => {
     const reporter = createMemoryLogReporter()
-    const [ctx] = plugin.init({
-      name: 'test-app',
-      log: { customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] }
-    })
+    const [ctx] = plugin({ customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] })
+      .init({ name: 'test-app' })
 
     const l = ctx.log.getLogger('test logger')
     l.spicy(`it's spicy`)
@@ -75,9 +71,9 @@ describe(`plugin.${plugin.init.name}()`, () => {
   })
 })
 
-describe(`plugins.${plugin.initForTest.name}()`, () => {
+describe(`${logPluginForTest.name}().init()`, () => {
   it('defaults logLevel to debug and provides memory reporter', () => {
-    const [{ log }] = plugin.initForTest()
+    const [{ log }] = logPluginForTest().init()
 
     expect(log.logLevel).toEqual(logLevels.debug)
     log.info('hello')

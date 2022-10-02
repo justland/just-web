@@ -5,7 +5,7 @@ import type { BrowserContributionsInitContext, BrowserContributionsStartContext 
 
 export { BrowserContributionsInitContext, BrowserContributionsStartContext }
 
-export default definePlugin({
+export default definePlugin(() => ({
   name: '@just-web/browser-contributions',
   init: (ctx: BrowserContributionsInitContext) => [undefined, ctx],
   start: async (ctx: BrowserContributionsStartContext) => {
@@ -15,4 +15,4 @@ export default definePlugin({
       startKeyBindings(ctx)
     }
   }
-})
+}))

@@ -3,16 +3,15 @@ import type { PluginModule } from '@just-web/types'
 import { ctx } from './createApp.ctx'
 
 export namespace createApp2 {
-  export type Options<N extends string = LogMethodNames> = { name: string } & LogOptions<N>
+  export type Options<N extends string = LogMethodNames> = { name: string, log?: LogOptions<N> }
 }
 
 export function createApp2<N extends string = LogMethodNames>(options: createApp2.Options<N>) {
-  const appContext = { ...options, id: ctx.genAppID() }
+  const appContext = { name: options.name, id: ctx.genAppID() }
 
-  const [{ log }] = logPlugin.init<N>(appContext)
+  const [{ log }] = logPlugin<N>(options.log).init(appContext)
   return {
-    name: appContext.name,
-    id: appContext.id,
+    ...appContext,
     log,
     extend<
       C extends Record<string | symbol, any>,

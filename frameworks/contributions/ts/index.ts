@@ -15,14 +15,14 @@ export type ContributionsOptions = {
   }
 }
 
-export default definePlugin({
+export default definePlugin(() => ({
   name: '@just-web/contributions',
   init: (ctx: LogContext & { options?: ContributionsOptions }) => {
     const commands = commandContributionRegistry(ctx, ctx.options?.contributions?.commands)
     const keyBindings = keyBindingRegistry(ctx, ctx.options?.contributions?.keyBindings)
     return [{ contributions: { commands, keyBindings } }]
   }
-})
+}))
 
 export function createContributionsContext(
   context: LogContext,

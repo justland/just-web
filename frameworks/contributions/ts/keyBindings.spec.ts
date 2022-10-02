@@ -1,10 +1,10 @@
-import logPlugin from '@just-web/log'
+import { logPluginForTest } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { formatKeyBinding, keyBindingRegistry } from '.'
 import { ctx } from './keyBinding.ctx'
 
 function setupTest(options?: keyBindingRegistry.Options) {
-  const [logctx] = logPlugin.initForTest()
+  const [logctx] = logPluginForTest().init()
   return [keyBindingRegistry(logctx, options), logctx.log] as const
 }
 
