@@ -1,5 +1,10 @@
+import { LeftJoin, Omit } from 'type-plus'
+import { getLogger, Logger } from 'standard-log'
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
-export type AppBaseContext = { name: string }
+export type AppBaseContext = { name: string, id: string }
+
+export type StartContextBase = { log: Omit<Logger, 'id' | 'level' | 'write'> & { getLogger: typeof getLogger } }
 
 /**
  * This PluginModule namespace describes the key exports within your module.
@@ -71,10 +76,10 @@ export namespace PluginModule {
   })
 
   export type TypeA_WithStart<
-    NeedContext extends Record<string | symbol, any>
+    NeedContext extends Record<string | symbol, any>,
   > = PluginModuleBase & ({
     init: (context: NeedContext) => void,
-    start: () => Promise<void>
+    start: (ctx: StartContextBase) => Promise<void>
   })
 
   export type TypeB<
@@ -90,7 +95,7 @@ export namespace PluginModule {
     PluginContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
     init: (context: NeedContext) => [PluginContext],
-    start: () => Promise<void>
+    start: (ctx: StartContextBase) => Promise<void>
   }
 
   export type TypeC<
@@ -98,7 +103,7 @@ export namespace PluginModule {
     StartContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
     init: (context: NeedContext) => [undefined, StartContext],
-    start: (context: StartContext) => Promise<void>,
+    start: (context: LeftJoin<StartContextBase, StartContext>) => Promise<void>,
   }
 
   export type TypeD<
@@ -107,15 +112,14 @@ export namespace PluginModule {
     StartContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
     init: (context: NeedContext) => [PluginContext, StartContext],
-    start: (context: StartContext) => Promise<void>,
+    start: (context: LeftJoin<StartContextBase, StartContext>) => Promise<void>,
   }
 }
 
 export type PluginModule<
   NeedContext extends Record<string | symbol, any> = Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any> = Record<string | symbol, any>,
-  StartContext extends Record<string | symbol, any> = Record<string | symbol, any>,
-  TestPluginContext extends PluginContext = PluginContext
+  StartContext extends Record<string | symbol, any> = Record<string | symbol, any>
 > = PluginModule.TypeA<NeedContext>
   | PluginModule.TypeA_WithStart<NeedContext>
   | PluginModule.TypeB<NeedContext, PluginContext, void>
@@ -230,8 +234,10 @@ export function definePlugin<
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
 >(plugin: (...args: any[]) => PluginModule.TypeB<NeedContext, PluginContext, void>): typeof plugin
-export function definePlugin<NeedContext extends Record<string | symbol, any>,>(plugin: (...args: any[]) => PluginModule.TypeA_WithStart<NeedContext>): typeof plugin
-export function definePlugin<NeedContext extends Record<string | symbol, any>,>(plugin: (...args: any[]) => PluginModule.TypeA<NeedContext>): typeof plugin
+export function definePlugin<
+  NeedContext extends Record<string | symbol, any>
+>(plugin: (...args: any[]) => PluginModule.TypeA_WithStart<NeedContext>): typeof plugin
+export function definePlugin<NeedContext extends Record<string | symbol, any>>(plugin: (...args: any[]) => PluginModule.TypeA<NeedContext>): typeof plugin
 export function definePlugin<
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
