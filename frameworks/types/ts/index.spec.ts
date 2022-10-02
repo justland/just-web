@@ -79,7 +79,7 @@ describe(definePlugin.name, () => {
         init(_) { },
         async start(ctx) {
           isType.equal<false, any, typeof ctx>()
-          // isType.equal<true, StartContextBase, typeof ctx>()
+          isType.equal<true, StartContextBase, typeof ctx>()
         }
       }))
       const m = plugin()
