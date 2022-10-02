@@ -9,7 +9,7 @@ import { createContributionsContext } from '@just-web/contributions'
 import type { LogContext, LogOptions, TestLogContext } from '@just-web/log'
 import { createOSContext, OSContext } from '@just-web/os'
 import { LeftJoin } from 'type-plus'
-import { ctx } from '../app.ctx'
+import { ctx } from '../createApp.ctx'
 
 export type Context = {
   appID: string,
