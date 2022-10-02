@@ -1,5 +1,8 @@
 lockfileVersion: 5.4
 
+overrides:
+  '@typescript-eslint/eslint-plugin': ^5.28.0
+
 importers:
 
   .:
@@ -36,7 +39,7 @@ importers:
       husky: 8.0.1
       jest: 28.1.1_@types+node@18.7.23
       jest-watch-suspend: 1.1.2_jest@28.1.1
-      jest-watch-toggle-config: 2.0.1_x2ojh62wpsno6yjm7sl2ksieuy
+      jest-watch-toggle-config: 2.0.1_2uo3z45phv7jvwcfrnpbvlw3ii
       jest-watch-typeahead: 1.1.0_jest@28.1.1
       npm-check-updates: 13.1.5
       npm-run-all: 4.1.5
@@ -713,12 +716,12 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      standard-log: ^10.1.0
+      standard-log: ^10.2.1
       type-plus: ^4.13.1
       typescript: ^4.7.4
     dependencies:
       '@just-func/types': 0.2.1
-      standard-log: 10.1.0
+      standard-log: 10.2.1
       type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.18.5
@@ -6390,8 +6393,8 @@ packages:
       '@types/yargs': 17.0.13
       chalk: 4.1.2
 
-  /@jest/types/29.1.0:
-    resolution: {integrity: sha512-lE30u3z4lbTOqf5D7fDdoco3Qd8H6F/t73nLOswU4x+7VhgDQMX5y007IMqrKjFHdnpslaYymVFhWX+ttXNARQ==}
+  /@jest/types/29.1.2:
+    resolution: {integrity: sha512-DcXGtoTykQB5jiwCmVr8H4vdg2OJhQex3qPkG+ISyDO7xQXbt/4R6dowcRyPemRnkH7JoHvZuxPBdlq+9JxFCg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/schemas': 29.0.0
@@ -19225,16 +19228,16 @@ packages:
       pretty-format: 28.1.1
     dev: true
 
-  /jest-validate/29.1.0:
-    resolution: {integrity: sha512-EQKRweSxmIJelCdirpuVkeCS1rSNXJFtSGEeSRFwH39QGioy7qKRSY8XBB4qFiappbsvgHnH0V6Iq5ASs11knA==}
+  /jest-validate/29.1.2:
+    resolution: {integrity: sha512-k71pOslNlV8fVyI+mEySy2pq9KdXdgZtm7NHrBX8LghJayc3wWZH0Yr0mtYNGaCU4F1OLPXRkwZR0dBm/ClshA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@jest/types': 29.1.0
+      '@jest/types': 29.1.2
       camelcase: 6.3.0
       chalk: 4.1.2
       jest-get-type: 29.0.0
       leven: 3.1.0
-      pretty-format: 29.1.0
+      pretty-format: 29.1.2
     dev: true
 
   /jest-watch-suspend/1.1.2_jest@27.5.1:
@@ -19256,6 +19259,18 @@ packages:
       unpartial: 0.6.4
     dev: true
 
+  /jest-watch-toggle-config/2.0.1_2uo3z45phv7jvwcfrnpbvlw3ii:
+    resolution: {integrity: sha512-qOOPo8vPlDX/hfHCQbJT5NKUvR+Uah+rsCtt+cCmg8oiMNtUvWUO2sqYW/X5PXmWyaoxwI14D8lVEmFy3w6BwQ==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      jest: '>= 23.4.1'
+      jest-validate: '>= 23.4.0'
+    dependencies:
+      chalk: 4.1.2
+      jest: 28.1.1_@types+node@18.7.23
+      jest-validate: 29.1.2
+    dev: true
+
   /jest-watch-toggle-config/2.0.1_oppp7y6x7mqpudsh7mhqghjaqy:
     resolution: {integrity: sha512-qOOPo8vPlDX/hfHCQbJT5NKUvR+Uah+rsCtt+cCmg8oiMNtUvWUO2sqYW/X5PXmWyaoxwI14D8lVEmFy3w6BwQ==}
     engines: {node: '>= 10'}
@@ -19266,18 +19281,6 @@ packages:
       chalk: 4.1.2
       jest: 27.5.1
       jest-validate: 27.5.1
-
-  /jest-watch-toggle-config/2.0.1_x2ojh62wpsno6yjm7sl2ksieuy:
-    resolution: {integrity: sha512-qOOPo8vPlDX/hfHCQbJT5NKUvR+Uah+rsCtt+cCmg8oiMNtUvWUO2sqYW/X5PXmWyaoxwI14D8lVEmFy3w6BwQ==}
-    engines: {node: '>= 10'}
-    peerDependencies:
-      jest: '>= 23.4.1'
-      jest-validate: '>= 23.4.0'
-    dependencies:
-      chalk: 4.1.2
-      jest: 28.1.1_@types+node@18.7.23
-      jest-validate: 29.1.0
-    dev: true
 
   /jest-watch-typeahead/1.1.0_jest@27.5.1:
     resolution: {integrity: sha512-Va5nLSJTN7YFtC2jd+7wsoe1pNe5K4ShLux/E5iHEwlB9AxaxmggY7to9KUqKojhaJw3aXqt5WAb4jGPOolpEw==}
@@ -22449,8 +22452,8 @@ packages:
       ansi-styles: 5.2.0
       react-is: 18.2.0
 
-  /pretty-format/29.1.0:
-    resolution: {integrity: sha512-dZ21z0UjKVSiEkrPAt2nJnGfrtYMFBlNW4wTkJsIp9oB5A8SUQ8DuJ9EUgAvYyNfMeoGmKiDnpJvM489jkzdSQ==}
+  /pretty-format/29.1.2:
+    resolution: {integrity: sha512-CGJ6VVGXVRP2o2Dorl4mAwwvDWT25luIsYhkyVQW32E4nL+TgW939J7LlKT/npq5Cpq6j3s+sy+13yk7xYpBmg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/schemas': 29.0.0
@@ -24699,6 +24702,17 @@ packages:
       ms: 2.1.3
       type-plus: 4.13.1
       upper-case: 2.0.2
+    dev: true
+
+  /standard-log/10.2.1:
+    resolution: {integrity: sha512-vG/kucPqkX3r4Q13H2aPEGxpJ5+eCgEdAx22j2Fx0aewDW3NzkaYFZ4Ey8tyxBgba9qsKywak5PHicXze9DCew==}
+    dependencies:
+      '@just-func/types': 0.2.1
+      iso-error: 4.3.8
+      ms: 2.1.3
+      type-plus: 4.13.1
+      upper-case: 2.0.2
+    dev: false
 
   /state-toggle/1.0.3:
     resolution: {integrity: sha512-d/5Z4/2iiCnHw6Xzghyhb+GcmF89bxwgXG60wjIiZaxnymbyOmI8Hk4VqHXiVVp6u2ysaskFfXg3ekCj4WNftQ==}
