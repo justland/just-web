@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export type AppBaseContext = { name: string }
 
 /**
@@ -101,7 +102,8 @@ export namespace PluginModule {
 
   export type TypeB<
     NeedContext extends Record<string | symbol, any>,
-    PluginContext extends Record<string | symbol, any>
+    PluginContext extends Record<string | symbol, any>,
+    _StartContext extends void
   > = PluginModuleBase & {
     init: (context: NeedContext) => [PluginContext]
   }
@@ -180,6 +182,26 @@ export namespace PluginModule {
     start: (context: StartContext) => Promise<void>,
   }
 }
+
+export type PluginModule<
+  NeedContext extends Record<string | symbol, any> = Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any> = Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any> = Record<string | symbol, any>,
+  TestPluginContext extends PluginContext = PluginContext
+> = PluginModule.TypeA<NeedContext>
+  | PluginModule.TypeA_WithStart<NeedContext>
+  | PluginModule.TypeA_WithStartAndTest<NeedContext>
+  | PluginModule.TypeA_WithTest<NeedContext>
+  | PluginModule.TypeA_WithTestContext<NeedContext, TestPluginContext>
+  | PluginModule.TypeB<NeedContext, PluginContext, void>
+  | PluginModule.TypeB_WithStart<NeedContext, PluginContext>
+  | PluginModule.TypeB_WithStartAndTestContext<NeedContext, PluginContext, TestPluginContext>
+  | PluginModule.TypeB_WithTestContext<NeedContext, PluginContext, TestPluginContext>
+  | PluginModule.TypeC<NeedContext, StartContext>
+  | PluginModule.TypeC_WithTest<NeedContext, StartContext>
+  | PluginModule.TypeC_WithTestContext<NeedContext, StartContext, TestPluginContext>
+  | PluginModule.TypeD<NeedContext, PluginContext, StartContext>
+  | PluginModule.TypeD_WithTestContext<NeedContext, PluginContext, StartContext, TestPluginContext>
 
 /**
  * Typed helper to define the `initialize()` function.
@@ -329,7 +351,7 @@ export function definePlugin<
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
 >(
-  plugin: PluginModule.TypeB<NeedContext, PluginContext>
+  plugin: PluginModule.TypeB<NeedContext, PluginContext, void>
 ): typeof plugin
 export function definePlugin<
   NeedContext extends Record<string | symbol, any>,
@@ -363,7 +385,7 @@ export function definePlugin<
   StartContext extends Record<string | symbol, any>,
 >(plugin: PluginModule.TypeD<NeedContext, PluginContext, StartContext> |
   PluginModule.TypeC<NeedContext, StartContext> |
-  PluginModule.TypeB<NeedContext, PluginContext> |
+  PluginModule.TypeB<NeedContext, PluginContext, void> |
   PluginModule.TypeA<NeedContext>) {
   return plugin
 }
