@@ -19,7 +19,7 @@ export namespace createCommandsContext {
   } & LogContext & ContributionsContext
 }
 
-export default definePlugin({
+export default definePlugin(() => ({
   name: '@just-web/commands',
   init: (ctx: createCommandsContext.Context): [CommandsContext] => {
     const log = ctx.log.getLogger('@just-web/commands')
@@ -35,7 +35,7 @@ export default definePlugin({
     })
     return [{ commands: commandRegistry(ctx, ctx.options?.commands) }]
   }
-})
+}))
 
 export function createCommandsContext(ctx: createCommandsContext.Context): CommandsContext {
   const logger = ctx.log.getLogger('@just-web/commands')

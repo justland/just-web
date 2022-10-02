@@ -1,8 +1,8 @@
 import plugin from '.'
 
-describe(`os.${plugin.init.name}()`, () => {
+describe(`default().init()`, () => {
   it('adds `os` to the applcation', () => {
-    const [{ os }] = plugin.init({})
+    const [{ os }] = plugin().init({})
 
     expect(os.isMac).toBeDefined()
   })

@@ -1,19 +1,19 @@
-import logPlugin from '@just-web/log'
 import contributionsPlugin from '@just-web/contributions'
+import { logPluginForTest } from '@just-web/log'
 import commandsPlugin from '.'
 
 describe('initialize()', () => {
   test('basic case', () => {
-    const [{ log }] = logPlugin.initForTest()
-    const [{ contributions }] = contributionsPlugin.init({ log })
-    commandsPlugin.init({ log, contributions })
+    const [{ log }] = logPluginForTest().init()
+    const [{ contributions }] = contributionsPlugin().init({ log })
+    commandsPlugin().init({ log, contributions })
   })
 
   it('supports predefined commands', () => {
-    const [{ log }] = logPlugin.initForTest()
-    const [{ contributions }] = contributionsPlugin.init({ log })
+    const [{ log }] = logPluginForTest().init()
+    const [{ contributions }] = contributionsPlugin().init({ log })
     const d = log.getLogger('test')
-    const [{ commands }] = commandsPlugin.init({
+    const [{ commands }] = commandsPlugin().init({
       log, contributions, options: {
         commands: {
           'a': () => d.info('exec a'),

@@ -33,7 +33,7 @@ describe(createApp2.name, () => {
 
   it('adds the PluginContext of the plugin to the app', () => {
     const app = createApp2({ name: 'test-app' })
-      .extend(osPlugin)
+      .extend(osPlugin())
 
     isType.t<CanAssign<typeof app, OSContext>>()
     expect(app.os.isMac).toBeDefined()

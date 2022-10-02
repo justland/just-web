@@ -23,7 +23,7 @@
       "path": "plugins/browser"
     },
     {
-      "path": "frameworks/events"
+      "path": "libraries/events"
     },
     {
       "path": "frameworks/log"
@@ -33,9 +33,6 @@
     },
     {
       "path": "plugins/browser-contributions"
-    },
-    {
-      "path": "libraries/format"
     },
     {
       "path": "libraries/states"

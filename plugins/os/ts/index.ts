@@ -5,10 +5,10 @@ import type { OSContext } from './types'
 export * from './os'
 export { OSContext }
 
-export default definePlugin({
+export default definePlugin(() => ({
   name: '@just-web/os',
   init: (): [OSContext] => [{ os: { isMac } }]
-})
+}))
 
 export function createOSContext() {
   return {

@@ -26,7 +26,7 @@ type ModuleStore = {
 
 export type StartContext = { store: Store<ModuleStore>, routeContext: RoutesContext }
 
-export default definePlugin({
+export default definePlugin(() => ({
   name: '@just-web/routes',
   init: (ctx: LogContext): [RoutesContext, StartContext] => {
     const store = createStore<ModuleStore>({
@@ -85,7 +85,7 @@ export default definePlugin({
   start: async (
     { store, routeContext }: StartContext
   ) => void routeContext.routes.navigate(store.get().config.initialRoute)
-})
+}))
 
 export const initialize = defineInitialize((ctx: LogContext): [RoutesContext, StartContext] => {
   const store = createStore<ModuleStore>({

@@ -1,8 +1,8 @@
 import plugin from '.'
 
-describe(`browser.${plugin.init.name}()`, () => {
+describe(`default().init()`, () => {
   it('can omit options', () => {
-    const [{ browser }] = plugin.init({})
+    const [{ browser }] = plugin().init({})
 
     expect(browser.errors).toBeDefined()
   })

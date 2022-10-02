@@ -4,7 +4,7 @@ import commandsPlugin from '@just-web/commands'
 import contributionsPlugin, {
   CommandContribution, KeyBindingContribution
 } from '@just-web/contributions'
-import logPlugin from '@just-web/log'
+import { logPluginForTest } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import mousetrap from 'mousetrap'
 import { startKeyBindings } from './keyBindings'
@@ -14,11 +14,11 @@ type StubCommand = KeyBindingContribution & CommandContribution & {
 }
 
 function setupTest(...stubCommands: StubCommand[]) {
-  const [{ log }] = logPlugin.initForTest()
-  const [{ contributions }] = contributionsPlugin.init({ log })
-  const [{ commands }] = commandsPlugin.init({ log, contributions })
-  const [{ browser }] = browserPlugin.init({})
-  const [{ os }] = osPlugin.init({})
+  const [{ log }] = logPluginForTest().init()
+  const [{ contributions }] = contributionsPlugin().init({ log })
+  const [{ commands }] = commandsPlugin().init({ log, contributions })
+  const [{ browser }] = browserPlugin().init({})
+  const [{ os }] = osPlugin().init({})
 
   stubCommands.forEach(stubCommand => {
     contributions.commands.add(stubCommand)

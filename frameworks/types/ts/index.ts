@@ -77,29 +77,6 @@ export namespace PluginModule {
     start: () => Promise<void>
   })
 
-  export type TypeA_WithStartAndTest<
-    NeedContext extends Record<string | symbol, any>,
-  > = PluginModuleBase & {
-    init: (context: NeedContext) => void,
-    initForTest: (context: NeedContext) => void,
-    start: () => Promise<void>
-  }
-
-  export type TypeA_WithTest<
-    NeedContext extends Record<string | symbol, any>,
-  > = PluginModuleBase & {
-    init: (context: NeedContext) => void,
-    initForTest: (context: NeedContext) => void
-  }
-
-  export type TypeA_WithTestContext<
-    NeedContext extends Record<string | symbol, any>,
-    TestPluginContext extends Record<string | symbol, any>
-  > = PluginModuleBase & {
-    init: (context: NeedContext) => void,
-    initForTest: (context: NeedContext) => [TestPluginContext]
-  }
-
   export type TypeB<
     NeedContext extends Record<string | symbol, any>,
     PluginContext extends Record<string | symbol, any>,
@@ -116,49 +93,11 @@ export namespace PluginModule {
     start: () => Promise<void>
   }
 
-  export type TypeB_WithStartAndTestContext<
-    NeedContext extends Record<string | symbol, any>,
-    PluginContext extends Record<string | symbol, any>,
-    TestPluginContext extends PluginContext
-  > = PluginModuleBase & {
-    init: (context: NeedContext) => [PluginContext],
-    initForTest: (context: NeedContext) => [TestPluginContext],
-    start: () => Promise<void>
-  }
-
-  export type TypeB_WithTestContext<
-    NeedContext extends Record<string | symbol, any>,
-    PluginContext extends Record<string | symbol, any>,
-    TestPluginContext extends PluginContext
-  > = PluginModuleBase & {
-    init: (context: NeedContext) => [PluginContext],
-    initForTest: (context: NeedContext) => [TestPluginContext],
-  }
-
   export type TypeC<
     NeedContext extends Record<string | symbol, any>,
     StartContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
     init: (context: NeedContext) => [undefined, StartContext],
-    start: (context: StartContext) => Promise<void>,
-  }
-
-  export type TypeC_WithTest<
-    NeedContext extends Record<string | symbol, any>,
-    StartContext extends Record<string | symbol, any>,
-  > = PluginModuleBase & {
-    init: (context: NeedContext) => [undefined, StartContext],
-    initForTest: (context: NeedContext) => [undefined, StartContext],
-    start: (context: StartContext) => Promise<void>,
-  }
-
-  export type TypeC_WithTestContext<
-    NeedContext extends Record<string | symbol, any>,
-    StartContext extends Record<string | symbol, any>,
-    TestPluginContext extends Record<string | symbol, any>
-  > = PluginModuleBase & {
-    init: (context: NeedContext) => [undefined, StartContext],
-    initForTest: (context: NeedContext) => [TestPluginContext, StartContext],
     start: (context: StartContext) => Promise<void>,
   }
 
@@ -170,17 +109,6 @@ export namespace PluginModule {
     init: (context: NeedContext) => [PluginContext, StartContext],
     start: (context: StartContext) => Promise<void>,
   }
-
-  export type TypeD_WithTestContext<
-    NeedContext extends Record<string | symbol, any>,
-    PluginContext extends Record<string | symbol, any>,
-    StartContext extends Record<string | symbol, any>,
-    TestPluginContext extends PluginContext
-  > = PluginModuleBase & {
-    init: (context: NeedContext) => [PluginContext, StartContext],
-    initForTest: (context: NeedContext) => [TestPluginContext, StartContext],
-    start: (context: StartContext) => Promise<void>,
-  }
 }
 
 export type PluginModule<
@@ -190,18 +118,10 @@ export type PluginModule<
   TestPluginContext extends PluginContext = PluginContext
 > = PluginModule.TypeA<NeedContext>
   | PluginModule.TypeA_WithStart<NeedContext>
-  | PluginModule.TypeA_WithStartAndTest<NeedContext>
-  | PluginModule.TypeA_WithTest<NeedContext>
-  | PluginModule.TypeA_WithTestContext<NeedContext, TestPluginContext>
   | PluginModule.TypeB<NeedContext, PluginContext, void>
   | PluginModule.TypeB_WithStart<NeedContext, PluginContext>
-  | PluginModule.TypeB_WithStartAndTestContext<NeedContext, PluginContext, TestPluginContext>
-  | PluginModule.TypeB_WithTestContext<NeedContext, PluginContext, TestPluginContext>
   | PluginModule.TypeC<NeedContext, StartContext>
-  | PluginModule.TypeC_WithTest<NeedContext, StartContext>
-  | PluginModule.TypeC_WithTestContext<NeedContext, StartContext, TestPluginContext>
   | PluginModule.TypeD<NeedContext, PluginContext, StartContext>
-  | PluginModule.TypeD_WithTestContext<NeedContext, PluginContext, StartContext, TestPluginContext>
 
 /**
  * Typed helper to define the `initialize()` function.
@@ -297,93 +217,26 @@ export function definePlugin<
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>,
-  TestPluginContext extends PluginContext
->(
-  plugin: PluginModule.TypeD_WithTestContext<NeedContext, PluginContext, StartContext, TestPluginContext>
-): typeof plugin
+>(plugin: (...args: any[]) => PluginModule.TypeD<NeedContext, PluginContext, StartContext>): typeof plugin
+export function definePlugin<
+  NeedContext extends Record<string | symbol, any>,
+  StartContext extends Record<string | symbol, any>,
+>(plugin: (...args: any[]) => PluginModule.TypeC<NeedContext, StartContext>): typeof plugin
+export function definePlugin<
+  NeedContext extends Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any>,
+>(plugin: (...args: any[]) => PluginModule.TypeB_WithStart<NeedContext, PluginContext>): typeof plugin
+export function definePlugin<
+  NeedContext extends Record<string | symbol, any>,
+  PluginContext extends Record<string | symbol, any>,
+>(plugin: (...args: any[]) => PluginModule.TypeB<NeedContext, PluginContext, void>): typeof plugin
+export function definePlugin<NeedContext extends Record<string | symbol, any>,>(plugin: (...args: any[]) => PluginModule.TypeA_WithStart<NeedContext>): typeof plugin
+export function definePlugin<NeedContext extends Record<string | symbol, any>,>(plugin: (...args: any[]) => PluginModule.TypeA<NeedContext>): typeof plugin
 export function definePlugin<
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeD<NeedContext, PluginContext, StartContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  StartContext extends Record<string | symbol, any>
->(
-  plugin: PluginModule.TypeC_WithTest<NeedContext, StartContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  StartContext extends Record<string | symbol, any>,
-  TestPluginContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeC_WithTestContext<NeedContext, StartContext, TestPluginContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  StartContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeC<NeedContext, StartContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  PluginContext extends Record<string | symbol, any>,
-  TestPluginContext extends PluginContext
->(
-  plugin: PluginModule.TypeB_WithStartAndTestContext<NeedContext, PluginContext, TestPluginContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  PluginContext extends Record<string | symbol, any>,
-  TestPluginContext extends PluginContext
->(
-  plugin: PluginModule.TypeB_WithTestContext<NeedContext, PluginContext, TestPluginContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  PluginContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeB_WithStart<NeedContext, PluginContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  PluginContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeB<NeedContext, PluginContext, void>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  TestPluginContext extends Record<string | symbol, any>
->(
-  plugin: PluginModule.TypeA_WithTestContext<NeedContext, TestPluginContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeA_WithStartAndTest<NeedContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeA_WithTest<NeedContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeA_WithStart<NeedContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
->(
-  plugin: PluginModule.TypeA<NeedContext>
-): typeof plugin
-export function definePlugin<
-  NeedContext extends Record<string | symbol, any>,
-  PluginContext extends Record<string | symbol, any>,
-  StartContext extends Record<string | symbol, any>,
->(plugin: PluginModule.TypeD<NeedContext, PluginContext, StartContext> |
+>(plugin: (...args: any[]) => PluginModule.TypeD<NeedContext, PluginContext, StartContext> |
   PluginModule.TypeC<NeedContext, StartContext> |
   PluginModule.TypeB<NeedContext, PluginContext, void> |
   PluginModule.TypeA<NeedContext>) {
