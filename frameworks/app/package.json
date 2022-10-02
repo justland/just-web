@@ -30,6 +30,7 @@
     "@just-web/log": "workspace:*",
     "@just-web/os": "workspace:*",
     "@just-web/states": "workspace:*",
+    "@just-web/types": "workspace:*",
     "iso-error": "~4.4.0",
     "type-plus": "^4.13.1"
   },
@@ -43,6 +44,7 @@
     "@types/ramda": "^0.28.14",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
+    "assertron": "^10.0.0",
     "depcheck": "~1.4.3",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "~8.5.0",
