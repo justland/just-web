@@ -10,7 +10,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "outDir": ".nowhere",
-    "removeComments": true,
+    "removeComments": false,
     "resolveJsonModule": true,
     "sourceMap": true,
     "inlineSources": true,
