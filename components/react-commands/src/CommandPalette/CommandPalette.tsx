@@ -1,5 +1,6 @@
 import { CommandsContext } from '@just-web/commands'
 import { CommandContribution, ContributionsContext, formatCommand, formatKeyBinding, KeyBindingContribution } from '@just-web/contributions'
+import { OSContext } from '@just-web/os'
 import { useStore } from '@just-web/react'
 import { VFC } from 'react'
 import CP from 'react-command-palette'
@@ -14,7 +15,7 @@ export interface CommandPaletteProps {
   ctx?: ContributionsContext & CommandsContext
 }
 
-function getCommands(ctx: ContributionsContext & CommandsContext) {
+function getCommands(ctx: ContributionsContext & CommandsContext & OSContext) {
   const cmds = ctx.contributions.commands.get()
   const kbs = ctx.contributions.keyBindings.get()
   return Object.values(cmds)
@@ -26,7 +27,7 @@ function getCommands(ctx: ContributionsContext & CommandsContext) {
         command: () => ctx.commands.invoke(c.command)
       }
       const k = kbs[c.command]
-      return k ? { ...r, key: formatKeyBinding(k).key } : r
+      return k ? { ...r, key: formatKeyBinding(ctx, k).key } : r
     })
 }
 
@@ -40,7 +41,7 @@ const RenderCommand: VFC<{ name: string, key?: string }> = command => (
 const CommandPalette: VFC<CommandPaletteProps> = (props) => {
   const store = getStore()
   const [open, setOpen] = useStore(store, s => s.openCommandPalette, s => { s.openCommandPalette = open })
-  const log = store.get().log
+  const log = store.get().context.log
   log.trace('rendering CommandPalette, open:', open)
   const commands = open ? getCommands(required(store.get().context, props.ctx)) : []
 

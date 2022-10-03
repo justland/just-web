@@ -1,35 +1,31 @@
-import { createTestApp, JustWebTestApp } from '@just-web/app'
-import commandsPlugin, { CommandsContext } from '@just-web/commands'
-import contributionsPlugin, { ContributionsContext } from '@just-web/contributions'
-import osPlugin, { OSContext } from '@just-web/os'
+import { createApp } from '@just-web/app'
+import browserContributionsPlugin from '@just-web/browser-contributions'
+import commandsPlugin, { CommandsOptions } from '@just-web/commands'
+import contributionsPlugin, { ContributionsOptions } from '@just-web/contributions'
 import { logLevels } from '@just-web/log'
+import { OSOptions, osTestPlugin } from '@just-web/os'
 import { ComponentStory } from '@storybook/react'
 import Mousetrap from 'mousetrap'
 import plugin from '..'
+import { getStore } from '../store'
 import CommandPalette from './CommandPalette'
 
+type Story = ComponentStory<typeof CommandPalette>
+
 export default {
-  component: CommandPalette
+  component: ({ ...args }) => {
+    return <>
+      <div>ctrl+p to show the command palette</div>
+      <button onClick={() => {
+        const ctx = getStore().get().context
+        ctx.commands.showCommandPalette()
+      }}>Open Command Palette</button>
+      <CommandPalette {...args} />
+    </>
+  }
 }
 
-interface Contribution {
-  command: string,
-  name?: string,
-  key?: string,
-  mac?: string
-}
-
-function addCommand(ctx: CommandsContext & ContributionsContext, ...inputs: Array<Contribution>) {
-  inputs.forEach(entry => {
-    ctx.contributions.commands.add({ command: entry.command, description: entry.name })
-    ctx.commands.register(entry.command, () => { alert(entry.command) })
-    if (entry.key || entry.mac) {
-      ctx.contributions.keyBindings.add(entry)
-    }
-  })
-}
-
-const simpleCmd: Contribution = { command: 'core.simpleCommand' }
+const simpleCmd = { command: 'core.simpleCommand' }
 const keyedCmd = {
   command: 'core.keyedCommand',
   name: 'Command with key',
@@ -47,75 +43,82 @@ const macOnlyCmd = {
   mac: 'cmd+o'
 }
 
-const Story: ComponentStory<typeof CommandPalette> = ({ ...args }) => {
-  return <>
-    <div>ctrl+p to show the command palette</div>
-    <CommandPalette {...args} />
-  </>
-}
-
-async function loadApp(setupApp?: (app: JustWebTestApp & ContributionsContext & CommandsContext & OSContext) => void) {
-  const base = createTestApp({ log: { logLevel: logLevels.all } })
-    .extend(contributionsPlugin())
-    .extend(commandsPlugin())
-    .extend(osPlugin())
-
-  setupApp?.(base)
-  const app = base.extend(plugin())
+async function setupApp(options?: ContributionsOptions & CommandsOptions & OSOptions) {
+  const app = createApp({ name: 'storybook', log: { logLevel: logLevels.all } })
+    .extend(contributionsPlugin(options))
+    .extend(commandsPlugin(options))
+    .extend(osTestPlugin(options))
+    .extend(browserContributionsPlugin())
+    .extend(plugin())
+  console.info('app', app)
   await app.start()
   return {}
 }
 
-export const NoCommand = Story.bind({})
-NoCommand.loaders = [
-  async () => loadApp()
-]
+export const NoCommand = {
+  loaders: [async (_) => setupApp()],
+  play: async (_) => void Mousetrap.trigger('ctrl+p')
+} as Story
 
-NoCommand.play = () => {
-  Mousetrap.trigger('ctrl+p')
-}
+export const OneCommand = {
+  loaders: [async (_) => setupApp({
+    contributions: {
+      commands: [simpleCmd]
+    },
+    commands: {
+      [simpleCmd.command]: () => alert(simpleCmd.command)
+    }
+  })],
+  play: async (_) => void Mousetrap.trigger('ctrl+p')
+} as Story
 
-export const OneCommand = Story.bind({})
+export const WithKey = {
+  loaders: [async (_) => setupApp({
+    contributions: {
+      commands: [keyedCmd],
+      keyBindings: [keyedCmd]
+    },
+    commands: {
+      [keyedCmd.command]: () => alert(keyedCmd.command)
+    }
+  })],
+  play: async (_) => void Mousetrap.trigger('ctrl+p')
+} as Story
 
-OneCommand.loaders = [
-  async () => loadApp(app => addCommand(app, simpleCmd))
-]
-OneCommand.play = () => {
-  Mousetrap.trigger('ctrl+p')
-}
-
-export const WithKey = Story.bind({})
-WithKey.loaders = [
-  async () => loadApp(app => addCommand(app, keyedCmd))
-]
-WithKey.play = () => {
-  Mousetrap.trigger('ctrl+p')
-}
-
-export const OverrideMacCommandInMac = Story.bind({})
-OverrideMacCommandInMac.loaders = [
-  async () => loadApp(app => {
-    app.os = {
-      ...app.os,
+export const OverrideMacCommandInMac = {
+  loaders: [async (_) => setupApp({
+    contributions: {
+      commands: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
+      keyBindings: [keyedCmd, macCmd, macOnlyCmd]
+    },
+    commands: {
+      [simpleCmd.command]: () => alert(simpleCmd.command),
+      [keyedCmd.command]: () => alert(keyedCmd.command),
+      [macCmd.command]: () => alert(macCmd.command),
+      [macOnlyCmd.command]: () => alert(macOnlyCmd.command)
+    },
+    os: {
       isMac: () => true
     }
-    addCommand(app, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  })
-]
-OverrideMacCommandInMac.play = () => {
-  Mousetrap.trigger('ctrl+p')
-}
+  })],
+  play: async (_) => void Mousetrap.trigger('cmd+p')
+} as Story
 
-export const OverrideMacCommandInWindow = Story.bind({})
-OverrideMacCommandInWindow.loaders = [
-  async () => loadApp(app => {
-    app.os = {
-      ...app.os,
-      isMac: () => true
+export const OverrideMacCommandInWindow = {
+  loaders: [async (_) => setupApp({
+    contributions: {
+      commands: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
+      keyBindings: [keyedCmd, macCmd, macOnlyCmd]
+    },
+    commands: {
+      [simpleCmd.command]: () => alert(simpleCmd.command),
+      [keyedCmd.command]: () => alert(keyedCmd.command),
+      [macCmd.command]: () => alert(macCmd.command),
+      [macOnlyCmd.command]: () => alert(macOnlyCmd.command)
+    },
+    os: {
+      isMac: () => false
     }
-    addCommand(app, simpleCmd, keyedCmd, macCmd, macOnlyCmd)
-  })
-]
-OverrideMacCommandInWindow.play = () => {
-  Mousetrap.trigger('ctrl+p')
-}
+  })],
+  play: async (_) => void Mousetrap.trigger('ctrl+p')
+} as Story

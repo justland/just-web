@@ -1,6 +1,7 @@
 import commandsPlugin from '@just-web/commands'
 import contributionsPlugin from '@just-web/contributions'
 import { logPluginForTest } from '@just-web/log'
+import { osTestPlugin } from '@just-web/os'
 
 import plugin, { CommandPalette } from '.'
 
@@ -13,7 +14,8 @@ describe('plugin', () => {
     const [{ log }] = logPluginForTest().init()
     const [{ contributions }] = contributionsPlugin().init({ log })
     const [{ commands }] = commandsPlugin().init({ log, contributions })
-    plugin().init({ log, commands })
+    const [{ os }] = osTestPlugin().init({ log })
+    plugin().init({ log, commands, os })
     expect(commands.keys()).toEqual(['just-web.showCommandPalette'])
   })
 })

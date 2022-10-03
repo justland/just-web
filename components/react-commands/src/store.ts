@@ -1,10 +1,10 @@
 import { CommandsContext } from '@just-web/commands'
-import { Logger } from '@just-web/log'
+import { LogContext } from '@just-web/log'
+import { OSContext } from '@just-web/os'
 import { Store } from '@just-web/states'
 
 export interface State {
-  context: CommandsContext,
-  log: Logger,
+  context: LogContext & CommandsContext & OSContext,
   openCommandPalette: boolean
 }
 
