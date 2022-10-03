@@ -77,7 +77,7 @@ describe(createApp2.name, () => {
     ])
   })
 
-  it.skip('call both plugins when start', async () => {
+  it('call both plugins when start', async () => {
     const reporter = createMemoryLogReporter()
     const app = createApp2({ name: 'test-app', log: { reporters: [reporter] } })
       .extend(definePlugin(() => ({
@@ -97,7 +97,99 @@ describe(createApp2.name, () => {
     ])
   })
 
-  it.todo('start() can only be called once, from any of the exteneded app or the app itself')
+  it('calls plugin tree', async () => {
+    const reporter = createMemoryLogReporter()
+    const app = createApp2({ name: 'test-app', log: { reporters: [reporter] } })
+
+    app.extend(definePlugin(() => ({
+      name: 'dummy-a', init() { },
+      async start({ log }) { log.info('start') }
+    }))()).extend(definePlugin(() => ({
+      name: 'dummy-b', init() { },
+      async start({ log }) { log.info('start') }
+    }))())
+
+    app.extend(definePlugin(() => ({
+      name: 'dummy-c', init() { },
+      async start({ log }) {
+        log.info('start')
+      }
+    }))())
+
+    app.extend(definePlugin(() => ({
+      name: 'dummy-d', init() { },
+      async start({ log }) { log.info('start') }
+    }))()).extend(definePlugin(() => ({
+      name: 'dummy-e', init() { },
+      async start({ log }) { log.info('start') }
+    }))())
+
+    await app.start()
+
+    expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
+      'test-app:dummy-a (INFO) start',
+      'test-app:dummy-b (INFO) start',
+      'test-app:dummy-c (INFO) start',
+      'test-app:dummy-d (INFO) start',
+      'test-app:dummy-e (INFO) start',
+      'test-app (INFO) start',
+    ])
+  })
+
+  it('only calls `start()` of each plugin once', async () => {
+    const reporter = createMemoryLogReporter()
+    const app = createApp2({ name: 'test-app', log: { reporters: [reporter] } })
+
+    const app2 = app.extend(definePlugin(() => ({
+      name: 'dummy-a', init() { },
+      async start({ log }) { log.info('start') }
+    }))()).extend(definePlugin(() => ({
+      name: 'dummy-b', init() { },
+      async start({ log }) { log.info('start') }
+    }))())
+
+    const app3 = app.extend(definePlugin(() => ({
+      name: 'dummy-c', init() { },
+      async start({ log }) {
+        log.info('start')
+      }
+    }))())
+
+    const app4 = app.extend(definePlugin(() => ({
+      name: 'dummy-d', init() { },
+      async start({ log }) { log.info('start') }
+    }))()).extend(definePlugin(() => ({
+      name: 'dummy-e', init() { },
+      async start({ log }) { log.info('start') }
+    }))())
+
+    await app.start()
+    await app2.start()
+    await app3.start()
+    await app4.start()
+
+    expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
+      'test-app:dummy-a (INFO) start',
+      'test-app:dummy-b (INFO) start',
+      'test-app:dummy-c (INFO) start',
+      'test-app:dummy-d (INFO) start',
+      'test-app:dummy-e (INFO) start',
+      'test-app (INFO) start',
+    ])
+  })
+
+  it('sends startContext to start()', async () => {
+    const reporter = createMemoryLogReporter()
+    const app = createApp2({ name: 'a', log: { reporters: [reporter] } }).extend(definePlugin(() => ({
+      name: 'plugin-a',
+      init: () => ([undefined, { b: 1 }]),
+      start: (ctx) => {
+        isType.t<CanAssign<typeof ctx, { b: number }>>()
+        expect(ctx.b).toEqual(1)
+      }
+    }))())
+    await app.start()
+  })
 })
 
 

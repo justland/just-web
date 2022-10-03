@@ -1,69 +1,84 @@
 import logPlugin, { createPrefixedGetLogger, LogContext, LogMethodNames, LogOptions } from '@just-web/log'
 import type { AppBaseContext, PluginModule } from '@just-web/types'
-import { isType } from 'type-plus'
+import { isType, pick } from 'type-plus'
 import { ctx } from './createApp.ctx'
 
 export namespace createApp2 {
   export type Options<N extends string = LogMethodNames> = { name: string, log?: LogOptions<N> }
 }
 
+type AppNode = {
+  name: string,
+  started: boolean,
+  parent?: AppNode,
+  plugin?: () => Promise<void>,
+  children: AppNode[],
+  start(): Promise<void>
+}
+
+function createAppNode(name: string, parent?: AppNode): AppNode {
+  const node: AppNode = {
+    name,
+    parent,
+    started: false,
+    children: [],
+    async start() {
+      if (this.started) return
+      if (this.plugin) await this.plugin()
+      for (const c of this.children) {
+        await c.start()
+      }
+      this.started = true
+    }
+  }
+  parent?.children.push(node)
+  return node
+}
+
 export function createApp2<N extends string = LogMethodNames>(options: createApp2.Options<N>) {
   const appContext = { name: options.name, id: ctx.genAppID() }
-
   const logModule = logPlugin(options.log)
   const [logctx] = logModule.init(appContext)
   const log = logctx.log as LogContext<LogMethodNames>['log']
-
-  return appClosure({ ...appContext, log })
+  const appNode = createAppNode(options.name)
+  return appClosure({ ...appContext, log }, appNode)
 }
 
 function appClosure(
   appContext: AppBaseContext & LogContext,
-  _parentContext?: {
-    pluginContext?: [PluginModule<any, any, any>, any],
-    start(): Promise<void>
-  }) {
-  // const subApps: Array<{ start(): Promise<void> }> = []
-  // return {
-  //   async start() {
-  //     if (parentContext) return parentContext.start()
-  //     // pluginC.forEach
-  //   }
-  // }
+  appNode: AppNode) {
   const log = appContext.log
-  // this and extends apps needs to be a tree what when one of? `start()` is called,
-  // all plugin starts are executed correctly.
-  let pluginTuple: [{ name: string, start(ctx: any): Promise<void> }, any]
+
   return {
     ...appContext,
     extend<
       C extends Record<string | symbol, any>,
       N extends Record<string | symbol, any>,
       S extends Record<string | symbol, any>>(this: C, plugin: PluginModule<C, N, S>): C & N {
-      // TODO: create a customer log module for `init()` here,
-      // instead of doing it in `start()`
-      const initResult = plugin.init(this)
+      const childAppNode = createAppNode(plugin.name, appNode)
+
+      const pluginLogger = Object.assign(log.getLogger(plugin.name), {
+        ...pick(log, 'toLogLevel', 'toLogLevelName'),
+        getLogger: createPrefixedGetLogger({ log }, plugin.name)
+      })
+
+      const initResult = plugin.init({ ...this, log: pluginLogger })
       if (!initResult) {
-        if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start))
-          pluginTuple = [plugin, undefined]
-        return this as any
+        if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
+          childAppNode.plugin = () => plugin.start({ log: pluginLogger } as any)
+        }
+        return appClosure(appContext, childAppNode) as any
       }
       const [pluginContext, startContext] = initResult
       if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start))
-        pluginTuple = [plugin, startContext]
-      return { ...this, ...pluginContext! }
+        childAppNode.plugin = () => plugin.start({ ...startContext, log: pluginLogger } as any)
+      return appClosure({ ...appContext, ...pluginContext! }, childAppNode) as any
     },
     async start() {
-      if (pluginTuple) {
-        const plugin = pluginTuple[0]
-        const l = log.getLogger(plugin.name)
-        await plugin.start({
-          ...pluginTuple[1],
-          log: Object.assign(l, {
-            getLogger: createPrefixedGetLogger({ log }, plugin.name)
-          })
-        })
-      }
+      let top: AppNode = appNode
+      while (top.parent) top = top.parent
+      if (top.started) return
+      await top.start()
       log.info('start')
     }
   }
