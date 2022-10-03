@@ -34,5 +34,9 @@ createApp({ name: 'your-awesome-app' })
   .extend(browserContributionsPlugin())
 ```
 
+## To-do
+
+- Listen to key bindings change and add new key bindings
+
 [`@just-web/browser-contributions`]: https://github.com/justland/just-web/tree/main/plugins/browser-contributions
 [`@just-web/contributions`]: https://github.com/justland/just-web/tree/main/plugins/contributions
