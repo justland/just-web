@@ -18,7 +18,9 @@ describe('registerRoute()', () => {
     const app = await setupTest()
     app.routes.register('/debug', () => { })
     app.routes.register('/debug', () => { })
-    logEqual(app.log.reporter, `(ERROR) Registering an already registered route: '/debug'`)
+    logEqual(app.log.reporter,
+      `(NOTICE) init`,
+      `(ERROR) Registering an already registered route: '/debug'`)
   })
 
   test('returns an unregister function', async () => {
@@ -33,7 +35,9 @@ describe('navigate()', () => {
   test('navigate to an unknown route logs an error', async () => {
     const app = await setupTest()
     app.routes.navigate('/not-exist')
-    logEqual(app.log.reporter, `(ERROR) navigate target not found: '/not-exist'`)
+    logEqual(app.log.reporter,
+      `(NOTICE) init`,
+      `(ERROR) navigate target not found: '/not-exist'`)
   })
 
   test('navigate route', async () => {
@@ -54,6 +58,7 @@ describe('validateRoutes()', () => {
 
     logEqual(
       app.log.reporter,
+      `(NOTICE) init`,
       `(ERROR) route '/' is required`,
       `(ERROR) route '/error' is required`
     )
