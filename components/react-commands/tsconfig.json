@@ -26,6 +26,9 @@
       "path": "../../libraries/states"
     },
     {
+      "path": "../../plugins/browser-contributions"
+    },
+    {
       "path": "../../plugins/commands"
     },
     {
