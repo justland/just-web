@@ -1,6 +1,7 @@
 import {
-  createApp, createMemoryLogReporter
+  createApp
 } from '@just-web/app'
+import { createMemoryLogReporter } from '@just-web/log'
 import { logMatchSome } from '@just-web/testing'
 import routePlugin from '.'
 

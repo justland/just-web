@@ -1,19 +1,19 @@
-import createApp, { logLevels } from '@just-web/app'
-import routePlugin from '@just-web/routes'
-import contributionsPlugin from '@just-web/contributions'
-import commandsPlugin from '@just-web/commands'
-import osPlugin from '@just-web/os'
+import { createApp } from '@just-web/app'
 import browserPlugin from '@just-web/browser'
 import browserContributionsPlugin from '@just-web/browser-contributions'
-
+import commandsPlugin from '@just-web/commands'
+import contributionsPlugin from '@just-web/contributions'
+import { logLevels } from '@just-web/log'
+import osPlugin from '@just-web/os'
+import routePlugin from '@just-web/routes'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { createDocument } from './docs/createDocument'
 import { createDocView } from './docViews/createDocView'
-import './styles.css'
 import reportWebVitals from './reportWebVitals'
 import { createAppStore } from './store'
+import './styles.css'
 
 void (async () => {
   const app = await createApp({

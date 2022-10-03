@@ -3,8 +3,9 @@
   "version": "0.2.7",
   "private": true,
   "scripts": {
-    "build": "run-s tailwind:css build:ts",
-    "build:ts": "react-app-rewired build",
+    "build": "run-s tailwind:css build:ts build:react",
+    "build:ts": "tsc --noEmit",
+    "build:react": "react-app-rewired build",
     "build:storybook": "build-storybook",
     "build:watch": "echo no build:watch",
     "chromatic": "npx chromatic --project-token=9693e88259d4",
