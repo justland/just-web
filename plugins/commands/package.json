@@ -23,7 +23,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "@unional/events-plus": "~2.2.0",
+    "@unional/events-plus": "~2.2.2",
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
