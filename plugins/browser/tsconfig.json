@@ -11,19 +11,13 @@
   },
   "references": [
     {
-      "path": "../../frameworks/commands"
-    },
-    {
-      "path": "../../frameworks/contributions"
-    },
-    {
-      "path": "../../frameworks/log"
+      "path": "../../frameworks/types"
     },
     {
       "path": "../../libraries/states"
     },
     {
-      "path": "../../frameworks/types"
+      "path": "../../tools/repo-scripts"
     }
   ],
   "include": [

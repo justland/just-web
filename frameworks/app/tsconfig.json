@@ -15,22 +15,16 @@
   ],
   "references": [
     {
-      "path": "../../frameworks/commands"
-    },
-    {
-      "path": "../../frameworks/contributions"
-    },
-    {
-      "path": "../../plugins/browser"
-    },
-    {
       "path": "../../frameworks/log"
     },
     {
-      "path": "../../libraries/states"
+      "path": "../../frameworks/types"
     },
     {
-      "path": "../../tools/testing"
+      "path": "../../plugins/os"
+    },
+    {
+      "path": "../../tools/repo-scripts"
     }
   ]
 }
