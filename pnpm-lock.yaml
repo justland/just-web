@@ -732,6 +732,7 @@ importers:
       copyfiles: ~2.4.1
       cross-env: ~7.0.3
       css-loader: ~6.7.1
+      delay: ^5.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
@@ -740,6 +741,7 @@ importers:
       eslint-plugin-storybook: ^0.5.7
       eslint-plugin-yml: ~0.14.0
       identity-obj-proxy: ~3.0.0
+      is-ci: ^3.0.1
       jest: ^27.5.1
       jest-circus: ~27.5.1
       jest-environment-node: ~27.5.1
@@ -823,6 +825,7 @@ importers:
       copyfiles: 2.4.1
       cross-env: 7.0.3
       css-loader: 6.7.1_webpack@5.73.0
+      delay: 5.0.0
       depcheck: 1.4.3
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
@@ -831,6 +834,7 @@ importers:
       eslint-plugin-storybook: 0.5.12_vhsckgnokn2tf7m5xkrurmvfv4
       eslint-plugin-yml: 0.14.0_eslint@8.17.0
       identity-obj-proxy: 3.0.0
+      is-ci: 3.0.1
       jest: 27.5.1
       jest-circus: 27.5.1
       jest-environment-node: 27.5.1
@@ -14786,6 +14790,11 @@ packages:
       slash: 3.0.0
     dev: true
 
+  /delay/5.0.0:
+    resolution: {integrity: sha512-ReEBKkIfe4ya47wlPYf/gu5ib6yUG0/Aez0JQZQz94kiWtRQvZIQbTiehsnwHvLSWJnQdhVeqYue7Id1dKr0qw==}
+    engines: {node: '>=10'}
+    dev: true
+
   /delayed-stream/1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
@@ -15688,8 +15697,8 @@ packages:
       '@babel/plugin-transform-react-jsx': ^7.14.9
       eslint: ^8.1.0
     dependencies:
-      '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.5
-      '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.5
+      '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.19.3
+      '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.19.3
       eslint: 8.17.0
       lodash: 4.17.21
       string-natural-compare: 3.0.1
