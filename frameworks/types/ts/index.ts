@@ -218,31 +218,37 @@ export function defineStart<
  * Typed helper to define a just-web plugin.
  */
 export function definePlugin<
+  Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>,
->(plugin: (...args: any[]) => PluginModule.TypeD<NeedContext, PluginContext, StartContext>): typeof plugin
+>(plugin: (...args: Params) => PluginModule.TypeD<NeedContext, PluginContext, StartContext>): typeof plugin
 export function definePlugin<
+  Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>,
->(plugin: (...args: any[]) => PluginModule.TypeC<NeedContext, StartContext>): typeof plugin
+>(plugin: (...args: Params) => PluginModule.TypeC<NeedContext, StartContext>): typeof plugin
 export function definePlugin<
+  Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
->(plugin: (...args: any[]) => PluginModule.TypeB_WithStart<NeedContext, PluginContext>): typeof plugin
+>(plugin: (...args: Params) => PluginModule.TypeB_WithStart<NeedContext, PluginContext>): typeof plugin
 export function definePlugin<
+  Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
->(plugin: (...args: any[]) => PluginModule.TypeB<NeedContext, PluginContext, void>): typeof plugin
+>(plugin: (...args: Params) => PluginModule.TypeB<NeedContext, PluginContext, void>): typeof plugin
 export function definePlugin<
+  Params extends any[],
   NeedContext extends Record<string | symbol, any>
->(plugin: (...args: any[]) => PluginModule.TypeA_WithStart<NeedContext>): typeof plugin
+>(plugin: (...args: Params) => PluginModule.TypeA_WithStart<NeedContext>): typeof plugin
 export function definePlugin<NeedContext extends Record<string | symbol, any>>(plugin: (...args: any[]) => PluginModule.TypeA<NeedContext>): typeof plugin
 export function definePlugin<
+  Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>,
->(plugin: (...args: any[]) => PluginModule.TypeD<NeedContext, PluginContext, StartContext> |
+>(plugin: (...args: Params) => PluginModule.TypeD<NeedContext, PluginContext, StartContext> |
   PluginModule.TypeC<NeedContext, StartContext> |
   PluginModule.TypeB<NeedContext, PluginContext, void> |
   PluginModule.TypeA<NeedContext>) {
