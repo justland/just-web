@@ -1,22 +1,5 @@
 import { createMemoryLogReporter, logLevels } from 'standard-log'
-import plugin, { createLogContext, createTestLogContext, logPluginForTest } from './index'
-
-describe('createLogContext()', () => {
-  test('emit trace message', () => {
-    const reporter = createMemoryLogReporter()
-    createLogContext({ name: 'test-app', options: { log: { logLevel: logLevels.all, reporters: [reporter] } } })
-
-    expect(reporter.getLogMessageWithLevel()).toEqual('(TRACE) create log context')
-  })
-})
-
-describe('createTestLogContext()', () => {
-  test('returns memory reporter', () => {
-    const { log: { reporter } } = createTestLogContext(undefined, { log: { logLevel: logLevels.all } })
-
-    expect(reporter.getLogMessageWithLevel()).toEqual('(TRACE) create test log context')
-  })
-})
+import plugin, { logPluginForTest } from './index'
 
 describe(`plugin().init()`, () => {
   it('provides app log methods', () => {

@@ -1,93 +1,118 @@
-import * as browserModule from '@just-web/browser'
-import browserContributions from '@just-web/browser-contributions'
-import * as commandsModule from '@just-web/commands'
-import * as contributionsModule from '@just-web/contributions'
-import * as logModule from '@just-web/log'
-import * as osModule from '@just-web/os'
+import logPlugin, { createPrefixedGetLogger, LogContext, LogMethodNames, LogOptions, logPluginForTest, TestLogContext } from '@just-web/log'
+import type { AppBaseContext, PluginModule } from '@just-web/types'
+import { isType, pick } from 'type-plus'
 import { ctx } from './createApp.ctx'
-import { Context, createContext, TestContext } from './contexts/context'
-import { createPluginsClosure, PluginsContext, startPlugins } from './plugins/context'
 
-export type { Context, TestContext } from './contexts/context'
-export type { PluginModule } from './plugins/context'
-
-export interface AppContext extends Context, PluginsContext {
-  start(): Promise<void>
-}
 export namespace createApp {
-  export type Options = {
-    name: string,
-    log?: logModule.LogOptions
-  } & commandsModule.CommandsOptions
-    & contributionsModule.ContributionsOptions
-    & browserModule.BrowserOptions
+  export type Options<N extends string = LogMethodNames> = { name: string, log?: LogOptions<N> }
 }
 
-// export function createApp2(options: createApp.Options) {
-//   const appContext = new AsyncContext({ name: options.name, appID: ctx.genAppID(), options })
-//   const startContext = new AsyncContext()
-//   return {
-//     extend() { },
-//     async load() { },
-//     async start() { }
+// export namespace JustWebApp {
+//   export type Methods = {
+//     extend<
+//       A extends Record<string | symbol, any>,
+//       C extends Record<string | symbol, any>,
+//       N extends Record<string | symbol, any>,
+//       S extends Record<string | symbol, any>
+//     >(this: A, plugin: PluginModule<C, N, S>): N extends object ? A & N : A,
+//     start(): Promise<void>
 //   }
 // }
 
+// export type JustWebApp<N extends string = LogMethodNames> = AppBaseContext & JustWebApp.Methods & LogContext<N>
+// export type JustWebTestApp<N extends string = LogMethodNames> = AppBaseContext & JustWebApp.Methods & TestLogContext<N>
 
-export function createApp(options: createApp.Options): AppContext {
-  const logcontext = logModule.createLogContext({ name: options.name, options })
-  const contributionsContext = contributionsModule.createContributionsContext(logcontext, options)
-  const commands = commandsModule.createCommandsContext({ options, ...contributionsContext, ...logcontext })
-  const os = osModule.createOSContext()
-  const context = {
-    appID: ctx.genAppID(),
-    ...logcontext,
-    ...commands,
-    ...contributionsContext,
-    ...os,
-    ...browserModule.createErrorsContext({ options })
-  }
-  const [pluginContext, { loading }] = createPluginsClosure({ context })
-  return Object.assign(context, {
-    ...pluginContext,
-    async start() {
-      const logger = context.log.getLogger('@just-web/app')
-      logger.notice('application starts')
-      await startPlugins({ logger: logger, loading })
-      await browserContributions().start(context)
-    }
-  })
-}
-
-export interface TestAppContext extends TestContext, PluginsContext {
+type AppNode = {
+  name: string,
+  started: boolean,
+  parent?: AppNode,
+  plugin?: () => Promise<void>,
+  children: AppNode[],
   start(): Promise<void>
 }
 
-export namespace createTestApp {
-  export type Options = {
-    name?: string,
-  } & logModule.TestLogOptions
-    & commandsModule.CommandsOptions
-    & contributionsModule.ContributionsOptions
-    & browserModule.BrowserOptions
+export function createApp<N extends string = LogMethodNames>(options: createApp.Options<N>) {
+  const appContext = { name: options.name, id: ctx.genAppID() }
+  const logModule = logPlugin(options.log)
+  const [logctx] = logModule.init(appContext)
+  const log = logctx.log as LogContext<LogMethodNames>['log']
+  const appNode = createAppNode(options.name)
+  return appClosure({ ...appContext, log }, appNode)
 }
 
-export function createTestApp(options?: createTestApp.Options): TestAppContext {
-  const logContext = logModule.createTestLogContext(options, options)
+export type JustWebApp = ReturnType<typeof createApp>
 
-  const context = createContext(logContext, options)
+function appClosure<L extends LogContext>(
+  appContext: AppBaseContext & L,
+  appNode: AppNode) {
+  const log = appContext.log
 
-  const [pluginContext, { loading }] = createPluginsClosure({ context })
+  return {
+    ...appContext,
+    extend<
+      C extends Record<string | symbol, any>,
+      N extends Record<string | symbol, any>,
+      S extends Record<string | symbol, any>>(this: C, plugin: PluginModule<C, N, S>): C & N {
+      const childAppNode = createAppNode(plugin.name, appNode)
 
-  return Object.assign(context, {
-    appID: ctx.genAppID(),
-    ...logContext,
-    ...pluginContext,
+      const pluginLogger = Object.assign(log.getLogger(plugin.name), {
+        ...pick(log, 'toLogLevel', 'toLogLevelName'),
+        getLogger: createPrefixedGetLogger({ log }, plugin.name)
+      })
+
+      const initResult = plugin.init({ ...this, log: pluginLogger })
+      if (!initResult) {
+        if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
+          childAppNode.plugin = () => plugin.start({ log: pluginLogger } as any)
+        }
+        return appClosure(appContext, childAppNode) as any
+      }
+      const [pluginContext, startContext] = initResult
+      if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start))
+        childAppNode.plugin = () => plugin.start({ ...startContext, log: pluginLogger } as any)
+      return appClosure({ ...appContext, ...pluginContext! }, childAppNode) as any
+    },
     async start() {
-      const logger = logContext.log.getLogger('@just-web/app')
-      logger.notice('application starts')
-      await startPlugins({ logger: logger, loading })
-      await browserContributions().start(context)
+      let top: AppNode = appNode
+      while (top.parent) top = top.parent
+      if (top.started) return
+      await top.start()
+      log.info('start')
     }
-  })
+  }
 }
+
+function createAppNode(name: string, parent?: AppNode): AppNode {
+  const node: AppNode = {
+    name,
+    parent,
+    started: false,
+    children: [],
+    async start() {
+      if (this.started) return
+      if (this.plugin) await this.plugin()
+      for (const c of this.children) {
+        await c.start()
+      }
+      this.started = true
+    }
+  }
+  parent?.children.push(node)
+  return node
+}
+export namespace createTestApp {
+  export type Options<N extends string = LogMethodNames> = { name?: string, log?: LogOptions<N> }
+}
+
+
+export function createTestApp<N extends string = LogMethodNames>(options?: createTestApp.Options<N>) {
+  const name = options?.name ?? 'test-app'
+  const appContext = { name: name, id: ctx.genAppID() }
+  const logModule = logPluginForTest(options?.log)
+  const [logctx] = logModule.init(appContext)
+  const log = logctx.log as TestLogContext<LogMethodNames>['log']
+  const appNode = createAppNode(name)
+  return appClosure({ ...appContext, log }, appNode)
+}
+
+export type JustWebTestApp = ReturnType<typeof createTestApp>

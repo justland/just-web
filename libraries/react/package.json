@@ -48,6 +48,7 @@
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@just-web/app": "workspace:*",
     "@just-web/repo-scripts": "workspace:*",
+    "@just-web/types": "workspace:*",
     "@size-limit/preset-small-lib": "~7.0.8",
     "@storybook/addon-actions": "~6.4.22",
     "@storybook/addon-console": "~1.2.3",
@@ -129,6 +130,7 @@
   },
   "peerDependencies": {
     "@just-web/app": "workspace:*",
+    "@just-web/types": "workspace:*",
     "react": ">= 16.8.0"
   },
   "size-limit": [

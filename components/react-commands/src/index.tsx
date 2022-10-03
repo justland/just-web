@@ -22,17 +22,3 @@ export default definePlugin(() => ({
     )
   }
 }))
-
-export async function activate(context: LogContext & CommandsContext) {
-  const log = context.log.getLogger('@just-web/react-commands')
-  log.notice('activate')
-  const store = setStore(createStore<State>({
-    context,
-    log,
-    openCommandPalette: false
-  }))
-  context.commands.register(
-    'just-web.showCommandPalette',
-    () => store.update(s => { s.openCommandPalette = true })
-  )
-}

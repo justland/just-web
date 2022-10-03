@@ -1,6 +1,5 @@
-
-import { ContributionsContext } from '@just-web/contributions'
-import { LogContext } from '@just-web/log'
+import type { ContributionsContext } from '@just-web/contributions'
+import type { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { CommandRegistry, commandRegistry } from './commandRegistry'
 
@@ -14,12 +13,10 @@ export type CommandsContext = {
 export type CommandsOptions = { commands?: commandRegistry.Options }
 
 export namespace createCommandsContext {
-  export type Context = {
-    options?: CommandsOptions
-  } & LogContext & ContributionsContext
+  export type Context = LogContext & ContributionsContext
 }
 
-export default definePlugin(() => ({
+export default definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
   init: (ctx: createCommandsContext.Context): [CommandsContext] => {
     const log = ctx.log.getLogger('@just-web/commands')
@@ -33,21 +30,6 @@ export default definePlugin(() => ({
       key: 'ctrl+p',
       mac: 'cmd+p'
     })
-    return [{ commands: commandRegistry(ctx, ctx.options?.commands) }]
+    return [{ commands: commandRegistry(ctx, options?.commands) }]
   }
 }))
-
-export function createCommandsContext(ctx: createCommandsContext.Context): CommandsContext {
-  const logger = ctx.log.getLogger('@just-web/commands')
-  logger.trace('create context')
-  ctx.contributions.commands.add({
-    command: 'just-web.showCommandPalette',
-    commandPalette: false
-  })
-  ctx.contributions.keyBindings.add({
-    command: 'just-web.showCommandPalette',
-    key: 'ctrl+p',
-    mac: 'cmd+p'
-  })
-  return { commands: commandRegistry(ctx, ctx.options?.commands) }
-}

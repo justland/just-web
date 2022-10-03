@@ -2,12 +2,12 @@ import {
   createApp, createMemoryLogReporter
 } from '@just-web/app'
 import { logMatchSome } from '@just-web/testing'
-import * as routesModule from '.'
+import routePlugin from '.'
 
 describe('start()', () => {
   test('configure initial route', async () => {
     let called = false
-    const app = await createApp({ name: 'test' }).addPlugin(routesModule)
+    const app = await createApp({ name: 'test' }).extend(routePlugin())
     app.routes.register('/intro', () => called = true)
     app.routes.config({ initialRoute: '/intro' })
     await app.start()
@@ -15,7 +15,7 @@ describe('start()', () => {
   })
   test('needs to register route for `initialRoute`', async () => {
     const reporter = createMemoryLogReporter()
-    const app = await createApp({ name: 'test', log: { reporters: [reporter] } }).addPlugin(routesModule)
+    const app = await createApp({ name: 'test', log: { reporters: [reporter] } }).extend(routePlugin())
     await app.start()
     logMatchSome(reporter,
       `(ERROR) navigate target not found: '/'`

@@ -1,5 +1,6 @@
-import type { CommandContribution, Context, KeyBindingContribution } from '@just-web/app'
-import { formatCommand, formatKeyBinding } from '@just-web/contributions'
+import type { CommandContribution, KeyBindingContribution } from '@just-web/app'
+import { CommandsContext } from '@just-web/commands'
+import { ContributionsContext, formatCommand, formatKeyBinding } from '@just-web/contributions'
 import { useStore } from '@just-web/react'
 import { VFC } from 'react'
 import CP from 'react-command-palette'
@@ -11,10 +12,10 @@ import styles from './CommandPalette.module.css'
 export type CommandPaletteCommand = CommandContribution & KeyBindingContribution
 
 export interface CommandPaletteProps {
-  ctx?: Context
+  ctx?: ContributionsContext & CommandsContext
 }
 
-function getCommands(ctx: Context) {
+function getCommands(ctx: ContributionsContext & CommandsContext) {
   const cmds = ctx.contributions.commands.get()
   const kbs = ctx.contributions.keyBindings.get()
   return Object.values(cmds)

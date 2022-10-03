@@ -22,14 +22,3 @@ export default definePlugin((options?: BrowserOptions) => ({
     }]
   }
 }))
-
-export function createErrorsContext(ctx?: BrowserInitContext): BrowserContext {
-  const errors = createErrorStore()
-  registerOnErrorHandler({
-    errors,
-    preventDefault: ctx?.options?.browser?.preventDefault ?? false
-  })
-  return {
-    browser: { errors: toReadonlyErrorStore(errors) }
-  }
-}

@@ -9,9 +9,3 @@ export default definePlugin(() => ({
   name: '@just-web/os',
   init: (): [OSContext] => [{ os: { isMac } }]
 }))
-
-export function createOSContext() {
-  return {
-    os: { isMac }
-  }
-}

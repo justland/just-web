@@ -1,10 +1,11 @@
-import { createTestApp, TestAppContext } from '@just-web/app'
-import { CommandsContext } from '@just-web/commands'
-import { ContributionsContext } from '@just-web/contributions'
+import { createTestApp, JustWebTestApp } from '@just-web/app'
+import commandsPlugin, { CommandsContext } from '@just-web/commands'
+import contributionsPlugin, { ContributionsContext } from '@just-web/contributions'
+import osPlugin, { OSContext } from '@just-web/os'
 import { logLevels } from '@just-web/log'
 import { ComponentStory } from '@storybook/react'
 import Mousetrap from 'mousetrap'
-import * as module from '..'
+import plugin from '..'
 import CommandPalette from './CommandPalette'
 
 export default {
@@ -53,10 +54,14 @@ const Story: ComponentStory<typeof CommandPalette> = ({ ...args }) => {
   </>
 }
 
-async function loadApp(setupApp?: (app: TestAppContext) => void) {
-  let app = createTestApp({ log: { logLevel: logLevels.all } })
-  setupApp?.(app)
-  app = await app.addPlugin(module)
+async function loadApp(setupApp?: (app: JustWebTestApp & ContributionsContext & CommandsContext & OSContext) => void) {
+  const base = createTestApp({ log: { logLevel: logLevels.all } })
+    .extend(contributionsPlugin())
+    .extend(commandsPlugin())
+    .extend(osPlugin())
+
+  setupApp?.(base)
+  const app = base.extend(plugin())
   await app.start()
   return {}
 }

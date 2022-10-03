@@ -13,14 +13,12 @@ describe('initialize()', () => {
     const [{ log }] = logPluginForTest().init()
     const [{ contributions }] = contributionsPlugin().init({ log })
     const d = log.getLogger('test')
-    const [{ commands }] = commandsPlugin().init({
-      log, contributions, options: {
-        commands: {
-          'a': () => d.info('exec a'),
-          'b': () => d.info('exec b')
-        }
+    const [{ commands }] = commandsPlugin({
+      commands: {
+        'a': () => d.info('exec a'),
+        'b': () => d.info('exec b')
       }
-    })
+    }).init({ log, contributions })
     commands.invoke('a')
     commands.invoke('b')
     expect(log.reporter.getLogMessages()).toEqual([
