@@ -2,7 +2,7 @@ import { createTestApp } from '@just-web/app'
 import commandsPlugin from '@just-web/commands'
 import contributionsPlugin from '@just-web/contributions'
 import { AssertOrder } from 'assertron'
-import plugin, { clearUserPreference, clearUserPreferences, getUserPreference, updateUserPreference } from '.'
+import plugin, { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference } from '.'
 
 function setupTestApp() {
   return createTestApp()
@@ -28,19 +28,19 @@ describe(`plugin.init()`, () => {
     o.end()
   })
 
-  it('provides updateUserPreference() API', () => {
+  it('provides setUserPreference() API', () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
     app.commands.register(
-      updateUserPreference.type,
-      updateUserPreference.listener(({ key, value }) => {
+      setUserPreference.type,
+      setUserPreference.listener(({ key, value }) => {
         expect(key).toEqual('some-unique-id')
         expect(value).toEqual({ a: 1 })
         o.once(1)
       })
     )
 
-    app.preferences.update('some-unique-id', { a: 1 })
+    app.preferences.set('some-unique-id', { a: 1 })
 
     o.end()
   })
@@ -60,6 +60,7 @@ describe(`plugin.init()`, () => {
 
     o.end()
   })
+
   it('provides clearUserPreferences() API', () => {
     const app = setupTestApp()
 

@@ -6,10 +6,10 @@ import { justEvent } from '@unional/events-plus'
 import { AnyRecord } from 'type-plus'
 
 /**
- * Update the specified user preference.
+ * Set the specified user preference.
  * @param key The key of the preference to be update
  */
-export const updateUserPreference = justEvent<{ key: string, value: string | AnyRecord }>('just-web.updateUserPreference')
+export const setUserPreference = justEvent<{ key: string, value: string | AnyRecord }>('just-web.setUserPreference')
 export const getUserPreference = justEvent<{ key: string }>('just-web.getUserPreference')
 
 /**
@@ -22,7 +22,7 @@ export const clearUserPreferences = justEvent('just-web.clearUserPreferences')
 export default definePlugin(() => ({
   name: '@just-web/preferences',
   init: ({ commands, contributions }: LogContext & CommandsContext & ContributionsContext) => {
-    contributions.commands.add({ command: updateUserPreference.type })
+    contributions.commands.add({ command: setUserPreference.type })
     contributions.commands.add({ command: getUserPreference.type })
     contributions.commands.add({ command: clearUserPreference.type })
     contributions.commands.add({ command: clearUserPreferences.type })
@@ -35,10 +35,10 @@ export default definePlugin(() => ({
             ...getUserPreference({ key })
           )
         },
-        update(key: string, value: string | AnyRecord) {
+        set(key: string, value: string | AnyRecord) {
           return commands.invoke(
-            updateUserPreference.type,
-            ...updateUserPreference({ key, value })
+            setUserPreference.type,
+            ...setUserPreference({ key, value })
           )
         },
         clear(key: string) {
