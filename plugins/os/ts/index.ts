@@ -1,5 +1,6 @@
 import { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
+import { unpartial } from 'type-plus'
 import { isMac } from './os'
 
 export * from './os'
@@ -14,5 +15,16 @@ const plugin = definePlugin(() => ({
 }))
 
 export type OSContext = ReturnType<ReturnType<typeof plugin>['init']>[0]
+export type OSOptions = Partial<OSContext>
 
 export default plugin
+
+export const osTestPlugin = definePlugin((options?: OSOptions) => ({
+  name: '@just-web/os-test',
+  init: ({ log }: LogContext) => {
+    log.notice('init')
+    return [{
+      os: unpartial({ isMac }, options?.os)
+    }]
+  }
+}))
