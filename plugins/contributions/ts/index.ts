@@ -1,6 +1,5 @@
 export * from './commands'
 export * from './keyBindings'
-export * from './types'
 
 import { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
@@ -14,7 +13,7 @@ export type ContributionsOptions = {
   }
 }
 
-export default definePlugin((options?: ContributionsOptions) => ({
+const plugin = definePlugin((options?: ContributionsOptions) => ({
   name: '@just-web/contributions',
   init: (ctx: LogContext) => {
     ctx.log.notice('init')
@@ -23,3 +22,7 @@ export default definePlugin((options?: ContributionsOptions) => ({
     return [{ contributions: { commands, keyBindings } }]
   }
 }))
+
+export type ContributionsContext = ReturnType<ReturnType<typeof plugin>['init']>[0]
+
+export default plugin
