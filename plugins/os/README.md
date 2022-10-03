@@ -25,9 +25,9 @@ rush add -p @just-web/os
 
 ```ts
 import { createApp } from '@just-web/app'
-import os from '@just-web/os'
+import osPlugin from '@just-web/os'
 
-createApp({ name: 'your-awesome-app' }).addPlugin(os)
+createApp({ name: 'your-awesome-app' }).extend(osPlugin())
 ```
 
 [`@just-web/os`]: https://github.com/justland/just-web/tree/main/plugins/os
