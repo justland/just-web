@@ -23,10 +23,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "@just-web/contributions": "workspace:*",
     "@just-web/log": "workspace:*",
-    "@just-web/os": "workspace:*",
-    "@just-web/states": "workspace:*",
     "@just-web/types": "workspace:*",
     "iso-error": "~4.4.0",
     "type-plus": "^4.13.1"
@@ -34,6 +31,7 @@
   "devDependencies": {
     "@babel/core": "~7.18.0",
     "@babel/plugin-transform-runtime": "~7.18.0",
+    "@just-web/os": "workspace:*",
     "@just-web/repo-scripts": "workspace:*",
     "@size-limit/preset-small-lib": "~7.0.8",
     "@types/jest": "^27.4.1",

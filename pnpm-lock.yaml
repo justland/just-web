@@ -54,17 +54,17 @@ importers:
       '@babel/plugin-transform-react-jsx': ~7.17.3
       '@headlessui/react': ~1.5.0
       '@just-web/app': workspace:*
-      '@just-web/browser': workspace:^0.2.7
-      '@just-web/browser-contributions': workspace:^0.2.7
-      '@just-web/commands': workspace:^0.2.5
-      '@just-web/contributions': workspace:^0.2.3
-      '@just-web/log': workspace:^0.2.2
-      '@just-web/os': workspace:^0.2.7
+      '@just-web/browser': workspace:*
+      '@just-web/browser-contributions': workspace:*
+      '@just-web/commands': workspace:*
+      '@just-web/contributions': workspace:*
+      '@just-web/log': workspace:*
+      '@just-web/os': workspace:*
       '@just-web/react': workspace:*
       '@just-web/react-commands': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@just-web/routes': workspace:*
-      '@just-web/states': workspace:^0.2.3
+      '@just-web/states': workspace:*
       '@storybook/addon-actions': ~6.4.22
       '@storybook/addon-essentials': ~6.4.22
       '@storybook/addon-interactions': ~6.4.22
@@ -136,9 +136,16 @@ importers:
     dependencies:
       '@headlessui/react': 1.5.0_sfoxds7t5ydpegc3knd667wn6m
       '@just-web/app': link:../../../frameworks/app
+      '@just-web/browser': link:../../../plugins/browser
+      '@just-web/browser-contributions': link:../../../plugins/browser-contributions
+      '@just-web/commands': link:../../../frameworks/commands
+      '@just-web/contributions': link:../../../frameworks/contributions
+      '@just-web/log': link:../../../frameworks/log
+      '@just-web/os': link:../../../plugins/os
       '@just-web/react': link:../../../libraries/react
       '@just-web/react-commands': link:../../../components/react-commands
       '@just-web/routes': link:../../../plugins/routes
+      '@just-web/states': link:../../../libraries/states
       codemirror: 5.65.5
       react: 17.0.2
       react-codemirror2-react-17: 1.0.0_uwulx3m5oxu46iwgjw3mfbw2eu
@@ -148,14 +155,7 @@ importers:
       '@babel/core': 7.18.5
       '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.5
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.5
-      '@just-web/browser': link:../../../plugins/browser
-      '@just-web/browser-contributions': link:../../../plugins/browser-contributions
-      '@just-web/commands': link:../../../frameworks/commands
-      '@just-web/contributions': link:../../../frameworks/contributions
-      '@just-web/log': link:../../../frameworks/log
-      '@just-web/os': link:../../../plugins/os
       '@just-web/repo-scripts': link:../../../tools/repo-scripts
-      '@just-web/states': link:../../../libraries/states
       '@storybook/addon-actions': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addon-essentials': 6.4.22_cciewxp7w637vvdjpbbghldska
       '@storybook/addon-interactions': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
@@ -510,15 +510,9 @@ importers:
     specifiers:
       '@babel/core': ~7.18.0
       '@babel/plugin-transform-runtime': ~7.18.0
-      '@just-web/browser': workspace:*
-      '@just-web/browser-contributions': workspace:*
-      '@just-web/commands': workspace:*
-      '@just-web/contributions': workspace:*
       '@just-web/log': workspace:*
       '@just-web/os': workspace:*
       '@just-web/repo-scripts': workspace:*
-      '@just-web/states': workspace:*
-      '@just-web/testing': workspace:*
       '@just-web/types': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
@@ -545,21 +539,15 @@ importers:
       type-plus: ^4.13.1
       typescript: ^4.8.4
     dependencies:
-      '@just-web/browser': link:../../plugins/browser
-      '@just-web/browser-contributions': link:../../plugins/browser-contributions
-      '@just-web/commands': link:../commands
-      '@just-web/contributions': link:../contributions
       '@just-web/log': link:../log
-      '@just-web/os': link:../../plugins/os
-      '@just-web/states': link:../../libraries/states
       '@just-web/types': link:../types
       iso-error: 4.4.0
       type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.18.5
       '@babel/plugin-transform-runtime': 7.18.2_@babel+core@7.18.5
+      '@just-web/os': link:../../plugins/os
       '@just-web/repo-scripts': link:../../tools/repo-scripts
-      '@just-web/testing': link:../../tools/testing
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.5.2
       '@types/ramda': 0.28.14
@@ -821,9 +809,9 @@ importers:
       '@babel/plugin-syntax-flow': ^7.14.5
       '@babel/plugin-transform-react-jsx': ^7.14.9
       '@just-web/app': workspace:*
-      '@just-web/log': workspace:^0.2.2
+      '@just-web/log': workspace:*
       '@just-web/repo-scripts': workspace:*
-      '@just-web/states': workspace:^0.2.3
+      '@just-web/states': workspace:*
       '@just-web/types': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
       '@storybook/addon-actions': ~6.4.22
@@ -15700,8 +15688,8 @@ packages:
       '@babel/plugin-transform-react-jsx': ^7.14.9
       eslint: ^8.1.0
     dependencies:
-      '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.19.3
-      '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.19.3
+      '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.5
+      '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.5
       eslint: 8.17.0
       lodash: 4.17.21
       string-natural-compare: 3.0.1
