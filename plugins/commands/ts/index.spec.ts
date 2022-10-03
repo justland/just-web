@@ -1,5 +1,6 @@
 import contributionsPlugin from '@just-web/contributions'
 import { logPluginForTest } from '@just-web/log'
+import { logEqual } from '@just-web/testing'
 import commandsPlugin from '.'
 
 describe('initialize()', () => {
@@ -21,9 +22,11 @@ describe('initialize()', () => {
     }).init({ log, contributions })
     commands.invoke('a')
     commands.invoke('b')
-    expect(log.reporter.getLogMessages()).toEqual([
-      'exec a',
-      'exec b'
-    ])
+    logEqual(log.reporter,
+      '(NOTICE) init',
+      '(NOTICE) init',
+      '(INFO) exec a',
+      '(INFO) exec b'
+    )
   })
 })

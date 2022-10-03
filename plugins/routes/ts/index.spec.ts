@@ -1,14 +1,14 @@
 import {
   createApp
 } from '@just-web/app'
-import { createMemoryLogReporter } from '@just-web/log'
+import { createMemoryLogReporter, logLevels } from '@just-web/log'
 import { logMatchSome } from '@just-web/testing'
 import routePlugin from '.'
 
 describe('start()', () => {
   test('configure initial route', async () => {
     let called = false
-    const app = await createApp({ name: 'test' }).extend(routePlugin())
+    const app = await createApp({ name: 'test', log: { logLevel: logLevels.none } }).extend(routePlugin())
     app.routes.register('/intro', () => called = true)
     app.routes.config({ initialRoute: '/intro' })
     await app.start()
@@ -19,6 +19,7 @@ describe('start()', () => {
     const app = await createApp({ name: 'test', log: { reporters: [reporter] } }).extend(routePlugin())
     await app.start()
     logMatchSome(reporter,
+      `(NOTICE) init`,
       `(ERROR) navigate target not found: '/'`
     )
   })

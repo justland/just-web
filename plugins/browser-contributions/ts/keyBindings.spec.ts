@@ -17,8 +17,8 @@ function setupTest(...stubCommands: StubCommand[]) {
   const [{ log }] = logPluginForTest().init()
   const [{ contributions }] = contributionsPlugin().init({ log })
   const [{ commands }] = commandsPlugin().init({ log, contributions })
-  const [{ browser }] = browserPlugin().init({})
-  const [{ os }] = osPlugin().init({})
+  const [{ browser }] = browserPlugin().init({ log })
+  const [{ os }] = osPlugin().init({ log })
 
   stubCommands.forEach(stubCommand => {
     contributions.commands.add(stubCommand)
@@ -81,5 +81,11 @@ test('emit warning for duplicate key binding', async () => {
   })
   startKeyBindings(options)
 
-  logEqual(options.log.reporter, '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j')
+  logEqual(options.log.reporter,
+    '(NOTICE) init',
+    '(NOTICE) init',
+    '(NOTICE) init',
+    '(NOTICE) init',
+    '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j'
+  )
 })
