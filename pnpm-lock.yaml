@@ -1062,6 +1062,8 @@ importers:
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
+      '@unional/events-plus': ~2.2.0
+      assertron: ^10.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
@@ -1079,6 +1081,7 @@ importers:
       type-plus: ^4.13.1
       typescript: ^4.8.4
     dependencies:
+      '@unional/events-plus': 2.2.0
       type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.18.5
@@ -1093,6 +1096,7 @@ importers:
       '@types/jest': 27.5.2
       '@typescript-eslint/eslint-plugin': 5.28.0_hiamgr4ek23hhgsokjypxbuwwy
       '@typescript-eslint/parser': 5.38.1_vhsckgnokn2tf7m5xkrurmvfv4
+      assertron: 10.0.0
       depcheck: 1.4.3
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
@@ -11551,7 +11555,6 @@ packages:
       typescript: 4.8.4
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@typescript-eslint/eslint-plugin/5.28.0_zzm6nnd5isebrlmd43qblrzcpe:
     resolution: {integrity: sha512-DXVU6Cg29H2M6EybqSg2A+x8DgO9TCUBRp4QEXQHJceLS7ogVDP0g3Lkg/SZCqcvkAP/RruuQqK0gdlkgmhSUA==}

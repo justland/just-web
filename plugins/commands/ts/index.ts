@@ -1,14 +1,11 @@
 import type { ContributionsContext } from '@just-web/contributions'
 import type { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
-import { CommandRegistry, commandRegistry } from './commandRegistry'
+import { justEvent } from '@unional/events-plus'
+import { commandRegistry } from './commandRegistry'
 
 export * from './commandRegistry'
 export type { Command } from './types'
-
-export type CommandsContext = {
-  commands: CommandRegistry
-}
 
 export type CommandsOptions = { commands?: commandRegistry.Options }
 
@@ -16,19 +13,30 @@ export namespace createCommandsContext {
   export type Context = LogContext & ContributionsContext
 }
 
-export default definePlugin((options?: CommandsOptions) => ({
+export const showCommandPalette = justEvent('just-web.showCommandPalette')
+
+const plugin = definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
-  init: (ctx: createCommandsContext.Context): [CommandsContext] => {
+  init: (ctx: createCommandsContext.Context) => {
     ctx.log.notice('init')
     ctx.contributions.commands.add({
-      command: 'just-web.showCommandPalette',
+      command: showCommandPalette.type,
       commandPalette: false
     })
     ctx.contributions.keyBindings.add({
-      command: 'just-web.showCommandPalette',
+      command: showCommandPalette.type,
       key: 'ctrl+p',
       mac: 'cmd+p'
     })
-    return [{ commands: commandRegistry(ctx, options?.commands) }]
+    const registry = commandRegistry(ctx, options?.commands)
+    return [{
+      commands: Object.assign(registry, {
+        showCommandPalette() { return registry.invoke(showCommandPalette.type) }
+      })
+    }]
   }
 }))
+
+export type CommandsContext = ReturnType<ReturnType<typeof plugin>['init']>[0]
+
+export default plugin
