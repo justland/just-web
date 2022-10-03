@@ -327,10 +327,11 @@ importers:
       '@babel/plugin-syntax-flow': ~7.17.0
       '@babel/plugin-transform-react-jsx': ~7.17.3
       '@just-web/app': workspace:*
+      '@just-web/browser-contributions': workspace:*
       '@just-web/commands': workspace:*
       '@just-web/contributions': workspace:*
       '@just-web/log': workspace:*
-      '@just-web/os': workspace:^0.2.7
+      '@just-web/os': workspace:*
       '@just-web/react': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
@@ -423,6 +424,7 @@ importers:
       '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.5
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.5
       '@just-web/app': link:../../frameworks/app
+      '@just-web/browser-contributions': link:../../plugins/browser-contributions
       '@just-web/commands': link:../../plugins/commands
       '@just-web/contributions': link:../../plugins/contributions
       '@just-web/log': link:../../frameworks/log
@@ -596,12 +598,14 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      standard-log: ^10.3.0
+      standard-log: ^11.0.0
+      standard-log-color: ^11.0.0
       type-plus: ^4.13.1
       typescript: ^4.8.4
     dependencies:
       '@just-func/types': 0.2.1
-      standard-log: 10.3.0
+      standard-log: 11.0.0
+      standard-log-color: 11.0.0_standard-log@11.0.0
       type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.18.5
@@ -651,7 +655,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      standard-log: ^10.3.0
+      standard-log: ^11.0.0
       type-plus: ^4.13.1
       typescript: ^4.8.4
     devDependencies:
@@ -676,7 +680,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      standard-log: 10.3.0
+      standard-log: 11.0.0
       type-plus: 4.13.1
       typescript: 4.8.4
 
@@ -13989,6 +13993,10 @@ packages:
     dependencies:
       color-name: 1.1.4
 
+  /color-map/2.0.6:
+    resolution: {integrity: sha512-XRURUKZrudYjWerwTiMJYEyUOvrSvXcO7y9W2X+8KdmWIfDFO1P3P3xMCN2aFYKlHAbEO7UZTm0osD52kziZuw==}
+    dev: false
+
   /color-name/1.1.3:
     resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==}
 
@@ -24878,8 +24886,19 @@ packages:
     resolution: {integrity: sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==}
     dev: true
 
-  /standard-log/10.3.0:
-    resolution: {integrity: sha512-UYuATE6iDGQ9/XX0fqAoHRhYzcv8CCRxO9h8RrS8pUDSZQKjd7xACAc63Eoidhtd7Tj4sf6K4eItka/4IutQFA==}
+  /standard-log-color/11.0.0_standard-log@11.0.0:
+    resolution: {integrity: sha512-85yZY6JkydJVGcYqyinEzqPuS6nEsnmvvknBT/BLI7yvkat7FHQL6PEXVe3UMiJCJj0vKf6z2Ev7VBb67bdzBA==}
+    peerDependencies:
+      standard-log: '>=11.0.0'
+    dependencies:
+      color-map: 2.0.6
+      standard-log: 11.0.0
+      supports-color: 8.1.1
+      unpartial: 1.0.4
+    dev: false
+
+  /standard-log/11.0.0:
+    resolution: {integrity: sha512-zySMFLAcy2hy2Vj1iSG4UmQlFFC5GC/OK+/vwcfVV7B5NL76hSW3nwOzZZpmttSE1Q/+VZDjkjPXGrr2d2Gs5w==}
     dependencies:
       '@just-func/types': 0.2.1
       iso-error: 4.4.0

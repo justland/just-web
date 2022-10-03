@@ -5,7 +5,8 @@ import {
   logLevels, LogMethodNames, LogReporter, ReporterFilter,
   StandardLog, StandardLogForTest, StandardLogOptions
 } from 'standard-log'
-import { omit, Omit, requiredDeep } from 'type-plus'
+import { createColorLogReporter } from 'standard-log-color'
+import { omit, Omit, requiredDeep, unpartial } from 'type-plus'
 
 export {
   createConsoleLogReporter, createMemoryLogReporter, createStandardLogForTest,
@@ -13,6 +14,7 @@ export {
   plainLogFormatter, StandardLogError, suppressLogs,
   toConsoleMethod, toLogLevel, toLogLevelName, toMessageWithLevel
 } from 'standard-log'
+export * from 'standard-log-color'
 export type {
   ConsoleLogFormatter, ConsoleLogReporter, ConsoleLogReporterOptions,
   LogEntry, LogFilter, LogFormatter, LogFunction, Logger, LoggerOptions,
@@ -92,7 +94,7 @@ export default <N extends string = LogMethodNames>(options?: LogOptions<N>) => (
   init: (
     ctx: AppBaseContext
   ): [LogContext<N>] => {
-    const sl = createStandardLog<N>(options)
+    const sl = createStandardLog<N>(unpartial({ reporters: [createColorLogReporter()] }, options))
     sl.getLogger(`${ctx.name}:@just-web/log`).trace('init')
 
     const log = {
