@@ -14,31 +14,34 @@
       "path": "frameworks/app"
     },
     {
-      "path": "frameworks/commands"
-    },
-    {
-      "path": "frameworks/contributions"
-    },
-    {
-      "path": "plugins/browser"
-    },
-    {
-      "path": "libraries/events"
-    },
-    {
       "path": "frameworks/log"
     },
     {
       "path": "frameworks/types"
     },
     {
-      "path": "plugins/browser-contributions"
+      "path": "libraries/react"
     },
     {
       "path": "libraries/states"
     },
     {
-      "path": "libraries/react"
+      "path": "plugins/browser"
+    },
+    {
+      "path": "plugins/browser-contributions"
+    },
+    {
+      "path": "plugins/commands"
+    },
+    {
+      "path": "plugins/contributions"
+    },
+    {
+      "path": "plugins/events"
+    },
+    {
+      "path": "plugins/os"
     },
     {
       "path": "plugins/routes"

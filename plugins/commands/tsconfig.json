@@ -14,10 +14,19 @@
       "path": "../../frameworks/log"
     },
     {
-      "path": "../../frameworks/contributions"
+      "path": "../../frameworks/types"
     },
     {
       "path": "../../libraries/states"
+    },
+    {
+      "path": "../../plugins/contributions"
+    },
+    {
+      "path": "../../plugins/os"
+    },
+    {
+      "path": "../../tools/repo-scripts"
     },
     {
       "path": "../../tools/testing"

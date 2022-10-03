@@ -48,6 +48,6 @@ const Comp = () => <>
 </>
 ```
 
-[`@just-web/commands`]: https://github.com/justland/just-web/tree/main/frameworks/commands
+[`@just-web/commands`]: https://github.com/justland/just-web/tree/main/plugins/commands
 [`@just-web/react-commands`]: https://github.com/justland/just-web/tree/main/components/react-commands
 [`React`]: https://reactjs.org/

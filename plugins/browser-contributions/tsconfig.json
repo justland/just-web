@@ -11,19 +11,25 @@
   },
   "references": [
     {
-      "path": "../../plugins/browser"
-    },
-    {
-      "path": "../../frameworks/commands"
-    },
-    {
-      "path": "../../frameworks/contributions"
-    },
-    {
       "path": "../../frameworks/log"
     },
     {
       "path": "../../frameworks/types"
+    },
+    {
+      "path": "../../plugins/browser"
+    },
+    {
+      "path": "../../plugins/commands"
+    },
+    {
+      "path": "../../plugins/contributions"
+    },
+    {
+      "path": "../../plugins/os"
+    },
+    {
+      "path": "../../tools/repo-scripts"
     },
     {
       "path": "../../tools/testing"

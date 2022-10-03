@@ -11,5 +11,10 @@
   "include": [
     "ts",
     "typings"
+  ],
+  "references": [
+    {
+      "path": "../../tools/repo-scripts"
+    }
   ]
 }
