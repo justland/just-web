@@ -16,6 +16,7 @@
     "build": "turbo run build",
     "browser": "pnpm --filter=@just-web/browser",
     "browser-contributions": "pnpm --filter=@just-web/browser-contributions",
+    "browser-preferences": "pnpm --filter=@just-web/browser-preferences",
     "clean": "turbo run clean",
     "commands": "pnpm --filter=@just-web/commands",
     "contributions": "pnpm --filter=@just-web/contributions",
@@ -75,5 +76,5 @@
       "@typescript-eslint/eslint-plugin": "^5.28.0"
     }
   },
-  "packageManager": "pnpm@7.12.2"
+  "packageManager": "pnpm@7.10.0"
 }

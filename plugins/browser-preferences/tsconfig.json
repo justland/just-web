@@ -1,0 +1,36 @@
+{
+  "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "ES2019",
+      "ES2021.Promise"
+    ],
+    "outDir": "lib",
+    "rootDir": "ts"
+  },
+  "references": [
+    {
+      "path": "../../frameworks/log"
+    },
+    {
+      "path": "../../frameworks/types"
+    },
+    {
+      "path": "../../plugins/commands"
+    },
+    {
+      "path": "../../plugins/contributions"
+    },
+    {
+      "path": "../../plugins/preferences"
+    },
+    {
+      "path": "../../tools/repo-scripts"
+    }
+  ],
+  "include": [
+    "ts",
+    "typings"
+  ]
+}
