@@ -1,3 +1,4 @@
+import { showCommandPalette } from '@just-web/commands'
 import { formatKeyBinding } from '@just-web/contributions'
 import { getLogger } from '@just-web/log'
 import { getStoreValue } from '../../store'
@@ -9,12 +10,12 @@ const MainBackdrop = () => {
   log.trace('render')
   const s = getStoreValue()
   const keyBindings = s.app.contributions.keyBindings.list()
-  const showCommandPalette = keyBindings.find(k => k.command === 'just-web.showCommandPalette')
+  const kb = keyBindings.find(k => k.command === showCommandPalette.type)!
 
   return <div className="flex flex-col text-center items-center justify-center text-4xl">
     <img src={logo} className="App-logo" alt="logo" />
     <p>
-      Press <code>{formatKeyBinding(showCommandPalette!).key}</code> to open command palette.
+      Press <code>{formatKeyBinding(s.app, kb).key}</code> to open command palette.
     </p>
     <a
       className="text-blue-300"
