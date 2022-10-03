@@ -1,4 +1,4 @@
-import { LogContext } from '@just-web/app'
+import { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 
 export default definePlugin(() => ({

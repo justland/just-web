@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { getLogger, Store, suppressLogs } from '@just-web/app'
+import { getLogger, suppressLogs } from '@just-web/log'
+import { Store } from '@just-web/states'
 import { MD5 } from 'object-hash'
 import { useLayoutEffect, useState } from 'react'
 import { AnyFunction, record } from 'type-plus'

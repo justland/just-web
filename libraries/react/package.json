@@ -47,7 +47,9 @@
     "@babel/plugin-syntax-flow": "^7.14.5",
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@just-web/app": "workspace:*",
+    "@just-web/log": "workspace:*",
     "@just-web/repo-scripts": "workspace:*",
+    "@just-web/states": "workspace:*",
     "@just-web/types": "workspace:*",
     "@size-limit/preset-small-lib": "~7.0.8",
     "@storybook/addon-actions": "~6.4.22",
@@ -130,6 +132,8 @@
   },
   "peerDependencies": {
     "@just-web/app": "workspace:*",
+    "@just-web/log": "workspace:*",
+    "@just-web/states": "workspace:*",
     "@just-web/types": "workspace:*",
     "react": ">= 16.8.0"
   },

@@ -821,8 +821,10 @@ importers:
       '@babel/plugin-syntax-flow': ^7.14.5
       '@babel/plugin-transform-react-jsx': ^7.14.9
       '@just-web/app': workspace:*
+      '@just-web/log': workspace:^0.2.2
       '@just-web/repo-scripts': workspace:*
-      '@just-web/types': workspace:^0.2.2
+      '@just-web/states': workspace:^0.2.3
+      '@just-web/types': workspace:*
       '@size-limit/preset-small-lib': ~7.0.8
       '@storybook/addon-actions': ~6.4.22
       '@storybook/addon-console': ~1.2.3
@@ -910,7 +912,9 @@ importers:
       '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.19.3
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.19.3
       '@just-web/app': link:../../frameworks/app
+      '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
+      '@just-web/states': link:../states
       '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@storybook/addon-actions': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
@@ -7210,7 +7214,7 @@ packages:
       '@storybook/node-logger': 6.4.22
       '@storybook/postinstall': 6.4.22
       '@storybook/preview-web': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/react': 6.4.22_ymk5fedq7cdgkyblo2lqi3vk5y
+      '@storybook/react': 6.4.22_tn67hgmzv2xft5e6qzg7nodqvm
       '@storybook/source-loader': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/store': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/theming': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -7832,7 +7836,7 @@ packages:
       '@storybook/core-client': 6.4.22_vpfffaae5laz5ugwubpgow3zhq
       '@storybook/core-common': 6.4.22_u3adge4v4z5vroplpbetp5b6uu
       '@storybook/csf': 0.0.2--canary.87bc651.0
-      '@storybook/react': 6.4.22_ymk5fedq7cdgkyblo2lqi3vk5y
+      '@storybook/react': 6.4.22_tn67hgmzv2xft5e6qzg7nodqvm
       '@types/glob': 7.2.0
       '@types/jest': 26.0.24
       '@types/jest-specific-snapshot': 0.5.5
@@ -15696,8 +15700,8 @@ packages:
       '@babel/plugin-transform-react-jsx': ^7.14.9
       eslint: ^8.1.0
     dependencies:
-      '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.5
-      '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.5
+      '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.19.3
+      '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.19.3
       eslint: 8.17.0
       lodash: 4.17.21
       string-natural-compare: 3.0.1

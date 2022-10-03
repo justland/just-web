@@ -1,4 +1,4 @@
-import { createStore, Store } from '@just-web/app'
+import { createStore, Store } from '@just-web/states'
 import { useEffect, VFC } from 'react'
 import { useStore } from './useStore'
 

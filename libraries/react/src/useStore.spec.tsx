@@ -1,4 +1,4 @@
-import { createStore } from '@just-web/app'
+import { createStore } from '@just-web/states'
 import { useEffect } from 'react'
 import { act, create, ReactTestRendererJSON } from 'react-test-renderer'
 import { useStore } from '.'

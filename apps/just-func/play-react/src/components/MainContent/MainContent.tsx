@@ -1,5 +1,5 @@
 import { Tab } from '@headlessui/react'
-import { getLogger } from '@just-web/app'
+import { getLogger } from '@just-web/log'
 import { useStore } from '@just-web/react'
 import { store } from '../../docViews/store'
 
