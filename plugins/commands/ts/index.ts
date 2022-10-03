@@ -19,8 +19,7 @@ export namespace createCommandsContext {
 export default definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
   init: (ctx: createCommandsContext.Context): [CommandsContext] => {
-    const log = ctx.log.getLogger('@just-web/commands')
-    log.trace('create context')
+    ctx.log.notice('init')
     ctx.contributions.commands.add({
       command: 'just-web.showCommandPalette',
       commandPalette: false
