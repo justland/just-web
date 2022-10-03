@@ -6,14 +6,14 @@
   "fixed": [
     [
       "@just-web/app",
-      "@just-web/commands",
-      "@just-web/contributions",
-      "@just-web/errors",
-      "@just-web/events",
-      "@just-web/log",
       "@just-web/browser",
       "@just-web/browser-contributions",
-      "@just-web/states"
+      "@just-web/commands",
+      "@just-web/contributions",
+      "@just-web/log",
+      "@just-web/os",
+      "@just-web/states",
+      "@just-web/types"
     ]
   ],
   "linked": [],
