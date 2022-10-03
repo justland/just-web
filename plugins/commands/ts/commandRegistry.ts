@@ -11,7 +11,7 @@ export interface CommandRegistry {
    * invoke a registered command.
    * @param args arguments for the command
    */
-  invoke(command: string, ...args: any[]): void,
+  invoke(command: string, ...args: any[]): any,
   /**
    * Gets all registered command names.
    */
@@ -47,7 +47,7 @@ export function commandRegistry(
     invoke(command: string, ...args: any[]) {
       logger.trace('invoke', command)
       const handler = registry.get()[command]
-      handler ? handler(...args) : logger.error(`Invoking not registered command: '${command}'`)
+      return handler ? handler(...args) : logger.error(`Invoking not registered command: '${command}'`)
     },
     keys: registry.keys.bind(registry)
   }

@@ -88,4 +88,11 @@ describe('invoke()', () => {
     r.invoke('command1', 1)
     expect(fn).toHaveBeenCalledWith(1)
   })
+
+  it('receives the return value from the handler', () => {
+    const [r] = setupTest()
+    r.register('c1', () => ({ a: 1 }))
+    const a = r.invoke('c1')
+    expect(a).toEqual({ a: 1 })
+  })
 })
