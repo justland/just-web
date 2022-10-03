@@ -1,5 +1,11 @@
 import createApp, { logLevels } from '@just-web/app'
-import * as routes from '@just-web/routes'
+import routePlugin from '@just-web/routes'
+import contributionsPlugin from '@just-web/contributions'
+import commandsPlugin from '@just-web/commands'
+import osPlugin from '@just-web/os'
+import browserPlugin from '@just-web/browser'
+import browserContributionsPlugin from '@just-web/browser-contributions'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
@@ -13,7 +19,12 @@ void (async () => {
   const app = await createApp({
     name: 'test',
     log: { logLevel: logLevels.all }
-  }).addPlugin(routes)
+  }).extend(contributionsPlugin())
+    .extend(commandsPlugin())
+    .extend(osPlugin())
+    .extend(browserPlugin())
+    .extend(browserContributionsPlugin())
+    .extend(routePlugin())
   createAppStore(app)
 
   app.contributions.commands.add({

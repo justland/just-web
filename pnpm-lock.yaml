@@ -54,12 +54,17 @@ importers:
       '@babel/plugin-transform-react-jsx': ~7.17.3
       '@headlessui/react': ~1.5.0
       '@just-web/app': workspace:*
+      '@just-web/browser': workspace:^0.2.7
+      '@just-web/browser-contributions': workspace:^0.2.7
+      '@just-web/commands': workspace:^0.2.5
       '@just-web/contributions': workspace:^0.2.3
       '@just-web/log': workspace:^0.2.2
+      '@just-web/os': workspace:^0.2.7
       '@just-web/react': workspace:*
       '@just-web/react-commands': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@just-web/routes': workspace:*
+      '@just-web/states': workspace:^0.2.3
       '@storybook/addon-actions': ~6.4.22
       '@storybook/addon-essentials': ~6.4.22
       '@storybook/addon-interactions': ~6.4.22
@@ -143,9 +148,14 @@ importers:
       '@babel/core': 7.18.5
       '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.18.5
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.18.5
+      '@just-web/browser': link:../../../plugins/browser
+      '@just-web/browser-contributions': link:../../../plugins/browser-contributions
+      '@just-web/commands': link:../../../frameworks/commands
       '@just-web/contributions': link:../../../frameworks/contributions
       '@just-web/log': link:../../../frameworks/log
+      '@just-web/os': link:../../../plugins/os
       '@just-web/repo-scripts': link:../../../tools/repo-scripts
+      '@just-web/states': link:../../../libraries/states
       '@storybook/addon-actions': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addon-essentials': 6.4.22_cciewxp7w637vvdjpbbghldska
       '@storybook/addon-interactions': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
@@ -320,6 +330,7 @@ importers:
       '@just-web/commands': workspace:*
       '@just-web/contributions': workspace:*
       '@just-web/log': workspace:*
+      '@just-web/os': workspace:^0.2.7
       '@just-web/react': workspace:*
       '@just-web/repo-scripts': workspace:*
       '@just-web/states': workspace:*
@@ -415,6 +426,7 @@ importers:
       '@just-web/commands': link:../../frameworks/commands
       '@just-web/contributions': link:../../frameworks/contributions
       '@just-web/log': link:../../frameworks/log
+      '@just-web/os': link:../../plugins/os
       '@just-web/react': link:../../libraries/react
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/states': link:../../libraries/states
@@ -810,6 +822,7 @@ importers:
       '@babel/plugin-transform-react-jsx': ^7.14.9
       '@just-web/app': workspace:*
       '@just-web/repo-scripts': workspace:*
+      '@just-web/types': workspace:^0.2.2
       '@size-limit/preset-small-lib': ~7.0.8
       '@storybook/addon-actions': ~6.4.22
       '@storybook/addon-console': ~1.2.3
@@ -898,6 +911,7 @@ importers:
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.19.3
       '@just-web/app': link:../../frameworks/app
       '@just-web/repo-scripts': link:../../tools/repo-scripts
+      '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@storybook/addon-actions': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addon-console': 1.2.3_rivxleni3rql4upe7cuupvteyi
@@ -7196,7 +7210,7 @@ packages:
       '@storybook/node-logger': 6.4.22
       '@storybook/postinstall': 6.4.22
       '@storybook/preview-web': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/react': 6.4.22_tn67hgmzv2xft5e6qzg7nodqvm
+      '@storybook/react': 6.4.22_ymk5fedq7cdgkyblo2lqi3vk5y
       '@storybook/source-loader': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/store': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/theming': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -7818,7 +7832,7 @@ packages:
       '@storybook/core-client': 6.4.22_vpfffaae5laz5ugwubpgow3zhq
       '@storybook/core-common': 6.4.22_u3adge4v4z5vroplpbetp5b6uu
       '@storybook/csf': 0.0.2--canary.87bc651.0
-      '@storybook/react': 6.4.22_tn67hgmzv2xft5e6qzg7nodqvm
+      '@storybook/react': 6.4.22_ymk5fedq7cdgkyblo2lqi3vk5y
       '@types/glob': 7.2.0
       '@types/jest': 26.0.24
       '@types/jest-specific-snapshot': 0.5.5

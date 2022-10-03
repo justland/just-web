@@ -6,6 +6,7 @@ import { lazyImport } from './lazyImport'
 
 test('lazy import module', async () => {
   const app = createTestApp({ name: 'test' })
+
   const Component = lazyImport(
     () => app,
     () => import('./dummyModule'),

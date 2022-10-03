@@ -63,6 +63,7 @@
     "@just-web/commands": "workspace:*",
     "@just-web/contributions": "workspace:*",
     "@just-web/log": "workspace:*",
+    "@just-web/os": "workspace:^0.2.7",
     "@just-web/react": "workspace:*",
     "@just-web/repo-scripts": "workspace:*",
     "@just-web/states": "workspace:*",
@@ -147,6 +148,7 @@
     "@just-web/commands": "workspace:*",
     "@just-web/contributions": "workspace:*",
     "@just-web/log": "workspace:*",
+    "@just-web/os": "workspace:*",
     "@just-web/react": "workspace:*",
     "@just-web/states": "workspace:*",
     "@just-web/types": "workspace:*"

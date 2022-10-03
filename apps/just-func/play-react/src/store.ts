@@ -1,8 +1,11 @@
-import { AppContext, createStore, Store } from '@just-web/app'
+import { JustWebApp, createStore, Store } from '@just-web/app'
+import { BrowserContext } from '@just-web/browser'
+import { CommandsContext } from '@just-web/commands'
+import { ContributionsContext } from '@just-web/contributions'
+import { OSContext } from '@just-web/os'
 import { RoutesContext } from '@just-web/routes'
 
-
-export interface App extends AppContext, RoutesContext { }
+export type App = JustWebApp & ContributionsContext & OSContext & BrowserContext & CommandsContext & RoutesContext
 
 export interface AppStore<A = App> {
   app: A
