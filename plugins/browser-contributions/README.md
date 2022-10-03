@@ -1,40 +1,38 @@
-# @just-web/browser
+# `@just-web/browser-contributions`
 
-[`@just-web/routes`] is a plugin that provides client side routing capability.
+[`@just-web/browser-contributions`] provides browser specific implementation for [`@just-web/contributions`].
 
 ## Install
 
 ```sh
 # npm
-npm install @just-web/routes
+npm install @just-web/browser-contributions
 
 # yarn
-yarn add @just-web/routes
+yarn add @just-web/browser-contributions
 
 # pnpm
-pnpm install @just-web/routes
+pnpm install @just-web/browser-contributions
 
 #rush
-rush add -p @just-web/routes
+rush add -p @just-web/browser-contributions
 ```
 
-## Basic usage
-
-Since routing is a basic functionality of an application,
-you typically will load it statically:
+## Usage
 
 ```ts
 import { createApp } from '@just-web/app'
-import * as routes from '@just-web/routes'
+import contributionsPlugin from '@just-web/contributions'
+import commandsPlugin from '@just-web/commands'
+import osPlugin from '@just-web/os'
+import browserContributionsPlugin from '@just-web/browser-contributions'
 
-void (async () => {
-  const app = await createApp({ name: 'my-awesome-app' })
-    .addPlugin(routes)
-  app.routes.register('/', () => { ... })
-  app.routes.register('/error', () => { ... })
-  await app.start()
-})()
-
+createApp({ name: 'your-awesome-app' })
+  .extend(contributionsPlugin())
+  .extend(commandsPlugin())
+  .extend(osPlugin())
+  .extend(browserContributionsPlugin())
 ```
 
-[`@just-web/routes`]: https://github.com/justland/just-web/tree/main/plugins/routes
+[`@just-web/browser-contributions`]: https://github.com/justland/just-web/tree/main/plugins/browser-contributions
+[`@just-web/contributions`]: https://github.com/justland/just-web/tree/main/plugins/contributions
