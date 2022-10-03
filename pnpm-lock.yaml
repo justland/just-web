@@ -983,7 +983,6 @@ importers:
     specifiers:
       '@babel/core': ~7.18.0
       '@babel/plugin-transform-runtime': ~7.18.0
-      '@just-web/browser': workspace:*
       '@just-web/commands': workspace:*
       '@just-web/contributions': workspace:*
       '@just-web/log': workspace:*
@@ -1019,7 +1018,6 @@ importers:
     devDependencies:
       '@babel/core': 7.18.5
       '@babel/plugin-transform-runtime': 7.18.2_@babel+core@7.18.5
-      '@just-web/browser': link:../browser
       '@just-web/commands': link:../commands
       '@just-web/contributions': link:../contributions
       '@just-web/log': link:../../frameworks/log
@@ -11555,6 +11553,7 @@ packages:
       typescript: 4.8.4
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@typescript-eslint/eslint-plugin/5.28.0_zzm6nnd5isebrlmd43qblrzcpe:
     resolution: {integrity: sha512-DXVU6Cg29H2M6EybqSg2A+x8DgO9TCUBRp4QEXQHJceLS7ogVDP0g3Lkg/SZCqcvkAP/RruuQqK0gdlkgmhSUA==}

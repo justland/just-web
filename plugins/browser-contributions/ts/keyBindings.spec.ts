@@ -1,10 +1,9 @@
-import browserPlugin from '@just-web/browser'
-import osPlugin from '@just-web/os'
 import commandsPlugin from '@just-web/commands'
 import contributionsPlugin, {
   CommandContribution, KeyBindingContribution
 } from '@just-web/contributions'
 import { logPluginForTest } from '@just-web/log'
+import osPlugin from '@just-web/os'
 import { logEqual } from '@just-web/testing'
 import mousetrap from 'mousetrap'
 import { startKeyBindings } from './keyBindings'
@@ -17,7 +16,6 @@ function setupTest(...stubCommands: StubCommand[]) {
   const [{ log }] = logPluginForTest().init()
   const [{ contributions }] = contributionsPlugin().init({ log })
   const [{ commands }] = commandsPlugin().init({ log, contributions })
-  const [{ browser }] = browserPlugin().init({ log })
   const [{ os }] = osPlugin().init({ log })
 
   stubCommands.forEach(stubCommand => {
@@ -28,7 +26,6 @@ function setupTest(...stubCommands: StubCommand[]) {
       () => stubCommand.handler(stubCommand))
   })
   return {
-    browser,
     os,
     log,
     commands,
@@ -82,7 +79,6 @@ test('emit warning for duplicate key binding', async () => {
   startKeyBindings(options)
 
   logEqual(options.log.reporter,
-    '(NOTICE) init',
     '(NOTICE) init',
     '(NOTICE) init',
     '(NOTICE) init',
