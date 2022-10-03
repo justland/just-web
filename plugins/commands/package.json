@@ -23,6 +23,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
+    "@unional/events-plus": "~2.2.0",
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
@@ -38,6 +39,7 @@
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
+    "assertron": "^10.0.0",
     "depcheck": "~1.4.3",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "~8.5.0",
