@@ -1,7 +1,7 @@
 import { LogContext } from '@just-web/log'
+import { OSContext } from '@just-web/os'
 import { createRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
 import { record } from 'type-plus'
-import { ctx } from './keyBinding.ctx'
 
 export type KeyBindingContribution = {
   /**
@@ -60,8 +60,8 @@ function getInitRecord(options?: keyBindingRegistry.Options) {
   }, record<string, KeyBindingContribution>())
 }
 
-export function formatKeyBinding(keyBinding: KeyBindingContribution) {
-  const m = ctx.isMac()
+export function formatKeyBinding({ os }: OSContext, keyBinding: KeyBindingContribution) {
+  const m = os.isMac()
   return {
     command: keyBinding.command,
     key: (m ? keyBinding.mac ?? keyBinding.key : keyBinding.key) as string
