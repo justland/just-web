@@ -7,10 +7,12 @@ export { BrowserContributionsInitContext, BrowserContributionsStartContext }
 
 export default definePlugin(() => ({
   name: '@just-web/browser-contributions',
-  init: (ctx: BrowserContributionsInitContext) => [undefined, ctx],
+  init: (ctx: BrowserContributionsInitContext) => {
+    ctx.log.notice('init')
+    return [undefined, ctx]
+  },
   start: async (ctx) => {
-    const log = ctx.log.getLogger('@just-web/browser-contributions')
-    log.trace('start')
+    ctx.log.notice('start')
     if (isType<startKeyBindings.Param>(ctx, ctx => !!ctx.contributions)) {
       startKeyBindings(ctx)
     }

@@ -10,7 +10,7 @@ export default definePlugin(() => ({
   name: '@just-web/react-commands',
   init: (context: LogContext & CommandsContext) => {
     const log = context.log.getLogger('@just-web/react-commands')
-    log.notice('activate')
+    log.notice('init')
     const store = setStore(createStore<State>({
       context,
       log,

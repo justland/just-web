@@ -1,3 +1,4 @@
+import { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { isMac } from './os'
 import type { OSContext } from './types'
@@ -7,5 +8,8 @@ export { OSContext }
 
 export default definePlugin(() => ({
   name: '@just-web/os',
-  init: (): [OSContext] => [{ os: { isMac } }]
+  init: (ctx: LogContext): [OSContext] => {
+    ctx.log.notice('init')
+    return [{ os: { isMac } }]
+  }
 }))

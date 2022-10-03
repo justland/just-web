@@ -1,6 +1,6 @@
 import { LogContext } from '@just-web/log'
 import { createStore, Store } from '@just-web/states'
-import { defineInitialize, definePlugin, defineStart } from '@just-web/types'
+import { definePlugin } from '@just-web/types'
 import { record, requiredDeep } from 'type-plus'
 import type { Route, RoutesConfigOptions } from './types'
 
@@ -29,6 +29,7 @@ export type StartContext = { store: Store<ModuleStore>, routeContext: RoutesCont
 export default definePlugin(() => ({
   name: '@just-web/routes',
   init: (ctx: LogContext): [RoutesContext, StartContext] => {
+    ctx.log.notice('init')
     const store = createStore<ModuleStore>({
       ...ctx,
       config: defaultConfig,
@@ -82,71 +83,11 @@ export default definePlugin(() => ({
     }
     return [routeContext, { store, routeContext }]
   },
-  start: async (
-    { store, routeContext }: StartContext
-  ) => void routeContext.routes.navigate(store.get().config.initialRoute)
-}))
-
-export const initialize = defineInitialize((ctx: LogContext): [RoutesContext, StartContext] => {
-  const store = createStore<ModuleStore>({
-    ...ctx,
-    config: defaultConfig,
-    routes: record()
-  })
-  const routeContext: RoutesContext = {
-    routes: {
-      navigate(route) {
-        const log = getLogger(store)
-        const r = store.get().routes[route]
-        if (!r) log.error(`navigate target not found: '${route}'`)
-        else {
-          log.notice(`navigate to: '${route}'`)
-          r()
-        }
-      },
-      register(route, handler) {
-        if (hasRoute(store, route)) {
-          const log = getLogger(store)
-          log.error(`Registering an already registered route: '${route}'`)
-          return () => { }
-        }
-
-        store.update(s => { s.routes[route] = handler })
-
-        return () => {
-          store.update(s => { delete s.routes[route] })
-        }
-      },
-      hasRoute(route) { return hasRoute(store, route) },
-      clearRoutes() { clearRoutes(store) },
-      async validateRoutes() {
-        let ready = true
-        if (!hasRoute(store, '/')) {
-          const log = getLogger(store)
-          log.error(`route '/' is required`)
-          ready = false
-        }
-        if (!hasRoute(store, '/error')) {
-          const log = getLogger(store)
-          log.error(`route '/error' is required`)
-          ready = false
-        }
-
-        return ready
-      },
-      config(options: RoutesConfigOptions) {
-        store.update(s => { s.config = requiredDeep(s.config, options) })
-      }
-    },
+  start: async ({ store, routeContext, log }) => {
+    log.notice('start')
+    routeContext.routes.navigate(store.get().config.initialRoute)
   }
-  return [routeContext, { store, routeContext }]
-})
-
-export const activate = (ctx: LogContext) => Promise.resolve(initialize(ctx))
-
-export const start = defineStart(async (
-  { store, routeContext }: StartContext
-) => void routeContext.routes.navigate(store.get().config.initialRoute))
+}))
 
 function getLogger(store: Store<ModuleStore>) {
   return store.get().log.getLogger('@just-web/routes')
