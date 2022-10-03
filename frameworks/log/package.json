@@ -2,8 +2,8 @@
   "name": "@just-web/log",
   "version": "0.2.2",
   "description": "@just-web log module",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
     "lib",
     "!**/*.spec.*"
@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@just-func/types": "^0.2.1",
-    "standard-log": "^10.3.0",
+    "standard-log": "^11.0.0",
+    "standard-log-color": "^11.0.0",
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
