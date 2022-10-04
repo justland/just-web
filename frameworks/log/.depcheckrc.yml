@@ -3,7 +3,6 @@ ignores:
   - "@size-limit/*"
   - "@types/jest"
   - "@typescript-eslint/parser"
-  - standard-log-color # don't know why it doesn't detect correctly
   - npm-check-updates
   - size-limit
   - type-plus # don't know why it doesn't detect correctly

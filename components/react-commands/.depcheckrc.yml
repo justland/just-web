@@ -18,6 +18,7 @@ ignores:
   - postcss
   - react-refresh
   - size-limit
+  - standard-log-color
   - storybook-dark-mode
   - storybook-css-modules-preset
   - style-loader
