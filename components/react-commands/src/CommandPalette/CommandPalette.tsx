@@ -2,7 +2,7 @@ import { CommandsContext } from '@just-web/commands'
 import { CommandContribution, ContributionsContext, formatCommand, formatKeyBinding, KeyBindingContribution } from '@just-web/contributions'
 import { OSContext } from '@just-web/os'
 import { useStore } from '@just-web/react'
-import { VFC } from 'react'
+import { useCallback, VFC } from 'react'
 import CP from 'react-command-palette'
 import theme from 'react-command-palette/dist/themes/atom-theme'
 import { required } from 'type-plus'
@@ -40,12 +40,15 @@ const RenderCommand: VFC<{ name: string, key?: string }> = command => (
 
 const CommandPalette: VFC<CommandPaletteProps> = (props) => {
   const store = getStore()
-  const [open, setOpen] = useStore(store, s => s.openCommandPalette, s => { s.openCommandPalette = open })
+  const [open, setOpen] = useStore(store,
+    s => s.openCommandPalette,
+    (s, open) => { s.openCommandPalette = open }
+  )
   const log = store.get().context.log
   log.trace('rendering CommandPalette, open:', open)
   const commands = open ? getCommands(required(store.get().context, props.ctx)) : []
 
-  const onRequestClose = () => setOpen(false)
+  const onRequestClose = useCallback(() => setOpen(false), [])
 
   return <CP
     commands={commands}
