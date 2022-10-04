@@ -1,5 +1,12 @@
 # @just-web/events
 
+## 1.0.2
+
+### Patch Changes
+
+- @just-web/log@1.0.2
+- @just-web/types@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes

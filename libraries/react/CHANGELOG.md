@@ -1,5 +1,14 @@
 # @just-web/react
 
+## 2.0.2
+
+### Patch Changes
+
+- @just-web/app@1.0.2
+- @just-web/log@1.0.2
+- @just-web/states@1.0.2
+- @just-web/types@1.0.2
+
 ## 2.0.1
 
 ### Patch Changes

@@ -1,5 +1,26 @@
 # @just-web/react-commands
 
+## 2.0.2
+
+### Patch Changes
+
+- f95730b: Pass through most of `react-command-palatte` props.
+
+  Not all props are declared, but all are pass through.
+  The not declared props really shouldn't be used,
+  but keep it open for the time being.
+
+- Updated dependencies [14cb2de]
+  - @just-web/contributions@1.0.2
+  - @just-web/browser-contributions@1.0.2
+  - @just-web/commands@1.0.2
+  - @just-web/app@1.0.2
+  - @just-web/log@1.0.2
+  - @just-web/os@1.0.2
+  - @just-web/states@1.0.2
+  - @just-web/types@1.0.2
+  - @just-web/react@2.0.2
+
 ## 2.0.1
 
 ### Patch Changes
