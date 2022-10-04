@@ -7,21 +7,6 @@ export namespace createApp {
   export type Options<N extends string = LogMethodNames> = { name: string, log?: LogOptions<N> }
 }
 
-// export namespace JustWebApp {
-//   export type Methods = {
-//     extend<
-//       A extends Record<string | symbol, any>,
-//       C extends Record<string | symbol, any>,
-//       N extends Record<string | symbol, any>,
-//       S extends Record<string | symbol, any>
-//     >(this: A, plugin: PluginModule<C, N, S>): N extends object ? A & N : A,
-//     start(): Promise<void>
-//   }
-// }
-
-// export type JustWebApp<N extends string = LogMethodNames> = AppBaseContext & JustWebApp.Methods & LogContext<N>
-// export type JustWebTestApp<N extends string = LogMethodNames> = AppBaseContext & JustWebApp.Methods & TestLogContext<N>
-
 type AppNode = {
   name: string,
   started: boolean,
@@ -60,16 +45,23 @@ function appClosure<L extends LogContext>(
         getLogger: createPrefixedGetLogger({ log }, plugin.name)
       })
 
+      log.notice(`initializing ${plugin.name}`)
       const initResult = plugin.init({ ...this, log: pluginLogger })
       if (!initResult) {
         if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
-          childAppNode.plugin = () => plugin.start({ log: pluginLogger } as any)
+          childAppNode.plugin = () => {
+            log.notice(`starting ${plugin.name}`)
+            return plugin.start({ log: pluginLogger } as any)
+          }
         }
         return appClosure(appContext, childAppNode) as any
       }
       const [pluginContext, startContext] = initResult
       if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start))
-        childAppNode.plugin = () => plugin.start({ ...startContext, log: pluginLogger } as any)
+        childAppNode.plugin = () => {
+          log.notice(`starting ${plugin.name}`)
+          return plugin.start({ ...startContext, log: pluginLogger } as any)
+        }
       return appClosure({ ...appContext, ...pluginContext! }, childAppNode) as any
     },
     async start() {

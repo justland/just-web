@@ -17,10 +17,7 @@ export type EventsContextOptions = {
 
 export default definePlugin(() => ({
   name: '@just-web/events',
-  init: (ctx: EventsContextOptions) => {
-    ctx.log.notice('init')
-    const emitter = trapError(ctx.options?.emitter || new EventEmitter(), ctx.log)
-
-    return [{ emitter }]
-  }
+  init: (ctx: EventsContextOptions) => [
+    { emitter: trapError(ctx.options?.emitter || new EventEmitter(), ctx.log) }
+  ]
 }))

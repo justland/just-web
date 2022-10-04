@@ -27,8 +27,6 @@ describe('plugin.init()', () => {
     commands.invoke('b')
 
     logEqual(log.reporter,
-      '(NOTICE) init',
-      '(NOTICE) init',
       '(INFO) exec a',
       '(INFO) exec b'
     )

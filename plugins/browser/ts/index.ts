@@ -1,4 +1,3 @@
-import { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { createErrorStore, toReadonlyErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
@@ -9,8 +8,7 @@ export { BrowserContext, BrowserInitContext, BrowserOptions }
 
 export default definePlugin((options?: BrowserOptions) => ({
   name: '@just-web/browser',
-  init: ({ log }: LogContext): [BrowserContext] => {
-    log.notice('init')
+  init: (): [BrowserContext] => {
     const errors = createErrorStore()
     // Normally plugin should not do work during init.
     // However this is a special case as we want to listen to any error,

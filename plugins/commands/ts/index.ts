@@ -18,7 +18,6 @@ export const showCommandPalette = justEvent('just-web.showCommandPalette')
 const plugin = definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
   init: (ctx: createCommandsContext.Context) => {
-    ctx.log.notice('init')
     ctx.contributions.commands.add({
       command: showCommandPalette.type,
       commandPalette: false

@@ -19,7 +19,7 @@ describe('start()', () => {
     const app = await createApp({ name: 'test', log: { reporters: [reporter] } }).extend(routePlugin())
     await app.start()
     logMatchSome(reporter,
-      `(NOTICE) init`,
+      `(NOTICE) initializing @just-web/routes`,
       `(ERROR) navigate target not found: '/'`
     )
   })

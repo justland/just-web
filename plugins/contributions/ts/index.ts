@@ -16,7 +16,6 @@ export type ContributionsOptions = {
 const plugin = definePlugin((options?: ContributionsOptions) => ({
   name: '@just-web/contributions',
   init: (ctx: LogContext) => {
-    ctx.log.notice('init')
     const commands = commandContributionRegistry(ctx, options?.contributions?.commands)
     const keyBindings = keyBindingRegistry(ctx, options?.contributions?.keyBindings)
     return [{ contributions: { commands, keyBindings } }]
