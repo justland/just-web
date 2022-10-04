@@ -1,10 +1,10 @@
 import { definePlugin } from '@just-web/types'
 import { createErrorStore, toReadonlyErrorStore } from './errorStore'
 import { registerOnErrorHandler } from './onerror'
-import type { BrowserContext, BrowserOptions } from './types'
+import type { BrowserContext, BrowserOptions, ReadonlyErrorStore } from './types'
 
 export * from './errors'
-export { BrowserContext, BrowserOptions }
+export { BrowserContext, BrowserOptions, ReadonlyErrorStore }
 
 export default definePlugin((options?: BrowserOptions) => ({
   name: '@just-web/browser',

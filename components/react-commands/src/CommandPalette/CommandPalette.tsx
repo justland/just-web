@@ -38,7 +38,7 @@ const RenderCommand: VFC<{ name: string, key?: string }> = command => (
   </div>
 )
 
-const CommandPalette: VFC<CommandPaletteProps> = (props) => {
+const CommandPalette = (props: CommandPaletteProps) => {
   const store = getStore()
   const [open, setOpen] = useStore(store,
     s => s.openCommandPalette,
