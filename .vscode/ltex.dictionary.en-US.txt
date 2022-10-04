@@ -15,3 +15,5 @@ useStore
 lazyImport
 
 params
+
+os
