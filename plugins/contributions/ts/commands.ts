@@ -5,7 +5,7 @@ import { createRegistry, withAdder } from '@just-web/states'
 import { sentenceCase } from 'sentence-case'
 import { record } from 'type-plus'
 
-export interface CommandContribution {
+export type CommandContribution = {
   /**
    * The command id. e.g. `just-web.showCommandPalette`
    */
