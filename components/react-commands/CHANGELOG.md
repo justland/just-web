@@ -1,5 +1,21 @@
 # @just-web/react-commands
 
+## 2.0.1
+
+### Patch Changes
+
+- 640a299: export some missing types
+- Updated dependencies [9853c63]
+  - @just-web/app@1.0.1
+  - @just-web/react@2.0.1
+  - @just-web/browser-contributions@1.0.1
+  - @just-web/commands@1.0.1
+  - @just-web/contributions@1.0.1
+  - @just-web/log@1.0.1
+  - @just-web/os@1.0.1
+  - @just-web/states@1.0.1
+  - @just-web/types@1.0.1
+
 ## 2.0.0
 
 ### Patch Changes

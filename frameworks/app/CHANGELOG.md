@@ -1,5 +1,15 @@
 # @just-web/app
 
+## 1.0.1
+
+### Patch Changes
+
+- 9853c63: Move `@just-web/log` and `@just-web/types` to peer dependencies.
+  The application will need to reference them directly when creating local plugins and modules.
+  Thus, the application need to import and add them as dependencies.
+  - @just-web/log@1.0.1
+  - @just-web/types@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
