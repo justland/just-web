@@ -12,7 +12,7 @@ export interface CommandContribution {
   /**
    * Name of the command such as `Show command palette`.
    * If not specified,
-   * it is default to Sentence case of the second part of the `id`.
+   * it is default to Sentence Case of the second part of the `id`.
    */
   name?: string,
   /**
