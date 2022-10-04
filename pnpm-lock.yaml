@@ -122,7 +122,7 @@ importers:
       react-app-rewired: ~2.2.1
       react-codemirror2-react-17: ~1.0.0
       react-dom: ~17.0.2
-      react-refresh: 0.11.0
+      react-refresh: 0.14.0
       react-scripts: 5.0.0
       rimraf: ~3.0.2
       standard-log-color: ^11.0.0
@@ -172,7 +172,7 @@ importers:
       '@storybook/core-events': 6.4.22
       '@storybook/manager-webpack5': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/node-logger': 6.4.22
-      '@storybook/preset-create-react-app': 4.1.2_3fe6n37cu3gvgz2bdxg3zjyllu
+      '@storybook/preset-create-react-app': 4.1.2_foxfdg7i6crqykuvfsfm2hdeje
       '@storybook/react': 6.4.22_ymk5fedq7cdgkyblo2lqi3vk5y
       '@storybook/testing-library': 0.0.13_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/theming': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -211,7 +211,7 @@ importers:
       preact: 10.8.0
       puppeteer: 3.0.4
       react-app-rewired: 2.2.1_react-scripts@5.0.0
-      react-refresh: 0.11.0
+      react-refresh: 0.14.0
       react-scripts: 5.0.0_5opkg24argtsov3wofnk3uvixi
       rimraf: 3.0.2
       storybook-css-modules-preset: 1.1.1
@@ -405,7 +405,7 @@ importers:
       react-app-rewired: ~2.2.1
       react-command-palette: ~0.21.1
       react-dom: ~17.0.2
-      react-refresh: 0.11.0
+      react-refresh: 0.14.0
       react-scripts: 5.0.0
       rimraf: ~3.0.2
       size-limit: ~7.0.8
@@ -453,7 +453,7 @@ importers:
       '@storybook/jest': 0.0.10_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/manager-webpack5': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/node-logger': 6.4.22
-      '@storybook/preset-create-react-app': 4.1.2_3fe6n37cu3gvgz2bdxg3zjyllu
+      '@storybook/preset-create-react-app': 4.1.2_foxfdg7i6crqykuvfsfm2hdeje
       '@storybook/react': 6.4.22_ymk5fedq7cdgkyblo2lqi3vk5y
       '@storybook/test-runner': 0.0.8_lsqebrwccayhjo5phhmrvqpnh4
       '@storybook/testing-library': 0.0.13_sfoxds7t5ydpegc3knd667wn6m
@@ -500,7 +500,7 @@ importers:
       preact: 10.8.0
       puppeteer: 3.0.4
       react-app-rewired: 2.2.1_react-scripts@5.0.0
-      react-refresh: 0.11.0
+      react-refresh: 0.14.0
       react-scripts: 5.0.0_5opkg24argtsov3wofnk3uvixi
       rimraf: 3.0.2
       size-limit: 7.0.8
@@ -765,7 +765,7 @@ importers:
       react: ~17.0.2
       react-app-rewired: ~2.2.1
       react-dom: ~17.0.2
-      react-refresh: 0.11.0
+      react-refresh: 0.14.0
       react-scripts: 5.0.0
       react-test-renderer: ~17.0.2
       rimraf: ~3.0.2
@@ -805,7 +805,7 @@ importers:
       '@storybook/jest': 0.0.10_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/manager-webpack5': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/node-logger': 6.4.22
-      '@storybook/preset-create-react-app': 4.1.2_mqhl4qlkle4xl6ongx6spwsyfq
+      '@storybook/preset-create-react-app': 4.1.2_fh7ssrkkqz7uvtpcle23sfdkbi
       '@storybook/react': 6.4.22_tn67hgmzv2xft5e6qzg7nodqvm
       '@storybook/test-runner': 0.0.8_lsqebrwccayhjo5phhmrvqpnh4
       '@storybook/testing-library': 0.0.13_sfoxds7t5ydpegc3knd667wn6m
@@ -857,7 +857,7 @@ importers:
       react: 17.0.2
       react-app-rewired: 2.2.1_react-scripts@5.0.0
       react-dom: 17.0.2_react@17.0.2
-      react-refresh: 0.11.0
+      react-refresh: 0.14.0
       react-scripts: 5.0.0_5opkg24argtsov3wofnk3uvixi
       react-test-renderer: 17.0.2_react@17.0.2
       rimraf: 3.0.2
@@ -6904,7 +6904,7 @@ packages:
       webpack: 4.46.0
     dev: true
 
-  /@pmmmwh/react-refresh-webpack-plugin/0.5.7_aumhct55s6lhceplyc622fxoum:
+  /@pmmmwh/react-refresh-webpack-plugin/0.5.7_ixqhyzd7eiz5jgrk4ldm2gupye:
     resolution: {integrity: sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q==}
     engines: {node: '>= 10.13'}
     peerDependencies:
@@ -6937,7 +6937,7 @@ packages:
       find-up: 5.0.0
       html-entities: 2.3.3
       loader-utils: 2.0.2
-      react-refresh: 0.11.0
+      react-refresh: 0.14.0
       schema-utils: 3.1.1
       source-map: 0.7.4
       webpack: 5.73.0
@@ -10211,7 +10211,7 @@ packages:
       core-js: 3.22.8
     dev: true
 
-  /@storybook/preset-create-react-app/4.1.2_3fe6n37cu3gvgz2bdxg3zjyllu:
+  /@storybook/preset-create-react-app/4.1.2_fh7ssrkkqz7uvtpcle23sfdkbi:
     resolution: {integrity: sha512-5uBZPhuyXx4APgLZnhiZ/PqYYprBua5CabQCfAlk+/9V4vSpX+ww+XP4Rl8Ifc/nf/HktgwtJFH4HXrZGRKC4w==}
     peerDependencies:
       '@babel/core': '*'
@@ -10219,10 +10219,10 @@ packages:
       '@storybook/react': '>=5.2'
       react-scripts: '>=5.0.0'
     dependencies:
-      '@babel/core': 7.18.5
-      '@pmmmwh/react-refresh-webpack-plugin': 0.5.7_aumhct55s6lhceplyc622fxoum
+      '@babel/core': 7.19.3
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.7_ixqhyzd7eiz5jgrk4ldm2gupye
       '@storybook/node-logger': 6.4.22
-      '@storybook/react': 6.4.22_ymk5fedq7cdgkyblo2lqi3vk5y
+      '@storybook/react': 6.4.22_tn67hgmzv2xft5e6qzg7nodqvm
       '@storybook/react-docgen-typescript-plugin': 1.0.2-canary.6.9d540b91e815f8fc2f8829189deb00553559ff63.0_pfhymta45wkqia6xzv764wgtky
       '@types/babel__core': 7.1.19
       babel-plugin-react-docgen: 4.2.1
@@ -10242,7 +10242,7 @@ packages:
       - webpack-plugin-serve
     dev: true
 
-  /@storybook/preset-create-react-app/4.1.2_mqhl4qlkle4xl6ongx6spwsyfq:
+  /@storybook/preset-create-react-app/4.1.2_foxfdg7i6crqykuvfsfm2hdeje:
     resolution: {integrity: sha512-5uBZPhuyXx4APgLZnhiZ/PqYYprBua5CabQCfAlk+/9V4vSpX+ww+XP4Rl8Ifc/nf/HktgwtJFH4HXrZGRKC4w==}
     peerDependencies:
       '@babel/core': '*'
@@ -10250,10 +10250,10 @@ packages:
       '@storybook/react': '>=5.2'
       react-scripts: '>=5.0.0'
     dependencies:
-      '@babel/core': 7.19.3
-      '@pmmmwh/react-refresh-webpack-plugin': 0.5.7_aumhct55s6lhceplyc622fxoum
+      '@babel/core': 7.18.5
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.7_ixqhyzd7eiz5jgrk4ldm2gupye
       '@storybook/node-logger': 6.4.22
-      '@storybook/react': 6.4.22_tn67hgmzv2xft5e6qzg7nodqvm
+      '@storybook/react': 6.4.22_ymk5fedq7cdgkyblo2lqi3vk5y
       '@storybook/react-docgen-typescript-plugin': 1.0.2-canary.6.9d540b91e815f8fc2f8829189deb00553559ff63.0_pfhymta45wkqia6xzv764wgtky
       '@types/babel__core': 7.1.19
       babel-plugin-react-docgen: 4.2.1
@@ -23456,6 +23456,11 @@ packages:
 
   /react-refresh/0.11.0:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  /react-refresh/0.14.0:
+    resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
 
