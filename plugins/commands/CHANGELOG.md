@@ -1,5 +1,15 @@
 # @just-web/commands
 
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [14cb2de]
+  - @just-web/contributions@1.0.2
+  - @just-web/log@1.0.2
+  - @just-web/states@1.0.2
+  - @just-web/types@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes

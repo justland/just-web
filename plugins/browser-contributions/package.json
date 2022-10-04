@@ -1,6 +1,6 @@
 {
   "name": "@just-web/browser-contributions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "browser implementation for @just-web/contributions",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@just-web/testing",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "just-web testing library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -1,5 +1,14 @@
 # @just-web/browser-preferences
 
+## 1.0.2
+
+### Patch Changes
+
+- @just-web/commands@1.0.2
+- @just-web/preferences@1.0.2
+- @just-web/log@1.0.2
+- @just-web/types@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes
