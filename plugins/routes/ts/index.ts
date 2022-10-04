@@ -4,6 +4,8 @@ import { definePlugin } from '@just-web/types'
 import { record, requiredDeep } from 'type-plus'
 import type { Route, RoutesConfigOptions } from './types'
 
+export { Route, RoutesConfigOptions }
+
 export interface RoutesContext {
   routes: {
     navigate(route: string): void,
@@ -19,7 +21,7 @@ const defaultConfig: RoutesConfigOptions = {
   initialRoute: '/'
 }
 
-type ModuleStore = {
+export type ModuleStore = {
   config: RoutesConfigOptions,
   routes: Record<string, Route>
 } & LogContext
