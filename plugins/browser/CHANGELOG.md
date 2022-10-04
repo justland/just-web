@@ -1,5 +1,14 @@
 # @just-web/browser
 
+## 1.0.1
+
+### Patch Changes
+
+- 640a299: export some missing types
+  - @just-web/log@1.0.1
+  - @just-web/states@1.0.1
+  - @just-web/types@1.0.1
+
 ## 1.0.0
 
 ### Patch Changes

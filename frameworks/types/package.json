@@ -1,6 +1,6 @@
 {
   "name": "@just-web/types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type definitions for `@just-web` modules",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

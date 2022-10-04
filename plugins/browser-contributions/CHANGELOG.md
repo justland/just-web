@@ -1,5 +1,15 @@
 # @just-web/browser-contributions
 
+## 1.0.1
+
+### Patch Changes
+
+- @just-web/commands@1.0.1
+- @just-web/contributions@1.0.1
+- @just-web/log@1.0.1
+- @just-web/os@1.0.1
+- @just-web/types@1.0.1
+
 ## 1.0.0
 
 ### Patch Changes
