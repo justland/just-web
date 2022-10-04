@@ -1,6 +1,6 @@
 {
   "name": "@just-web/browser-preferences",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "browser implementation for @just-web/preferences",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

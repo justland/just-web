@@ -1,5 +1,14 @@
 # @just-web/commands
 
+## 1.1.0
+
+### Patch Changes
+
+- @just-web/contributions@1.1.0
+- @just-web/log@1.1.0
+- @just-web/states@1.1.0
+- @just-web/types@1.1.0
+
 ## 1.0.2
 
 ### Patch Changes

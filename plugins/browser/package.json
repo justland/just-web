@@ -1,6 +1,6 @@
 {
   "name": "@just-web/browser",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "just-web browser plugin module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

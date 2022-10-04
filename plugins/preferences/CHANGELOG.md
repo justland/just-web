@@ -1,5 +1,20 @@
 # @just-web/preferences
 
+## 1.1.0
+
+### Minor Changes
+
+- 3576dd3: Add `updateUserPreference()`.
+
+  Add proper logs to the implementations.
+
+### Patch Changes
+
+- @just-web/commands@1.1.0
+- @just-web/contributions@1.1.0
+- @just-web/log@1.1.0
+- @just-web/types@1.1.0
+
 ## 1.0.2
 
 ### Patch Changes
