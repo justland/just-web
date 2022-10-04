@@ -1,13 +1,13 @@
-# `@just-web/preferences`
+# @just-web/preferences
 
-`@just-web/preferences` plugin provides the core logic for saving and loading user preferences.
+[@just-web/preferences] plugin provides the core logic for saving and loading user preferences.
 
 Where the preferences are saved depends on how it is implemented in the details.
 
 You will need one of the following (or your own):
 
-- [`@just-web/browser-preferences`]
-- [`@just-web/service-preferences`]
+- [@just-web/browser-preferences]
+- 🚧 `@just-web/service-preferences`
 
 ## Install
 
@@ -24,3 +24,6 @@ pnpm install @just-web/preferences
 #rush
 rush add -p @just-web/preferences
 ```
+
+[@just-web/preferences]: https://github.com/justland/just-web/tree/main/plugins/preferences
+[@just-web/browser-preferences]: https://github.com/justland/just-web/tree/main/plugins/browser-preferences

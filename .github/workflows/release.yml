@@ -11,3 +11,7 @@ jobs:
     uses: justland/.github/.github/workflows/pnpm-release-changeset.yml@main
     needs: code
     secrets: inherit
+
+  docgen:
+      uses: justland/.github/.github/workflows/pnpm-docs.yml@main
+      needs: release

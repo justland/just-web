@@ -65,5 +65,9 @@
     {
       "limit": "15 kb"
     }
-  ]
+  ],
+  "typedoc": {
+    "entryPoint": "./ts/index.ts",
+    "readmeFile": "./README.md"
+  }
 }

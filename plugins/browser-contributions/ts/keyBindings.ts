@@ -5,26 +5,22 @@ import { OSContext } from '@just-web/os'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
 
-export namespace startKeyBindings {
-  export type Param = LogContext & ContributionsContext & CommandsContext & OSContext
-}
-
 let keys: Record<string, boolean>
-export function startKeyBindings(options: startKeyBindings.Param) {
-  const keyBindings = options.contributions.keyBindings
+export function startKeyBindings(param: LogContext & ContributionsContext & CommandsContext & OSContext) {
+  const keyBindings = param.contributions.keyBindings
 
   keys = record()
 
-  keyBindings.list().forEach(keybinding => bindKey(options, keybinding))
+  keyBindings.list().forEach(keybinding => bindKey(param, keybinding))
   keyBindings.onChange((value) => {
     // TODO: use `immer` patch support to only update the delta
     Mousetrap.reset()
     keys = record()
-    forEachKey(value, name => bindKey(options, value[name]))
+    forEachKey(value, name => bindKey(param, value[name]))
   })
 }
 
-function bindKey({ log: logContext, commands, os }: startKeyBindings.Param, keyBinding: KeyBindingContribution) {
+function bindKey({ log: logContext, commands, os }: LogContext & CommandsContext & OSContext, keyBinding: KeyBindingContribution) {
   const key = getKey({ os }, keyBinding)
   if (key) {
     const log = logContext.getLogger('@just-web/browser-contributions')

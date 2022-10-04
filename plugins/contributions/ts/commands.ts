@@ -1,6 +1,7 @@
 
-import { LogContext } from '@just-web/log'
-import { createRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
+import type { LogContext } from '@just-web/log'
+import type { Registry, WithAdder } from '@just-web/states'
+import { createRegistry, withAdder } from '@just-web/states'
 import { sentenceCase } from 'sentence-case'
 import { record } from 'type-plus'
 

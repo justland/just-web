@@ -72,6 +72,7 @@ apps/*/*/lib
 components/*/*.tsbuildinfo
 components/*/coverage
 components/*/lib
+/docs
 frameworks/*/*.tsbuildinfo
 frameworks/*/coverage
 frameworks/*/lib

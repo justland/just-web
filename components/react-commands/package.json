@@ -160,5 +160,9 @@
     {
       "limit": "15 kb"
     }
-  ]
+  ],
+  "typedoc": {
+    "entryPoint": "./src/index.tsx",
+    "readmeFile": "./README.md"
+  }
 }
