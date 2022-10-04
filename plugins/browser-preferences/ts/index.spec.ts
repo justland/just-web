@@ -1,6 +1,6 @@
 import commandsPlugin from '@just-web/commands'
 import contributionsPlugin from '@just-web/contributions'
-import { logPluginForTest } from '@just-web/log'
+import { logTestPlugin } from '@just-web/log'
 import preferencesPlugin, { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences'
 import { a, AssertOrder } from 'assertron'
 import { hasAll } from 'satisfier'
@@ -26,7 +26,7 @@ function setupPlugin() {
   const name = 'test-app'
   const id = 'some-id'
 
-  const [{ log }] = logPluginForTest().init()
+  const [{ log }] = logTestPlugin().init()
   const [{ contributions }] = contributionsPlugin().init({ log })
   const [{ commands }] = commandsPlugin().init({ log, contributions })
   const [{ preferences }] = preferencesPlugin().init({ log, commands, contributions })
@@ -41,14 +41,14 @@ describe('setUserPreference()', () => {
     expect(preferences.get('key-a')).toEqual('hello-world')
   })
 
-  it('save with key prefixed with app id, so that preferences will be be overwritten in micro front end scenario', () => {
+  it('save with key prefixed with app name, so that preferences will be be overwritten in micro front end scenario', () => {
     const { preferences } = setupPlugin()
     const o = new AssertOrder(1)
     ctx.localStorage = {
       ...ctx.localStorage,
       setItem: (key) => {
         o.once(1)
-        expect(key).toEqual('some-id:my-key')
+        expect(key).toEqual('test-app:my-key')
       }
     }
     preferences.set('my-key', 'hello')

@@ -1,9 +1,9 @@
-import { logPluginForTest } from '@just-web/log'
+import { logTestPlugin } from '@just-web/log'
 import eventsPlugin, { justEvent } from '.'
 
 it('can create just event', () => {
   const addEvent = justEvent('add')
-  const [ctx] = logPluginForTest().init()
+  const [ctx] = logTestPlugin().init()
   const [{ emitter }] = eventsPlugin().init(ctx)
 
   let called = false

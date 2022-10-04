@@ -1,4 +1,4 @@
-import logPlugin, { createPrefixedGetLogger, LogContext, LogMethodNames, LogOptions, logPluginForTest, TestLogContext } from '@just-web/log'
+import logPlugin, { createPrefixedGetLogger, LogContext, LogMethodNames, LogOptions, logTestPlugin, TestLogContext } from '@just-web/log'
 import type { AppBaseContext, PluginModule } from '@just-web/types'
 import { isType, pick } from 'type-plus'
 import { ctx } from './createApp.ctx'
@@ -108,7 +108,7 @@ export namespace createTestApp {
 export function createTestApp<N extends string = LogMethodNames>(options?: createTestApp.Options<N>) {
   const name = options?.name ?? 'test-app'
   const appContext = { name: name, id: ctx.genAppID() }
-  const logModule = logPluginForTest(options?.log)
+  const logModule = logTestPlugin(options?.log)
   const [logctx] = logModule.init(appContext)
   const log = logctx.log as TestLogContext<LogMethodNames>['log']
   const appNode = createAppNode(name)
