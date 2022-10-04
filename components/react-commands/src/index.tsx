@@ -1,4 +1,5 @@
 import { CommandsContext } from '@just-web/commands'
+import { ContributionsContext } from '@just-web/contributions'
 import { LogContext } from '@just-web/log'
 import { OSContext } from '@just-web/os'
 import { createStore } from '@just-web/states'
@@ -9,7 +10,7 @@ export * from './CommandPalette'
 
 export default definePlugin(() => ({
   name: '@just-web/react-commands',
-  init: (context: LogContext & CommandsContext & OSContext) => {
+  init: (context: LogContext & ContributionsContext & CommandsContext & OSContext) => {
     context.log.notice('init')
     const store = setStore(createStore<State>({
       context,

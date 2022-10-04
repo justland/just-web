@@ -15,7 +15,7 @@ describe('plugin', () => {
     const [{ contributions }] = contributionsPlugin().init({ log })
     const [{ commands }] = commandsPlugin().init({ log, contributions })
     const [{ os }] = osTestPlugin().init({ log })
-    plugin().init({ log, commands, os })
+    plugin().init({ log, contributions, commands, os })
     expect(commands.keys()).toEqual(['just-web.showCommandPalette'])
   })
 })
