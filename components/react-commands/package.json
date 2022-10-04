@@ -56,9 +56,9 @@
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
-    "@babel/core": "~7.18.0",
-    "@babel/plugin-syntax-flow": "~7.17.0",
-    "@babel/plugin-transform-react-jsx": "~7.17.3",
+    "@babel/core": "~7.19.0",
+    "@babel/plugin-syntax-flow": "~7.18.0",
+    "@babel/plugin-transform-react-jsx": "~7.19.0",
     "@just-web/app": "workspace:^*",
     "@just-web/browser-contributions": "workspace:^*",
     "@just-web/commands": "workspace:^*",

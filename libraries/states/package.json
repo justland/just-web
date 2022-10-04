@@ -29,8 +29,8 @@
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
-    "@babel/core": "~7.18.0",
-    "@babel/plugin-transform-runtime": "~7.18.0",
+    "@babel/core": "~7.19.0",
+    "@babel/plugin-transform-runtime": "~7.19.0",
     "@just-web/repo-scripts": "workspace:^*",
     "@size-limit/preset-small-lib": "~7.0.8",
     "@types/jest": "^27.4.1",
