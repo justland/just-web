@@ -30,7 +30,7 @@ function setupPlugin() {
   const [{ contributions }] = contributionsPlugin().init({ log })
   const [{ commands }] = commandsPlugin().init({ log, contributions })
   const [{ preferences }] = preferencesPlugin().init({ log, commands, contributions })
-  plugin().init({ name, id, log, commands })
+  plugin().init({ name, id, commands })
   return { name, id, log, contributions, commands, preferences }
 }
 

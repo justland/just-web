@@ -1,5 +1,4 @@
 import { CommandsContext } from '@just-web/commands'
-import { LogContext } from '@just-web/log'
 import { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences'
 import { AppBaseContext, definePlugin } from '@just-web/types'
 import { decode, encode } from 'base-64'
@@ -9,8 +8,7 @@ import { ctx } from './index.ctx'
 
 const plugin = definePlugin(() => ({
   name: '@just-web/browser-preferences',
-  init({ name, log, commands }: AppBaseContext & LogContext & CommandsContext) {
-    log.notice('init')
+  init({ name, commands }: AppBaseContext & CommandsContext) {
     commands.register(
       setUserPreference.type,
       setUserPreference.listener(

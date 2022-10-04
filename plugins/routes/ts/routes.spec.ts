@@ -19,7 +19,7 @@ describe('registerRoute()', () => {
     app.routes.register('/debug', () => { })
     app.routes.register('/debug', () => { })
     logEqual(app.log.reporter,
-      `(NOTICE) init`,
+      `(NOTICE) initializing @just-web/routes`,
       `(ERROR) Registering an already registered route: '/debug'`)
   })
 
@@ -36,7 +36,7 @@ describe('navigate()', () => {
     const app = await setupTest()
     app.routes.navigate('/not-exist')
     logEqual(app.log.reporter,
-      `(NOTICE) init`,
+      `(NOTICE) initializing @just-web/routes`,
       `(ERROR) navigate target not found: '/not-exist'`)
   })
 
@@ -58,7 +58,7 @@ describe('validateRoutes()', () => {
 
     logEqual(
       app.log.reporter,
-      `(NOTICE) init`,
+      `(NOTICE) initializing @just-web/routes`,
       `(ERROR) route '/' is required`,
       `(ERROR) route '/error' is required`
     )

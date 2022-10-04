@@ -1,4 +1,4 @@
-import { createMemoryLogReporter, LogContext, LogMethodNames } from '@just-web/log'
+import { createMemoryLogReporter, LogContext, logLevels, LogMethodNames } from '@just-web/log'
 import osPlugin, { OSContext } from '@just-web/os'
 import { definePlugin, StartContextBase } from '@just-web/types'
 import { a } from 'assertron'
@@ -33,7 +33,7 @@ describe(createApp.name, () => {
   })
 
   it('adds the PluginContext of the plugin to the app', () => {
-    const app = createApp({ name: 'test-app' })
+    const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
       .extend(osPlugin())
 
     isType.t<CanAssign<typeof app, OSContext>>()
@@ -41,7 +41,7 @@ describe(createApp.name, () => {
   })
 
   it('returns itself if the plugin has no PluginContext', () => {
-    const app = createApp({ name: 'test-app' })
+    const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
     const app2 = app.extend({ name: 'dummy', init: () => { } })
 
     isType.equal<true, typeof app, typeof app2>()
@@ -66,13 +66,15 @@ describe(createApp.name, () => {
         // Seems to be a TypeScript bug (4.8.4)
         async start({ log }: StartContextBase) {
           isType.equal<false, any, typeof log>()
-          log.info('start')
+          log.info('inside plugin')
         }
       }))())
     await app.start()
 
     expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
-      'test-app:dummy-plugin (INFO) start',
+      'test-app (NOTICE) initializing dummy-plugin',
+      'test-app (NOTICE) starting dummy-plugin',
+      'test-app:dummy-plugin (INFO) inside plugin',
       'test-app (INFO) start',
     ])
   })
@@ -82,17 +84,19 @@ describe(createApp.name, () => {
     const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
       .extend(definePlugin(() => ({
         name: 'dummy-a', init() { return [undefined, { a: 1 }] },
-        async start({ log }) { log.info('start') }
+        async start() { }
       }))())
       .extend(definePlugin(() => ({
         name: 'dummy-b', init() { },
-        async start({ log }) { log.info('start') }
+        async start() { }
       }))())
     await app.start()
 
     expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
-      'test-app:dummy-a (INFO) start',
-      'test-app:dummy-b (INFO) start',
+      'test-app (NOTICE) initializing dummy-a',
+      'test-app (NOTICE) initializing dummy-b',
+      'test-app (NOTICE) starting dummy-a',
+      'test-app (NOTICE) starting dummy-b',
       'test-app (INFO) start',
     ])
   })
@@ -103,35 +107,38 @@ describe(createApp.name, () => {
 
     app.extend(definePlugin(() => ({
       name: 'dummy-a', init() { },
-      async start({ log }) { log.info('start') }
+      async start() { }
     }))()).extend(definePlugin(() => ({
       name: 'dummy-b', init() { },
-      async start({ log }) { log.info('start') }
+      async start() { }
     }))())
 
     app.extend(definePlugin(() => ({
       name: 'dummy-c', init() { },
-      async start({ log }) {
-        log.info('start')
-      }
+      async start() { }
     }))())
 
     app.extend(definePlugin(() => ({
       name: 'dummy-d', init() { },
-      async start({ log }) { log.info('start') }
+      async start() { }
     }))()).extend(definePlugin(() => ({
       name: 'dummy-e', init() { },
-      async start({ log }) { log.info('start') }
+      async start() { }
     }))())
 
     await app.start()
 
     expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
-      'test-app:dummy-a (INFO) start',
-      'test-app:dummy-b (INFO) start',
-      'test-app:dummy-c (INFO) start',
-      'test-app:dummy-d (INFO) start',
-      'test-app:dummy-e (INFO) start',
+      'test-app (NOTICE) initializing dummy-a',
+      'test-app (NOTICE) initializing dummy-b',
+      'test-app (NOTICE) initializing dummy-c',
+      'test-app (NOTICE) initializing dummy-d',
+      'test-app (NOTICE) initializing dummy-e',
+      'test-app (NOTICE) starting dummy-a',
+      'test-app (NOTICE) starting dummy-b',
+      'test-app (NOTICE) starting dummy-c',
+      'test-app (NOTICE) starting dummy-d',
+      'test-app (NOTICE) starting dummy-e',
       'test-app (INFO) start',
     ])
   })
@@ -142,25 +149,23 @@ describe(createApp.name, () => {
 
     const app2 = app.extend(definePlugin(() => ({
       name: 'dummy-a', init() { },
-      async start({ log }) { log.info('start') }
+      async start() { }
     }))()).extend(definePlugin(() => ({
       name: 'dummy-b', init() { },
-      async start({ log }) { log.info('start') }
+      async start() { }
     }))())
 
     const app3 = app.extend(definePlugin(() => ({
       name: 'dummy-c', init() { },
-      async start({ log }) {
-        log.info('start')
-      }
+      async start() { }
     }))())
 
     const app4 = app.extend(definePlugin(() => ({
       name: 'dummy-d', init() { },
-      async start({ log }) { log.info('start') }
+      async start() { }
     }))()).extend(definePlugin(() => ({
       name: 'dummy-e', init() { },
-      async start({ log }) { log.info('start') }
+      async start() { }
     }))())
 
     await app.start()
@@ -169,11 +174,16 @@ describe(createApp.name, () => {
     await app4.start()
 
     expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
-      'test-app:dummy-a (INFO) start',
-      'test-app:dummy-b (INFO) start',
-      'test-app:dummy-c (INFO) start',
-      'test-app:dummy-d (INFO) start',
-      'test-app:dummy-e (INFO) start',
+      'test-app (NOTICE) initializing dummy-a',
+      'test-app (NOTICE) initializing dummy-b',
+      'test-app (NOTICE) initializing dummy-c',
+      'test-app (NOTICE) initializing dummy-d',
+      'test-app (NOTICE) initializing dummy-e',
+      'test-app (NOTICE) starting dummy-a',
+      'test-app (NOTICE) starting dummy-b',
+      'test-app (NOTICE) starting dummy-c',
+      'test-app (NOTICE) starting dummy-d',
+      'test-app (NOTICE) starting dummy-e',
       'test-app (INFO) start',
     ])
   })
@@ -203,11 +213,3 @@ describe(createTestApp.name, () => {
     expect(app.log.reporter.getLogMessagesWithIdAndLevel()).toEqual(['test-app (INFO) hello'])
   })
 })
-
-// TODO: move these to devDeps
-// "@just-web/browser": "workspace:*",
-// "@just-web/browser-contributions": "workspace:*",
-// "@just-web/commands": "workspace:*",
-// "@just-web/contributions": "workspace:*",
-// "@just-web/os": "workspace:*",
-// "@just-web/states": "workspace:*",

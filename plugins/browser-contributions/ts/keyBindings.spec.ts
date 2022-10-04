@@ -79,9 +79,6 @@ test('emit warning for duplicate key binding', async () => {
   startKeyBindings(options)
 
   logEqual(options.log.reporter,
-    '(NOTICE) init',
-    '(NOTICE) init',
-    '(NOTICE) init',
     '(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j'
   )
 })

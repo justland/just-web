@@ -29,7 +29,6 @@ export type StartContext = { store: Store<ModuleStore>, routeContext: RoutesCont
 export default definePlugin(() => ({
   name: '@just-web/routes',
   init: (ctx: LogContext): [RoutesContext, StartContext] => {
-    ctx.log.notice('init')
     const store = createStore<ModuleStore>({
       ...ctx,
       config: defaultConfig,
@@ -83,8 +82,7 @@ export default definePlugin(() => ({
     }
     return [routeContext, { store, routeContext }]
   },
-  start: async ({ store, routeContext, log }) => {
-    log.notice('start')
+  start: async ({ store, routeContext }) => {
     routeContext.routes.navigate(store.get().config.initialRoute)
   }
 }))
