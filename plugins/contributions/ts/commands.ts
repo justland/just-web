@@ -26,7 +26,22 @@ export interface CommandContribution {
    * By default, all commands will be available to the command palette.
    * Set this to false to prevent it from appearing in the command palette.
    */
-  commandPalette?: false
+  commandPalette?: false,
+  /**
+   * Category can be used by the UI to group or filter the command.
+   */
+  category?: string,
+
+  icon?: {
+    light: string,
+    /**
+     * If not specified, the `light` icon will be used.
+     */
+    dark?: string
+  },
+  // ? no use case yet
+  // enabled?: boolean,
+  // when?: string,
 }
 
 export interface CommandContributionRegistry
