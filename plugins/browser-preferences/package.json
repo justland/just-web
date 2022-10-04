@@ -24,13 +24,12 @@
   },
   "dependencies": {
     "@types/base-64": "^1.0.0",
-    "base-64": "^1.0.0",
-    "flatted": "^3.2.7",
-    "type-plus": "^4.13.1"
+    "base-64": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "~7.18.0",
     "@babel/plugin-transform-runtime": "~7.18.0",
+    "@just-web/app": "workspace:*",
     "@just-web/commands": "workspace:*",
     "@just-web/contributions": "workspace:*",
     "@just-web/log": "workspace:*",
@@ -57,6 +56,7 @@
     "rimraf": "~3.0.2",
     "satisfier": "^5.3.0",
     "size-limit": "~7.0.8",
+    "type-plus": "^4.13.1",
     "typescript": "^4.8.4"
   },
   "peerDependencies": {

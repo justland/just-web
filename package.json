@@ -43,6 +43,7 @@
     "size": "turbo run size",
     "states": "pnpm --filter=@just-web/states",
     "test": "turbo run test",
+    "testing": "pnpm --filter=@just-web/testing",
     "types": "pnpm --filter=@just-web/types",
     "verify": "turbo run build lint coverage depcheck size",
     "version": "changeset version && pnpm install",

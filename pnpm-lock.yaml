@@ -1062,6 +1062,7 @@ importers:
     specifiers:
       '@babel/core': ~7.18.0
       '@babel/plugin-transform-runtime': ~7.18.0
+      '@just-web/app': workspace:*
       '@just-web/commands': workspace:*
       '@just-web/contributions': workspace:*
       '@just-web/log': workspace:*
@@ -1080,7 +1081,6 @@ importers:
       eslint-config-prettier: ~8.5.0
       eslint-plugin-harmony: ^7.0.0
       eslint-plugin-yml: ~0.14.0
-      flatted: ^3.2.7
       jest: ^27.5.1
       jest-validate: ^27.5.1
       jest-watch-suspend: ^1.1.2
@@ -1096,11 +1096,10 @@ importers:
     dependencies:
       '@types/base-64': 1.0.0
       base-64: 1.0.0
-      flatted: 3.2.7
-      type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.18.5
       '@babel/plugin-transform-runtime': 7.18.2_@babel+core@7.18.5
+      '@just-web/app': link:../../frameworks/app
       '@just-web/commands': link:../commands
       '@just-web/contributions': link:../contributions
       '@just-web/log': link:../../frameworks/log
@@ -1127,6 +1126,7 @@ importers:
       rimraf: 3.0.2
       satisfier: 5.3.0
       size-limit: 7.0.8
+      type-plus: 4.13.1
       typescript: 4.8.4
 
   plugins/commands:

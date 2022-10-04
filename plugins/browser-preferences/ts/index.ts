@@ -1,34 +1,51 @@
 import { CommandsContext } from '@just-web/commands'
-import { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences'
+import { LogContext } from '@just-web/log'
+import { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference, updateUserPreference } from '@just-web/preferences'
 import { AppBaseContext, definePlugin } from '@just-web/types'
 import { decode, encode } from 'base-64'
-import { stringify } from 'flatted'
-import { AnyRecord } from 'type-plus'
 import { ctx } from './index.ctx'
 
 const plugin = definePlugin(() => ({
   name: '@just-web/browser-preferences',
-  init({ name, commands }: AppBaseContext & CommandsContext) {
+  init({ name, commands, log }: AppBaseContext & LogContext & CommandsContext) {
+    commands.register(
+      getUserPreference.type,
+      getUserPreference.listener(
+        ({ key }) => {
+          const k = getKey(name, key)
+          log.planck(`get: '${k}'`)
+          return deserialize(ctx.localStorage.getItem(k))
+        }
+      )
+    )
     commands.register(
       setUserPreference.type,
       setUserPreference.listener(
         ({ key, value }) => {
-          console.info('setting', key, value)
-          ctx.localStorage.setItem(getKey(name, key), serialize(value))
+          const k = getKey(name, key)
+          log.info(`set: '${k}' ${value}`)
+          ctx.localStorage.setItem(k, serialize(value))
         }
       ))
     commands.register(
-      getUserPreference.type,
-      getUserPreference.listener(
-        ({ key }) => deserialize(ctx.localStorage.getItem(getKey(name, key)))
+      updateUserPreference.type,
+      updateUserPreference.listener(
+        ({ key, handler }) => {
+          const k = getKey(name, key)
+          const original = deserialize(ctx.localStorage.getItem(k))
+          const newValue = handler(original)
+          log.info(`update: '${k}' ${original} -> ${newValue}`)
+          ctx.localStorage.setItem(k, serialize(newValue))
+        }
       )
     )
     commands.register(
       clearUserPreference.type,
       clearUserPreference.listener(
         ({ key }) => {
-          console.info('removing', key)
-          ctx.localStorage.removeItem(getKey(name, key))
+          const k = getKey(name, key)
+          log.info(`clear: '${k}'`)
+          ctx.localStorage.removeItem(k)
         }
       )
     )
@@ -36,20 +53,15 @@ const plugin = definePlugin(() => ({
       clearUserPreferences.type,
       clearUserPreferences.listener(
         () => {
-          console.info('clearAll start')
+          log.info(`clear all: '${name}'`)
           const keys: string[] = []
           // have to iterate and get all keys first.
           // removing item mid-loop screw up key index.
           for (let i = 0; i < ctx.localStorage.length; i++) {
             keys.push(ctx.localStorage.key(i)!)
           }
-          console.info('keys', ctx.localStorage.length, keys)
           keys.filter(k => k.startsWith(`${name}:`))
-            .forEach(key => {
-              console.info('remoing all for ', key)
-              ctx.localStorage.removeItem(key)
-            })
-          console.info('clearAll ends')
+            .forEach(key => ctx.localStorage.removeItem(key))
         }
       )
     )
@@ -62,8 +74,8 @@ function getKey(id: string, key: string) {
   return `${id}:${key}`
 }
 
-function serialize(value: string | AnyRecord) {
-  return encode(typeof value === 'string' ? value : stringify(value))
+function serialize(value: string) {
+  return encode(value)
 }
 
 function deserialize(value: string | null) {
