@@ -1,18 +1,18 @@
 import contributionsPlugin from '@just-web/contributions'
-import { logPluginForTest } from '@just-web/log'
+import { logTestPlugin } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import commandsPlugin, { showCommandPalette } from '.'
 import { AssertOrder } from 'assertron'
 
 describe('plugin.init()', () => {
   test('basic case', () => {
-    const [{ log }] = logPluginForTest().init()
+    const [{ log }] = logTestPlugin().init()
     const [{ contributions }] = contributionsPlugin().init({ log })
     commandsPlugin().init({ log, contributions })
   })
 
   it('supports predefined commands', () => {
-    const [{ log }] = logPluginForTest().init()
+    const [{ log }] = logTestPlugin().init()
     const [{ contributions }] = contributionsPlugin().init({ log })
 
     const d = log.getLogger('test')
@@ -35,7 +35,7 @@ describe('plugin.init()', () => {
   })
 
   it('provides showCommandPalette()', () => {
-    const [{ log }] = logPluginForTest().init()
+    const [{ log }] = logTestPlugin().init()
     const [{ contributions }] = contributionsPlugin().init({ log })
     const [{ commands }] = commandsPlugin().init({ log, contributions })
     const o = new AssertOrder(1)

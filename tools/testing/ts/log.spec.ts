@@ -1,9 +1,9 @@
-import { logPluginForTest, TestLogContext } from '@just-web/log'
+import { logTestPlugin, TestLogContext } from '@just-web/log'
 import { isType } from 'type-plus'
 import { logEqual, logMatchSome } from './log'
 
 let ctx: TestLogContext
-beforeEach(() => ctx = logPluginForTest().init()[0])
+beforeEach(() => ctx = logTestPlugin().init()[0])
 
 describe('logEqual()', () => {
   test('require at least one line of expected message', () => {

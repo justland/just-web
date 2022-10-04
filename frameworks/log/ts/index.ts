@@ -107,7 +107,7 @@ export default <N extends string = LogMethodNames>(options?: LogOptions<N>) => (
   }
 })
 
-export const logPluginForTest = <N extends string = LogMethodNames>(options?: LogOptions<N>) => ({
+export const logTestPlugin = <N extends string = LogMethodNames>(options?: LogOptions<N>) => ({
   name: '@just-web/log',
   init: (
     ctx?: AppBaseContext & LogOptions<N>

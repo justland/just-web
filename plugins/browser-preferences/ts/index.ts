@@ -9,20 +9,20 @@ import { ctx } from './index.ctx'
 
 const plugin = definePlugin(() => ({
   name: '@just-web/browser-preferences',
-  init({ id, log, commands }: AppBaseContext & LogContext & CommandsContext) {
+  init({ name, log, commands }: AppBaseContext & LogContext & CommandsContext) {
     log.notice('init')
     commands.register(
       setUserPreference.type,
       setUserPreference.listener(
         ({ key, value }) => {
           console.info('setting', key, value)
-          ctx.localStorage.setItem(getKey(id, key), serialize(value))
+          ctx.localStorage.setItem(getKey(name, key), serialize(value))
         }
       ))
     commands.register(
       getUserPreference.type,
       getUserPreference.listener(
-        ({ key }) => deserialize(ctx.localStorage.getItem(getKey(id, key)))
+        ({ key }) => deserialize(ctx.localStorage.getItem(getKey(name, key)))
       )
     )
     commands.register(
@@ -30,7 +30,7 @@ const plugin = definePlugin(() => ({
       clearUserPreference.listener(
         ({ key }) => {
           console.info('removing', key)
-          ctx.localStorage.removeItem(getKey(id, key))
+          ctx.localStorage.removeItem(getKey(name, key))
         }
       )
     )
@@ -46,7 +46,7 @@ const plugin = definePlugin(() => ({
             keys.push(ctx.localStorage.key(i)!)
           }
           console.info('keys', ctx.localStorage.length, keys)
-          keys.filter(k => k.startsWith(`${id}:`))
+          keys.filter(k => k.startsWith(`${name}:`))
             .forEach(key => {
               console.info('remoing all for ', key)
               ctx.localStorage.removeItem(key)

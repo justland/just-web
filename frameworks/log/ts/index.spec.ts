@@ -1,5 +1,5 @@
 import { createMemoryLogReporter, logLevels } from 'standard-log'
-import plugin, { logPluginForTest } from './index'
+import plugin, { logTestPlugin } from './index'
 
 describe(`plugin().init()`, () => {
   it('provides app log methods', () => {
@@ -54,9 +54,9 @@ describe(`plugin().init()`, () => {
   })
 })
 
-describe(`${logPluginForTest.name}().init()`, () => {
+describe(`${logTestPlugin.name}().init()`, () => {
   it('defaults logLevel to debug and provides memory reporter', () => {
-    const [{ log }] = logPluginForTest().init()
+    const [{ log }] = logTestPlugin().init()
 
     expect(log.logLevel).toEqual(logLevels.debug)
     log.info('hello')
