@@ -1,5 +1,19 @@
 # @just-web/states
 
+## 1.0.0
+
+### Patch Changes
+
+- 564addf: Upgrade type-plus to 4.13.1
+
+  Update `init()` and `start()` logs.
+
+  Code comments are not kept so it that JSDocs will be available
+
+- Updated dependencies [564addf]
+- Updated dependencies [c228a89]
+  - @just-web/log@1.0.0
+
 ## 0.2.3
 
 ### Patch Changes

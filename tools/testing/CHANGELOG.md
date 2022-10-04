@@ -1,5 +1,20 @@
 # @just-web/testing
 
+## 0.2.3
+
+### Patch Changes
+
+- 564addf: Upgrade type-plus to 4.13.1
+
+  Update `init()` and `start()` logs.
+
+  Code comments are not kept so it that JSDocs will be available
+
+- 0e94b19: Upgrade `assertron` to 10.0.0
+- Updated dependencies [564addf]
+- Updated dependencies [c228a89]
+  - @just-web/log@1.0.0
+
 ## 0.2.2
 
 ### Patch Changes

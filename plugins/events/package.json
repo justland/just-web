@@ -1,6 +1,6 @@
 {
   "name": "@just-web/events",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "just-web events module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
