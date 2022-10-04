@@ -1,9 +1,11 @@
+import { createTestApp } from '@just-web/app'
 import commandsPlugin from '@just-web/commands'
 import contributionsPlugin from '@just-web/contributions'
-import { logTestPlugin } from '@just-web/log'
+import { logLevels } from '@just-web/log'
 import preferencesPlugin, { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences'
 import { a, AssertOrder } from 'assertron'
-import { hasAll } from 'satisfier'
+import { hasAll, some } from 'satisfier'
+import { isType } from 'type-plus'
 import plugin from '.'
 import { ctx } from './index.ctx'
 
@@ -21,17 +23,13 @@ describe('plugin.init()', () => {
     ))
   })
 })
-
 function setupPlugin() {
-  const name = 'test-app'
-  const id = 'some-id'
-
-  const [{ log }] = logTestPlugin().init()
-  const [{ contributions }] = contributionsPlugin().init({ log })
-  const [{ commands }] = commandsPlugin().init({ log, contributions })
-  const [{ preferences }] = preferencesPlugin().init({ log, commands, contributions })
-  plugin().init({ name, id, commands })
-  return { name, id, log, contributions, commands, preferences }
+  const app = createTestApp({ log: { logLevel: logLevels.info } })
+    .extend(contributionsPlugin())
+    .extend(commandsPlugin())
+    .extend(preferencesPlugin())
+    .extend(plugin())
+  return app
 }
 
 describe('setUserPreference()', () => {
@@ -68,15 +66,54 @@ describe('setUserPreference()', () => {
     preferences.set('my-key', 'hello')
     o.end()
   })
+
+  it('is being tracked', () => {
+    const { preferences, log } = setupPlugin()
+    preferences.set('key-a', 'hello-world')
+
+    a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
+      "test-app:@just-web/browser-preferences (INFO) set: 'test-app:key-a' hello-world"
+    ))
+  })
+})
+
+describe('updateUserPreference()', () => {
+  it('requires the handler to return a string', () => {
+    const { preferences } = setupPlugin()
+
+    isType.equal<true, string, ReturnType<Parameters<typeof preferences.update>[1]>>()
+  })
+  it('passes the original value to the handler', () => {
+    const { preferences } = setupPlugin()
+    preferences.set('update-a', 'hello')
+    preferences.update('update-a', (v) => v + ' world')
+
+    expect(preferences.get('update-a')).toEqual('hello world')
+  })
+
+  it('is being tracked', () => {
+    const { preferences, log } = setupPlugin()
+    preferences.set('update-a', 'hello')
+    preferences.update('update-a', (v) => v + ' world')
+
+    console.info(log.reporter.getLogMessagesWithIdAndLevel())
+    a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
+      "test-app:@just-web/browser-preferences (INFO) update: 'test-app:update-a' hello -> hello world"
+    ))
+  })
 })
 
 describe('clearUserPreference()', () => {
   it('clear not set value is ok', () => {
-    const { preferences } = setupPlugin()
+    const { preferences, log } = setupPlugin()
     preferences.clear('unknown') // do not throw
+
+    a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
+      `test-app:@just-web/browser-preferences (INFO) clear: 'test-app:unknown'`
+    ))
   })
 
-  it('clear updated value', () => {
+  it('clear existing value', () => {
     const { preferences } = setupPlugin()
     preferences.set('x', '123')
     preferences.clear('x')
@@ -86,7 +123,7 @@ describe('clearUserPreference()', () => {
 
 describe('clearUserPreferences()', () => {
   it('only clear preference for the current app', () => {
-    const { preferences } = setupPlugin()
+    const { preferences, log } = setupPlugin()
     preferences.set('x', '123')
     preferences.set('y', 'abc')
 
@@ -95,5 +132,9 @@ describe('clearUserPreferences()', () => {
     expect(preferences.get('x')).toBeUndefined()
     expect(preferences.get('y')).toBeUndefined()
     expect(ctx.localStorage.getItem('someone-else-value')).toEqual('hello')
+
+    a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
+      `test-app:@just-web/browser-preferences (INFO) clear all: 'test-app'`
+    ))
   })
 })

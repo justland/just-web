@@ -3,14 +3,14 @@ import { ContributionsContext } from '@just-web/contributions'
 import { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { justEvent } from '@unional/events-plus'
-import { AnyRecord } from 'type-plus'
 
 /**
  * Set the specified user preference.
  * @param key The key of the preference to be update
  */
-export const setUserPreference = justEvent<{ key: string, value: string | AnyRecord }>('just-web.setUserPreference')
+export const setUserPreference = justEvent<{ key: string, value: string }>('just-web.setUserPreference')
 export const getUserPreference = justEvent<{ key: string }>('just-web.getUserPreference')
+export const updateUserPreference = justEvent<{ key: string, handler: (value: string | undefined) => string }>('just-web.updateUserPreference')
 
 /**
  * Clear the specified user preference.
@@ -35,10 +35,16 @@ export default definePlugin(() => ({
             ...getUserPreference({ key })
           )
         },
-        set(key: string, value: string | AnyRecord) {
+        set(key: string, value: string) {
           return commands.invoke(
             setUserPreference.type,
             ...setUserPreference({ key, value })
+          )
+        },
+        update(key: string, handler: (value: string | undefined) => string) {
+          return commands.invoke(
+            updateUserPreference.type,
+            ...updateUserPreference({ key, handler })
           )
         },
         clear(key: string) {
