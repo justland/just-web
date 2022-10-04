@@ -6,12 +6,16 @@
   "fixed": [
     [
       "@just-web/app",
-      "@just-web/browser",
       "@just-web/browser-contributions",
+      "@just-web/browser-preferences",
+      "@just-web/browser",
       "@just-web/commands",
       "@just-web/contributions",
+      "@just-web/events",
       "@just-web/log",
       "@just-web/os",
+      "@just-web/preferences",
+      "@just-web/routes",
       "@just-web/states",
       "@just-web/types"
     ]
