@@ -1,5 +1,19 @@
 # @just-web/react-commands
 
+## 2.0.4
+
+### Patch Changes
+
+- @just-web/app@1.1.1
+- @just-web/browser-contributions@1.1.1
+- @just-web/commands@1.1.1
+- @just-web/contributions@1.1.1
+- @just-web/log@1.1.1
+- @just-web/os@1.1.1
+- @just-web/states@1.1.1
+- @just-web/types@1.1.1
+- @just-web/react@2.0.4
+
 ## 2.0.3
 
 ### Patch Changes

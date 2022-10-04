@@ -1,5 +1,21 @@
 # @just-func/play-react
 
+## 0.2.12
+
+### Patch Changes
+
+- @just-web/app@1.1.1
+- @just-web/browser-contributions@1.1.1
+- @just-web/browser@1.1.1
+- @just-web/commands@1.1.1
+- @just-web/contributions@1.1.1
+- @just-web/log@1.1.1
+- @just-web/os@1.1.1
+- @just-web/routes@1.1.1
+- @just-web/states@1.1.1
+- @just-web/react-commands@2.0.4
+- @just-web/react@2.0.4
+
 ## 0.2.11
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @just-web/preferences
 
+## 1.1.1
+
+### Patch Changes
+
+- export `PreferencesContext`
+  - @just-web/commands@1.1.1
+  - @just-web/contributions@1.1.1
+  - @just-web/log@1.1.1
+  - @just-web/types@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@just-web/os",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "just-web os plugin module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

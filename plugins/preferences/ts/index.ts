@@ -19,7 +19,7 @@ export const updateUserPreference = justEvent<{ key: string, handler: (value: st
 export const clearUserPreference = justEvent<{ key: string }>('just-web.clearUserPreference')
 export const clearUserPreferences = justEvent('just-web.clearUserPreferences')
 
-export default definePlugin(() => ({
+const plugin = definePlugin(() => ({
   name: '@just-web/preferences',
   init: ({ commands, contributions }: LogContext & CommandsContext & ContributionsContext) => {
     contributions.commands.add({ command: setUserPreference.type })
@@ -60,3 +60,7 @@ export default definePlugin(() => ({
     }]
   }
 }))
+
+export default plugin
+
+export type PreferencesContext = ReturnType<ReturnType<typeof plugin>['init']>[0]

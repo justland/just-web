@@ -22,6 +22,9 @@
       "path": "../../plugins/os"
     },
     {
+      "path": "../../plugins/preferences"
+    },
+    {
       "path": "../../tools/repo-scripts"
     },
     {
