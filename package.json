@@ -14,6 +14,7 @@
   "scripts": {
     "app": "pnpm --filter=@just-web/app",
     "build": "turbo run build",
+    "build:doc": "typedoc",
     "browser": "pnpm --filter=@just-web/browser",
     "browser-contributions": "pnpm --filter=@just-web/browser-contributions",
     "browser-preferences": "pnpm --filter=@just-web/browser-preferences",
@@ -56,12 +57,12 @@
     "@commitlint/config-conventional": "^17.0.2",
     "@just-web/repo-scripts": "workspace:*",
     "@types/eslint": "^8.4.3",
-    "@types/jest": "^28.1.1",
+    "@types/jest": "^27.5.2",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "eslint": "^8.17.0",
     "eslint-plugin-harmony": "^7.1.0",
     "husky": "^8.0.1",
-    "jest": "^28.1.1",
+    "jest": "^27.5.1",
     "jest-watch-suspend": "^1.1.2",
     "jest-watch-toggle-config": "^2.0.1",
     "jest-watch-typeahead": "^1.1.0",
@@ -69,6 +70,8 @@
     "npm-run-all": "^4.1.5",
     "pinst": "^3.0.0",
     "turbo": "1.4.6",
+    "typedoc": "^0.23.15",
+    "typedoc-plugin-extras": "^2.3.0",
     "typescript": "^4.8.4"
   },
   "pnpm": {

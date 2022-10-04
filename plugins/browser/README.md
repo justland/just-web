@@ -25,9 +25,9 @@ rush add -p @just-web/browser
 
 ```ts
 import { createApp } from '@just-web/app'
-import browser from '@just-web/browser'
+import browserPlugin from '@just-web/browser'
 
-createApp({ name: 'your-awesome-app' }).addPlugin(browser)
+createApp({ name: 'your-awesome-app' }).extend(browserPlugin())
 ```
 
 [`@just-web/browser`]: https://github.com/justland/just-web/tree/main/plugins/browser

@@ -1,6 +1,6 @@
 # @just-web/routes
 
-[`@just-web/routes`] is a plugin that provides client side routing capability.
+[@just-web/routes] is a plugin that provides client side routing capability.
 
 ## Install
 
@@ -25,11 +25,12 @@ you typically will load it statically:
 
 ```ts
 import { createApp } from '@just-web/app'
-import * as routes from '@just-web/routes'
+import routesPlugin from '@just-web/routes'
 
 void (async () => {
   const app = await createApp({ name: 'my-awesome-app' })
-    .addPlugin(routes)
+    .extend(routesPlugin())
+
   app.routes.register('/', () => { ... })
   app.routes.register('/error', () => { ... })
   await app.start()
@@ -37,4 +38,4 @@ void (async () => {
 
 ```
 
-[`@just-web/routes`]: https://github.com/justland/just-web/tree/main/plugins/routes
+[@just-web/routes]: https://github.com/justland/just-web/tree/main/plugins/routes

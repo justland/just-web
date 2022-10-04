@@ -28,8 +28,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 
 void (async () => {
-  const app = createApp()
-  app.addPlugin(...)
+  const app = createApp().extend(...)
   await app.start()
 
   ReactDOM.render(

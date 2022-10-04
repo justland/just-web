@@ -1,13 +1,22 @@
-# @just-web/events
+# @just-web/events (ALPHA)
 
-[`@just-web/events`] provides event based pub/sub system to `@just-web` applications.
+[@just-web/events] provides event based pub/sub system to [@just-web] applications.
 
-This is a core module of `@just-web`.
-You do not need to reference this module directly.
+## Install
 
-The features of this module are exposed through [`@just-web/app`].
+```sh
+# npm
+npm install @just-web/browser-contributions
 
-Please refer to the `handbook` on how to use it.
+# yarn
+yarn add @just-web/browser-contributions
 
-[`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
-[`@just-web/events`]: https://github.com/justland/just-web/tree/main/frameworks/events
+# pnpm
+pnpm install @just-web/browser-contributions
+
+#rush
+rush add -p @just-web/browser-contributions
+```
+
+[@just-web]: https://github.com/justland/just-web/
+[@just-web/events]: https://github.com/justland/just-web/tree/main/plugins/events

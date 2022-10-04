@@ -15,7 +15,3 @@ export type BrowserOptions = {
     preventDefault?: boolean
   }
 }
-
-export type BrowserInitContext = {
-  options?: BrowserOptions
-}

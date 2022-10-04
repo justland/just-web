@@ -1,3 +1,4 @@
+export type { Adder, WithAdder } from './adder'
 export * from './adder'
 export * from './registry'
 export * from './state'
