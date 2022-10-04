@@ -13,3 +13,7 @@
 ---
 
 Upgrade type-plus to 4.13.1
+
+Update `init()` and `start()` logs.
+
+Code comments are not kept so it that JSDocs will be available

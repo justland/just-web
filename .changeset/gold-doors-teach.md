@@ -16,3 +16,11 @@ But there are use cases that commands can be used within a subsection of an appl
 For example, some UI internal commands for interactions.
 
 In those cases, it doesn't make sense to make those command public.
+
+
+`invoke()` now returns the value returned from the handler.
+It is not typed at the moment.
+
+Will need to revisit it to figure out how to type the command's return type.
+
+May need to create a replacement of the `JustEvent` from `@unional/events-plus`.
