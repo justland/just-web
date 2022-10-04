@@ -1,0 +1,243 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@just-web/states | just-web</title><meta name="description" content="Documentation for just-web"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base="..">
+<div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="https://github.com/justland/just-web" class="title">@just-web Documentation</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<ul class="tsd-breadcrumb">
+<li><a href="../modules.html">just-web</a></li>
+<li><a href="_just_web_states.html">@just-web/states</a></li></ul>
+<h1>Module @just-web/states</h1></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/justland/just-web/blob/640a299/libraries/states/ts/index.ts#L1">libraries/states/ts/index.ts:1</a></li></ul></aside>
+<section class="tsd-panel-group">
+<section class="tsd-panel tsd-typography">
+<a href="#just-webstates-" id="just-webstates-" style="color: inherit; text-decoration: none;">
+  <h1>@just-web/states <!-- omit in toc --></h1>
+</a>
+<p><a href="https://github.com/justland/just-web/tree/main/frameworks/states"><code>@just-web/states</code></a> provides state management to all <code>@just-web</code> applications.</p>
+<p>This is a core module of <code>@just-web</code>.
+You do not need to reference this module directly.</p>
+<p>The features of this module are exposed through <a href="https://github.com/justland/just-web/tree/main/frameworks/app"><code>@just-web/app</code></a>.</p>
+<p><code>@just-web</code> modules, as well as default plugins and components,
+use this to manage their states.</p>
+<p>All data stored in the states are immutable.</p>
+<p><a href="https://github.com/justland/just-web/tree/main/frameworks/states"><code>@just-web/states</code></a> uses <a href="https://github.com/immerjs/immer"><code>immer</code></a> to manage immutability,
+and use <a href="https://www.jstips.co/en/javascript/why-you-should-use-Object.is()-in-equality-comparison/"><code>Object.is()</code></a> to detect changes.</p>
+
+<a href="#features-" id="features-" style="color: inherit; text-decoration: none;">
+  <h2>Features <!-- omit in toc --></h2>
+</a>
+<ul>
+<li><a href="#createstate">createState</a></li>
+<li><a href="#createstore">createStore</a><ul>
+<li><a href="#toreadonlystore">toReadonlyStore</a></li>
+</ul>
+</li>
+<li><a href="#createregistry">createRegistry</a><ul>
+<li><a href="#toreadonlyregistry">toReadonlyRegistry</a></li>
+</ul>
+</li>
+<li><a href="#adder">adder</a></li>
+<li><a href="#withadder">withAdder</a></li>
+</ul>
+
+<a href="#createstate" id="createstate" style="color: inherit; text-decoration: none;">
+  <h2>createState</h2>
+</a>
+<p><code>createState()</code> provides a functional style state management,
+similar to <code>useState()</code> in React Hooks.</p>
+<p>It returns 4 values instead of 2 compares to <code>useState()</code>.</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> [</span><span class="hl-6">value</span><span class="hl-0">, </span><span class="hl-6">set</span><span class="hl-0">, </span><span class="hl-6">onChange</span><span class="hl-0">, </span><span class="hl-6">reset</span><span class="hl-0">] = </span><span class="hl-7">createState</span><span class="hl-0">&lt;</span><span class="hl-9">T</span><span class="hl-0">&gt;(</span><span class="hl-3">init</span><span class="hl-0">)</span>
+</code></pre>
+<ul>
+<li><code>T</code>: type of the data. Will be inferred from <code>init</code> if not specified.</li>
+<li><code>init</code>: the initial value. It will be frozen after calling <code>createState()</code>.</li>
+<li><code>value</code>: the frozen <code>init</code>.</li>
+<li><code>set(newValue)</code>: the setter for new value</li>
+<li><code>onChange(handler)</code>: listen to state changes.</li>
+<li><code>reset()</code>: reset the state value back to <code>init</code>.</li>
+</ul>
+<p>As described above, you should use some immutable library when setting the value.
+Here is an example on how to do it using <a href="https://github.com/immerjs/immer"><code>immer</code></a>:</p>
+<pre><code class="language-ts"><span class="hl-2">import</span><span class="hl-0"> { </span><span class="hl-3">createStore</span><span class="hl-0"> } </span><span class="hl-2">from</span><span class="hl-0"> </span><span class="hl-4">&#39;@just-web/states&#39;</span><br/><span class="hl-2">import</span><span class="hl-0"> { </span><span class="hl-3">produce</span><span class="hl-0"> } </span><span class="hl-2">from</span><span class="hl-0"> </span><span class="hl-4">&#39;immer&#39;</span><br/><br/><span class="hl-5">const</span><span class="hl-0"> [</span><span class="hl-6">value</span><span class="hl-0">, </span><span class="hl-6">set</span><span class="hl-0">] = </span><span class="hl-7">createState</span><span class="hl-0">({ </span><span class="hl-3">a:</span><span class="hl-0"> </span><span class="hl-13">1</span><span class="hl-0"> })</span><br/><br/><span class="hl-7">set</span><span class="hl-0">(</span><span class="hl-7">produce</span><span class="hl-0">(</span><span class="hl-3">value</span><span class="hl-0">, </span><span class="hl-3">draft</span><span class="hl-0"> </span><span class="hl-5">=&gt;</span><span class="hl-0"> { </span><span class="hl-3">draft</span><span class="hl-0">.</span><span class="hl-3">a</span><span class="hl-0"> = </span><span class="hl-13">2</span><span class="hl-0"> }))</span>
+</code></pre>
+
+<a href="#createstore" id="createstore" style="color: inherit; text-decoration: none;">
+  <h2>createStore</h2>
+</a>
+<p><code>createStore()</code> is the object-oriented counterpart of <code>createState()</code>.</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">store</span><span class="hl-0"> = </span><span class="hl-7">createStore</span><span class="hl-0">&lt;</span><span class="hl-9">T</span><span class="hl-0">&gt;(</span><span class="hl-3">init</span><span class="hl-0">)</span><br/><br/><span class="hl-3">store</span><span class="hl-0">.</span><span class="hl-7">get</span><span class="hl-0">()</span><br/><span class="hl-3">store</span><span class="hl-0">.</span><span class="hl-7">set</span><span class="hl-0">(</span><span class="hl-3">value</span><span class="hl-0">)</span><br/><span class="hl-3">store</span><span class="hl-0">.</span><span class="hl-7">update</span><span class="hl-0">(</span><span class="hl-3">handler</span><span class="hl-0">)</span><br/><span class="hl-3">store</span><span class="hl-0">.</span><span class="hl-7">onChange</span><span class="hl-0">(</span><span class="hl-3">handler</span><span class="hl-0">)</span><br/><span class="hl-3">store</span><span class="hl-0">.</span><span class="hl-7">reset</span><span class="hl-0">()</span>
+</code></pre>
+<p>The key difference between <code>createStore()</code> and <code>createState()</code> is that you can get the current value of the <code>store</code> at anytime using <code>store.get()</code>.
+For <code>state</code>, you can only get the latest value through <code>onChange()</code>.</p>
+<p>It also provides <code>store.update(handler)</code> to make updating the store easier to do.
+It is using <a href="https://github.com/immerjs/immer"><code>immer</code></a> internally as in the example above.</p>
+
+<a href="#toreadonlystore" id="toreadonlystore" style="color: inherit; text-decoration: none;">
+  <h3>toReadonlyStore</h3>
+</a>
+<p>Since you pass <code>store</code> around as an object,
+You may want to pass the <code>store</code> to someone with read only access.</p>
+<p>You can create a read only version of the <code>store</code> using <code>toReadonlyStore()</code>:</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">store</span><span class="hl-0"> = </span><span class="hl-7">createStore</span><span class="hl-0">({})</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">readonlyStore</span><span class="hl-0"> = </span><span class="hl-7">toReadonlyStore</span><span class="hl-0">(</span><span class="hl-3">store</span><span class="hl-0">)</span><br/><br/><span class="hl-1">// readonly store only has</span><br/><span class="hl-3">readonlyStore</span><span class="hl-0">.</span><span class="hl-7">get</span><span class="hl-0">()</span><br/><span class="hl-3">readonlyStore</span><span class="hl-0">.</span><span class="hl-7">onChange</span><span class="hl-0">(</span><span class="hl-3">handler</span><span class="hl-0">)</span>
+</code></pre>
+
+<a href="#createregistry" id="createregistry" style="color: inherit; text-decoration: none;">
+  <h2>createRegistry</h2>
+</a>
+<p><code>createRegistry()</code> is a specialized version of <code>createStore()</code> that deals with <code>Record&lt;K, T&gt;</code>.</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">registry</span><span class="hl-0"> = </span><span class="hl-7">createRegistry</span><span class="hl-0">({})</span><br/><br/><span class="hl-1">// on top of store&#39;s API, registry has</span><br/><span class="hl-3">registry</span><span class="hl-0">.</span><span class="hl-7">keys</span><span class="hl-0">()</span><br/><span class="hl-3">registry</span><span class="hl-0">.</span><span class="hl-7">size</span><span class="hl-0">()</span><br/><span class="hl-3">registry</span><span class="hl-0">.</span><span class="hl-7">list</span><span class="hl-0">()</span>
+</code></pre>
+<ul>
+<li><code>keys()</code>: gets a list of keys in the registry.</li>
+<li><code>size()</code>: gets how many entries in the registry.</li>
+<li><code>list()</code>: gets a list of values in the registry.</li>
+</ul>
+
+<a href="#toreadonlyregistry" id="toreadonlyregistry" style="color: inherit; text-decoration: none;">
+  <h3>toReadonlyRegistry</h3>
+</a>
+<p>Same as <code>store</code>,
+you can use <code>toReadonlyRegistry()</code> to create a read only version of the registry.</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">registry</span><span class="hl-0"> = </span><span class="hl-7">createRegistry</span><span class="hl-0">({})</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">readonlyRegistry</span><span class="hl-0"> = </span><span class="hl-7">toReadonlyRegistry</span><span class="hl-0">(</span><span class="hl-3">registry</span><span class="hl-0">)</span><br/><br/><span class="hl-1">// readonly registry only has</span><br/><span class="hl-3">readonlyRegistry</span><span class="hl-0">.</span><span class="hl-7">get</span><span class="hl-0">()</span><br/><span class="hl-3">readonlyRegistry</span><span class="hl-0">.</span><span class="hl-7">onChange</span><span class="hl-0">(</span><span class="hl-3">handler</span><span class="hl-0">)</span><br/><span class="hl-3">readonlyRegistry</span><span class="hl-0">.</span><span class="hl-7">keys</span><span class="hl-0">()</span><br/><span class="hl-3">readonlyRegistry</span><span class="hl-0">.</span><span class="hl-7">size</span><span class="hl-0">()</span><br/><span class="hl-3">readonlyRegistry</span><span class="hl-0">.</span><span class="hl-7">list</span><span class="hl-0">()</span>
+</code></pre>
+
+<a href="#adder" id="adder" style="color: inherit; text-decoration: none;">
+  <h2>adder</h2>
+</a>
+<p>Using <code>set(newValue)</code> (or <code>update(handler)</code>) to add an entry can be a bit tedious.
+Therefore, we provide a <code>adder()</code> function which you can use to generate a <code>add(...entries)</code> function to add entries to the <code>store</code> or <code>registry</code>.</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">store</span><span class="hl-0"> = </span><span class="hl-7">createStore</span><span class="hl-0">&lt;</span><span class="hl-9">number</span><span class="hl-0">[]&gt;([])</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">addToStore</span><span class="hl-0"> = </span><span class="hl-7">adder</span><span class="hl-0">(</span><span class="hl-3">store</span><span class="hl-0">, (</span><span class="hl-3">record</span><span class="hl-0">, </span><span class="hl-3">entry</span><span class="hl-0">) </span><span class="hl-5">=&gt;</span><span class="hl-0"> { </span><span class="hl-3">record</span><span class="hl-0">.</span><span class="hl-7">push</span><span class="hl-0">(</span><span class="hl-3">entry</span><span class="hl-0">) })</span><br/><span class="hl-7">addToStore</span><span class="hl-0">(</span><span class="hl-13">1</span><span class="hl-0">, </span><span class="hl-13">2</span><span class="hl-0">, </span><span class="hl-13">3</span><span class="hl-0">, </span><span class="hl-13">4</span><span class="hl-0">)</span><br/><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">registry</span><span class="hl-0"> = </span><span class="hl-7">createRegistry</span><span class="hl-0">({})</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">addToRegistry</span><span class="hl-0"> = </span><span class="hl-7">adder</span><span class="hl-0">(</span><span class="hl-3">registry</span><span class="hl-0">, (</span><span class="hl-3">record</span><span class="hl-0">, </span><span class="hl-3">entry</span><span class="hl-0">) </span><span class="hl-5">=&gt;</span><span class="hl-0"> { </span><span class="hl-3">record</span><span class="hl-0">[</span><span class="hl-3">entry</span><span class="hl-0">.</span><span class="hl-3">key</span><span class="hl-0">] = </span><span class="hl-3">entry</span><span class="hl-0"> })</span><br/><span class="hl-7">addToRegistry</span><span class="hl-0">({ </span><span class="hl-3">key:</span><span class="hl-0"> </span><span class="hl-4">&#39;a&#39;</span><span class="hl-0">, </span><span class="hl-3">value:</span><span class="hl-0"> </span><span class="hl-13">1</span><span class="hl-0"> }, { </span><span class="hl-3">key:</span><span class="hl-0"> </span><span class="hl-4">&#39;b&#39;</span><span class="hl-0">, </span><span class="hl-3">value:</span><span class="hl-0"> </span><span class="hl-13">2</span><span class="hl-0"> })</span>
+</code></pre>
+<p>You can also use the provided <code>push</code> and <code>unshift</code> function for array:</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">store</span><span class="hl-0"> = </span><span class="hl-7">createStore</span><span class="hl-0">&lt;</span><span class="hl-9">number</span><span class="hl-0">[]&gt;([])</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">pushToStore</span><span class="hl-0"> = </span><span class="hl-7">adder</span><span class="hl-0">(</span><span class="hl-3">store</span><span class="hl-0">, </span><span class="hl-3">push</span><span class="hl-0">)</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">unshiftToStore</span><span class="hl-0"> = </span><span class="hl-7">adder</span><span class="hl-0">(</span><span class="hl-3">store</span><span class="hl-0">, </span><span class="hl-3">unshift</span><span class="hl-0">)</span>
+</code></pre>
+
+<a href="#withadder" id="withadder" style="color: inherit; text-decoration: none;">
+  <h2>withAdder</h2>
+</a>
+<p><code>withAdder()</code> uses the <code>adder()</code> function above to add a <code>add()</code> to the <code>store</code> or <code>registry</code>:</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">store</span><span class="hl-0"> = </span><span class="hl-7">withAdder</span><span class="hl-0">(</span><span class="hl-7">createStore</span><span class="hl-0">&lt;</span><span class="hl-9">number</span><span class="hl-0">&gt;([]), </span><span class="hl-3">push</span><span class="hl-0">)</span><br/><span class="hl-3">store</span><span class="hl-0">.</span><span class="hl-7">add</span><span class="hl-0">(</span><span class="hl-13">1</span><span class="hl-0">, </span><span class="hl-13">2</span><span class="hl-0">, </span><span class="hl-13">3</span><span class="hl-0">)</span><br/><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">registry</span><span class="hl-0"> = </span><span class="hl-7">withAdder</span><span class="hl-0">(</span><br/><span class="hl-0">  </span><span class="hl-7">createRegistry</span><span class="hl-0">({ </span><span class="hl-3">key:</span><span class="hl-0"> </span><span class="hl-4">&#39;x&#39;</span><span class="hl-0">, </span><span class="hl-3">value:</span><span class="hl-0"> </span><span class="hl-13">1</span><span class="hl-0"> }),</span><br/><span class="hl-0">  (</span><span class="hl-3">record</span><span class="hl-0">, </span><span class="hl-3">entry</span><span class="hl-0">) </span><span class="hl-5">=&gt;</span><span class="hl-0"> { </span><span class="hl-3">record</span><span class="hl-0">[</span><span class="hl-3">entry</span><span class="hl-0">.</span><span class="hl-3">key</span><span class="hl-0">] = </span><span class="hl-3">entry</span><span class="hl-0"> }</span><br/><span class="hl-0">)</span><br/><span class="hl-3">registry</span><span class="hl-0">.</span><span class="hl-7">add</span><span class="hl-0">({ </span><span class="hl-3">key:</span><span class="hl-0"> </span><span class="hl-4">&#39;y&#39;</span><span class="hl-0">, </span><span class="hl-3">value:</span><span class="hl-0"> </span><span class="hl-13">2</span><span class="hl-0"> }, { </span><span class="hl-3">key:</span><span class="hl-0"> </span><span class="hl-4">&#39;z&#39;</span><span class="hl-0">, </span><span class="hl-3">value:</span><span class="hl-0"> </span><span class="hl-13">999</span><span class="hl-0"> })</span>
+</code></pre>
+
+<a href="#to-do-" id="to-do-" style="color: inherit; text-decoration: none;">
+  <h2>To do <!-- omit in toc --></h2>
+</a>
+<ul>
+<li>🔍 should <code>register.keys()</code> returns an iterator instead of array?</li>
+<li>🔍 should <code>register</code> adds <code>values()</code> that returns an iterator?</li>
+<li>🔍 if not using context, this package may be re-classify as library instead of framework<br>the only question at the moment is about logging</li>
+</ul>
+</section></section>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<h3 class="tsd-index-heading uppercase">Index</h3>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Interfaces</h3>
+<div class="tsd-index-list"><a href="../interfaces/_just_web_states.Adder.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg><span>Adder</span></a>
+<a href="../interfaces/_just_web_states.OnStateChange.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>On<wbr/>State<wbr/>Change</span></a>
+<a href="../interfaces/_just_web_states.ReadonlyRegistry.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Readonly<wbr/>Registry</span></a>
+<a href="../interfaces/_just_web_states.ReadonlyStore.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Readonly<wbr/>Store</span></a>
+<a href="../interfaces/_just_web_states.Registry.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Registry</span></a>
+<a href="../interfaces/_just_web_states.ResetState.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Reset<wbr/>State</span></a>
+<a href="../interfaces/_just_web_states.SetState.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Set<wbr/>State</span></a>
+<a href="../interfaces/_just_web_states.StateChangeHandler.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>State<wbr/>Change<wbr/>Handler</span></a>
+<a href="../interfaces/_just_web_states.Store.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Store</span></a>
+<a href="../interfaces/_just_web_states.WithAdder.html" class="tsd-index-link tsd-kind-interface tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>With<wbr/>Adder</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Variables</h3>
+<div class="tsd-index-list"><a href="../variables/_just_web_states.stateLog.html" class="tsd-index-link tsd-kind-variable tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-variable)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-32-path"></rect><path d="M11.106 16L8.85 7.24H9.966L11.454 13.192C11.558 13.608 11.646 13.996 11.718 14.356C11.79 14.708 11.842 14.976 11.874 15.16C11.906 14.976 11.954 14.708 12.018 14.356C12.09 13.996 12.178 13.608 12.282 13.192L13.758 7.24H14.85L12.582 16H11.106Z" fill="var(--color-text)" id="icon-32-text"></path></svg><span>state<wbr/>Log</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Functions</h3>
+<div class="tsd-index-list"><a href="../functions/_just_web_states.adder-1.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-64-path"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)" id="icon-64-text"></path></svg><span>adder</span></a>
+<a href="../functions/_just_web_states.createRegistry.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Registry</span></a>
+<a href="../functions/_just_web_states.createState.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>State</span></a>
+<a href="../functions/_just_web_states.createStore.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Store</span></a>
+<a href="../functions/_just_web_states.push.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>push</span></a>
+<a href="../functions/_just_web_states.toReadonlyRegistry.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>to<wbr/>Readonly<wbr/>Registry</span></a>
+<a href="../functions/_just_web_states.toReadonlyStore.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>to<wbr/>Readonly<wbr/>Store</span></a>
+<a href="../functions/_just_web_states.unshift.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>unshift</span></a>
+<a href="../functions/_just_web_states.withAdder-1.html" class="tsd-index-link tsd-kind-function tsd-parent-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>with<wbr/>Adder</span></a>
+</div></section></section></section></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current"><a href="../modules.html">just-<wbr/>web</a>
+<ul>
+<li class="tsd-kind-module"><a href="_just_web_app.html">@just-<wbr/>web/app</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_just_web_app.createApp.html">create<wbr/>App</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_just_web_app.createTestApp.html">create<wbr/>Test<wbr/>App</a></li></ul></li>
+<li class="tsd-kind-module"><a href="_just_web_browser.html">@just-<wbr/>web/browser</a></li>
+<li class="tsd-kind-module"><a href="_just_web_browser_contributions.html">@just-<wbr/>web/browser-<wbr/>contributions</a></li>
+<li class="tsd-kind-module"><a href="_just_web_browser_preferences.html">@just-<wbr/>web/browser-<wbr/>preferences</a></li>
+<li class="tsd-kind-module"><a href="_just_web_commands.html">@just-<wbr/>web/commands</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_just_web_commands.commandRegistry.html">command<wbr/>Registry</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_just_web_commands.createCommandsContext.html">create<wbr/>Commands<wbr/>Context</a></li></ul></li>
+<li class="tsd-kind-module"><a href="_just_web_contributions.html">@just-<wbr/>web/contributions</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_just_web_contributions.commandContributionRegistry.html">command<wbr/>Contribution<wbr/>Registry</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_just_web_contributions.keyBindingRegistry.html">key<wbr/>Binding<wbr/>Registry</a></li></ul></li>
+<li class="tsd-kind-module"><a href="_just_web_log.html">@just-<wbr/>web/log</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_just_web_log.justLog.html">just<wbr/>Log</a></li></ul></li>
+<li class="tsd-kind-module"><a href="_just_web_os.html">@just-<wbr/>web/os</a></li>
+<li class="tsd-kind-module"><a href="_just_web_preferences.html">@just-<wbr/>web/preferences</a></li>
+<li class="tsd-kind-module"><a href="_just_web_react.html">@just-<wbr/>web/react</a></li>
+<li class="tsd-kind-module"><a href="_just_web_react_commands.html">@just-<wbr/>web/react-<wbr/>commands</a></li>
+<li class="tsd-kind-module"><a href="_just_web_routes.html">@just-<wbr/>web/routes</a></li>
+<li class="current selected tsd-kind-module"><a href="_just_web_states.html">@just-<wbr/>web/states</a></li>
+<li class="tsd-kind-module"><a href="_just_web_testing.html">@just-<wbr/>web/testing</a></li>
+<li class="tsd-kind-module"><a href="_just_web_types.html">@just-<wbr/>web/types</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_just_web_types.PluginModule.html">Plugin<wbr/>Module</a></li></ul></li></ul></li></ul></div></details></nav>
+<nav class="tsd-navigation secondary menu-sticky">
+<ul>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.Adder.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Adder</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.OnStateChange.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>On<wbr/>State<wbr/>Change</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.ReadonlyRegistry.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Readonly<wbr/>Registry</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.ReadonlyStore.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Readonly<wbr/>Store</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.Registry.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Registry</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.ResetState.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Reset<wbr/>State</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.SetState.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Set<wbr/>State</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.StateChangeHandler.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>State<wbr/>Change<wbr/>Handler</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.Store.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Store</a></li>
+<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_just_web_states.WithAdder.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>With<wbr/>Adder</a></li>
+<li class="tsd-kind-variable tsd-parent-kind-module"><a href="../variables/_just_web_states.stateLog.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg>state<wbr/>Log</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.adder-1.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>adder</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.createRegistry.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>create<wbr/>Registry</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.createState.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>create<wbr/>State</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.createStore.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>create<wbr/>Store</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.push.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>push</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.toReadonlyRegistry.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>to<wbr/>Readonly<wbr/>Registry</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.toReadonlyStore.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>to<wbr/>Readonly<wbr/>Store</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.unshift.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>unshift</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="../functions/_just_web_states.withAdder-1.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>with<wbr/>Adder</a></li></ul></nav></div></div>
+<div class="container tsd-generator">
+<p style="line-height: 28px;">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="../assets/main.js"></script></body></html>
