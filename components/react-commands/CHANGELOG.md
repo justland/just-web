@@ -1,5 +1,41 @@
 # @just-web/react-commands
 
+## 2.0.0
+
+### Patch Changes
+
+- 8c3183e: Use `useCallback()` for the callbacks.
+- 8c3183e: Update `react-command-palette` to `0.21.1`.
+
+  The "Using UNSAFE_componentWillReceiveProps in strict mode" is not fixed.
+
+  That is caused by https://github.com/moroshko/react-autosuggest/issues/624
+  and likely will not be fixed.
+
+  Will soon need to look for alternatives.
+
+- 564addf: Upgrade type-plus to 4.13.1
+
+  Update `init()` and `start()` logs.
+
+  Code comments are not kept so it that JSDocs will be available
+
+- Updated dependencies [8c3183e]
+- Updated dependencies [b262ab5]
+- Updated dependencies [8c3183e]
+- Updated dependencies [564addf]
+- Updated dependencies [c228a89]
+- Updated dependencies [8c3183e]
+  - @just-web/os@1.0.0
+  - @just-web/commands@1.0.0
+  - @just-web/app@1.0.0
+  - @just-web/contributions@1.0.0
+  - @just-web/log@1.0.0
+  - @just-web/states@1.0.0
+  - @just-web/react@2.0.0
+  - @just-web/types@1.0.0
+  - @just-web/browser-contributions@1.0.0
+
 ## 1.0.7
 
 ### Patch Changes

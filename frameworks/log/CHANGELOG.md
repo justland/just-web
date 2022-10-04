@@ -1,5 +1,19 @@
 # @just-web/log
 
+## 1.0.0
+
+### Patch Changes
+
+- 564addf: Upgrade type-plus to 4.13.1
+
+  Update `init()` and `start()` logs.
+
+  Code comments are not kept so it that JSDocs will be available
+
+- c228a89: Upgrade `standard-log` to 10.0.0
+- Updated dependencies [8c3183e]
+  - @just-web/types@1.0.0
+
 ## 0.2.2
 
 ### Patch Changes

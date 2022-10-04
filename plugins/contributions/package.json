@@ -1,6 +1,6 @@
 {
   "name": "@just-web/contributions",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "just-web contributions store",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
