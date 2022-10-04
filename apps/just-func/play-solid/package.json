@@ -30,12 +30,12 @@
     "tinykeys": "~1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "~7.18.0",
-    "@babel/plugin-syntax-flow": "~7.17.0",
-    "@babel/plugin-transform-react-jsx": "~7.17.3",
-    "@babel/plugin-transform-runtime": "~7.18.0",
-    "@babel/preset-env": "~7.18.0",
-    "@babel/preset-typescript": "~7.17.0",
+    "@babel/core": "~7.19.0",
+    "@babel/plugin-syntax-flow": "~7.18.0",
+    "@babel/plugin-transform-react-jsx": "~7.19.0",
+    "@babel/plugin-transform-runtime": "~7.19.0",
+    "@babel/preset-env": "~7.19.0",
+    "@babel/preset-typescript": "~7.18.0",
     "@just-web/repo-scripts": "workspace:^*",
     "@storybook/addon-essentials": "~6.4.19",
     "@storybook/addon-links": "~6.4.19",
