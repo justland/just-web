@@ -25,7 +25,7 @@
   "devDependencies": {
     "@babel/core": "~7.18.0",
     "@babel/plugin-transform-runtime": "~7.18.0",
-    "@just-web/repo-scripts": "workspace:*",
+    "@just-web/repo-scripts": "workspace:^*",
     "@size-limit/preset-small-lib": "~7.0.8",
     "@types/jest": "^27.5.2",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
