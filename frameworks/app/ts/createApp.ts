@@ -16,6 +16,11 @@ type AppNode = {
   start(): Promise<void>
 }
 
+/**
+ * Creates a new `@just-web` application.
+ * @type N Inferred type for log methods. You don't need to specify this explicitly.
+ * Add the custom logs under `options.log.customLevels`
+ */
 export function createApp<N extends string = LogMethodNames>(options: createApp.Options<N>) {
   const appContext = { name: options.name, id: ctx.genAppID() }
   const logModule = logPlugin(options.log)
