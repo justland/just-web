@@ -34,10 +34,12 @@ import preferencesPlugin from '@just-web/preferences'
 import bpPlugin from '@just-web/browser-preferences'
 
 const app = createApp({name: 'your-awesome-app'})
-  .extends(contributionsPlugin())
-  .extends(commandsPlugin())
-  .extends(perferencesPlugin())
+  .extend(contributionsPlugin())
+  .extend(commandsPlugin())
+  .extend(perferencesPlugin())
   .extend(bpPlugin())
+
+await app.start()
 
 // using the `preferences` API.
 app.preferences.get(...)

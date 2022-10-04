@@ -8,6 +8,7 @@ import osPlugin from '@just-web/os'
 import routePlugin from '@just-web/routes'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createColorLogReporter } from 'standard-log-color'
 import App from './App'
 import { createDocument } from './docs/createDocument'
 import { createDocView } from './docViews/createDocView'
@@ -16,9 +17,10 @@ import { createAppStore } from './store'
 import './styles.css'
 
 void (async () => {
+  const reporter = createColorLogReporter()
   const app = await createApp({
-    name: 'test',
-    log: { logLevel: logLevels.all }
+    name: 'play-react',
+    log: { logLevel: logLevels.all, reporters: [reporter] }
   }).extend(contributionsPlugin())
     .extend(commandsPlugin())
     .extend(osPlugin())

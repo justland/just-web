@@ -19,7 +19,6 @@ export type {
   LogLevel, LogMethod, LogMethodNames, LogReporter,
   LogReporterOptions, MemoryLogReporter, StandardLog, StandardLogOptions, TimestampFormat
 } from 'standard-log'
-export * from 'standard-log-color'
 
 export namespace justLog {
   export interface Param<N extends string = LogMethodNames> extends StandardLogOptions<N> {

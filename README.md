@@ -45,6 +45,14 @@ Here are the components provided in this repository:
 
 Here are the plugins provided in this repository:
 
+- [`@just-web/browser`]: provides browser specific capability.
+- [`@just-web/browser-contributions`]: provides [@just-web/contributions] implementation on the browser.
+- [`@just-web/browser-preferences`]: provides [@just-web/preferences] implementation on the browser.
+- [`@just-web/commands`]: provides commands registration and invocation.
+- [`@just-web/contributions`]: provides contribution metadata storage.
+- [`@just-web/events`]: provides pub/sub events capability.
+- [`@just-web/os`]: provides Operating System related capability.
+- [`@just-web/preferences`]: provides user preference capability.
 - [`@just-web/routes`]: provides routing capability.
 
 ## Tools
