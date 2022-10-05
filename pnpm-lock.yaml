@@ -111,7 +111,7 @@ importers:
       eslint-config-prettier: ~8.5.0
       eslint-config-react-app: ~7.0.0
       eslint-plugin-harmony: ^7.0.0
-      eslint-plugin-storybook: ^0.5.7
+      eslint-plugin-storybook: ^0.6.0
       eslint-plugin-yml: ~0.14.0
       identity-obj-proxy: ~3.0.0
       jest: ^27.5.1
@@ -203,7 +203,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.17.0
       eslint-config-react-app: 7.0.1_wo7cp4lvbmtdh6jln32etv3igu
       eslint-plugin-harmony: 7.1.0_oeacmew2nrl5yidggn3nqfrcka
-      eslint-plugin-storybook: 0.5.12_vhsckgnokn2tf7m5xkrurmvfv4
+      eslint-plugin-storybook: 0.6.4_vhsckgnokn2tf7m5xkrurmvfv4
       eslint-plugin-yml: 0.14.0_eslint@8.17.0
       identity-obj-proxy: 3.0.0
       jest: 27.5.1
@@ -252,7 +252,7 @@ importers:
       eslint-config-prettier: ~8.5.0
       eslint-config-react-app: ~7.0.0
       eslint-plugin-harmony: ^7.0.0
-      eslint-plugin-storybook: ^0.5.7
+      eslint-plugin-storybook: ^0.6.0
       eslint-plugin-yml: ~0.14.0
       fuse.js: ~6.5.3
       identity-obj-proxy: ~3.0.0
@@ -307,7 +307,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.17.0
       eslint-config-react-app: 7.0.1_wo7cp4lvbmtdh6jln32etv3igu
       eslint-plugin-harmony: 7.1.0_oeacmew2nrl5yidggn3nqfrcka
-      eslint-plugin-storybook: 0.5.12_vhsckgnokn2tf7m5xkrurmvfv4
+      eslint-plugin-storybook: 0.6.4_vhsckgnokn2tf7m5xkrurmvfv4
       eslint-plugin-yml: 0.14.0_eslint@8.17.0
       identity-obj-proxy: 3.0.0
       jest: 27.5.1
@@ -390,7 +390,7 @@ importers:
       eslint-config-prettier: ~8.5.0
       eslint-config-react-app: ~7.0.0
       eslint-plugin-harmony: ^7.0.0
-      eslint-plugin-storybook: ^0.5.7
+      eslint-plugin-storybook: ^0.6.0
       eslint-plugin-yml: ~0.14.0
       identity-obj-proxy: ~3.0.0
       jest: ^27.5.1
@@ -488,7 +488,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.17.0
       eslint-config-react-app: 7.0.1_wo7cp4lvbmtdh6jln32etv3igu
       eslint-plugin-harmony: 7.1.0_oeacmew2nrl5yidggn3nqfrcka
-      eslint-plugin-storybook: 0.5.12_vhsckgnokn2tf7m5xkrurmvfv4
+      eslint-plugin-storybook: 0.6.4_vhsckgnokn2tf7m5xkrurmvfv4
       eslint-plugin-yml: 0.14.0_eslint@8.17.0
       identity-obj-proxy: 3.0.0
       jest: 27.5.1
@@ -750,7 +750,7 @@ importers:
       eslint-config-prettier: ~8.5.0
       eslint-config-react-app: ~7.0.0
       eslint-plugin-harmony: ^7.0.0
-      eslint-plugin-storybook: ^0.5.7
+      eslint-plugin-storybook: ^0.6.0
       eslint-plugin-yml: ~0.14.0
       identity-obj-proxy: ~3.0.0
       is-ci: ^3.0.1
@@ -843,7 +843,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.17.0
       eslint-config-react-app: 7.0.1_v5i3kzpcq52rq7rl7ti7th5ys4
       eslint-plugin-harmony: 7.1.0_oeacmew2nrl5yidggn3nqfrcka
-      eslint-plugin-storybook: 0.5.12_vhsckgnokn2tf7m5xkrurmvfv4
+      eslint-plugin-storybook: 0.6.4_vhsckgnokn2tf7m5xkrurmvfv4
       eslint-plugin-yml: 0.14.0_eslint@8.17.0
       identity-obj-proxy: 3.0.0
       is-ci: 3.0.1
@@ -13593,8 +13593,8 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /eslint-plugin-storybook/0.5.12_vhsckgnokn2tf7m5xkrurmvfv4:
-    resolution: {integrity: sha512-ojuNKnrZFrQpm5N5Lp8UR0VEn4HtLjlNn6nxQAYlmTsEXNigtId1XPuMbXAsvFcEmv3RTb5l+9tZgkhSURfACg==}
+  /eslint-plugin-storybook/0.6.4_vhsckgnokn2tf7m5xkrurmvfv4:
+    resolution: {integrity: sha512-wxwbAZqlgjj6MbS/llY7wnXCCUsuFcLB1XnahbgBtjmsFUggpiECt01Dt8huaKvriVXg2w4d7Ye+GzA00rdcKg==}
     engines: {node: 12.x || 14.x || >= 16}
     peerDependencies:
       eslint: '>=6'
@@ -13603,6 +13603,7 @@ packages:
       '@typescript-eslint/experimental-utils': 5.27.1_vhsckgnokn2tf7m5xkrurmvfv4
       eslint: 8.17.0
       requireindex: 1.2.0
+      ts-dedent: 2.2.0
     transitivePeerDependencies:
       - supports-color
       - typescript
