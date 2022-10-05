@@ -122,7 +122,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       postcss: ~8.4.12
-      preact: ~10.8.0
+      preact: ~10.11.0
       puppeteer: ~3.3.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
@@ -168,7 +168,7 @@ importers:
       '@storybook/addon-essentials': 6.4.22_sxizqgibrjfl6rvdibqplbpx6a
       '@storybook/addon-interactions': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/addon-storyshots': 6.4.22_2l4dq4th6mxydaol37z5mspk44
+      '@storybook/addon-storyshots': 6.4.22_wnctl66m6lcidov2mhbidhi6kq
       '@storybook/addon-storyshots-puppeteer': 6.4.22_kgainfcf23cuitp74sbd5lxfwa
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -214,7 +214,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       postcss: 8.4.14
-      preact: 10.8.0
+      preact: 10.11.1
       puppeteer: 3.3.0
       react-app-rewired: 2.2.1_react-scripts@5.0.1
       react-refresh: 0.14.0
@@ -405,7 +405,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       postcss: ~8.4.12
-      preact: ~10.8.0
+      preact: ~10.11.0
       puppeteer: ~3.3.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
@@ -448,7 +448,7 @@ importers:
       '@storybook/addon-essentials': 6.4.22_sxizqgibrjfl6rvdibqplbpx6a
       '@storybook/addon-interactions': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/addon-storyshots': 6.4.22_2l4dq4th6mxydaol37z5mspk44
+      '@storybook/addon-storyshots': 6.4.22_wnctl66m6lcidov2mhbidhi6kq
       '@storybook/addon-storyshots-puppeteer': 6.4.22_kgainfcf23cuitp74sbd5lxfwa
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -503,7 +503,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       postcss: 8.4.14
-      preact: 10.8.0
+      preact: 10.11.1
       puppeteer: 3.3.0
       react-app-rewired: 2.2.1_react-scripts@5.0.1
       react-refresh: 0.14.0
@@ -766,7 +766,7 @@ importers:
       npm-run-all: ^4.1.5
       object-hash: ~3.0.0
       postcss: ~8.4.12
-      preact: ~10.8.0
+      preact: ~10.11.0
       puppeteer: ~3.3.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
@@ -800,7 +800,7 @@ importers:
       '@storybook/addon-essentials': 6.4.22_sxizqgibrjfl6rvdibqplbpx6a
       '@storybook/addon-interactions': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
-      '@storybook/addon-storyshots': 6.4.22_2l4dq4th6mxydaol37z5mspk44
+      '@storybook/addon-storyshots': 6.4.22_wnctl66m6lcidov2mhbidhi6kq
       '@storybook/addon-storyshots-puppeteer': 6.4.22_kgainfcf23cuitp74sbd5lxfwa
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -858,7 +858,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       postcss: 8.4.14
-      preact: 10.8.0
+      preact: 10.11.1
       puppeteer: 3.3.0
       react: 17.0.2
       react-app-rewired: 2.2.1_react-scripts@5.0.1
@@ -5636,7 +5636,7 @@ packages:
         optional: true
     dependencies:
       '@axe-core/puppeteer': 4.4.2_puppeteer@3.3.0
-      '@storybook/addon-storyshots': 6.4.22_2l4dq4th6mxydaol37z5mspk44
+      '@storybook/addon-storyshots': 6.4.22_wnctl66m6lcidov2mhbidhi6kq
       '@storybook/csf': 0.0.2--canary.87bc651.0
       '@storybook/node-logger': 6.4.22
       '@types/jest-image-snapshot': 4.3.1
@@ -5648,7 +5648,7 @@ packages:
       - jest
     dev: true
 
-  /@storybook/addon-storyshots/6.4.22_2l4dq4th6mxydaol37z5mspk44:
+  /@storybook/addon-storyshots/6.4.22_wnctl66m6lcidov2mhbidhi6kq:
     resolution: {integrity: sha512-9u+uigHH4khxHB18z1TOau+RKpLo/8tdhvKVqgjy6pr3FSsgp+JyoI+ubDtgWAWFHQ0Zhh5MBWNDmPOo5pwBdA==}
     peerDependencies:
       '@angular/core': '>=6.0.0'
@@ -5716,8 +5716,8 @@ packages:
       global: 4.4.0
       jest: 27.5.1
       jest-specific-snapshot: 4.0.0_jest@27.5.1
-      preact: 10.8.0
-      preact-render-to-string: 5.2.0_preact@10.8.0
+      preact: 10.11.1
+      preact-render-to-string: 5.2.0_preact@10.11.1
       pretty-format: 26.6.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -19768,17 +19768,17 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  /preact-render-to-string/5.2.0_preact@10.8.0:
+  /preact-render-to-string/5.2.0_preact@10.11.1:
     resolution: {integrity: sha512-+RGwSW78Cl+NsZRUbFW1MGB++didsfqRk+IyRVTaqy+3OjtpKK/6HgBtfszUX0YXMfo41k2iaQSseAHGKEwrbg==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.8.0
+      preact: 10.11.1
       pretty-format: 3.8.0
     dev: true
 
-  /preact/10.8.0:
-    resolution: {integrity: sha512-2yXIS/h/UP5go0rBKesZqx0LuScqjECtH5pq8SQu3t6X2XNUWjCY4pcViUttDu3qX6NMxGiA/RuxOZd00QLCzg==}
+  /preact/10.11.1:
+    resolution: {integrity: sha512-1Wz5PCRm6Fg+6BTXWJHhX4wRK9MZbZBHuwBqfZlOdVm2NqPe8/rjYpufvYCwJSGb9layyzB2jTTXfpCTynLqFQ==}
     dev: true
 
   /preferred-pm/3.0.3:
