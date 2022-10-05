@@ -123,7 +123,7 @@ importers:
       npm-run-all: ^4.1.5
       postcss: ~8.4.12
       preact: ~10.8.0
-      puppeteer: ~3.0.0
+      puppeteer: ~3.3.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
       react-codemirror2-react-17: ~1.0.0
@@ -169,7 +169,7 @@ importers:
       '@storybook/addon-interactions': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/addon-storyshots': 6.4.22_2l4dq4th6mxydaol37z5mspk44
-      '@storybook/addon-storyshots-puppeteer': 6.4.22_wzkj5jfy6rzqqdjocrz27y4aya
+      '@storybook/addon-storyshots-puppeteer': 6.4.22_kgainfcf23cuitp74sbd5lxfwa
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/api': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -215,7 +215,7 @@ importers:
       npm-run-all: 4.1.5
       postcss: 8.4.14
       preact: 10.8.0
-      puppeteer: 3.0.4
+      puppeteer: 3.3.0
       react-app-rewired: 2.2.1_react-scripts@5.0.1
       react-refresh: 0.14.0
       react-scripts: 5.0.1_x4aluemm3rmsq7lkui6j2s6rfm
@@ -406,7 +406,7 @@ importers:
       npm-run-all: ^4.1.5
       postcss: ~8.4.12
       preact: ~10.8.0
-      puppeteer: ~3.0.0
+      puppeteer: ~3.3.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
       react-command-palette: ~0.21.1
@@ -449,7 +449,7 @@ importers:
       '@storybook/addon-interactions': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/addon-storyshots': 6.4.22_2l4dq4th6mxydaol37z5mspk44
-      '@storybook/addon-storyshots-puppeteer': 6.4.22_wzkj5jfy6rzqqdjocrz27y4aya
+      '@storybook/addon-storyshots-puppeteer': 6.4.22_kgainfcf23cuitp74sbd5lxfwa
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/api': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -504,7 +504,7 @@ importers:
       npm-run-all: 4.1.5
       postcss: 8.4.14
       preact: 10.8.0
-      puppeteer: 3.0.4
+      puppeteer: 3.3.0
       react-app-rewired: 2.2.1_react-scripts@5.0.1
       react-refresh: 0.14.0
       react-scripts: 5.0.1_x4aluemm3rmsq7lkui6j2s6rfm
@@ -767,7 +767,7 @@ importers:
       object-hash: ~3.0.0
       postcss: ~8.4.12
       preact: ~10.8.0
-      puppeteer: ~3.0.0
+      puppeteer: ~3.3.0
       react: ~17.0.2
       react-app-rewired: ~2.2.1
       react-dom: ~17.0.2
@@ -801,7 +801,7 @@ importers:
       '@storybook/addon-interactions': 6.4.22_xt5q4i2qwetch7tt2rc2uj6z7e
       '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/addon-storyshots': 6.4.22_2l4dq4th6mxydaol37z5mspk44
-      '@storybook/addon-storyshots-puppeteer': 6.4.22_wzkj5jfy6rzqqdjocrz27y4aya
+      '@storybook/addon-storyshots-puppeteer': 6.4.22_kgainfcf23cuitp74sbd5lxfwa
       '@storybook/addon-storysource': 6.4.22_k2mvpji5i2ojml6m4ftklg47pa
       '@storybook/addons': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/api': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
@@ -859,7 +859,7 @@ importers:
       npm-run-all: 4.1.5
       postcss: 8.4.14
       preact: 10.8.0
-      puppeteer: 3.0.4
+      puppeteer: 3.3.0
       react: 17.0.2
       react-app-rewired: 2.2.1_react-scripts@5.0.1
       react-dom: 17.0.2_react@17.0.2
@@ -1628,14 +1628,14 @@ packages:
       leven: 3.1.0
     dev: true
 
-  /@axe-core/puppeteer/4.4.2_puppeteer@3.0.4:
+  /@axe-core/puppeteer/4.4.2_puppeteer@3.3.0:
     resolution: {integrity: sha512-HsiXUALjQ5fcWZZgGUvYGr/b7qvWbQXeDuW2z+2YYOJsavlPV9z0IGdm4rmX0lmsdJ9usA5vq5LNLiz23ZyXmw==}
     engines: {node: '>=6.4.0'}
     peerDependencies:
       puppeteer: '>=1.10.0 <= 13'
     dependencies:
       axe-core: 4.4.2
-      puppeteer: 3.0.4
+      puppeteer: 3.3.0
     dev: true
 
   /@babel/code-frame/7.16.7:
@@ -5626,7 +5626,7 @@ packages:
       - webpack
     dev: true
 
-  /@storybook/addon-storyshots-puppeteer/6.4.22_wzkj5jfy6rzqqdjocrz27y4aya:
+  /@storybook/addon-storyshots-puppeteer/6.4.22_kgainfcf23cuitp74sbd5lxfwa:
     resolution: {integrity: sha512-vmi0slsy8jo+NZL+KSDSvm71vKPv4EKH4xZvZgCAQ6Pm47KgmQxce1tVchmEtP4cBCmhTx7VHjDEe+QgtBvtDw==}
     peerDependencies:
       '@storybook/addon-storyshots': 6.4.22
@@ -5635,14 +5635,14 @@ packages:
       puppeteer:
         optional: true
     dependencies:
-      '@axe-core/puppeteer': 4.4.2_puppeteer@3.0.4
+      '@axe-core/puppeteer': 4.4.2_puppeteer@3.3.0
       '@storybook/addon-storyshots': 6.4.22_2l4dq4th6mxydaol37z5mspk44
       '@storybook/csf': 0.0.2--canary.87bc651.0
       '@storybook/node-logger': 6.4.22
       '@types/jest-image-snapshot': 4.3.1
       core-js: 3.22.8
       jest-image-snapshot: 4.5.1_jest@27.5.1
-      puppeteer: 3.0.4
+      puppeteer: 3.3.0
       regenerator-runtime: 0.13.9
     transitivePeerDependencies:
       - jest
@@ -9181,7 +9181,7 @@ packages:
   /@types/wait-on/5.3.1:
     resolution: {integrity: sha512-2FFOKCF/YydrMUaqg+fkk49qf0e5rDgwt6aQsMzFQzbS419h2gNOXyiwp/o2yYy27bi/C1z+HgfncryjGzlvgQ==}
     dependencies:
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
     dev: true
 
   /@types/webpack-env/1.17.0:
@@ -9240,7 +9240,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
     dev: true
     optional: true
 
@@ -20053,8 +20053,8 @@ packages:
     dependencies:
       escape-goat: 2.1.1
 
-  /puppeteer/3.0.4:
-    resolution: {integrity: sha512-1QEb4tJXXbNId7WSHlcDkS3B4GklTIebKn8Y9D6B7tAdUjQncb+8QlTjbQsAgGX5dhRG32Qycuk5XKzJgLs0sg==}
+  /puppeteer/3.3.0:
+    resolution: {integrity: sha512-23zNqRltZ1PPoK28uRefWJ/zKb5Jhnzbbwbpcna2o5+QMn17F0khq5s1bdH3vPlyj+J36pubccR8wiNA/VE0Vw==}
     engines: {node: '>=10.18.1'}
     deprecated: Version no longer supported. Upgrade to @latest
     requiresBuild: true
@@ -24714,7 +24714,7 @@ packages:
     dev: true
 
   /yauzl/2.10.0:
-    resolution: {integrity: sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk=}
+    resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
     dependencies:
       buffer-crc32: 0.2.13
       fd-slicer: 1.1.0
