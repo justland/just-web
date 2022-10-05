@@ -81,5 +81,5 @@
       "@typescript-eslint/eslint-plugin": "^5.28.0"
     }
   },
-  "packageManager": "pnpm@7.10.0"
+  "packageManager": "pnpm@7.13.1"
 }
