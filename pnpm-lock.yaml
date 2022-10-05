@@ -254,7 +254,7 @@ importers:
       eslint-plugin-harmony: ^7.0.0
       eslint-plugin-storybook: ^0.6.0
       eslint-plugin-yml: ~0.15.0
-      fuse.js: ~6.5.3
+      fuse.js: ~6.6.0
       identity-obj-proxy: ~3.0.0
       jest: ^27.5.1
       jest-validate: ^27.5.1
@@ -279,8 +279,8 @@ importers:
       vite-plugin-solid: ^2.2.6
       webpack: ^5.70.0
     dependencies:
-      fuse.js: 6.5.3
-      solid-command-palette: 1.0.0_2hpz7abucyzfxgahklfs3fjm7u
+      fuse.js: 6.6.2
+      solid-command-palette: 1.0.0_ex2pmhndb5ugevt7gof6gjd4qi
       solid-js: 1.4.3
       solid-transition-group: 0.0.8_solid-js@1.4.3
       tinykeys: 1.4.0
@@ -13067,8 +13067,8 @@ packages:
   /functions-have-names/1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
 
-  /fuse.js/6.5.3:
-    resolution: {integrity: sha512-sA5etGE7yD/pOqivZRBvUBd/NaL2sjAu6QuSaFoe1H2BrJSkH/T/UXAJ8CdXdw7DvY3Hs8CXKYkDWX7RiP5KOg==}
+  /fuse.js/6.6.2:
+    resolution: {integrity: sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==}
     engines: {node: '>=10'}
     dev: false
 
@@ -20331,7 +20331,7 @@ packages:
       ip: 1.1.8
       smart-buffer: 4.2.0
 
-  /solid-command-palette/1.0.0_2hpz7abucyzfxgahklfs3fjm7u:
+  /solid-command-palette/1.0.0_ex2pmhndb5ugevt7gof6gjd4qi:
     resolution: {integrity: sha512-z0bDAbLlbgfjZn3bOZvqxXY7plpoSfOd4sZvRjM2yizPWJ5JlEPZ10mzfW6HwF8cmp3kh6zuFWg5/5YM34767w==}
     peerDependencies:
       fuse.js: ^6.5.3
@@ -20339,7 +20339,7 @@ packages:
       solid-transition-group: 0.0.8
       tinykeys: ^1.4.0
     dependencies:
-      fuse.js: 6.5.3
+      fuse.js: 6.6.2
       solid-js: 1.4.3
       solid-transition-group: 0.0.8_solid-js@1.4.3
       tinykeys: 1.4.0
