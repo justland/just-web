@@ -2,6 +2,25 @@
   "name": "@just-web/testing",
   "version": "0.2.7",
   "description": "just-web testing library",
+  "keywords": [
+    "just-web",
+    "framework",
+    "testing"
+  ],
+  "homepage": "https://github.com/justland/just-web/tree/main/tools/testing",
+  "bugs": {
+    "url": "https://github.com/justland/just-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justland/just-web.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Homa Wong (unional)",
+    "email": "homawong@gmail.com",
+    "url": "https://github.com/unional"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [

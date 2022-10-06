@@ -2,6 +2,25 @@
   "name": "@just-web/types",
   "version": "1.1.1",
   "description": "Type definitions for `@just-web` modules",
+  "keywords": [
+    "just-web",
+    "framework"
+  ],
+  "homepage": "https://github.com/justland/just-web/tree/main/frameworks/types",
+  "bugs": {
+    "url": "https://github.com/justland/just-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justland/just-web.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Homa Wong (unional)",
+    "email": "homawong@gmail.com",
+    "url": "https://github.com/unional"
+  },
+  "sideEffects": false,
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [

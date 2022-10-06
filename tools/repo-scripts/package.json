@@ -2,6 +2,25 @@
   "name": "@just-web/repo-scripts",
   "version": "0.1.0",
   "description": "just-web shared repository config and scripts",
+  "keywords": [
+    "just-web",
+    "framework",
+    "repo-scripts"
+  ],
+  "homepage": "https://github.com/justland/just-web/tree/main/tools/repo-scripts",
+  "bugs": {
+    "url": "https://github.com/justland/just-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justland/just-web.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Homa Wong (unional)",
+    "email": "homawong@gmail.com",
+    "url": "https://github.com/unional"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [

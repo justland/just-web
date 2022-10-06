@@ -2,6 +2,24 @@
   "name": "@just-web/browser-preferences",
   "version": "1.1.1",
   "description": "browser implementation for @just-web/preferences",
+  "keywords": [
+    "just-web",
+    "framework"
+  ],
+  "homepage": "https://github.com/justland/just-web/tree/main/plugins/browser-preferences",
+  "bugs": {
+    "url": "https://github.com/justland/just-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justland/just-web.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Homa Wong (unional)",
+    "email": "homawong@gmail.com",
+    "url": "https://github.com/unional"
+  },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
