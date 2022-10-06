@@ -79,7 +79,7 @@ Please check out the [contributing guide](./CONTRIBUTING.md)
 [@just-web/browser-preferences]: https://github.com/justland/just-web/tree/main/plugins/browser-preferences
 [@just-web/browser]: https://github.com/justland/just-web/tree/main/plugins/browser
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/plugins/commands
-[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/contributions
+[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/keyboard
 [@just-web/events]: https://github.com/justland/just-web/tree/main/plugins/events
 [@just-web/log]: https://github.com/justland/just-web/tree/main/frameworks/log
 [@just-web/os]: https://github.com/justland/just-web/tree/main/plugins/os

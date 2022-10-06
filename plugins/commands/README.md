@@ -34,4 +34,4 @@ rush add -p @just-web/commands
 ```
 
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/frameworks/commands
-[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/frameworks/contributions
+[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/frameworks/keyboard
