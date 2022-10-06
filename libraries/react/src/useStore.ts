@@ -26,7 +26,7 @@ function getChangeSource(store: Store<any>, getState: AnyFunction, updateStore: 
  * Use a value in the store for `useState()`.
  * @param getState a function to get the value to be used in `useState()`.
  * @param updateStore optional function to update the store value when the state changes.
- * This is the same as calling `setValue()` by yourself.
+ * This is the same as calling `store.setValue()` by yourself.
  */
 export function useStore<S, V>(
   store: Store<S>,
