@@ -159,7 +159,7 @@ importers:
       react: 17.0.2
       react-codemirror2-react-17: 1.0.0_uwulx3m5oxu46iwgjw3mfbw2eu
       react-dom: 17.0.2_react@17.0.2
-      standard-log-color: 11.0.0_standard-log@11.0.0
+      standard-log-color: 11.0.0_standard-log@11.1.0
       web-vitals: 2.1.4
     devDependencies:
       '@babel/core': 7.19.3
@@ -512,7 +512,7 @@ importers:
       react-scripts: 5.0.1_x4aluemm3rmsq7lkui6j2s6rfm
       rimraf: 3.0.2
       size-limit: 7.0.8
-      standard-log-color: 11.0.0_standard-log@11.0.0
+      standard-log-color: 11.0.0_standard-log@11.1.0
       storybook-css-modules-preset: 1.1.1
       storybook-dark-mode: 1.0.9_torjq7jcmsvcxvrosne524itxu
       style-loader: 3.3.1_webpack@5.73.0
@@ -610,12 +610,12 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      standard-log: ^11.0.0
+      standard-log: ^11.1.0
       type-plus: ^4.13.1
       typescript: ^4.8.4
     dependencies:
       '@just-func/types': 0.2.1
-      standard-log: 11.0.0
+      standard-log: 11.1.0
       type-plus: 4.13.1
     devDependencies:
       '@babel/core': 7.19.3
@@ -665,7 +665,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      standard-log: ^11.0.0
+      standard-log: ^11.1.0
       type-plus: ^4.13.1
       typescript: ^4.8.4
     devDependencies:
@@ -690,7 +690,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      standard-log: 11.0.0
+      standard-log: 11.1.0
       type-plus: 4.13.1
       typescript: 4.8.4
 
@@ -946,6 +946,7 @@ importers:
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
+      assertron: ^10.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
@@ -960,6 +961,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
+      satisfier: ^5.4.0
       size-limit: ~7.0.8
       type-plus: ^4.13.1
       typescript: ^4.8.4
@@ -977,6 +979,7 @@ importers:
       '@types/jest': 27.5.2
       '@typescript-eslint/eslint-plugin': 5.28.0_hiamgr4ek23hhgsokjypxbuwwy
       '@typescript-eslint/parser': 5.38.1_vhsckgnokn2tf7m5xkrurmvfv4
+      assertron: 10.0.0
       depcheck: 1.4.3
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
@@ -990,6 +993,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       rimraf: 3.0.2
+      satisfier: 5.4.0
       size-limit: 7.0.8
       typescript: 4.8.4
 
@@ -7871,7 +7875,6 @@ packages:
       typescript: 4.8.4
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@typescript-eslint/eslint-plugin/5.28.0_qixdqiiw7czhm6fbxnydepwjka:
     resolution: {integrity: sha512-DXVU6Cg29H2M6EybqSg2A+x8DgO9TCUBRp4QEXQHJceLS7ogVDP0g3Lkg/SZCqcvkAP/RruuQqK0gdlkgmhSUA==}
@@ -9007,7 +9010,7 @@ packages:
       is-promise: 4.0.0
       iso-error: 4.4.0
       path-equal: 1.2.2
-      satisfier: 5.3.0
+      satisfier: 5.4.0
       tersify: 3.10.2
       type-plus: 4.13.1
 
@@ -12127,7 +12130,7 @@ packages:
       eslint: '>=8.4.0'
       eslint-config-prettier: ^8.0.0
     dependencies:
-      '@typescript-eslint/eslint-plugin': 5.28.0_zzm6nnd5isebrlmd43qblrzcpe
+      '@typescript-eslint/eslint-plugin': 5.28.0_hiamgr4ek23hhgsokjypxbuwwy
       '@typescript-eslint/experimental-utils': 5.27.1_vhsckgnokn2tf7m5xkrurmvfv4
       '@typescript-eslint/parser': 5.38.1_vhsckgnokn2tf7m5xkrurmvfv4
       eslint: 8.17.0
@@ -20386,6 +20389,12 @@ packages:
     resolution: {integrity: sha512-DWwRYvE+NNZnGIxIoaILfdYTHq0cMQWxSFAbDjUDITUQrnU9CT4KAIUDBJwnPnlAurpMLBzvoWExs29XRSgmtg==}
     dependencies:
       tersify: 3.10.2
+    dev: true
+
+  /satisfier/5.4.0:
+    resolution: {integrity: sha512-KGPnd+YT0XIstiCDuIpEvUI0TpjTk6uIK4vTtx69Sdwl+Ap2e/Jb4jeHkTz5qU3cAUJ5KXm2rUCKK+BVYtOU+w==}
+    dependencies:
+      tersify: 3.10.2
 
   /sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
@@ -21048,18 +21057,18 @@ packages:
     resolution: {integrity: sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==}
     dev: true
 
-  /standard-log-color/11.0.0_standard-log@11.0.0:
+  /standard-log-color/11.0.0_standard-log@11.1.0:
     resolution: {integrity: sha512-85yZY6JkydJVGcYqyinEzqPuS6nEsnmvvknBT/BLI7yvkat7FHQL6PEXVe3UMiJCJj0vKf6z2Ev7VBb67bdzBA==}
     peerDependencies:
       standard-log: '>=11.0.0'
     dependencies:
       color-map: 2.0.6
-      standard-log: 11.0.0
+      standard-log: 11.1.0
       supports-color: 8.1.1
       unpartial: 1.0.4
 
-  /standard-log/11.0.0:
-    resolution: {integrity: sha512-zySMFLAcy2hy2Vj1iSG4UmQlFFC5GC/OK+/vwcfVV7B5NL76hSW3nwOzZZpmttSE1Q/+VZDjkjPXGrr2d2Gs5w==}
+  /standard-log/11.1.0:
+    resolution: {integrity: sha512-INurzveee1M/sORYYbmanNg1DWuG4MvBOPC1RWLn8zdaxS80Gi27prSbbGXnsska6H+XzemChWrZwQjkB8Gtfw==}
     dependencies:
       '@just-func/types': 0.2.1
       iso-error: 4.4.0
