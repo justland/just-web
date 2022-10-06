@@ -1,5 +1,5 @@
 import { createMemoryLogReporter, logLevels } from 'standard-log'
-import plugin, { logTestPlugin } from './index'
+import plugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, logTestPlugin } from './index'
 
 describe(`plugin().init()`, () => {
   it('provides app log methods', () => {
@@ -62,6 +62,76 @@ describe(`${logTestPlugin.name}().init()`, () => {
     log.info('hello')
     expect(log.reporter.getLogMessages()).toEqual([
       'hello'
+    ])
+  })
+
+  it('works with app name', () => {
+    const [{ log }] = logTestPlugin().init({ name: 'some-app', id: 'some-id' })
+    log.notice('hello')
+
+    expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
+      'some-app (NOTICE) hello'
+    ])
+  })
+
+  it('works with additional reporters', () => {
+    const r = createMemoryLogReporter()
+    const [{ log }] = logTestPlugin({ reporters: [r] }).init()
+    log.notice('hello')
+
+    // the build-in one will not be used
+    expect(log.reporter.logs).toEqual([])
+
+    expect(r.getLogMessagesWithIdAndLevel()).toEqual([
+      'test (NOTICE) hello'
+    ])
+  })
+})
+
+describe(`${createPrefixedGetLogger.name}()`, () => {
+  it('prefix logger id', () => {
+    const [{ log }] = logTestPlugin().init()
+    const getLogger = createPrefixedGetLogger({ log }, 'some-plugin')
+    const r = getLogger('some-logger')
+    r.notice('hello')
+
+    expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
+      'test:some-plugin:some-logger (NOTICE) hello'
+    ])
+  })
+
+  it('gets `app:prefix` as logger id when given empty id', () => {
+    const [{ log }] = logTestPlugin().init()
+    const getLogger = createPrefixedGetLogger({ log }, 'some-plugin')
+    const r = getLogger('')
+    r.notice('hello')
+
+    expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
+      'test:some-plugin (NOTICE) hello'
+    ])
+  })
+})
+
+describe(`${createPrefixedGetNonConsoleLogger.name}()`, () => {
+  it('prefix logger id', () => {
+    const [{ log }] = logTestPlugin().init()
+    const getLogger = createPrefixedGetNonConsoleLogger({ log }, 'some-plugin')
+    const r = getLogger('some-logger')
+    r.notice('hello')
+
+    expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
+      'test:some-plugin:some-logger (NOTICE) hello'
+    ])
+  })
+
+  it('gets `app:prefix` as logger id when given empty id', () => {
+    const [{ log }] = logTestPlugin().init()
+    const getLogger = createPrefixedGetNonConsoleLogger({ log }, 'some-plugin')
+    const r = getLogger('')
+    r.notice('hello')
+
+    expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
+      'test:some-plugin (NOTICE) hello'
     ])
   })
 })
