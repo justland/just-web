@@ -127,16 +127,15 @@ export type CommandPaletteProps = {
 
 function getCommands(ctx: KeyboardContext & CommandsContext & OSContext) {
   const cmds = ctx.commands.contributions.get()
-  const kbs = ctx.keyboard.keyBindings.get()
+  const kbs = ctx.keyboard.keyBindingContributions.get()
   return Object.values(cmds)
     .filter(c => c.commandPalette !== false)
     .map(c => {
       const r = {
         ...c,
         name: formatCommand(c).name,
-        command: (...args) => {
-          console.error(args)
-          ctx.commands.commands.invoke(c.command)
+        command: () => {
+          ctx.commands.handlers.invoke(c.command)
         }
       }
       const k = kbs[c.command]

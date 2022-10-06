@@ -29,12 +29,12 @@ void (async () => {
     .extend(routePlugin())
   createAppStore(app)
 
-  app.contributions.commands.add({
+  app.commands.contributions.add({
     command: 'app.newDocument',
     name: 'Create a new document'
   })
 
-  app.commands.commands.register('app.newDocument', () => {
+  app.commands.handlers.register('app.newDocument', () => {
     const doc = createDocument()
     createDocView(doc)
   })

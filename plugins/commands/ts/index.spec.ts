@@ -18,15 +18,15 @@ describe('plugin.init()', () => {
     const d = log.getLogger('test')
     const [{ commands }] = commandsPlugin({
       commands: {
-        commands: {
+        handlers: {
           'a': () => d.info('exec a'),
           'b': () => d.info('exec b')
         }
       }
     }).init({ log, keyboard })
 
-    commands.commands.invoke('a')
-    commands.commands.invoke('b')
+    commands.handlers.invoke('a')
+    commands.handlers.invoke('b')
 
     logEqual(log.reporter,
       '(INFO) exec a',
@@ -39,7 +39,7 @@ describe('plugin.init()', () => {
     const [{ keyboard }] = keyboardPlugin().init({ log })
     const [{ commands }] = commandsPlugin().init({ log, keyboard })
     const o = new AssertOrder(1)
-    commands.commands.register(showCommandPalette.type, () => o.once(1))
+    commands.handlers.register(showCommandPalette.type, () => o.once(1))
 
     commands.showCommandPalette()
     o.end()

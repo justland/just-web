@@ -16,7 +16,7 @@ export default definePlugin(() => ({
       context,
       openCommandPalette: false
     }))
-    context.commands.commands.register(
+    context.commands.handlers.register(
       'just-web.showCommandPalette',
       () => store.update(s => { s.openCommandPalette = true })
     )

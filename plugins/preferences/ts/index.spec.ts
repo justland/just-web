@@ -15,7 +15,7 @@ describe(`plugin.init()`, () => {
   it('provides getUserPreference() API', () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
-    app.commands.commands.register(
+    app.commands.handlers.register(
       getUserPreference.type,
       getUserPreference.listener(({ key }) => {
         expect(key).toEqual('some-unique-id')
@@ -32,7 +32,7 @@ describe(`plugin.init()`, () => {
   it('provides setUserPreference() API', () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
-    app.commands.commands.register(
+    app.commands.handlers.register(
       setUserPreference.type,
       setUserPreference.listener(({ key, value }) => {
         expect(key).toEqual('some-unique-id')
@@ -50,15 +50,15 @@ describe(`plugin.init()`, () => {
     const app = setupTestApp()
     const store = record<string, string>()
 
-    app.commands.commands.register(
+    app.commands.handlers.register(
       setUserPreference.type,
       setUserPreference.listener(({ key, value }) => store[key] = value)
     )
-    app.commands.commands.register(
+    app.commands.handlers.register(
       getUserPreference.type,
       getUserPreference.listener(({ key }) => store[key])
     )
-    app.commands.commands.register(
+    app.commands.handlers.register(
       updateUserPreference.type,
       updateUserPreference.listener(({ key, handler }) => store[key] = handler(store[key]))
     )
@@ -72,7 +72,7 @@ describe(`plugin.init()`, () => {
   it('provides clearUserPreference() API', () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
-    app.commands.commands.register(
+    app.commands.handlers.register(
       clearUserPreference.type,
       clearUserPreference.listener(({ key }) => {
         expect(key).toEqual('some-unique-id')
@@ -89,7 +89,7 @@ describe(`plugin.init()`, () => {
     const app = setupTestApp()
 
     const o = new AssertOrder(1)
-    app.commands.commands.register(
+    app.commands.handlers.register(
       clearUserPreferences.type,
       clearUserPreferences.listener(() => o.once(1))
     )

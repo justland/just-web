@@ -9,7 +9,7 @@ const log = getLogger('MainBackdrop')
 const MainBackdrop = () => {
   log.trace('render')
   const s = getStoreValue()
-  const keyBindings = s.app.keyboard.keyBindings.list()
+  const keyBindings = s.app.keyboard.keyBindingContributions.list()
   const kb = keyBindings.find(k => k.command === showCommandPalette.type)!
 
   return <div className="flex flex-col text-center items-center justify-center text-4xl">

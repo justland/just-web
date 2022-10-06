@@ -69,7 +69,7 @@ export const OneCommand = {
   loaders: [async (_) => setupApp({
     commands: {
       contributions: [simpleCmd],
-      commands: {
+      handlers: {
         [simpleCmd.command]: () => alert(simpleCmd.command)
       }
     }
@@ -81,12 +81,12 @@ export const WithKey = {
   loaders: [async (_) => setupApp({
     commands: {
       contributions: [keyedCmd],
-      commands: {
+      handlers: {
         [keyedCmd.command]: () => alert(keyedCmd.command)
       }
     },
     keyboard: {
-      keyBindings: [keyedCmd]
+      keyBindingContributions: [keyedCmd]
     },
   })],
   play: async (_) => void Mousetrap.trigger(shortcut)
@@ -96,7 +96,7 @@ export const OverrideMacCommandInMac = {
   loaders: [async (_) => setupApp({
     commands: {
       contributions: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
-      commands: {
+      handlers: {
         [simpleCmd.command]: () => alert(simpleCmd.command),
         [keyedCmd.command]: () => alert(keyedCmd.command),
         [macCmd.command]: () => alert(macCmd.command),
@@ -104,7 +104,7 @@ export const OverrideMacCommandInMac = {
       }
     },
     keyboard: {
-      keyBindings: [keyedCmd, macCmd, macOnlyCmd]
+      keyBindingContributions: [keyedCmd, macCmd, macOnlyCmd]
     },
     os: {
       isMac: () => true
@@ -117,7 +117,7 @@ export const OverrideMacCommandInWindow = {
   loaders: [async (_) => setupApp({
     commands: {
       contributions: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
-      commands: {
+      handlers: {
         [simpleCmd.command]: () => alert(simpleCmd.command),
         [keyedCmd.command]: () => alert(keyedCmd.command),
         [macCmd.command]: () => alert(macCmd.command),
@@ -125,7 +125,7 @@ export const OverrideMacCommandInWindow = {
       }
     },
     keyboard: {
-      keyBindings: [keyedCmd, macCmd, macOnlyCmd]
+      keyBindingContributions: [keyedCmd, macCmd, macOnlyCmd]
     },
     os: {
       isMac: () => false

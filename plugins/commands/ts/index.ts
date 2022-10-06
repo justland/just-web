@@ -3,8 +3,8 @@ import type { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { justEvent } from '@unional/events-plus'
 import { AnyFunction } from 'type-plus'
-import { commandRegistry } from './commandRegistry'
 import { contributionRegistry } from './contributions'
+import { handlerRegistry } from './handlers'
 import { CommandContribution } from './types'
 
 export * from './formatCommand'
@@ -14,33 +14,33 @@ export const showCommandPalette = justEvent('just-web.showCommandPalette')
 
 export type CommandsOptions = {
   commands?: {
-    commands?: Record<string, AnyFunction>,
-    contributions?: Array<CommandContribution>
+    contributions?: Array<CommandContribution>,
+    handlers?: Record<string, AnyFunction>,
   }
 }
 
 const plugin = definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
   init: (ctx: LogContext & KeyboardContext) => {
-    ctx.keyboard.keyBindings.add({
+    ctx.keyboard.keyBindingContributions.add({
       command: showCommandPalette.type,
       key: 'ctrl+p',
       mac: 'cmd+p'
     })
 
-    const commands = commandRegistry(ctx, options?.commands?.commands)
+    const handlers = handlerRegistry(ctx, options?.commands?.handlers)
     const contributions = contributionRegistry(ctx, options?.commands?.contributions)
 
     contributions.add({
       command: showCommandPalette.type,
-      commandPalette: false
+      commandPalette: false,
     })
 
     return [{
       commands: {
-        commands,
         contributions,
-        showCommandPalette() { return commands.invoke(showCommandPalette.type) }
+        handlers,
+        showCommandPalette() { return handlers.invoke(showCommandPalette.type) }
       }
     }]
   }
