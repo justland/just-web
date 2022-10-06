@@ -1,11 +1,11 @@
 import { logTestPlugin } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { CommandContribution, formatCommand } from '.'
-import { commandContributionRegistry } from './contributions'
+import { contributionRegistry } from './contributions'
 
 function setupTest(options?: CommandContribution[]) {
   const [logctx] = logTestPlugin().init()
-  return [commandContributionRegistry(logctx, options), logctx.log] as const
+  return [contributionRegistry(logctx, options), logctx.log] as const
 }
 
 it('creates as empty registory', () => {

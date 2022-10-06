@@ -4,10 +4,9 @@ import { definePlugin } from '@just-web/types'
 import { justEvent } from '@unional/events-plus'
 import { AnyFunction } from 'type-plus'
 import { commandRegistry } from './commandRegistry'
-import { commandContributionRegistry } from './contributions'
+import { contributionRegistry } from './contributions'
 import { CommandContribution } from './types'
 
-export * from './commandRegistry'
 export * from './formatCommand'
 export type { Command, CommandContribution } from './types'
 
@@ -30,7 +29,7 @@ const plugin = definePlugin((options?: CommandsOptions) => ({
     })
 
     const commands = commandRegistry(ctx, options?.commands?.commands)
-    const contributions = commandContributionRegistry(ctx, options?.commands?.contributions)
+    const contributions = contributionRegistry(ctx, options?.commands?.contributions)
 
     contributions.add({
       command: showCommandPalette.type,

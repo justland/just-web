@@ -5,17 +5,17 @@ import { createRegistry, withAdder } from '@just-web/states'
 import { record } from 'type-plus'
 import { CommandContribution } from './types'
 
-export interface CommandContributionRegistry
+export interface ContributionRegistry
   extends Registry<string, CommandContribution>, WithAdder<CommandContribution> { }
 
-export namespace commandContributionRegistry {
+export namespace contributionRegistry {
   export type Options = CommandContribution[]
 }
 
-export function commandContributionRegistry(
+export function contributionRegistry(
   ctx: LogContext,
-  options?: commandContributionRegistry.Options,
-): CommandContributionRegistry {
+  options?: contributionRegistry.Options,
+): ContributionRegistry {
   return withAdder(
     createRegistry<string, CommandContribution>(getInitRecord(options)),
     function (r, cmd) {
@@ -26,7 +26,7 @@ export function commandContributionRegistry(
     })
 }
 
-function getInitRecord(options?: commandContributionRegistry.Options) {
+function getInitRecord(options?: contributionRegistry.Options) {
   return (options ?? []).reduce((p, c) => {
     p[c.command] = c
     return p
