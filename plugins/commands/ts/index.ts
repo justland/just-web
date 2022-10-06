@@ -8,6 +8,8 @@ import { handlerRegistry } from './handlers'
 import { CommandContribution } from './types'
 
 export * from './formatCommand'
+export type { ContributionRegistry } from './contributions'
+export type { HandlerRegistry } from './handlers'
 export type { Command, CommandContribution } from './types'
 
 export const showCommandPalette = justEvent('just-web.showCommandPalette')
