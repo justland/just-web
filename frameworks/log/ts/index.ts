@@ -93,7 +93,6 @@ export default <N extends string = LogMethodNames>(options?: LogOptions<N>) => (
     ctx: AppBaseContext
   ): [LogContext<N>] => {
     const sl = createStandardLog<N>(options)
-    sl.getLogger(`${ctx.name}:@just-web/log`).trace('init')
 
     const log = {
       ...sl,
@@ -118,9 +117,6 @@ export const logTestPlugin = <N extends string = LogMethodNames>(options?: LogOp
       logLevel: logLevels.debug,
       reporters: [reporter]
     }, options))
-
-    sl.getLogger(`${name}:@just-web/log`).trace('initForTest')
-
     const log = {
       ...sl,
       getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) },
