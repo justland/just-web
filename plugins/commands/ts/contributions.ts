@@ -20,8 +20,7 @@ export function contributionRegistry(
     createRegistry<string, CommandContribution>(getInitRecord(options)),
     function (r, cmd) {
       const key = cmd.command
-      const log = ctx.log.getLogger('@just-web/contributions')
-      if (r[key]) return log.error(`Registering a duplicate command contribution, ignored: ${key}`)
+      if (r[key]) return ctx.log.error(`Registering a duplicate command contribution, ignored: ${key}`)
       r[key] = cmd
     })
 }

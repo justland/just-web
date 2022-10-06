@@ -6,12 +6,12 @@
   "fixed": [
     [
       "@just-web/app",
-      "@just-web/browser-contributions",
+      "@just-web/browser-keyboard",
       "@just-web/browser-preferences",
       "@just-web/browser",
       "@just-web/commands",
-      "@just-web/contributions",
       "@just-web/events",
+      "@just-web/keyboard",
       "@just-web/log",
       "@just-web/os",
       "@just-web/preferences",

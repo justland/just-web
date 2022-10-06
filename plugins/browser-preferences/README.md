@@ -28,13 +28,13 @@ rush add -p @just-web/browser-preferences
 
 ```ts
 import { createApp } from '@just-web/app'
-import contributionsPlugin from '@just-web/keyboard'
+import keyboardPlugin from '@just-web/keyboard'
 import commandsPlugin from '@just-web/commands'
 import preferencesPlugin from '@just-web/preferences'
 import bpPlugin from '@just-web/browser-preferences'
 
 const app = createApp({name: 'your-awesome-app'})
-  .extend(contributionsPlugin())
+  .extend(keyboardPlugin())
   .extend(commandsPlugin())
   .extend(perferencesPlugin())
   .extend(bpPlugin())
@@ -49,6 +49,6 @@ app.preferences.clearAll()
 ```
 
 [@just-web/browser-preferences]: https://github.com/justland/just-web/tree/main/plugins/browser-preferences
-[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/contributions
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/plugins/commands
+[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/keyboard
 [@just-web/preferences]: https://github.com/justland/just-web/tree/main/plugins/preferences
