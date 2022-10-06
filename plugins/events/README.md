@@ -6,16 +6,16 @@
 
 ```sh
 # npm
-npm install @just-web/browser-contributions
+npm install @just-web/events
 
 # yarn
-yarn add @just-web/browser-contributions
+yarn add @just-web/events
 
 # pnpm
-pnpm install @just-web/browser-contributions
+pnpm install @just-web/events
 
 #rush
-rush add -p @just-web/browser-contributions
+rush add -p @just-web/events
 ```
 
 [@just-web]: https://github.com/justland/just-web/

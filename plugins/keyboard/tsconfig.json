@@ -2,6 +2,7 @@
   "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
   "compilerOptions": {
     "lib": [
+      "DOM",
       "ES2019",
       "ES2021.Promise"
     ],
@@ -19,16 +20,7 @@
       "path": "../../libraries/states"
     },
     {
-      "path": "../../plugins/os"
-    },
-    {
-      "path": "../../plugins/preferences"
-    },
-    {
       "path": "../../tools/repo-scripts"
-    },
-    {
-      "path": "../../tools/testing"
     }
   ],
   "include": [

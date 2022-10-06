@@ -23,7 +23,7 @@
       "path": "../../plugins/commands"
     },
     {
-      "path": "../../plugins/contributions"
+      "path": "../../plugins/keyboard"
     },
     {
       "path": "../../plugins/preferences"

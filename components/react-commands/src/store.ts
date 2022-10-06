@@ -1,11 +1,11 @@
 import { CommandsContext } from '@just-web/commands'
-import { ContributionsContext } from '@just-web/contributions'
+import { KeyboardContext } from '@just-web/keyboard'
 import { LogContext } from '@just-web/log'
 import { OSContext } from '@just-web/os'
 import { Store } from '@just-web/states'
 
 export interface State {
-  context: LogContext & ContributionsContext & CommandsContext & OSContext,
+  context: LogContext & KeyboardContext & CommandsContext & OSContext,
   openCommandPalette: boolean
 }
 

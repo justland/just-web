@@ -1,13 +1,13 @@
 import { createTestApp } from '@just-web/app'
 import commandsPlugin from '@just-web/commands'
-import contributionsPlugin from '@just-web/contributions'
+import keyboardPlugin from '@just-web/keyboard'
 import { AssertOrder } from 'assertron'
 import { record } from 'type-plus'
 import plugin, { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference, updateUserPreference } from '.'
 
 function setupTestApp() {
   return createTestApp()
-    .extend(contributionsPlugin())
+    .extend(keyboardPlugin())
     .extend(commandsPlugin())
     .extend(plugin())
 }
@@ -15,7 +15,7 @@ describe(`plugin.init()`, () => {
   it('provides getUserPreference() API', () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
-    app.commands.register(
+    app.commands.commands.register(
       getUserPreference.type,
       getUserPreference.listener(({ key }) => {
         expect(key).toEqual('some-unique-id')
@@ -32,7 +32,7 @@ describe(`plugin.init()`, () => {
   it('provides setUserPreference() API', () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
-    app.commands.register(
+    app.commands.commands.register(
       setUserPreference.type,
       setUserPreference.listener(({ key, value }) => {
         expect(key).toEqual('some-unique-id')
@@ -50,15 +50,15 @@ describe(`plugin.init()`, () => {
     const app = setupTestApp()
     const store = record<string, string>()
 
-    app.commands.register(
+    app.commands.commands.register(
       setUserPreference.type,
       setUserPreference.listener(({ key, value }) => store[key] = value)
     )
-    app.commands.register(
+    app.commands.commands.register(
       getUserPreference.type,
       getUserPreference.listener(({ key }) => store[key])
     )
-    app.commands.register(
+    app.commands.commands.register(
       updateUserPreference.type,
       updateUserPreference.listener(({ key, handler }) => store[key] = handler(store[key]))
     )
@@ -72,7 +72,7 @@ describe(`plugin.init()`, () => {
   it('provides clearUserPreference() API', () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
-    app.commands.register(
+    app.commands.commands.register(
       clearUserPreference.type,
       clearUserPreference.listener(({ key }) => {
         expect(key).toEqual('some-unique-id')
@@ -89,7 +89,7 @@ describe(`plugin.init()`, () => {
     const app = setupTestApp()
 
     const o = new AssertOrder(1)
-    app.commands.register(
+    app.commands.commands.register(
       clearUserPreferences.type,
       clearUserPreferences.listener(() => o.once(1))
     )

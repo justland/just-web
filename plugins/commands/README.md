@@ -7,7 +7,7 @@ There are a few situations to use commands over functions:
 
 - Tracking: execution of commands are tracked. They are logged at `logLevels.trace`.
 - Polymorphic: command can be defined by a higher-level module, and implement by a lower-level detail module. Allows you to handle the same command differently depending on the environment and condition.
-- Menu, Command Palette, Keyboard shortcuts: along with [@just-web/contributions], commands can be displayed and invoked in different ways.
+- Menu, Command Palette, Keyboard shortcuts: along with [@just-web/keyboard], commands can be displayed and invoked in different ways.
 - Cross-boundary: command can be invoked by different modules, without directly depends on the defining module (*1)
 - Dynamic dispatch: command type is a string, meaning you can dynamically construct it and invoke the command. This is useful for free from or user-based input.
 
@@ -34,4 +34,4 @@ rush add -p @just-web/commands
 ```
 
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/frameworks/commands
-[@just-web/contributions]: https://github.com/justland/just-web/tree/main/frameworks/contributions
+[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/frameworks/contributions

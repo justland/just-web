@@ -1,13 +1,13 @@
 import type { CommandsContext } from '@just-web/commands'
-import { ContributionsContext, KeyBindingContribution } from '@just-web/contributions'
+import { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
 import type { LogContext } from '@just-web/log'
 import { OSContext } from '@just-web/os'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
 
 let keys: Record<string, boolean>
-export function startKeyBindings(param: LogContext & ContributionsContext & CommandsContext & OSContext) {
-  const keyBindings = param.contributions.keyBindings
+export function startKeyBindings(param: LogContext & KeyboardContext & CommandsContext & OSContext) {
+  const keyBindings = param.keyboard.keyBindings
 
   keys = record()
 
@@ -23,7 +23,7 @@ export function startKeyBindings(param: LogContext & ContributionsContext & Comm
 function bindKey({ log: logContext, commands, os }: LogContext & CommandsContext & OSContext, keyBinding: KeyBindingContribution) {
   const key = getKey({ os }, keyBinding)
   if (key) {
-    const log = logContext.getLogger('@just-web/browser-contributions')
+    const log = logContext.getLogger('@just-web/browser-keyboard')
     if (keys[key]) {
       log.warn(`Registering a duplicate key binding, ignored: ${keyBinding.command} - ${key}`)
     }
@@ -33,7 +33,7 @@ function bindKey({ log: logContext, commands, os }: LogContext & CommandsContext
       Mousetrap.bind(toMousetrapKey(key), (e) => {
         log.trace(`trigger ${key}`)
         if (e.preventDefault) e.preventDefault()
-        commands.invoke(keyBinding.command)
+        commands.commands.invoke(keyBinding.command)
         return false
       })
     }

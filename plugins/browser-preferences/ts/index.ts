@@ -8,7 +8,7 @@ import { ctx } from './index.ctx'
 const plugin = definePlugin(() => ({
   name: '@just-web/browser-preferences',
   init({ name, commands, log }: AppBaseContext & LogContext & CommandsContext) {
-    commands.register(
+    commands.commands.register(
       getUserPreference.type,
       getUserPreference.listener(
         ({ key }) => {
@@ -18,7 +18,7 @@ const plugin = definePlugin(() => ({
         }
       )
     )
-    commands.register(
+    commands.commands.register(
       setUserPreference.type,
       setUserPreference.listener(
         ({ key, value }) => {
@@ -27,7 +27,7 @@ const plugin = definePlugin(() => ({
           ctx.localStorage.setItem(k, serialize(value))
         }
       ))
-    commands.register(
+    commands.commands.register(
       updateUserPreference.type,
       updateUserPreference.listener(
         ({ key, handler }) => {
@@ -39,7 +39,7 @@ const plugin = definePlugin(() => ({
         }
       )
     )
-    commands.register(
+    commands.commands.register(
       clearUserPreference.type,
       clearUserPreference.listener(
         ({ key }) => {
@@ -49,7 +49,7 @@ const plugin = definePlugin(() => ({
         }
       )
     )
-    commands.register(
+    commands.commands.register(
       clearUserPreferences.type,
       clearUserPreferences.listener(
         () => {

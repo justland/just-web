@@ -1,5 +1,5 @@
 import commandsPlugin from '@just-web/commands'
-import contributionsPlugin from '@just-web/contributions'
+import keyboardPlugin from '@just-web/keyboard'
 import { logTestPlugin } from '@just-web/log'
 import { osTestPlugin } from '@just-web/os'
 
@@ -12,10 +12,10 @@ test('exports', () => {
 describe('plugin', () => {
   it('registers `just-web.showCommandPalette` handler', () => {
     const [{ log }] = logTestPlugin().init()
-    const [{ contributions }] = contributionsPlugin().init({ log })
-    const [{ commands }] = commandsPlugin().init({ log, contributions })
+    const [{ keyboard }] = keyboardPlugin().init({ log })
+    const [{ commands }] = commandsPlugin().init({ log, keyboard })
     const [{ os }] = osTestPlugin().init({ log })
-    plugin().init({ log, contributions, commands, os })
-    expect(commands.keys()).toEqual(['just-web.showCommandPalette'])
+    plugin().init({ log, keyboard, commands, os })
+    expect(commands.commands.keys()).toEqual(['just-web.showCommandPalette'])
   })
 })

@@ -1,5 +1,5 @@
 import { showCommandPalette } from '@just-web/commands'
-import { formatKeyBinding } from '@just-web/contributions'
+import { formatKeyBinding } from '@just-web/keyboard'
 import { getLogger } from '@just-web/log'
 import { getStoreValue } from '../../store'
 import logo from './logo.svg'
@@ -9,7 +9,7 @@ const log = getLogger('MainBackdrop')
 const MainBackdrop = () => {
   log.trace('render')
   const s = getStoreValue()
-  const keyBindings = s.app.contributions.keyBindings.list()
+  const keyBindings = s.app.keyboard.keyBindings.list()
   const kb = keyBindings.find(k => k.command === showCommandPalette.type)!
 
   return <div className="flex flex-col text-center items-center justify-center text-4xl">

@@ -1,37 +1,48 @@
-import type { ContributionsContext } from '@just-web/contributions'
+import type { KeyboardContext } from '@just-web/keyboard'
 import type { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { justEvent } from '@unional/events-plus'
+import { AnyFunction } from 'type-plus'
 import { commandRegistry } from './commandRegistry'
+import { commandContributionRegistry } from './contributions'
+import { CommandContribution } from './types'
 
 export * from './commandRegistry'
-export type { Command } from './types'
-
-export type CommandsOptions = { commands?: commandRegistry.Options }
-
-export namespace createCommandsContext {
-  export type Context = LogContext & ContributionsContext
-}
+export * from './formatCommand'
+export type { Command, CommandContribution } from './types'
 
 export const showCommandPalette = justEvent('just-web.showCommandPalette')
 
+export type CommandsOptions = {
+  commands?: {
+    commands?: Record<string, AnyFunction>,
+    contributions?: Array<CommandContribution>
+  }
+}
+
 const plugin = definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
-  init: (ctx: createCommandsContext.Context) => {
-    ctx.contributions.commands.add({
-      command: showCommandPalette.type,
-      commandPalette: false
-    })
-    ctx.contributions.keyBindings.add({
+  init: (ctx: LogContext & KeyboardContext) => {
+    ctx.keyboard.keyBindings.add({
       command: showCommandPalette.type,
       key: 'ctrl+p',
       mac: 'cmd+p'
     })
-    const registry = commandRegistry(ctx, options?.commands)
+
+    const commands = commandRegistry(ctx, options?.commands?.commands)
+    const contributions = commandContributionRegistry(ctx, options?.commands?.contributions)
+
+    contributions.add({
+      command: showCommandPalette.type,
+      commandPalette: false
+    })
+
     return [{
-      commands: Object.assign(registry, {
-        showCommandPalette() { return registry.invoke(showCommandPalette.type) }
-      })
+      commands: {
+        commands,
+        contributions,
+        showCommandPalette() { return commands.invoke(showCommandPalette.type) }
+      }
     }]
   }
 }))

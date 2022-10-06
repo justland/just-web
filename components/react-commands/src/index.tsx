@@ -1,5 +1,5 @@
 import { CommandsContext } from '@just-web/commands'
-import { ContributionsContext } from '@just-web/contributions'
+import { KeyboardContext } from '@just-web/keyboard'
 import { LogContext } from '@just-web/log'
 import { OSContext } from '@just-web/os'
 import { createStore } from '@just-web/states'
@@ -10,13 +10,13 @@ export * from './CommandPalette'
 
 export default definePlugin(() => ({
   name: '@just-web/react-commands',
-  init: (context: LogContext & ContributionsContext & CommandsContext & OSContext) => {
+  init: (context: LogContext & KeyboardContext & CommandsContext & OSContext) => {
     context.log.notice('init')
     const store = setStore(createStore<State>({
       context,
       openCommandPalette: false
     }))
-    context.commands.register(
+    context.commands.commands.register(
       'just-web.showCommandPalette',
       () => store.update(s => { s.openCommandPalette = true })
     )
