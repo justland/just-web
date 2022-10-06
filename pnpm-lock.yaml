@@ -7875,6 +7875,7 @@ packages:
       typescript: 4.8.4
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@typescript-eslint/eslint-plugin/5.28.0_qixdqiiw7czhm6fbxnydepwjka:
     resolution: {integrity: sha512-DXVU6Cg29H2M6EybqSg2A+x8DgO9TCUBRp4QEXQHJceLS7ogVDP0g3Lkg/SZCqcvkAP/RruuQqK0gdlkgmhSUA==}
@@ -12130,7 +12131,7 @@ packages:
       eslint: '>=8.4.0'
       eslint-config-prettier: ^8.0.0
     dependencies:
-      '@typescript-eslint/eslint-plugin': 5.28.0_hiamgr4ek23hhgsokjypxbuwwy
+      '@typescript-eslint/eslint-plugin': 5.28.0_zzm6nnd5isebrlmd43qblrzcpe
       '@typescript-eslint/experimental-utils': 5.27.1_vhsckgnokn2tf7m5xkrurmvfv4
       '@typescript-eslint/parser': 5.38.1_vhsckgnokn2tf7m5xkrurmvfv4
       eslint: 8.17.0
