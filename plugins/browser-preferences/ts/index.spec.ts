@@ -1,8 +1,8 @@
 import { createTestApp } from '@just-web/app'
 import commandsPlugin from '@just-web/commands'
-import contributionsPlugin from '@just-web/contributions'
+import keyboardPlugin from '@just-web/keyboard'
 import { logLevels } from '@just-web/log'
-import preferencesPlugin, { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences'
+import preferencesPlugin, { clearUserPreferences } from '@just-web/preferences'
 import { a, AssertOrder } from 'assertron'
 import { hasAll, some } from 'satisfier'
 import { isType } from 'type-plus'
@@ -15,17 +15,14 @@ describe('plugin.init()', () => {
   it('regiser commands', () => {
     const { commands } = setupPlugin()
 
-    a.satisfies(commands.keys(), hasAll(
-      getUserPreference.type,
-      setUserPreference.type,
-      clearUserPreference.type,
+    a.satisfies(commands.contributions.keys(), hasAll(
       clearUserPreferences.type
     ))
   })
 })
 function setupPlugin() {
   const app = createTestApp({ log: { logLevel: logLevels.info } })
-    .extend(contributionsPlugin())
+    .extend(keyboardPlugin())
     .extend(commandsPlugin())
     .extend(preferencesPlugin())
     .extend(plugin())

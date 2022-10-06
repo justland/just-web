@@ -20,7 +20,7 @@ rush add -p @just-web/browser-preferences
 
 ## Depends on
 
-- [@just-web/contributions]: dependency of [@just-web/commands]
+- [@just-web/keyboard]: dependency of [@just-web/commands]
 - [@just-web/commands]
 - [@just-web/preferences]
 
@@ -28,7 +28,7 @@ rush add -p @just-web/browser-preferences
 
 ```ts
 import { createApp } from '@just-web/app'
-import contributionsPlugin from '@just-web/contributions'
+import contributionsPlugin from '@just-web/keyboard'
 import commandsPlugin from '@just-web/commands'
 import preferencesPlugin from '@just-web/preferences'
 import bpPlugin from '@just-web/browser-preferences'
@@ -49,6 +49,6 @@ app.preferences.clearAll()
 ```
 
 [@just-web/browser-preferences]: https://github.com/justland/just-web/tree/main/plugins/browser-preferences
-[@just-web/contributions]: https://github.com/justland/just-web/tree/main/plugins/contributions
+[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/contributions
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/plugins/commands
 [@just-web/preferences]: https://github.com/justland/just-web/tree/main/plugins/preferences

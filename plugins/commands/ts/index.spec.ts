@@ -1,4 +1,4 @@
-import contributionsPlugin from '@just-web/contributions'
+import keyboardPlugin from '@just-web/keyboard'
 import { logTestPlugin } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import commandsPlugin, { showCommandPalette } from '.'
@@ -7,24 +7,26 @@ import { AssertOrder } from 'assertron'
 describe('plugin.init()', () => {
   test('basic case', () => {
     const [{ log }] = logTestPlugin().init()
-    const [{ contributions }] = contributionsPlugin().init({ log })
-    commandsPlugin().init({ log, contributions })
+    const [{ keyboard }] = keyboardPlugin().init({ log })
+    commandsPlugin().init({ log, keyboard })
   })
 
   it('supports predefined commands', () => {
     const [{ log }] = logTestPlugin().init()
-    const [{ contributions }] = contributionsPlugin().init({ log })
+    const [{ keyboard }] = keyboardPlugin().init({ log })
 
     const d = log.getLogger('test')
     const [{ commands }] = commandsPlugin({
       commands: {
-        'a': () => d.info('exec a'),
-        'b': () => d.info('exec b')
+        commands: {
+          'a': () => d.info('exec a'),
+          'b': () => d.info('exec b')
+        }
       }
-    }).init({ log, contributions })
+    }).init({ log, keyboard })
 
-    commands.invoke('a')
-    commands.invoke('b')
+    commands.commands.invoke('a')
+    commands.commands.invoke('b')
 
     logEqual(log.reporter,
       '(INFO) exec a',
@@ -34,10 +36,10 @@ describe('plugin.init()', () => {
 
   it('provides showCommandPalette()', () => {
     const [{ log }] = logTestPlugin().init()
-    const [{ contributions }] = contributionsPlugin().init({ log })
-    const [{ commands }] = commandsPlugin().init({ log, contributions })
+    const [{ keyboard }] = keyboardPlugin().init({ log })
+    const [{ commands }] = commandsPlugin().init({ log, keyboard })
     const o = new AssertOrder(1)
-    commands.register(showCommandPalette.type, () => o.once(1))
+    commands.commands.register(showCommandPalette.type, () => o.once(1))
 
     commands.showCommandPalette()
     o.end()

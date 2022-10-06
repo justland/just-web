@@ -38,13 +38,13 @@
       "path": "../../../plugins/browser"
     },
     {
-      "path": "../../../plugins/browser-contributions"
+      "path": "../../../plugins/browser-keyboard"
     },
     {
       "path": "../../../plugins/commands"
     },
     {
-      "path": "../../../plugins/contributions"
+      "path": "../../../plugins/keyboard"
     },
     {
       "path": "../../../plugins/os"

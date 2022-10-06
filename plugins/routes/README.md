@@ -2,6 +2,11 @@
 
 [@just-web/routes] is a plugin that provides client side routing capability.
 
+## Features
+
+- routing
+- history
+
 ## Install
 
 ```sh

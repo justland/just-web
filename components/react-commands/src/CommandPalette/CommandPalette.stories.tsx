@@ -1,7 +1,7 @@
 import { createApp } from '@just-web/app'
-import browserContributionsPlugin from '@just-web/browser-contributions'
+import browserKeyboardPlugin from '@just-web/browser-keyboard'
 import commandsPlugin, { CommandsOptions } from '@just-web/commands'
-import contributionsPlugin, { ContributionsOptions } from '@just-web/contributions'
+import keyboardPlugin, { KeyboardOptions } from '@just-web/keyboard'
 import { logLevels } from '@just-web/log'
 import { isMac, OSOptions, osTestPlugin } from '@just-web/os'
 import { ComponentStory } from '@storybook/react'
@@ -47,13 +47,13 @@ const macOnlyCmd = {
   mac: 'cmd+o'
 }
 
-async function setupApp(options?: ContributionsOptions & CommandsOptions & OSOptions) {
+async function setupApp(options?: KeyboardOptions & CommandsOptions & OSOptions) {
   const reporter = createColorLogReporter()
   const app = createApp({ name: 'storybook', log: { logLevel: logLevels.all, reporters: [reporter] } })
-    .extend(contributionsPlugin(options))
+    .extend(keyboardPlugin(options))
     .extend(commandsPlugin(options))
     .extend(osTestPlugin(options))
-    .extend(browserContributionsPlugin())
+    .extend(browserKeyboardPlugin())
     .extend(plugin())
   console.info('app', app)
   await app.start()
@@ -67,11 +67,11 @@ export const NoCommand = {
 
 export const OneCommand = {
   loaders: [async (_) => setupApp({
-    contributions: {
-      commands: [simpleCmd]
-    },
     commands: {
-      [simpleCmd.command]: () => alert(simpleCmd.command)
+      contributions: [simpleCmd],
+      commands: {
+        [simpleCmd.command]: () => alert(simpleCmd.command)
+      }
     }
   })],
   play: async (_) => void Mousetrap.trigger(shortcut)
@@ -79,28 +79,32 @@ export const OneCommand = {
 
 export const WithKey = {
   loaders: [async (_) => setupApp({
-    contributions: {
-      commands: [keyedCmd],
+    commands: {
+      contributions: [keyedCmd],
+      commands: {
+        [keyedCmd.command]: () => alert(keyedCmd.command)
+      }
+    },
+    keyboard: {
       keyBindings: [keyedCmd]
     },
-    commands: {
-      [keyedCmd.command]: () => alert(keyedCmd.command)
-    }
   })],
   play: async (_) => void Mousetrap.trigger(shortcut)
 } as Story
 
 export const OverrideMacCommandInMac = {
   loaders: [async (_) => setupApp({
-    contributions: {
-      commands: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
-      keyBindings: [keyedCmd, macCmd, macOnlyCmd]
-    },
     commands: {
-      [simpleCmd.command]: () => alert(simpleCmd.command),
-      [keyedCmd.command]: () => alert(keyedCmd.command),
-      [macCmd.command]: () => alert(macCmd.command),
-      [macOnlyCmd.command]: () => alert(macOnlyCmd.command)
+      contributions: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
+      commands: {
+        [simpleCmd.command]: () => alert(simpleCmd.command),
+        [keyedCmd.command]: () => alert(keyedCmd.command),
+        [macCmd.command]: () => alert(macCmd.command),
+        [macOnlyCmd.command]: () => alert(macOnlyCmd.command)
+      }
+    },
+    keyboard: {
+      keyBindings: [keyedCmd, macCmd, macOnlyCmd]
     },
     os: {
       isMac: () => true
@@ -111,15 +115,17 @@ export const OverrideMacCommandInMac = {
 
 export const OverrideMacCommandInWindow = {
   loaders: [async (_) => setupApp({
-    contributions: {
-      commands: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
-      keyBindings: [keyedCmd, macCmd, macOnlyCmd]
-    },
     commands: {
-      [simpleCmd.command]: () => alert(simpleCmd.command),
-      [keyedCmd.command]: () => alert(keyedCmd.command),
-      [macCmd.command]: () => alert(macCmd.command),
-      [macOnlyCmd.command]: () => alert(macOnlyCmd.command)
+      contributions: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
+      commands: {
+        [simpleCmd.command]: () => alert(simpleCmd.command),
+        [keyedCmd.command]: () => alert(keyedCmd.command),
+        [macCmd.command]: () => alert(macCmd.command),
+        [macOnlyCmd.command]: () => alert(macOnlyCmd.command)
+      }
+    },
+    keyboard: {
+      keyBindings: [keyedCmd, macCmd, macOnlyCmd]
     },
     os: {
       isMac: () => false

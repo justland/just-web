@@ -1,5 +1,5 @@
-import { CommandsContext } from '@just-web/commands'
-import { CommandContribution, ContributionsContext, formatCommand, formatKeyBinding, KeyBindingContribution } from '@just-web/contributions'
+import { CommandContribution, CommandsContext, formatCommand } from '@just-web/commands'
+import { formatKeyBinding, KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
 import { OSContext } from '@just-web/os'
 import { useStore } from '@just-web/react'
 import { ComponentType, ReactElement, useCallback, VFC } from 'react'
@@ -125,9 +125,9 @@ export type CommandPaletteProps = {
   }
 }
 
-function getCommands(ctx: ContributionsContext & CommandsContext & OSContext) {
-  const cmds = ctx.contributions.commands.get()
-  const kbs = ctx.contributions.keyBindings.get()
+function getCommands(ctx: KeyboardContext & CommandsContext & OSContext) {
+  const cmds = ctx.commands.contributions.get()
+  const kbs = ctx.keyboard.keyBindings.get()
   return Object.values(cmds)
     .filter(c => c.commandPalette !== false)
     .map(c => {
@@ -136,7 +136,7 @@ function getCommands(ctx: ContributionsContext & CommandsContext & OSContext) {
         name: formatCommand(c).name,
         command: (...args) => {
           console.error(args)
-          ctx.commands.invoke(c.command)
+          ctx.commands.commands.invoke(c.command)
         }
       }
       const k = kbs[c.command]

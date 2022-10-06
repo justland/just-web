@@ -1,7 +1,7 @@
-import commandsPlugin from '@just-web/commands'
-import contributionsPlugin, {
-  CommandContribution, KeyBindingContribution
-} from '@just-web/contributions'
+import commandsPlugin, { CommandContribution } from '@just-web/commands'
+import keyboardPlugin, {
+  KeyBindingContribution
+} from '@just-web/keyboard'
 import { logTestPlugin } from '@just-web/log'
 import osPlugin from '@just-web/os'
 import { logEqual } from '@just-web/testing'
@@ -14,22 +14,22 @@ type StubCommand = KeyBindingContribution & CommandContribution & {
 
 function setupTest(...stubCommands: StubCommand[]) {
   const [{ log }] = logTestPlugin().init()
-  const [{ contributions }] = contributionsPlugin().init({ log })
-  const [{ commands }] = commandsPlugin().init({ log, contributions })
+  const [{ keyboard }] = keyboardPlugin().init({ log })
+  const [{ commands }] = commandsPlugin().init({ log, keyboard })
   const [{ os }] = osPlugin().init({ log })
 
   stubCommands.forEach(stubCommand => {
-    contributions.commands.add(stubCommand)
-    contributions.keyBindings.add(stubCommand)
-    commands.register(
+    commands.contributions.add(stubCommand)
+    commands.commands.register(
       stubCommand.command,
       () => stubCommand.handler(stubCommand))
+    keyboard.keyBindings.add(stubCommand)
   })
   return {
     os,
     log,
     commands,
-    contributions
+    keyboard
   }
 }
 

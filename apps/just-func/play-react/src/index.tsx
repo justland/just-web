@@ -1,8 +1,8 @@
 import { createApp } from '@just-web/app'
 import browserPlugin from '@just-web/browser'
-import browserContributionsPlugin from '@just-web/browser-contributions'
+import browserKeyboardPlugin from '@just-web/browser-keyboard'
 import commandsPlugin from '@just-web/commands'
-import contributionsPlugin from '@just-web/contributions'
+import keyboardPlugin from '@just-web/keyboard'
 import { logLevels } from '@just-web/log'
 import osPlugin from '@just-web/os'
 import routePlugin from '@just-web/routes'
@@ -21,11 +21,11 @@ void (async () => {
   const app = await createApp({
     name: 'play-react',
     log: { logLevel: logLevels.all, reporters: [reporter] }
-  }).extend(contributionsPlugin())
+  }).extend(keyboardPlugin())
     .extend(commandsPlugin())
     .extend(osPlugin())
     .extend(browserPlugin())
-    .extend(browserContributionsPlugin())
+    .extend(browserKeyboardPlugin())
     .extend(routePlugin())
   createAppStore(app)
 
@@ -34,7 +34,7 @@ void (async () => {
     name: 'Create a new document'
   })
 
-  app.commands.register('app.newDocument', () => {
+  app.commands.commands.register('app.newDocument', () => {
     const doc = createDocument()
     createDocView(doc)
   })

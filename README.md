@@ -52,10 +52,10 @@ Here are the components provided in this repository:
 Here are the plugins provided in this repository:
 
 - [@just-web/browser]: provides browser specific capability.
-- [@just-web/browser-contributions]: provides [@just-web/contributions] implementation on the browser.
+- [@just-web/browser-keyboard]: provides [@just-web/keyboard] implementation on the browser.
 - [@just-web/browser-preferences]: provides [@just-web/preferences] implementation on the browser.
 - [@just-web/commands]: provides commands registration and invocation.
-- [@just-web/contributions]: provides contribution metadata storage.
+- [@just-web/keyboard]: provides contribution metadata storage.
 - [@just-web/events]: provides pub/sub events capability.
 - [@just-web/os]: provides Operating System related capability.
 - [@just-web/preferences]: provides user preference capability.
@@ -75,11 +75,11 @@ Please check out the [contributing guide](./CONTRIBUTING.md)
 
 [@just-web]: https://github.com/justland/just-web
 [@just-web/app]: https://github.com/justland/just-web/tree/main/frameworks/app
-[@just-web/browser-contributions]: https://github.com/justland/just-web/tree/main/plugins/browser-contributions
+[@just-web/browser-keyboard]: https://github.com/justland/just-web/tree/main/plugins/browser-keyboard
 [@just-web/browser-preferences]: https://github.com/justland/just-web/tree/main/plugins/browser-preferences
 [@just-web/browser]: https://github.com/justland/just-web/tree/main/plugins/browser
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/plugins/commands
-[@just-web/contributions]: https://github.com/justland/just-web/tree/main/plugins/contributions
+[@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/contributions
 [@just-web/events]: https://github.com/justland/just-web/tree/main/plugins/events
 [@just-web/log]: https://github.com/justland/just-web/tree/main/frameworks/log
 [@just-web/os]: https://github.com/justland/just-web/tree/main/plugins/os
