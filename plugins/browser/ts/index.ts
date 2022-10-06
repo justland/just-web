@@ -1,6 +1,7 @@
+import { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { createErrorStore, toReadonlyErrorStore } from './errorStore'
-import { registerOnErrorHandler } from './onerror'
+import { ctx } from './index.ctx'
 import type { ReadonlyErrorStore } from './types'
 
 export * from './errors'
@@ -18,13 +19,14 @@ export type BrowserOptions = {
 
 const plugin = definePlugin((options?: BrowserOptions) => ({
   name: '@just-web/browser',
-  init: () => {
+  init: ({ log }: LogContext) => {
     const errors = createErrorStore()
     // Normally plugin should not do work during init.
     // However this is a special case as we want to listen to any error,
     // including those occurs during the setup/loading phrase.
-    registerOnErrorHandler({
+    ctx.registerOnErrorHandler({
       errors,
+      log,
       preventDefault: options?.browser?.preventDefault ?? false
     })
     return [{
