@@ -9,7 +9,7 @@
 "@just-web/preferences": major
 "@just-web/routes": major
 "@just-func/play-react": patch
-"@just-web/react-commands": patch
+"@just-web/react-commands": major
 ---
 
 Replace `@just-web/contributions` with `@just-web/keyboard` and `@just-web/commands`
@@ -26,5 +26,3 @@ where which plugin indicates they have contributions to declare.
 This makes the dependencies easier to manage.
 
 Fixing [#101](https://github.com/justland/just-web/issues/101)
-
-The `@just-web/react-commands` is marked as a patch upgrade just trying to bring its version to match the rest.
