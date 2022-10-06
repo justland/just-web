@@ -7,7 +7,7 @@ import { forEachKey, record } from 'type-plus'
 
 let keys: Record<string, boolean>
 export function startKeyBindings(param: LogContext & KeyboardContext & CommandsContext & OSContext) {
-  const keyBindings = param.keyboard.keyBindings
+  const keyBindings = param.keyboard.keyBindingContributions
 
   keys = record()
 
@@ -33,7 +33,7 @@ function bindKey({ log: logContext, commands, os }: LogContext & CommandsContext
       Mousetrap.bind(toMousetrapKey(key), (e) => {
         log.trace(`trigger ${key}`)
         if (e.preventDefault) e.preventDefault()
-        commands.commands.invoke(keyBinding.command)
+        commands.handlers.invoke(keyBinding.command)
         return false
       })
     }

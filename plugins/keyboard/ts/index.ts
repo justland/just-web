@@ -7,16 +7,16 @@ export * from './keyBindings'
 
 export type KeyboardOptions = {
   keyboard?: {
-    keyBindings?: keyBindingRegistry.Options
+    keyBindingContributions?: keyBindingRegistry.Options
   }
 }
 
 const plugin = definePlugin((options?: KeyboardOptions) => ({
   name: '@just-web/contributions',
   init: (ctx: LogContext) => {
-    const keyBindings = keyBindingRegistry(ctx, options?.keyboard?.keyBindings)
+    const keyBindingContributions = keyBindingRegistry(ctx, options?.keyboard?.keyBindingContributions)
 
-    return [{ keyboard: { keyBindings } }]
+    return [{ keyboard: { keyBindingContributions } }]
   }
 }))
 

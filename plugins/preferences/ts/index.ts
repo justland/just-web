@@ -26,31 +26,31 @@ const plugin = definePlugin(() => ({
     return [{
       preferences: {
         get(key: string) {
-          return commands.commands.invoke(
+          return commands.handlers.invoke(
             getUserPreference.type,
             ...getUserPreference({ key })
           )
         },
         set(key: string, value: string) {
-          return commands.commands.invoke(
+          return commands.handlers.invoke(
             setUserPreference.type,
             ...setUserPreference({ key, value })
           )
         },
         update(key: string, handler: (value: string | undefined) => string) {
-          return commands.commands.invoke(
+          return commands.handlers.invoke(
             updateUserPreference.type,
             ...updateUserPreference({ key, handler })
           )
         },
         clear(key: string) {
-          return commands.commands.invoke(
+          return commands.handlers.invoke(
             clearUserPreference.type,
             ...clearUserPreference({ key })
           )
         },
         clearAll() {
-          return commands.commands.invoke(clearUserPreferences.type)
+          return commands.handlers.invoke(clearUserPreferences.type)
         }
       }
     }]

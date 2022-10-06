@@ -2,7 +2,7 @@ import type { LogContext } from '@just-web/log'
 import { createRegistry } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
 
-export type CommandRegistry = {
+export type HandlerRegistry = {
   /**
    * register handler for the specified command.
    */
@@ -18,13 +18,13 @@ export type CommandRegistry = {
   keys(): string[]
 }
 
-export namespace commandRegistry {
+export namespace handlerRegistry {
   export type Options = Record<string, AnyFunction>
 }
 
-export function commandRegistry(
+export function handlerRegistry(
   { log }: LogContext,
-  options?: commandRegistry.Options): CommandRegistry {
+  options?: handlerRegistry.Options): HandlerRegistry {
   const logger = log.getLogger('@just-web/commands')
 
   const registry = createRegistry<string, (...args: any[]) => void>(options)

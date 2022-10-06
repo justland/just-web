@@ -16,6 +16,6 @@ describe('plugin', () => {
     const [{ commands }] = commandsPlugin().init({ log, keyboard })
     const [{ os }] = osTestPlugin().init({ log })
     plugin().init({ log, keyboard, commands, os })
-    expect(commands.commands.keys()).toEqual(['just-web.showCommandPalette'])
+    expect(commands.handlers.keys()).toEqual(['just-web.showCommandPalette'])
   })
 })

@@ -1,22 +1,22 @@
 import { logTestPlugin } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
-import { commandRegistry } from './commandRegistry'
+import { handlerRegistry } from './handlers'
 
-function setupTest(options?: commandRegistry.Options) {
+function setupTest(options?: handlerRegistry.Options) {
   const [logctx] = logTestPlugin().init()
-  return [commandRegistry(logctx, options), logctx.log] as const
+  return [handlerRegistry(logctx, options), logctx.log] as const
 }
 
 it('creates as an empty registry', () => {
   const [logctx] = logTestPlugin().init()
-  const r = commandRegistry(logctx)
+  const r = handlerRegistry(logctx)
   expect(r.keys()).toEqual([])
 })
 
 it('creates with default commands', () => {
   const [logctx] = logTestPlugin().init()
   const log = logctx.log.getLogger('test')
-  const r = commandRegistry(logctx, {
+  const r = handlerRegistry(logctx, {
     a: () => log.info('exec a')
   })
   expect(r.keys()).toEqual(['a'])

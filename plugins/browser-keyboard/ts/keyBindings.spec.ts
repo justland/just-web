@@ -20,10 +20,10 @@ function setupTest(...stubCommands: StubCommand[]) {
 
   stubCommands.forEach(stubCommand => {
     commands.contributions.add(stubCommand)
-    commands.commands.register(
+    commands.handlers.register(
       stubCommand.command,
       () => stubCommand.handler(stubCommand))
-    keyboard.keyBindings.add(stubCommand)
+    keyboard.keyBindingContributions.add(stubCommand)
   })
   return {
     os,
