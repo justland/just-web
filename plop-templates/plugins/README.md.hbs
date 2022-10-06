@@ -1,0 +1,32 @@
+# @just-web/{{name}}
+
+[@just-web/{{name}}] provides ... for a [@just-web] applications.
+
+## Install
+
+```sh
+# npm
+npm install @just-web/{{name}}
+
+# yarn
+yarn add @just-web/{{name}}
+
+# pnpm
+pnpm install @just-web/{{name}}
+
+#rush
+rush add -p @just-web/{{name}}
+```
+
+## Usage
+
+```ts
+import { createApp } from '@just-web/app'
+import {{name}}Plugin from '@just-web/{{name}}'
+
+createApp({ name: 'your-awesome-app' })
+  .extend({{name}}Plugin())
+```
+
+[@just-web]: https://github.com/justland/just-web
+[@just-web/{{name}}]: https://github.com/justland/just-web/tree/main/plugins/{{name}}

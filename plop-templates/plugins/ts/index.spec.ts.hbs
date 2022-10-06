@@ -1,0 +1,15 @@
+import { createTestApp } from '@just-web/app'
+import plugin from '.'
+
+describe('plugin.init()', () => {
+  it('something', () => {
+    const [{ {{name}} }] = setupTestApp()
+
+    a.satisfies({{name}}, ...)
+  })
+})
+
+function setupTestApp(options?: {{pascalCase name}}Options) {
+  return createTestApp()
+    .extend(plugin(options))
+}
