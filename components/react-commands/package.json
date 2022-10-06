@@ -2,6 +2,26 @@
   "name": "@just-web/react-commands",
   "version": "2.0.4",
   "description": "@just-web/commands UI components in react",
+  "keywords": [
+    "just-web",
+    "framework",
+    "react"
+  ],
+  "homepage": "https://github.com/justland/just-web/tree/main/components/react-commands",
+  "bugs": {
+    "url": "https://github.com/justland/just-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justland/just-web.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Homa Wong (unional)",
+    "email": "homawong@gmail.com",
+    "url": "https://github.com/unional"
+  },
+  "sideEffects": false,
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
