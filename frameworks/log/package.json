@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@just-func/types": "^0.2.1",
-    "standard-log": "^11.0.0",
+    "standard-log": "^11.1.0",
     "type-plus": "^4.13.1"
   },
   "devDependencies": {
