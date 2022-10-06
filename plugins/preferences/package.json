@@ -76,7 +76,7 @@
   },
   "peerDependencies": {
     "@just-web/commands": "workspace:^*",
-    "@just-web/keyboard": "works  pace:^*",
+    "@just-web/keyboard": "workspace:^*",
     "@just-web/log": "workspace:^*",
     "@just-web/types": "workspace:^*"
   },
