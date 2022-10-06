@@ -83,7 +83,15 @@ export function createPrefixedGetLogger<
   N extends string = LogMethodNames
 >(context: LogContext<N>, prefix: string): typeof getLogger<N> {
   return function getLogger(id, options) {
-    return context.log.getLogger(`${prefix}:${id}`, options)
+    return context.log.getLogger(getLoggerID(prefix, id), options)
+  }
+}
+
+export function createPrefixedGetNonConsoleLogger<
+  N extends string = LogMethodNames
+>(context: LogContext<N>, prefix: string): typeof getLogger<N> {
+  return function getNonConsoleLogger(id, options) {
+    return context.log.getNonConsoleLogger(getLoggerID(prefix, id), options)
   }
 }
 
@@ -93,18 +101,24 @@ export default <N extends string = LogMethodNames>(options?: LogOptions<N>) => (
     ctx: AppBaseContext
   ): [LogContext<N>] => {
     const sl = createStandardLog<N>(options)
-
-    const log = {
-      ...sl,
-      getLogger(id, options) { return sl.getLogger(`${ctx.name}:${id}`, options) },
-    } as LogContext<N>['log']
-
-    const appLogger = sl.getLogger(ctx.name)
-    const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.customLevels ?? {})).concat(['on', 'count'])
-    logMethods.forEach(m => (log as any)[m] = (appLogger as any)[m].bind(appLogger))
-    return [{ log }]
+    return [{
+      log: buildLogContext<N>(ctx.name, sl, options)
+    }]
   }
 })
+
+function buildLogContext<N extends string = LogMethodNames>(name: string, sl: StandardLog<N>, options?: LogOptions<N>) {
+  const log = {
+    ...sl,
+    getLogger(id, options) { return sl.getLogger(getLoggerID(name, id), options) },
+    getNonConsoleLogger(id, options) { return sl.getNonConsoleLogger(getLoggerID(name, id), options) },
+  } as LogContext<N>['log']
+
+  const appLogger = sl.getLogger(name)
+  const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.customLevels ?? {})).concat(['on', 'count'])
+  logMethods.forEach(m => (log as any)[m] = (appLogger as any)[m].bind(appLogger))
+  return log
+}
 
 export const logTestPlugin = <N extends string = LogMethodNames>(options?: LogOptions<N>) => ({
   name: '@just-web/log',
@@ -113,18 +127,19 @@ export const logTestPlugin = <N extends string = LogMethodNames>(options?: LogOp
   ): [TestLogContext<N>] => {
     const name = ctx?.name ?? 'test'
     const reporter = createMemoryLogReporter()
+
     const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
       logLevel: logLevels.debug,
       reporters: [reporter]
     }, options))
-    const log = {
-      ...sl,
-      getLogger(id, options) { return sl.getLogger(`${name}:${id}`, options) },
-    } as TestLogContext<N>['log']
-
-    const appLogger = sl.getLogger(name)
-    const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.customLevels ?? {})).concat(['on'])
-    logMethods.forEach(m => (log as any)[m] = (appLogger as any)[m].bind(appLogger))
-    return [{ log: { ...log, reporter } }]
+    return [{
+      log: Object.assign(buildLogContext<N>(name, sl, options), {
+        reporter
+      })
+    }]
   }
 })
+
+function getLoggerID(prefix: string, id: string) {
+  return id ? `${prefix}:${id}` : prefix
+}
