@@ -1,4 +1,4 @@
-import { getLogger, Logger } from '@just-web/log'
+import { getLogger, Logger, logLevels } from '@just-web/log'
 import { tersify } from 'tersify'
 
 export const stateLog = getLogger('@just-web/states:state')
@@ -38,7 +38,7 @@ export function createState<T>(init: T): [T, SetState<T>, OnStateChange<T>, Rese
   function onChange(handler: StateChangeHandler<T>, meta?: { logger?: Logger }) {
     if (handlers.includes(handler)) return () => { }
     const log = meta?.logger ?? stateLog
-    log.trace(`new onChange handler: ${tersify(handler)}`)
+    log.on(logLevels.trace, log => log(`new onChange handler: ${tersify(handler)}`))
     handlers.push(handler)
     return () => { handlers.splice(handlers.indexOf(handler), 1) }
   }
