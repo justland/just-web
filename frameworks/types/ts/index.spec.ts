@@ -121,6 +121,33 @@ describe(definePlugin.name, () => {
       isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }], typeof m.init>()
       isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
     })
+
+    it('can detect Params type', () => {
+      const plugin = definePlugin((options?: { a: number }) => ({
+        name: 'dummy',
+        init: () => ([{ dummy: options?.a }])
+      }))
+
+      isType.equal<true, [options?: { a: number }], Parameters<typeof plugin>>()
+    })
+
+    it('can detect Params type with NeedContext', () => {
+      const plugin = definePlugin((options?: { a: number }) => ({
+        name: 'dummy',
+        init: (_: { a: number }) => ([{ dummy: options?.a }])
+      }))
+
+      isType.equal<true, [options?: { a: number }], Parameters<typeof plugin>>()
+    })
+
+    // it('can detect Params type with NeedContext in function form', () => {
+    //   const plugin = definePlugin((options?: { a: number }) => ({
+    //     name: 'dummy',
+    //     init(_: { a: number }) { return [{ dummy: options?.a }] }
+    //   }))
+
+    //   isType.equal<true, [options?: { a: number }], Parameters<typeof plugin>>()
+    // })
   })
 
   describe('PluginModule_C: with StartContext', () => {

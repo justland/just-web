@@ -1,20 +1,38 @@
-import { JustWebApp } from '@just-web/app'
 import { PluginModule } from '@just-web/types'
 import { ComponentType, lazy } from 'react'
 
 export function lazyImport<
-  A extends JustWebApp,
-  M extends { default: () => PluginModule<A> },
-  C extends ComponentType<any>
+  M extends { default: (...args: any[]) => PluginModule<any> },
+  K extends keyof M,
+  R extends { start(): Promise<void> }
 >(
-  getApp: () => A,
-  importPlugin: () => Promise<M>,
-  getComponent: (m: M) => C
-): React.LazyExoticComponent<C> {
-  return lazy(async () => {
-    const m = await importPlugin() as unknown as M
-    getApp().extend(m.default())
+  importPlugin: Promise<M>,
+  key: K,
+  extendPlugin: (plugin: M['default']) => R
+): M[K] extends ComponentType<any> ? {
+  [k in K]: React.LazyExoticComponent<M[K]>
+} & {
+  getExtendingApp: () => Promise<R>
+} : never {
+  let cached: Promise<readonly [M, R]>
+  function cachedExtendingApp() {
+    if (cached) return cached
+    return cached = extendingApp()
+  }
+  async function extendingApp() {
+    const m = await importPlugin
+    const extendedApp = extendPlugin(m.default)
+    await extendedApp.start()
+    return [m, extendedApp] as const
+  }
 
-    return { default: getComponent(m) }
+  const Component = lazy(async () => {
+    const [m] = await cachedExtendingApp()
+    return { default: m[key] as any }
   })
+
+  return {
+    [key]: Component,
+    getExtendingApp: () => cachedExtendingApp().then(([, extendedApp]) => extendedApp)
+  } as any
 }

@@ -1,9 +1,10 @@
-import { LogContext } from '@just-web/log'
-import { definePlugin } from '@just-web/types'
+import { AppBaseContext, definePlugin } from '@just-web/types'
 
-export default definePlugin(() => ({
+const plugin = definePlugin((options?: { a: number }) => ({
   name: 'dummy',
-  init(_context: LogContext) { }
+  init: (_context: AppBaseContext) => [{ dummy: options?.a }]
 }))
+
+export default plugin
 
 export const Component = () => <div>dummy</div>
