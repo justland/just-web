@@ -62,17 +62,17 @@ function appClosure<L extends LogContext>(
         return appClosure(appContext, childAppNode) as any
       }
       const [pluginContext, startContext] = initResult
-      if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start))
+      if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
         childAppNode.plugin = () => {
           log.notice(`starting ${plugin.name}`)
           return plugin.start({ ...startContext, log: pluginLogger } as any)
         }
+      }
       return appClosure({ ...appContext, ...pluginContext! }, childAppNode) as any
     },
     async start() {
       let top: AppNode = appNode
       while (top.parent) top = top.parent
-      if (top.started) return
       await top.start()
       log.info('start')
     }
@@ -86,8 +86,7 @@ function createAppNode(name: string, parent?: AppNode): AppNode {
     started: false,
     children: [],
     async start() {
-      if (this.started) return
-      if (this.plugin) await this.plugin()
+      if (!this.started && this.plugin) await this.plugin()
       for (const c of this.children) {
         await c.start()
       }
