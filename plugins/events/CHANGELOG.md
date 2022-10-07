@@ -1,5 +1,36 @@
 # @just-web/events
 
+## 2.0.0
+
+### Major Changes
+
+- 8d9a1b9: Replace `@just-web/contributions` with `@just-web/keyboard` and `@just-web/commands`
+
+  `contributions.keyBindings` -> `keyboard.keyBindingContributions`
+  `contributions.commands` -> `commands.contributions`
+  `commands.register()` -> `commands.handlers.register()`
+  `commands.invoke()` -> `commands.handlers.invoke()`
+  `commands.keys()` -> `commands.handlers.keys()`
+
+  The contribution is a concept that should spread around plugins,
+  where which plugin indicates they have contributions to declare.
+
+  This makes the dependencies easier to manage.
+
+  Fixing [#101](https://github.com/justland/just-web/issues/101)
+
+### Patch Changes
+
+- 8a4b0d6: Improve types.
+
+  The event emitter type is now inferred based on `options.emitter` or default to `eventemitter3`.
+
+  Fixed the `EventsContext` and provides the `EventsOptions` type.
+
+- Updated dependencies [89f4a41]
+- Updated dependencies [cdd4f6b]
+  - @just-web/log@2.0.0
+
 ## 1.1.1
 
 ### Patch Changes

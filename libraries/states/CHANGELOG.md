@@ -1,5 +1,13 @@
 # @just-web/states
 
+## 2.0.0
+
+### Patch Changes
+
+- Updated dependencies [89f4a41]
+- Updated dependencies [cdd4f6b]
+  - @just-web/log@2.0.0
+
 ## 1.1.1
 
 ### Patch Changes

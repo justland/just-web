@@ -1,5 +1,29 @@
 # @just-web/log
 
+## 2.0.0
+
+### Minor Changes
+
+- cdd4f6b: `@just-web/log`: remove init log message.
+  It does not match with new plugin init logs and is expected to be working.
+  This also simplify testing as one less log entry to filter.
+
+  `@just-web/log`: add support of `getNonConsoleLog()`, for `@just-web/browser`.
+
+  `@just-web/log`: fix log ID prefixing
+
+  `@just-web/browser`: logs captured error to `non-console` logger.
+
+### Patch Changes
+
+- 89f4a41: Remove `@just-web/log` init log message.
+  Now those messages are done at the app level,
+  so having them in the plugin level is not consistent.
+  Also, we don't want to extra log to appear when using `logTestPlugin()` during tests.
+- Updated dependencies [cdd4f6b]
+- Updated dependencies [8d9a1b9]
+  - @just-web/types@2.0.0
+
 ## 1.1.1
 
 ### Patch Changes

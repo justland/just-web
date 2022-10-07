@@ -1,5 +1,15 @@
 # @just-web/app
 
+## 2.0.0
+
+### Patch Changes
+
+- Updated dependencies [89f4a41]
+- Updated dependencies [cdd4f6b]
+- Updated dependencies [8d9a1b9]
+  - @just-web/log@2.0.0
+  - @just-web/types@2.0.0
+
 ## 1.1.1
 
 ### Patch Changes
@@ -65,7 +75,7 @@
     },
     start() {
       /* optional */
-    }
+    },
   });
   ```
 
