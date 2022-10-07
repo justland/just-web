@@ -1,5 +1,12 @@
 # @just-web/os
 
+## 2.0.1
+
+### Patch Changes
+
+- @just-web/log@2.0.1
+- @just-web/types@2.0.1
+
 ## 2.0.0
 
 ### Patch Changes

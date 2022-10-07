@@ -1,5 +1,22 @@
 # @just-web/react
 
+## 2.1.1
+
+### Patch Changes
+
+- 372ab7e: `@just-web/app`: starts newly added plugin when calling `start()` again.
+  `@just-web/react`: fix `lazyImport()` to start the plugin correctly.
+
+  The signature of `lazyImport()` changed.
+  But since this is so new, keep it as a patch.
+
+- Updated dependencies [3905f21]
+- Updated dependencies [372ab7e]
+  - @just-web/app@2.0.1
+  - @just-web/log@2.0.1
+  - @just-web/states@2.0.1
+  - @just-web/types@2.0.1
+
 ## 2.1.0
 
 ### Minor Changes

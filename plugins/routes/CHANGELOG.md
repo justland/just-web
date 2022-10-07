@@ -1,5 +1,16 @@
 # @just-web/routes
 
+## 2.0.1
+
+### Patch Changes
+
+- Updated dependencies [3905f21]
+- Updated dependencies [372ab7e]
+  - @just-web/app@2.0.1
+  - @just-web/log@2.0.1
+  - @just-web/states@2.0.1
+  - @just-web/types@2.0.1
+
 ## 2.0.0
 
 ### Major Changes
