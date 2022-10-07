@@ -41,7 +41,6 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "@unional/events-plus": "~2.2.2",
     "sentence-case": "~3.0.4",
     "type-plus": "^4.13.1"
   },
