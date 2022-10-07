@@ -1,23 +1,30 @@
-import { LogContext, Logger } from '@just-web/log'
-import { definePlugin } from '@just-web/types'
+import { LogContext } from '@just-web/log'
 import { EventEmitterLike, trapError } from '@unional/events-plus'
 import { EventEmitter } from 'eventemitter3'
 
 export { justEvent, JustEventDuo, JustEventEmpty, JustEventUno } from '@unional/events-plus'
 
-export interface EventsContext {
-  logger: Logger
+export type EventsOptions<E extends EventEmitterLike> = {
+  emitter?: E
 }
 
-export type EventsContextOptions = {
-  options?: {
-    emitter?: EventEmitterLike
-  }
-} & LogContext
+export type EventsContext<E extends EventEmitterLike> = {
+  emitter: E
+}
 
-export default definePlugin(() => ({
+// unfortunately since `eventemitter3` is not exposing the `EventEmitter` class declaration,
+// I have to do this to get the inferred type.
+const e = new EventEmitter()
+
+const plugin = <E extends EventEmitterLike = typeof e>(options?: EventsOptions<E>) => ({
   name: '@just-web/events',
-  init: (ctx: EventsContextOptions) => [
-    { emitter: trapError(ctx.options?.emitter || new EventEmitter(), ctx.log) }
-  ]
-}))
+  init: (ctx: LogContext): [EventsContext<E>] => [
+    {
+      emitter: options?.emitter
+        ? trapError(options?.emitter, ctx.log)
+        : trapError(new EventEmitter(), ctx.log)
+    }
+  ] as any
+})
+
+export default plugin
