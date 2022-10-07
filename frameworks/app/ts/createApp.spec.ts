@@ -169,6 +169,10 @@ describe(createApp.name, () => {
     }))())
 
     await app.start()
+    // right now each of this will emit a log
+    // need to detect if there are any new plugin down the tree started,
+    // to determine if we should emit the extra log
+    // and may be good to show which plugins/new plugins have started
     await app2.start()
     await app3.start()
     await app4.start()
@@ -184,6 +188,9 @@ describe(createApp.name, () => {
       'test-app (NOTICE) starting dummy-c',
       'test-app (NOTICE) starting dummy-d',
       'test-app (NOTICE) starting dummy-e',
+      'test-app (INFO) start',
+      'test-app (INFO) start',
+      'test-app (INFO) start',
       'test-app (INFO) start',
     ])
   })
