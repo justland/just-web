@@ -1,18 +1,19 @@
 import type { KeyboardContext } from '@just-web/keyboard'
 import type { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
-import { justEvent } from '@unional/events-plus'
 import { AnyFunction } from 'type-plus'
+import { command } from './command'
 import { contributionRegistry } from './contributions'
 import { handlerRegistry } from './handlers'
 import { CommandContribution } from './types'
 
-export * from './formatCommand'
+export * from './command'
 export type { ContributionRegistry } from './contributions'
+export * from './formatCommand'
 export type { HandlerRegistry } from './handlers'
 export type { Command, CommandContribution } from './types'
 
-export const showCommandPalette = justEvent('just-web.showCommandPalette')
+export const showCommandPalette = command('just-web.showCommandPalette')
 
 export type CommandsOptions = {
   commands?: {

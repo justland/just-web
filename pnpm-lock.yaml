@@ -1149,7 +1149,6 @@ importers:
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
-      '@unional/events-plus': ~2.2.2
       assertron: ^10.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -1169,7 +1168,6 @@ importers:
       type-plus: ^4.13.1
       typescript: ^4.8.4
     dependencies:
-      '@unional/events-plus': 2.2.2
       sentence-case: 3.0.4
       type-plus: 4.13.1
     devDependencies:
