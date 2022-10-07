@@ -1,5 +1,21 @@
 # @just-web/react
 
+## 2.1.0
+
+### Minor Changes
+
+- 4b05ca8: Add `createStoreContext()` and `useStoreContext()`
+
+### Patch Changes
+
+- Updated dependencies [89f4a41]
+- Updated dependencies [cdd4f6b]
+- Updated dependencies [8d9a1b9]
+  - @just-web/log@2.0.0
+  - @just-web/types@2.0.0
+  - @just-web/app@2.0.0
+  - @just-web/states@2.0.0
+
 ## 2.0.4
 
 ### Patch Changes
