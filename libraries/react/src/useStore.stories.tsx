@@ -7,7 +7,7 @@ const UseStore: VFC<{ store: Store<{ counter: number }> }> = ({ store }) => {
   const [value, setValue] = useStore(store, s => s.counter, s => { s.counter = value })
   return <>
     <div>{value}</div>
-    <div>{store.get().counter} - this will lack behind when using setValue, expected</div>
+    <div>{store.get().counter} - this will lag behind when using setValue, expected</div>
     <button onClick={() => setValue(value + 1)}>Invoke setValue</button>
     <button onClick={() => store.update(s => { s.counter++ })}>Invoke store.update</button>
   </>
@@ -18,7 +18,7 @@ const UseEffect: VFC<{ store: Store<{ counter: number }> }> = ({ store }) => {
   useEffect(() => store.update(s => { s.counter = value }), [store, value])
   return <>
     <div>{value}</div>
-    <div>{store.get().counter} - this will lack behind when using setValue, expected</div>
+    <div>{store.get().counter} - this will lag behind when using setValue, expected</div>
     <button onClick={() => setValue(value + 1)}>Invoke setValue</button>
     <button onClick={() => store.update(s => { s.counter++ })}>Invoke store.update</button>
   </>
