@@ -1,5 +1,11 @@
 # @just-web/react
 
+## 2.1.2
+
+### Patch Changes
+
+- deceff5: Export `createStoreContext()` and `useStoreContext()`.
+
 ## 2.1.1
 
 ### Patch Changes

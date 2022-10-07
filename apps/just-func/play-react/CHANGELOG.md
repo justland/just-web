@@ -1,5 +1,13 @@
 # @just-func/play-react
 
+## 0.2.15
+
+### Patch Changes
+
+- Updated dependencies [deceff5]
+  - @just-web/react@2.1.2
+  - @just-web/react-commands@3.0.2
+
 ## 0.2.14
 
 ### Patch Changes
