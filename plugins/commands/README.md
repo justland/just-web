@@ -1,5 +1,8 @@
 # @just-web/commands
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [@just-web/commands] provides mechanism to register and invoke commands.
 
 Commands are basically functions.
@@ -93,3 +96,7 @@ export drinkingPartyPlugin = definePlugin(() => ({
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/frameworks/commands
 [@just-web/keyboard]: https://github.com/justland/just-web/tree/main/frameworks/keyboard
 [`command()`]: https://github.com/justland/just-web/tree/main/frameworks/commands/ts/command.ts
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/commands.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/commands
+[npm-image]: https://img.shields.io/npm/v/@just-web/commands.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/commands

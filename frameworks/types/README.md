@@ -1,5 +1,8 @@
 # @just-web/types
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [`@just-web/types`] provides type definitions for `@just-web` modules.
 
 ## Install
@@ -52,3 +55,7 @@ export default {
 [`@just-web/types`]: https://github.com/justland/just-web/tree/main/frameworks/types
 [`definePlugin()`]:  https://github.com/justland/just-web/tree/main/frameworks/types/ts/index.ts
 [`defineInit()`]:  https://github.com/justland/just-web/tree/main/frameworks/types/ts/index.ts
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/types.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/types
+[npm-image]: https://img.shields.io/npm/v/@just-web/types.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/types

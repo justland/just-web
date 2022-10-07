@@ -1,5 +1,8 @@
 # @just-web/browser-preferences
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [@just-web/browser-preferences] provides the implementation of [@just-web/preferences] on the browser.
 
 ## Install
@@ -52,3 +55,7 @@ app.preferences.clearAll()
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/plugins/commands
 [@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/keyboard
 [@just-web/preferences]: https://github.com/justland/just-web/tree/main/plugins/preferences
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/browser-preferences.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/browser-preferences
+[npm-image]: https://img.shields.io/npm/v/@just-web/browser-preferences.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/browser-preferences

@@ -1,5 +1,8 @@
 # @just-web/states <!-- omit in toc -->
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [`@just-web/states`] provides state management to all `@just-web` applications.
 
 This is a core module of `@just-web`.
@@ -174,3 +177,7 @@ registry.add({ key: 'y', value: 2 }, { key: 'z', value: 999 })
 [`@just-web/states`]: https://github.com/justland/just-web/tree/main/frameworks/states
 [`immer`]: https://github.com/immerjs/immer
 [`Object.is()`]: https://www.jstips.co/en/javascript/why-you-should-use-Object.is()-in-equality-comparison/
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/states.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/states
+[npm-image]: https://img.shields.io/npm/v/@just-web/states.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/states

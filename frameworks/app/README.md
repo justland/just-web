@@ -1,5 +1,8 @@
 # @just-web/app
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 The entry point of `@just-web` application framework.
 
 ## Install
@@ -41,3 +44,7 @@ void (async () => {
 ```
 
 [React]: https://reactjs.org/
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/app.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/app
+[npm-image]: https://img.shields.io/npm/v/@just-web/app.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/app

@@ -1,6 +1,9 @@
 # @just-web/command-react <!-- omit in toc -->
 
-[`@just-web/react-commands] provides the components for [`@just-web/commands`] written in [`React`].
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
+[@just-web/react-commands] provides the components for [@just-web/commands] written in [React].
 
 ## Install <!-- omit in toc -->
 
@@ -48,6 +51,10 @@ const Comp = () => <>
 </>
 ```
 
-[`@just-web/commands`]: https://github.com/justland/just-web/tree/main/plugins/commands
-[`@just-web/react-commands`]: https://github.com/justland/just-web/tree/main/components/react-commands
-[`React`]: https://reactjs.org/
+[@just-web/commands]: https://github.com/justland/just-web/tree/main/plugins/commands
+[@just-web/react-commands]: https://github.com/justland/just-web/tree/main/components/react-commands
+[React]: https://reactjs.org/
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/react-commands.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/react-commands
+[npm-image]: https://img.shields.io/npm/v/@just-web/react-commands.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/react-commands
