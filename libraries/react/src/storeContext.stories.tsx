@@ -1,7 +1,7 @@
 
 import { createStore } from '@just-web/states'
 import Modal from 'react-modal'
-import { createStoreContext, useStoreContext } from './storeContext'
+import { createStoreContext, useStoreContext } from '.'
 
 export default {}
 
