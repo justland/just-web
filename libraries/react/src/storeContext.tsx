@@ -11,5 +11,9 @@ export function useStoreContext<S, V>(
   getState: (s: S) => V,
   updateStore?: (draft: S, value: V) => void | S
 ): [value: V, setValue: (value: V | ((value: V) => V)) => void] {
-  return useStore(useContext(reactContext), getState, updateStore)
+  const store = useContext(reactContext)
+  if (!store) {
+    throw new Error('Context.Provider must be used before using useStoreContext()')
+  }
+  return useStore(store, getState, updateStore)
 }
