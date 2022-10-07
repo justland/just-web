@@ -1,5 +1,14 @@
 # @just-web/preferences
 
+## 2.0.1
+
+### Patch Changes
+
+- @just-web/commands@2.0.1
+- @just-web/keyboard@2.0.1
+- @just-web/log@2.0.1
+- @just-web/types@2.0.1
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,5 +1,19 @@
 # @just-web/app
 
+## 2.0.1
+
+### Patch Changes
+
+- 3905f21: fix(`@just-web/app`): add missing `getNonConsoleLogger()`
+- 372ab7e: `@just-web/app`: starts newly added plugin when calling `start()` again.
+  `@just-web/react`: fix `lazyImport()` to start the plugin correctly.
+
+  The signature of `lazyImport()` changed.
+  But since this is so new, keep it as a patch.
+
+  - @just-web/log@2.0.1
+  - @just-web/types@2.0.1
+
 ## 2.0.0
 
 ### Patch Changes
