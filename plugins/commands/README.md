@@ -33,5 +33,63 @@ pnpm install @just-web/commands
 rush add -p @just-web/commands
 ```
 
+## command
+
+[`command()`] is a helper function to help you create a command.
+
+There are several ways to use it.
+Here are three:
+
+```ts
+import { command, CommandsContext } from '@just-web/commands'
+
+export const singCommand = command<(songName: string) => void>('party.sing')
+export const danceCommand = command<(danceNumber: string) => void>(
+  'party.dance',
+  (danceNumber) => dance(danceNumber)
+)
+// this will be implement in another plugin
+export const drinkCommand = command<(drink: string) => void>('party.drink')
+
+const partyPlugin = definePlugin(() => ({
+  name: 'party',
+  init({ commands }: CommandsContext) {
+    commands.handler.register(
+      singCommand.type,
+      singCommand.defineHandler((songName) => sing(songName))
+    )
+
+    danceCommand.connect({ commands })
+
+    return [{
+      party: {
+        sing(songName: string) {
+          commands.handlers.invoke(singCommand.type, ...singCommand.defineArgs(songName))
+          // or this, as you don't really need the `defineArgs()` type helper
+          commands.handlers.invoke(singCommand.type, songName)
+        },
+        // yes, this will work, since you called `.connect({ commands })`
+        dance: danceCommand
+      }
+    }]
+  }
+}))
+
+// in drinking party plugin
+export drinkingPartyPlugin = definePlugin(() => ({
+  name: 'drinking-party',
+  init({ commands }: CommandsContext) {
+    drinkCommand.connect({ commands }, (drink) => drinkMore(drink))
+
+    return [{
+      drinkingParty: {
+        drink: drinkCommand
+      }
+    }]
+  }
+}))
+```
+
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/frameworks/commands
 [@just-web/keyboard]: https://github.com/justland/just-web/tree/main/frameworks/keyboard
+[`command()`]: https://github.com/justland/just-web/tree/main/frameworks/commands/ts/command.ts
