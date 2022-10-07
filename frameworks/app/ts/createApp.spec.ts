@@ -4,8 +4,9 @@ import { definePlugin, StartContextBase } from '@just-web/types'
 import { a } from 'assertron'
 import { CanAssign, isType } from 'type-plus'
 import { createApp, createTestApp } from './createApp'
+import { some } from 'satisfier'
 
-describe(createApp.name, () => {
+describe(`${createApp.name}()`, () => {
   it('needs name', () => {
     const app = createApp({ name: 'some app' })
 
@@ -46,6 +47,7 @@ describe(createApp.name, () => {
 
     isType.equal<true, typeof app, typeof app2>()
   })
+
   it('starts will log an app start message', async () => {
     const reporter = createMemoryLogReporter()
     const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
@@ -195,7 +197,7 @@ describe(createApp.name, () => {
     ])
   })
 
-  it('sends startContext to start()', async () => {
+  it(`sends startContext to start()`, async () => {
     const reporter = createMemoryLogReporter()
     const app = createApp({ name: 'a', log: { reporters: [reporter] } }).extend(definePlugin(() => ({
       name: 'plugin-a',
@@ -207,9 +209,41 @@ describe(createApp.name, () => {
     }))())
     await app.start()
   })
+
+  it(`gives plugin a prefixed getLogger()`, async () => {
+    const reporter = createMemoryLogReporter()
+    const app = createApp({ name: 'a', log: { reporters: [reporter] } }).extend(definePlugin(() => ({
+      name: 'plugin-a',
+      init: (ctx: LogContext) => {
+        const log = ctx.log.getLogger('custom')
+        log.info('info')
+      }
+    }))())
+    await app.start()
+
+    a.satisfies(reporter.getLogMessagesWithIdAndLevel(), some(
+      'a:plugin-a:custom (INFO) info'
+    ))
+  })
+
+  it('gives plugin a prefixed getNonConsoleLogger()', async () => {
+    const reporter = createMemoryLogReporter()
+    const app = createApp({ name: 'a', log: { reporters: [reporter] } }).extend(definePlugin(() => ({
+      name: 'plugin-a',
+      init: (ctx: LogContext) => {
+        const log = ctx.log.getNonConsoleLogger('custom')
+        log.info('info')
+      }
+    }))())
+    await app.start()
+
+    a.satisfies(reporter.getLogMessagesWithIdAndLevel(), some(
+      'a:plugin-a:custom (INFO) info'
+    ))
+  })
 })
 
-describe(createTestApp.name, () => {
+describe(`${createTestApp.name}()`, () => {
   it('can be called without param', () => {
     createTestApp()
   })
