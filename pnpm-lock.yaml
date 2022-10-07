@@ -1209,7 +1209,6 @@ importers:
       '@just-web/log': workspace:^*
       '@just-web/repo-scripts': workspace:^*
       '@just-web/testing': workspace:^*
-      '@just-web/types': workspace:^*
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@types/node': ^16.11.26
@@ -1241,7 +1240,6 @@ importers:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/testing': link:../../tools/testing
-      '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@types/jest': 27.5.2
       '@types/node': 16.11.62
