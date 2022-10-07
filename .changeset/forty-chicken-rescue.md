@@ -2,4 +2,4 @@
 "@just-web/react": minor
 ---
 
-add `createStoreContext()` and `useStoreContext()`
+Add `createStoreContext()` and `useStoreContext()`

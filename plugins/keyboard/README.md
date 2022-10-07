@@ -1,5 +1,8 @@
 # @just-web/keyboard
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [@just-web/keyboard] provides functionality about keyboards:
 
 - ✅ Key bindings: shortcuts for all platforms.
@@ -41,3 +44,7 @@ creatApp({ name: 'your-awesome-app' })
 
 [@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/keyboard
 [@just-web/os]: https://github.com/justland/just-web/tree/main/plugins/os
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/keyboard.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/keyboard
+[npm-image]: https://img.shields.io/npm/v/@just-web/keyboard.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/keyboard

@@ -1,5 +1,8 @@
 # @just-web/log
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [`@just-web/log`] provides a consistent logging API to `@just-web` applications.
 
 It supports customization with runtime protection, sanitization, remote reporting, log level control, etc.
@@ -40,3 +43,7 @@ Please refer to the `handbook` to learn more about it.
 
 [`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
 [`@just-web/log`]: https://github.com/justland/just-web/tree/main/frameworks/log
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/log.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/log
+[npm-image]: https://img.shields.io/npm/v/@just-web/log.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/log

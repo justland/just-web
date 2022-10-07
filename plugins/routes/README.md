@@ -1,5 +1,8 @@
 # @just-web/routes
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [@just-web/routes] is a plugin that provides client side routing capability.
 
 ## Features
@@ -44,3 +47,7 @@ void (async () => {
 ```
 
 [@just-web/routes]: https://github.com/justland/just-web/tree/main/plugins/routes
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/routes.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/routes
+[npm-image]: https://img.shields.io/npm/v/@just-web/routes.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/routes

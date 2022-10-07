@@ -1,5 +1,8 @@
 # @just-web/react <!-- omit in toc -->
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [@just-web/react] provides additional utilities when using [@just-web] with [React].
 
 ## Install <!-- omit in toc -->
@@ -132,3 +135,7 @@ const YourConsumer = () => {
 [useStoreContext()]: https://github.com/justland/just-web/blob/main/libraries/react/src/useStoreContext.ts
 [Store]: https://github.com/justland/just-web/tree/main/frameworks/states/ts/store.ts
 [immer]: https://www.npmjs.com/package/immer
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/react.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/react
+[npm-image]: https://img.shields.io/npm/v/@just-web/react.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/react

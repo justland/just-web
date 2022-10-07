@@ -1,5 +1,8 @@
 # just-web
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+
 [@just-web] is a plugin-based application framework.
 
 As a good framework, it defers making decisions as much as possible.
@@ -93,7 +96,11 @@ Please check out the [contributing guide](./CONTRIBUTING.md)
 [@just-web/types]: https://github.com/justland/just-web/tree/main/frameworks/types
 [Axios]: https://axios-http.com/
 [cross-fetch]: https://www.npmjs.com/package/cross-fetch
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/app.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@just-web/app
 [MobX]: https://mobx.js.org/
+[npm-image]: https://img.shields.io/npm/v/@just-web/app.svg?style=flat
+[npm-url]: https://npmjs.org/package/@just-web/app
 [React]: https://reactjs.org/
 [Redux]: https://redux.js.org/
 [SolidJS]: https://www.solidjs.com/
