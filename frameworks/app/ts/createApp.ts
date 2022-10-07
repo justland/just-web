@@ -1,4 +1,4 @@
-import logPlugin, { createPrefixedGetLogger, LogContext, LogMethodNames, LogOptions, logTestPlugin, TestLogContext } from '@just-web/log'
+import logPlugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, LogContext, LogMethodNames, LogOptions, logTestPlugin, TestLogContext } from '@just-web/log'
 import type { AppBaseContext, PluginModule } from '@just-web/types'
 import { isType, pick } from 'type-plus'
 import { ctx } from './createApp.ctx'
@@ -47,7 +47,8 @@ function appClosure<L extends LogContext>(
 
       const pluginLogger = Object.assign(log.getLogger(plugin.name), {
         ...pick(log, 'toLogLevel', 'toLogLevelName'),
-        getLogger: createPrefixedGetLogger({ log }, plugin.name)
+        getLogger: createPrefixedGetLogger({ log }, plugin.name),
+        getNonConsoleLogger: createPrefixedGetNonConsoleLogger({ log }, plugin.name)
       })
 
       log.notice(`initializing ${plugin.name}`)
