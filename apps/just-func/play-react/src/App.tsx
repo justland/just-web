@@ -5,10 +5,10 @@ import MainContent from './components/MainContent/MainContent'
 import { store } from './docViews/store'
 import { getStoreValue } from './store'
 
-const CommandPalette = lazyImport(
-  () => getStoreValue().app,
-  () => import('@just-web/react-commands'),
-  m => m.CommandPalette
+const { CommandPalette } = lazyImport(
+  import('@just-web/react-commands'),
+  'CommandPalette',
+  (plugin) => getStoreValue().app.extend(plugin()),
 )
 function App() {
   const [hasView] = useStore(store, s => s.views.length !== 0)
