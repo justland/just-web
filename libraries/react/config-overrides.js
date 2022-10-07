@@ -6,6 +6,10 @@ module.exports = {
     config.testMatch = [
       '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}'
     ]
+    config.coveragePathIgnorePatterns= [
+      'dummyModule.tsx',
+      '.*.stories.tsx'
+    ]
     config.watchPlugins = [
       'jest-watch-suspend',
       'jest-watch-typeahead/filename',
