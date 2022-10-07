@@ -11,10 +11,10 @@ function setupPlugin<E extends EventEmitterLike>(options?: LogOptions & EventsOp
 }
 
 it('can be used with `justEvent.listenTo|emitBy` ', () => {
-  const [{ emitter, log }] = setupPlugin()
+  const [{ events, log }] = setupPlugin()
   const someEvent = justEvent('some-event')
-  someEvent.listenTo(emitter, () => log.info('triggered'))
-  someEvent.emitBy(emitter)
+  someEvent.listenTo(events.emitter, () => log.info('triggered'))
+  someEvent.emitBy(events.emitter)
 
   expect(log.reporter.getLogMessages()).toEqual([
     'triggered'
@@ -23,10 +23,10 @@ it('can be used with `justEvent.listenTo|emitBy` ', () => {
 
 
 it('can be used with `justEvent` and `addListener|emit`', () => {
-  const [{ emitter, log }] = setupPlugin()
+  const [{ events, log }] = setupPlugin()
   const someEvent = justEvent('some-event')
-  emitter.addListener(someEvent.type, () => log.info('triggered'))
-  emitter.emit(someEvent.type)
+  events.emitter.addListener(someEvent.type, () => log.info('triggered'))
+  events.emitter.emit(someEvent.type)
 
   expect(log.reporter.getLogMessages()).toEqual([
     'triggered'
@@ -34,10 +34,10 @@ it('can be used with `justEvent` and `addListener|emit`', () => {
 })
 
 it('can be used with `justEvent.defaultListener`', () => {
-  const [{ emitter, log }] = setupPlugin()
+  const [{ events, log }] = setupPlugin()
   const someEvent = justEvent('some-event', (value: number) => log.info('triggered', value))
-  emitter.addListener(someEvent.type, someEvent.defaultListener)
-  emitter.emit(someEvent.type, ...someEvent(3))
+  events.emitter.addListener(someEvent.type, someEvent.defaultListener)
+  events.emitter.emit(someEvent.type, ...someEvent(3))
 
   expect(log.reporter.getLogMessages()).toEqual([
     'triggered 3'
@@ -45,17 +45,17 @@ it('can be used with `justEvent.defaultListener`', () => {
 })
 
 it('traps error created by listener', () => {
-  const [{ emitter, log }] = setupPlugin()
-  emitter.addListener('event', () => { throw new Error('from listener') })
-  emitter.emit('event')
+  const [{ events, log }] = setupPlugin()
+  events.emitter.addListener('event', () => { throw new Error('from listener') })
+  events.emitter.emit('event')
 
   logMatchSome(log.reporter, '(ERROR) Error: from listener')
 })
 
 it('can use a different event emitter', () => {
-  const [{ emitter }] = setupPlugin({ emitter: new EventEmitter() })
+  const [{ events }] = setupPlugin({ events: { emitter: new EventEmitter() } })
   let called = false
-  emitter.addListener('event', () => called = true)
-  emitter.emit('event')
+  events.emitter.addListener('event', () => called = true)
+  events.emitter.emit('event')
   expect(called).toBe(true)
 })

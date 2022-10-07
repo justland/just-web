@@ -4,11 +4,11 @@ import eventsPlugin, { justEvent } from '.'
 it('can create just event', () => {
   const addEvent = justEvent('add')
   const [ctx] = logTestPlugin().init()
-  const [{ emitter }] = eventsPlugin().init(ctx)
+  const [{ events }] = eventsPlugin().init(ctx)
 
   let called = false
-  addEvent.listenTo(emitter, () => called = true)
-  addEvent.emitBy(emitter)
+  addEvent.listenTo(events.emitter, () => called = true)
+  addEvent.emitBy(events.emitter)
 
   expect(called).toBe(true)
 })
