@@ -1,5 +1,5 @@
 import { CanAssign, isType, KeyTypes } from 'type-plus'
-import { createRegistry, Registry } from '.'
+import { createRegistry, Registry, withAdder } from '.'
 import { ReadonlyRegistry, toReadonlyRegistry } from './registry'
 
 describe('createRegistry()', () => {
@@ -24,10 +24,20 @@ describe('createRegistry()', () => {
   })
 
   describe('keys()', () => {
-    test('get both string and symbol keys', () => {
+    it('gets both string and symbol keys', () => {
       const s = Symbol()
       const a = createRegistry({ [s]: 's', b: 'b' })
       expect(a.keys()).toEqual(['b', s])
+    })
+
+    it('gets key through add()', () => {
+      const r = withAdder(
+        createRegistry<string, { id: string, value: number }>(),
+        (r, e) => r[e.id] = e
+      )
+      r.add({ id: 'a', value: 1 }, { id: 'b', value: 1 })
+
+      expect(r.keys()).toEqual(['a', 'b'])
     })
   })
 
