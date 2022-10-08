@@ -37,12 +37,21 @@ describe('adder()', () => {
 })
 
 describe('withAdder()', () => {
-  test('for array store', () => {
+  it('works with array store', () => {
     const store = withAdder(
       createStore<string[]>([]),
       (array, entry) => { array.push(entry) })
     store.add('a', 'b')
     expect(store.get()).toEqual(['a', 'b'])
+  })
+
+  it('works with record store', () => {
+    const recordStore = createStore<Record<string, { id: string, value: number }>>({})
+    const store = withAdder(
+      recordStore,
+      (store, entry) => { store[entry.id] = entry })
+    store.add({ id: 'a', value: 1 }, { id: 'b', value: 2 })
+    expect(store.get()).toEqual({ a: { id: 'a', value: 1 }, b: { id: 'b', value: 2 } })
   })
 
   test('for record registry', () => {
