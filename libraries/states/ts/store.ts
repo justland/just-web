@@ -3,7 +3,7 @@ import produce from 'immer'
 import { pick } from 'type-plus'
 import { createState, OnStateChange, ResetState, SetState } from './state'
 
-export interface ReadonlyStore<T> {
+export type ReadonlyStore<T> = {
   get(): T,
   onChange: OnStateChange<T>,
 }
