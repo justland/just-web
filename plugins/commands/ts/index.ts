@@ -1,17 +1,18 @@
 import type { KeyboardContext } from '@just-web/keyboard'
 import type { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
-import { AnyFunction } from 'type-plus'
+import type { AnyFunction } from 'type-plus'
 import { command } from './command'
 import { contributionRegistry } from './contributions'
 import { handlerRegistry } from './handlers'
-import { CommandContribution } from './types'
+import type { CommandContribution, CommandsContext } from './types'
 
 export * from './command'
-export type { ContributionRegistry } from './contributions'
 export * from './formatCommand'
-export type { HandlerRegistry } from './handlers'
-export type { Command, CommandContribution } from './types'
+export type {
+  Command, CommandContribution, CommandHandler, CommandsContext, Command_WithDefault,
+  ContributionRegistry, HandlerRegistry
+} from './types'
 
 export const showCommandPalette = command('just-web.showCommandPalette')
 
@@ -24,7 +25,7 @@ export type CommandsOptions = {
 
 const plugin = definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
-  init: (ctx: LogContext & KeyboardContext) => {
+  init: (ctx: LogContext & KeyboardContext): [CommandsContext] => {
     ctx.keyboard.keyBindingContributions.add({
       command: showCommandPalette.type,
       key: 'ctrl+p',
@@ -48,7 +49,5 @@ const plugin = definePlugin((options?: CommandsOptions) => ({
     }]
   }
 }))
-
-export type CommandsContext = ReturnType<ReturnType<typeof plugin>['init']>[0]
 
 export default plugin
