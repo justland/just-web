@@ -102,11 +102,13 @@ readonlyStore.onChange(handler)
 const registry = createRegistry({})
 
 // on top of store's API, registry has
+registry.has(key)
 registry.keys()
 registry.size()
 registry.list()
 ```
 
+- `has(key)`: gets if entry with specified key exists in the registry.
 - `keys()`: gets a list of keys in the registry.
 - `size()`: gets how many entries in the registry.
 - `list()`: gets a list of values in the registry.
@@ -124,6 +126,7 @@ const readonlyRegistry = toReadonlyRegistry(registry)
 readonlyRegistry.get()
 readonlyRegistry.onChange(handler)
 readonlyRegistry.keys()
+readonlyRegistry.has()
 readonlyRegistry.size()
 readonlyRegistry.list()
 ```
