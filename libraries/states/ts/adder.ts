@@ -3,11 +3,9 @@ import type { ArrayValue, KeyTypes, Pick } from 'type-plus'
 import { Registry } from './registry'
 import type { Store } from './store'
 
-export interface Adder<T> {
-  (...entries: T[]): void
-}
+export type Adder<T> = (...entries: T[]) => void
 
-export interface WithAdder<T> {
+export type WithAdder<T> = {
   add: Adder<T>
 }
 
@@ -35,7 +33,7 @@ export function adder<T, K extends KeyTypes = string | symbol>(
 }
 
 export function withAdder<T, K extends KeyTypes, R extends Registry<K, T>>(
-  registry: Pick<R, 'get' | 'set'>,
+  registry: Pick<R, 'get' | 'set' | 'has'>,
   addEntry: (record: Draft<Record<K, T>>, entry: T) => void
 ): R & WithAdder<T>
 export function withAdder<A extends Array<any>, S extends Store<A>>(

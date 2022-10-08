@@ -2,7 +2,7 @@ import { KeyTypes, pick, record, Widen } from 'type-plus'
 import { OnStateChange, ResetState, SetState } from './state'
 import { createStore } from './store'
 
-export interface ReadonlyRegistry<K extends KeyTypes, T> {
+export type ReadonlyRegistry<K extends KeyTypes, T> = {
   get(): Record<K, T>,
   onChange: OnStateChange<Record<K, T>>,
   keys(): K[],

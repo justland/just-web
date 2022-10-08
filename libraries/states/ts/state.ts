@@ -3,26 +3,18 @@ import { tersify } from 'tersify'
 
 export const stateLog = getLogger('@just-web/states:state')
 
-export interface SetState<T> {
-  (value: T, meta?: { logger?: Logger }): void
-}
+export type SetState<T> = (value: T, meta?: { logger?: Logger }) => void
 
-export interface StateChangeHandler<T> {
-  (value: T, prev: T): void
-}
+export type StateChangeHandler<T> = (value: T, prev: T) => void
 
-export interface OnStateChange<T> {
-  (handler: StateChangeHandler<T>, meta?: { logger?: Logger }): () => void
-}
+export type OnStateChange<T> = (handler: StateChangeHandler<T>, meta?: { logger?: Logger }) => (() => void)
 
-export interface ResetState {
-  (): void
-}
+export type ResetState = () => void
 
 /**
  * creates a functional style state to track changes of a value.
  */
-export function createState<T>(init: T): [T, SetState<T>, OnStateChange<T>, ResetState] {
+export function createState<T>(init: T): [value: T, set: SetState<T>, onChange: OnStateChange<T>, reset: ResetState] {
   const handlers: StateChangeHandler<T>[] = []
   let value = Object.freeze(init)
   function set(newValue: T, meta?: { logger?: Logger }) {
@@ -45,10 +37,5 @@ export function createState<T>(init: T): [T, SetState<T>, OnStateChange<T>, Rese
 
   function reset() { set(init) }
 
-  return [
-    value,
-    set,
-    onChange,
-    reset
-  ]
+  return [value, set, onChange, reset]
 }
