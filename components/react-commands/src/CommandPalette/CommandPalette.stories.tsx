@@ -29,20 +29,20 @@ export default {
   }
 }
 
-const simpleCmd = { command: 'core.simpleCommand' }
+const simpleCmd = { id: 'core.simpleCommand' }
 const keyedCmd = {
-  command: 'core.keyedCommand',
+  id: 'core.keyedCommand',
   name: 'Command with key',
   key: 'ctrl+k'
 }
 const macCmd = {
-  command: 'core.macCommand',
+  id: 'core.macCommand',
   name: 'Command with mac key override',
   key: 'ctrl+m',
   mac: 'cmd+m'
 }
 const macOnlyCmd = {
-  command: 'core.macOnlyCommand',
+  id: 'core.macOnlyCommand',
   name: 'Command with only mac key',
   mac: 'cmd+o'
 }
@@ -70,7 +70,7 @@ export const OneCommand = {
     commands: {
       contributions: [simpleCmd],
       handlers: {
-        [simpleCmd.command]: () => alert(simpleCmd.command)
+        [simpleCmd.id]: () => alert(simpleCmd.id)
       }
     }
   })],
@@ -82,7 +82,7 @@ export const WithKey = {
     commands: {
       contributions: [keyedCmd],
       handlers: {
-        [keyedCmd.command]: () => alert(keyedCmd.command)
+        [keyedCmd.id]: () => alert(keyedCmd.id)
       }
     },
     keyboard: {
@@ -97,10 +97,10 @@ export const OverrideMacCommandInMac = {
     commands: {
       contributions: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
       handlers: {
-        [simpleCmd.command]: () => alert(simpleCmd.command),
-        [keyedCmd.command]: () => alert(keyedCmd.command),
-        [macCmd.command]: () => alert(macCmd.command),
-        [macOnlyCmd.command]: () => alert(macOnlyCmd.command)
+        [simpleCmd.id]: () => alert(simpleCmd.id),
+        [keyedCmd.id]: () => alert(keyedCmd.id),
+        [macCmd.id]: () => alert(macCmd.id),
+        [macOnlyCmd.id]: () => alert(macOnlyCmd.id)
       }
     },
     keyboard: {
@@ -118,10 +118,10 @@ export const OverrideMacCommandInWindow = {
     commands: {
       contributions: [simpleCmd, keyedCmd, macCmd, macOnlyCmd],
       handlers: {
-        [simpleCmd.command]: () => alert(simpleCmd.command),
-        [keyedCmd.command]: () => alert(keyedCmd.command),
-        [macCmd.command]: () => alert(macCmd.command),
-        [macOnlyCmd.command]: () => alert(macOnlyCmd.command)
+        [simpleCmd.id]: () => alert(simpleCmd.id),
+        [keyedCmd.id]: () => alert(keyedCmd.id),
+        [macCmd.id]: () => alert(macCmd.id),
+        [macOnlyCmd.id]: () => alert(macOnlyCmd.id)
       }
     },
     keyboard: {

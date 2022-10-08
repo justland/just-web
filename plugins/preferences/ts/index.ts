@@ -21,7 +21,7 @@ export const clearUserPreferences = justEvent('just-web.clearUserPreferences')
 const plugin = definePlugin(() => ({
   name: '@just-web/preferences',
   init: ({ commands }: LogContext & CommandsContext) => {
-    commands.contributions.add({ command: clearUserPreferences.type })
+    commands.contributions.add({ id: clearUserPreferences.type })
 
     return [{
       preferences: {

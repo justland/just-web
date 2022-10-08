@@ -30,7 +30,7 @@ void (async () => {
   createAppStore(app)
 
   app.commands.contributions.add({
-    command: 'app.newDocument',
+    id: 'app.newDocument',
     name: 'Create a new document'
   })
 

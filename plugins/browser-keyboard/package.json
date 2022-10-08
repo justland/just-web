@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "mousetrap": "~1.6.5",
-    "type-plus": "^4.13.1"
+    "type-plus": "^4.13.2"
   },
   "devDependencies": {
     "@babel/core": "~7.19.0",

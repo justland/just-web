@@ -135,10 +135,10 @@ function getCommands(ctx: KeyboardContext & CommandsContext & OSContext) {
         ...c,
         name: formatCommand(c).name,
         command: () => {
-          ctx.commands.handlers.invoke(c.command)
+          ctx.commands.handlers.invoke(c.id)
         }
       }
-      const k = kbs[c.command]
+      const k = kbs[c.id]
       return k ? { ...r, key: formatKeyBinding(ctx, k).key } : r
     })
 }

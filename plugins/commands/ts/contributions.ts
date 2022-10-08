@@ -15,7 +15,7 @@ export function contributionRegistry(
   return withAdder(
     createRegistry<string, CommandContribution>(getInitRecord(options)),
     function (r, cmd) {
-      const key = cmd.command
+      const key = cmd.id
       if (r[key]) return ctx.log.error(`Registering a duplicate command contribution, ignored: ${key}`)
       r[key] = cmd
     })
@@ -23,7 +23,7 @@ export function contributionRegistry(
 
 function getInitRecord(options?: contributionRegistry.Options) {
   return (options ?? []).reduce((p, c) => {
-    p[c.command] = c
+    p[c.id] = c
     return p
   }, record<string, CommandContribution>())
 }

@@ -5,9 +5,9 @@ import { record } from 'type-plus'
 
 export type KeyBindingContribution = {
   /**
-   * Command to bind to.
+   * Id of the command to bind to.
    */
-  command: string,
+  id: string,
   /**
    * Default key
    */
@@ -18,9 +18,9 @@ export type KeyBindingContribution = {
   mac?: string
 } | {
   /**
-   * Command to bind to.
+   * Id of the command to bind to.
    */
-  command: string,
+  id: string,
   /**
    * MacOS specific key
    */
@@ -46,7 +46,7 @@ export function keyBindingRegistry(
   return withAdder(
     createRegistry<string, KeyBindingContribution>(getInitRecord(options)),
     function (r, kb) {
-      const key = kb.command
+      const key = kb.id
       const log = ctx.log.getLogger('@just-web/contributions')
       if (r[key]) return log.warn(`Registering a duplicate key binding contribution, ignored: ${key}`)
       r[key] = kb
@@ -55,7 +55,7 @@ export function keyBindingRegistry(
 
 function getInitRecord(options?: keyBindingRegistry.Options) {
   return (options ?? []).reduce((p, c) => {
-    p[c.command] = c
+    p[c.id] = c
     return p
   }, record<string, KeyBindingContribution>())
 }
@@ -63,7 +63,7 @@ function getInitRecord(options?: keyBindingRegistry.Options) {
 export function formatKeyBinding({ os }: OSContext, keyBinding: KeyBindingContribution) {
   const m = os.isMac()
   return {
-    command: keyBinding.command,
+    id: keyBinding.id,
     key: (m ? keyBinding.mac ?? keyBinding.key : keyBinding.key) as string
   }
 }

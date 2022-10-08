@@ -14,14 +14,14 @@ it('creates as empty registory', () => {
 })
 
 it('creates with prefilled command contributions', () => {
-  const [r] = setupTest([{ command: 'some.command' }])
+  const [r] = setupTest([{ id: 'some.command' }])
   expect(r.keys()).toEqual(['some.command'])
 })
 
 describe('add()', () => {
   it('adds a new command', () => {
     const [store] = setupTest()
-    const cmd = { command: 'a', description: 'a' }
+    const cmd = { id: 'a', description: 'a' }
     store.add(cmd)
     const a = store.get()['a']
 
@@ -29,8 +29,8 @@ describe('add()', () => {
   })
   it('logs an error and ignore if a command with the name ID already exist', () => {
     const [store, log] = setupTest()
-    const cmd1 = { command: 'a', description: 'a' }
-    const cmd2 = { command: 'a', description: 'a' }
+    const cmd1 = { id: 'a', description: 'a' }
+    const cmd2 = { id: 'a', description: 'a' }
     store.add(cmd1)
     store.add(cmd2)
 
@@ -42,8 +42,8 @@ describe('add()', () => {
 
   it('adds multiple commands', () => {
     const [store] = setupTest()
-    const cmd1 = { command: 'a', description: 'a' }
-    const cmd2 = { command: 'b', description: 'b' }
+    const cmd1 = { id: 'a', description: 'a' }
+    const cmd2 = { id: 'b', description: 'b' }
     store.add(cmd1, cmd2)
 
     expect(Object.keys(store.get()).length).toBe(2)
@@ -52,7 +52,7 @@ describe('add()', () => {
 
 describe('formatCommand()', () => {
   const allDefinedCommand = {
-    command: 'app.someCommand',
+    id: 'app.someCommand',
     name: 'Sing a song',
     description: 'Jingle Bell'
   }
@@ -60,17 +60,17 @@ describe('formatCommand()', () => {
     const a = formatCommand(allDefinedCommand)
 
     expect(a).toEqual({
-      command: 'app.someCommand',
+      id: 'app.someCommand',
       name: 'Sing a song',
       description: 'Jingle Bell'
     })
   })
 
   test('create name from command as sentence case, skipping first category', () => {
-    const a = formatCommand({ command: 'app.miku.singASong' })
+    const a = formatCommand({ id: 'app.miku.singASong' })
 
     expect(a).toEqual({
-      command: 'app.miku.singASong',
+      id: 'app.miku.singASong',
       name: 'Miku sing a song',
       description: undefined
     })

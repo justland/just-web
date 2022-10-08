@@ -10,7 +10,7 @@ const MainBackdrop = () => {
   log.trace('render')
   const s = getStoreValue()
   const keyBindings = s.app.keyboard.keyBindingContributions.list()
-  const kb = keyBindings.find(k => k.command === showCommandPalette.type)!
+  const kb = keyBindings.find(k => k.id === showCommandPalette.id)!
 
   return <div className="flex flex-col text-center items-center justify-center text-4xl">
     <img src={logo} className="App-logo" alt="logo" />

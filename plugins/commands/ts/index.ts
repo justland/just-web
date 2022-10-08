@@ -27,7 +27,7 @@ const plugin = definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
   init: (ctx: LogContext & KeyboardContext): [CommandsContext] => {
     ctx.keyboard.keyBindingContributions.add({
-      command: showCommandPalette.type,
+      id: showCommandPalette.id,
       key: 'ctrl+p',
       mac: 'cmd+p'
     })
@@ -36,7 +36,7 @@ const plugin = definePlugin((options?: CommandsOptions) => ({
     const contributions = contributionRegistry(ctx, options?.commands?.contributions)
 
     contributions.add({
-      command: showCommandPalette.type,
+      id: showCommandPalette.id,
       commandPalette: false,
     })
 
@@ -44,7 +44,7 @@ const plugin = definePlugin((options?: CommandsOptions) => ({
       commands: {
         contributions,
         handlers,
-        showCommandPalette() { return handlers.invoke(showCommandPalette.type) }
+        showCommandPalette() { return handlers.invoke(showCommandPalette.id) }
       }
     }]
   }

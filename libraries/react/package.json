@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "object-hash": "~3.0.0",
-    "type-plus": "^4.13.1"
+    "type-plus": "^4.13.2"
   },
   "devDependencies": {
     "@babel/plugin-syntax-flow": "^7.14.5",

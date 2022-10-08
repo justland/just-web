@@ -39,7 +39,7 @@ describe('plugin.init()', () => {
     const [{ keyboard }] = keyboardPlugin().init({ log })
     const [{ commands }] = commandsPlugin().init({ log, keyboard })
     const o = new AssertOrder(1)
-    commands.handlers.register(showCommandPalette.type, () => o.once(1))
+    commands.handlers.register(showCommandPalette.id, () => o.once(1))
 
     commands.showCommandPalette()
     o.end()

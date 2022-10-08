@@ -25,15 +25,15 @@ function bindKey({ log: logContext, commands, os }: LogContext & CommandsContext
   if (key) {
     const log = logContext.getLogger('@just-web/browser-keyboard')
     if (keys[key]) {
-      log.warn(`Registering a duplicate key binding, ignored: ${keyBinding.command} - ${key}`)
+      log.warn(`Registering a duplicate key binding, ignored: ${keyBinding.id} - ${key}`)
     }
     else {
       keys[key] = true
-      log.trace(`binding: ${key} -> ${keyBinding.command}`)
+      log.trace(`binding: ${key} -> ${keyBinding.id}`)
       Mousetrap.bind(toMousetrapKey(key), (e) => {
         log.trace(`trigger ${key}`)
         if (e.preventDefault) e.preventDefault()
-        commands.handlers.invoke(keyBinding.command)
+        commands.handlers.invoke(keyBinding.id)
         return false
       })
     }
