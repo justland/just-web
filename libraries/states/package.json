@@ -46,7 +46,7 @@
     "@just-web/log": "workspace:^*",
     "immer": "~9.0.14",
     "tersify": "^3.10.2",
-    "type-plus": "^4.13.1"
+    "type-plus": "^4.13.2"
   },
   "devDependencies": {
     "@babel/core": "~7.19.0",

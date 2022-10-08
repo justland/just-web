@@ -13,14 +13,14 @@ it('creates as empty registory', () => {
 })
 
 it('creates with prefilled command contributions', () => {
-  const [r] = setupTest([{ command: 'some.command', key: 'ctrl+s' }])
+  const [r] = setupTest([{ id: 'some.command', key: 'ctrl+s' }])
   expect(r.keys()).toEqual(['some.command'])
 })
 
 describe('add()', () => {
   it('adds a new command', () => {
     const [store] = setupTest()
-    const cmd = { command: 'a', key: 'ctrl+s' }
+    const cmd = { id: 'a', key: 'ctrl+s' }
     store.add(cmd)
     const a = store.get()['a']
 
@@ -28,8 +28,8 @@ describe('add()', () => {
   })
   it('logs an error and ignore if a command with the name ID already exist', () => {
     const [store, log] = setupTest()
-    const cmd1 = { command: 'a', key: 'ctrl+s' }
-    const cmd2 = { command: 'a', key: 'ctrl+s' }
+    const cmd1 = { id: 'a', key: 'ctrl+s' }
+    const cmd2 = { id: 'a', key: 'ctrl+s' }
     store.add(cmd1)
     store.add(cmd2)
 
@@ -41,8 +41,8 @@ describe('add()', () => {
 
   it('adds multiple commands', () => {
     const [store] = setupTest()
-    const cmd1 = { command: 'a', key: 'ctrl+s' }
-    const cmd2 = { command: 'b', key: 'ctrl+b' }
+    const cmd1 = { id: 'a', key: 'ctrl+s' }
+    const cmd2 = { id: 'b', key: 'ctrl+b' }
     store.add(cmd1, cmd2)
 
     expect(Object.keys(store.get()).length).toBe(2)
@@ -51,27 +51,27 @@ describe('add()', () => {
 
 describe('formatKeyBinding()', () => {
   test(`in mac returns 'mac' key if defined`, () => {
-    const a = formatKeyBinding({ os: { isMac: () => true } }, { command: 'someCommand', mac: 'cmd+p' })
+    const a = formatKeyBinding({ os: { isMac: () => true } }, { id: 'someCommand', mac: 'cmd+p' })
     expect(a).toEqual({
-      command: 'someCommand',
+      id: 'someCommand',
       key: 'cmd+p'
     })
   })
   test(`in mac returns 'key' if 'mac' not defined`, () => {
-    const a = formatKeyBinding({ os: { isMac: () => true } }, { command: 'someCommand', key: 'ctrl+p' })
+    const a = formatKeyBinding({ os: { isMac: () => true } }, { id: 'someCommand', key: 'ctrl+p' })
     expect(a).toEqual({
-      command: 'someCommand',
+      id: 'someCommand',
       key: 'ctrl+p'
     })
   })
   test(`not in mac returns 'key'`, () => {
     const a = formatKeyBinding({ os: { isMac: () => false } }, {
-      command: 'someCommand',
+      id: 'someCommand',
       mac: 'cmd+p',
       key: 'ctrl+p'
     })
     expect(a).toEqual({
-      command: 'someCommand',
+      id: 'someCommand',
       key: 'ctrl+p'
     })
   })

@@ -21,7 +21,7 @@ function setupTest(...stubCommands: StubCommand[]) {
   stubCommands.forEach(stubCommand => {
     commands.contributions.add(stubCommand)
     commands.handlers.register(
-      stubCommand.command,
+      stubCommand.id,
       () => stubCommand.handler(stubCommand))
     keyboard.keyBindingContributions.add(stubCommand)
   })
@@ -38,7 +38,7 @@ beforeEach(() => { mousetrap.reset() })
 test('trigger command', () => {
   const invoked: string[] = []
   const options = setupTest({
-    command: 'just-test.showJob',
+    id: 'just-test.showJob',
     description: 'show job',
     key: 'ctrl+j',
     handler(cmd) { invoked.push(cmd.description!) },
@@ -52,7 +52,7 @@ test('trigger command', () => {
 test('trigger cmd command', () => {
   const invoked: string[] = []
   const options = setupTest({
-    command: 'just-test.showJob',
+    id: 'just-test.showJob',
     description: 'show job',
     key: 'cmd+j',
     handler(cmd) { invoked.push(cmd.description!) }
@@ -66,12 +66,12 @@ test('trigger cmd command', () => {
 
 test('emit warning for duplicate key binding', async () => {
   const options = setupTest({
-    command: 'just-test.showJob',
+    id: 'just-test.showJob',
     description: 'show job',
     key: 'ctrl+j',
     handler() { }
   }, {
-    command: 'just-test.diffJob',
+    id: 'just-test.diffJob',
     description: 'another command',
     key: 'ctrl+j',
     handler() { }

@@ -45,10 +45,14 @@ Here are three:
 
 ```ts
 import { command, CommandsContext } from '@just-web/commands'
+import { command, KeyboardContext } from '@just-web/keyboard'
 
 export const singCommand = command<(songName: string) => void>('party.sing')
-export const danceCommand = command<(danceNumber: string) => void>(
-  'party.dance',
+export const danceCommand = command<(danceNumber: string) => void>({
+    id: 'party.dance',
+    desciption: 'World End Dancehall',
+    key: 'ctrl+d'
+  },
   (danceNumber) => dance(danceNumber)
 )
 // this will be implement in another plugin
@@ -56,13 +60,13 @@ export const drinkCommand = command<(drink: string) => void>('party.drink')
 
 const partyPlugin = definePlugin(() => ({
   name: 'party',
-  init({ commands }: CommandsContext) {
+  init({ commands, keyboard }: CommandsContext & KeyboardContext) {
     commands.handler.register(
       singCommand.type,
       singCommand.defineHandler((songName) => sing(songName))
     )
 
-    danceCommand.connect({ commands })
+    danceCommand.connect({ commands, keyboard })
 
     return [{
       party: {

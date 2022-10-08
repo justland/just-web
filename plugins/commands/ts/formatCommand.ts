@@ -3,8 +3,8 @@ import type { CommandContribution } from './types'
 
 export function formatCommand(cmd: CommandContribution) {
   return {
-    command: cmd.command,
-    name: cmd.name ?? generateName(cmd.command),
+    id: cmd.id,
+    name: cmd.name ?? generateName(cmd.id),
     description: cmd.description
   }
 }

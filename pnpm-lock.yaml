@@ -422,14 +422,14 @@ importers:
       storybook-dark-mode: ~1.0.9
       style-loader: ~3.3.1
       ts-jest: ^27.1.3
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
       webpack: ^5.70.0
     dependencies:
       react: 17.0.2
       react-command-palette: 0.21.1_sfoxds7t5ydpegc3knd667wn6m
       react-dom: 17.0.2_react@17.0.2
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-syntax-flow': 7.18.6_@babel+core@7.19.3
@@ -551,11 +551,11 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.0
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       iso-error: 4.4.0
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -613,12 +613,12 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~7.0.8
       standard-log: ^11.1.0
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       '@just-func/types': 0.2.1
       standard-log: 11.1.0
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -668,7 +668,7 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~7.0.8
       standard-log: ^11.1.0
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     devDependencies:
       '@babel/core': 7.19.3
@@ -693,7 +693,7 @@ importers:
       rimraf: 3.0.2
       size-limit: 7.0.8
       standard-log: 11.1.0
-      type-plus: 4.13.1
+      type-plus: 4.13.2
       typescript: 4.8.4
 
   libraries/react:
@@ -786,12 +786,12 @@ importers:
       storybook-dark-mode: ~1.0.9
       style-loader: ~3.3.1
       ts-jest: ^27.1.3
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
       webpack: ^5.70.0
     dependencies:
       object-hash: 3.0.0
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.19.3
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.19.3
@@ -909,13 +909,13 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~7.0.8
       tersify: ^3.10.2
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       '@just-web/log': link:../../frameworks/log
       immer: 9.0.14
       tersify: 3.10.2
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -969,11 +969,11 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.0
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       iso-error: 4.4.0
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1034,11 +1034,11 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       mousetrap: 1.6.5
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1103,7 +1103,7 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.3.0
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       '@types/base-64': 1.0.0
@@ -1138,7 +1138,7 @@ importers:
       rimraf: 3.0.2
       satisfier: 5.3.0
       size-limit: 7.0.8
-      type-plus: 4.13.1
+      type-plus: 4.13.2
       typescript: 4.8.4
 
   plugins/commands:
@@ -1169,13 +1169,14 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
+      satisfier: ^5.4.0
       sentence-case: ~3.0.4
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       sentence-case: 3.0.4
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1203,6 +1204,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       rimraf: 3.0.2
+      satisfier: 5.4.0
       size-limit: 7.0.8
       typescript: 4.8.4
 
@@ -1293,10 +1295,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1353,7 +1355,7 @@ importers:
       platform: ~1.3.6
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       platform: 1.3.6
@@ -1382,7 +1384,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      type-plus: 4.13.1
+      type-plus: 4.13.2
       typescript: 4.8.4
 
   plugins/preferences:
@@ -1415,7 +1417,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       '@unional/events-plus': 2.2.2
@@ -1447,7 +1449,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      type-plus: 4.13.1
+      type-plus: 4.13.2
       typescript: 4.8.4
 
   plugins/routes:
@@ -1478,10 +1480,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
-      type-plus: 4.13.1
+      type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1584,7 +1586,7 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.2.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.1
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       '@just-web/log': link:../../frameworks/log
@@ -1612,7 +1614,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      type-plus: 4.13.1
+      type-plus: 4.13.2
       typescript: 4.8.4
 
 packages:
@@ -4112,7 +4114,7 @@ packages:
       '@jest/schemas': 29.0.0
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 18.8.0
+      '@types/node': 18.8.3
       '@types/yargs': 17.0.13
       chalk: 4.1.2
     dev: true
@@ -4166,7 +4168,7 @@ packages:
   /@just-func/types/0.2.1:
     resolution: {integrity: sha512-NHhnteq2kwQkgJcBOp3jLdIvV3zZvjVuXEBqkqkefmyS2I0XEKWGXlBQz/37N7IGZrnnG9fvd4PAAYoQ7AjkyA==}
     dependencies:
-      type-plus: 4.13.1
+      type-plus: 4.13.2
 
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
@@ -6342,7 +6344,7 @@ packages:
   /@storybook/expect/27.5.2-0:
     resolution: {integrity: sha512-cP99mhWN/JeCp7VSIiymvj5tmuMY050iFohvp8Zq+kewKsBSZ6/qpTJAGCCZk6pneTcp4S0Fm5BSqyxzbyJ3gw==}
     dependencies:
-      '@types/jest': 28.1.1
+      '@types/jest': 27.5.2
     dev: true
 
   /@storybook/html/6.5.12_fu6r72642buyvqfmkk52dkgcza:
@@ -7632,6 +7634,10 @@ packages:
 
   /@types/node/18.8.0:
     resolution: {integrity: sha512-u+h43R6U8xXDt2vzUaVP3VwjjLyOJk6uEciZS8OSyziUQGOwmk+l+4drxcsDboHXwyTaqS1INebghmWMRxq3LA==}
+
+  /@types/node/18.8.3:
+    resolution: {integrity: sha512-0os9vz6BpGwxGe9LOhgP/ncvYN5Tx1fNcd2TM3rD/aCGBkysb+ZWpXEocG24h6ZzOi13+VB8HndAQFezsSOw1w==}
+    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -9015,7 +9021,7 @@ packages:
       path-equal: 1.2.2
       satisfier: 5.4.0
       tersify: 3.10.2
-      type-plus: 4.13.1
+      type-plus: 4.13.2
 
   /assign-symbols/1.0.0:
     resolution: {integrity: sha512-Q+JC7Whu8HhmTdBph/Tq59IoRtoy6KAm5zzPv00WdujX82lbAL8K7WVjne7vdCsAmbF4AYaDOPyO3k0kl8qIrw==}
@@ -13591,7 +13597,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.17.2
+      uglify-js: 3.17.3
     dev: true
 
   /hard-rejection/2.1.0:
@@ -21073,7 +21079,7 @@ packages:
       '@just-func/types': 0.2.1
       iso-error: 4.4.0
       ms: 2.1.3
-      type-plus: 4.13.1
+      type-plus: 4.13.2
       upper-case: 2.0.2
 
   /state-toggle/1.0.3:
@@ -22112,8 +22118,8 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /type-plus/4.13.1:
-    resolution: {integrity: sha512-Kz7dyl3b6J6AM6WUoyEA5z45OzW310ituEaCwFEmLThTIzg0sAJieUzbLwiWE0kjaLAQpOYRY23/YQhOz3g6vQ==}
+  /type-plus/4.13.2:
+    resolution: {integrity: sha512-VMmH+coX8a7cn+DHM9LDP1X7suklW38iuPy9UOJsOc2EieP+82igmaxZM+bvnWvTtvMMLRkWE3/3jIBlfEsFoA==}
     dependencies:
       tersify: 3.10.2
       unpartial: 1.0.4
@@ -22163,8 +22169,8 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  /uglify-js/3.17.2:
-    resolution: {integrity: sha512-bbxglRjsGQMchfvXZNusUcYgiB9Hx2K4AHYXQy2DITZ9Rd+JzhX7+hoocE5Winr7z2oHvPsekkBwXtigvxevXg==}
+  /uglify-js/3.17.3:
+    resolution: {integrity: sha512-JmMFDME3iufZnBpyKL+uS78LRiC+mK55zWfM5f/pWBJfpOttXAqYfdDGRukYhJuyRinvPVAtUhvy7rlDybNtFg==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true

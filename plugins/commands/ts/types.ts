@@ -1,3 +1,4 @@
+import { KeyboardContext } from '@just-web/keyboard'
 import type { Registry, WithAdder } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
 
@@ -5,7 +6,7 @@ export type CommandHandler = {
   /**
    * The command id. e.g. `just-web.showCommandPalette`
    */
-  command: string,
+  id: string,
   handler: AnyFunction
 }
 
@@ -29,7 +30,7 @@ export type CommandContribution = {
   /**
    * The command id. e.g. `just-web.showCommandPalette`
    */
-  command: string,
+  id: string,
   /**
    * Name of the command such as `Show command palette`.
    * If not specified,
@@ -77,17 +78,34 @@ export type CommandsContext = {
 
 export type Command<F extends AnyFunction> = {
   (...args: Parameters<F>): ReturnType<F>,
-  type: string,
+  id: string,
   connect(context: CommandsContext, handler: F): void,
+  defineHandler(handler: F): F,
+  defineArgs<A extends Parameters<F>>(...args: A): A
+}
+
+export type Command_K<F extends AnyFunction> = {
+  (...args: Parameters<F>): ReturnType<F>,
+  id: string,
+  connect(context: CommandsContext & KeyboardContext, handler: F): void,
   defineHandler(handler: F): F,
   defineArgs<A extends Parameters<F>>(...args: A): A
 }
 
 export type Command_WithDefault<F extends AnyFunction> = {
   (...args: Parameters<F>): ReturnType<F>,
-  type: string,
+  id: string,
   defaultHandler: F,
-  connect(context: CommandsContext): void,
+  connect(context: CommandsContext, handler?: F): void,
+  defineHandler(handler: F): F,
+  defineArgs<A extends Parameters<F>>(...args: A): A
+}
+
+export type Command_KWithDefault<F extends AnyFunction> = {
+  (...args: Parameters<F>): ReturnType<F>,
+  id: string,
+  defaultHandler: F,
+  connect(context: CommandsContext & KeyboardContext, handler?: F): void,
   defineHandler(handler: F): F,
   defineArgs<A extends Parameters<F>>(...args: A): A
 }
