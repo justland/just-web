@@ -1,22 +1,5 @@
-import { AnyFunction } from 'type-plus'
-import { CommandsContext } from '.'
-
-export type Command<F extends AnyFunction> = {
-  (...args: Parameters<F>): ReturnType<F>,
-  type: string,
-  connect(context: CommandsContext, handler: F): void,
-  defineHandler(handler: F): F,
-  defineArgs<A extends Parameters<F>>(...args: A): A
-}
-
-export type Command_WithDefault<F extends AnyFunction> = {
-  (...args: Parameters<F>): ReturnType<F>,
-  type: string,
-  defaultHandler: F,
-  connect(context: CommandsContext): void,
-  defineHandler(handler: F): F,
-  defineArgs<A extends Parameters<F>>(...args: A): A
-}
+import type { AnyFunction } from 'type-plus'
+import type { Command, CommandsContext, Command_WithDefault } from './types'
 
 /**
  * Creates a command with a default handler

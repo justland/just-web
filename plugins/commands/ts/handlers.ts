@@ -1,22 +1,7 @@
 import type { LogContext } from '@just-web/log'
 import { createRegistry } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
-
-export type HandlerRegistry = {
-  /**
-   * register handler for the specified command.
-   */
-  register(command: string, handler: AnyFunction): void,
-  /**
-   * invoke a registered command.
-   * @param args arguments for the command
-   */
-  invoke(command: string, ...args: any[]): any,
-  /**
-   * Gets all registered command names.
-   */
-  keys(): string[]
-}
+import type { HandlerRegistry } from './types'
 
 export namespace handlerRegistry {
   export type Options = Record<string, AnyFunction>

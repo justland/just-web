@@ -1,12 +1,8 @@
 
 import type { LogContext } from '@just-web/log'
-import type { Registry, WithAdder } from '@just-web/states'
 import { createRegistry, withAdder } from '@just-web/states'
 import { record } from 'type-plus'
-import { CommandContribution } from './types'
-
-export interface ContributionRegistry
-  extends Registry<string, CommandContribution>, WithAdder<CommandContribution> { }
+import type { CommandContribution, ContributionRegistry } from './types'
 
 export namespace contributionRegistry {
   export type Options = CommandContribution[]

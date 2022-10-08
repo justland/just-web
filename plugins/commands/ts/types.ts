@@ -1,11 +1,28 @@
+import type { Registry, WithAdder } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
 
-export interface Command {
+export type CommandHandler = {
   /**
    * The command id. e.g. `just-web.showCommandPalette`
    */
   command: string,
   handler: AnyFunction
+}
+
+export type HandlerRegistry = {
+  /**
+   * register handler for the specified command.
+   */
+  register(command: string, handler: AnyFunction): void,
+  /**
+   * invoke a registered command.
+   * @param args arguments for the command
+   */
+  invoke(command: string, ...args: any[]): any,
+  /**
+   * Gets all registered command names.
+   */
+  keys(): string[]
 }
 
 export type CommandContribution = {
@@ -45,4 +62,32 @@ export type CommandContribution = {
   // ? no use case yet
   // enabled?: boolean,
   // when?: string,
+}
+
+export interface ContributionRegistry
+  extends Registry<string, CommandContribution>, WithAdder<CommandContribution> { }
+
+export type CommandsContext = {
+  commands: {
+    contributions: ContributionRegistry,
+    handlers: HandlerRegistry,
+    showCommandPalette(): any
+  }
+}
+
+export type Command<F extends AnyFunction> = {
+  (...args: Parameters<F>): ReturnType<F>,
+  type: string,
+  connect(context: CommandsContext, handler: F): void,
+  defineHandler(handler: F): F,
+  defineArgs<A extends Parameters<F>>(...args: A): A
+}
+
+export type Command_WithDefault<F extends AnyFunction> = {
+  (...args: Parameters<F>): ReturnType<F>,
+  type: string,
+  defaultHandler: F,
+  connect(context: CommandsContext): void,
+  defineHandler(handler: F): F,
+  defineArgs<A extends Parameters<F>>(...args: A): A
 }

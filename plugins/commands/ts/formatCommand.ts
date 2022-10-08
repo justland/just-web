@@ -1,5 +1,5 @@
 import { sentenceCase } from 'sentence-case'
-import { CommandContribution } from './types'
+import type { CommandContribution } from './types'
 
 export function formatCommand(cmd: CommandContribution) {
   return {
