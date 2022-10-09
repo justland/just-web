@@ -44,7 +44,7 @@
   "dependencies": {
     "@just-web/log": "workspace:^*",
     "assertron": "^10.0.0",
-    "satisfier": "^5.2.2"
+    "satisfier": "^5.4.2"
   },
   "devDependencies": {
     "@babel/core": "~7.19.0",
