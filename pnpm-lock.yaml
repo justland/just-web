@@ -549,7 +549,7 @@ importers:
       npm-run-all: ^4.1.5
       ramda: ^0.28.0
       rimraf: ~3.0.2
-      satisfier: ^5.4.0
+      satisfier: ^5.4.2
       size-limit: ~7.0.8
       type-plus: ^4.13.2
       typescript: ^4.8.4
@@ -583,7 +583,7 @@ importers:
       npm-run-all: 4.1.5
       ramda: 0.28.0
       rimraf: 3.0.2
-      satisfier: 5.4.0
+      satisfier: 5.4.2
       size-limit: 7.0.8
       typescript: 4.8.4
 
@@ -967,7 +967,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      satisfier: ^5.4.0
+      satisfier: ^5.4.2
       size-limit: ~7.0.8
       type-plus: ^4.13.2
       typescript: ^4.8.4
@@ -999,7 +999,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      satisfier: 5.4.0
+      satisfier: 5.4.2
       size-limit: 7.0.8
       typescript: 4.8.4
 
@@ -1101,7 +1101,7 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      satisfier: ^5.3.0
+      satisfier: ^5.4.2
       size-limit: ~7.0.8
       type-plus: ^4.13.2
       typescript: ^4.8.4
@@ -1136,7 +1136,7 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      satisfier: 5.3.0
+      satisfier: 5.4.2
       size-limit: 7.0.8
       type-plus: 4.13.2
       typescript: 4.8.4
@@ -1584,14 +1584,14 @@ importers:
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      satisfier: ^5.2.2
+      satisfier: ^5.4.2
       size-limit: ~7.0.8
       type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       '@just-web/log': link:../../frameworks/log
       assertron: 10.0.0
-      satisfier: 5.2.2
+      satisfier: 5.4.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -6344,7 +6344,7 @@ packages:
   /@storybook/expect/27.5.2-0:
     resolution: {integrity: sha512-cP99mhWN/JeCp7VSIiymvj5tmuMY050iFohvp8Zq+kewKsBSZ6/qpTJAGCCZk6pneTcp4S0Fm5BSqyxzbyJ3gw==}
     dependencies:
-      '@types/jest': 27.5.2
+      '@types/jest': 28.1.1
     dev: true
 
   /@storybook/html/6.5.12_fu6r72642buyvqfmkk52dkgcza:
@@ -9019,7 +9019,7 @@ packages:
       is-promise: 4.0.0
       iso-error: 4.4.0
       path-equal: 1.2.2
-      satisfier: 5.4.0
+      satisfier: 5.4.2
       tersify: 3.10.2
       type-plus: 4.13.2
 
@@ -20385,20 +20385,14 @@ packages:
       immutable: 4.1.0
       source-map-js: 1.0.2
 
-  /satisfier/5.2.2:
-    resolution: {integrity: sha512-VEMcWR7F9xCqWtmjt8HetuycNAPqP5MPcZrYTs+DshHNiE39jWLPjdZeTt/+bhh4ogge2OuktNOWTMcQHAOHcA==}
-    dependencies:
-      tersify: 3.10.2
-    dev: false
-
-  /satisfier/5.3.0:
-    resolution: {integrity: sha512-DWwRYvE+NNZnGIxIoaILfdYTHq0cMQWxSFAbDjUDITUQrnU9CT4KAIUDBJwnPnlAurpMLBzvoWExs29XRSgmtg==}
+  /satisfier/5.4.0:
+    resolution: {integrity: sha512-KGPnd+YT0XIstiCDuIpEvUI0TpjTk6uIK4vTtx69Sdwl+Ap2e/Jb4jeHkTz5qU3cAUJ5KXm2rUCKK+BVYtOU+w==}
     dependencies:
       tersify: 3.10.2
     dev: true
 
-  /satisfier/5.4.0:
-    resolution: {integrity: sha512-KGPnd+YT0XIstiCDuIpEvUI0TpjTk6uIK4vTtx69Sdwl+Ap2e/Jb4jeHkTz5qU3cAUJ5KXm2rUCKK+BVYtOU+w==}
+  /satisfier/5.4.2:
+    resolution: {integrity: sha512-K1QPzEPjiC/7FcwiCwRH218SS3OVEWlx56EcHI+tZIf+TaAs+OHwwruAD4ke6xvRk/QniwSPkP98o9Oo84RxGQ==}
     dependencies:
       tersify: 3.10.2
 
