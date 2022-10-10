@@ -10,7 +10,7 @@ importers:
       '@changesets/cli': ^2.25.0
       '@commitlint/cli': ^17.0.2
       '@commitlint/config-conventional': ^17.0.2
-      '@just-web/repo-scripts': workspace:^*
+      '@just-web/repo-scripts': workspace:^
       '@types/eslint': ^8.4.3
       '@types/jest': ^27.5.2
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -61,18 +61,18 @@ importers:
       '@babel/plugin-syntax-flow': ~7.18.0
       '@babel/plugin-transform-react-jsx': ~7.19.0
       '@headlessui/react': ~1.7.0
-      '@just-web/app': workspace:^*
-      '@just-web/browser': workspace:^*
-      '@just-web/browser-keyboard': workspace:^*
-      '@just-web/commands': workspace:^*
-      '@just-web/keyboard': workspace:^*
-      '@just-web/log': workspace:^*
-      '@just-web/os': workspace:^*
-      '@just-web/react': workspace:^*
-      '@just-web/react-commands': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/routes': workspace:^*
-      '@just-web/states': workspace:^*
+      '@just-web/app': workspace:^
+      '@just-web/browser': workspace:^
+      '@just-web/browser-keyboard': workspace:^
+      '@just-web/commands': workspace:^
+      '@just-web/keyboard': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/os': workspace:^
+      '@just-web/react': workspace:^
+      '@just-web/react-commands': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/routes': workspace:^
+      '@just-web/states': workspace:^
       '@storybook/addon-actions': ~6.5.0
       '@storybook/addon-essentials': ~6.5.0
       '@storybook/addon-interactions': ~6.5.0
@@ -238,7 +238,7 @@ importers:
       '@babel/plugin-transform-runtime': ~7.19.0
       '@babel/preset-env': ~7.19.0
       '@babel/preset-typescript': ~7.18.0
-      '@just-web/repo-scripts': workspace:^*
+      '@just-web/repo-scripts': workspace:^
       '@storybook/addon-essentials': ~6.5.0
       '@storybook/addon-links': ~6.5.0
       '@storybook/addon-postcss': ~2.0.0
@@ -336,16 +336,16 @@ importers:
       '@babel/core': ~7.19.0
       '@babel/plugin-syntax-flow': ~7.18.0
       '@babel/plugin-transform-react-jsx': ~7.19.0
-      '@just-web/app': workspace:^*
-      '@just-web/browser-keyboard': workspace:^*
-      '@just-web/commands': workspace:^*
-      '@just-web/keyboard': workspace:^*
-      '@just-web/log': workspace:^*
-      '@just-web/os': workspace:^*
-      '@just-web/react': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/states': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/app': workspace:^
+      '@just-web/browser-keyboard': workspace:^
+      '@just-web/commands': workspace:^
+      '@just-web/keyboard': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/os': workspace:^
+      '@just-web/react': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/states': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@storybook/addon-actions': ~6.5.0
       '@storybook/addon-console': ~1.2.3
@@ -524,10 +524,10 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/log': workspace:^*
-      '@just-web/os': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/log': workspace:^
+      '@just-web/os': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@types/ramda': ^0.28.14
@@ -592,8 +592,8 @@ importers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
       '@just-func/types': ^0.2.1
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.5.2
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -648,7 +648,7 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/repo-scripts': workspace:^*
+      '@just-web/repo-scripts': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.5.2
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -700,11 +700,11 @@ importers:
     specifiers:
       '@babel/plugin-syntax-flow': ^7.14.5
       '@babel/plugin-transform-react-jsx': ^7.14.9
-      '@just-web/app': workspace:^*
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/states': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/app': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/states': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@storybook/addon-actions': ~6.5.0
       '@storybook/addon-console': ~1.2.3
@@ -887,8 +887,8 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -944,10 +944,10 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/states': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/states': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -1007,13 +1007,13 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/commands': workspace:^*
-      '@just-web/keyboard': workspace:^*
-      '@just-web/log': workspace:^*
-      '@just-web/os': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/testing': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/commands': workspace:^
+      '@just-web/keyboard': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/os': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/testing': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@types/mousetrap': ~1.6.9
@@ -1074,13 +1074,13 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/app': workspace:^*
-      '@just-web/commands': workspace:^*
-      '@just-web/keyboard': workspace:^*
-      '@just-web/log': workspace:^*
-      '@just-web/preferences': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/app': workspace:^
+      '@just-web/commands': workspace:^
+      '@just-web/keyboard': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/preferences': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/base-64': ^1.0.0
       '@types/jest': ^27.4.1
@@ -1145,12 +1145,12 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/keyboard': workspace:^*
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/states': workspace:^*
-      '@just-web/testing': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/keyboard': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/states': workspace:^
+      '@just-web/testing': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -1166,16 +1166,21 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^1.0.0
+      just-func: ^0.2.3
       npm-check-updates: ~12.5.4
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      satisfier: ^5.4.0
+      satisfier: ^5.4.2
       sentence-case: ~3.0.4
       size-limit: ~7.0.8
+      standard-log: ^11.1.0
+      tersify: ^3.10.2
       type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
+      just-func: 0.2.3
       sentence-case: 3.0.4
+      tersify: 3.10.2
       type-plus: 4.13.2
     devDependencies:
       '@babel/core': 7.19.3
@@ -1204,17 +1209,18 @@ importers:
       npm-check-updates: 12.5.12
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      satisfier: 5.4.0
+      satisfier: 5.4.2
       size-limit: 7.0.8
+      standard-log: 11.1.0
       typescript: 4.8.4
 
   plugins/events:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/testing': workspace:^*
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/testing': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@types/node': ^16.11.26
@@ -1271,12 +1277,12 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/log': workspace:^*
-      '@just-web/os': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/states': workspace:^*
-      '@just-web/testing': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/log': workspace:^
+      '@just-web/os': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/states': workspace:^
+      '@just-web/testing': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -1332,9 +1338,9 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@types/platform': ~1.3.4
@@ -1391,12 +1397,12 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/app': workspace:^*
-      '@just-web/commands': workspace:^*
-      '@just-web/keyboard': workspace:^*
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/app': workspace:^
+      '@just-web/commands': workspace:^
+      '@just-web/keyboard': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -1456,12 +1462,12 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/app': workspace:^*
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
-      '@just-web/states': workspace:^*
-      '@just-web/testing': workspace:^*
-      '@just-web/types': workspace:^*
+      '@just-web/app': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/states': workspace:^
+      '@just-web/testing': workspace:^
+      '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -1564,8 +1570,8 @@ importers:
     specifiers:
       '@babel/core': ~7.19.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-web/log': workspace:^*
-      '@just-web/repo-scripts': workspace:^*
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
       '@size-limit/preset-small-lib': ~7.0.8
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
@@ -4169,6 +4175,12 @@ packages:
     resolution: {integrity: sha512-NHhnteq2kwQkgJcBOp3jLdIvV3zZvjVuXEBqkqkefmyS2I0XEKWGXlBQz/37N7IGZrnnG9fvd4PAAYoQ7AjkyA==}
     dependencies:
       type-plus: 4.13.2
+
+  /@just-func/types/0.4.0:
+    resolution: {integrity: sha512-JsBoSndz/rN/cmBgUC9DOFyWdMMJzBwEcaNnayZgzZ30mRnQVKEot5Xqy6X3Cc3+RwAmrowQFudLGTH3kfzXxA==}
+    dependencies:
+      type-plus: 4.13.2
+    dev: false
 
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
@@ -7883,7 +7895,6 @@ packages:
       typescript: 4.8.4
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@typescript-eslint/eslint-plugin/5.28.0_qixdqiiw7czhm6fbxnydepwjka:
     resolution: {integrity: sha512-DXVU6Cg29H2M6EybqSg2A+x8DgO9TCUBRp4QEXQHJceLS7ogVDP0g3Lkg/SZCqcvkAP/RruuQqK0gdlkgmhSUA==}
@@ -8553,12 +8564,12 @@ packages:
       acorn: 7.4.1
     dev: true
 
-  /acorn-jsx/5.3.2_acorn@8.7.1:
+  /acorn-jsx/5.3.2_acorn@8.8.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      acorn: 8.7.1
+      acorn: 8.8.0
 
   /acorn-node/1.8.2:
     resolution: {integrity: sha512-8mt+fslDufLYntIoPAaIMUe/lrbrehIiwmR3t2k9LljIzoigEPF27eLk2hy8zSGzmR/ogr7zbRKINMo1u0yh5A==}
@@ -8590,6 +8601,12 @@ packages:
 
   /acorn/8.7.1:
     resolution: {integrity: sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+    dev: true
+
+  /acorn/8.8.0:
+    resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -12139,7 +12156,7 @@ packages:
       eslint: '>=8.4.0'
       eslint-config-prettier: ^8.0.0
     dependencies:
-      '@typescript-eslint/eslint-plugin': 5.28.0_zzm6nnd5isebrlmd43qblrzcpe
+      '@typescript-eslint/eslint-plugin': 5.28.0_hiamgr4ek23hhgsokjypxbuwwy
       '@typescript-eslint/experimental-utils': 5.27.1_vhsckgnokn2tf7m5xkrurmvfv4
       '@typescript-eslint/parser': 5.38.1_vhsckgnokn2tf7m5xkrurmvfv4
       eslint: 8.17.0
@@ -12399,8 +12416,8 @@ packages:
     resolution: {integrity: sha512-D211tC7ZwouTIuY5x9XnS0E9sWNChB7IYKX/Xp5eQj3nFXhqmiUDB9q27y76oFl8jTg3pXcQx/bpxMfs3CIZbA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.7.1
-      acorn-jsx: 5.3.2_acorn@8.7.1
+      acorn: 8.8.0
+      acorn-jsx: 5.3.2_acorn@8.8.0
       eslint-visitor-keys: 3.3.0
 
   /esprima/4.0.1:
@@ -15689,7 +15706,7 @@ packages:
         optional: true
     dependencies:
       abab: 2.0.6
-      acorn: 8.7.1
+      acorn: 8.8.0
       acorn-globals: 6.0.0
       cssom: 0.4.4
       cssstyle: 2.3.0
@@ -15812,6 +15829,13 @@ packages:
     resolution: {integrity: sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /just-func/0.2.3:
+    resolution: {integrity: sha512-Rb/dLVchcrT2Fzbn6Ibshn4E3tGRTHomSqStpvpcYJZcnrk8mfe404MkrSMas/lkD6ntqv4yPV1lQFMtwNmguA==}
+    dependencies:
+      '@just-func/types': 0.4.0
+      type-plus: 4.13.2
+    dev: false
 
   /keyv/3.1.0:
     resolution: {integrity: sha512-9ykJ/46SN/9KPM/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYnThq8X2RZgCg74RPxgcVA==}
@@ -20385,12 +20409,6 @@ packages:
       immutable: 4.1.0
       source-map-js: 1.0.2
 
-  /satisfier/5.4.0:
-    resolution: {integrity: sha512-KGPnd+YT0XIstiCDuIpEvUI0TpjTk6uIK4vTtx69Sdwl+Ap2e/Jb4jeHkTz5qU3cAUJ5KXm2rUCKK+BVYtOU+w==}
-    dependencies:
-      tersify: 3.10.2
-    dev: true
-
   /satisfier/5.4.2:
     resolution: {integrity: sha512-K1QPzEPjiC/7FcwiCwRH218SS3OVEWlx56EcHI+tZIf+TaAs+OHwwruAD4ke6xvRk/QniwSPkP98o9Oo84RxGQ==}
     dependencies:
@@ -21666,7 +21684,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      acorn: 8.7.1
+      acorn: 8.8.0
       commander: 2.20.3
       source-map: 0.6.1
       source-map-support: 0.5.21
@@ -21678,7 +21696,7 @@ packages:
     hasBin: true
     dependencies:
       '@jridgewell/source-map': 0.3.2
-      acorn: 8.7.1
+      acorn: 8.8.0
       commander: 2.20.3
       source-map-support: 0.5.21
     dev: true
@@ -21686,7 +21704,7 @@ packages:
   /tersify/3.10.2:
     resolution: {integrity: sha512-7R7EAX2CYn14J4M9wp4phx0Wtd10KVl98f+iMIp17Ua9YBqMTkrZYK5LvtJpxrh+fO1uGTyKoeqL1BXpHiayMw==}
     dependencies:
-      acorn: 8.7.1
+      acorn: 8.8.0
       is-buffer: 2.0.5
       unpartial: 0.7.5
 
@@ -21921,7 +21939,7 @@ packages:
       '@tsconfig/node14': 1.0.2
       '@tsconfig/node16': 1.0.3
       '@types/node': 18.8.0
-      acorn: 8.7.1
+      acorn: 8.8.0
       acorn-walk: 8.2.0
       arg: 4.1.3
       create-require: 1.1.1

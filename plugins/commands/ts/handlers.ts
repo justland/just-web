@@ -1,7 +1,8 @@
-import type { LogContext } from '@just-web/log'
+import { LogContext, logLevels } from '@just-web/log'
 import { createRegistry } from '@just-web/states'
+import { tersify } from 'tersify'
 import type { AnyFunction } from 'type-plus'
-import type { HandlerRegistry } from './types'
+import type { CommandHandler, HandlerRegistry } from './types'
 
 export namespace handlerRegistry {
   export type Options = Record<string, AnyFunction>
@@ -18,21 +19,24 @@ export function handlerRegistry(
     /**
      * register handler for specified command.
      */
-    register(command: string, handler: AnyFunction) {
-      logger.trace('register', command)
-
+    register(command: string | CommandHandler, handler?: AnyFunction) {
+      const [id, hdr] = typeof command === 'string'
+        ? [command, handler!]
+        : [command.id, command.handler]
+      logger.trace('register', id)
       const commands = registry.get()
-      if (commands[command]) {
-        logger.warn(`Registering a duplicate command, ignored: ${command}`)
-        return
+      if (commands[id]) {
+        logger.notice(`Registring a new handler for '${id}'. Please make sure this is expected.`)
+        logger.on(logLevels.debug, log => log(`overrideing handler: ${tersify(hdr)}`))
       }
-      registry.update(m => { m[command] = handler })
+      registry.update(m => { m[id] = hdr })
     },
-    invoke(command: string, ...args: any[]) {
-      logger.trace('invoke', command)
-      const handler = registry.get()[command]
-      return handler ? handler(...args) : logger.error(`Invoking not registered command: '${command}'`)
+    invoke(id: string, ...args: any[]) {
+      logger.trace('invoke', id)
+      const handler = registry.get()[id]
+      return handler ? handler(...args) : logger.error(`Invoking not registered command: '${id}'`)
     },
-    keys: registry.keys.bind(registry)
+    keys: registry.keys.bind(registry),
+    has: registry.has.bind(registry)
   }
 }

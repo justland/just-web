@@ -37,7 +37,10 @@ describe('register()', () => {
     const [r, log] = setupTest()
     r.register('just-web.showCommandPalette', () => { })
     r.register('just-web.showCommandPalette', () => { })
-    logEqual(log.reporter, `(WARN) Registering a duplicate command, ignored: just-web.showCommandPalette`)
+    logEqual(
+      log.reporter,
+      `(NOTICE) Registring a new handler for 'just-web.showCommandPalette'. Please make sure this is expected.`,
+      `(DEBUG) overrideing handler: () => {}`)
   })
 
   it('can register a command taking params', () => {

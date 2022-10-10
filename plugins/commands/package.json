@@ -41,7 +41,9 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
+    "just-func": "^0.2.3",
     "sentence-case": "~3.0.4",
+    "tersify": "^3.10.2",
     "type-plus": "^4.13.2"
   },
   "devDependencies": {
@@ -71,8 +73,9 @@
     "npm-check-updates": "~12.5.4",
     "npm-run-all": "^4.1.5",
     "rimraf": "~3.0.2",
-    "satisfier": "^5.4.0",
+    "satisfier": "^5.4.2",
     "size-limit": "~7.0.8",
+    "standard-log": "^11.1.0",
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
