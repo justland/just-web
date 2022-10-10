@@ -78,7 +78,7 @@ export type CommandsContext = {
   }
 }
 
-export namespace Command {
+export namespace JustCommand {
   export type Base<
     Param extends JustValues = JustEmpty,
     R extends JustValues = JustEmpty
@@ -95,14 +95,41 @@ export namespace Command {
 export type JustCommand<
   Param extends JustValues = JustEmpty,
   R extends JustValues = JustEmpty
-> = Command.Base<Param, R> & {
+> = JustCommand.Base<Param, R> & {
   register(param: [registry: HandlerRegistry, handler: JustFunction<Param, R>]): void,
 }
 
 export type JustCommand_WithDefault<
   Param extends JustValues = JustEmpty,
   R extends JustValues = JustEmpty
-> = Command.Base<Param, R> & {
+> = JustCommand.Base<Param, R> & {
   handler: JustFunction<Param, R>,
   register(param: [registry: HandlerRegistry, handler?: JustFunction<Param, R>]): void,
+}
+
+export namespace Command {
+  export type Base<
+    Params extends any[] = [],
+    R = void
+  > = {
+    (...args: Params): R,
+    id: string,
+    defineHandler(handler: (...args: Params) => R): (...args: Params) => R,
+    defineArgs<A extends Params>(...args: A): A
+  }
+}
+
+export type Command<
+  Params extends any[] = [],
+  R = void
+> = Command.Base<Params, R> & {
+  register(handlers: HandlerRegistry, handler: (...args: Params) => R): void,
+}
+
+export type Command_WithDefault<
+  Params extends any[] = [],
+  R = void
+> = Command.Base<Params, R> & {
+  handler: (...args: Params) => R,
+  register(handlers: HandlerRegistry, handler?: (...args: Params) => R): void,
 }
