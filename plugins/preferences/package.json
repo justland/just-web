@@ -40,9 +40,6 @@
     "verify": "run-p build lint coverage depcheck",
     "verify:build": "run-s clean build depcheck"
   },
-  "dependencies": {
-    "@unional/events-plus": "~2.2.2"
-  },
   "devDependencies": {
     "@babel/core": "~7.19.0",
     "@babel/plugin-transform-runtime": "~7.19.0",
