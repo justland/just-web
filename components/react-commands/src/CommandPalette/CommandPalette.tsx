@@ -133,7 +133,7 @@ function getCommands(ctx: KeyboardContext & CommandsContext & OSContext) {
     .map(c => {
       const r = {
         ...c,
-        name: formatCommand(c).name,
+        name: formatCommand(c).id,
         command: () => {
           ctx.commands.handlers.invoke(c.id)
         }

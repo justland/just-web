@@ -16,7 +16,7 @@ describe('plugin.init()', () => {
     const { commands } = setupPlugin()
 
     a.satisfies(commands.contributions.keys(), hasAll(
-      clearUserPreferences.type
+      clearUserPreferences.id
     ))
   })
 })
