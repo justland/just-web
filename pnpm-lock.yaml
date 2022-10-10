@@ -1405,7 +1405,6 @@ importers:
       '@types/jest': ^27.4.1
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
-      '@unional/events-plus': ~2.2.2
       assertron: ^10.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -1423,8 +1422,6 @@ importers:
       size-limit: ~7.0.8
       type-plus: ^4.13.2
       typescript: ^4.8.4
-    dependencies:
-      '@unional/events-plus': 2.2.2
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -7893,7 +7890,6 @@ packages:
       typescript: 4.8.4
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@typescript-eslint/eslint-plugin/5.28.0_qixdqiiw7czhm6fbxnydepwjka:
     resolution: {integrity: sha512-DXVU6Cg29H2M6EybqSg2A+x8DgO9TCUBRp4QEXQHJceLS7ogVDP0g3Lkg/SZCqcvkAP/RruuQqK0gdlkgmhSUA==}
