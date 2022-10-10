@@ -1,56 +1,57 @@
-import { CommandsContext } from '@just-web/commands'
+import { command, CommandsContext } from '@just-web/commands'
 import { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
-import { justEvent } from '@unional/events-plus'
 
 /**
  * Set the specified user preference.
  * @param key The key of the preference to be update
  */
-export const setUserPreference = justEvent<{ key: string, value: string }>('just-web.setUserPreference')
-export const getUserPreference = justEvent<{ key: string }>('just-web.getUserPreference')
-export const updateUserPreference = justEvent<{ key: string, handler: (value: string | undefined) => string }>('just-web.updateUserPreference')
+export const setUserPreference = command<[key: string, value: string]>('just-web.setUserPreference')
+export const getUserPreference = command<[key: string], string | undefined>('just-web.getUserPreference')
+export const updateUserPreference = command<
+  [key: string, handler: (value: string | undefined) => string]
+>('just-web.updateUserPreference')
 
 /**
  * Clear the specified user preference.
  * @param key The key of the preference to be cleared
  */
-export const clearUserPreference = justEvent<{ key: string }>('just-web.clearUserPreference')
-export const clearUserPreferences = justEvent('just-web.clearUserPreferences')
+export const clearUserPreference = command<[key: string]>('just-web.clearUserPreference')
+export const clearUserPreferences = command('just-web.clearUserPreferences')
 
 const plugin = definePlugin(() => ({
   name: '@just-web/preferences',
   init: ({ commands }: LogContext & CommandsContext) => {
-    commands.contributions.add({ id: clearUserPreferences.type })
+    commands.contributions.add(clearUserPreferences)
 
     return [{
       preferences: {
         get(key: string) {
           return commands.handlers.invoke(
-            getUserPreference.type,
-            ...getUserPreference({ key })
+            getUserPreference.id,
+            ...getUserPreference.defineArgs(key)
           )
         },
         set(key: string, value: string) {
           return commands.handlers.invoke(
-            setUserPreference.type,
-            ...setUserPreference({ key, value })
+            setUserPreference.id,
+            ...setUserPreference.defineArgs(key, value)
           )
         },
         update(key: string, handler: (value: string | undefined) => string) {
           return commands.handlers.invoke(
-            updateUserPreference.type,
-            ...updateUserPreference({ key, handler })
+            updateUserPreference.id,
+            ...updateUserPreference.defineArgs(key, handler)
           )
         },
         clear(key: string) {
           return commands.handlers.invoke(
-            clearUserPreference.type,
-            ...clearUserPreference({ key })
+            clearUserPreference.id,
+            ...clearUserPreference.defineArgs(key)
           )
         },
         clearAll() {
-          return commands.handlers.invoke(clearUserPreferences.type)
+          return commands.handlers.invoke(clearUserPreferences.id)
         }
       }
     }]

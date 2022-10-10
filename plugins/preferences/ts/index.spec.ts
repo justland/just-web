@@ -16,15 +16,15 @@ describe(`plugin.init()`, () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
     app.commands.handlers.register(
-      getUserPreference.type,
-      getUserPreference.listener(({ key }) => {
+      getUserPreference.id,
+      getUserPreference.defineHandler(key => {
         expect(key).toEqual('some-unique-id')
         o.once(1)
-        return { a: 1 }
+        return '{ a: 1 }'
       })
     )
 
-    expect(app.preferences.get('some-unique-id')).toEqual({ a: 1 })
+    expect(app.preferences.get('some-unique-id')).toEqual('{ a: 1 }')
 
     o.end()
   })
@@ -33,8 +33,8 @@ describe(`plugin.init()`, () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
     app.commands.handlers.register(
-      setUserPreference.type,
-      setUserPreference.listener(({ key, value }) => {
+      setUserPreference.id,
+      setUserPreference.defineHandler(([key, value]) => {
         expect(key).toEqual('some-unique-id')
         expect(value).toEqual('{ a: 1 }')
         o.once(1)
@@ -51,16 +51,16 @@ describe(`plugin.init()`, () => {
     const store = record<string, string>()
 
     app.commands.handlers.register(
-      setUserPreference.type,
-      setUserPreference.listener(({ key, value }) => store[key] = value)
+      setUserPreference.id,
+      setUserPreference.defineHandler(([key, value]) => store[key] = value)
     )
     app.commands.handlers.register(
-      getUserPreference.type,
-      getUserPreference.listener(({ key }) => store[key])
+      getUserPreference.id,
+      getUserPreference.defineHandler(key => store[key])
     )
     app.commands.handlers.register(
-      updateUserPreference.type,
-      updateUserPreference.listener(({ key, handler }) => store[key] = handler(store[key]))
+      updateUserPreference.id,
+      updateUserPreference.defineHandler((key, handler) => store[key] = handler(store[key]))
     )
 
     app.preferences.set('some-unique-id', 'value')
@@ -73,8 +73,8 @@ describe(`plugin.init()`, () => {
     const app = setupTestApp()
     const o = new AssertOrder(1)
     app.commands.handlers.register(
-      clearUserPreference.type,
-      clearUserPreference.listener(({ key }) => {
+      clearUserPreference.id,
+      clearUserPreference.defineHandler(key => {
         expect(key).toEqual('some-unique-id')
         o.once(1)
       })
@@ -90,8 +90,8 @@ describe(`plugin.init()`, () => {
 
     const o = new AssertOrder(1)
     app.commands.handlers.register(
-      clearUserPreferences.type,
-      clearUserPreferences.listener(() => o.once(1))
+      clearUserPreferences.id,
+      clearUserPreferences.defineHandler(() => o.once(1))
     )
 
     app.preferences.clearAll()
