@@ -34,7 +34,7 @@ describe(`plugin.init()`, () => {
     const o = new AssertOrder(1)
     app.commands.handlers.register(
       setUserPreference.id,
-      setUserPreference.defineHandler(([key, value]) => {
+      setUserPreference.defineHandler((key, value) => {
         expect(key).toEqual('some-unique-id')
         expect(value).toEqual('{ a: 1 }')
         o.once(1)
@@ -52,7 +52,7 @@ describe(`plugin.init()`, () => {
 
     app.commands.handlers.register(
       setUserPreference.id,
-      setUserPreference.defineHandler(([key, value]) => store[key] = value)
+      setUserPreference.defineHandler((key, value) => store[key] = value)
     )
     app.commands.handlers.register(
       getUserPreference.id,
