@@ -53,7 +53,7 @@ describe('add()', () => {
 describe('formatCommand()', () => {
   const allDefinedCommand = {
     id: 'app.someCommand',
-    name: 'Sing a song',
+    title: 'Sing a song',
     description: 'Jingle Bell'
   }
   test('use defined name', () => {
@@ -61,7 +61,7 @@ describe('formatCommand()', () => {
 
     expect(a).toEqual({
       id: 'app.someCommand',
-      name: 'Sing a song',
+      title: 'Sing a song',
       description: 'Jingle Bell'
     })
   })
@@ -71,7 +71,7 @@ describe('formatCommand()', () => {
 
     expect(a).toEqual({
       id: 'app.miku.singASong',
-      name: 'Miku sing a song',
+      title: 'Miku sing a song',
       description: undefined
     })
   })

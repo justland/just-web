@@ -31,7 +31,7 @@ void (async () => {
 
   app.commands.contributions.add({
     id: 'app.newDocument',
-    name: 'Create a new document'
+    title: 'Create a new document'
   })
 
   app.commands.handlers.register('app.newDocument', () => {

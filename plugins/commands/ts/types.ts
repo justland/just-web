@@ -1,4 +1,4 @@
-import { KeyboardContext } from '@just-web/keyboard'
+import { JustEmpty, JustFunction, JustValues } from 'just-func'
 import type { Registry, WithAdder } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
 
@@ -14,16 +14,18 @@ export type HandlerRegistry = {
   /**
    * register handler for the specified command.
    */
-  register(command: string, handler: AnyFunction): void,
+  register(id: string, handler: AnyFunction): void,
+  register(info: CommandHandler): void,
   /**
    * invoke a registered command.
    * @param args arguments for the command
    */
-  invoke(command: string, ...args: any[]): any,
+  invoke(id: string, ...args: any[]): any,
   /**
    * Gets all registered command names.
    */
-  keys(): string[]
+  keys(): string[],
+  has(id: string): boolean
 }
 
 export type CommandContribution = {
@@ -36,7 +38,7 @@ export type CommandContribution = {
    * If not specified,
    * it is default to Sentence Case of the second part of the `id`.
    */
-  name?: string,
+  title?: string,
   /**
    * Detail description about the command.
    * It will support some formatting such as markdown,
@@ -76,36 +78,31 @@ export type CommandsContext = {
   }
 }
 
-export type Command<F extends AnyFunction> = {
-  (...args: Parameters<F>): ReturnType<F>,
-  id: string,
-  connect(context: CommandsContext, handler: F): void,
-  defineHandler(handler: F): F,
-  defineArgs<A extends Parameters<F>>(...args: A): A
+export namespace Command {
+  export type Base<
+    Param extends JustValues = JustEmpty,
+    R extends JustValues = JustEmpty
+  > = JustFunction<Param, R> & {
+    id: string,
+    defineHandler(handler: JustFunction<Param, R>): JustFunction<Param, R>
+  } & (Param extends JustEmpty ? {
+    defineArgs<A extends JustEmpty>(): A
+  } : {
+    defineArgs<A extends Param>(...args: A): A
+  })
 }
 
-export type Command_K<F extends AnyFunction> = {
-  (...args: Parameters<F>): ReturnType<F>,
-  id: string,
-  connect(context: CommandsContext & KeyboardContext, handler: F): void,
-  defineHandler(handler: F): F,
-  defineArgs<A extends Parameters<F>>(...args: A): A
+export type JustCommand<
+  Param extends JustValues = JustEmpty,
+  R extends JustValues = JustEmpty
+> = Command.Base<Param, R> & {
+  register(param: [registry: HandlerRegistry, handler: JustFunction<Param, R>]): void,
 }
 
-export type Command_WithDefault<F extends AnyFunction> = {
-  (...args: Parameters<F>): ReturnType<F>,
-  id: string,
-  defaultHandler: F,
-  connect(context: CommandsContext, handler?: F): void,
-  defineHandler(handler: F): F,
-  defineArgs<A extends Parameters<F>>(...args: A): A
-}
-
-export type Command_KWithDefault<F extends AnyFunction> = {
-  (...args: Parameters<F>): ReturnType<F>,
-  id: string,
-  defaultHandler: F,
-  connect(context: CommandsContext & KeyboardContext, handler?: F): void,
-  defineHandler(handler: F): F,
-  defineArgs<A extends Parameters<F>>(...args: A): A
+export type JustCommand_WithDefault<
+  Param extends JustValues = JustEmpty,
+  R extends JustValues = JustEmpty
+> = Command.Base<Param, R> & {
+  handler: JustFunction<Param, R>,
+  register(param: [registry: HandlerRegistry, handler?: JustFunction<Param, R>]): void,
 }
