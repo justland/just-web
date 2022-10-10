@@ -12,3 +12,5 @@ command({
   key: 'ctrl+k'
 })
 ```
+
+Add `justCommand()`. A `just-func` variant of `command()`
