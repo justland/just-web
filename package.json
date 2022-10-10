@@ -56,7 +56,7 @@
     "@changesets/cli": "^2.25.0",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
-    "@just-web/repo-scripts": "workspace:^*",
+    "@just-web/repo-scripts": "workspace:^",
     "@types/eslint": "^8.4.3",
     "@types/jest": "^27.5.2",
     "@typescript-eslint/eslint-plugin": "^5.28.0",

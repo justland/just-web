@@ -47,13 +47,13 @@
   "devDependencies": {
     "@babel/core": "~7.19.0",
     "@babel/plugin-transform-runtime": "~7.19.0",
-    "@just-web/commands": "workspace:^*",
-    "@just-web/keyboard": "workspace:^*",
-    "@just-web/log": "workspace:^*",
-    "@just-web/os": "workspace:^*",
-    "@just-web/repo-scripts": "workspace:^*",
-    "@just-web/testing": "workspace:^*",
-    "@just-web/types": "workspace:^*",
+    "@just-web/commands": "workspace:^",
+    "@just-web/keyboard": "workspace:^",
+    "@just-web/log": "workspace:^",
+    "@just-web/os": "workspace:^",
+    "@just-web/repo-scripts": "workspace:^",
+    "@just-web/testing": "workspace:^",
+    "@just-web/types": "workspace:^",
     "@size-limit/preset-small-lib": "~7.0.8",
     "@types/jest": "^27.4.1",
     "@types/mousetrap": "~1.6.9",
@@ -76,11 +76,11 @@
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
-    "@just-web/commands": "workspace:^*",
-    "@just-web/keyboard": "workspace:^*",
-    "@just-web/log": "workspace:^*",
-    "@just-web/os": "workspace:^*",
-    "@just-web/types": "workspace:^*"
+    "@just-web/commands": "workspace:^",
+    "@just-web/keyboard": "workspace:^",
+    "@just-web/log": "workspace:^",
+    "@just-web/os": "workspace:^",
+    "@just-web/types": "workspace:^"
   },
   "size-limit": [
     {
