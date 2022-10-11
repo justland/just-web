@@ -1,48 +1,49 @@
-import { KeyBindingContribution } from '@just-web/keyboard'
+import { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
 import { getLogger } from '@just-web/log'
 import type { JustEmpty, JustFunction, JustValues } from 'just-func'
-import type { Command, CommandContribution, Command_WithDefault, HandlerRegistry, JustCommand, JustCommand_WithDefault } from './types'
+import type { Command, CommandContribution, CommandsContext, Command_WithDefault, JustCommand, JustCommand_WithDefault } from './types'
 
 /**
-* Creates a command with a default handler
+* Creates a `just` command with default handler
 */
 export function justCommand<
-  Param extends JustValues = JustValues,
+  Params extends JustValues = JustValues,
   R extends JustValues = JustEmpty
->(info: CommandContribution & KeyBindingContribution & { handler: JustFunction<Param, R> })
-  : JustCommand_WithDefault<Param, R>
+>(param: [idOrInfo: CommandContribution & KeyBindingContribution | string, handler: JustFunction<Params, R>])
+  : JustCommand_WithDefault<Params, R>
 /**
 * Creates a command without default handler.
 */
 export function justCommand<
-  Param extends JustValues = JustValues,
+  Params extends JustValues = JustEmpty,
   R extends JustValues = JustEmpty
->(info: CommandContribution & KeyBindingContribution): JustCommand<Param, R>
-/**
-* Creates a command without default handler.
-*/
+>(param: [idOrInfo: CommandContribution & KeyBindingContribution | string]): JustCommand<Params, R>
 export function justCommand<
-  Param extends JustValues = JustEmpty,
+  Params extends JustValues = JustEmpty,
   R extends JustValues = JustEmpty
->(id: string): JustCommand<Param, R>
-export function justCommand(idOrInfo: any): any {
-  return buildJustCommand(typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo)
-}
-
-function buildJustCommand<H extends JustFunction>(info: CommandContribution & KeyBindingContribution & { handler?: H }) {
-  let registry: HandlerRegistry
-  type Params = Parameters<H>
-  type R = ReturnType<H>
-  const id = info.id
+>([idOrInfo, handler]: [idOrInfo: CommandContribution & KeyBindingContribution | string, handler?: JustFunction<Params, R>]): any {
+  const withIdString = typeof idOrInfo === 'string'
+  const info = typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo
+  let ctx: CommandsContext & KeyboardContext
 
   return Object.assign(function (...args: Params) {
-    if (!registry) return getLogger('@just-web/log').error(`cannot call '${id}' before register().`)
-    return registry.invoke(id, ...args)
+    if (!ctx) return getLogger('@just-web/log').error(`cannot call '${info.id}' before connect().`)
+    return ctx.commands.handlers.invoke(info.id, ...args)
   }, {
     ...info,
-    register([handlers, hdr]: [handlers: HandlerRegistry, hdr: (...args: Params) => R]) {
-      registry = handlers
-      registry.register(id, hdr ?? info.handler)
+    handler,
+    connect([context, hdr]: [context: CommandsContext & KeyboardContext, hdr?: (...args: Params) => R]) {
+      ctx = context
+      if (handler || hdr) {
+        ctx.commands.handlers.register(info.id, hdr ?? handler!)
+      }
+
+      if (withIdString) return
+
+      ctx.commands.contributions.add(info)
+      if (info.key || info.mac) {
+        ctx.keyboard.keyBindingContributions.add(info)
+      }
     },
     defineHandler(handler: (...args: Params) => R) { return handler },
     defineArgs(...args: Params) { return args },
@@ -78,25 +79,28 @@ export function command<
   Params extends any[] = [],
   R = void
 >(idOrInfo: any, handler?: (...args: Params) => R): any {
-  return buildCommand(typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo, handler)
-}
-
-function buildCommand<
-  Params extends any[] = [],
-  R = void
->(info: CommandContribution & KeyBindingContribution, handler?: (...args: Params) => R) {
-  let registry: HandlerRegistry
-  const id = info.id
+  const withIdString = typeof idOrInfo === 'string'
+  const info = typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo
+  let ctx: CommandsContext & KeyboardContext
 
   return Object.assign(function (...args: Params) {
-    if (!registry) return getLogger('@just-web/log').error(`cannot call '${id}' before register().`)
-    return registry.invoke(id, ...args)
+    if (!ctx) return getLogger('@just-web/log').error(`cannot call '${info.id}' before connect().`)
+    return ctx.commands.handlers.invoke(info.id, ...args)
   }, {
     ...info,
     handler,
-    register(handlers: HandlerRegistry, hdr: (...args: Params) => R) {
-      registry = handlers
-      registry.register(id, hdr ?? handler)
+    connect(context: CommandsContext & KeyboardContext, hdr?: (...args: Params) => R) {
+      ctx = context
+      if (handler || hdr) {
+        ctx.commands.handlers.register(info.id, hdr ?? handler!)
+      }
+
+      if (withIdString) return
+
+      ctx.commands.contributions.add(info)
+      if (info.key || info.mac) {
+        ctx.keyboard.keyBindingContributions.add(info)
+      }
     },
     defineHandler(handler: (...args: Params) => R) { return handler },
     defineArgs(...args: Params) { return args }
