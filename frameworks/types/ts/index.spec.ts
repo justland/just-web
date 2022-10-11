@@ -137,7 +137,8 @@ describe(definePlugin.name, () => {
         init: (_: { a: number }) => ([{ dummy: options?.a }])
       }))
 
-      isType.equal<true, [options?: { a: number }], Parameters<typeof plugin>>()
+      type P = Parameters<typeof plugin>
+      isType.equal<true, [options?: { a: number }], P>()
     })
 
     // it('can detect Params type with NeedContext in function form', () => {
@@ -146,7 +147,8 @@ describe(definePlugin.name, () => {
     //     init(_: { a: number }) { return [{ dummy: options?.a }] }
     //   }))
 
-    //   isType.equal<true, [options?: { a: number }], Parameters<typeof plugin>>()
+    //   type P = Parameters<typeof plugin>
+    //   isType.equal<true, [options?: { a: number }], P>()
     // })
   })
 
