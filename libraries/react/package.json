@@ -143,7 +143,6 @@
     "react-test-renderer": "~17.0.2",
     "rimraf": "~3.0.2",
     "size-limit": "~7.0.8",
-    "standard-log-color": "^11.0.0",
     "storybook-css-modules-preset": "~1.1.1",
     "storybook-dark-mode": "~1.0.9",
     "style-loader": "~3.3.1",
@@ -166,9 +165,5 @@
   "typedoc": {
     "entryPoint": "./src/index.ts",
     "readmeFile": "./README.md"
-  },
-  "dependencies": {
-    "standard-log": "^11.1.0",
-    "type-plus": "^4.13.2"
   }
 }
