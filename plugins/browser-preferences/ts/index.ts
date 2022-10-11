@@ -1,4 +1,5 @@
 import { CommandsContext } from '@just-web/commands'
+import { KeyboardContext } from '@just-web/keyboard'
 import { LogContext } from '@just-web/log'
 import { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference, updateUserPreference } from '@just-web/preferences'
 import { AppBaseContext, definePlugin } from '@just-web/types'
@@ -7,30 +8,30 @@ import { ctx } from './index.ctx'
 
 const plugin = definePlugin(() => ({
   name: '@just-web/browser-preferences',
-  init({ name, commands, log }: AppBaseContext & LogContext & CommandsContext) {
-    getUserPreference.register(commands.handlers, (key) => {
+  init({ name, commands, keyboard, log }: AppBaseContext & LogContext & CommandsContext & KeyboardContext) {
+    getUserPreference.connect({ commands, keyboard }, (key) => {
       const k = getKey(name, key)
       log.planck(`get: '${k}'`)
       return deserialize(ctx.localStorage.getItem(k))
     })
-    setUserPreference.register(commands.handlers, (key, value) => {
+    setUserPreference.connect({ commands, keyboard }, (key, value) => {
       const k = getKey(name, key)
       log.info(`set: '${k}' ${value}`)
       ctx.localStorage.setItem(k, serialize(value))
     })
-    updateUserPreference.register(commands.handlers, (key, handler) => {
+    updateUserPreference.connect({ commands, keyboard }, (key, handler) => {
       const k = getKey(name, key)
       const original = deserialize(ctx.localStorage.getItem(k))
       const newValue = handler(original)
       log.info(`update: '${k}' ${original} -> ${newValue}`)
       ctx.localStorage.setItem(k, serialize(newValue))
     })
-    clearUserPreference.register(commands.handlers, (key) => {
+    clearUserPreference.connect({ commands, keyboard }, (key) => {
       const k = getKey(name, key)
       log.info(`clear: '${k}'`)
       ctx.localStorage.removeItem(k)
     })
-    clearUserPreferences.register(commands.handlers, () => {
+    clearUserPreferences.connect({ commands, keyboard }, () => {
       log.info(`clear all: '${name}'`)
       const keys: string[] = []
       // have to iterate and get all keys first.
