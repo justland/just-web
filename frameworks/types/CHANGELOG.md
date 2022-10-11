@@ -1,5 +1,14 @@
 # @just-web/types
 
+## 3.0.0
+
+### Patch Changes
+
+- 7180f82: Update `type-plus` to 4.13.2.
+- 0c21f10: Update deps from `workspace:^*` to `workspace:^`.
+
+  `workspace:^*` is incorrect as during publish, the version is not replaced.
+
 ## 2.0.1
 
 ## 2.0.0

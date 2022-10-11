@@ -1,5 +1,55 @@
 # @just-web/commands
 
+## 3.0.0
+
+### Major Changes
+
+- 5eb37cd: Adding `connect()` back to `command()` and `justCommand()`.
+
+  `justCommand()` is still experimental.
+  I'm still trying to figure out how the arguments and return value should be structured.
+
+- 7180f82: Rename `type` and `command` to `id`.
+  This is needed to keep things normalized.
+
+  Add `command(contribution)`.
+  It combines both `CommandContribution` and `KeyBindingContribution`.
+
+- 7180f82: Add support to declare `command()` with contributions.
+
+  ```ts
+  command({
+    id: "plugin-a.increment",
+    name: "Increment",
+    description: "Increment input value by 1",
+    key: "ctrl+k",
+  });
+  ```
+
+  Add `justCommand()`. A `just-func` variant of `command()`
+
+### Patch Changes
+
+- edbca92: `@just-web/commands`: move types to fix a circular ref issue.
+
+  There are two `Command` types.
+  One is renamed to `CommandHandler` because that's what it is.
+  Should not be used directly anyway, so it is not a breaking change.
+
+- 7180f82: Update `type-plus` to 4.13.2.
+- 0c21f10: Update deps from `workspace:^*` to `workspace:^`.
+
+  `workspace:^*` is incorrect as during publish, the version is not replaced.
+
+- Updated dependencies [7180f82]
+- Updated dependencies [f2f1a69]
+- Updated dependencies [0ff86d0]
+- Updated dependencies [0c21f10]
+  - @just-web/log@3.0.0
+  - @just-web/types@3.0.0
+  - @just-web/states@3.0.0
+  - @just-web/keyboard@3.0.0
+
 ## 2.0.1
 
 ### Patch Changes
