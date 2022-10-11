@@ -1,6 +1,8 @@
 import { JustEmpty, JustFunction, JustValues } from 'just-func'
 import type { Registry, WithAdder } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
+import { LogContext } from '@just-web/log'
+import { KeyboardContext } from '@just-web/keyboard'
 
 export type CommandHandler = {
   /**
@@ -123,6 +125,7 @@ export type Command<
   Params extends any[] = [],
   R = void
 > = Command.Base<Params, R> & {
+  connect(ctx: LogContext & CommandsContext & KeyboardContext, handler?: (...args: Params) => R): void,
   register(handlers: HandlerRegistry, handler: (...args: Params) => R): void,
 }
 

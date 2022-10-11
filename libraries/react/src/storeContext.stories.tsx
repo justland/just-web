@@ -48,7 +48,7 @@ function Message() {
 export const UseContext = () => {
   return <div>
     <AppProvider>
-      <h2>Re-renders! 😩</h2>
+      <h2>No renders! 😆</h2>
       <Message />
       <Message />
       <Message />

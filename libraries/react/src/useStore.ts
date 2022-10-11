@@ -1,65 +1,29 @@
-import { getLogger, suppressLogs } from '@just-web/log'
 import { Store } from '@just-web/states'
-import { MD5 } from 'object-hash'
-import { useLayoutEffect, useState } from 'react'
-import { AnyFunction, record } from 'type-plus'
-
-interface ChangeSource {
-  initialized?: boolean,
-  fromStore?: boolean,
-  fromState?: boolean
-}
-
-const map = new Map<Store<any>, Record<string, ChangeSource>>()
-
-function getChangeSource(store: Store<any>, getState: AnyFunction, updateStore: AnyFunction | undefined) {
-  if (!map.has(store)) {
-    map.set(store, record())
-  }
-  const m = map.get(store)!
-  const key = [getState, updateStore ?? null].map(MD5).join()
-  if (m[key]) return m[key]
-  return m[key] = record()
-}
+import { useCallback, useEffect, useState } from 'react'
 
 /**
  * Use a value in the store for `useState()`.
  * @param getState a function to get the value to be used in `useState()`.
- * @param updateStore optional function to update the store value when the state changes.
- * This is the same as calling `store.setValue()` by yourself.
+ * @param updateStore optional function to update the store value when the state changes
  */
 export function useStore<S, V>(
   store: Store<S>,
   getState: (s: S) => V,
   updateStore?: (draft: S, value: V) => void | S)
   : [value: V, setValue: (value: V | ((value: V) => V)) => void] {
-  const shared: ChangeSource = getChangeSource(store, getState, updateStore)
+  const [value, setValue] = useState(() => getState(store.get()))
 
-  const [value, setValue] = useState(getState(store.get()))
-  useLayoutEffect(() => {
-    const stateLog = getLogger('@just-web/states/state')
-    return suppressLogs(() => store.onChange(s => {
-      if (shared.fromState) return void (shared.fromState = false)
+  useEffect(() => store.onChange(s => setValue(getState(s))), [])
 
-      const newValue = getState(s)
-      if (Object.is(newValue, value)) return
-      shared.fromStore = true
-      setValue(newValue)
-    }), stateLog)
-  }, [value])
-
-  useLayoutEffect(() => {
-    if (!shared.initialized) {
-      shared.initialized = true
-      return
-    }
-    if (shared.fromStore) return void (shared.fromStore = false)
-
+  return [value, useCallback((updater) => {
     if (updateStore) {
-      shared.fromState = true
-      store.update(s => updateStore(s, value))
+      store.update(s => {
+        const prevValue = getState(s)
+        const newValue = typeof updater === 'function' ? (updater as any)(prevValue) : updater
+        return updateStore(s, newValue)
+      })
+      return setValue(getState(store.get()))
     }
-  }, [value])
-
-  return [value, setValue]
+    return setValue(updater)
+  }, [])]
 }
