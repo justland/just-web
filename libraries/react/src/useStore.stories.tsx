@@ -2,7 +2,6 @@ import { createStore, Store } from '@just-web/states'
 import { FC, useEffect, useState, VFC } from 'react'
 import { useStore } from './useStore'
 
-
 const UseStore: FC<{ name?: string, store: Store<{ counter: number }> }> = ({ name = 'UseStore', store, children }) => {
   const [value, setValue] = useStore(store, s => s.counter, (s, v) => {
     console.info(`${name} useStore.update`, s.counter, v)
@@ -35,7 +34,7 @@ const UseEffect: VFC<{ store: Store<{ counter: number }> }> = ({ store }) => {
   console.count('render')
   return <>
     <div>state value: {value}</div>
-    <div>store value: {store.get().counter} This value is lack behind by one, because change occurs within `useEffect()` and the store value is not tracked by React</div>
+    <div>store value: {store.get().counter} This value is lack behind by one when using `setValue`, because change occurs within `useEffect()` and the store value is not tracked by React</div>
     <button onClick={() => setValue(v => v + 1)}>Invoke setValue</button>
     <button onClick={() => store.update(s => { s.counter++ })}>Invoke store.update</button>
   </>
@@ -122,4 +121,25 @@ export const ParentChild_2 = () => {
     </UseStore>
     <ToggleStoreUpdate store={store} />
   </>
+}
+
+export const StoreChangeTriggerRender = () => {
+  const store = createStore({ counter: 0 })
+  const values: number[] = []
+  const Counter = () => {
+    const [value] = useStore(store, s => s.counter)
+    values.push(value)
+    return (
+      <>
+        <div>{value}</div>
+        <div id='values'>{values}</div>
+      </>
+    )
+  }
+
+  useEffect(() => {
+    const id = setInterval(() => store.update((s) => { s.counter++ }), 300)
+    return () => clearInterval(id)
+  }, [])
+  return <Counter />
 }
