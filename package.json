@@ -38,6 +38,7 @@
     "preferences": "pnpm --filter=@just-web/preferences",
     "react-commands": "pnpm --filter=@just-web/react-commands",
     "react": "pnpm --filter=@just-web/react",
+    "release": "changeset publish",
     "repo-scripts": "pnpm --filter=@just-web/repo-scripts",
     "routes": "pnpm --filter=@just-web/routes",
     "size": "turbo run size",
