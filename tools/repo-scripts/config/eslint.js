@@ -44,7 +44,8 @@ module.exports = {
             // https://github.com/storybookjs/eslint-plugin-storybook/issues/45
             // https://github.com/storybookjs/testing-library/issues/10
             '@typescript-eslint/await-thenable': 'off',
-            'import/no-anonymous-default-export': 'off'
+            'import/no-anonymous-default-export': 'off',
+            'no-console': 'off'
           }
         },
         {
