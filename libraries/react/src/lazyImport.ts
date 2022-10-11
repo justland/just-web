@@ -14,10 +14,9 @@ export function lazyImport<
 } & {
   getExtendingApp: () => Promise<R>
 } : never {
-  let cached: Promise<readonly [M, R]>
+  let cached: Promise<readonly [M, R]> | undefined
   function cachedExtendingApp() {
-    if (cached) return cached
-    return cached = extendingApp()
+    return cached ? cached : cached = extendingApp()
   }
   async function extendingApp() {
     const m = await importPlugin
