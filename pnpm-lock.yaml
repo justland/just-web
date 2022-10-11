@@ -37,7 +37,7 @@ importers:
       '@just-web/repo-scripts': link:tools/repo-scripts
       '@types/eslint': 8.4.3
       '@types/jest': 27.5.2
-      '@typescript-eslint/eslint-plugin': 5.28.0_qixdqiiw7czhm6fbxnydepwjka
+      '@typescript-eslint/eslint-plugin': 5.28.0_s4cpm5akwo6jqdaskikqlqh6am
       eslint: 8.17.0
       eslint-plugin-harmony: 7.1.0_oeacmew2nrl5yidggn3nqfrcka
       husky: 8.0.1
@@ -422,14 +422,14 @@ importers:
       storybook-dark-mode: ~1.0.9
       style-loader: ~3.3.1
       ts-jest: ^27.1.3
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
       webpack: ^5.70.0
     dependencies:
       react: 17.0.2
       react-command-palette: 0.21.1_sfoxds7t5ydpegc3knd667wn6m
       react-dom: 17.0.2_react@17.0.2
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-syntax-flow': 7.18.6_@babel+core@7.19.3
@@ -551,11 +551,11 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       iso-error: 4.4.0
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -613,12 +613,12 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~7.0.8
       standard-log: ^11.1.0
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       '@just-func/types': 0.2.1
       standard-log: 11.1.0
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -668,7 +668,7 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~7.0.8
       standard-log: ^11.1.0
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     devDependencies:
       '@babel/core': 7.19.3
@@ -693,7 +693,7 @@ importers:
       rimraf: 3.0.2
       size-limit: 7.0.8
       standard-log: 11.1.0
-      type-plus: 4.13.2
+      type-plus: 4.14.0
       typescript: 4.8.4
 
   libraries/react:
@@ -904,13 +904,13 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~7.0.8
       tersify: ^3.10.2
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       '@just-web/log': link:../../frameworks/log
       immer: 9.0.14
       tersify: 3.10.2
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -964,11 +964,11 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       iso-error: 4.4.0
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1029,11 +1029,11 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       mousetrap: 1.6.5
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1098,7 +1098,7 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       '@types/base-64': 1.0.0
@@ -1133,7 +1133,7 @@ importers:
       rimraf: 3.0.2
       satisfier: 5.4.2
       size-limit: 7.0.8
-      type-plus: 4.13.2
+      type-plus: 4.14.0
       typescript: 4.8.4
 
   plugins/commands:
@@ -1169,13 +1169,13 @@ importers:
       size-limit: ~7.0.8
       standard-log: ^11.1.0
       tersify: ^3.10.2
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       just-func: 0.2.3
       sentence-case: 3.0.4
       tersify: 3.10.2
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1294,10 +1294,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1354,7 +1354,7 @@ importers:
       platform: ~1.3.6
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       platform: 1.3.6
@@ -1383,7 +1383,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      type-plus: 4.13.2
+      type-plus: 4.14.0
       typescript: 4.8.4
 
   plugins/preferences:
@@ -1415,7 +1415,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     devDependencies:
       '@babel/core': 7.19.3
@@ -1445,7 +1445,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      type-plus: 4.13.2
+      type-plus: 4.14.0
       typescript: 4.8.4
 
   plugins/routes:
@@ -1476,10 +1476,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
@@ -1582,7 +1582,7 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.2
       size-limit: ~7.0.8
-      type-plus: ^4.13.2
+      type-plus: ^4.14.0
       typescript: ^4.8.4
     dependencies:
       '@just-web/log': link:../../frameworks/log
@@ -1610,7 +1610,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 7.0.8
-      type-plus: 4.13.2
+      type-plus: 4.14.0
       typescript: 4.8.4
 
 packages:
@@ -4110,7 +4110,7 @@ packages:
       '@jest/schemas': 29.0.0
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 18.8.3
+      '@types/node': 18.8.4
       '@types/yargs': 17.0.13
       chalk: 4.1.2
     dev: true
@@ -4164,12 +4164,12 @@ packages:
   /@just-func/types/0.2.1:
     resolution: {integrity: sha512-NHhnteq2kwQkgJcBOp3jLdIvV3zZvjVuXEBqkqkefmyS2I0XEKWGXlBQz/37N7IGZrnnG9fvd4PAAYoQ7AjkyA==}
     dependencies:
-      type-plus: 4.13.2
+      type-plus: 4.14.0
 
   /@just-func/types/0.4.0:
     resolution: {integrity: sha512-JsBoSndz/rN/cmBgUC9DOFyWdMMJzBwEcaNnayZgzZ30mRnQVKEot5Xqy6X3Cc3+RwAmrowQFudLGTH3kfzXxA==}
     dependencies:
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     dev: false
 
   /@leichtgewicht/ip-codec/2.0.4:
@@ -6346,7 +6346,7 @@ packages:
   /@storybook/expect/27.5.2-0:
     resolution: {integrity: sha512-cP99mhWN/JeCp7VSIiymvj5tmuMY050iFohvp8Zq+kewKsBSZ6/qpTJAGCCZk6pneTcp4S0Fm5BSqyxzbyJ3gw==}
     dependencies:
-      '@types/jest': 28.1.1
+      '@types/jest': 27.5.2
     dev: true
 
   /@storybook/html/6.5.12_fu6r72642buyvqfmkk52dkgcza:
@@ -7637,8 +7637,8 @@ packages:
   /@types/node/18.8.0:
     resolution: {integrity: sha512-u+h43R6U8xXDt2vzUaVP3VwjjLyOJk6uEciZS8OSyziUQGOwmk+l+4drxcsDboHXwyTaqS1INebghmWMRxq3LA==}
 
-  /@types/node/18.8.3:
-    resolution: {integrity: sha512-0os9vz6BpGwxGe9LOhgP/ncvYN5Tx1fNcd2TM3rD/aCGBkysb+ZWpXEocG24h6ZzOi13+VB8HndAQFezsSOw1w==}
+  /@types/node/18.8.4:
+    resolution: {integrity: sha512-WdlVphvfR/GJCLEMbNA8lJ0lhFNBj4SW3O+O5/cEGw9oYrv0al9zTwuQsq+myDUXgNx2jgBynoVgZ2MMJ6pbow==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -7914,6 +7914,33 @@ packages:
       - supports-color
     dev: true
 
+  /@typescript-eslint/eslint-plugin/5.28.0_s4cpm5akwo6jqdaskikqlqh6am:
+    resolution: {integrity: sha512-DXVU6Cg29H2M6EybqSg2A+x8DgO9TCUBRp4QEXQHJceLS7ogVDP0g3Lkg/SZCqcvkAP/RruuQqK0gdlkgmhSUA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      '@typescript-eslint/parser': ^5.0.0
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/parser': 5.40.0_vhsckgnokn2tf7m5xkrurmvfv4
+      '@typescript-eslint/scope-manager': 5.28.0
+      '@typescript-eslint/type-utils': 5.28.0_vhsckgnokn2tf7m5xkrurmvfv4
+      '@typescript-eslint/utils': 5.28.0_vhsckgnokn2tf7m5xkrurmvfv4
+      debug: 4.3.4
+      eslint: 8.17.0
+      functional-red-black-tree: 1.0.1
+      ignore: 5.2.0
+      regexpp: 3.2.0
+      semver: 7.3.7
+      tsutils: 3.21.0_typescript@4.8.4
+      typescript: 4.8.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@typescript-eslint/eslint-plugin/5.28.0_zzm6nnd5isebrlmd43qblrzcpe:
     resolution: {integrity: sha512-DXVU6Cg29H2M6EybqSg2A+x8DgO9TCUBRp4QEXQHJceLS7ogVDP0g3Lkg/SZCqcvkAP/RruuQqK0gdlkgmhSUA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -8010,6 +8037,26 @@ packages:
       - supports-color
     dev: true
 
+  /@typescript-eslint/parser/5.40.0_vhsckgnokn2tf7m5xkrurmvfv4:
+    resolution: {integrity: sha512-Ah5gqyX2ySkiuYeOIDg7ap51/b63QgWZA7w6AHtFrag7aH0lRQPbLzUjk0c9o5/KZ6JRkTTDKShL4AUrQa6/hw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/scope-manager': 5.40.0
+      '@typescript-eslint/types': 5.40.0
+      '@typescript-eslint/typescript-estree': 5.40.0_typescript@4.8.4
+      debug: 4.3.4
+      eslint: 8.17.0
+      typescript: 4.8.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@typescript-eslint/scope-manager/5.27.1:
     resolution: {integrity: sha512-fQEOSa/QroWE6fAEg+bJxtRZJTH8NTskggybogHt4H9Da8zd4cJji76gA5SBlR0MgtwF7rebxTbDKB49YUCpAg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -8037,6 +8084,14 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.39.0
       '@typescript-eslint/visitor-keys': 5.39.0
+    dev: true
+
+  /@typescript-eslint/scope-manager/5.40.0:
+    resolution: {integrity: sha512-d3nPmjUeZtEWRvyReMI4I1MwPGC63E8pDoHy0BnrYjnJgilBD3hv7XOiETKLY/zTwI7kCnBDf2vWTRUVpYw0Uw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      '@typescript-eslint/types': 5.40.0
+      '@typescript-eslint/visitor-keys': 5.40.0
     dev: true
 
   /@typescript-eslint/type-utils/5.28.0_vhsckgnokn2tf7m5xkrurmvfv4:
@@ -8071,6 +8126,11 @@ packages:
 
   /@typescript-eslint/types/5.39.0:
     resolution: {integrity: sha512-gQMZrnfEBFXK38hYqt8Lkwt8f4U6yq+2H5VDSgP/qiTzC8Nw8JO3OuSUOQ2qW37S/dlwdkHDntkZM6SQhKyPhw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@typescript-eslint/types/5.40.0:
+    resolution: {integrity: sha512-V1KdQRTXsYpf1Y1fXCeZ+uhjW48Niiw0VGt4V8yzuaDTU8Z1Xl7yQDyQNqyAFcVhpYXIVCEuxSIWTsLDpHgTbw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
@@ -8155,6 +8215,27 @@ packages:
       - supports-color
     dev: true
 
+  /@typescript-eslint/typescript-estree/5.40.0_typescript@4.8.4:
+    resolution: {integrity: sha512-b0GYlDj8TLTOqwX7EGbw2gL5EXS2CPEWhF9nGJiGmEcmlpNBjyHsTwbqpyIEPVpl6br4UcBOYlcI2FJVtJkYhg==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/types': 5.40.0
+      '@typescript-eslint/visitor-keys': 5.40.0
+      debug: 4.3.4
+      globby: 11.1.0
+      is-glob: 4.0.3
+      semver: 7.3.8
+      tsutils: 3.21.0_typescript@4.8.4
+      typescript: 4.8.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@typescript-eslint/utils/5.27.1_vhsckgnokn2tf7m5xkrurmvfv4:
     resolution: {integrity: sha512-mZ9WEn1ZLDaVrhRaYgzbkXBkTPghPFsup8zDbbsYTxC5OmqrFE7skkKS/sraVsLP3TcT3Ki5CSyEFBRkLH/H/w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -8215,6 +8296,14 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       '@typescript-eslint/types': 5.39.0
+      eslint-visitor-keys: 3.3.0
+    dev: true
+
+  /@typescript-eslint/visitor-keys/5.40.0:
+    resolution: {integrity: sha512-ijJ+6yig+x9XplEpG2K6FUdJeQGGj/15U3S56W9IqXKJqleuD7zJ2AX/miLezwxpd7ZxDAqO87zWufKg+RPZyQ==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      '@typescript-eslint/types': 5.40.0
       eslint-visitor-keys: 3.3.0
     dev: true
 
@@ -9029,7 +9118,7 @@ packages:
       path-equal: 1.2.2
       satisfier: 5.4.2
       tersify: 3.10.2
-      type-plus: 4.13.2
+      type-plus: 4.14.0
 
   /assign-symbols/1.0.0:
     resolution: {integrity: sha512-Q+JC7Whu8HhmTdBph/Tq59IoRtoy6KAm5zzPv00WdujX82lbAL8K7WVjne7vdCsAmbF4AYaDOPyO3k0kl8qIrw==}
@@ -13221,7 +13310,7 @@ packages:
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
-      nan: 2.16.0
+      nan: 2.17.0
     dev: true
     optional: true
 
@@ -15825,7 +15914,7 @@ packages:
     resolution: {integrity: sha512-Rb/dLVchcrT2Fzbn6Ibshn4E3tGRTHomSqStpvpcYJZcnrk8mfe404MkrSMas/lkD6ntqv4yPV1lQFMtwNmguA==}
     dependencies:
       '@just-func/types': 0.4.0
-      type-plus: 4.13.2
+      type-plus: 4.14.0
     dev: false
 
   /keyv/3.1.0:
@@ -16739,8 +16828,8 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
-  /nan/2.16.0:
-    resolution: {integrity: sha512-UdAqHyFngu7TfQKsCBgAA6pWDkT8MAO7d0jyOecVhN5354xbLqdn8mV9Tat9gepAupm0bt2DbeaSC8vS52MuFA==}
+  /nan/2.17.0:
+    resolution: {integrity: sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==}
     requiresBuild: true
     dev: true
     optional: true
@@ -20532,6 +20621,14 @@ packages:
     dependencies:
       lru-cache: 6.0.0
 
+  /semver/7.3.8:
+    resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /send/0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
     engines: {node: '>= 0.8.0'}
@@ -21083,7 +21180,7 @@ packages:
       '@just-func/types': 0.2.1
       iso-error: 4.4.0
       ms: 2.1.3
-      type-plus: 4.13.2
+      type-plus: 4.14.0
       upper-case: 2.0.2
 
   /state-toggle/1.0.3:
@@ -22122,8 +22219,8 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /type-plus/4.13.2:
-    resolution: {integrity: sha512-VMmH+coX8a7cn+DHM9LDP1X7suklW38iuPy9UOJsOc2EieP+82igmaxZM+bvnWvTtvMMLRkWE3/3jIBlfEsFoA==}
+  /type-plus/4.14.0:
+    resolution: {integrity: sha512-vITFSZgvdK561RK54G2OCXwWx73CpTqnf4hCIldl+Da/nbsYMjHQpj5Zpa3HX5oCpyM5rv/BHaFUuR2Tmlk+eA==}
     dependencies:
       tersify: 3.10.2
       unpartial: 1.0.4
