@@ -21,12 +21,12 @@ export const showCommandPalette = command({
   mac: 'cmd+p'
 })
 
-export const justShowCommandPalette = justCommand({
+export const justShowCommandPalette = justCommand([{
   id: 'just-web.showCommandPalette',
   commandPalette: false,
   key: 'ctrl+p',
   mac: 'cmd+p'
-})
+}])
 
 export type CommandsOptions = {
   commands?: {

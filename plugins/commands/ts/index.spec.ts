@@ -41,7 +41,7 @@ describe('plugin.init()', () => {
     const [{ commands }] = commandsPlugin().init({ log, keyboard })
     const o = new AssertOrder(1)
 
-    justShowCommandPalette.register([commands.handlers, () => (o.once(1), justValue())])
+    justShowCommandPalette.connect([{ commands, keyboard }, () => (o.once(1), justValue())])
 
     commands.showCommandPalette()
     o.end()

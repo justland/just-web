@@ -1,8 +1,7 @@
-import { JustEmpty, JustFunction, JustValues } from 'just-func'
-import type { Registry, WithAdder } from '@just-web/states'
-import type { AnyFunction } from 'type-plus'
-import { LogContext } from '@just-web/log'
 import { KeyboardContext } from '@just-web/keyboard'
+import type { Registry, WithAdder } from '@just-web/states'
+import { JustEmpty, JustFunction, JustValues } from 'just-func'
+import type { AnyFunction } from 'type-plus'
 
 export type CommandHandler = {
   /**
@@ -95,18 +94,18 @@ export namespace JustCommand {
 }
 
 export type JustCommand<
-  Param extends JustValues = JustEmpty,
+  Params extends JustValues = JustEmpty,
   R extends JustValues = JustEmpty
-> = JustCommand.Base<Param, R> & {
-  register(param: [registry: HandlerRegistry, handler: JustFunction<Param, R>]): void,
+> = JustCommand.Base<Params, R> & {
+  connect(param: [ctx: CommandsContext & KeyboardContext, handler?: (...args: Params) => R]): void,
 }
 
 export type JustCommand_WithDefault<
-  Param extends JustValues = JustEmpty,
+  Params extends JustValues = JustEmpty,
   R extends JustValues = JustEmpty
-> = JustCommand.Base<Param, R> & {
-  handler: JustFunction<Param, R>,
-  register(param: [registry: HandlerRegistry, handler?: JustFunction<Param, R>]): void,
+> = JustCommand.Base<Params, R> & {
+  handler: JustFunction<Params, R>,
+  connect(param: [ctx: CommandsContext & KeyboardContext, handler?: (...args: Params) => R]): void,
 }
 
 export namespace Command {
@@ -125,8 +124,7 @@ export type Command<
   Params extends any[] = [],
   R = void
 > = Command.Base<Params, R> & {
-  connect(ctx: LogContext & CommandsContext & KeyboardContext, handler?: (...args: Params) => R): void,
-  register(handlers: HandlerRegistry, handler: (...args: Params) => R): void,
+  connect(ctx: CommandsContext & KeyboardContext, handler?: (...args: Params) => R): void,
 }
 
 export type Command_WithDefault<
@@ -134,5 +132,5 @@ export type Command_WithDefault<
   R = void
 > = Command.Base<Params, R> & {
   handler: (...args: Params) => R,
-  register(handlers: HandlerRegistry, handler?: (...args: Params) => R): void,
+  connect(ctx: CommandsContext & KeyboardContext, handler?: (...args: Params) => R): void,
 }
