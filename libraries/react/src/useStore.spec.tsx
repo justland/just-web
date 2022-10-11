@@ -71,13 +71,13 @@ test('specifying updateStore then setState will trigger store changes', async ()
 test('can update by using useEffect in the component', async () => {
   const store = createStore({ counter: 0 })
 
-  const values: number[] = []
+  const reRenders: number[] = []
   const storeValues: number[] = []
   store.onChange(s => storeValues.push(s.counter))
 
   const Counter = () => {
     const [value, setValue] = useStore(store, s => s.counter)
-    values.push(value)
+    reRenders.push(value)
     useEffect(
       () => store.update(s => { s.counter = value }),
       [value]
@@ -100,7 +100,7 @@ test('can update by using useEffect in the component', async () => {
   act(triggerClick)
   act(triggerClick)
 
-  expect(values).toEqual([0, 1, 2, 3, 4])
+  expect(reRenders).toEqual([0, 1, 1, 2, 2, 3, 3, 4, 4])
   expect(storeValues).toEqual([1, 2, 3, 4])
 })
 
