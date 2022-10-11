@@ -4,6 +4,9 @@
 
 ### Patch Changes
 
+- 54c4842: Fix `useStore()` to work on all cases
+  Now the store and state are updated at the same time.
+  The `useEffect()` case is still lagged behind, but that should be as expected.
 - 7180f82: Update `type-plus` to 4.13.2.
 - 0c21f10: Update deps from `workspace:^*` to `workspace:^`.
 
