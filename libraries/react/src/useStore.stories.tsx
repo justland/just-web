@@ -80,6 +80,7 @@ const Parent = ({ store }: { store: Store<{ counter: number }> }) => {
     else {
       clearInterval(timerId)
     }
+    return () => clearInterval(timerId)
   }, [timer])
 
   return (<>
@@ -97,23 +98,28 @@ const Parent = ({ store }: { store: Store<{ counter: number }> }) => {
 export const ParentChild_1 = () => {
   return <Parent store={createStore({ counter: 0 })} />
 }
-
-export const ParentChild_2 = () => {
-  const store = createStore({ counter: 0 })
+const ToggleStoreUpdate = ({ store }: { store: Store<{ counter: number }> }) => {
   const [timer, setTimer] = useState(false)
-  const [timerId, setTimerId] = useState<any>()
+  // const [timerId, setTimerId] = useState<any>()
   useEffect(() => {
     if (timer) {
-      setTimerId(setInterval(() => store.update(s => { s.counter = s.counter + 1 }), 1000))
-    }
-    else {
-      clearInterval(timerId)
+      const id = setInterval(() => store.update(s => {
+        console.info(`timer store.update:`, s.counter, s.counter + 1)
+        s.counter = s.counter + 1
+      }), 1000)
+      return () => clearInterval(id)
     }
   }, [timer])
+  return <div>
+    <button onClick={() => setTimer(v => !v)} >{timer ? 'stop store update' : 'start store update'}</button>
+  </div>
+}
+export const ParentChild_2 = () => {
+  const store = createStore({ counter: 0 })
   return <>
     <UseStore name='parent' store={store}>
       <UseStore name='child' store={store} />
     </UseStore>
-    <div><button onClick={() => setTimer(v => !v)} >{timer ? 'stop store update' : 'start store update'}</button></div>
+    <ToggleStoreUpdate store={store} />
   </>
 }
