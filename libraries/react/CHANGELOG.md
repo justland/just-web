@@ -1,5 +1,23 @@
 # @just-web/react
 
+## 3.0.0
+
+### Patch Changes
+
+- 7180f82: Update `type-plus` to 4.13.2.
+- 0c21f10: Update deps from `workspace:^*` to `workspace:^`.
+
+  `workspace:^*` is incorrect as during publish, the version is not replaced.
+
+- Updated dependencies [7180f82]
+- Updated dependencies [f2f1a69]
+- Updated dependencies [0ff86d0]
+- Updated dependencies [0c21f10]
+  - @just-web/app@3.0.0
+  - @just-web/log@3.0.0
+  - @just-web/types@3.0.0
+  - @just-web/states@3.0.0
+
 ## 2.1.2
 
 ### Patch Changes

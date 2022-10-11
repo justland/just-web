@@ -1,5 +1,23 @@
 # @just-web/states
 
+## 3.0.0
+
+### Minor Changes
+
+- f2f1a69: Add `has()` to registry.
+
+### Patch Changes
+
+- 7180f82: Update `type-plus` to 4.13.2.
+- 0ff86d0: Fix `withAdder()` type when working with `Registry`.
+- 0c21f10: Update deps from `workspace:^*` to `workspace:^`.
+
+  `workspace:^*` is incorrect as during publish, the version is not replaced.
+
+- Updated dependencies [7180f82]
+- Updated dependencies [0c21f10]
+  - @just-web/log@3.0.0
+
 ## 2.0.1
 
 ### Patch Changes
