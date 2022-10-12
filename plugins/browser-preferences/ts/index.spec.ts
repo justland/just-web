@@ -20,8 +20,8 @@ describe('plugin.init()', () => {
     ))
   })
 })
-function setupPlugin() {
-  const app = createTestApp({ log: { logLevel: logLevels.info } })
+function setupPlugin(options: createTestApp.Options = { log: { logLevel: logLevels.info } }) {
+  const app = createTestApp(options)
     .extend(keyboardPlugin())
     .extend(commandsPlugin())
     .extend(preferencesPlugin())
@@ -65,11 +65,11 @@ describe('setUserPreference()', () => {
   })
 
   it('is being tracked', () => {
-    const { preferences, log } = setupPlugin()
+    const { preferences, log } = setupPlugin({ log: { logLevel: logLevels.all } })
     preferences.set('key-a', 'hello-world')
 
     a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
-      "test-app:@just-web/browser-preferences (INFO) set: 'test-app:key-a' hello-world"
+      "test-app:@just-web/browser-preferences (TRACE) set: 'test-app:key-a' hello-world"
     ))
   })
 })
@@ -89,24 +89,24 @@ describe('updateUserPreference()', () => {
   })
 
   it('is being tracked', () => {
-    const { preferences, log } = setupPlugin()
+    const { preferences, log } = setupPlugin({ log: { logLevel: logLevels.all } })
     preferences.set('update-a', 'hello')
     preferences.update('update-a', (v) => v + ' world')
 
     console.info(log.reporter.getLogMessagesWithIdAndLevel())
     a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
-      "test-app:@just-web/browser-preferences (INFO) update: 'test-app:update-a' hello -> hello world"
+      "test-app:@just-web/browser-preferences (TRACE) update: 'test-app:update-a' hello -> hello world"
     ))
   })
 })
 
 describe('clearUserPreference()', () => {
   it('clear not set value is ok', () => {
-    const { preferences, log } = setupPlugin()
+    const { preferences, log } = setupPlugin({ log: { logLevel: logLevels.all } })
     preferences.clear('unknown') // do not throw
 
     a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
-      `test-app:@just-web/browser-preferences (INFO) clear: 'test-app:unknown'`
+      `test-app:@just-web/browser-preferences (TRACE) clear: 'test-app:unknown'`
     ))
   })
 
@@ -131,7 +131,7 @@ describe('clearUserPreferences()', () => {
     expect(ctx.localStorage.getItem('someone-else-value')).toEqual('hello')
 
     a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
-      `test-app:@just-web/browser-preferences (INFO) clear all: 'test-app'`
+      `test-app:@just-web/browser-preferences (NOTICE) clear all: 'test-app'`
     ))
   })
 })

@@ -4,7 +4,7 @@ import { isType, pick } from 'type-plus'
 import { ctx } from './createApp.ctx'
 
 export namespace createApp {
-  export type Options<N extends string = LogMethodNames> = { name: string, log?: LogOptions<N> }
+  export type Options<N extends string = LogMethodNames> = { name: string } & LogOptions<N>
 }
 
 type AppNode = {
@@ -23,7 +23,7 @@ type AppNode = {
  */
 export function createApp<N extends string = LogMethodNames>(options: createApp.Options<N>) {
   const appContext = { name: options.name, id: ctx.genAppID() }
-  const logModule = logPlugin(options.log)
+  const logModule = logPlugin(options)
   const [logctx] = logModule.init(appContext)
   const log = logctx.log as LogContext<LogMethodNames>['log']
   const appNode = createAppNode(options.name)
@@ -98,14 +98,14 @@ function createAppNode(name: string, parent?: AppNode): AppNode {
   return node
 }
 export namespace createTestApp {
-  export type Options<N extends string = LogMethodNames> = { name?: string, log?: LogOptions<N> }
+  export type Options<N extends string = LogMethodNames> = { name?: string } & LogOptions<N>
 }
 
 
 export function createTestApp<N extends string = LogMethodNames>(options?: createTestApp.Options<N>) {
   const name = options?.name ?? 'test-app'
   const appContext = { name: name, id: ctx.genAppID() }
-  const logModule = logTestPlugin(options?.log)
+  const logModule = logTestPlugin(options)
   const [logctx] = logModule.init(appContext)
   const log = logctx.log as TestLogContext<LogMethodNames>['log']
   const appNode = createAppNode(name)

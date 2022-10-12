@@ -42,18 +42,11 @@
     "@storybook/addon-postcss": "~2.0.0",
     "@storybook/html": "~6.5.0",
     "@types/jest": "^27.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
     "autoprefixer": "~10.4.4",
     "babel-loader": "~8.2.3",
     "babel-preset-solid": "~1.5.0",
     "depcheck": "~1.4.3",
     "eslint": "^8.11.0",
-    "eslint-config-prettier": "~8.5.0",
-    "eslint-config-react-app": "~7.0.0",
-    "eslint-plugin-harmony": "^7.0.0",
-    "eslint-plugin-storybook": "^0.6.0",
-    "eslint-plugin-yml": "~0.15.0",
     "identity-obj-proxy": "~3.0.0",
     "jest": "^27.5.1",
     "jest-validate": "^27.5.1",
@@ -73,10 +66,5 @@
     "vite": "^2.8.6",
     "vite-plugin-solid": "^2.2.6",
     "webpack": "^5.70.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@typescript-eslint/eslint-plugin": "^5.28.0"
-    }
   }
 }

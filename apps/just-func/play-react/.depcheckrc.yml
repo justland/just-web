@@ -8,7 +8,6 @@ ignores:
   - "@types/jest"
   - "@types/node"
   - "@types/platform"
-  - "@typescript-eslint/parser"
   - autoprefixer
   - babel-loader
   - css-loader

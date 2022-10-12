@@ -4,7 +4,7 @@ import plugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, log
 describe(`plugin().init()`, () => {
   it('provides app log methods', () => {
     const reporter = createMemoryLogReporter()
-    const [ctx] = plugin({ logLevel: logLevels.all, reporters: [reporter] })
+    const [ctx] = plugin({ log: { logLevel: logLevels.all, reporters: [reporter] } })
       .init({ name: 'test-app', id: '' })
     ctx.log.alert('alert')
     ctx.log.count('count')
@@ -37,7 +37,7 @@ describe(`plugin().init()`, () => {
 
   it('can add custom levels', () => {
     const reporter = createMemoryLogReporter()
-    const [ctx] = plugin({ customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] })
+    const [ctx] = plugin({ log: { customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] } })
       .init({ name: 'test-app', id: '' })
 
     const l = ctx.log.getLogger('test logger')
@@ -76,7 +76,7 @@ describe(`${logTestPlugin.name}().init()`, () => {
 
   it('works with additional reporters', () => {
     const r = createMemoryLogReporter()
-    const [{ log }] = logTestPlugin({ reporters: [r] }).init()
+    const [{ log }] = logTestPlugin({ log: { reporters: [r] } }).init()
     log.notice('hello')
 
     // the build-in one will not be used

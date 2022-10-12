@@ -3,9 +3,7 @@ ignores:
   - "@babel/plugin-transform-react-jsx"
   - "@storybook/*"
   - "@testing-library/*"
-  - "@typescript-eslint/parser"
   - babel-loader
-  - eslint-plugin-yml
   - fuse.js
   - identity-obj-proxy
   - npm-check-updates

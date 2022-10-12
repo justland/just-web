@@ -69,7 +69,9 @@ export type LogContext<N extends string = LogMethodNames> = {
   log: StandardLog<N> & Omit<Logger<LogMethodNames | N>, 'id' | 'level' | 'write'>
 }
 
-export type LogOptions<N extends string = LogMethodNames> = StandardLogOptions<N>
+export type LogOptions<N extends string = LogMethodNames> = {
+  log?: StandardLogOptions<N>
+}
 
 export type TestLogContext<N extends string = LogMethodNames> = {
   log: StandardLogForTest<N> & Omit<Logger<LogMethodNames | N>, 'id' | 'level' | 'write'>
@@ -100,7 +102,7 @@ export default <N extends string = LogMethodNames>(options?: LogOptions<N>) => (
   init: (
     ctx: AppBaseContext
   ): [LogContext<N>] => {
-    const sl = createStandardLog<N>(options)
+    const sl = createStandardLog<N>(options?.log)
     return [{
       log: buildLogContext<N>(ctx.name, sl, options)
     }]
@@ -115,7 +117,7 @@ function buildLogContext<N extends string = LogMethodNames>(name: string, sl: St
   } as LogContext<N>['log']
 
   const appLogger = sl.getLogger(name)
-  const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.customLevels ?? {})).concat(['on', 'count'])
+  const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.log?.customLevels ?? {})).concat(['on', 'count'])
   logMethods.forEach(m => (log as any)[m] = (appLogger as any)[m].bind(appLogger))
   return log
 }
@@ -131,7 +133,7 @@ export const logTestPlugin = <N extends string = LogMethodNames>(options?: LogOp
     const sl = createStandardLog<N>(requiredDeep<StandardLogOptions<N>>({
       logLevel: logLevels.debug,
       reporters: [reporter]
-    }, options))
+    }, options?.log))
     return [{
       log: Object.assign(buildLogContext<N>(name, sl, options), {
         reporter

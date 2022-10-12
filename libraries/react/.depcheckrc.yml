@@ -6,7 +6,6 @@ ignores:
   - "@testing-library/*"
   - "@size-limit/*"
   - "@types/*"
-  - "@typescript-eslint/parser"
   - autoprefixer
   - babel-loader
   - css-loader

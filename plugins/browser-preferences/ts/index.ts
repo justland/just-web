@@ -32,7 +32,7 @@ const plugin = definePlugin(() => ({
       ctx.localStorage.removeItem(k)
     })
     clearUserPreferences.connect({ commands, keyboard }, () => {
-      log.info(`clear all: '${name}'`)
+      log.notice(`clear all: '${name}'`)
       const keys: string[] = []
       // have to iterate and get all keys first.
       // removing item mid-loop screw up key index.
