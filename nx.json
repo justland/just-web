@@ -1,0 +1,82 @@
+{
+  "extends": "nx/presets/npm.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "build:ts",
+          "build:react",
+          "build:storybook",
+          "build:watch",
+          "chromatic",
+          "clean",
+          "coverage",
+          "depcheck",
+          "eject",
+          "lint",
+          "nuke",
+          "nuke:local",
+          "sb",
+          "storybook",
+          "tailwind:css",
+          "tailwind:css:watch",
+          "test",
+          "test:visual",
+          "test:watch",
+          "verify",
+          "verify:build",
+          "verify:test",
+          "dev",
+          "copy:css",
+          "test:storybook"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "coverage": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "depcheck": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "nuke": {
+      "cache": false
+    },
+    "size": {
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "verify": {
+      "dependsOn": ["build", "lint", "coverage", "depcheck", "size"]
+    }
+  },
+  "affected": {
+    "defaultBase": "main"
+  }
+}
