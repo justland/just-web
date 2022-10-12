@@ -659,7 +659,7 @@ importers:
       '@types/platform': ~1.3.4
       '@types/react': ^17.0.42
       '@types/react-dom': ^17.0.14
-      '@types/react-test-renderer': ~17.0.2
+      '@types/react-test-renderer': ~18.0.0
       '@types/testing-library__jest-dom': ~5.14.3
       assertron: ^10.0.0
       autoprefixer: ~10.4.4
@@ -742,7 +742,7 @@ importers:
       '@types/platform': 1.3.4
       '@types/react': 17.0.45
       '@types/react-dom': 17.0.17
-      '@types/react-test-renderer': 17.0.2
+      '@types/react-test-renderer': 18.0.0
       '@types/testing-library__jest-dom': 5.14.3
       assertron: 10.0.0
       autoprefixer: 10.4.7_postcss@8.4.14
@@ -7510,8 +7510,8 @@ packages:
       '@types/react': 17.0.45
     dev: true
 
-  /@types/react-test-renderer/17.0.2:
-    resolution: {integrity: sha512-+F1KONQTBHDBBhbHuT2GNydeMpPuviduXIVJRB7Y4nma4NR5DrTJfMMZ+jbhEHbpwL+Uqhs1WXh4KHiyrtYTPg==}
+  /@types/react-test-renderer/18.0.0:
+    resolution: {integrity: sha512-C7/5FBJ3g3sqUahguGi03O79b8afNeSD6T8/GU50oQrJCU0bVCCGQHaGKUbg2Ce8VQEEqTw8/HiS6lXHHdgkdQ==}
     dependencies:
       '@types/react': 17.0.45
     dev: true
