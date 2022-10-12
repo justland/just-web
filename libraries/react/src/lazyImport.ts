@@ -1,4 +1,4 @@
-import { PluginModule } from '@just-web/types'
+import type { PluginModule } from '@just-web/types'
 import { ComponentType, lazy } from 'react'
 
 export function lazyImport<

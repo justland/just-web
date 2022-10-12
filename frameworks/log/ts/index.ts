@@ -1,5 +1,5 @@
 import type { StackTraceMeta } from '@just-func/types'
-import { AppBaseContext } from '@just-web/types'
+import type { AppBaseContext } from '@just-web/types'
 import {
   createMemoryLogReporter, createStandardLog, DEFAULT_LOG_METHOD_NAMES, getLogger, Logger,
   logLevels, LogMethodNames, LogReporter, ReporterFilter,
