@@ -16,19 +16,19 @@ const plugin = definePlugin(() => ({
     })
     setUserPreference.connect({ commands, keyboard }, (key, value) => {
       const k = getKey(name, key)
-      log.info(`set: '${k}' ${value}`)
+      log.trace(`set: '${k}' ${value}`)
       ctx.localStorage.setItem(k, serialize(value))
     })
     updateUserPreference.connect({ commands, keyboard }, (key, handler) => {
       const k = getKey(name, key)
       const original = deserialize(ctx.localStorage.getItem(k))
       const newValue = handler(original)
-      log.info(`update: '${k}' ${original} -> ${newValue}`)
+      log.trace(`update: '${k}' ${original} -> ${newValue}`)
       ctx.localStorage.setItem(k, serialize(newValue))
     })
     clearUserPreference.connect({ commands, keyboard }, (key) => {
       const k = getKey(name, key)
-      log.info(`clear: '${k}'`)
+      log.trace(`clear: '${k}'`)
       ctx.localStorage.removeItem(k)
     })
     clearUserPreferences.connect({ commands, keyboard }, () => {
