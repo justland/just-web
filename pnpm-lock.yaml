@@ -101,7 +101,6 @@ importers:
       css-loader: ~6.7.1
       depcheck: ~1.4.3
       eslint: ^8.11.0
-      eslint-plugin-storybook: ^0.6.0
       identity-obj-proxy: ~3.0.0
       jest: ^27.5.1
       jest-validate: ^27.5.1
@@ -187,7 +186,6 @@ importers:
       css-loader: 6.7.1_webpack@5.73.0
       depcheck: 1.4.3
       eslint: 8.17.0
-      eslint-plugin-storybook: 0.6.6_vhsckgnokn2tf7m5xkrurmvfv4
       identity-obj-proxy: 3.0.0
       jest: 27.5.1
       jest-validate: 27.5.1
@@ -1331,6 +1329,7 @@ importers:
       eslint: ^8.11.0
       eslint-config-prettier: ~8.5.0
       eslint-plugin-harmony: ^7.0.0
+      eslint-plugin-storybook: ^0.6.6
       eslint-plugin-yml: ~0.15.0
       jest: ^27.5.1
       jest-validate: ^27.5.1
@@ -1353,6 +1352,7 @@ importers:
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
       eslint-plugin-harmony: 7.1.0_oeacmew2nrl5yidggn3nqfrcka
+      eslint-plugin-storybook: 0.6.6_vhsckgnokn2tf7m5xkrurmvfv4
       eslint-plugin-yml: 0.15.0_eslint@8.17.0
       jest: 27.5.1
       jest-validate: 27.5.1
@@ -6102,7 +6102,7 @@ packages:
     resolution: {integrity: sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==}
     dependencies:
       lodash: 4.17.21
-    dev: true
+    dev: false
 
   /@storybook/csf/0.0.2--canary.4566f4d.1:
     resolution: {integrity: sha512-9OVvMVh3t9znYZwb0Svf/YQoxX2gVOeQTGe2bses2yj+a3+OJnCrUF3/hGv6Em7KujtOdL2LL+JnG49oMVGFgQ==}
@@ -11972,7 +11972,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
-    dev: true
+    dev: false
 
   /eslint-plugin-testing-library/5.5.1_vhsckgnokn2tf7m5xkrurmvfv4:
     resolution: {integrity: sha512-plLEkkbAKBjPxsLj7x4jNapcHAg2ernkQlKKrN2I8NrQwPISZHyCUNvg5Hv3EDqOQReToQb5bnqXYbkijJPE/g==}
@@ -19815,7 +19815,7 @@ packages:
   /requireindex/1.2.0:
     resolution: {integrity: sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==}
     engines: {node: '>=0.10.5'}
-    dev: true
+    dev: false
 
   /requires-port/1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
@@ -21571,7 +21571,6 @@ packages:
   /ts-dedent/2.2.0:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
-    dev: true
 
   /ts-jest/27.1.5_zgo3ukr7wfsrfu7w73hol4lxpy:
     resolution: {integrity: sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA==}
