@@ -1,5 +1,12 @@
 # @just-web/testing
 
+## 0.2.11
+
+### Patch Changes
+
+- Updated dependencies [085a2d1e]
+  - @just-web/log@3.1.0
+
 ## 0.2.10
 
 ### Patch Changes

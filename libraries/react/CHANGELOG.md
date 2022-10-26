@@ -1,5 +1,24 @@
 # @just-web/react
 
+## 3.1.0
+
+### Minor Changes
+
+- 4cf08aff: Add `AppContext` and `useAppContext()`.
+
+  It should be used in most cases,
+  either you are writing MFE or not.
+
+### Patch Changes
+
+- Updated dependencies [3be5a2a2]
+- Updated dependencies [ca54af50]
+- Updated dependencies [085a2d1e]
+  - @just-web/types@3.1.0
+  - @just-web/log@3.1.0
+  - @just-web/app@3.1.0
+  - @just-web/states@3.1.0
+
 ## 3.0.0
 
 ### Patch Changes

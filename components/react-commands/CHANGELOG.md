@@ -1,5 +1,23 @@
 # @just-web/react-commands
 
+## 4.0.1
+
+### Patch Changes
+
+- Updated dependencies [3be5a2a2]
+- Updated dependencies [4cf08aff]
+- Updated dependencies [ca54af50]
+- Updated dependencies [085a2d1e]
+  - @just-web/types@3.1.0
+  - @just-web/react@3.1.0
+  - @just-web/log@3.1.0
+  - @just-web/app@3.1.0
+  - @just-web/browser-keyboard@3.1.0
+  - @just-web/commands@3.1.0
+  - @just-web/keyboard@3.1.0
+  - @just-web/os@3.1.0
+  - @just-web/states@3.1.0
+
 ## 4.0.0
 
 ### Patch Changes

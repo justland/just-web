@@ -1,6 +1,6 @@
 {
   "name": "@just-web/react",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Supporting library for using @just-web with React",
   "keywords": [
     "just-web",

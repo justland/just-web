@@ -1,5 +1,15 @@
 # @just-web/types
 
+## 3.1.0
+
+### Minor Changes
+
+- 3be5a2a2: Add `PluginContext` type to extract that from the plugin.
+
+### Patch Changes
+
+- ca54af50: Support `start(...): void`
+
 ## 3.0.0
 
 ### Patch Changes

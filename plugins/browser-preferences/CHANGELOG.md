@@ -1,5 +1,23 @@
 # @just-web/browser-preferences
 
+## 3.1.0
+
+### Patch Changes
+
+- 085a2d1e: `@just-web/log`: adjust `LogOptions` type.
+  It does not affect the actual API and `@just-web/app`.
+
+  `@just-web/browser-preferences`: adjusts the log levels one more time and update the tests.
+
+- 5d2b412f: Lower some logs levels to trace.
+- Updated dependencies [3be5a2a2]
+- Updated dependencies [ca54af50]
+- Updated dependencies [085a2d1e]
+  - @just-web/types@3.1.0
+  - @just-web/log@3.1.0
+  - @just-web/commands@3.1.0
+  - @just-web/preferences@3.1.0
+
 ## 3.0.0
 
 ### Patch Changes
