@@ -1,6 +1,6 @@
 import { createStandardLog, LogMethodNames, StandardLogOptions } from 'standard-log'
-import { isType } from 'type-plus'
-import { defineInitialize, definePlugin, defineStart, StartContextBase } from '.'
+import { isType, LeftJoin } from 'type-plus'
+import { defineInitialize, definePlugin, defineStart, PluginContext, StartContextBase } from '.'
 
 describe(defineInitialize.name, () => {
   it('accepts function returning a PluginContext', () => {
@@ -179,6 +179,21 @@ describe(definePlugin.name, () => {
       isType.equal<true, (ctx: StartContextBase & { s: number }) => void | Promise<void>, typeof m.start>()
     })
 
+    it('allows StartContext override props in StartContextBase', () => {
+      const plugin = definePlugin(() => ({
+        name: 'test-plugin',
+        init: () => ([{ b: 1 }, { log: 1 }]),
+        start: async (ctx) => {
+          isType.equal<true, LeftJoin<StartContextBase, { log: number }>, typeof ctx>()
+          isType.equal<true, number, typeof ctx.log>()
+        }
+      }))
+      const m = plugin()
+
+      isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }, { log: number }], typeof m.init>()
+      isType.equal<true, (ctx: LeftJoin<StartContextBase, { log: number }>) => void | Promise<void>, typeof m.start>()
+    })
+
     it('detects PluginContext with StartContext', () => {
       const plugin = definePlugin(() => ({
         name: 'dummy',
@@ -230,5 +245,68 @@ describe(definePlugin.name, () => {
       const log = sl.getLogger('test')
       expect(log.silly).toBeDefined()
     })
+  })
+})
+
+describe('PluginContext', () => {
+  it('gets PluginContext from TypeB', () => {
+    const typeB = definePlugin(() => ({ name: 'test-plugin', init: () => ([{ b: 1 }]) }))
+    isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
+  })
+  it('gets PluginContext from TypeB with NeedContext', () => {
+    const typeB = definePlugin(() => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]) }))
+    isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
+  })
+  it('gets PluginContext from TypeB with Param', () => {
+    const typeB = definePlugin((_: number) => ({ name: 'test-plugin', init: () => ([{ b: 1 }]) }))
+    isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
+  })
+  it('gets PluginContext from TypeB with Param and NeedContext', () => {
+    const typeB = definePlugin((_: number) => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]) }))
+    isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
+  })
+
+  it('gets PluginContext from TypeB_WithStart', () => {
+    const typeB = definePlugin(() => ({ name: 'test-plugin', init: () => ([{ b: 1 }]), async start() { } }))
+    isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
+  })
+  it('gets PluginContext from TypeB_WithStart with NeedContext', () => {
+    const typeB = definePlugin(() => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]), async start() { } }))
+    isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
+  })
+  it('gets PluginContext from TypeB_WithStart with Param', () => {
+    const typeB = definePlugin((_: number) => ({ name: 'test-plugin', init: () => ([{ b: 1 }]), async start() { } }))
+    isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
+  })
+  it('gets PluginContext from TypeB_WithStart with Param and NeedContext', () => {
+    const typeB = definePlugin((_: number) => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]), async start() { } }))
+    isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
+  })
+
+  it('gets PluginContext from TypeD', () => {
+    const typeD = definePlugin(() => ({ name: 'test-plugin', init: () => ([{ b: 1 }, { s: 1 }]), async start() { } }))
+    type A = PluginContext<typeof typeD>
+    isType.equal<true, { b: number }, A>()
+  })
+  it('gets PluginContext from TypeD with NeedContext', () => {
+    const typeD = definePlugin(() => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]), async start() { } }))
+    type A = PluginContext<typeof typeD>
+    isType.equal<true, { b: number }, A>()
+  })
+  it('gets PluginContext from TypeD with Param', () => {
+    const typeD = definePlugin((_: number) => ({ name: 'test-plugin', init: () => ([{ b: 1 }, { s: 1 }]), start: async (_: StartContextBase & { s: number }) => { } }))
+    type A = PluginContext<typeof typeD>
+    isType.equal<true, { b: number }, A>()
+  })
+  it('gets PluginContext from TypeD with Param and NeedContext', () => {
+    const typeD = definePlugin((_: number) => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]), start: () => { } }))
+    type A = PluginContext<typeof typeD>
+    isType.equal<true, { b: number }, A>()
+  })
+
+  it('returns never when the plugin has no PluginContext', () => {
+    const typeA = definePlugin(() => ({ name: 'test-plugin', init: () => { } }))
+    type A = PluginContext<typeof typeA>
+    isType.equal<true, never, A>()
   })
 })

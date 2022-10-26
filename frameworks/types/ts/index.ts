@@ -1,5 +1,5 @@
 import { getLogger, Logger } from 'standard-log'
-import { LeftJoin, Omit } from 'type-plus'
+import { AnyFunction, LeftJoin, Omit } from 'type-plus'
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export type AppBaseContext = { name: string, id: string }
@@ -69,19 +69,28 @@ export namespace PluginModule {
     name: string
   }
 
+  /**
+   * TypeA are plugins that does not return a `PluginContext`
+   */
   export type TypeA<
     NeedContext extends Record<string | symbol, any>
   > = PluginModuleBase & ({
     init: (context: NeedContext) => void,
   })
 
-  export type TypeA_WithStart<
+  /**
+   * TypeA are plugins that does not return a `PluginContext`
+   */
+   export type TypeA_WithStart<
     NeedContext extends Record<string | symbol, any>,
   > = PluginModuleBase & ({
     init: (context: NeedContext) => void,
     start: (ctx: StartContextBase) => void | Promise<void>
   })
 
+  /**
+   * TypeB are plugins with `PluginContext` but no `StartContext`.
+   */
   export type TypeB<
     NeedContext extends Record<string | symbol, any>,
     PluginContext extends Record<string | symbol, any>,
@@ -90,7 +99,10 @@ export namespace PluginModule {
     init: (context: NeedContext) => [PluginContext]
   }
 
-  export type TypeB_WithStart<
+  /**
+   * TypeB are plugins with `PluginContext` but no `StartContext`.
+   */
+   export type TypeB_WithStart<
     NeedContext extends Record<string | symbol, any>,
     PluginContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
@@ -98,6 +110,9 @@ export namespace PluginModule {
     start: (ctx: StartContextBase) => void | Promise<void>
   }
 
+  /**
+   * TypeC are plugins with `StartContext` but no `PluginContext`.
+   */
   export type TypeC<
     NeedContext extends Record<string | symbol, any>,
     StartContext extends Record<string | symbol, any>
@@ -106,6 +121,9 @@ export namespace PluginModule {
     start: (context: LeftJoin<StartContextBase, StartContext>) => void | Promise<void>,
   }
 
+  /**
+   * TypeD are plugins with both `PluginContext` and `StartContext`.
+   */
   export type TypeD<
     NeedContext extends Record<string | symbol, any>,
     PluginContext extends Record<string | symbol, any>,
@@ -128,16 +146,23 @@ export type PluginModule<
   | PluginModule.TypeD<NeedContext, PluginContext, StartContext>
 
 /**
- * Typed helper to define the `initialize()` function.
- *
- * `initialize()` function gets the `context` it needs from the application,
- * and returns two things:
- *
- * `PluginContext` which will be added to the application instance.
- * `StartContext` which will be passed to the `start()` function if present.
- *
- * These types are inferred automatically so you don't need to specify them explicitly.
+ * Gets the `PluginContext` type from the plugin.
+ * @return The `PluginContext` or `never`
  */
+export type PluginContext<P extends AnyFunction> = ReturnType<ReturnType<P>['init']>[0] extends infer R
+  ? (unknown extends R ? never : R) : never
+
+/**
+* Typed helper to define the `initialize()` function.
+*
+* `initialize()` function gets the `context` it needs from the application,
+* and returns two things:
+*
+* `PluginContext` which will be added to the application instance.
+* `StartContext` which will be passed to the `start()` function if present.
+*
+* These types are inferred automatically so you don't need to specify them explicitly.
+*/
 export function defineInitialize<
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
