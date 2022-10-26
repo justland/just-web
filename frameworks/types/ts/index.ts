@@ -79,7 +79,7 @@ export namespace PluginModule {
     NeedContext extends Record<string | symbol, any>,
   > = PluginModuleBase & ({
     init: (context: NeedContext) => void,
-    start: (ctx: StartContextBase) => Promise<void>
+    start: (ctx: StartContextBase) => void | Promise<void>
   })
 
   export type TypeB<
@@ -95,7 +95,7 @@ export namespace PluginModule {
     PluginContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
     init: (context: NeedContext) => [PluginContext],
-    start: (ctx: StartContextBase) => Promise<void>
+    start: (ctx: StartContextBase) => void | Promise<void>
   }
 
   export type TypeC<
@@ -103,7 +103,7 @@ export namespace PluginModule {
     StartContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
     init: (context: NeedContext) => [undefined, StartContext],
-    start: (context: LeftJoin<StartContextBase, StartContext>) => Promise<void>,
+    start: (context: LeftJoin<StartContextBase, StartContext>) => void | Promise<void>,
   }
 
   export type TypeD<
@@ -112,7 +112,7 @@ export namespace PluginModule {
     StartContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
     init: (context: NeedContext) => [PluginContext, StartContext],
-    start: (context: LeftJoin<StartContextBase, StartContext>) => Promise<void>,
+    start: (context: LeftJoin<StartContextBase, StartContext>) => void | Promise<void>,
   }
 }
 
