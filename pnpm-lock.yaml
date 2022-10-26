@@ -623,6 +623,7 @@ importers:
       '@babel/plugin-transform-react-jsx': ^7.14.9
       '@just-web/app': workspace:^
       '@just-web/log': workspace:^
+      '@just-web/os': workspace:^
       '@just-web/repo-scripts': workspace:^
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
@@ -706,6 +707,7 @@ importers:
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.19.3
       '@just-web/app': link:../../frameworks/app
       '@just-web/log': link:../../frameworks/log
+      '@just-web/os': link:../../plugins/os
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/states': link:../states
       '@just-web/types': link:../../frameworks/types

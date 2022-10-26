@@ -13,7 +13,12 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-storysource',
-    '@storybook/preset-create-react-app',
+    {
+      name: '@storybook/preset-create-react-app',
+      options: {
+        scriptsPackageName: 'react-scripts'
+      }
+    },
     'storybook-dark-mode',
   ],
   features: {

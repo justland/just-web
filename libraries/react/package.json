@@ -61,6 +61,7 @@
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@just-web/app": "workspace:^",
     "@just-web/log": "workspace:^",
+    "@just-web/os": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@just-web/states": "workspace:^",
     "@just-web/types": "workspace:^",
