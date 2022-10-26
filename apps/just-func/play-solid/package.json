@@ -1,6 +1,7 @@
 {
   "name": "@just-func/play-solid",
   "version": "0.0.2",
+  "private": true,
   "description": "",
   "license": "MIT",
   "scripts": {
