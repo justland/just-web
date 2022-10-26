@@ -70,7 +70,7 @@ describe(definePlugin.name, () => {
       const m = plugin()
 
       isType.equal<true, (ctx: { a: number }) => void, typeof m.init>()
-      isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase) => void | Promise<void>, typeof m.start>()
     })
 
     it('can specify `start()` with no StartContext', () => {
@@ -85,7 +85,7 @@ describe(definePlugin.name, () => {
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => void, typeof m.init>()
-      isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase) => void | Promise<void>, typeof m.start>()
     })
   })
 
@@ -107,7 +107,7 @@ describe(definePlugin.name, () => {
       const m = plugin()
 
       isType.equal<true, (ctx: { a: number }) => [{ b: number }], typeof m.init>()
-      isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase) => void | Promise<void>, typeof m.start>()
     })
 
     it('can specify `start()` with no StartContext', () => {
@@ -119,7 +119,7 @@ describe(definePlugin.name, () => {
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }], typeof m.init>()
-      isType.equal<true, (ctx: StartContextBase) => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase) => void | Promise<void>, typeof m.start>()
     })
 
     it('can detect Params type', () => {
@@ -162,7 +162,7 @@ describe(definePlugin.name, () => {
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => [undefined, { s: number }], typeof m.init>()
-      isType.equal<true, (ctx: StartContextBase & { s: number }) => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase & { s: number }) => void | Promise<void>, typeof m.start>()
     })
   })
 
@@ -176,7 +176,33 @@ describe(definePlugin.name, () => {
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }, { s: number }], typeof m.init>()
-      isType.equal<true, (ctx: StartContextBase & { s: number }) => Promise<void>, typeof m.start>()
+      isType.equal<true, (ctx: StartContextBase & { s: number }) => void | Promise<void>, typeof m.start>()
+    })
+
+    it('detects PluginContext with StartContext', () => {
+      const plugin = definePlugin(() => ({
+        name: 'dummy',
+        init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]),
+        start: async (ctx) => {
+          isType.equal<true, StartContextBase & { s: number }, typeof ctx>()
+        }
+      }))
+
+      type PluginContext = ReturnType<ReturnType<typeof plugin>['init']>[0]
+      isType.equal<true, { b: number }, PluginContext>()
+    })
+
+    it('detects PluginContext with StartContext with sync start', () => {
+      const plugin = definePlugin(() => ({
+        name: 'dummy',
+        init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]),
+        start: (ctx) => {
+          isType.equal<true, StartContextBase & { s: number }, typeof ctx>()
+        }
+      }))
+
+      type PluginContext = ReturnType<ReturnType<typeof plugin>['init']>[0]
+      isType.equal<true, { b: number }, PluginContext>()
     })
   })
 
