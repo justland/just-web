@@ -1,5 +1,5 @@
 import { Store } from '@just-web/states'
-import { createContext, useContext } from 'react'
+import { Context, createContext, useContext } from 'react'
 import { useStore } from './useStore'
 
 /**
@@ -17,7 +17,7 @@ export function createStoreContext<T>() {
  * @param updateStore Optional. The function to update the store when the returning `setValue()` is called.
  */
 export function useStoreContext<S, V>(
-  reactContext: React.Context<Store<S>>,
+  reactContext: Context<Store<S>>,
   getState: (s: S) => V,
   updateStore?: (draft: S, value: V) => void | S
 ): [value: V, setValue: (value: V | ((value: V) => V)) => void] {
