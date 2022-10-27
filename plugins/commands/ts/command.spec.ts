@@ -284,6 +284,12 @@ describe(`${command.name}()`, () => {
     expect(commands.handlers.invoke(inc.id, 3)).toEqual([4])
   })
 
+  it('uses id as the function name', () => {
+    const cmd = command('someCommand')
+
+    expect(cmd.name).toEqual('someCommand')
+  })
+
   describe(`defineHandler() and defineArgs()`, () => {
     it('can be used to help work directly from `handlers`', () => {
       const [{ commands, keyboard }] = setupPlugin()

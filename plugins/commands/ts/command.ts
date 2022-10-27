@@ -66,6 +66,13 @@ export function command<
 >(info: CommandContribution & KeyBindingContribution): Command<Params, R>
 /**
  * Creates a local command with a default handler.
+ *
+ * @param id `ID` of the command.
+ * It should be unique across the application.
+ * It should follow the `<plugin>.<name>` pattern.
+ *
+ * For example: `just-web.showCommandPalette`
+ * The resulting command function will also have this as the name.
  */
 export function command<
   Params extends any[] = [],
@@ -73,6 +80,13 @@ export function command<
 >(id: string, handler: (...args: Params) => R): Command_WithDefault<Params, R>
 /**
  * Creates a local command without default handler.
+ *
+ * @param id `ID` of the command.
+ * It should be unique across the application.
+ * It should follow the `<plugin>.<name>` pattern.
+ *
+ * For example: `just-web.showCommandPalette`
+ * The resulting command function will also have this as the name.
  */
 export function command<
   Params extends any[] = [],
@@ -86,10 +100,17 @@ export function command<
   const info = typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo
   let ctx: CommandsContext & Partial<KeyboardContext>
 
-  return Object.assign(function (...args: Params) {
+  const fn = Object.defineProperty(function (...args: Params) {
     if (!ctx) return getLogger('@just-web/log').error(`cannot call '${info.id}' before connect().`)
     return ctx.commands.handlers.invoke(info.id, ...args)
-  }, {
+  }, 'name', {
+    enumerable: false,
+    writable: false,
+    configurable: false,
+    value: info.id
+  })
+
+  return Object.assign(fn, {
     ...info,
     handler,
     connect(context: CommandsContext & Partial<KeyboardContext>, hdr?: (...args: Params) => R) {
