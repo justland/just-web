@@ -18,7 +18,11 @@
 <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
 <li class="tsd-signature tsd-anchor-link" id="definePlugin">define<wbr/>Plugin<span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">StartContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span>plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../types/_just_web_types.PluginModule.TypeD.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeD</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">StartContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a><a href="#definePlugin" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Typed helper to define a just-web plugin.</p>
+<div class="tsd-comment tsd-typography"><p>Typed helper to define a <code>just-web</code> plugin.</p>
+
+<h3>Note</h3><p>due to an issue with TypeScript,
+the function <code>init()</code> and <code>start()</code> needs to be defined as an arrow function.
+If not, the type can&#39;t be inferred correctly.</p>
 </div>
 <section class="tsd-panel tsd-type-parameters">
 <h4>Type Parameters</h4>
@@ -49,9 +53,15 @@
 <h4 class="tsd-returns-title">Returns <a href="../types/_just_web_types.PluginModule.TypeD.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeD</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">StartContext</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/justland/just-web/blob/e8935d9b/frameworks/types/ts/index.ts#L245">frameworks/types/ts/index.ts:245</a></li></ul></aside></li>
+<li>Defined in <a href="https://github.com/justland/just-web/blob/9f9cb438/frameworks/types/ts/index.ts#L249">frameworks/types/ts/index.ts:249</a></li></ul></aside></li>
 <li class="tsd-signature tsd-anchor-link" id="definePlugin-1">define<wbr/>Plugin<span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">StartContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span>plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../types/_just_web_types.PluginModule.TypeC.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeC</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">StartContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a><a href="#definePlugin-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Typed helper to define a <code>just-web</code> plugin.</p>
+
+<h3>Note</h3><p>due to an issue with TypeScript,
+the function <code>init()</code> and <code>start()</code> needs to be defined as an arrow function.
+If not, the type can&#39;t be inferred correctly.</p>
+</div>
 <section class="tsd-panel tsd-type-parameters">
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameters">
@@ -79,9 +89,15 @@
 <h4 class="tsd-returns-title">Returns <a href="../types/_just_web_types.PluginModule.TypeC.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeC</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">StartContext</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/justland/just-web/blob/e8935d9b/frameworks/types/ts/index.ts#L251">frameworks/types/ts/index.ts:251</a></li></ul></aside></li>
+<li>Defined in <a href="https://github.com/justland/just-web/blob/9f9cb438/frameworks/types/ts/index.ts#L262">frameworks/types/ts/index.ts:262</a></li></ul></aside></li>
 <li class="tsd-signature tsd-anchor-link" id="definePlugin-2">define<wbr/>Plugin<span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span>plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../types/_just_web_types.PluginModule.TypeB_WithStart.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeB_WithStart</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a><a href="#definePlugin-2" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Typed helper to define a <code>just-web</code> plugin.</p>
+
+<h3>Note</h3><p>due to an issue with TypeScript,
+the function <code>init()</code> and <code>start()</code> needs to be defined as an arrow function.
+If not, the type can&#39;t be inferred correctly.</p>
+</div>
 <section class="tsd-panel tsd-type-parameters">
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameters">
@@ -109,9 +125,15 @@
 <h4 class="tsd-returns-title">Returns <a href="../types/_just_web_types.PluginModule.TypeB_WithStart.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeB_WithStart</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/justland/just-web/blob/e8935d9b/frameworks/types/ts/index.ts#L256">frameworks/types/ts/index.ts:256</a></li></ul></aside></li>
+<li>Defined in <a href="https://github.com/justland/just-web/blob/9f9cb438/frameworks/types/ts/index.ts#L274">frameworks/types/ts/index.ts:274</a></li></ul></aside></li>
 <li class="tsd-signature tsd-anchor-link" id="definePlugin-3">define<wbr/>Plugin<span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span>plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../types/_just_web_types.PluginModule.TypeB.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeB</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a><a href="#definePlugin-3" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Typed helper to define a <code>just-web</code> plugin.</p>
+
+<h3>Note</h3><p>due to an issue with TypeScript,
+the function <code>init()</code> and <code>start()</code> needs to be defined as an arrow function.
+If not, the type can&#39;t be inferred correctly.</p>
+</div>
 <section class="tsd-panel tsd-type-parameters">
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameters">
@@ -139,9 +161,15 @@
 <h4 class="tsd-returns-title">Returns <a href="../types/_just_web_types.PluginModule.TypeB.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeB</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">PluginContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/justland/just-web/blob/e8935d9b/frameworks/types/ts/index.ts#L261">frameworks/types/ts/index.ts:261</a></li></ul></aside></li>
+<li>Defined in <a href="https://github.com/justland/just-web/blob/9f9cb438/frameworks/types/ts/index.ts#L286">frameworks/types/ts/index.ts:286</a></li></ul></aside></li>
 <li class="tsd-signature tsd-anchor-link" id="definePlugin-4">define<wbr/>Plugin<span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span>plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Params</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../types/_just_web_types.PluginModule.TypeA_WithStart.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeA_WithStart</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a><a href="#definePlugin-4" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Typed helper to define a <code>just-web</code> plugin.</p>
+
+<h3>Note</h3><p>due to an issue with TypeScript,
+the function <code>init()</code> and <code>start()</code> needs to be defined as an arrow function.
+If not, the type can&#39;t be inferred correctly.</p>
+</div>
 <section class="tsd-panel tsd-type-parameters">
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameters">
@@ -167,9 +195,15 @@
 <h4 class="tsd-returns-title">Returns <a href="../types/_just_web_types.PluginModule.TypeA_WithStart.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeA_WithStart</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/justland/just-web/blob/e8935d9b/frameworks/types/ts/index.ts#L266">frameworks/types/ts/index.ts:266</a></li></ul></aside></li>
+<li>Defined in <a href="https://github.com/justland/just-web/blob/9f9cb438/frameworks/types/ts/index.ts#L298">frameworks/types/ts/index.ts:298</a></li></ul></aside></li>
 <li class="tsd-signature tsd-anchor-link" id="definePlugin-5">define<wbr/>Plugin<span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span>plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../types/_just_web_types.PluginModule.TypeA.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeA</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a><a href="#definePlugin-5" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Typed helper to define a <code>just-web</code> plugin.</p>
+
+<h3>Note</h3><p>due to an issue with TypeScript,
+the function <code>init()</code> and <code>start()</code> needs to be defined as an arrow function.
+If not, the type can&#39;t be inferred correctly.</p>
+</div>
 <section class="tsd-panel tsd-type-parameters">
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameters">
@@ -193,7 +227,7 @@
 <h4 class="tsd-returns-title">Returns <a href="../types/_just_web_types.PluginModule.TypeA.html" class="tsd-signature-type" data-tsd-kind="Type alias">TypeA</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">NeedContext</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></li></ul></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">typeof </span><a class="tsd-signature-type" data-tsd-kind="Parameter">plugin</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/justland/just-web/blob/e8935d9b/frameworks/types/ts/index.ts#L270">frameworks/types/ts/index.ts:270</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/justland/just-web/blob/9f9cb438/frameworks/types/ts/index.ts#L309">frameworks/types/ts/index.ts:309</a></li></ul></aside></li></ul></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
