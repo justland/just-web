@@ -17,7 +17,7 @@ export const updateUserPreference = command<
  * @param key The key of the preference to be cleared
  */
 export const clearUserPreference = command<[key: string]>('just-web.clearUserPreference')
-export const clearUserPreferences = command('just-web.clearUserPreferences')
+export const clearUserPreferences = command({ id: 'just-web.clearUserPreferences' })
 
 const plugin = definePlugin(() => ({
   name: '@just-web/preferences',
