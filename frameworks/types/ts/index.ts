@@ -81,7 +81,7 @@ export namespace PluginModule {
   /**
    * TypeA are plugins that does not return a `PluginContext`
    */
-   export type TypeA_WithStart<
+  export type TypeA_WithStart<
     NeedContext extends Record<string | symbol, any>,
   > = PluginModuleBase & ({
     init: (context: NeedContext) => void,
@@ -102,7 +102,7 @@ export namespace PluginModule {
   /**
    * TypeB are plugins with `PluginContext` but no `StartContext`.
    */
-   export type TypeB_WithStart<
+  export type TypeB_WithStart<
     NeedContext extends Record<string | symbol, any>,
     PluginContext extends Record<string | symbol, any>
   > = PluginModuleBase & {
@@ -240,7 +240,11 @@ export function defineStart<
 }
 
 /**
- * Typed helper to define a just-web plugin.
+ * Typed helper to define a `just-web` plugin.
+ *
+ * @note due to an issue with TypeScript,
+ * the function `init()` and `start()` needs to be defined as an arrow function.
+ * If not, the type can't be inferred correctly.
  */
 export function definePlugin<
   Params extends any[],
@@ -248,25 +252,60 @@ export function definePlugin<
   PluginContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>,
 >(plugin: (...args: Params) => PluginModule.TypeD<NeedContext, PluginContext, StartContext>): typeof plugin
+/**
+ * Typed helper to define a `just-web` plugin.
+ *
+ * @note due to an issue with TypeScript,
+ * the function `init()` and `start()` needs to be defined as an arrow function.
+ * If not, the type can't be inferred correctly.
+ */
 export function definePlugin<
   Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>,
 >(plugin: (...args: Params) => PluginModule.TypeC<NeedContext, StartContext>): typeof plugin
+/**
+ * Typed helper to define a `just-web` plugin.
+ *
+ * @note due to an issue with TypeScript,
+ * the function `init()` and `start()` needs to be defined as an arrow function.
+ * If not, the type can't be inferred correctly.
+ */
 export function definePlugin<
   Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
 >(plugin: (...args: Params) => PluginModule.TypeB_WithStart<NeedContext, PluginContext>): typeof plugin
+/**
+ * Typed helper to define a `just-web` plugin.
+ *
+ * @note due to an issue with TypeScript,
+ * the function `init()` and `start()` needs to be defined as an arrow function.
+ * If not, the type can't be inferred correctly.
+ */
 export function definePlugin<
   Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
 >(plugin: (...args: Params) => PluginModule.TypeB<NeedContext, PluginContext, void>): typeof plugin
+/**
+ * Typed helper to define a `just-web` plugin.
+ *
+ * @note due to an issue with TypeScript,
+ * the function `init()` and `start()` needs to be defined as an arrow function.
+ * If not, the type can't be inferred correctly.
+ */
 export function definePlugin<
   Params extends any[],
   NeedContext extends Record<string | symbol, any>
 >(plugin: (...args: Params) => PluginModule.TypeA_WithStart<NeedContext>): typeof plugin
+/**
+ * Typed helper to define a `just-web` plugin.
+ *
+ * @note due to an issue with TypeScript,
+ * the function `init()` and `start()` needs to be defined as an arrow function.
+ * If not, the type can't be inferred correctly.
+ */
 export function definePlugin<NeedContext extends Record<string | symbol, any>>(plugin: (...args: any[]) => PluginModule.TypeA<NeedContext>): typeof plugin
 export function definePlugin<
   Params extends any[],
