@@ -75,7 +75,7 @@ export type CommandsContext = {
   commands: {
     contributions: ContributionRegistry,
     handlers: HandlerRegistry,
-    showCommandPalette(): any
+    showCommandPalette(): void
   }
 }
 

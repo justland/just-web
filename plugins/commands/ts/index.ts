@@ -9,10 +9,7 @@ import type { CommandContribution, CommandsContext } from './types'
 
 export * from './command'
 export * from './formatCommand'
-export type {
-  JustCommand as Command, CommandContribution, CommandHandler, CommandsContext, JustCommand_WithDefault as Command_WithDefault,
-  ContributionRegistry, HandlerRegistry
-} from './types'
+export type { CommandContribution, CommandHandler, CommandsContext, ContributionRegistry, HandlerRegistry, JustCommand as Command, JustCommand_WithDefault as Command_WithDefault } from './types'
 
 export const showCommandPalette = command({
   id: 'just-web.showCommandPalette',
@@ -41,14 +38,14 @@ const plugin = definePlugin((options?: CommandsOptions) => ({
     const contributions = contributionRegistry(ctx, options?.commands?.contributions)
     const handlers = handlerRegistry(ctx, options?.commands?.handlers)
 
-    contributions.add(justShowCommandPalette)
-    ctx.keyboard.keyBindingContributions.add(justShowCommandPalette)
+    contributions.add(showCommandPalette)
+    ctx.keyboard.keyBindingContributions.add(showCommandPalette)
 
     return [{
       commands: {
         contributions,
         handlers,
-        showCommandPalette: justShowCommandPalette
+        showCommandPalette
       }
     }]
   }
