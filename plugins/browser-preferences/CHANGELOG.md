@@ -1,5 +1,19 @@
 # @just-web/browser-preferences
 
+## 3.1.1
+
+### Patch Changes
+
+- Updated dependencies [17d5574e]
+- Updated dependencies [edca7c12]
+- Updated dependencies [d93f524c]
+- Updated dependencies [adebc089]
+- Updated dependencies [cf41bf89]
+  - @just-web/preferences@3.1.1
+  - @just-web/commands@3.1.1
+  - @just-web/log@3.1.1
+  - @just-web/types@3.1.1
+
 ## 3.1.0
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @just-web/preferences
 
+## 3.1.1
+
+### Patch Changes
+
+- 17d5574e: Add defaultValue support for `getUserPreference`
+- edca7c12: Fix `app.preference.*` return types
+- Updated dependencies [d93f524c]
+- Updated dependencies [adebc089]
+- Updated dependencies [cf41bf89]
+  - @just-web/commands@3.1.1
+  - @just-web/keyboard@3.1.1
+  - @just-web/log@3.1.1
+  - @just-web/types@3.1.1
+
 ## 3.1.0
 
 ### Patch Changes

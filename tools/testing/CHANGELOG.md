@@ -1,5 +1,11 @@
 # @just-web/testing
 
+## 0.2.12
+
+### Patch Changes
+
+- @just-web/log@3.1.1
+
 ## 0.2.11
 
 ### Patch Changes

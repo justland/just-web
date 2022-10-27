@@ -1,5 +1,21 @@
 # @just-web/commands
 
+## 3.1.1
+
+### Patch Changes
+
+- d93f524c: Set `id` as the command function `name`.
+- adebc089: Connects `showCommandPalate` instead of the `just` variant
+- cf41bf89: Make `KeyboardContext` optional.
+
+  This allows the command to be used in an application that does not need key binding support,
+  even if the command has key bindings.
+
+  - @just-web/keyboard@3.1.1
+  - @just-web/log@3.1.1
+  - @just-web/states@3.1.1
+  - @just-web/types@3.1.1
+
 ## 3.1.0
 
 ### Patch Changes

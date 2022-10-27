@@ -1,5 +1,14 @@
 # @just-web/routes
 
+## 3.1.1
+
+### Patch Changes
+
+- @just-web/app@3.1.1
+- @just-web/log@3.1.1
+- @just-web/states@3.1.1
+- @just-web/types@3.1.1
+
 ## 3.1.0
 
 ### Patch Changes
