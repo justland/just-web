@@ -124,7 +124,16 @@ export type Command<
   Params extends any[] = [],
   R = void
 > = Command.Base<Params, R> & {
-  connect(ctx: CommandsContext & KeyboardContext, handler?: (...args: Params) => R): void,
+  /**
+   * Connects a command to the app context.
+   *
+   * If `handler` is provided,
+   * the command function can be called directly which will invoke the command.
+   *
+   * If contribution and/or keybindings are defined in the command,
+   * They will also be registered automatically.
+   */
+  connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R): void,
 }
 
 export type Command_WithDefault<
@@ -132,5 +141,18 @@ export type Command_WithDefault<
   R = void
 > = Command.Base<Params, R> & {
   handler: (...args: Params) => R,
-  connect(ctx: CommandsContext & KeyboardContext, handler?: (...args: Params) => R): void,
+  /**
+   * Connects a command to the app context.
+   *
+   * After calling this,
+   * the command function can be called directly which will invoke the command.
+   *
+   * If contribution and/or keybindings are defined in the command,
+   * They will also be registered automatically.
+   *
+   * @param handler overrides the default handler.
+   * This is useful if the plugin wants to provide a different implementation.
+   * e.g. implementation for specific platform.
+   */
+   connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R): void,
 }
