@@ -1,5 +1,11 @@
 # @just-web/log
 
+## 3.1.1
+
+### Patch Changes
+
+- @just-web/types@3.1.1
+
 ## 3.1.0
 
 ### Patch Changes

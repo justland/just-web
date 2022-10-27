@@ -1,5 +1,18 @@
 # @just-web/browser-contributions
 
+## 3.1.1
+
+### Patch Changes
+
+- Updated dependencies [d93f524c]
+- Updated dependencies [adebc089]
+- Updated dependencies [cf41bf89]
+  - @just-web/commands@3.1.1
+  - @just-web/keyboard@3.1.1
+  - @just-web/log@3.1.1
+  - @just-web/os@3.1.1
+  - @just-web/types@3.1.1
+
 ## 3.1.0
 
 ### Patch Changes
