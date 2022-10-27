@@ -1,5 +1,5 @@
 import { command, CommandsContext } from '@just-web/commands'
-import { LogContext } from '@just-web/log'
+import { KeyboardContext } from '@just-web/keyboard'
 import { definePlugin } from '@just-web/types'
 
 /**
@@ -21,38 +21,20 @@ export const clearUserPreferences = command('just-web.clearUserPreferences')
 
 const plugin = definePlugin(() => ({
   name: '@just-web/preferences',
-  init: ({ commands }: LogContext & CommandsContext) => {
-    commands.contributions.add(clearUserPreferences)
+  init: (ctx: CommandsContext & Partial<KeyboardContext>) => {
+    getUserPreference.connect(ctx)
+    setUserPreference.connect(ctx)
+    updateUserPreference.connect(ctx)
+    clearUserPreference.connect(ctx)
+    clearUserPreferences.connect(ctx)
 
     return [{
       preferences: {
-        get(key: string) {
-          return commands.handlers.invoke(
-            getUserPreference.id,
-            ...getUserPreference.defineArgs(key)
-          )
-        },
-        set(key: string, value: string) {
-          return commands.handlers.invoke(
-            setUserPreference.id,
-            ...setUserPreference.defineArgs(key, value)
-          )
-        },
-        update(key: string, handler: (value: string | undefined) => string) {
-          return commands.handlers.invoke(
-            updateUserPreference.id,
-            ...updateUserPreference.defineArgs(key, handler)
-          )
-        },
-        clear(key: string) {
-          return commands.handlers.invoke(
-            clearUserPreference.id,
-            ...clearUserPreference.defineArgs(key)
-          )
-        },
-        clearAll() {
-          return commands.handlers.invoke(clearUserPreferences.id)
-        }
+        get: getUserPreference,
+        set: setUserPreference,
+        update: updateUserPreference,
+        clear: clearUserPreference,
+        clearAll: clearUserPreferences
       }
     }]
   }
