@@ -7,7 +7,7 @@ import { definePlugin } from '@just-web/types'
  * @param key The key of the preference to be update
  */
 export const setUserPreference = command<[key: string, value: string]>('just-web.setUserPreference')
-export const getUserPreference = command<[key: string], string | undefined>('just-web.getUserPreference')
+export const getUserPreference = command<[key: string, defaultValue?: string], string | undefined>('just-web.getUserPreference')
 export const updateUserPreference = command<
   [key: string, handler: (value: string | undefined) => string]
 >('just-web.updateUserPreference')

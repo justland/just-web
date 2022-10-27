@@ -99,3 +99,12 @@ describe(`plugin.init()`, () => {
     o.end()
   })
 })
+
+
+describe(`${getUserPreference.name}()`, () => {
+  it('can specify a default value', () => {
+    setupTestApp()
+    const result = getUserPreference('new-key', 'abc')
+    expect(result).toEqual(result)
+  })
+})
