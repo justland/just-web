@@ -51,25 +51,28 @@ export function justCommand<
 }
 
 /**
-* Creates a command with a default handler
-*/
+ * Creates a public command with default handler that will be added to `contributions`.
+ */
 export function command<
   Params extends any[] = [],
   R = void
 >(info: CommandContribution & KeyBindingContribution, handler: (...args: Params) => R): Command_WithDefault<Params, R>
+/**
+ * Creates a public command that will be added to `contributions`.
+ */
 export function command<
   Params extends any[] = [],
   R = void
 >(info: CommandContribution & KeyBindingContribution): Command<Params, R>
 /**
- * Creates a command with a default handler
+ * Creates a local command with a default handler.
  */
 export function command<
   Params extends any[] = [],
   R = void
 >(id: string, handler: (...args: Params) => R): Command_WithDefault<Params, R>
 /**
- * Creates a command without default handler.
+ * Creates a local command without default handler.
  */
 export function command<
   Params extends any[] = [],

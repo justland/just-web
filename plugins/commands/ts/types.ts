@@ -132,6 +132,13 @@ export type Command<
    *
    * If contribution and/or keybindings are defined in the command,
    * They will also be registered automatically.
+   *
+   * If the command is defined with string, i.e. `command('name',...)`,
+   * it will not be added to contribution.
+   * It's a shortcut so that local commands can also use `connect()` to setup itself.
+   *
+   * If you want the command to be available outside (i.e. register to contributions),
+   * use the object form `command({...}, ...)`.
    */
   connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R): void,
 }
@@ -149,6 +156,13 @@ export type Command_WithDefault<
    *
    * If contribution and/or keybindings are defined in the command,
    * They will also be registered automatically.
+   *
+   * If the command is defined with string, i.e. `command('name',...)`,
+   * it will not be added to contribution.
+   * It's a shortcut so that local commands can also use `connect()` to setup itself.
+   *
+   * If you want the command to be available outside (i.e. register to contributions),
+   * use the object form `command({...}, ...)`.
    *
    * @param handler overrides the default handler.
    * This is useful if the plugin wants to provide a different implementation.
