@@ -103,7 +103,7 @@ export type JustCommand<
   Params extends JustValues = JustEmpty,
   R extends JustValues = JustEmpty
 > = JustCommand.Base<Params, R> & {
-  connect(param: [ctx: CommandsContext & KeyboardContext, handler?: (...args: Params) => R]): void,
+  connect(param: [ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R]): void,
 }
 
 export type JustCommand_WithDefault<
@@ -111,7 +111,7 @@ export type JustCommand_WithDefault<
   R extends JustValues = JustEmpty
 > = JustCommand.Base<Params, R> & {
   handler: JustFunction<Params, R>,
-  connect(param: [ctx: CommandsContext & KeyboardContext, handler?: (...args: Params) => R]): void,
+  connect(param: [ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R]): void,
 }
 
 export namespace Command {
@@ -174,5 +174,5 @@ export type Command_WithDefault<
    * This is useful if the plugin wants to provide a different implementation.
    * e.g. implementation for specific platform.
    */
-   connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R): void,
+  connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R): void,
 }
