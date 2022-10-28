@@ -94,7 +94,6 @@ export namespace PluginModule {
   export type TypeB<
     NeedContext extends Record<string | symbol, any>,
     PluginContext extends Record<string | symbol, any>,
-    _StartContext extends void
   > = PluginModuleBase & {
     init: (context: NeedContext) => [PluginContext]
   }
@@ -140,7 +139,7 @@ export type PluginModule<
   StartContext extends Record<string | symbol, any> = Record<string | symbol, any>
 > = PluginModule.TypeA<NeedContext>
   | PluginModule.TypeA_WithStart<NeedContext>
-  | PluginModule.TypeB<NeedContext, PluginContext, void>
+  | PluginModule.TypeB<NeedContext, PluginContext>
   | PluginModule.TypeB_WithStart<NeedContext, PluginContext>
   | PluginModule.TypeC<NeedContext, StartContext>
   | PluginModule.TypeD<NeedContext, PluginContext, StartContext>
@@ -287,7 +286,7 @@ export function definePlugin<
   Params extends any[],
   NeedContext extends Record<string | symbol, any>,
   PluginContext extends Record<string | symbol, any>,
->(plugin: (...args: Params) => PluginModule.TypeB<NeedContext, PluginContext, void>): typeof plugin
+>(plugin: (...args: Params) => PluginModule.TypeB<NeedContext, PluginContext>): typeof plugin
 /**
  * Typed helper to define a `just-web` plugin.
  *
@@ -314,7 +313,7 @@ export function definePlugin<
   StartContext extends Record<string | symbol, any>,
 >(plugin: (...args: Params) => PluginModule.TypeD<NeedContext, PluginContext, StartContext> |
   PluginModule.TypeC<NeedContext, StartContext> |
-  PluginModule.TypeB<NeedContext, PluginContext, void> |
+  PluginModule.TypeB<NeedContext, PluginContext> |
   PluginModule.TypeA<NeedContext>) {
   return plugin
 }
