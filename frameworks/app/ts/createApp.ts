@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import logPlugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, LogContext, LogMethodNames, LogOptions, logTestPlugin, TestLogContext } from '@just-web/log'
 import type { AppBaseContext, PluginModule } from '@just-web/types'
 import { isType, LeftJoin, pick } from 'type-plus'
@@ -39,17 +40,15 @@ function appClosure<L extends LogContext>(
 
   function extend<
     C extends Record<string | symbol, any>,
-    P extends PluginModule.TypeB<any, any>
-    | PluginModule.TypeB_WithStart<any, any>
-    | PluginModule.TypeD<any, any, any>
+    P
   >(this: C, plugin: P)
-    : ReturnType<P['init']> extends [infer PM extends Record<any, any>] ? LeftJoin<C, PM> : C
-  function extend<
-    C,
-    P extends PluginModule.TypeA<any>
-    | PluginModule.TypeA_WithStart<any>
-    | PluginModule.TypeC<any, any>
-  >(this: C, plugin: P): C
+    : P extends PluginModule.TypeD<infer N, infer PM, infer S>
+    ? LeftJoin<C, PM>
+    : (P extends PluginModule.TypeB<infer N, infer PM>
+      ? LeftJoin<C, PM>
+      : (P extends PluginModule.TypeB_WithStart<infer N, infer PM>
+        ? LeftJoin<C, PM>
+        : C))
   function extend(this: any, plugin: any) {
     const childAppNode = createAppNode(plugin.name, appNode)
 

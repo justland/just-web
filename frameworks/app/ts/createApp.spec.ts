@@ -48,7 +48,7 @@ describe(`${createApp.name}()`, () => {
     isType.equal<true, typeof app, typeof app2>()
   })
 
-  it('allows plugin with partial context', () => {
+  it('allows TypeB plugin with partial NeedContext', () => {
     const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
     const app2 = app.extend({ name: 'dummy', init: () => [{ a: 1 }] })
     const app3 = app2.extend({ name: 'dummy', init: (_: { a: number, b?: number }) => { } })
@@ -56,15 +56,25 @@ describe(`${createApp.name}()`, () => {
     isType.equal<true, typeof app2, typeof app3>()
   })
 
-  it('allows plugin with partial context', () => {
+  it('allows TypeB plugin with partial NeedContext overriding PluginContext', () => {
     const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
-    const app2 = app.extend({ name: 'dummy', init: () => [{ a: 1 }] })
-    const app3 = app2.extend({ name: 'dummy', init: (_: { a: number, b?: number }) => [{ a: 'a' }] })
+    const b = definePlugin(() => ({ name: 'dummy', init: () => [{ a: 1 }] }))
+    const app2 = app.extend(b())
+    const b1 = definePlugin(() => ({ name: 'dummy', init: (_: { a: number, b?: number }) => [{ a: 'a' }] }))
+    const app3 = app2.extend(b1())
 
     isType.equal<true, string, typeof app3.a>()
     isType.equal<true, typeof app & { a: string }, typeof app3>()
   })
 
+  it('works with TypeD plugin', () => {
+    const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
+    const d = definePlugin(() => ({ name: 'dummy', init: () => [{ a: 1 }, { s: 1 }], start: () => { } }))
+    const app2 = app.extend(d())
+
+    isType.equal<true, number, typeof app2.a>()
+    isType.equal<true, typeof app & { a: number }, typeof app2>()
+  })
 
   it('starts will log an app start message', async () => {
     const reporter = createMemoryLogReporter()
