@@ -2,9 +2,9 @@ import { createMemoryLogReporter, LogContext, logLevels, LogMethodNames } from '
 import osPlugin, { OSContext } from '@just-web/os'
 import { definePlugin, StartContextBase } from '@just-web/types'
 import { a } from 'assertron'
+import { some } from 'satisfier'
 import { CanAssign, isType } from 'type-plus'
 import { createApp, createTestApp } from './createApp'
-import { some } from 'satisfier'
 
 describe(`${createApp.name}()`, () => {
   it('needs name', () => {
@@ -47,6 +47,24 @@ describe(`${createApp.name}()`, () => {
 
     isType.equal<true, typeof app, typeof app2>()
   })
+
+  it('allows plugin with partial context', () => {
+    const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
+    const app2 = app.extend({ name: 'dummy', init: () => [{ a: 1 }] })
+    const app3 = app2.extend({ name: 'dummy', init: (_: { a: number, b?: number }) => { } })
+
+    isType.equal<true, typeof app2, typeof app3>()
+  })
+
+  it('allows plugin with partial context', () => {
+    const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
+    const app2 = app.extend({ name: 'dummy', init: () => [{ a: 1 }] })
+    const app3 = app2.extend({ name: 'dummy', init: (_: { a: number, b?: number }) => [{ a: 'a' }] })
+
+    isType.equal<true, string, typeof app3.a>()
+    isType.equal<true, typeof app & { a: string }, typeof app3>()
+  })
+
 
   it('starts will log an app start message', async () => {
     const reporter = createMemoryLogReporter()

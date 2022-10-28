@@ -1,6 +1,6 @@
 import logPlugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, LogContext, LogMethodNames, LogOptions, logTestPlugin, TestLogContext } from '@just-web/log'
 import type { AppBaseContext, PluginModule } from '@just-web/types'
-import { isType, pick } from 'type-plus'
+import { isType, LeftJoin, pick } from 'type-plus'
 import { ctx } from './createApp.ctx'
 
 export namespace createApp {
@@ -37,40 +37,54 @@ function appClosure<L extends LogContext>(
   appNode: AppNode) {
   const log = appContext.log
 
-  return {
-    ...appContext,
-    extend<
-      C extends Record<string | symbol, any>,
-      N extends Record<string | symbol, any>,
-      S extends Record<string | symbol, any>>(this: C, plugin: PluginModule<C, N, S>): C & N {
-      const childAppNode = createAppNode(plugin.name, appNode)
+  function extend<
+    C extends Record<string | symbol, any>,
+    P extends PluginModule.TypeB<any, any>
+    | PluginModule.TypeB_WithStart<any, any>
+    | PluginModule.TypeD<any, any, any>
+  >(this: C, plugin: P)
+    : ReturnType<P['init']> extends [infer PM extends Record<any, any>] ? LeftJoin<C, PM> : C
+  function extend<
+    C,
+    P extends PluginModule.TypeA<any>
+    | PluginModule.TypeA_WithStart<any>
+    | PluginModule.TypeC<any, any>
+  >(this: C, plugin: P): C
+  function extend(this: any, plugin: any) {
+    const childAppNode = createAppNode(plugin.name, appNode)
 
-      const pluginLogger = Object.assign(log.getLogger(plugin.name), {
-        ...pick(log, 'toLogLevel', 'toLogLevelName'),
-        getLogger: createPrefixedGetLogger({ log }, plugin.name),
-        getNonConsoleLogger: createPrefixedGetNonConsoleLogger({ log }, plugin.name)
-      })
+    const pluginLogger = Object.assign(log.getLogger(plugin.name), {
+      ...pick(log, 'toLogLevel', 'toLogLevelName'),
+      getLogger: createPrefixedGetLogger({ log }, plugin.name),
+      getNonConsoleLogger: createPrefixedGetNonConsoleLogger({ log }, plugin.name)
+    })
 
-      log.notice(`initializing ${plugin.name}`)
-      const initResult = plugin.init({ ...this, log: pluginLogger })
-      if (!initResult) {
-        if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
-          childAppNode.plugin = () => {
-            log.notice(`starting ${plugin.name}`)
-            return plugin.start({ log: pluginLogger } as any)
-          }
-        }
-        return appClosure(appContext, childAppNode) as any
-      }
-      const [pluginContext, startContext] = initResult
+    log.notice(`initializing ${plugin.name}`)
+    const initResult = plugin.init({ ...this, log: pluginLogger })
+    if (!initResult) {
       if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
         childAppNode.plugin = () => {
           log.notice(`starting ${plugin.name}`)
-          return plugin.start({ ...startContext, log: pluginLogger } as any)
+          return plugin.start({ log: pluginLogger } as any)
         }
       }
-      return appClosure({ ...appContext, ...pluginContext! }, childAppNode) as any
-    },
+      return appClosure(appContext, childAppNode) as any
+    }
+    const [pluginContext, startContext] = initResult
+    if (isType<{
+      name: string, start(ctx: any): Promise<void>
+    }>(plugin, p => !!p.start)) {
+      childAppNode.plugin = () => {
+        log.notice(`starting ${plugin.name}`)
+        return plugin.start({ ...startContext, log: pluginLogger } as any)
+      }
+    }
+    return appClosure({ ...appContext, ...pluginContext! }, childAppNode) as any
+  }
+
+  return {
+    ...appContext,
+    extend,
     async start() {
       let top: AppNode = appNode
       while (top.parent) top = top.parent
