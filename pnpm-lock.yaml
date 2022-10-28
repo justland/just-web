@@ -624,6 +624,7 @@ importers:
       '@just-web/app': workspace:^
       '@just-web/log': workspace:^
       '@just-web/os': workspace:^
+      '@just-web/preferences': workspace:^3.1.0
       '@just-web/repo-scripts': workspace:^
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
@@ -700,14 +701,18 @@ importers:
       storybook-dark-mode: ~1.0.9
       style-loader: ~3.3.1
       ts-jest: ^27.1.3
+      type-plus: ^4.14.0
       typescript: ^4.8.4
       webpack: ^5.70.0
+    dependencies:
+      type-plus: 4.14.0
     devDependencies:
       '@babel/plugin-syntax-flow': 7.17.12_@babel+core@7.19.3
       '@babel/plugin-transform-react-jsx': 7.17.12_@babel+core@7.19.3
       '@just-web/app': link:../../frameworks/app
       '@just-web/log': link:../../frameworks/log
       '@just-web/os': link:../../plugins/os
+      '@just-web/preferences': link:../../plugins/preferences
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/states': link:../states
       '@just-web/types': link:../../frameworks/types

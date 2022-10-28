@@ -56,12 +56,16 @@
     "verify:build": "run-s clean build depcheck",
     "verify:test": "run-s test test:visual"
   },
+  "dependencies": {
+    "type-plus": "^4.14.0"
+  },
   "devDependencies": {
     "@babel/plugin-syntax-flow": "^7.14.5",
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@just-web/app": "workspace:^",
     "@just-web/log": "workspace:^",
     "@just-web/os": "workspace:^",
+    "@just-web/preferences": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@just-web/states": "workspace:^",
     "@just-web/types": "workspace:^",
@@ -147,6 +151,9 @@
     "@just-web/states": "workspace:^",
     "@just-web/types": "workspace:^",
     "react": ">= 16.8.0"
+  },
+  "optionalDependencies": {
+    "@just-web/preferences": "workspace:^"
   },
   "size-limit": [
     {
