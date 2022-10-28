@@ -21,6 +21,11 @@ export const getUserPreference = command<[key: string, defaultValue?: string], s
 export const setUserPreference = command<[key: string, value: string | undefined | ((prevValue: string | undefined) => string | undefined)]>('just-web.setUserPreference')
 export const clearAllUserPreferences = command({ id: 'just-web.clearAllUserPreferences' })
 
+/**
+ * Preferences Plugin.
+ * @uses `@just-web/commands`
+ * @optional `@just-web/keyboard`
+ */
 const plugin = definePlugin(() => ({
   name: '@just-web/preferences',
   init: (ctx: CommandsContext & Partial<KeyboardContext>) => {
