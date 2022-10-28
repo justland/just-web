@@ -35,9 +35,9 @@ export function justCommand<
     connect([context, hdr]: [context: CommandsContext & Partial<KeyboardContext>, hdr?: JustFunction<Params, R>]) {
       ctx = context
       hdr = hdr ?? handler
-      if (hdr) {
-        ctx.commands.handlers.register(info.id, hdr)
-      }
+      if (!hdr) return
+
+      ctx.commands.handlers.register(info.id, hdr)
 
       if (withIdString) return
 
@@ -117,9 +117,9 @@ export function command<
     connect(context: CommandsContext & Partial<KeyboardContext>, hdr?: (...args: Params) => R) {
       ctx = context
       hdr = hdr ?? handler
-      if (hdr) {
-        ctx.commands.handlers.register(info.id, hdr)
-      }
+      if (!hdr) return
+
+      ctx.commands.handlers.register(info.id, hdr)
 
       if (withIdString) return
 

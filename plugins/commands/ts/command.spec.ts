@@ -210,6 +210,18 @@ describe(`${justCommand.name}()`, () => {
       expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(true)
     })
 
+    it('will note add to contribution if handler is not defined', () => {
+      // this allows the implementation to connect the command,
+      // instead of getting duplicate registration and get ignored.
+      const [{ commands, keyboard }] = setupPlugin()
+      const inc = justCommand([{ id: 'plugin-a.increment', key: 'ctrl+a' }])
+
+      inc.connect([{ commands, keyboard }])
+
+      expect(commands.contributions.has('plugin-a.increment')).toBe(false)
+      expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(false)
+    })
+
     it(`works without KeyboardContext, which will skip the registration`, () => {
       const [{ commands }] = setupPlugin()
       const inc = justCommand([{ id: 'plugin-a.increment', key: 'ctrl+i' }, (v: number) => [v + 1]])
@@ -425,6 +437,18 @@ describe(`${command.name}()`, () => {
 
       expect(commands.contributions.has('plugin-a.increment')).toBe(true)
       expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(true)
+    })
+
+    it('will note add to contribution if handler is not defined', () => {
+      // this allows the implementation to connect the command,
+      // instead of getting duplicate registration and get ignored.
+      const [{ commands, keyboard }] = setupPlugin()
+      const inc = command({ id: 'plugin-a.increment', key: 'ctrl+a' })
+
+      inc.connect({ commands, keyboard })
+
+      expect(commands.contributions.has('plugin-a.increment')).toBe(false)
+      expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(false)
     })
 
     it(`works without KeyboardContext, which will skip the registration`, () => {
