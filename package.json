@@ -49,7 +49,7 @@
     "verify": "turbo run verify",
     "version": "changeset version && pnpm install",
     "watch": "jest --watch",
-    "postinstall": "husky install",
+    "prepare": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
   },
