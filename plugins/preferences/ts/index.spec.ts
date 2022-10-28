@@ -3,13 +3,13 @@ import commandsPlugin from '@just-web/commands'
 import keyboardPlugin from '@just-web/keyboard'
 import { AssertOrder } from 'assertron'
 import { record } from 'type-plus'
-import plugin, { clearUserPreference, clearUserPreferences, getUserPreference, setUserPreference, updateUserPreference } from '.'
+import preferencesPlugin, { clearAllUserPreferences, getUserPreference, setUserPreference } from '.'
 
 function setupTestApp() {
   return createTestApp()
     .extend(keyboardPlugin())
     .extend(commandsPlugin())
-    .extend(plugin())
+    .extend(preferencesPlugin())
 }
 describe(`plugin.init()`, () => {
   it('provides getUserPreference() API', () => {
@@ -46,52 +46,13 @@ describe(`plugin.init()`, () => {
     o.end()
   })
 
-  it('provides updateUserPreference() API', () => {
-    const app = setupTestApp()
-    const store = record<string, string>()
-
-    app.commands.handlers.register(
-      setUserPreference.id,
-      setUserPreference.defineHandler((key, value) => store[key] = value)
-    )
-    app.commands.handlers.register(
-      getUserPreference.id,
-      getUserPreference.defineHandler(key => store[key])
-    )
-    app.commands.handlers.register(
-      updateUserPreference.id,
-      updateUserPreference.defineHandler((key, handler) => store[key] = handler(store[key]))
-    )
-
-    app.preferences.set('some-unique-id', 'value')
-    app.preferences.update('some-unique-id', (value) => value! + 1)
-
-    expect(store['some-unique-id']).toEqual('value1')
-  })
-
-  it('provides clearUserPreference() API', () => {
-    const app = setupTestApp()
-    const o = new AssertOrder(1)
-    app.commands.handlers.register(
-      clearUserPreference.id,
-      clearUserPreference.defineHandler(key => {
-        expect(key).toEqual('some-unique-id')
-        o.once(1)
-      })
-    )
-
-    app.preferences.clear('some-unique-id')
-
-    o.end()
-  })
-
-  it('provides clearUserPreferences() API', () => {
+  it('provides clearAllUserPreferences() API', () => {
     const app = setupTestApp()
 
     const o = new AssertOrder(1)
     app.commands.handlers.register(
-      clearUserPreferences.id,
-      clearUserPreferences.defineHandler(() => o.once(1))
+      clearAllUserPreferences.id,
+      clearAllUserPreferences.defineHandler(() => o.once(1))
     )
 
     app.preferences.clearAll()
@@ -106,5 +67,37 @@ describe(`${getUserPreference.name}()`, () => {
     setupTestApp()
     const result = getUserPreference('new-key', 'abc')
     expect(result).toEqual(result)
+  })
+})
+
+describe(`${setUserPreference.name}()`, () => {
+  it('supports passing in handler', () => {
+    const app = setupTestApp()
+    const store = record<string, string | undefined>()
+
+    app.commands.handlers.register(
+      setUserPreference.id,
+      setUserPreference.defineHandler((key, value) => {
+        const v = typeof value === 'function' ? value(store[key]) : value
+        store[key] = v
+      })
+    )
+    app.commands.handlers.register(
+      getUserPreference.id,
+      getUserPreference.defineHandler(key => store[key])
+    )
+
+    app.preferences.set('some-unique-id', (value) => value ? (value + 1) : 's')
+    app.preferences.set('some-unique-id', (value) => value ? (value + 1) : 's')
+
+    expect(store['some-unique-id']).toEqual('s1')
+  })
+
+  it('can accept undefined as value (which the implementation should remove the preference)', () => {
+    setUserPreference('somekey', undefined)
+  })
+
+  it('can receive undefined from the handler (which the implementation should remove the preference)', () => {
+    setUserPreference('somekey', () => undefined)
   })
 })
