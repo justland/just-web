@@ -154,7 +154,7 @@ describe(`${justCommand.name}()`, () => {
       inc.connect([{ commands, keyboard }])
 
       isType.equal<true,
-        [[context: CommandsContext & KeyboardContext, handler?: (value: number) => JustUno<number>]],
+        [[context: CommandsContext & Partial<KeyboardContext>, handler?: (value: number) => JustUno<number>]],
         Parameters<typeof inc.connect>>()
     })
 
@@ -199,6 +199,7 @@ describe(`${justCommand.name}()`, () => {
       expect(commands.contributions.has('plugin-a.increment')).toBe(true)
       expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(false)
     })
+
     it('object/info based command with key/mac will be add to keybindings', () => {
       const [{ commands, keyboard }] = setupPlugin()
       const inc = justCommand([{ id: 'plugin-a.increment', key: 'ctrl+a' }, (v: number) => [v + 1]])
@@ -207,6 +208,15 @@ describe(`${justCommand.name}()`, () => {
 
       expect(commands.contributions.has('plugin-a.increment')).toBe(true)
       expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(true)
+    })
+
+    it(`works without KeyboardContext, which will skip the registration`, () => {
+      const [{ commands }] = setupPlugin()
+      const inc = justCommand([{ id: 'plugin-a.increment', key: 'ctrl+i' }, (v: number) => [v + 1]])
+
+      inc.connect([{ commands }])
+
+      expect(inc(3)).toEqual([4])
     })
   })
 })

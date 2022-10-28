@@ -24,7 +24,7 @@ export function justCommand<
 >([idOrInfo, handler]: [idOrInfo: CommandContribution & KeyBindingContribution | string, handler?: JustFunction<Params, R>]): any {
   const withIdString = typeof idOrInfo === 'string'
   const info = typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo
-  let ctx: CommandsContext & KeyboardContext
+  let ctx: CommandsContext & Partial<KeyboardContext>
 
   return Object.assign(function (...args: Params) {
     if (!ctx) return getLogger('@just-web/log').error(`cannot call '${info.id}' before connect().`)
@@ -32,16 +32,17 @@ export function justCommand<
   }, {
     ...info,
     handler,
-    connect([context, hdr]: [context: CommandsContext & KeyboardContext, hdr?: (...args: Params) => R]) {
+    connect([context, hdr]: [context: CommandsContext & Partial<KeyboardContext>, hdr?: JustFunction<Params, R>]) {
       ctx = context
-      if (handler || hdr) {
-        ctx.commands.handlers.register(info.id, hdr ?? handler!)
+      hdr = hdr ?? handler
+      if (hdr) {
+        ctx.commands.handlers.register(info.id, hdr)
       }
 
       if (withIdString) return
 
       ctx.commands.contributions.add(info)
-      if (info.key || info.mac) {
+      if (ctx.keyboard && (info.key || info.mac)) {
         ctx.keyboard.keyBindingContributions.add(info)
       }
     },
