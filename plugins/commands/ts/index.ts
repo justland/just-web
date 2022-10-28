@@ -34,12 +34,12 @@ export type CommandsOptions = {
 
 const plugin = definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
-  init: (ctx: LogContext & KeyboardContext): [CommandsContext] => {
+  init: (ctx: LogContext & Partial<KeyboardContext>): [CommandsContext] => {
     const contributions = contributionRegistry(ctx, options?.commands?.contributions)
     const handlers = handlerRegistry(ctx, options?.commands?.handlers)
 
     contributions.add(showCommandPalette)
-    ctx.keyboard.keyBindingContributions.add(showCommandPalette)
+    ctx.keyboard?.keyBindingContributions.add(showCommandPalette)
 
     return [{
       commands: {
