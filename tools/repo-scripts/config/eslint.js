@@ -66,7 +66,7 @@ module.exports = {
       root: true
     }
   },
-  library(project) {
+  library(project, rules) {
     return {
       env: {
         node: true,
@@ -91,7 +91,8 @@ module.exports = {
             EXPERIMENTAL_useSourceOfProjectReferenceRedirect: true
           },
           rules: {
-            '@typescript-eslint/require-await': 'off'
+            '@typescript-eslint/require-await': 'off',
+            ...rules
           }
         }
       ],
