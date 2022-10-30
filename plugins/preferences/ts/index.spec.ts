@@ -79,7 +79,8 @@ describe(`${setUserPreference.name}()`, () => {
       setUserPreference.id,
       setUserPreference.defineHandler((key, value) => {
         const v = typeof value === 'function' ? value(store[key]) : value
-        store[key] = v
+        // while not correct, it's not the case we test here.
+        store[key] = v as any
       })
     )
     app.commands.handlers.register(

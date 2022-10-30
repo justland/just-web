@@ -1,4 +1,4 @@
-import { Store } from '@just-web/states'
+import { Store, Updater } from '@just-web/states'
 import { Context, createContext, useContext } from 'react'
 import { useStore } from './useStore'
 
@@ -19,7 +19,7 @@ export function createStoreContext<T>() {
 export function useStoreContext<S, V>(
   reactContext: Context<Store<S>>,
   getState: (s: S) => V,
-  updateStore?: (draft: S, value: V) => void | S
+  updateStore?: (draft: S, value: V) => ReturnType<Updater<S>>
 ): [value: V, setValue: (value: V | ((value: V) => V)) => void] {
   const store = useContext(reactContext)
   if (!store) {

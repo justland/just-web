@@ -1,3 +1,4 @@
+import { Draft } from 'immer'
 import { KeyTypes, pick, record, Widen } from 'type-plus'
 import { OnStateChange, ResetState, SetState } from './state'
 import { createStore } from './store'
@@ -11,11 +12,19 @@ export type ReadonlyRegistry<K extends KeyTypes, T> = {
   list(): T[]
 }
 
-export interface Registry<K extends KeyTypes, T> extends ReadonlyRegistry<K, T> {
+export type Registry<K extends KeyTypes, T> = ReadonlyRegistry<K, T> & {
   set: SetState<Record<K, T>>,
-  update(handler: (draft: Record<K, T>) => Record<K, T> | void): void,
+  /**
+   * @deprecated `set()` provides the same functionality
+   */
+  update(handler: (draft: Draft<Record<K, T>>) => Record<K, T> | void): void,
   reset: ResetState
 }
+
+/**
+ * Gets the Value type of the Registry (the `Record<K, T>`)
+ */
+export type RegistryValue<R extends Registry<any, any>> = ReturnType<R['get']>
 
 export function createRegistry<K extends KeyTypes, T>(init?: Record<K, T>): Registry<Widen<K>, T> {
   const store = createStore<Record<Widen<K>, T>>(record(init))

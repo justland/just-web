@@ -102,5 +102,5 @@ export function hasRoute(store: Store<ModuleStore>, route: string) {
 }
 
 export function clearRoutes(store: Store<ModuleStore>) {
-  store.update(s => { s.routes = record() })
+  store.set(s => { s.routes = record<string, Route>() })
 }

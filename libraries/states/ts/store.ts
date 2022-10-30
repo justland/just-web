@@ -1,17 +1,20 @@
-import { getLogger, logLevels, LogMethodNames } from '@just-web/log'
-import produce from 'immer'
+import { getLogger, Logger, logLevels, LogMethodNames } from '@just-web/log'
 import { pick } from 'type-plus'
 import { createState, OnStateChange, ResetState, SetState } from './state'
+import { AsyncUpdater, Updater } from './types'
 
 export type ReadonlyStore<T> = {
   get(): T,
   onChange: OnStateChange<T>,
 }
 
-export interface Store<T> extends ReadonlyStore<T> {
+export type Store<T> = ReadonlyStore<T> & {
   set: SetState<T>,
-  update: (handler: (draft: T) => T | void) => void,
-  reset: ResetState
+  /**
+   * @deprecated `set()` covers all use cases
+   */
+  update(handler: Updater<T> | AsyncUpdater<T>, meta?: { logger: Logger }): void,
+  reset: ResetState,
 }
 
 /**
@@ -28,7 +31,7 @@ export function createStore<T>(value: T): Store<T> {
   return {
     get() { return state[0] },
     set,
-    update(handler) { set(produce(state[0], handler)) },
+    update(handler, meta) { set(handler, meta) },
     onChange,
     reset
   }
