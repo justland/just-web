@@ -2,11 +2,11 @@ import { getLogger, Logger, logLevels } from '@just-web/log'
 import produce, { nothing } from 'immer'
 import { tersify } from 'tersify'
 import { AnyFunction, isPromise } from 'type-plus'
-import type { AsyncUpdater, Updater } from './types'
+import type { Updater } from './types'
 
 export const stateLog = getLogger('@just-web/states:state')
 
-export type SetStateValue<T> = T | Updater<T> | AsyncUpdater<T>
+export type SetStateValue<T> = T | Updater<T>
 
 /**
  * set or update the state.
