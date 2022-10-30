@@ -1,7 +1,7 @@
 import { getLogger, Logger, logLevels, LogMethodNames } from '@just-web/log'
 import { pick } from 'type-plus'
 import { createState, OnStateChange, ResetState, SetState } from './state'
-import { AsyncUpdater, Updater } from './types'
+import type { Updater } from './types'
 
 export type ReadonlyStore<T> = {
   get(): T,
@@ -13,7 +13,7 @@ export type Store<T> = ReadonlyStore<T> & {
   /**
    * @deprecated `set()` covers all use cases
    */
-  update(handler: Updater<T> | AsyncUpdater<T>, meta?: { logger: Logger }): void,
+  update(handler: Updater<T>, meta?: { logger: Logger }): void,
   reset: ResetState,
 }
 
