@@ -2,6 +2,7 @@ import { command, CommandsContext } from '@just-web/commands'
 import type { KeyboardContext } from '@just-web/keyboard'
 import type { SetStateValue } from '@just-web/states'
 import { definePlugin } from '@just-web/types'
+
 /**
  * Gets a specific user preference
  *

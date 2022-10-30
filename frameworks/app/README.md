@@ -27,6 +27,7 @@ Using a simple [React] app as an example:
 
 ```ts
 import { createApp } from '@just-web/app'
+import { AppContext } from '@just-web/react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
@@ -36,11 +37,34 @@ void (async () => {
 
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <AppContext.Provider value={app}>
+        <App />
+      </AppContext.Provider>
     <React.StrictMode>,
     document.getElementById('root')
   )
 })
+```
+
+Your logics can be implemented as plugins.
+The plugin can get the dependencies it needs through the `init()` function, or through `useAppContext()` for [React] components.
+
+```ts
+import { definePlugin } from '@just-web/types'
+
+const plugin = definePlugin(() => {
+  name: 'your-feature',
+  init(ctx: ContextThatYouNeed) { ... }
+})
+```
+
+```ts
+import { useAppContext } from '@just-web/react'
+
+const Comp = () => {
+  const ctx = useAppContext<ContextThatYouNeed>()
+  return <div>{ctx.auth.id}</div>
+}
 ```
 
 [React]: https://reactjs.org/
