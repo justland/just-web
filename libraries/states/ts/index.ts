@@ -1,7 +1,6 @@
 export * from './adder'
-export type { Adder, WithAdder } from './adder'
 export * from './immer'
 export * from './registry'
 export * from './state'
 export * from './store'
-export { AsyncUpdater, Updater } from './types'
+export type { AsyncUpdater, Updater } from './types'

@@ -1,11 +1,28 @@
 import { isType } from 'type-plus'
-import { isNothing, nothing } from '.'
+import { isNothing, nothing } from './index'
 
 describe(`${isNothing}()`, () => {
-  it('works as a type guard', () => {
-    let x: string | typeof nothing | undefined
+  it('guard undefined as not `nothing`', () => {
+    const und: string | typeof nothing | undefined = undefined as any
 
-    if (isNothing(x)) isType.equal<true, typeof nothing, typeof x>()
-    else isType.equal<true, string | undefined, typeof x>()
+    if (isNothing(und)) {
+      isType.equal<true, typeof nothing, typeof und>()
+      fail('should not reach')
+    }
+    else {
+      isType.equal<true, string | undefined, typeof und>()
+    }
+  })
+
+  it('guard `nothing` as `nothing`', () => {
+    const und: string | typeof nothing | undefined = nothing as any
+
+    if (isNothing(und)) {
+      isType.equal<true, typeof nothing, typeof und>()
+    }
+    else {
+      isType.equal<true, string | undefined, typeof und>()
+      fail('should not reach')
+    }
   })
 })

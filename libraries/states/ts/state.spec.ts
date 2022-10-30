@@ -224,8 +224,15 @@ describe('onChange()', () => {
 })
 
 describe('function as value', () => {
-  const init = Object.assign((x: number) => x + 1, { b: 1 })
+  const initFn = (x: number) => x + 1
+  const init = Object.assign(initFn, { b: 1 })
   it(`gets the init function as value`, () => {
+    const [v] = createState(initFn)
+
+    expect(v).toStrictEqual(initFn)
+  })
+
+  it(`gets the function object as value`, () => {
     const [v] = createState(init)
 
     expect(v).toStrictEqual(init)
@@ -233,6 +240,12 @@ describe('function as value', () => {
 
   describe('set()', () => {
     it(`set new funcion`, () => {
+      const [, set] = createState(initFn)
+      const actual = set((a: number) => a - 1)
+      expect(actual!(2)).toEqual(1)
+    })
+
+    it(`set new funcion object`, () => {
       const [, set] = createState(init)
       const actual = set(Object.assign((a: number) => a - 1, { b: 2 }))
       expect(actual!(2)).toEqual(1)
