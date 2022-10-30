@@ -2,8 +2,7 @@ import { getLogger, Logger, logLevels } from '@just-web/log'
 import produce, { nothing } from 'immer'
 import { tersify } from 'tersify'
 import { AnyFunction, isPromise } from 'type-plus'
-import { isNothing } from './immer'
-import { AsyncUpdater, Updater } from './types'
+import type { AsyncUpdater, Updater } from './types'
 
 export const stateLog = getLogger('@just-web/states:state')
 
@@ -12,7 +11,7 @@ export type SetStateValue<T> = T | Updater<T> | AsyncUpdater<T>
 /**
  * set or update the state.
  */
-export type SetState<T> = (<V extends SetStateValue<T>>(value: V, meta?: { logger?: Logger }) => V extends AnyFunction<any, Promise<any>> ? Promise<T> : T)
+export type SetState<T> = (<V extends SetStateValue<T> = SetStateValue<T>>(value: V, meta?: { logger?: Logger }) => V extends AnyFunction<any, Promise<any>> ? Promise<T> : T)
 
 export type StateChangeHandler<T> = (value: T, prev: T) => void
 
@@ -36,17 +35,14 @@ export function createState<T>(init: T)
   }
 
   function set(
-    newValue: T | typeof nothing
+    newValue: T
       | ((draft: T) => T | void | typeof nothing)
       | ((draft: T) => Promise<T | void | typeof nothing>),
     meta?: { logger?: Logger }) {
     if (Object.is(value, newValue)) return newValue
 
     const old = value
-    if (isNothing(newValue)) {
-      value = produce(old, () => nothing)
-    }
-    else if (typeof init === 'function' || typeof newValue !== 'function') {
+    if (typeof init === 'function' || typeof newValue !== 'function') {
       value = Object.freeze(newValue as T)
     }
     else {
