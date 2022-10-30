@@ -44,7 +44,7 @@
     "@just-web/states": "workspace:^",
     "@types/base-64": "^1.0.0",
     "base-64": "^1.0.0",
-    "immer": "~9.0.16",
+    "immer": "github:unional/immer#master",
     "type-plus": "^4.15.2"
   },
   "devDependencies": {
