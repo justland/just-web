@@ -1,7 +1,7 @@
 import { command, CommandsContext } from '@just-web/commands'
-import { KeyboardContext } from '@just-web/keyboard'
+import type { KeyboardContext } from '@just-web/keyboard'
+import type { SetStateValue } from '@just-web/states'
 import { definePlugin } from '@just-web/types'
-
 /**
  * Gets a specific user preference
  *
@@ -18,7 +18,7 @@ export const getUserPreference = command<[key: string, defaultValue?: string], s
  * If the value or the result of the handler is undefined,
  * the preference should be removed.
  */
-export const setUserPreference = command<[key: string, value: string | undefined | ((prevValue: string | undefined) => string | undefined)]>('just-web.setUserPreference')
+export const setUserPreference = command<[key: string, value: SetStateValue<string | undefined>]>('just-web.setUserPreference')
 export const clearAllUserPreferences = command({ id: 'just-web.clearAllUserPreferences' })
 
 /**

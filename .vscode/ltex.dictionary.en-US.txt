@@ -7,21 +7,14 @@ toReadonlyStore
 createRegistry
 toReadonlyRegistry
 withAdder
-
 CommandPalette
-
 useStore
-
 lazyImport
-
 params
-
 os
-
 polymorphically
 Homa
 unional
-
 useState
 useStoreContext
 createStoreContext
@@ -34,3 +27,4 @@ init
 npm-url
 Axios
 MFE
+async

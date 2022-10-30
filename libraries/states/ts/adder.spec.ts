@@ -1,36 +1,43 @@
 import { isType } from 'type-plus'
-import { adder, push, unshift, WithAdder, withAdder } from './adder'
-import { createRegistry, Registry } from './registry'
-import { createStore, Store } from './store'
+import {
+  adder, createRegistry, createStore,
+  push, Registry, Store,
+  unshift, WithAdder, withAdder
+} from '.'
 
 describe('adder()', () => {
-  test('creates an add function for store', () => {
-    const store = createStore<string[]>([])
-    const add = adder(store, (array, entry) => { array.push(entry) })
-    add('a', 'b')
-    expect(store.get()).toEqual(['a', 'b'])
+  describe('with array store', () => {
+    it('creates an add function for the store', () => {
+      const store = createStore<string[]>([])
+      const add = adder(store, (array, entry) => { array.push(entry) })
+      add('a', 'b')
+      expect(store.get()).toEqual(['a', 'b'])
+    })
+
+    it('can use the provided push() function', () => {
+      const store = createStore<string[]>([])
+      const add = adder(store, push)
+      add('a', 'b')
+      expect(store.get()).toEqual(['a', 'b'])
+    })
+
+    it('can use the provided unshift() function', () => {
+      const store = createStore<string[]>([])
+      const add = adder(store, unshift)
+      add('a', 'b')
+      expect(store.get()).toEqual(['b', 'a'])
+    })
   })
 
-  test('use provided push', () => {
-    const store = createStore<string[]>([])
-    const add = adder(store, push)
-    add('a', 'b')
-    expect(store.get()).toEqual(['a', 'b'])
+  describe('wtih record store', () => {
+    it.todo('asdf')
   })
-
-  test('use provided unshift', () => {
-    const store = createStore<string[]>([])
-    const add = adder(store, unshift)
-    add('a', 'b')
-    expect(store.get()).toEqual(['b', 'a'])
-  })
-
   test('creates an add function for registry', () => {
-    const store = createRegistry<string, { key: string, value: number }>({})
-    const add = adder(store, (record, entry) => record[entry.key] = entry)
+    const registry = createRegistry<string, { key: string, value: number }>({})
+    const add = adder(registry, (record, entry) => record[entry.key] = entry)
     add({ key: 'a', value: 1 }, { key: 'b', value: 2 })
 
-    expect(store.get()).toEqual({
+    expect(registry.get()).toEqual({
       a: { key: 'a', value: 1 },
       b: { key: 'b', value: 2 }
     })

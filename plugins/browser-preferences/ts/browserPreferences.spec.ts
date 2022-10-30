@@ -3,10 +3,11 @@ import commandsPlugin from '@just-web/commands'
 import keyboardPlugin from '@just-web/keyboard'
 import { logLevels } from '@just-web/log'
 import preferencesPlugin, { clearAllUserPreferences } from '@just-web/preferences'
+import { nothing } from '@just-web/states'
 import { a, AssertOrder } from 'assertron'
 import { hasAll, some } from 'satisfier'
 import browserPreferencePlugin from '.'
-import { ctx } from './index.ctx'
+import { ctx } from './browserPreferences.ctx'
 
 afterEach(() => ctx.localStorage = localStorage)
 
@@ -107,7 +108,7 @@ describe('app.preferences.set()', () => {
     })
 
     expect(preferences.get('accept-handler')).toEqual('2')
-    preferences.set('accept-handler', () => undefined)
+    preferences.set('accept-handler', () => nothing)
     expect(preferences.get('accept-handler')).toBeUndefined()
 
     const messages = log.reporter.getLogMessagesWithIdAndLevel()

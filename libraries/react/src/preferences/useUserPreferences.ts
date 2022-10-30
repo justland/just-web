@@ -1,4 +1,5 @@
 import { PreferencesContext } from '@just-web/preferences'
+import { nothing } from '@just-web/states'
 import { useMemo } from 'react'
 import { JSONTypes } from 'type-plus'
 
@@ -28,13 +29,13 @@ export function useUserPreference<T extends JSONTypes>(
     app.preferences.set(id, JSON.stringify(state))
   }
   function update(handler: (old: T) => T) {
-    app.preferences.update(id, (v) => {
+    app.preferences.set(id, (v) => {
       const old = v ? JSON.parse(v) : defaultValue
       return JSON.stringify(handler(old))
     })
   }
   function clear() {
-    app.preferences.clear(id)
+    app.preferences.set(id, () => nothing)
   }
   return [preference, set, update, clear] as const
 }

@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "iso-error": "~4.4.0",
-    "type-plus": "^4.14.0"
+    "type-plus": "^4.15.2"
   },
   "devDependencies": {
     "@babel/core": "~7.19.0",

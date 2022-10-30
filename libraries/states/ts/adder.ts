@@ -1,6 +1,6 @@
-import produce, { Draft } from 'immer'
-import type { ArrayValue, KeyTypes, Pick } from 'type-plus'
-import { Registry } from './registry'
+import type { Draft } from 'immer'
+import type { ArrayValue, KeyTypes, Pick, RecordValue } from 'type-plus'
+import type { Registry, RegistryValue } from './registry'
 import type { Store } from './store'
 
 export type Adder<T> = (...entries: T[]) => void
@@ -12,40 +12,41 @@ export type WithAdder<T> = {
 /**
  * builds an adder function for a store or registry
  */
+export function adder<R extends Registry<any, any>>(
+  registry: R,
+  handler: (record: Draft<RegistryValue<R>>, entry: RecordValue<RegistryValue<R>>) => void
+): R & Adder<ReturnType<RecordValue<RegistryValue<R>>>>
 export function adder<A extends Array<any>, S extends Store<A>>(
-  store: Pick<S, 'get' | 'set'>,
-  addEntry: (record: Draft<A>, entry: ArrayValue<A>) => void
+  store: S,
+  handler: (record: Draft<A>, entry: ArrayValue<A>) => void
 ): Adder<ArrayValue<A>>
 export function adder<T, K extends KeyTypes, S extends Store<Record<K, T>>>(
-  store: Pick<S, 'get' | 'set'>,
-  addEntry: (record: Draft<Record<K, T>>, entry: T) => void
+  store: S,
+  handler: (record: Draft<Record<K, T>>, entry: T) => void
 ): Adder<T>
-export function adder<T, K extends KeyTypes = string | symbol>(
-  store: Pick<Store<Record<K, T>>, 'get' | 'set'>,
-  addEntry: (record: Draft<Record<K, T>>, entry: T) => void
+export function adder<T>(
+  store: Pick<Store<any>, 'set'>,
+  handler: (record: Draft<any>, entry: T) => void
 ) {
   return function (...entries: T[]) {
-    store.set(produce(
-      store.get(),
-      s => entries.forEach(entry => addEntry(s, entry))
-    ))
+    store.set((s: any) => entries.forEach(entry => handler(s, entry)))
   }
 }
 
-export function withAdder<T, K extends KeyTypes, R extends Registry<K, T>>(
-  registry: Pick<R, 'get' | 'set' | 'has'>,
-  addEntry: (record: Draft<Record<K, T>>, entry: T) => void
-): R & WithAdder<T>
+export function withAdder<R extends Registry<any, any>>(
+  registry: R,
+  addEntry: (record: Draft<RegistryValue<R>>, entry: RecordValue<RegistryValue<R>>) => void
+): R & WithAdder<RecordValue<RegistryValue<R>>>
 export function withAdder<A extends Array<any>, S extends Store<A>>(
-  store: Pick<S, 'get' | 'set'>,
+  store: S,
   addEntry: (record: Draft<A>, entry: ArrayValue<A>) => void
 ): S & WithAdder<ArrayValue<A>>
-export function withAdder<T, K extends KeyTypes, S extends Store<Record<K, T>>>(
-  store: Pick<S, 'get' | 'set'>,
-  addEntry: (record: Draft<Record<K, T>>, entry: T) => void
-): S & WithAdder<T>
+export function withAdder<S extends Store<Record<any, any>>>(
+  store: S,
+  addEntry: (record: Draft<ReturnType<S['get']>>, entry: ReturnType<S['get']>['x']) => void
+): S & WithAdder<ReturnType<S['get']>['x']>
 export function withAdder<T, K extends KeyTypes = string | symbol>(
-  store: Pick<Store<Record<K, T>>, 'get' | 'set'>,
+  store: Store<any>,
   addEntry: (record: Draft<Record<K, T>>, entry: T) => void
 ) {
   return {
