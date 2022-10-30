@@ -76,5 +76,10 @@
     "typedoc-plugin-resolve-crossmodule-references": "^0.3.0",
     "typescript": "^4.8.4"
   },
+  "pnpm": {
+    "overrides": {
+      "immer": "unional/immer#master"
+    }
+  },
   "packageManager": "pnpm@7.13.4"
 }
