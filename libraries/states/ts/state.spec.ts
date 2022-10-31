@@ -221,6 +221,8 @@ describe('onChange()', () => {
 
     expect(count).toBe(1)
   })
+
+  it.todo('handler throws will not affect set call')
 })
 
 describe('function as value', () => {

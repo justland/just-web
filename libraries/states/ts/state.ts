@@ -11,7 +11,10 @@ export type SetStateValue<T> = T | Updater<T>
 /**
  * set or update the state.
  */
-export type SetState<T> = (<V extends SetStateValue<T> = SetStateValue<T>>(value: V, meta?: { logger?: Logger }) => V extends AnyFunction<any, Promise<any>> ? Promise<T> : T)
+export type SetState<T> = (<V extends SetStateValue<T> = SetStateValue<T>>(
+  value: V,
+  meta?: { logger?: Logger }
+) => V extends AnyFunction<any, Promise<any>> ? Promise<T> : T)
 
 export type StateChangeHandler<T> = (value: T, prev: T) => void
 
