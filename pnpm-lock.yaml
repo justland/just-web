@@ -1244,7 +1244,7 @@ importers:
       assertron: ^10.0.0
       depcheck: ~1.4.3
       eslint: ^8.11.0
-      immer: github:unional/immer#master
+      immer: unional/immer#master
       jest: ^27.5.1
       jest-validate: ^27.5.1
       jest-watch-suspend: ^1.1.2
@@ -7924,7 +7924,7 @@ packages:
   /@storybook/expect/27.5.2-0:
     resolution: {integrity: sha512-cP99mhWN/JeCp7VSIiymvj5tmuMY050iFohvp8Zq+kewKsBSZ6/qpTJAGCCZk6pneTcp4S0Fm5BSqyxzbyJ3gw==}
     dependencies:
-      '@types/jest': 27.5.2
+      '@types/jest': 28.1.1
     dev: true
 
   /@storybook/html/6.5.12_fu6r72642buyvqfmkk52dkgcza:
