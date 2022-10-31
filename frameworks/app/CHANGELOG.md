@@ -1,5 +1,21 @@
 # @just-web/app
 
+## 4.0.0
+
+### Patch Changes
+
+- 1e92661d: Update `type-plus` to `4.15.2`.
+- 7b3b99c0: Allow plugin with partial `NeedContext`
+
+  Improve `extend()` type to use `LeftJoin` for return type.
+
+- 9b004db7: Update `type-plus` to use `MaybePromise.transform()`
+- Updated dependencies [1e92661d]
+- Updated dependencies [5729f2c0]
+- Updated dependencies [9b004db7]
+  - @just-web/log@4.0.0
+  - @just-web/types@4.0.0
+
 ## 3.1.1
 
 ### Patch Changes
@@ -111,17 +127,17 @@
   The plugin mechanism is updated that now through the `extend()` method:
 
   ```ts
-  import { createApp } from "@just-web/app";
+  import { createApp } from '@just-web/app'
 
-  createApp({ name: "now-required" }).extend({
-    name: "plugin-name",
+  createApp({ name: 'now-required' }).extend({
+    name: 'plugin-name',
     init() {
       /* required */
     },
     start() {
       /* optional */
-    },
-  });
+    }
+  })
   ```
 
   Use the `definePlugin()` method from `@just-web/types` to define the plugin creator function `() => PluginModule`, which will do some sophisticate type checking and inferring for you.

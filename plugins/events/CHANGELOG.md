@@ -1,5 +1,13 @@
 # @just-web/events
 
+## 4.0.0
+
+### Patch Changes
+
+- Updated dependencies [1e92661d]
+- Updated dependencies [9b004db7]
+  - @just-web/log@4.0.0
+
 ## 3.1.1
 
 ### Patch Changes

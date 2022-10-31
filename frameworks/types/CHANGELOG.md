@@ -1,5 +1,13 @@
 # @just-web/types
 
+## 4.0.0
+
+### Patch Changes
+
+- 1e92661d: Update `type-plus` to `4.15.2`.
+- 5729f2c0: Remove extra type
+- 9b004db7: Update `type-plus` to use `MaybePromise.transform()`
+
 ## 3.1.1
 
 ## 3.1.0
