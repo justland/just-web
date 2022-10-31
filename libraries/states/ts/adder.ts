@@ -1,7 +1,7 @@
 import type { Draft } from 'immer'
 import type { ArrayValue, KeyTypes, Pick, RecordValue } from 'type-plus'
 import type { Registry, RegistryValue } from './registry'
-import type { Store } from './store'
+import type { Store, StoreValue } from './store'
 
 export type Adder<T> = (...entries: T[]) => void
 
@@ -20,10 +20,10 @@ export function adder<A extends Array<any>, S extends Store<A>>(
   store: S,
   handler: (record: Draft<A>, entry: ArrayValue<A>) => void
 ): Adder<ArrayValue<A>>
-export function adder<T, K extends KeyTypes, S extends Store<Record<K, T>>>(
+export function adder<S extends Store<Record<KeyTypes, any>>>(
   store: S,
-  handler: (record: Draft<Record<K, T>>, entry: T) => void
-): Adder<T>
+  handler: (record: Draft<StoreValue<S>>, entry: RecordValue<StoreValue<S>>) => void
+): Adder<RecordValue<StoreValue<S>>>
 export function adder<T>(
   store: Pick<Store<any>, 'set'>,
   handler: (record: Draft<any>, entry: T) => void
@@ -43,11 +43,11 @@ export function withAdder<A extends Array<any>, S extends Store<A>>(
 ): S & WithAdder<ArrayValue<A>>
 export function withAdder<S extends Store<Record<any, any>>>(
   store: S,
-  addEntry: (record: Draft<ReturnType<S['get']>>, entry: ReturnType<S['get']>['x']) => void
-): S & WithAdder<ReturnType<S['get']>['x']>
-export function withAdder<T, K extends KeyTypes = string | symbol>(
-  store: Store<any>,
-  addEntry: (record: Draft<Record<K, T>>, entry: T) => void
+  addEntry: (record: Draft<StoreValue<S>>, entry: RecordValue<StoreValue<S>>) => void
+): S & WithAdder<RecordValue<StoreValue<S>>>
+export function withAdder<S extends Store<any>>(
+  store: S,
+  addEntry: (record: Draft<StoreValue<S>>, entry: any) => void
 ) {
   return {
     ...store,

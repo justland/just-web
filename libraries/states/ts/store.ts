@@ -18,6 +18,11 @@ export type Store<T> = ReadonlyStore<T> & {
 }
 
 /**
+ * Gets the Value type of the Registry (the `Record<K, T>`)
+ */
+ export type StoreValue<S extends Store<any>> = ReturnType<S['get']>
+
+/**
  * creates a object style store to track a value and its changes.
  */
 export function createStore<T>(value: T): Store<T> {
