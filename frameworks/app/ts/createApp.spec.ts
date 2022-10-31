@@ -58,9 +58,9 @@ describe(`${createApp.name}()`, () => {
 
   it('allows TypeB plugin with partial NeedContext overriding PluginContext', () => {
     const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
-    const b = definePlugin(() => ({ name: 'dummy', init: () => [{ a: 1 }] }))
+    const b = definePlugin(() => ({ id: 'dummy', init: () => [{ a: 1 }] }))
     const app2 = app.extend(b())
-    const b1 = definePlugin(() => ({ name: 'dummy', init: (_: { a: number, b?: number }) => [{ a: 'a' }] }))
+    const b1 = definePlugin(() => ({ id: 'dummy', init: (_: { a: number, b?: number }) => [{ a: 'a' }] }))
     const app3 = app2.extend(b1())
 
     isType.equal<true, string, typeof app3.a>()
@@ -69,7 +69,7 @@ describe(`${createApp.name}()`, () => {
 
   it('works with TypeD plugin', () => {
     const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
-    const d = definePlugin(() => ({ name: 'dummy', init: () => [{ a: 1 }, { s: 1 }], start: () => { } }))
+    const d = definePlugin(() => ({ id: 'dummy', init: () => [{ a: 1 }, { s: 1 }], start: () => { } }))
     const app2 = app.extend(d())
 
     isType.equal<true, number, typeof app2.a>()
@@ -90,7 +90,7 @@ describe(`${createApp.name}()`, () => {
     const reporter = createMemoryLogReporter()
     const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
       .extend(definePlugin(() => ({
-        name: 'dummy-plugin',
+        id: 'dummy-plugin',
         init() { },
         // Have to declare the type here.
         // Seems to be a TypeScript bug (4.8.4)
@@ -113,11 +113,11 @@ describe(`${createApp.name}()`, () => {
     const reporter = createMemoryLogReporter()
     const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
       .extend(definePlugin(() => ({
-        name: 'dummy-a', init() { return [undefined, { a: 1 }] },
+        id: 'dummy-a', init() { return [undefined, { a: 1 }] },
         async start() { }
       }))())
       .extend(definePlugin(() => ({
-        name: 'dummy-b', init() { },
+        id: 'dummy-b', init() { },
         async start() { }
       }))())
     await app.start()
@@ -136,23 +136,23 @@ describe(`${createApp.name}()`, () => {
     const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
 
     app.extend(definePlugin(() => ({
-      name: 'dummy-a', init() { },
+      id: 'dummy-a', init() { },
       async start() { }
     }))()).extend(definePlugin(() => ({
-      name: 'dummy-b', init() { },
+      id: 'dummy-b', init() { },
       async start() { }
     }))())
 
     app.extend(definePlugin(() => ({
-      name: 'dummy-c', init() { },
+      id: 'dummy-c', init() { },
       async start() { }
     }))())
 
     app.extend(definePlugin(() => ({
-      name: 'dummy-d', init() { },
+      id: 'dummy-d', init() { },
       async start() { }
     }))()).extend(definePlugin(() => ({
-      name: 'dummy-e', init() { },
+      id: 'dummy-e', init() { },
       async start() { }
     }))())
 
@@ -178,23 +178,23 @@ describe(`${createApp.name}()`, () => {
     const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
 
     const app2 = app.extend(definePlugin(() => ({
-      name: 'dummy-a', init() { },
+      id: 'dummy-a', init() { },
       async start() { }
     }))()).extend(definePlugin(() => ({
-      name: 'dummy-b', init() { },
+      id: 'dummy-b', init() { },
       async start() { }
     }))())
 
     const app3 = app.extend(definePlugin(() => ({
-      name: 'dummy-c', init() { },
+      id: 'dummy-c', init() { },
       async start() { }
     }))())
 
     const app4 = app.extend(definePlugin(() => ({
-      name: 'dummy-d', init() { },
+      id: 'dummy-d', init() { },
       async start() { }
     }))()).extend(definePlugin(() => ({
-      name: 'dummy-e', init() { },
+      id: 'dummy-e', init() { },
       async start() { }
     }))())
 
@@ -228,7 +228,7 @@ describe(`${createApp.name}()`, () => {
   it(`sends startContext to start()`, async () => {
     const reporter = createMemoryLogReporter()
     const app = createApp({ name: 'a', log: { reporters: [reporter] } }).extend(definePlugin(() => ({
-      name: 'plugin-a',
+      id: 'plugin-a',
       init: () => ([undefined, { b: 1 }]),
       start: (ctx) => {
         isType.t<CanAssign<typeof ctx, { b: number }>>()
@@ -241,7 +241,7 @@ describe(`${createApp.name}()`, () => {
   it(`gives plugin a prefixed getLogger()`, async () => {
     const reporter = createMemoryLogReporter()
     const app = createApp({ name: 'a', log: { reporters: [reporter] } }).extend(definePlugin(() => ({
-      name: 'plugin-a',
+      id: 'plugin-a',
       init: (ctx: LogContext) => {
         const log = ctx.log.getLogger('custom')
         log.info('info')
@@ -257,7 +257,7 @@ describe(`${createApp.name}()`, () => {
   it('gives plugin a prefixed getNonConsoleLogger()', async () => {
     const reporter = createMemoryLogReporter()
     const app = createApp({ name: 'a', log: { reporters: [reporter] } }).extend(definePlugin(() => ({
-      name: 'plugin-a',
+      id: 'plugin-a',
       init: (ctx: LogContext) => {
         const log = ctx.log.getNonConsoleLogger('custom')
         log.info('info')

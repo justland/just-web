@@ -29,7 +29,7 @@ export type ModuleStore = {
 export type StartContext = { store: Store<ModuleStore>, routeContext: RoutesContext }
 
 export default definePlugin(() => ({
-  name: '@just-web/routes',
+  id: '@just-web/routes',
   init: (ctx: LogContext): [RoutesContext, StartContext] => {
     const store = createStore<ModuleStore>({
       ...ctx,

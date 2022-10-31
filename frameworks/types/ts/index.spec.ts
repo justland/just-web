@@ -33,8 +33,8 @@ describe(defineStart.name, () => {
 describe(definePlugin.name, () => {
   describe('PluginModule_A: no PluginContext and StartContext', () => {
     it('requires only the init() function. NeedContext can be omitted', () => {
-      let plugin = definePlugin(() => ({ name: 'test-plugin', init: () => { } }))
-      plugin = definePlugin(() => ({ name: 'test-plugin', init() { } }))
+      let plugin = definePlugin(() => ({ id: 'test-plugin', init: () => { } }))
+      plugin = definePlugin(() => ({ id: 'test-plugin', init() { } }))
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => void, typeof m.init>()
@@ -42,7 +42,7 @@ describe(definePlugin.name, () => {
 
     it('defaults NeedContext to Record<string|symbol, any>', () => {
       const plugin = definePlugin(() => ({
-        name: 'test-plugin',
+        id: 'test-plugin',
         init(ctx) {
           isType.equal<true, Record<string | symbol, any>, typeof ctx>()
         }
@@ -53,7 +53,7 @@ describe(definePlugin.name, () => {
     })
 
     it('can specify NeedContext', async () => {
-      const plugin = definePlugin(() => ({ name: 'test-plugin', init(_: { a: number }) { } }))
+      const plugin = definePlugin(() => ({ id: 'test-plugin', init(_: { a: number }) { } }))
       const m = plugin()
 
       isType.equal<true, (ctx: { a: number }) => void, typeof m.init>()
@@ -61,7 +61,7 @@ describe(definePlugin.name, () => {
 
     it('with NeedContext, can specify `start()` with no StartContext', () => {
       const plugin = definePlugin(() => ({
-        name: 'test-plugin',
+        id: 'test-plugin',
         init(_: { a: number }) { },
         async start(ctx) {
           isType.equal<false, any, typeof ctx>()
@@ -75,7 +75,7 @@ describe(definePlugin.name, () => {
 
     it('can specify `start()` with no StartContext', () => {
       const plugin = definePlugin(() => ({
-        name: 'test-plugin',
+        id: 'test-plugin',
         init(_) { },
         async start(ctx) {
           isType.equal<false, any, typeof ctx>()
@@ -91,8 +91,8 @@ describe(definePlugin.name, () => {
 
   describe('PluginModule_B: with PluginContext', () => {
     it('requires only the `init()` function. NeedContext can be omitted', () => {
-      let plugin = definePlugin(() => ({ name: 'test-plugin', init: () => ([{ b: 1 }]) }))
-      plugin = definePlugin(() => ({ name: 'test-plugin', init() { return [{ b: 1 }] } }))
+      let plugin = definePlugin(() => ({ id: 'test-plugin', init: () => ([{ b: 1 }]) }))
+      plugin = definePlugin(() => ({ id: 'test-plugin', init() { return [{ b: 1 }] } }))
       const m = plugin()
 
       isType.equal<true, (ctx: Record<string | symbol, any>) => [{ b: number }], typeof m.init>()
@@ -100,7 +100,7 @@ describe(definePlugin.name, () => {
 
     it('with NeedContext, can specify `start()` with no StartContext', () => {
       const plugin = definePlugin(() => ({
-        name: 'test-plugin',
+        id: 'test-plugin',
         init: (_: { a: number }) => [{ b: 1 }],
         async start() { }
       }))
@@ -112,7 +112,7 @@ describe(definePlugin.name, () => {
 
     it('can specify `start()` with no StartContext', () => {
       const plugin = definePlugin(() => ({
-        name: 'test-plugin',
+        id: 'test-plugin',
         init: () => [{ b: 1 }],
         async start() { }
       }))
@@ -124,7 +124,7 @@ describe(definePlugin.name, () => {
 
     it('can detect Params type', () => {
       const plugin = definePlugin((options?: { a: number }) => ({
-        name: 'dummy',
+        id: 'dummy',
         init: () => ([{ dummy: options?.a }])
       }))
 
@@ -133,7 +133,7 @@ describe(definePlugin.name, () => {
 
     it('can detect Params type with NeedContext', () => {
       const plugin = definePlugin((options?: { a: number }) => ({
-        name: 'dummy',
+        id: 'dummy',
         init: (_: { a: number }) => ([{ dummy: options?.a }])
       }))
 
@@ -155,7 +155,7 @@ describe(definePlugin.name, () => {
   describe('PluginModule_C: with StartContext', () => {
     it('requires `init()` and `start()`. ', () => {
       const plugin = definePlugin(() => ({
-        name: 'test-plugin',
+        id: 'test-plugin',
         init: () => ([undefined, { s: 1 }]),
         start: async (ctx) => isType.equal<true, StartContextBase & { s: number }, typeof ctx>()
       }))
@@ -169,7 +169,7 @@ describe(definePlugin.name, () => {
   describe('PluginModule_D: with PluginContext and StartContext', () => {
     it('requires `init()` and `start()`. ', () => {
       const plugin = definePlugin(() => ({
-        name: 'test-plugin',
+        id: 'test-plugin',
         init: () => ([{ b: 1 }, { s: 1 }]),
         start: async (ctx) => isType.equal<true, StartContextBase & { s: number }, typeof ctx>()
       }))
@@ -181,7 +181,7 @@ describe(definePlugin.name, () => {
 
     it('allows StartContext override props in StartContextBase', () => {
       const plugin = definePlugin(() => ({
-        name: 'test-plugin',
+        id: 'test-plugin',
         init: () => ([{ b: 1 }, { log: 1 }]),
         start: async (ctx) => {
           isType.equal<true, LeftJoin<StartContextBase, { log: number }>, typeof ctx>()
@@ -196,7 +196,7 @@ describe(definePlugin.name, () => {
 
     it('detects PluginContext with StartContext', () => {
       const plugin = definePlugin(() => ({
-        name: 'dummy',
+        id: 'dummy',
         init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]),
         start: async (ctx) => {
           isType.equal<true, StartContextBase & { s: number }, typeof ctx>()
@@ -209,7 +209,7 @@ describe(definePlugin.name, () => {
 
     it('detects PluginContext with StartContext with sync start', () => {
       const plugin = definePlugin(() => ({
-        name: 'dummy',
+        id: 'dummy',
         init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]),
         start: (ctx) => {
           isType.equal<true, StartContextBase & { s: number }, typeof ctx>()
@@ -250,62 +250,62 @@ describe(definePlugin.name, () => {
 
 describe('PluginContext', () => {
   it('gets PluginContext from TypeB', () => {
-    const typeB = definePlugin(() => ({ name: 'test-plugin', init: () => ([{ b: 1 }]) }))
+    const typeB = definePlugin(() => ({ id: 'test-plugin', init: () => ([{ b: 1 }]) }))
     isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
   })
   it('gets PluginContext from TypeB with NeedContext', () => {
-    const typeB = definePlugin(() => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]) }))
+    const typeB = definePlugin(() => ({ id: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]) }))
     isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
   })
   it('gets PluginContext from TypeB with Param', () => {
-    const typeB = definePlugin((_: number) => ({ name: 'test-plugin', init: () => ([{ b: 1 }]) }))
+    const typeB = definePlugin((_: number) => ({ id: 'test-plugin', init: () => ([{ b: 1 }]) }))
     isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
   })
   it('gets PluginContext from TypeB with Param and NeedContext', () => {
-    const typeB = definePlugin((_: number) => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]) }))
+    const typeB = definePlugin((_: number) => ({ id: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]) }))
     isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
   })
 
   it('gets PluginContext from TypeB_WithStart', () => {
-    const typeB = definePlugin(() => ({ name: 'test-plugin', init: () => ([{ b: 1 }]), async start() { } }))
+    const typeB = definePlugin(() => ({ id: 'test-plugin', init: () => ([{ b: 1 }]), async start() { } }))
     isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
   })
   it('gets PluginContext from TypeB_WithStart with NeedContext', () => {
-    const typeB = definePlugin(() => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]), async start() { } }))
+    const typeB = definePlugin(() => ({ id: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]), async start() { } }))
     isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
   })
   it('gets PluginContext from TypeB_WithStart with Param', () => {
-    const typeB = definePlugin((_: number) => ({ name: 'test-plugin', init: () => ([{ b: 1 }]), async start() { } }))
+    const typeB = definePlugin((_: number) => ({ id: 'test-plugin', init: () => ([{ b: 1 }]), async start() { } }))
     isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
   })
   it('gets PluginContext from TypeB_WithStart with Param and NeedContext', () => {
-    const typeB = definePlugin((_: number) => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]), async start() { } }))
+    const typeB = definePlugin((_: number) => ({ id: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }]), async start() { } }))
     isType.equal<true, { b: number }, PluginContext<typeof typeB>>()
   })
 
   it('gets PluginContext from TypeD', () => {
-    const typeD = definePlugin(() => ({ name: 'test-plugin', init: () => ([{ b: 1 }, { s: 1 }]), async start() { } }))
+    const typeD = definePlugin(() => ({ id: 'test-plugin', init: () => ([{ b: 1 }, { s: 1 }]), async start() { } }))
     type A = PluginContext<typeof typeD>
     isType.equal<true, { b: number }, A>()
   })
   it('gets PluginContext from TypeD with NeedContext', () => {
-    const typeD = definePlugin(() => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]), async start() { } }))
+    const typeD = definePlugin(() => ({ id: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]), async start() { } }))
     type A = PluginContext<typeof typeD>
     isType.equal<true, { b: number }, A>()
   })
   it('gets PluginContext from TypeD with Param', () => {
-    const typeD = definePlugin((_: number) => ({ name: 'test-plugin', init: () => ([{ b: 1 }, { s: 1 }]), start: async (_: StartContextBase & { s: number }) => { } }))
+    const typeD = definePlugin((_: number) => ({ id: 'test-plugin', init: () => ([{ b: 1 }, { s: 1 }]), start: async (_: StartContextBase & { s: number }) => { } }))
     type A = PluginContext<typeof typeD>
     isType.equal<true, { b: number }, A>()
   })
   it('gets PluginContext from TypeD with Param and NeedContext', () => {
-    const typeD = definePlugin((_: number) => ({ name: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]), start: () => { } }))
+    const typeD = definePlugin((_: number) => ({ id: 'test-plugin', init: (_: { a: number }) => ([{ b: 1 }, { s: 1 }]), start: () => { } }))
     type A = PluginContext<typeof typeD>
     isType.equal<true, { b: number }, A>()
   })
 
   it('returns never when the plugin has no PluginContext', () => {
-    const typeA = definePlugin(() => ({ name: 'test-plugin', init: () => { } }))
+    const typeA = definePlugin(() => ({ id: 'test-plugin', init: () => { } }))
     type A = PluginContext<typeof typeA>
     isType.equal<true, never, A>()
   })

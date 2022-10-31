@@ -9,7 +9,7 @@ import { isType, JSONTypes, MaybePromise, record } from 'type-plus'
 import preferencesPlugin, { clearAllUserPreferences, getUserPreference, setUserPreference } from './index'
 
 const inMemoryPrefPlugin = definePlugin(() => ({
-  name: 'in-memory.pref',
+  id: 'in-memory.pref',
   init(ctx: CommandsContext) {
     let storage = record<string, any>()
     getUserPreference.connect(ctx, (key, defaultValue) => {

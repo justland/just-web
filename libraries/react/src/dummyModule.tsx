@@ -1,7 +1,7 @@
 import { AppBaseContext, definePlugin } from '@just-web/types'
 
 const plugin = definePlugin((options?: { a: number }) => ({
-  name: 'dummy',
+  id: 'dummy',
   init: (_context: AppBaseContext) => [{ dummy: options?.a }]
 }))
 

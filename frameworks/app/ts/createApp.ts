@@ -50,20 +50,20 @@ function appClosure<L extends LogContext>(
         ? LeftJoin<C, PM>
         : C))
   function extend(this: any, plugin: any) {
-    const childAppNode = createAppNode(plugin.name, appNode)
+    const childAppNode = createAppNode(plugin.id, appNode)
 
-    const pluginLogger = Object.assign(log.getLogger(plugin.name), {
+    const pluginLogger = Object.assign(log.getLogger(plugin.id), {
       ...pick(log, 'toLogLevel', 'toLogLevelName'),
-      getLogger: createPrefixedGetLogger({ log }, plugin.name),
-      getNonConsoleLogger: createPrefixedGetNonConsoleLogger({ log }, plugin.name)
+      getLogger: createPrefixedGetLogger({ log }, plugin.id),
+      getNonConsoleLogger: createPrefixedGetNonConsoleLogger({ log }, plugin.id)
     })
 
-    log.notice(`initializing ${plugin.name}`)
+    log.notice(`initializing ${plugin.id}`)
     const initResult = plugin.init({ ...this, log: pluginLogger })
     if (!initResult) {
-      if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
+      if (isType<{ id: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
         childAppNode.plugin = () => {
-          log.notice(`starting ${plugin.name}`)
+          log.notice(`starting ${plugin.id}`)
           return plugin.start({ log: pluginLogger } as any)
         }
       }
@@ -71,10 +71,10 @@ function appClosure<L extends LogContext>(
     }
     const [pluginContext, startContext] = initResult
     if (isType<{
-      name: string, start(ctx: any): Promise<void>
+      id: string, start(ctx: any): Promise<void>
     }>(plugin, p => !!p.start)) {
       childAppNode.plugin = () => {
-        log.notice(`starting ${plugin.name}`)
+        log.notice(`starting ${plugin.id}`)
         return plugin.start({ ...startContext, log: pluginLogger } as any)
       }
     }

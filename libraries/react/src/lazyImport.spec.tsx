@@ -51,7 +51,7 @@ it('does not extend app twice from rendering Component and getting extended app'
   const { Component, getExtendingApp } = lazyImport(
     Promise.resolve({
       default: () => ({
-        name: 'dummy-2',
+        id: 'dummy-2',
         init() { o.once(1) }
       }),
       Component: () => <div>dummy</div>

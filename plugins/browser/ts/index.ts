@@ -18,7 +18,7 @@ export type BrowserOptions = {
 }
 
 const plugin = definePlugin((options?: BrowserOptions) => ({
-  name: '@just-web/browser',
+  id: '@just-web/browser',
   init: ({ log }: LogContext) => {
     const errors = createErrorStore()
     // Normally plugin should not do work during init.

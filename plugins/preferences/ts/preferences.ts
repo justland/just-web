@@ -29,7 +29,7 @@ export const clearAllUserPreferences = command({ id: 'just-web.clearAllUserPrefe
  * @optional `@just-web/keyboard`
  */
 const plugin = definePlugin(() => ({
-  name: '@just-web/preferences',
+  id: '@just-web/preferences',
   init: (ctx: CommandsContext & Partial<KeyboardContext>) => {
     getUserPreference.connect(ctx)
     setUserPreference.connect(ctx)

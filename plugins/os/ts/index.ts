@@ -6,7 +6,7 @@ import { isMac } from './os'
 export * from './os'
 
 const plugin = definePlugin(() => ({
-  name: '@just-web/os',
+  id: '@just-web/os',
   // this is added to the context so that tests (e.g. storybook) can simulate the behavior in different platforms
   init: () => [{ os: { isMac } }]
 }))
@@ -17,6 +17,6 @@ export type OSOptions = Partial<OSContext>
 export default plugin
 
 export const osTestPlugin = definePlugin((options?: OSOptions) => ({
-  name: '@just-web/os-test',
+  id: '@just-web/os-test',
   init: () => [{ os: unpartial({ isMac }, options?.os) }]
 }))

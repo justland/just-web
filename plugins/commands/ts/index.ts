@@ -33,7 +33,7 @@ export type CommandsOptions = {
 }
 
 const plugin = definePlugin((options?: CommandsOptions) => ({
-  name: '@just-web/commands',
+  id: '@just-web/commands',
   init: (ctx: LogContext & Partial<KeyboardContext>): [CommandsContext] => {
     const contributions = contributionRegistry(ctx, options?.commands?.contributions)
     const handlers = handlerRegistry(ctx, options?.commands?.handlers)

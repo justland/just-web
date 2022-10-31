@@ -10,7 +10,7 @@ import { MaybePromise } from 'type-plus'
 import { ctx } from './browserPreferences.ctx'
 
 const plugin = definePlugin(() => ({
-  name: '@just-web/browser-preferences',
+  id: '@just-web/browser-preferences',
   init({ name, commands, keyboard, log }: AppBaseContext & LogContext & CommandsContext & KeyboardContext) {
     getUserPreference.connect({ commands, keyboard }, (key, defaultValue) => {
       const k = getKey(name, key)

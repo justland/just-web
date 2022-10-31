@@ -6,7 +6,7 @@ import { definePlugin } from '@just-web/types'
 import { startKeyBindings } from './keyBindings'
 
 export default definePlugin(() => ({
-  name: '@just-web/browser-keyboard',
+  id: '@just-web/browser-keyboard',
   init(ctx: LogContext & KeyboardContext & CommandsContext & OSContext) {
     return [undefined, ctx]
   },

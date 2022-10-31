@@ -64,9 +64,9 @@ export namespace PluginModule {
 
   export type PluginModuleBase = {
     /**
-     * Name of the plugin.
+     * ID of the plugin.
      */
-    name: string
+    id: string
   }
 
   /**

@@ -9,7 +9,7 @@ import { setStore, State } from './store'
 export * from './CommandPalette'
 
 export default definePlugin(() => ({
-  name: '@just-web/react-commands',
+  id: '@just-web/react-commands',
   init: (context: LogContext & KeyboardContext & CommandsContext & OSContext) => {
     context.log.notice('init')
     const store = setStore(createStore<State>({

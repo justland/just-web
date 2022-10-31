@@ -18,10 +18,10 @@ describe(createApp.name, () => {
     const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
 
     app.extend(definePlugin(() => ({
-      name: 'dummy-a', init() { },
+      id: 'dummy-a', init() { },
       async start() { }
     }))()).extend(definePlugin(() => ({
-      name: 'dummy-b', init() { },
+      id: 'dummy-b', init() { },
       async start() { }
     }))())
 
@@ -32,15 +32,15 @@ describe(createApp.name, () => {
     // maybe need to do this only if the app has previously started.
     // but then also need to handle the case when the new `start()` is made from the original app.
     app.extend(definePlugin(() => ({
-      name: 'dummy-c', init() { },
+      id: 'dummy-c', init() { },
       async start() { }
     }))())
 
     const app2 = app.extend(definePlugin(() => ({
-      name: 'dummy-d', init() { },
+      id: 'dummy-d', init() { },
       async start() { }
     }))()).extend(definePlugin(() => ({
-      name: 'dummy-e', init() { },
+      id: 'dummy-e', init() { },
       async start() { }
     }))())
     await app2.start()
