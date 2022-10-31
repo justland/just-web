@@ -95,7 +95,7 @@ export namespace JustCommand {
   } & (Param extends JustEmpty ? {
     defineArgs<A extends JustEmpty>(): A
   } : {
-    defineArgs<A extends Param>(...args: A): A
+    defineArgs(...args: Param): Param
   })
 }
 
@@ -122,7 +122,7 @@ export namespace Command {
     (...args: Params): R,
     id: string,
     defineHandler(handler: (...args: Params) => R): (...args: Params) => R,
-    defineArgs<A extends Params>(...args: A): A
+    defineArgs(...args: Params): Params
   }
 }
 
