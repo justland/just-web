@@ -1,5 +1,28 @@
 # @just-func/play-react
 
+## 0.2.19
+
+### Patch Changes
+
+- Updated dependencies [1e92661d]
+- Updated dependencies [1e92661d]
+- Updated dependencies [7b3b99c0]
+- Updated dependencies [0987acac]
+- Updated dependencies [e9e5e2f0]
+- Updated dependencies [24558c6f]
+- Updated dependencies [9b004db7]
+  - @just-web/react-commands@5.0.0
+  - @just-web/app@4.0.0
+  - @just-web/log@4.0.0
+  - @just-web/react@4.0.0
+  - @just-web/states@4.0.0
+  - @just-web/browser@4.0.0
+  - @just-web/browser-keyboard@4.0.0
+  - @just-web/commands@4.0.0
+  - @just-web/keyboard@4.0.0
+  - @just-web/os@4.0.0
+  - @just-web/routes@4.0.0
+
 ## 0.2.18
 
 ### Patch Changes

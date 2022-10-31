@@ -1,5 +1,23 @@
 # @just-web/commands
 
+## 4.0.0
+
+### Patch Changes
+
+- 1e92661d: Update `type-plus` to `4.15.2`.
+- 0987acac: Will not register if there is no handler
+- 24558c6f: Support partial keyboard context for `JustCommand`
+- 9b004db7: Update `type-plus` to use `MaybePromise.transform()`
+- Updated dependencies [1e92661d]
+- Updated dependencies [1e92661d]
+- Updated dependencies [5729f2c0]
+- Updated dependencies [e9e5e2f0]
+- Updated dependencies [9b004db7]
+  - @just-web/log@4.0.0
+  - @just-web/types@4.0.0
+  - @just-web/states@4.0.0
+  - @just-web/keyboard@4.0.0
+
 ## 3.1.1
 
 ### Patch Changes
@@ -47,11 +65,11 @@
 
   ```ts
   command({
-    id: "plugin-a.increment",
-    name: "Increment",
-    description: "Increment input value by 1",
-    key: "ctrl+k",
-  });
+    id: 'plugin-a.increment',
+    name: 'Increment',
+    description: 'Increment input value by 1',
+    key: 'ctrl+k'
+  })
   ```
 
   Add `justCommand()`. A `just-func` variant of `command()`

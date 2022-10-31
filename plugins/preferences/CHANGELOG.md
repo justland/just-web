@@ -1,5 +1,47 @@
 # @just-web/preferences
 
+## 4.0.0
+
+### Major Changes
+
+- 9e297eb6: Clean up API.
+
+  `updateUserPreference` and `clearUserPreference` are removed.
+  `clearUserPreferences` renamed to `clearAllUserPreferences`.
+
+  This makes the API similar to `useState()` in `React`,
+  which is a very common way to handle `get/set`.
+
+  In `@just-web/states`,
+  `set()` and `update()` are two operations because it supports any value, including function.
+  So `set(handler)` is ambiguous if the value can be a function.
+
+  It is not the case here as we are dealing with `string` only.
+
+  So follow the same API as `useState()` makes it easier to use.
+
+### Minor Changes
+
+- 1e92661d: Update to use the types from `@just-web/states`
+- 9b004db7: Add `createStore()`
+
+### Patch Changes
+
+- 1e92661d: Update `type-plus` to `4.15.2`.
+- 9b004db7: Update `type-plus` to use `MaybePromise.transform()`
+- Updated dependencies [1e92661d]
+- Updated dependencies [1e92661d]
+- Updated dependencies [0987acac]
+- Updated dependencies [5729f2c0]
+- Updated dependencies [e9e5e2f0]
+- Updated dependencies [24558c6f]
+- Updated dependencies [9b004db7]
+  - @just-web/log@4.0.0
+  - @just-web/types@4.0.0
+  - @just-web/states@4.0.0
+  - @just-web/commands@4.0.0
+  - @just-web/keyboard@4.0.0
+
 ## 3.1.1
 
 ### Patch Changes

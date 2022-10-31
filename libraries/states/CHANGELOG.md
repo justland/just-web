@@ -1,5 +1,35 @@
 # @just-web/states
 
+## 4.0.0
+
+### Major Changes
+
+- 1e92661d: Enhance `set` support.
+
+  It now works closer to `immer`:
+
+  - Supports update and async update function when the init value is not a function.
+  - Supports usage of `nothing` from `immer`.
+
+  It will also return the updated result for convenience.
+  While this does not follow Command Query Separation,
+  it is easier to use and the name `set()` is clear that it updates the value.
+
+  Deprecate `store.update()` and `registry.update()`.
+  The `set()` function should cover all use cases.
+
+  This is a `major` change because the type changes is breaking,
+  even it just "add" functionality.
+
+### Patch Changes
+
+- 1e92661d: Update `type-plus` to `4.15.2`.
+- e9e5e2f0: Fix `adder()` support of `Store<Record<any,any>>`
+- 9b004db7: Update `type-plus` to use `MaybePromise.transform()`
+- Updated dependencies [1e92661d]
+- Updated dependencies [9b004db7]
+  - @just-web/log@4.0.0
+
 ## 3.1.1
 
 ### Patch Changes

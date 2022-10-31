@@ -1,5 +1,22 @@
 # @just-web/browser-contributions
 
+## 4.0.0
+
+### Patch Changes
+
+- 1e92661d: Update `type-plus` to `4.15.2`.
+- 9b004db7: Update `type-plus` to use `MaybePromise.transform()`
+- Updated dependencies [1e92661d]
+- Updated dependencies [0987acac]
+- Updated dependencies [5729f2c0]
+- Updated dependencies [24558c6f]
+- Updated dependencies [9b004db7]
+  - @just-web/log@4.0.0
+  - @just-web/types@4.0.0
+  - @just-web/commands@4.0.0
+  - @just-web/keyboard@4.0.0
+  - @just-web/os@4.0.0
+
 ## 3.1.1
 
 ### Patch Changes

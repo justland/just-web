@@ -1,5 +1,35 @@
 # @just-web/browser-preferences
 
+## 4.0.0
+
+### Major Changes
+
+- fa12d3a0: Update implementation for `just-web/preferences` 4.0
+
+### Minor Changes
+
+- 1e92661d: Update to use the types from `@just-web/states`
+
+### Patch Changes
+
+- 1e92661d: Update `type-plus` to `4.15.2`.
+- 9b004db7: Update `type-plus` to use `MaybePromise.transform()`
+- Updated dependencies [1e92661d]
+- Updated dependencies [1e92661d]
+- Updated dependencies [0987acac]
+- Updated dependencies [9e297eb6]
+- Updated dependencies [5729f2c0]
+- Updated dependencies [e9e5e2f0]
+- Updated dependencies [24558c6f]
+- Updated dependencies [1e92661d]
+- Updated dependencies [9b004db7]
+- Updated dependencies [9b004db7]
+  - @just-web/log@4.0.0
+  - @just-web/types@4.0.0
+  - @just-web/states@4.0.0
+  - @just-web/commands@4.0.0
+  - @just-web/preferences@4.0.0
+
 ## 3.1.1
 
 ### Patch Changes
