@@ -1,12 +1,12 @@
 import { CommandsContext } from '@just-web/commands'
 import { KeyboardContext } from '@just-web/keyboard'
 import { LogContext } from '@just-web/log'
-import { clearAllUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences'
-import { nothing, isNothing } from '@just-web/states'
+import { clearAllUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences/lib/preferences'
+import { isNothing, nothing } from '@just-web/states'
 import { AppBaseContext, definePlugin } from '@just-web/types'
 import { decode, encode } from 'base-64'
 import { produce } from 'immer'
-import { isPromise } from 'type-plus'
+import { MaybePromise } from 'type-plus'
 import { ctx } from './browserPreferences.ctx'
 
 const plugin = definePlugin(() => ({
@@ -21,8 +21,7 @@ const plugin = definePlugin(() => ({
       const k = getKey(name, key)
       const original = getItem(k)
       const v = typeof value === 'function' ? produce(original, value as any) : value
-      if (isPromise(v)) v.then(v => setHandler({ log }, k, original, v))
-      else setHandler({ log }, k, original, v)
+      MaybePromise.transform(v, v => setHandler({ log }, k, original, v))
     })
     clearAllUserPreferences.connect({ commands, keyboard }, () => {
       log.notice(`clear all: '${name}'`)

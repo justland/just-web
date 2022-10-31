@@ -44,7 +44,7 @@
     "just-func": "^0.2.3",
     "sentence-case": "~3.0.4",
     "tersify": "^3.10.2",
-    "type-plus": "^4.15.2"
+    "type-plus": "^4.16.0"
   },
   "devDependencies": {
     "@babel/core": "~7.19.0",
