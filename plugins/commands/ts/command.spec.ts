@@ -315,7 +315,7 @@ describe(`${command.name}()`, () => {
   describe(`defineHandler() and defineArgs()`, () => {
     it('can be used to help work directly from `handlers`', () => {
       const [{ commands, keyboard }] = setupPlugin()
-      const inc = command<[number], number>('plugin-a.increment')
+      const inc = command<[id: number], number>('plugin-a.increment')
 
       // note that doing it this way `inc()` will not work:
       // commands.handlers.register(inc.id, inc.defineHandler(v => [v + 1]))

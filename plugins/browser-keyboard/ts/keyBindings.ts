@@ -13,9 +13,9 @@ export function startKeyBindings(param: LogContext & KeyboardContext & CommandsC
 
   keyBindings.list().forEach(keybinding => bindKey(param, keybinding))
   keyBindings.onChange((value) => {
-    // TODO: use `immer` patch support to only update the delta
     Mousetrap.reset()
     keys = record()
+    // @todo: use `immer` patch support to only update the delta
     forEachKey(value, name => bindKey(param, value[name]))
   })
 }
