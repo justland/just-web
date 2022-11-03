@@ -1,11 +1,10 @@
-import { CommandContribution, CommandsContext, formatCommand } from '@just-web/commands'
+import { CommandContribution, CommandsContext, formatCommand, showCommandPalette } from '@just-web/commands'
 import { formatKeyBinding, KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
 import { OSContext } from '@just-web/os'
-import { useStore } from '@just-web/react'
-import { ComponentType, ReactElement, useCallback, VFC } from 'react'
+import { useAppContext } from '@just-web/react'
+import { ComponentType, ReactElement, useCallback, useEffect, useMemo, useState, VFC } from 'react'
 import CP from 'react-command-palette'
 import { AnyFunction } from 'type-plus'
-import { getStore } from '../store'
 import styles from './CommandPalette.module.css'
 
 export type CommandPaletteCommand = Omit<CommandContribution & KeyBindingContribution, 'command'> & {
@@ -150,25 +149,23 @@ const RenderCommand: VFC<{ name: string, key?: string }> = command => (
   </div>
 )
 
-const CommandPalette = (props: CommandPaletteProps) => {
-  const store = getStore()
-  const [open, setOpen] = useStore(store,
-    s => s.openCommandPalette,
-    (s, open) => { s.openCommandPalette = open }
-  )
-  const commands = open ? getCommands(store.get().context) : []
+export const CommandPalette = (props: CommandPaletteProps) => {
+  const [open, setOpen] = useState<boolean>()
+  const app = useAppContext<CommandsContext & KeyboardContext & OSContext>()
+
+  useEffect(() => app.commands.handlers.register(showCommandPalette.id, () => setOpen(true)), [])
+
+  const commands = useMemo(() => open ? getCommands(app) : [], [open])
 
   const onRequestClose = useCallback(() => setOpen(false), [])
 
   return <CP
+    {...props}
     commands={commands}
     open={open}
     onRequestClose={onRequestClose}
     renderCommand={RenderCommand}
     closeOnSelect={true}
     trigger={null}
-    {...props}
   />
 }
-
-export default CommandPalette

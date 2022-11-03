@@ -26,13 +26,17 @@ rush add -p @just-web/react-commands
 You can load the plugin synchronously or asynchronously.
 Here is an example to load it synchronously:
 
+Note that currently there are no init work done in this plugin.
+Meaning it can be converted to a library instead of a plugin.
+The `extend()` call below is not needed.
+
 ```ts
 import { createApp } from '@just-web/app'
 import * as reactCommandModule from '@just-web/react-commands'
 
 void (async () => {
   const app = await createApp({ name: 'my-app' })
-    .addPlugin(reactCommandModule)
+    .extend(reactCommandModule)
   await app.start()
 })()
 ```

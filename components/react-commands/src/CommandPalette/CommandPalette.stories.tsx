@@ -1,32 +1,37 @@
 import { createApp } from '@just-web/app'
 import browserKeyboardPlugin from '@just-web/browser-keyboard'
-import commandsPlugin, { CommandsOptions } from '@just-web/commands'
+import commandsPlugin, { CommandsContext, CommandsOptions } from '@just-web/commands'
 import keyboardPlugin, { KeyboardOptions } from '@just-web/keyboard'
 import { logLevels } from '@just-web/log'
-import { isMac, OSOptions, osTestPlugin } from '@just-web/os'
+import { isMac, OSContext, OSOptions, osTestPlugin } from '@just-web/os'
+import { AppContext, useAppContext } from '@just-web/react'
 import { ComponentStory } from '@storybook/react'
 import Mousetrap from 'mousetrap'
 import { createColorLogReporter } from 'standard-log-color'
-import plugin from '..'
-import { getStore } from '../store'
-import CommandPalette from './CommandPalette'
+import plugin, { CommandPalette } from '..'
 
-type Story = ComponentStory<typeof CommandPalette>
+type Story = ComponentStory<typeof CommandPalette> & { loaders?: Array<() => Promise<any>> }
 
 const shortcut = isMac() ? 'cmd+p' : 'ctrl+p'
 
 export default {
   component: ({ ...args }) => {
-    const ctx = getStore().get().context
-    const shortcut = ctx.os.isMac() ? 'cmd+p' : 'ctrl+p'
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const app = useAppContext<CommandsContext & OSContext>()
+    const shortcut = app.os.isMac() ? 'cmd+p' : 'ctrl+p'
     return <>
       <div><code>{shortcut}</code> to show the command palette</div>
       <button onClick={() => {
-        ctx.commands.showCommandPalette()
+        app.commands.showCommandPalette()
       }}>Open Command Palette</button>
       <CommandPalette {...args} />
     </>
-  }
+  },
+  decorators: [
+    (Story, { loaded: { app } }) => <AppContext.Provider value={app}>
+      <Story />
+    </AppContext.Provider>
+  ],
 }
 
 const simpleCmd = { id: 'core.simpleCommand' }
@@ -55,9 +60,9 @@ async function setupApp(options?: KeyboardOptions & CommandsOptions & OSOptions)
     .extend(osTestPlugin(options))
     .extend(browserKeyboardPlugin())
     .extend(plugin())
-  console.info('app', app)
+
   await app.start()
-  return {}
+  return { app }
 }
 
 export const NoCommand = {
@@ -88,7 +93,7 @@ export const WithKey = {
     keyboard: {
       keyBindingContributions: [keyedCmd]
     },
-  })],
+  }) as any],
   play: async (_) => void Mousetrap.trigger(shortcut)
 } as Story
 

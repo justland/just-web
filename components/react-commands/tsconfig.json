@@ -23,9 +23,6 @@
       "path": "../../libraries/react"
     },
     {
-      "path": "../../libraries/states"
-    },
-    {
       "path": "../../plugins/browser-keyboard"
     },
     {
