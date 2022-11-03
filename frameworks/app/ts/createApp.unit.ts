@@ -1,5 +1,6 @@
 import { createMemoryLogReporter } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
+import { a } from 'assertron'
 import { range } from 'ramda'
 import { record } from 'type-plus'
 import { createApp } from './createApp'
@@ -45,19 +46,19 @@ describe(createApp.name, () => {
     }))())
     await app2.start()
 
-    expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
+    a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [
       'test-app (NOTICE) initializing dummy-a',
       'test-app (NOTICE) initializing dummy-b',
       'test-app (NOTICE) starting dummy-a',
       'test-app (NOTICE) starting dummy-b',
-      'test-app (INFO) start',
+      /test-app \(INFO\) starting \(id: .*\)/,
       'test-app (NOTICE) initializing dummy-c',
       'test-app (NOTICE) initializing dummy-d',
       'test-app (NOTICE) initializing dummy-e',
       'test-app (NOTICE) starting dummy-c',
       'test-app (NOTICE) starting dummy-d',
       'test-app (NOTICE) starting dummy-e',
-      'test-app (INFO) start',
+      /test-app \(INFO\) starting \(id: .*\)/,
     ])
   })
 })
