@@ -1,5 +1,15 @@
 # @just-web/preferences
 
+## 4.0.1
+
+### Patch Changes
+
+- @just-web/commands@4.0.1
+- @just-web/keyboard@4.0.1
+- @just-web/log@4.0.1
+- @just-web/states@4.0.1
+- @just-web/types@4.0.1
+
 ## 4.0.0
 
 ### Major Changes

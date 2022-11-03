@@ -1,5 +1,15 @@
 # @just-web/react
 
+## 4.0.1
+
+### Patch Changes
+
+- Updated dependencies [a82e080a]
+  - @just-web/app@4.0.1
+  - @just-web/log@4.0.1
+  - @just-web/states@4.0.1
+  - @just-web/types@4.0.1
+
 ## 4.0.0
 
 ### Patch Changes

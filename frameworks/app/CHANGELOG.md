@@ -1,5 +1,13 @@
 # @just-web/app
 
+## 4.0.1
+
+### Patch Changes
+
+- a82e080a: Adjust starting log message
+  - @just-web/log@4.0.1
+  - @just-web/types@4.0.1
+
 ## 4.0.0
 
 ### Patch Changes

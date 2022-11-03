@@ -1,5 +1,25 @@
 # @just-web/react-commands
 
+## 5.0.1
+
+### Patch Changes
+
+- b6249217: Internalize the `open` state.
+  There is no need to use a module (or app) scope store to store this.
+
+  Now the command is registered when the command palette first rendered.
+
+- Updated dependencies [a82e080a]
+  - @just-web/app@4.0.1
+  - @just-web/react@4.0.1
+  - @just-web/browser-keyboard@4.0.1
+  - @just-web/commands@4.0.1
+  - @just-web/keyboard@4.0.1
+  - @just-web/log@4.0.1
+  - @just-web/os@4.0.1
+  - @just-web/states@4.0.1
+  - @just-web/types@4.0.1
+
 ## 5.0.0
 
 ### Patch Changes
