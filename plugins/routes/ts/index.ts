@@ -54,10 +54,10 @@ export default definePlugin(() => ({
             return () => { }
           }
 
-          store.update(s => { s.routes[route] = handler })
+          store.set(s => { s.routes[route] = handler })
 
           return () => {
-            store.update(s => { delete s.routes[route] })
+            store.set(s => { delete s.routes[route] })
           }
         },
         hasRoute(route) { return hasRoute(store, route) },
@@ -78,7 +78,7 @@ export default definePlugin(() => ({
           return ready
         },
         config(options: RoutesConfigOptions) {
-          store.update(s => { s.config = requiredDeep(s.config, options) })
+          store.set(s => { s.config = requiredDeep(s.config, options) })
         }
       },
     }

@@ -27,16 +27,16 @@ describe('createStore()', () => {
     expect(actual).toStrictEqual(value)
   })
 
-  test('update() by modify', () => {
+  test('set() by modify', () => {
     const store = createStore({ a: 1 })
-    store.update(s => { s.a = 2 })
+    store.set(s => { s.a = 2 })
     const a = store.get()
     expect(a).toEqual({ a: 2 })
   })
 
-  test('update() by return', () => {
+  test('set() by return', () => {
     const store = createStore({ a: 1 })
-    store.update(() => ({ a: 2 }))
+    store.set(() => ({ a: 2 }))
     const a = store.get()
     expect(a).toEqual({ a: 2 })
   })

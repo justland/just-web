@@ -11,14 +11,13 @@ export * from './CommandPalette'
 export default definePlugin(() => ({
   name: '@just-web/react-commands',
   init: (context: LogContext & KeyboardContext & CommandsContext & OSContext) => {
-    context.log.notice('init')
     const store = setStore(createStore<State>({
       context,
       openCommandPalette: false
     }))
     context.commands.handlers.register(
       'just-web.showCommandPalette',
-      () => store.update(s => { s.openCommandPalette = true })
+      () => store.set(s => { s.openCommandPalette = true })
     )
   }
 }))

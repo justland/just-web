@@ -3,7 +3,7 @@ import { Doc } from './types'
 
 export function createDocument(name?: string) {
   let doc: Doc
-  store.update(s => {
+  store.set(s => {
     doc = {
       name: name ?? createDocumentName(s.docs),
       content: ''
