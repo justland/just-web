@@ -24,7 +24,7 @@ describe('createDocument()', () => {
     expect(docs[1].name).toBe('Untitled-2')
   })
   test('create Untitled-x on first non-occupied x', () => {
-    store.update(s => {
+    store.set(s => {
       s.docs.push(
         { name: 'Untitled-1', content: '' },
         { name: 'Untitled-3', content: '' }
