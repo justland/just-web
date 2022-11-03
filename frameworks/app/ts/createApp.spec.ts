@@ -81,8 +81,8 @@ describe(`${createApp.name}()`, () => {
     const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
     await app.start()
 
-    expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
-      'test-app (INFO) start',
+    a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [
+      /test-app \(INFO\) starting \(id: .*\)/,
     ])
   })
 
@@ -101,11 +101,11 @@ describe(`${createApp.name}()`, () => {
       }))())
     await app.start()
 
-    expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
+    a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [
       'test-app (NOTICE) initializing dummy-plugin',
       'test-app (NOTICE) starting dummy-plugin',
       'test-app:dummy-plugin (INFO) inside plugin',
-      'test-app (INFO) start',
+      /test-app \(INFO\) starting \(id: .*\)/,
     ])
   })
 
@@ -122,12 +122,12 @@ describe(`${createApp.name}()`, () => {
       }))())
     await app.start()
 
-    expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
+    a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [
       'test-app (NOTICE) initializing dummy-a',
       'test-app (NOTICE) initializing dummy-b',
       'test-app (NOTICE) starting dummy-a',
       'test-app (NOTICE) starting dummy-b',
-      'test-app (INFO) start',
+      /test-app \(INFO\) starting \(id: .*\)/,
     ])
   })
 
@@ -158,7 +158,7 @@ describe(`${createApp.name}()`, () => {
 
     await app.start()
 
-    expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
+    a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [
       'test-app (NOTICE) initializing dummy-a',
       'test-app (NOTICE) initializing dummy-b',
       'test-app (NOTICE) initializing dummy-c',
@@ -169,7 +169,7 @@ describe(`${createApp.name}()`, () => {
       'test-app (NOTICE) starting dummy-c',
       'test-app (NOTICE) starting dummy-d',
       'test-app (NOTICE) starting dummy-e',
-      'test-app (INFO) start',
+      /test-app \(INFO\) starting \(id: .*\)/,
     ])
   })
 
@@ -207,7 +207,7 @@ describe(`${createApp.name}()`, () => {
     await app3.start()
     await app4.start()
 
-    expect(reporter.getLogMessagesWithIdAndLevel()).toEqual([
+    a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [
       'test-app (NOTICE) initializing dummy-a',
       'test-app (NOTICE) initializing dummy-b',
       'test-app (NOTICE) initializing dummy-c',
@@ -218,10 +218,10 @@ describe(`${createApp.name}()`, () => {
       'test-app (NOTICE) starting dummy-c',
       'test-app (NOTICE) starting dummy-d',
       'test-app (NOTICE) starting dummy-e',
-      'test-app (INFO) start',
-      'test-app (INFO) start',
-      'test-app (INFO) start',
-      'test-app (INFO) start',
+      /test-app \(INFO\) starting \(id: .*\)/,
+      /test-app \(INFO\) starting \(id: .*\)/,
+      /test-app \(INFO\) starting \(id: .*\)/,
+      /test-app \(INFO\) starting \(id: .*\)/,
     ])
   })
 

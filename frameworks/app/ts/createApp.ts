@@ -88,7 +88,7 @@ function appClosure<L extends LogContext>(
       let top: AppNode = appNode
       while (top.parent) top = top.parent
       await top.start()
-      log.info('start')
+      log.info(`starting (id: ${appContext.id})`)
     }
   }
 }
