@@ -387,6 +387,7 @@ importers:
       typescript: ^4.8.4
       webpack: ^5.70.0
     dependencies:
+      '@just-web/states': link:../../libraries/states
       react: 17.0.2
       react-command-palette: 0.21.1_sfoxds7t5ydpegc3knd667wn6m
       react-dom: 17.0.2_react@17.0.2
@@ -403,7 +404,6 @@ importers:
       '@just-web/os': link:../../plugins/os
       '@just-web/react': link:../../libraries/react
       '@just-web/repo-scripts': link:../../tools/repo-scripts
-      '@just-web/states': link:../../libraries/states
       '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@storybook/addon-actions': 6.5.12_sfoxds7t5ydpegc3knd667wn6m
