@@ -1,5 +1,5 @@
-import { createApp } from '@just-web/app'
-import { LogContext } from '@just-web/log'
+import { createApp, createTestApp } from '@just-web/app'
+import { LogContext, TestLogContext } from '@just-web/log'
 import osPlugin, { OSContext } from '@just-web/os'
 import { AppContext, useAppContext } from './AppContext'
 
@@ -53,5 +53,21 @@ export const CustomContext = () => {
   const app = createApp({ name: 'app' }).extend(osPlugin())
   return <AppContext.Provider value={app}>
     <CustomType />
+  </AppContext.Provider>
+}
+
+const AddLog = () => {
+  const c = useAppContext<TestLogContext>()
+
+  return <>
+    <div>Number of logs: {c.log.reporter.logs.length}</div>
+    <button onClick={() => c.log.info('write another log')}>Write log will not trigger render</button>
+  </>
+}
+
+export const ModifyingAppState = () => {
+  const app = createTestApp()
+  return <AppContext.Provider value={app}>
+    <AddLog />
   </AppContext.Provider>
 }
