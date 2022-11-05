@@ -1,0 +1,46 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "type": "text",
+      "version": 327,
+      "versionNonce": 1422178367,
+      "isDeleted": false,
+      "id": "6tf_T4xM_85SUQqbQWkOb",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": -42.87982709691488,
+      "y": -169.48807888480164,
+      "strokeColor": "#5f3dc4",
+      "backgroundColor": "transparent",
+      "width": 335,
+      "height": 274,
+      "seed": 486559800,
+      "groupIds": [],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1667625588468,
+      "link": null,
+      "locked": false,
+      "fontSize": 36,
+      "fontFamily": 1,
+      "text": "* trying nx\n    * plugins\n* monorepo tools\n* dependency graph\n* Nx Console\n",
+      "baseline": 260,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "* trying nx\n    * plugins\n* monorepo tools\n* dependency graph\n* Nx Console\n"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
