@@ -1,15 +1,5 @@
 {
-  "name": "just-web",
   "private": true,
-  "description": "`@just-web` is a plugin-based application framework.",
-  "homepage": "https://github.com/justland/just-web#readme",
-  "bugs": {
-    "url": "https://github.com/justland/just-web/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/justland/just-web.git"
-  },
   "license": "MIT",
   "scripts": {
     "app": "pnpm --filter=@just-web/app",
