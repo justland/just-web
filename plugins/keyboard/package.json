@@ -52,7 +52,7 @@
     "@just-web/states": "workspace:^",
     "@just-web/testing": "workspace:^",
     "@just-web/types": "workspace:^",
-    "@size-limit/preset-small-lib": "~7.0.8",
+    "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^27.4.1",
     "depcheck": "~1.4.3",
     "eslint": "^8.11.0",

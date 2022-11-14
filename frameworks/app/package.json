@@ -52,7 +52,7 @@
     "@just-web/os": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@just-web/types": "workspace:^",
-    "@size-limit/preset-small-lib": "~7.0.8",
+    "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^27.4.1",
     "@types/ramda": "^0.28.14",
     "assertron": "^10.0.0",
