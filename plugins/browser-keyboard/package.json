@@ -54,7 +54,7 @@
     "@just-web/repo-scripts": "workspace:^",
     "@just-web/testing": "workspace:^",
     "@just-web/types": "workspace:^",
-    "@size-limit/preset-small-lib": "~7.0.8",
+    "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^27.4.1",
     "@types/mousetrap": "~1.6.9",
     "depcheck": "~1.4.3",

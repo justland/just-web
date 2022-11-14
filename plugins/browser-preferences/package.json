@@ -57,7 +57,7 @@
     "@just-web/preferences": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@just-web/types": "workspace:^",
-    "@size-limit/preset-small-lib": "~7.0.8",
+    "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^27.4.1",
     "assertron": "^10.0.0",
     "depcheck": "~1.4.3",
