@@ -71,7 +71,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       ramda: ^0.28.0
       rimraf: ~3.0.2
@@ -100,7 +100,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       ramda: 0.28.0
       rimraf: 3.0.2
@@ -124,7 +124,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -149,7 +149,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -169,7 +169,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -189,7 +189,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -213,7 +213,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -238,7 +238,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -263,7 +263,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       satisfier: ^5.4.2
@@ -290,7 +290,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       satisfier: 5.4.2
@@ -319,7 +319,7 @@ importers:
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
       mousetrap: ~1.6.5
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -348,7 +348,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -379,7 +379,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       satisfier: ^5.4.2
@@ -412,7 +412,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       satisfier: 5.4.2
@@ -440,7 +440,7 @@ importers:
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
       just-func: ^0.2.3
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       sentence-case: ~3.0.4
@@ -473,7 +473,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -499,7 +499,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -523,7 +523,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -548,7 +548,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -574,7 +574,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -597,7 +597,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       platform: ~1.3.6
       rimraf: ~3.0.2
@@ -622,7 +622,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -651,7 +651,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -679,7 +679,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -705,7 +705,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -731,7 +731,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -757,7 +757,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
@@ -781,7 +781,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       ts-jest: 27.1.5_wri6cnybzkspe3zvb7nve4qk4q
@@ -806,7 +806,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      npm-check-updates: ~16.3.0
+      npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       satisfier: ^5.4.2
@@ -830,7 +830,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@27.5.1
       jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
       jest-watch-typeahead: 2.2.0_jest@27.5.1
-      npm-check-updates: 16.3.11
+      npm-check-updates: 16.4.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -1932,7 +1932,13 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.3.7
+      semver: 7.3.8
+
+  /@npmcli/fs/3.1.0:
+    resolution: {integrity: sha512-7kZUAaLscfgbwBQRbvdMYaZOWyMEcPTH/tJjnyAWJ/dvvs9Ef+CERx/qJb9GExJpl1qipaDGn7KqHnFGGixd0w==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      semver: 7.3.8
 
   /@npmcli/git/3.0.1:
     resolution: {integrity: sha512-UU85F/T+F1oVn3IsB/L6k9zXIMpXBuUBE25QDH0SsURwT6IOBqkC7M16uqo2vVZIyji3X1K4XH9luip7YekH1A==}
@@ -1945,8 +1951,25 @@ packages:
       proc-log: 2.0.1
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.3.7
+      semver: 7.3.8
       which: 2.0.2
+    transitivePeerDependencies:
+      - bluebird
+    dev: true
+
+  /@npmcli/git/4.0.3:
+    resolution: {integrity: sha512-8cXNkDIbnXPVbhXMmQ7/bklCAjtmPaXfI9aEM4iH+xSuEHINLMHhlfESvVwdqmHJRJkR48vNJTSUvoF6GRPSFA==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      '@npmcli/promise-spawn': 6.0.1
+      lru-cache: 7.10.1
+      mkdirp: 1.0.4
+      npm-pick-manifest: 8.0.1
+      proc-log: 3.0.0
+      promise-inflight: 1.0.1
+      promise-retry: 2.0.1
+      semver: 7.3.8
+      which: 3.0.0
     transitivePeerDependencies:
       - bluebird
 
@@ -1957,10 +1980,20 @@ packages:
     dependencies:
       npm-bundled: 1.1.2
       npm-normalize-package-bin: 1.0.1
+    dev: true
+
+  /@npmcli/installed-package-contents/2.0.1:
+    resolution: {integrity: sha512-GIykAFdOVK31Q1/zAtT5MbxqQL2vyl9mvFJv+OGu01zxbhL3p0xc8gJjdNGX1mWmUT43aEKVO2L6V/2j4TOsAA==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    hasBin: true
+    dependencies:
+      npm-bundled: 3.0.0
+      npm-normalize-package-bin: 3.0.0
 
   /@npmcli/move-file/2.0.0:
     resolution: {integrity: sha512-UR6D5f4KEGWJV6BGPH3Qb2EtgH+t+1XQ1Tt85c7qicN6cezzuHPdZwwAxqZr4JLtnQu0LZsTza/5gmNmSl8XLg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This functionality has been moved to @npmcli/fs
     dependencies:
       mkdirp: 1.0.4
       rimraf: 3.0.2
@@ -1968,12 +2001,24 @@ packages:
   /@npmcli/node-gyp/2.0.0:
     resolution: {integrity: sha512-doNI35wIe3bBaEgrlPfdJPaCpUR89pJWep4Hq3aRdh6gKazIVWfs0jHttvSSoq47ZXgC7h73kDsUl8AoIQUB+A==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    dev: true
+
+  /@npmcli/node-gyp/3.0.0:
+    resolution: {integrity: sha512-gp8pRXC2oOxu0DUE1/M3bYtb1b3/DbJ5aM113+XJBgfXdussRAsX0YOrOhdd8WvnAR6auDBvJomGAkLKA5ydxA==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
   /@npmcli/promise-spawn/3.0.0:
     resolution: {integrity: sha512-s9SgS+p3a9Eohe68cSI3fi+hpcZUmXq5P7w0kMlAsWVtR7XbK3ptkZqKT2cK1zLDObJ3sR+8P59sJE0w/KTL1g==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       infer-owner: 1.0.4
+    dev: true
+
+  /@npmcli/promise-spawn/6.0.1:
+    resolution: {integrity: sha512-+hcUpxgx0vEpDJI9Cn+lkTdKLoqKBXFCVps5H7FujEU2vLOp6KwqjLlxbnz8Wzgm8oEqW/u5FeNAXSFjLdCD0A==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      which: 3.0.0
 
   /@npmcli/run-script/4.2.1:
     resolution: {integrity: sha512-7dqywvVudPSrRCW5nTHpHgeWnbBtz8cFkOuKrecm6ih+oO9ciydhWt6OF7HlqupRRmB8Q/gECVdB9LMfToJbRg==}
@@ -1984,6 +2029,20 @@ packages:
       node-gyp: 9.3.0
       read-package-json-fast: 2.0.3
       which: 2.0.2
+    transitivePeerDependencies:
+      - bluebird
+      - supports-color
+    dev: true
+
+  /@npmcli/run-script/6.0.0:
+    resolution: {integrity: sha512-ql+AbRur1TeOdl1FY+RAwGW9fcr4ZwiVKabdvm93mujGREVuVLbdkXRJDrkTXSdCjaxYydr1wlA2v67jxWG5BQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      '@npmcli/node-gyp': 3.0.0
+      '@npmcli/promise-spawn': 6.0.1
+      node-gyp: 9.3.0
+      read-package-json-fast: 3.0.1
+      which: 3.0.0
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -2927,7 +2986,7 @@ packages:
     dependencies:
       ansi-align: 3.0.1
       camelcase: 7.0.0
-      chalk: 5.1.0
+      chalk: 5.1.2
       cli-boxes: 3.0.0
       string-width: 5.1.2
       type-fest: 2.19.0
@@ -3002,7 +3061,7 @@ packages:
   /builtins/5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.3.7
+      semver: 7.3.8
 
   /bytes-iec/3.1.1:
     resolution: {integrity: sha512-fey6+4jDK7TFtFg/klGSvNKJctyU7n2aQdnM+CO0ruLPbqqMOM8Tio0Pc+deqUeVKX1tL5DQep1zQ7+37aTAsA==}
@@ -3031,6 +3090,26 @@ packages:
       ssri: 9.0.1
       tar: 6.1.11
       unique-filename: 1.1.1
+    transitivePeerDependencies:
+      - bluebird
+
+  /cacache/17.0.2:
+    resolution: {integrity: sha512-rYUs2x4OjSgCQND7nTrh21AHIBFgd7s/ctAYvU3a8u+nK+R5YaX/SFPDYz4Azz7SGL6+6L9ZZWI4Kawpb7grzQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      '@npmcli/fs': 3.1.0
+      fs-minipass: 2.1.0
+      glob: 8.0.3
+      lru-cache: 7.10.1
+      minipass: 3.1.6
+      minipass-collect: 1.0.2
+      minipass-flush: 1.0.5
+      minipass-pipeline: 1.2.4
+      p-map: 4.0.0
+      promise-inflight: 1.0.1
+      ssri: 10.0.0
+      tar: 6.1.11
+      unique-filename: 3.0.0
     transitivePeerDependencies:
       - bluebird
 
@@ -3116,6 +3195,11 @@ packages:
 
   /chalk/5.1.0:
     resolution: {integrity: sha512-56zD4khRTBoIyzUYAFgDDaPhUMN/fC/rySe6aZGqbj/VWiU2eI3l6ZLOtYGFZAV5v02mwPjtpzlrOveJiz5eZQ==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: true
+
+  /chalk/5.1.2:
+    resolution: {integrity: sha512-E5CkT4jWURs1Vy5qGJye+XwCkNj7Od3Af7CP6SujMetSMkLs8Do2RWJK5yx1wamHV/op8Rz+9rltjaTQWDnEFQ==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   /change-case/4.1.2:
@@ -4667,6 +4751,12 @@ packages:
     dependencies:
       lru-cache: 7.10.1
 
+  /hosted-git-info/6.1.1:
+    resolution: {integrity: sha512-r0EI+HBMcXadMrugk0GCQ+6BQV39PiWAZVfq7oIckeGiN7sjRGyQxPdft3nQekFTCQbYxLBH+/axZMeH8UX6+w==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      lru-cache: 7.10.1
+
   /html-encoding-sniffer/2.0.1:
     resolution: {integrity: sha512-D5JbOMBIR/TVZkubHT+OyT2705QvogUW4IBn6nHd756OwieSF9aDYFj4dv6HHEVGYbHaLETa3WggZYWWMyy3ZQ==}
     engines: {node: '>=10'}
@@ -4756,6 +4846,13 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       minimatch: 5.1.0
+    dev: true
+
+  /ignore-walk/6.0.0:
+    resolution: {integrity: sha512-bTf9UWe/UP1yxG3QUrj/KOvEhTAUWPcv+WvbFZ28LcqznXabp7Xu6o9y1JEC18+oqODuS7VhTpekV5XvFwsxJg==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      minimatch: 5.1.0
 
   /ignore/5.2.0:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
@@ -4809,6 +4906,10 @@ packages:
   /ini/2.0.0:
     resolution: {integrity: sha512-7PnF4oN3CvZF23ADhA5wRaYEQpJ8qygSkbtTXWBeXWXmEVRXK+1ITciHWwHhsjv1TmW0MgacIv6hEi5pX5NQdA==}
     engines: {node: '>=10'}
+
+  /ini/3.0.1:
+    resolution: {integrity: sha512-it4HyVAUTKBc6m8e1iXWvXSTdndF7HbdN713+kvLrymxTaU4AUBWrJ4vEooP+V7fexnVD3LKcBshjGGPefSMUQ==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
 
   /inquirer/8.2.4:
     resolution: {integrity: sha512-nn4F01dxU8VeKfq192IjLsxu0/OmMZ4Lg3xKAns148rCaXP6ntAoEkVYZThWjwON8AlzdZZi6oqnhNbxUG9hVg==}
@@ -5526,7 +5627,7 @@ packages:
       jest-util: 27.5.1
       natural-compare: 1.4.0
       pretty-format: 27.5.1
-      semver: 7.3.7
+      semver: 7.3.8
     transitivePeerDependencies:
       - supports-color
 
@@ -5748,6 +5849,10 @@ packages:
 
   /json-parse-even-better-errors/2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
+
+  /json-parse-even-better-errors/3.0.0:
+    resolution: {integrity: sha512-iZbGHafX/59r39gPwVPRBGw0QQKnA7tte5pSMrhWOW7swGsVvVTjmfyAV9pNqk8YGT7tRCdxRu8uzcgZwoDooA==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
   /json-parse-helpfulerror/1.0.3:
     resolution: {integrity: sha512-XgP0FGR77+QhUxjXkwOMkC94k3WtqEBfcnjWqhRd82qTat4SWKRE+9kUnynz/shm3I4ea2+qISvTIeGTNU7kJg==}
@@ -6003,6 +6108,30 @@ packages:
       - bluebird
       - supports-color
 
+  /make-fetch-happen/11.0.1:
+    resolution: {integrity: sha512-clv3IblugXn2CDUmqFhNzii3rjKa46u5wNeivc+QlLXkGI5FjLX3rGboo+y2kwf1pd8W0iDiC384cemeDtw9kw==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      agentkeepalive: 4.2.1
+      cacache: 17.0.2
+      http-cache-semantics: 4.1.0
+      http-proxy-agent: 5.0.0
+      https-proxy-agent: 5.0.1
+      is-lambda: 1.0.1
+      lru-cache: 7.10.1
+      minipass: 3.1.6
+      minipass-collect: 1.0.2
+      minipass-fetch: 3.0.0
+      minipass-flush: 1.0.5
+      minipass-pipeline: 1.2.4
+      negotiator: 0.6.3
+      promise-retry: 2.0.1
+      socks-proxy-agent: 7.0.0
+      ssri: 10.0.0
+    transitivePeerDependencies:
+      - bluebird
+      - supports-color
+
   /make-iterator/1.0.1:
     resolution: {integrity: sha512-pxiuXh0iVEq7VM7KMIhs5gxsfxCux2URptUQaXo4iZZJxBAzTPOLE2BumO5dbfVYq/hBJFBR/a1mFDmOx5AGmw==}
     engines: {node: '>=0.10.0'}
@@ -6154,6 +6283,16 @@ packages:
     optionalDependencies:
       encoding: 0.1.13
 
+  /minipass-fetch/3.0.0:
+    resolution: {integrity: sha512-NSx3k5gR4Q5Ts2poCM/19d45VwhVLBtJZ6ypYcthj2BwmDx/e7lW8Aadnyt3edd2W0ecb+b0o7FYLRYE2AGcQg==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      minipass: 3.1.6
+      minipass-sized: 1.0.3
+      minizlib: 2.1.2
+    optionalDependencies:
+      encoding: 0.1.13
+
   /minipass-flush/1.0.5:
     resolution: {integrity: sha512-JmQSYYpPUqX5Jyn1mXaRwOda1uQ8HP5KAT/oDSLCzt1BYRhQU0/hDtsB1ufZfEEzMZ9aAVmsBw8+FWsIXlClWw==}
     engines: {node: '>= 8'}
@@ -6268,7 +6407,7 @@ packages:
       nopt: 6.0.0
       npmlog: 6.0.2
       rimraf: 3.0.2
-      semver: 7.3.7
+      semver: 7.3.8
       tar: 6.1.11
       which: 2.0.2
     transitivePeerDependencies:
@@ -6321,7 +6460,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.10.0
-      semver: 7.3.7
+      semver: 7.3.8
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -6331,7 +6470,17 @@ packages:
     dependencies:
       hosted-git-info: 5.1.0
       is-core-module: 2.10.0
-      semver: 7.3.7
+      semver: 7.3.8
+      validate-npm-package-license: 3.0.4
+    dev: true
+
+  /normalize-package-data/5.0.0:
+    resolution: {integrity: sha512-h9iPVIfrVZ9wVYQnxFgtw1ugSvGEMOlyPWWtm8BMJhnwyEL/FLbYbTY3V3PpjI/BUK67n9PEWDu6eHzu1fB15Q==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      hosted-git-info: 6.1.1
+      is-core-module: 2.10.0
+      semver: 7.3.8
       validate-npm-package-license: 3.0.4
 
   /normalize-path/3.0.0:
@@ -6346,6 +6495,13 @@ packages:
     resolution: {integrity: sha512-x5DHup0SuyQcmL3s7Rx/YQ8sbw/Hzg0rj48eN0dV7hf5cmQq5PXIeioroH3raV1QC1yh3uTYuMThvEQF3iKgGQ==}
     dependencies:
       npm-normalize-package-bin: 1.0.1
+    dev: true
+
+  /npm-bundled/3.0.0:
+    resolution: {integrity: sha512-Vq0eyEQy+elFpzsKjMss9kxqb9tG3YHg4dsyWuUENuzvSUWe1TCnW/vV9FkhvBk/brEDoDiVd+M1Btosa6ImdQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      npm-normalize-package-bin: 3.0.0
 
   /npm-check-updates/16.3.11:
     resolution: {integrity: sha512-MxdqS3kXAJasoEaz5BLqTR1Dak+Dm6PoK2N4KdKcQGUEhdVwt0ggfJ0R0Yym8sWc48CYqEl02HBkUAZFUCufHA==}
@@ -6383,23 +6539,84 @@ packages:
     transitivePeerDependencies:
       - bluebird
       - supports-color
+    dev: true
+
+  /npm-check-updates/16.4.0:
+    resolution: {integrity: sha512-+oa0E40MvB5l1NbRFqutI8WR4hgSnxzEg0/SFCjS1Hl5L7c1HJo6Rs65yhZMUbet/F0ZpJBx2Uipo+BJ1xD5Zw==}
+    engines: {node: '>=14.14'}
+    hasBin: true
+    dependencies:
+      chalk: 5.1.2
+      cli-table: 0.3.11
+      commander: 9.4.1
+      fast-memoize: 2.5.2
+      find-up: 5.0.0
+      fp-and-or: 0.1.3
+      get-stdin: 8.0.0
+      globby: 11.1.0
+      hosted-git-info: 5.1.0
+      ini: 3.0.1
+      json-parse-helpfulerror: 1.0.3
+      jsonlines: 0.1.1
+      lodash: 4.17.21
+      minimatch: 5.1.0
+      p-map: 4.0.0
+      pacote: 15.0.6
+      parse-github-url: 1.0.2
+      progress: 2.0.3
+      prompts-ncu: 2.5.1
+      rc-config-loader: 4.1.1
+      remote-git-tags: 3.0.0
+      rimraf: 3.0.2
+      semver: 7.3.8
+      semver-utils: 1.1.4
+      source-map-support: 0.5.21
+      spawn-please: 2.0.1
+      untildify: 4.0.0
+      update-notifier: 6.0.2
+      yaml: 2.1.3
+    transitivePeerDependencies:
+      - bluebird
+      - supports-color
 
   /npm-install-checks/5.0.0:
     resolution: {integrity: sha512-65lUsMI8ztHCxFz5ckCEC44DRvEGdZX5usQFriauxHEwt7upv1FKaQEmAtU0YnOAdwuNWCmk64xYiQABNrEyLA==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
-      semver: 7.3.7
+      semver: 7.3.8
+    dev: true
+
+  /npm-install-checks/6.0.0:
+    resolution: {integrity: sha512-SBU9oFglRVZnfElwAtF14NivyulDqF1VKqqwNsFW9HDcbHMAPHpRSsVFgKuwFGq/hVvWZExz62Th0kvxn/XE7Q==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      semver: 7.3.8
 
   /npm-normalize-package-bin/1.0.1:
     resolution: {integrity: sha512-EPfafl6JL5/rU+ot6P3gRSCpPDW5VmIzX959Ob1+ySFUuuYHWHekXpwdUZcKP5C+DS4GEtdJluwBjnsNDl+fSA==}
+    dev: true
+
+  /npm-normalize-package-bin/3.0.0:
+    resolution: {integrity: sha512-g+DPQSkusnk7HYXr75NtzkIP4+N81i3RPsGFidF3DzHd9MT9wWngmqoeg/fnHFz5MNdtG4w03s+QnhewSLTT2Q==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  /npm-package-arg/10.0.0:
+    resolution: {integrity: sha512-7dkh8mRp7s0KwVHKIVJnFCJQ2B34gOGnzgBjDGyprycmARq/82SX/lhilQ95ZuacP/G/1gsS345iAkKmxWBQ2Q==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      hosted-git-info: 6.1.1
+      proc-log: 3.0.0
+      semver: 7.3.8
+      validate-npm-package-name: 5.0.0
 
   /npm-package-arg/9.0.2:
     resolution: {integrity: sha512-v/miORuX8cndiOheW8p2moNuPJ7QhcFh9WGlTorruG8hXSA23vMTEp5hTCmDxic0nD8KHhj/NQgFuySD3GYY3g==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       hosted-git-info: 5.1.0
-      semver: 7.3.7
+      semver: 7.3.8
       validate-npm-package-name: 4.0.0
+    dev: true
 
   /npm-packlist/5.1.0:
     resolution: {integrity: sha512-a04sqF6FbkyOAFA19AA0e94gS7Et5T2/IMj3VOT9nOF2RaRdVPQ1Q17Fb/HaDRFs+gbC7HOmhVZ29adpWgmDZg==}
@@ -6410,6 +6627,13 @@ packages:
       ignore-walk: 5.0.1
       npm-bundled: 1.1.2
       npm-normalize-package-bin: 1.0.1
+    dev: true
+
+  /npm-packlist/7.0.2:
+    resolution: {integrity: sha512-d2+7RMySjVXssww23rV5NuIq1NzGvM04OlI5kwnvtYKfFTAPVs6Zxmxns2HRtJEA1oNj7D/BbFXeVAOLmW3N3Q==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      ignore-walk: 6.0.0
 
   /npm-pick-manifest/7.0.1:
     resolution: {integrity: sha512-IA8+tuv8KujbsbLQvselW2XQgmXWS47t3CB0ZrzsRZ82DbDfkcFunOaPm4X7qNuhMfq+FmV7hQT4iFVpHqV7mg==}
@@ -6418,7 +6642,17 @@ packages:
       npm-install-checks: 5.0.0
       npm-normalize-package-bin: 1.0.1
       npm-package-arg: 9.0.2
-      semver: 7.3.7
+      semver: 7.3.8
+    dev: true
+
+  /npm-pick-manifest/8.0.1:
+    resolution: {integrity: sha512-mRtvlBjTsJvfCCdmPtiu2bdlx8d/KXtF7yNXNWe7G0Z36qWA9Ny5zXsI2PfBZEv7SXgoxTmNaTzGSbbzDZChoA==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      npm-install-checks: 6.0.0
+      npm-normalize-package-bin: 3.0.0
+      npm-package-arg: 10.0.0
+      semver: 7.3.8
 
   /npm-registry-fetch/13.1.1:
     resolution: {integrity: sha512-5p8rwe6wQPLJ8dMqeTnA57Dp9Ox6GH9H60xkyJup07FmVlu3Mk7pf/kIIpl9gaN5bM8NM+UUx3emUWvDNTt39w==}
@@ -6431,6 +6665,22 @@ packages:
       minizlib: 2.1.2
       npm-package-arg: 9.0.2
       proc-log: 2.0.1
+    transitivePeerDependencies:
+      - bluebird
+      - supports-color
+    dev: true
+
+  /npm-registry-fetch/14.0.2:
+    resolution: {integrity: sha512-TMenrMagFA9KF81E2bkS5XRyzERK4KXu70vgXt5+i8FcrFeLNgNsc6e5hekTqjDwPDkL3HGn/holWcXDMfnFgw==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      make-fetch-happen: 11.0.1
+      minipass: 3.1.6
+      minipass-fetch: 3.0.0
+      minipass-json-stream: 1.0.1
+      minizlib: 2.1.2
+      npm-package-arg: 10.0.0
+      proc-log: 3.0.0
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -6638,7 +6888,7 @@ packages:
       got: 12.5.2
       registry-auth-token: 5.0.1
       registry-url: 6.0.1
-      semver: 7.3.7
+      semver: 7.3.8
 
   /pacote/13.6.2:
     resolution: {integrity: sha512-Gu8fU3GsvOPkak2CkbojR7vjs3k3P9cA6uazKTHdsdV0gpCEQq2opelnEv30KRQWgVzP5Vd/5umjcedma3MKtg==}
@@ -6665,6 +6915,33 @@ packages:
       read-package-json-fast: 2.0.3
       rimraf: 3.0.2
       ssri: 9.0.1
+      tar: 6.1.11
+    transitivePeerDependencies:
+      - bluebird
+      - supports-color
+    dev: true
+
+  /pacote/15.0.6:
+    resolution: {integrity: sha512-dQwcz/sME7QIL+cdrw/jftQfMMXxSo17i2kJ/gnhBhUvvBAsxoBu1lw9B5IzCH/Ce8CvEkG/QYZ6txzKfn0bTw==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    hasBin: true
+    dependencies:
+      '@npmcli/git': 4.0.3
+      '@npmcli/installed-package-contents': 2.0.1
+      '@npmcli/promise-spawn': 6.0.1
+      '@npmcli/run-script': 6.0.0
+      cacache: 17.0.2
+      fs-minipass: 2.1.0
+      minipass: 3.1.6
+      npm-package-arg: 10.0.0
+      npm-packlist: 7.0.2
+      npm-pick-manifest: 8.0.1
+      npm-registry-fetch: 14.0.2
+      proc-log: 3.0.0
+      promise-retry: 2.0.1
+      read-package-json: 6.0.0
+      read-package-json-fast: 3.0.1
+      ssri: 10.0.0
       tar: 6.1.11
     transitivePeerDependencies:
       - bluebird
@@ -6891,6 +7168,11 @@ packages:
   /proc-log/2.0.1:
     resolution: {integrity: sha512-Kcmo2FhfDTXdcbfDH76N7uBYHINxc/8GW7UAVuVP9I+Va3uHSerrnKV6dLooga/gh7GlgzuCCr/eoldnL1muGw==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    dev: true
+
+  /proc-log/3.0.0:
+    resolution: {integrity: sha512-++Vn7NS4Xf9NacaU9Xq3URUuqZETPsf8L4j5/ckhaRYsfPeRyzGw+iDjFhV/Jr3uNmTvvddEJFWh5R1gRgUH8A==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
   /progress/2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
@@ -6981,6 +7263,17 @@ packages:
       require-from-string: 2.0.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /rc-config-loader/4.1.1:
+    resolution: {integrity: sha512-S10o85x/szboh7FOxUyU+KuED+gr9V7SEnUBOzSn+vd1K8J2MtkP1RCPWg8Sw5kkuZKr7976bFzacCM6QtAApQ==}
+    dependencies:
+      debug: 4.3.4
+      js-yaml: 4.1.0
+      json5: 2.2.1
+      require-from-string: 2.0.2
+    transitivePeerDependencies:
+      - supports-color
 
   /rc/1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
@@ -7003,6 +7296,14 @@ packages:
     dependencies:
       json-parse-even-better-errors: 2.3.1
       npm-normalize-package-bin: 1.0.1
+    dev: true
+
+  /read-package-json-fast/3.0.1:
+    resolution: {integrity: sha512-8+HW7Yo+cjfF+md8DqsZHgats2mxf7gGYow/+2JjxrftoHFZz9v4dzd0EubzYbkNaLxrTVcnllHwklXN2+7aTQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      json-parse-even-better-errors: 3.0.0
+      npm-normalize-package-bin: 3.0.0
 
   /read-package-json/5.0.1:
     resolution: {integrity: sha512-MALHuNgYWdGW3gKzuNMuYtcSSZbGQm94fAp16xt8VsYTLBjUSc55bLMKe6gzpWue0Tfi6CBgwCSdDAqutGDhMg==}
@@ -7012,6 +7313,16 @@ packages:
       json-parse-even-better-errors: 2.3.1
       normalize-package-data: 4.0.0
       npm-normalize-package-bin: 1.0.1
+    dev: true
+
+  /read-package-json/6.0.0:
+    resolution: {integrity: sha512-b/9jxWJ8EwogJPpv99ma+QwtqB7FSl3+V6UXS7Aaay8/5VwMY50oIFooY1UKXMWpfNCM6T/PoGqa5GD1g9xf9w==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      glob: 8.0.3
+      json-parse-even-better-errors: 3.0.0
+      normalize-package-data: 5.0.0
+      npm-normalize-package-bin: 3.0.0
 
   /read-pkg-up/7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -7270,7 +7581,7 @@ packages:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.3.7
+      semver: 7.3.8
 
   /semver-utils/1.1.4:
     resolution: {integrity: sha512-EjnoLE5OGmDAVV/8YDoN5KiajNadjzIp9BAHOhYeQHt7j0UWxjmgsx4YD48wp4Ue1Qogq38F1GNUJNqF1kKKxA==}
@@ -7285,6 +7596,13 @@ packages:
 
   /semver/7.3.7:
     resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+
+  /semver/7.3.8:
+    resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -7432,6 +7750,13 @@ packages:
   /spawn-please/1.0.0:
     resolution: {integrity: sha512-Kz33ip6NRNKuyTRo3aDWyWxeGeM0ORDO552Fs6E1nj4pLWPkl37SrRtTnq+MEopVaqgmaO6bAvVS+v64BJ5M/A==}
     engines: {node: '>=10'}
+    dev: true
+
+  /spawn-please/2.0.1:
+    resolution: {integrity: sha512-W+cFbZR2q2mMTfjz5ZGvhBAiX+e/zczFCNlbS9mxiSdYswBXwUuBUT+a0urH+xZZa8f/bs0mXHyZsZHR9hKogA==}
+    engines: {node: '>=14'}
+    dependencies:
+      cross-spawn: 7.0.3
 
   /spawndamnit/2.0.0:
     resolution: {integrity: sha512-j4JKEcncSjFlqIwU5L/rp2N5SIPsdxaRsIv678+TZxZ0SRDJTm8JrxJMjE/XuiEZNEir3S8l0Fa3Ke339WI4qA==}
@@ -7466,6 +7791,12 @@ packages:
 
   /sprintf-js/1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
+
+  /ssri/10.0.0:
+    resolution: {integrity: sha512-64ghGOpqW0k+jh7m5jndBGdVEoPikWwGQmBNN5ks6jyUSMymzHDTlnNHOvzp+6MmHOljr2MokUzvRksnTwG0Iw==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      minipass: 3.1.6
 
   /ssri/9.0.1:
     resolution: {integrity: sha512-o57Wcn66jMQvfHG1FlYbWeZWW/dHZhJXjpIcTfXldXEk5nz5lStPo3mK0OJQfGR3RbZUlbISexbljkJzuEj/8Q==}
@@ -8018,8 +8349,20 @@ packages:
     dependencies:
       unique-slug: 2.0.2
 
+  /unique-filename/3.0.0:
+    resolution: {integrity: sha512-afXhuC55wkAmZ0P18QsVE6kp8JaxrEokN2HGIoIVv2ijHQd419H0+6EigAFcIzXeMIkcIkNBpB3L/DXB3cTS/g==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      unique-slug: 4.0.0
+
   /unique-slug/2.0.2:
     resolution: {integrity: sha512-zoWr9ObaxALD3DOPfjPSqxt4fnZiWblxHIgeWqW8x7UqDzEtHEQLzji2cuJYQFCU6KmoJikOYAZlrTHHebjx2w==}
+    dependencies:
+      imurmurhash: 0.1.4
+
+  /unique-slug/4.0.0:
+    resolution: {integrity: sha512-WrcA6AyEfqDX5bWige/4NQfPZMtASNVxdmWR76WESYQVAACSgWcR6e9i0mofqqBxYFtL4oAxPIptY73/0YE1DQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       imurmurhash: 0.1.4
 
@@ -8069,7 +8412,7 @@ packages:
     engines: {node: '>=14.16'}
     dependencies:
       boxen: 7.0.0
-      chalk: 5.1.0
+      chalk: 5.1.2
       configstore: 6.0.0
       has-yarn: 3.0.0
       import-lazy: 4.0.0
@@ -8079,7 +8422,7 @@ packages:
       is-yarn-global: 0.4.0
       latest-version: 7.0.0
       pupa: 3.1.0
-      semver: 7.3.7
+      semver: 7.3.8
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
 
@@ -8130,6 +8473,13 @@ packages:
   /validate-npm-package-name/4.0.0:
     resolution: {integrity: sha512-mzR0L8ZDktZjpX4OB46KT+56MAhl4EIazWP/+G/HPGuvfdaqg4YsCdtOm6U9+LOFyYDoh4dpnpxZRB9MQQns5Q==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    dependencies:
+      builtins: 5.0.1
+    dev: true
+
+  /validate-npm-package-name/5.0.0:
+    resolution: {integrity: sha512-YuKoXDAhBYxY7SfOKxHBDoSyENFeW5VvIIQp2TGQuit8gpK6MnWaQelBKxso72DoxTZfZdcP3W90LqpSkgPzLQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       builtins: 5.0.1
 
@@ -8217,6 +8567,13 @@ packages:
   /which/2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
     engines: {node: '>= 8'}
+    hasBin: true
+    dependencies:
+      isexe: 2.0.0
+
+  /which/3.0.0:
+    resolution: {integrity: sha512-nla//68K9NU6yRiwDY/Q8aU6siKlSs64aEC7+IV56QoAuyQT2ovsJcgGYGyqMOmI/CGN1BOR6mM5EN0FBO+zyQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     hasBin: true
     dependencies:
       isexe: 2.0.0
@@ -8328,6 +8685,10 @@ packages:
 
   /yaml/2.1.1:
     resolution: {integrity: sha512-o96x3OPo8GjWeSLF+wOAbrPfhFOGY0W00GNaxCDv+9hkcDJEnev1yh8S7pgHF0ik6zc8sQLuL8hjHjJULZp8bw==}
+    engines: {node: '>= 14'}
+
+  /yaml/2.1.3:
+    resolution: {integrity: sha512-AacA8nRULjKMX2DvWvOAdBZMOfQlypSFkjcOcu9FalllIDJ1kvlREzcdIZmidQUqqeMv7jorHjq2HlLv/+c2lg==}
     engines: {node: '>= 14'}
 
   /yargs-parser/18.1.3:
