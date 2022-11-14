@@ -76,7 +76,7 @@ importers:
       ramda: ^0.28.0
       rimraf: ~3.0.2
       satisfier: ^5.4.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -89,7 +89,7 @@ importers:
       '@just-web/os': link:../../plugins/os
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       '@types/ramda': 0.28.14
       assertron: 10.0.0
@@ -105,7 +105,7 @@ importers:
       ramda: 0.28.0
       rimraf: 3.0.2
       satisfier: 5.4.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   frameworks/log:
@@ -127,7 +127,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       standard-log: ^11.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
@@ -140,7 +140,7 @@ importers:
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       depcheck: 1.4.3
       eslint: 8.17.0
@@ -152,7 +152,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   frameworks/types:
@@ -172,7 +172,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       standard-log: ^11.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
@@ -180,7 +180,7 @@ importers:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
       '@just-web/repo-scripts': link:../../tools/repo-scripts
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       depcheck: 1.4.3
       eslint: 8.17.0
@@ -192,7 +192,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       standard-log: 11.1.0
       type-plus: 4.16.0
       typescript: 4.8.4
@@ -216,7 +216,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       tersify: ^3.10.2
       type-plus: ^4.16.0
       typescript: ^4.8.4
@@ -229,7 +229,7 @@ importers:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
       '@just-web/repo-scripts': link:../../tools/repo-scripts
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       depcheck: 1.4.3
       eslint: 8.17.0
@@ -241,7 +241,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   plugins/browser:
@@ -267,7 +267,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       satisfier: ^5.4.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -280,7 +280,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/states': link:../../libraries/states
       '@just-web/types': link:../../frameworks/types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       assertron: 10.0.0
       depcheck: 1.4.3
@@ -294,7 +294,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       satisfier: 5.4.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   plugins/browser-keyboard:
@@ -322,7 +322,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -338,7 +338,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       '@types/mousetrap': 1.6.9
       depcheck: 1.4.3
@@ -351,7 +351,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   plugins/browser-preferences:
@@ -383,7 +383,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       satisfier: ^5.4.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -402,7 +402,7 @@ importers:
       '@just-web/preferences': link:../preferences
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       assertron: 10.0.0
       depcheck: 1.4.3
@@ -416,7 +416,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       satisfier: 5.4.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   plugins/commands:
@@ -444,7 +444,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       sentence-case: ~3.0.4
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       standard-log: ^11.1.0
       tersify: ^3.10.2
       type-plus: ^4.16.0
@@ -463,7 +463,7 @@ importers:
       '@just-web/states': link:../../libraries/states
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       assertron: 10.0.0
       depcheck: 1.4.3
@@ -476,7 +476,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       standard-log: 11.1.0
       typescript: 4.8.4
 
@@ -502,7 +502,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       typescript: ^4.8.4
     dependencies:
       '@unional/events-plus': 2.2.2
@@ -513,7 +513,7 @@ importers:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/testing': link:../../tools/testing
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       '@types/node': 16.11.62
       depcheck: 1.4.3
@@ -526,7 +526,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   plugins/keyboard:
@@ -551,7 +551,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -565,7 +565,7 @@ importers:
       '@just-web/states': link:../../libraries/states
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       depcheck: 1.4.3
       eslint: 8.17.0
@@ -577,7 +577,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   plugins/os:
@@ -601,7 +601,7 @@ importers:
       npm-run-all: ^4.1.5
       platform: ~1.3.6
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -612,7 +612,7 @@ importers:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       '@types/platform': 1.3.4
       depcheck: 1.4.3
@@ -625,7 +625,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       type-plus: 4.16.0
       typescript: 4.8.4
 
@@ -654,7 +654,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -668,7 +668,7 @@ importers:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       assertron: 10.0.0
       depcheck: 1.4.3
@@ -682,7 +682,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       type-plus: 4.16.0
       typescript: 4.8.4
 
@@ -708,7 +708,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -722,7 +722,7 @@ importers:
       '@just-web/states': link:../../libraries/states
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       depcheck: 1.4.3
       eslint: 8.17.0
@@ -734,7 +734,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       typescript: 4.8.4
 
   tools/repo-scripts:
@@ -760,7 +760,7 @@ importers:
       npm-check-updates: ~16.3.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       ts-jest: ^27.1.5
       typescript: ^4.8.4
     dependencies:
@@ -787,8 +787,8 @@ importers:
       ts-jest: 27.1.5_zgo3ukr7wfsrfu7w73hol4lxpy
       typescript: 4.8.4
     devDependencies:
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
-      size-limit: 7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
+      size-limit: 8.1.0
 
   tools/testing:
     specifiers:
@@ -810,7 +810,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       satisfier: ^5.4.2
-      size-limit: ~7.0.8
+      size-limit: ~8.1.0
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
@@ -821,7 +821,7 @@ importers:
       '@babel/core': 7.19.3
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.19.3
       '@just-web/repo-scripts': link:../repo-scripts
-      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@8.1.0
       '@types/jest': 27.5.2
       depcheck: 1.4.3
       eslint: 8.17.0
@@ -833,7 +833,7 @@ importers:
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 7.0.8
+      size-limit: 8.1.0
       type-plus: 4.16.0
       typescript: 4.8.4
 
@@ -1983,7 +1983,7 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.3
 
-  /@size-limit/esbuild/7.0.8_size-limit@7.0.8:
+  /@size-limit/esbuild/7.0.8_size-limit@8.1.0:
     resolution: {integrity: sha512-AzCrxJJThDvHrBNoolebYVgXu46c6HuS3fOxoXr3V0YWNM0qz81z5F3j7RruzboZnls8ZgME4WrH6GM5rB9gtA==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     peerDependencies:
@@ -1991,27 +1991,27 @@ packages:
     dependencies:
       esbuild: 0.14.43
       nanoid: 3.3.4
-      size-limit: 7.0.8
+      size-limit: 8.1.0
     dev: true
 
-  /@size-limit/file/7.0.8_size-limit@7.0.8:
+  /@size-limit/file/7.0.8_size-limit@8.1.0:
     resolution: {integrity: sha512-1KeFQuMXIXAH/iELqIX7x+YNYDFvzIvmxcp9PrdwEoSNL0dXdaDIo9WE/yz8xvOmUcKaLfqbWkL75DM0k91WHQ==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     peerDependencies:
       size-limit: 7.0.8
     dependencies:
       semver: 7.3.5
-      size-limit: 7.0.8
+      size-limit: 8.1.0
     dev: true
 
-  /@size-limit/preset-small-lib/7.0.8_size-limit@7.0.8:
+  /@size-limit/preset-small-lib/7.0.8_size-limit@8.1.0:
     resolution: {integrity: sha512-CT8nIYA/c2CSD+X4rAUgwqYccQMahJ6rBnaZxvi3YKFdkXIbuGNXHNjHsYaFksgwG9P4UjG/unyO5L73f3zQBw==}
     peerDependencies:
       size-limit: 7.0.8
     dependencies:
-      '@size-limit/esbuild': 7.0.8_size-limit@7.0.8
-      '@size-limit/file': 7.0.8_size-limit@7.0.8
-      size-limit: 7.0.8
+      '@size-limit/esbuild': 7.0.8_size-limit@8.1.0
+      '@size-limit/file': 7.0.8_size-limit@8.1.0
+      size-limit: 8.1.0
     dev: true
 
   /@storybook/csf/0.0.1:
@@ -5812,8 +5812,8 @@ packages:
       resolve: 1.22.1
     dev: true
 
-  /lilconfig/2.0.5:
-    resolution: {integrity: sha512-xaYmXZtTHPAw5m+xLN8ab9C+3a8YmV3asNSPOATITbtwrfbwaLJj8h66H1WMIpALCkqsIzK3h7oQ+PdX+LQ9Eg==}
+  /lilconfig/2.0.6:
+    resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
     dev: true
 
@@ -7311,16 +7311,16 @@ packages:
   /sisteransi/1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
-  /size-limit/7.0.8:
-    resolution: {integrity: sha512-3h76c9E0e/nNhYLSR7IBI/bSoXICeo7EYkYjlyVqNIsu7KvN/PQmMbIXeyd2QKIF8iZKhaiZQoXLkGWbyPDtvQ==}
-    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+  /size-limit/8.1.0:
+    resolution: {integrity: sha512-bUL+Uyyt/G+a1XzKlI2WKHVDepmXtqMDhF65pdtjccheiQTNjExWW4nFefgbRL2QgNTzRfK6ayFKjO3o4ER4gg==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     dependencies:
       bytes-iec: 3.1.1
       chokidar: 3.5.3
       ci-job-number: 1.2.2
       globby: 11.1.0
-      lilconfig: 2.0.5
+      lilconfig: 2.0.6
       mkdirp: 1.0.4
       nanospinner: 1.1.0
       picocolors: 1.0.0

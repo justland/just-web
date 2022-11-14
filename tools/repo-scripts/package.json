@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "~7.0.8",
-    "size-limit": "~7.0.8"
+    "size-limit": "~8.1.0"
   },
   "size-limit": [
     {
