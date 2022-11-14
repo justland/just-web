@@ -6,11 +6,9 @@ module.exports = {
   customTitleLink: 'https://github.com/justland/just-web',
   entryPointStrategy: 'packages',
   entryPoints: [
-    'components/react-commands',
     'frameworks/app',
     'frameworks/log',
     'frameworks/types',
-    'libraries/react',
     'libraries/states',
     'plugins/browser',
     'plugins/browser-keyboard',
@@ -21,7 +19,6 @@ module.exports = {
     'plugins/os',
     'plugins/preferences',
     'plugins/routes',
-    'tools/repo-scri',
     'tools/testing',
   ],
   out: 'docs'
