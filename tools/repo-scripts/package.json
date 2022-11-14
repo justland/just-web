@@ -48,7 +48,7 @@
     "verify:build": "run-s clean build depcheck"
   },
   "dependencies": {
-    "@babel/core": "~7.19.0",
+    "@babel/core": "~7.20.0",
     "@babel/plugin-transform-runtime": "~7.19.0",
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/jest": "^27.4.1",
