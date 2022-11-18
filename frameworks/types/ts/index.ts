@@ -26,6 +26,9 @@ export namespace PluginModule {
     PluginContext extends Record<string | symbol, any> | undefined,
     StartContext extends Record<string | symbol, any> | undefined
   > = (context: NeedContext) => [PluginContext, StartContext?]
+  /**
+   * @deprecated StartContext will be deprecated. Use closure to pass value to your `start()` instead.
+   */
   export type initialize_B<
     in NeedContext extends Record<string | symbol, any>,
     StartContext extends Record<string | symbol, any> | undefined
@@ -56,6 +59,8 @@ export namespace PluginModule {
    * will be invoked when the application starts.
    *
    * This is a good time to start or complete any work needed before the application is being used.
+   *
+   * @param context THIS WILL BE DEPRECATED. Use closure to pass value to your `start()` instead.
    */
   export type start<
     in StartContext extends Record<string | symbol, any>
@@ -111,6 +116,7 @@ export namespace PluginModule {
 
   /**
    * TypeC are plugins with `StartContext` but no `PluginContext`.
+   * @deprecated StartContext will be deprecated. Use closure to pass value to your `start()` instead.
    */
   export type TypeC<
     NeedContext extends Record<string | symbol, any>,
@@ -122,6 +128,7 @@ export namespace PluginModule {
 
   /**
    * TypeD are plugins with both `PluginContext` and `StartContext`.
+   * @deprecated StartContext will be deprecated. Use closure to pass value to your `start()` instead.
    */
   export type TypeD<
     NeedContext extends Record<string | symbol, any>,
@@ -169,6 +176,9 @@ export function defineInitialize<
 >(
   initialize: PluginModule.initialize<NeedContext, PluginContext, StartContext>
 ): typeof initialize
+/**
+ * @deprecated StartContext will be deprecated. Use closure to pass value to your `start()` instead.
+ */
 export function defineInitialize<
   NeedContext extends Record<string | symbol, any>,
   StartContext extends Record<string | symbol, any>
@@ -241,6 +251,7 @@ export function defineStart<
 /**
  * Typed helper to define a `just-web` plugin.
  *
+ * @deprecated StartContext will be deprecated. Use closure to pass value to your `start()` instead.
  * @note due to an issue with TypeScript,
  * the function `init()` and `start()` needs to be defined as an arrow function.
  * If not, the type can't be inferred correctly.
@@ -254,6 +265,7 @@ export function definePlugin<
 /**
  * Typed helper to define a `just-web` plugin.
  *
+ * @deprecated StartContext will be deprecated. Use closure to pass value to your `start()` instead.
  * @note due to an issue with TypeScript,
  * the function `init()` and `start()` needs to be defined as an arrow function.
  * If not, the type can't be inferred correctly.
