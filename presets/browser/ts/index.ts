@@ -1,4 +1,4 @@
-import { browserPresetsPlugin } from './browserPresetsPlugin'
+import { presetsBrowserPlugin } from './presetsBrowserPlugin'
 
-export type { BrowserPresetsContext } from './browserPresetsPlugin'
-export default browserPresetsPlugin
+export type { PresetsBrowserContext } from './presetsBrowserPlugin'
+export default presetsBrowserPlugin

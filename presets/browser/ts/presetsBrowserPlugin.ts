@@ -6,7 +6,7 @@ import browserPreferencesPlugin from '@just-web/browser-preferences'
 import type { LogContext } from '@just-web/log'
 import { BrowserHistoryOptions, createBrowserHistory } from 'history'
 
-export const browserPresetsPlugin = definePlugin((options?: BrowserOptions & { history: BrowserHistoryOptions }) => ({
+export const presetsBrowserPlugin = definePlugin((options?: BrowserOptions & { history: BrowserHistoryOptions }) => ({
   name: '@just-web/presets-browser',
   init: (ctx: AppBaseContext & LogContext & CommandsContext & KeyboardContext) => {
     const [{ browser }] = browserPlugin(options).init(ctx)
@@ -18,4 +18,4 @@ export const browserPresetsPlugin = definePlugin((options?: BrowserOptions & { h
   }
 }))
 
-export type BrowserPresetsContext = PluginContext<typeof browserPresetsPlugin>
+export type PresetsBrowserContext = PluginContext<typeof presetsBrowserPlugin>
