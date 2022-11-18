@@ -1,5 +1,13 @@
 # @just-web/browser
 
+## 4.0.2
+
+### Patch Changes
+
+- @just-web/log@4.0.2
+- @just-web/states@4.0.2
+- @just-web/types@4.0.2
+
 ## 4.0.1
 
 ### Patch Changes
