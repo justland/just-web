@@ -1,5 +1,11 @@
 # @just-web/presets-browser
 
+## 1.0.1
+
+### Patch Changes
+
+- Add missing files to package
+
 ## 1.0.0
 
 ### Major Changes
