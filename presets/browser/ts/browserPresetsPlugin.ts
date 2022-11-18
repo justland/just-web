@@ -18,4 +18,4 @@ export const browserPresetsPlugin = definePlugin((options?: BrowserOptions & { h
   }
 }))
 
-export type BrowserPresetsPlugin = PluginContext<typeof browserPresetsPlugin>
+export type BrowserPresetsContext = PluginContext<typeof browserPresetsPlugin>
