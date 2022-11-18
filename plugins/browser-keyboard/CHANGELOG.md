@@ -1,5 +1,15 @@
 # @just-web/browser-contributions
 
+## 4.0.2
+
+### Patch Changes
+
+- @just-web/commands@4.0.2
+- @just-web/keyboard@4.0.2
+- @just-web/log@4.0.2
+- @just-web/os@4.0.2
+- @just-web/types@4.0.2
+
 ## 4.0.1
 
 ### Patch Changes

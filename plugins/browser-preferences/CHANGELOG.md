@@ -1,5 +1,16 @@
 # @just-web/browser-preferences
 
+## 4.0.2
+
+### Patch Changes
+
+- 54f12bec: `KeyboardContext` should be optional
+  - @just-web/commands@4.0.2
+  - @just-web/log@4.0.2
+  - @just-web/preferences@4.0.2
+  - @just-web/states@4.0.2
+  - @just-web/types@4.0.2
+
 ## 4.0.1
 
 ### Patch Changes
