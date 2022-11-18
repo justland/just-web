@@ -1,6 +1,6 @@
 
 import { LogContext } from '@just-web/log'
-import { definePlugin } from '@just-web/types'
+import { definePlugin, PluginContext } from '@just-web/types'
 import { keyBindingRegistry } from './keyBindings'
 
 export * from './keyBindings'
@@ -20,6 +20,6 @@ const plugin = definePlugin((options?: KeyboardOptions) => ({
   }
 }))
 
-export type KeyboardContext = ReturnType<ReturnType<typeof plugin>['init']>[0]
+export type KeyboardContext = PluginContext<typeof plugin>
 
 export default plugin

@@ -1,17 +1,16 @@
 module.exports = {
-  collectCoverageFrom: [
-    '<rootDir>/ts/**/*.[jt]s',
-    '!<rootDir>/ts/bin.[jt]s'
+  displayName: 'presets-browser',
+  preset: 'ts-jest',
+  globals: {
+    'ts-jest': {
+      isolatedModules: true
+    }
+  },
+  roots: [
+    '<rootDir>/ts',
   ],
-  projects: [
-    'apps/*',
-    'components/*',
-    'frameworks/*',
-    'libraries/*',
-    'plugins/*',
-    'presets/*',
-    'tools/*',
-  ],
+  testEnvironment: 'jsdom',
+  testMatch: ['**/?(*.)+(spec|test|integrate|accept|system|unit).[jt]s?(x)'],
   watchPlugins: [
     'jest-watch-suspend',
     'jest-watch-typeahead/filename',
