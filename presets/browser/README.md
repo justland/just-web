@@ -13,6 +13,11 @@ This presets includes:
 
 As a presets, you do not need to install any of the included packages yourself.
 
+This presets depends on:
+
+- [@just-web/commands](https://www.npmjs.com/package/@just-web/commands)
+- [@just-web/keyboard](https://www.npmjs.com/package/@just-web/keyboard) (Optional)
+
 ## Install
 
 ```sh

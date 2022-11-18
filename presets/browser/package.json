@@ -65,6 +65,15 @@
     "type-plus": "^4.16.0",
     "typescript": "^4.8.4"
   },
+  "peerDependencies": {
+    "@just-web/commands": ">= 4",
+    "@just-web/keyboard": ">= 4"
+  },
+  "peerDependenciesMeta": {
+    "@just-web/keyboard": {
+      "optional": true
+    }
+  },
   "typedoc": {
     "entryPoint": "./ts/index.ts",
     "readmeFile": "./README.md"
