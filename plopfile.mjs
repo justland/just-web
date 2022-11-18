@@ -12,47 +12,47 @@ export default function (
     actions: [{
       type: 'add',
       path: 'plugins/{{name}}/ts/index.spec.ts',
-      templateFile: 'plop-templates/plugins/ts/index.spec.ts.hbs'
+      templateFile: 'plops/plugins/ts/index.spec.ts.hbs'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/ts/index.ts',
-      templateFile: 'plop-templates/plugins/ts/index.ts.hbs'
+      templateFile: 'plops/plugins/ts/index.ts.hbs'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/.editorconfig',
-      templateFile: 'plop-templates/plugins/.editorconfig'
+      templateFile: 'plops/plugins/.editorconfig'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/.eslintignore',
-      templateFile: 'plop-templates/plugins/.eslintignore'
+      templateFile: 'plops/plugins/.eslintignore'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/.eslintrc.js',
-      templateFile: 'plop-templates/plugins/.eslintrc.js'
+      templateFile: 'plops/plugins/.eslintrc.js'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/.gitignore',
-      templateFile: 'plop-templates/plugins/.gitignore'
+      templateFile: 'plops/plugins/.gitignore'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/babel.config.js',
-      templateFile: 'plop-templates/plugins/babel.config.js'
+      templateFile: 'plops/plugins/babel.config.js'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/jest.config.js',
-      templateFile: 'plop-templates/plugins/jest.config.js'
+      templateFile: 'plops/plugins/jest.config.js'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/package.json',
-      templateFile: 'plop-templates/plugins/package.json.hbs'
+      templateFile: 'plops/plugins/package.json.hbs'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/tsconfig.json',
-      templateFile: 'plop-templates/plugins/tsconfig.json'
+      templateFile: 'plops/plugins/tsconfig.json'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/.depcheckrc.yml',
-      templateFile: 'plop-templates/plugins/.depcheckrc.yml'
+      templateFile: 'plops/plugins/.depcheckrc.yml'
     }]
   })
 }
