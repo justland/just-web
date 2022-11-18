@@ -1,5 +1,11 @@
 # @just-web/presets-browser
 
+## 1.0.2
+
+### Patch Changes
+
+- ce2f955a: re-export types to workaround "cannot be named" error.
+
 ## 1.0.1
 
 ### Patch Changes
