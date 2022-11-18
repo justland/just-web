@@ -1,0 +1,72 @@
+{
+  "name": "@just-web/presets-browser",
+  "version": "0.0.0",
+  "description": "just-web presets for browser related features",
+  "keywords": [
+    "just-web",
+    "just-web-presets"
+  ],
+  "homepage": "https://github.com/justland/just-web/tree/main/presets/browser-presets",
+  "bugs": {
+    "url": "https://github.com/justland/just-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justland/just-web.git",
+    "directory": "presets/browser"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Homa Wong (unional)",
+    "email": "homawong@gmail.com",
+    "url": "https://github.com/unional"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "clean": "rimraf coverage lib *.tsbuildinfo",
+    "coverage": "jest --coverage 2>&1",
+    "depcheck": "depcheck",
+    "lint": "eslint --ext=ts,tsx,js,yaml,yml .",
+    "nuke": "rimraf node_modules",
+    "test": "jest 2>&1",
+    "test:watch": "jest --watch",
+    "verify": "run-p build lint coverage depcheck",
+    "verify:build": "run-s clean build depcheck"
+  },
+  "dependencies": {
+    "@just-web/browser": "workspace:^",
+    "@just-web/browser-preferences": "workspace:^",
+    "history": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.20.0",
+    "@babel/plugin-transform-runtime": "~7.19.0",
+    "@just-web/app": "workspace:^",
+    "@just-web/commands": "workspace:^",
+    "@just-web/keyboard": "workspace:^",
+    "@just-web/log": "workspace:^",
+    "@just-web/repo-scripts": "workspace:^",
+    "@just-web/states": "workspace:^",
+    "@just-web/types": "workspace:^",
+    "@size-limit/preset-small-lib": "~8.1.0",
+    "@types/jest": "^27.4.1",
+    "depcheck": "~1.4.3",
+    "eslint": "^8.11.0",
+    "jest": "^27.5.1",
+    "jest-validate": "^27.5.1",
+    "jest-watch-suspend": "^1.1.2",
+    "jest-watch-toggle-config": "^2.0.1",
+    "jest-watch-typeahead": "^2.0.0",
+    "npm-check-updates": "~16.4.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "~3.0.2",
+    "size-limit": "~8.1.0",
+    "type-plus": "^4.16.0",
+    "typescript": "^4.8.4"
+  },
+  "typedoc": {
+    "entryPoint": "./ts/index.ts",
+    "readmeFile": "./README.md"
+  }
+}

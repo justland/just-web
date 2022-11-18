@@ -1,0 +1,5 @@
+ignores:
+  - "@size-limit/*"
+  - "@types/jest"
+  - npm-check-updates
+  - size-limit

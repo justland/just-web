@@ -10,7 +10,10 @@ importers:
       '@changesets/cli': ^2.25.0
       '@commitlint/cli': ^17.0.2
       '@commitlint/config-conventional': ^17.0.2
+      '@just-web/browser': workspace:^
+      '@just-web/browser-preferences': workspace:^
       '@just-web/repo-scripts': workspace:^
+      '@just-web/types': workspace:^
       '@types/eslint': ^8.4.3
       '@types/jest': ^27.5.2
       eslint: ^8.17.0
@@ -32,7 +35,10 @@ importers:
       '@changesets/cli': 2.25.0
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
+      '@just-web/browser': link:plugins/browser
+      '@just-web/browser-preferences': link:plugins/browser-preferences
       '@just-web/repo-scripts': link:tools/repo-scripts
+      '@just-web/types': link:frameworks/types
       '@types/eslint': 8.4.3
       '@types/jest': 27.5.2
       eslint: 8.17.0
@@ -737,6 +743,65 @@ importers:
       size-limit: 8.1.0
       typescript: 4.8.4
 
+  presets/browser:
+    specifiers:
+      '@babel/core': ~7.20.0
+      '@babel/plugin-transform-runtime': ~7.19.0
+      '@just-web/app': workspace:^
+      '@just-web/browser': workspace:^
+      '@just-web/browser-preferences': workspace:^
+      '@just-web/commands': workspace:^
+      '@just-web/keyboard': workspace:^
+      '@just-web/log': workspace:^
+      '@just-web/repo-scripts': workspace:^
+      '@just-web/states': workspace:^
+      '@just-web/types': workspace:^
+      '@size-limit/preset-small-lib': ~8.1.0
+      '@types/jest': ^27.4.1
+      depcheck: ~1.4.3
+      eslint: ^8.11.0
+      history: ^5.3.0
+      jest: ^27.5.1
+      jest-validate: ^27.5.1
+      jest-watch-suspend: ^1.1.2
+      jest-watch-toggle-config: ^2.0.1
+      jest-watch-typeahead: ^2.0.0
+      npm-check-updates: ~16.4.0
+      npm-run-all: ^4.1.5
+      rimraf: ~3.0.2
+      size-limit: ~8.1.0
+      type-plus: ^4.16.0
+      typescript: ^4.8.4
+    dependencies:
+      '@just-web/browser': link:../../plugins/browser
+      '@just-web/browser-preferences': link:../../plugins/browser-preferences
+      history: 5.3.0
+    devDependencies:
+      '@babel/core': 7.20.2
+      '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
+      '@just-web/app': link:../../frameworks/app
+      '@just-web/commands': link:../../plugins/commands
+      '@just-web/keyboard': link:../../plugins/keyboard
+      '@just-web/log': link:../../frameworks/log
+      '@just-web/repo-scripts': link:../../tools/repo-scripts
+      '@just-web/states': link:../../libraries/states
+      '@just-web/types': link:../../frameworks/types
+      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@types/jest': 27.5.2
+      depcheck: 1.4.3
+      eslint: 8.17.0
+      jest: 27.5.1
+      jest-validate: 27.5.1
+      jest-watch-suspend: 1.1.2_jest@27.5.1
+      jest-watch-toggle-config: 2.0.1_oppp7y6x7mqpudsh7mhqghjaqy
+      jest-watch-typeahead: 2.2.0_jest@27.5.1
+      npm-check-updates: 16.4.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      size-limit: 8.1.0
+      type-plus: 4.16.0
+      typescript: 4.8.4
+
   tools/repo-scripts:
     specifiers:
       '@babel/core': ~7.20.0
@@ -1142,7 +1207,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
-    dev: true
 
   /@babel/template/7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
@@ -1817,17 +1881,6 @@ packages:
       '@types/yargs': 16.0.4
       chalk: 4.1.2
 
-  /@jest/types/29.1.2:
-    resolution: {integrity: sha512-DcXGtoTykQB5jiwCmVr8H4vdg2OJhQex3qPkG+ISyDO7xQXbt/4R6dowcRyPemRnkH7JoHvZuxPBdlq+9JxFCg==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    dependencies:
-      '@jest/schemas': 29.0.0
-      '@types/istanbul-lib-coverage': 2.0.4
-      '@types/istanbul-reports': 3.0.1
-      '@types/node': 18.11.8
-      '@types/yargs': 17.0.13
-      chalk: 4.1.2
-
   /@jest/types/29.2.1:
     resolution: {integrity: sha512-O/QNDQODLnINEPAI0cl9U6zUIDXEWXt6IC1o2N2QENuos7hlGUIthlKyV4p6ki3TvXFX071blj8HUhgLGquPjw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -2467,7 +2520,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.7
+      semver: 7.3.8
       tsutils: 3.21.0_typescript@4.8.4
       typescript: 4.8.4
     transitivePeerDependencies:
@@ -2488,7 +2541,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.7
+      semver: 7.3.8
       tsutils: 3.21.0_typescript@4.8.4
       typescript: 4.8.4
     transitivePeerDependencies:
@@ -2509,7 +2562,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.7
+      semver: 7.3.8
       tsutils: 3.21.0_typescript@4.8.4
       typescript: 4.8.4
     transitivePeerDependencies:
@@ -4728,6 +4781,12 @@ packages:
       tslib: 2.4.0
     dev: true
 
+  /history/5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
+    dependencies:
+      '@babel/runtime': 7.18.3
+    dev: false
+
   /homedir-polyfill/1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
     engines: {node: '>=0.10.0'}
@@ -5740,7 +5799,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/test-result': 29.1.2
-      '@jest/types': 29.1.2
+      '@jest/types': 29.2.1
       '@types/node': 18.8.4
       ansi-escapes: 4.3.2
       chalk: 4.1.2
@@ -6030,7 +6089,7 @@ packages:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
     engines: {node: '>=12'}
     dependencies:
-      chalk: 5.1.0
+      chalk: 5.1.2
       is-unicode-supported: 1.3.0
     dev: true
 
@@ -6812,7 +6871,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       bl: 5.0.0
-      chalk: 5.1.0
+      chalk: 5.1.2
       cli-cursor: 4.0.0
       cli-spinners: 2.7.0
       is-interactive: 2.0.0
@@ -7392,7 +7451,6 @@ packages:
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
-    dev: true
 
   /regexp.prototype.flags/1.4.3:
     resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==}
@@ -8493,6 +8551,7 @@ packages:
 
   /w3c-hr-time/1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==}
+    deprecated: Use your platform's native performance.now() and performance.timeOrigin.
     dependencies:
       browser-process-hrtime: 1.0.0
 
