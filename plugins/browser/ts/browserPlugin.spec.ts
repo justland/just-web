@@ -1,12 +1,12 @@
 import { logTestPlugin } from '@just-web/log'
 import { AssertOrder } from 'assertron'
-import plugin from '.'
-import { ctx } from './index.ctx'
+import browserPlugin from '.'
+import { ctx } from './browserPlugin.ctx'
 
 describe(`default().init()`, () => {
   it('can omit options', () => {
     const [{ log }] = logTestPlugin().init()
-    const [{ browser }] = plugin().init({ log })
+    const [{ browser }] = browserPlugin().init({ log })
 
     expect(browser.errors).toBeDefined()
   })
@@ -19,7 +19,7 @@ describe(`default().init()`, () => {
       expect(options.preventDefault).toBe(true)
     }
 
-    plugin({ browser: { preventDefault: true } }).init({ log })
+    browserPlugin({ browser: { preventDefault: true } }).init({ log })
 
     o.end()
   })
