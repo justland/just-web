@@ -21,6 +21,12 @@
     "email": "homawong@gmail.com",
     "url": "https://github.com/unional"
   },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "!**/*.spec.*"
+  ],
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
