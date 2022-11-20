@@ -1,5 +1,11 @@
 # @just-web/states
 
+## 4.1.0
+
+### Patch Changes
+
+- @just-web/log@4.1.0
+
 ## 4.0.2
 
 ### Patch Changes

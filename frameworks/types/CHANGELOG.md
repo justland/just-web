@@ -1,5 +1,15 @@
 # @just-web/types
 
+## 4.1.0
+
+### Minor Changes
+
+- 3d4a51e3: Deprecating `StartContext`.
+  It is not needed as you can pass value to your `start()` using closure instead.
+  It will be removed in 5.0.
+
+  https://github.com/justland/just-web/issues/153
+
 ## 4.0.2
 
 ## 4.0.1

@@ -1,5 +1,12 @@
 # @just-web/presets-browser
 
+## 1.0.3
+
+### Patch Changes
+
+- @just-web/browser@4.1.0
+- @just-web/browser-preferences@4.1.0
+
 ## 1.0.2
 
 ### Patch Changes

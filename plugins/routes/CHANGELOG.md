@@ -1,5 +1,15 @@
 # @just-web/routes
 
+## 4.1.0
+
+### Patch Changes
+
+- Updated dependencies [3d4a51e3]
+  - @just-web/types@4.1.0
+  - @just-web/app@4.1.0
+  - @just-web/log@4.1.0
+  - @just-web/states@4.1.0
+
 ## 4.0.2
 
 ### Patch Changes
