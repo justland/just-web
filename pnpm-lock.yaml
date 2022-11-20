@@ -118,7 +118,7 @@ importers:
     specifiers:
       '@babel/core': ~7.20.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@just-func/types': ^0.4.0
+      '@just-func/types': ^0.5.0
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~8.1.0
@@ -138,7 +138,7 @@ importers:
       type-plus: ^4.16.0
       typescript: ^4.8.4
     dependencies:
-      '@just-func/types': 0.4.0
+      '@just-func/types': 0.5.0
       standard-log: 11.1.0
       type-plus: 4.16.0
     devDependencies:
@@ -1934,12 +1934,18 @@ packages:
   /@just-func/types/0.2.1:
     resolution: {integrity: sha512-NHhnteq2kwQkgJcBOp3jLdIvV3zZvjVuXEBqkqkefmyS2I0XEKWGXlBQz/37N7IGZrnnG9fvd4PAAYoQ7AjkyA==}
     dependencies:
-      type-plus: 4.16.0
+      type-plus: 4.18.0
 
   /@just-func/types/0.4.0:
     resolution: {integrity: sha512-JsBoSndz/rN/cmBgUC9DOFyWdMMJzBwEcaNnayZgzZ30mRnQVKEot5Xqy6X3Cc3+RwAmrowQFudLGTH3kfzXxA==}
     dependencies:
       type-plus: 4.16.0
+    dev: false
+
+  /@just-func/types/0.5.0:
+    resolution: {integrity: sha512-yPH5kX7Y1QjTvoUxLK1/vhWjJq1OqeWJ5qkTjWVVkRdk1qpnt6eGoqmb02OySzkyAFbQgnowv8F8M2bfgrkJrw==}
+    dependencies:
+      type-plus: 4.18.0
     dev: false
 
   /@manypkg/find-root/1.1.0:
@@ -8336,6 +8342,12 @@ packages:
 
   /type-plus/4.16.0:
     resolution: {integrity: sha512-JSfonNaQ7K/8H7F89+xkAcOGIiTUcyO3Unm8qC6/bfVAGgQBiOFBY131Ag56qp9GOAVpo134xm7jJn6GmLhjcg==}
+    dependencies:
+      tersify: 3.10.2
+      unpartial: 1.0.4
+
+  /type-plus/4.18.0:
+    resolution: {integrity: sha512-Hds5neDmogRcQheEmdjbEqVq/cE9UUdd9Ic7eCRI2/AzUH1JB+0ha3Hb3Spn2m1PQRBA61kNjbgSLaljNp0L9Q==}
     dependencies:
       tersify: 3.10.2
       unpartial: 1.0.4
