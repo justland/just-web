@@ -2,7 +2,6 @@ import keyboardPlugin from '@just-web/keyboard'
 import { logTestPlugin } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { AssertOrder } from 'assertron'
-import { justValue } from 'just-func'
 import commandsPlugin, { showCommandPalette } from '.'
 
 describe('plugin.init()', () => {
@@ -41,7 +40,7 @@ describe('plugin.init()', () => {
     const [{ commands }] = commandsPlugin().init({ log, keyboard })
     const o = new AssertOrder(1)
 
-    showCommandPalette.connect({ commands, keyboard }, () => (o.once(1), justValue()))
+    showCommandPalette.connect({ commands, keyboard }, () => o.once(1))
 
     commands.showCommandPalette()
     o.end()

@@ -1,72 +1,19 @@
 import { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
 import { getLogger } from '@just-web/log'
-import type { JustEmpty, JustFunction, JustValues } from 'just-func'
-import type { Command, CommandContribution, CommandsContext, Command_WithDefault, JustCommand, JustCommand_WithDefault } from './types'
+import { AnyFunction } from 'type-plus'
+import type { Command, CommandContribution, CommandsContext } from './types'
 
 /**
-* Creates a `just` command with default handler
-*/
-export function justCommand<
-  Params extends JustValues = JustValues,
-  R extends JustValues = JustEmpty
->(param: [idOrInfo: CommandContribution & KeyBindingContribution | string, handler: JustFunction<Params, R>])
-  : JustCommand_WithDefault<Params, R>
-/**
- * Creates a command without default handler.
- */
-export function justCommand<
-  Params extends JustValues = JustEmpty,
-  R extends JustValues = JustEmpty
->(param: [idOrInfo: CommandContribution & KeyBindingContribution | string]): JustCommand<Params, R>
-export function justCommand<
-  Params extends JustValues = JustEmpty,
-  R extends JustValues = JustEmpty
->([idOrInfo, handler]: [idOrInfo: CommandContribution & KeyBindingContribution | string, handler?: JustFunction<Params, R>]): any {
-  const withIdString = typeof idOrInfo === 'string'
-  const info = typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo
-  let ctx: CommandsContext & Partial<KeyboardContext>
-
-  return Object.assign(function (...args: Params) {
-    if (!ctx) return getLogger('@just-web/log').error(`cannot call '${info.id}' before connect().`)
-    return ctx.commands.handlers.invoke(info.id, ...args)
-  }, {
-    ...info,
-    handler,
-    connect([context, hdr]: [context: CommandsContext & Partial<KeyboardContext>, hdr?: JustFunction<Params, R>]) {
-      ctx = context
-      hdr = hdr ?? handler
-      if (!hdr) return
-
-      ctx.commands.handlers.register(info.id, hdr)
-
-      if (withIdString) return
-
-      ctx.commands.contributions.add(info)
-      if (ctx.keyboard && (info.key || info.mac)) {
-        ctx.keyboard.keyBindingContributions.add(info)
-      }
-    },
-    defineHandler(handler: (...args: Params) => R) { return handler },
-    defineArgs(...args: Params) { return args },
-  })
-}
-
-/**
- * Creates a public command with default handler that will be added to `contributions`.
+ * Creates a public command.
+ * A public command can be discovered by application and other plugins.
+ * @param handler Optional default handler.
  */
 export function command<
-  Params extends any[] = [],
-  R = void
->(info: CommandContribution & KeyBindingContribution, handler: (...args: Params) => R): Command_WithDefault<Params, R>
+  F extends AnyFunction = () => void
+>(info: CommandContribution & KeyBindingContribution, handler?: F): Command<F>
 /**
- * Creates a public command that will be added to `contributions`.
- */
-export function command<
-  Params extends any[] = [],
-  R = void
->(info: CommandContribution & KeyBindingContribution): Command<Params, R>
-/**
- * Creates a local command with a default handler.
+ * Creates a local command.
+ * Local commands can be used within the plugin but the application and other plugins will not see them.
  *
  * @param id `ID` of the command.
  * It should be unique across the application.
@@ -76,32 +23,16 @@ export function command<
  * The resulting command function will also have this as the name.
  */
 export function command<
-  Params extends any[] = [],
-  R = void
->(id: string, handler: (...args: Params) => R): Command_WithDefault<Params, R>
-/**
- * Creates a local command without default handler.
- *
- * @param id `ID` of the command.
- * It should be unique across the application.
- * It should follow the `<plugin>.<name>` pattern.
- *
- * For example: `just-web.showCommandPalette`
- * The resulting command function will also have this as the name.
- */
+  F extends AnyFunction = () => void
+>(id: string, handler?: F): Command<F>
 export function command<
-  Params extends any[] = [],
-  R = void
->(id: string): Command<Params, R>
-export function command<
-  Params extends any[] = [],
-  R = void
->(idOrInfo: any, handler?: (...args: Params) => R): any {
+  F extends AnyFunction = () => void
+>(idOrInfo: string | CommandContribution & KeyBindingContribution, handler?: F): any {
   const withIdString = typeof idOrInfo === 'string'
   const info = typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo
   let ctx: CommandsContext & Partial<KeyboardContext>
 
-  const fn = Object.defineProperty(function (...args: Params) {
+  const fn = Object.defineProperty(function (...args: Parameters<F>) {
     if (!ctx) return getLogger('@just-web/log').error(`cannot call '${info.id}' before connect().`)
     return ctx.commands.handlers.invoke(info.id, ...args)
   }, 'name', {
@@ -113,8 +44,7 @@ export function command<
 
   return Object.assign(fn, {
     ...info,
-    handler,
-    connect(context: CommandsContext & Partial<KeyboardContext>, hdr?: (...args: Params) => R) {
+    connect(context: CommandsContext & Partial<KeyboardContext>, hdr?: F) {
       ctx = context
       hdr = hdr ?? handler
       if (!hdr) return
@@ -128,7 +58,6 @@ export function command<
         ctx.keyboard.keyBindingContributions.add(info)
       }
     },
-    defineHandler(handler: (...args: Params) => R) { return handler },
-    defineArgs(...args: Params) { return args }
+    defineHandler(handler: F) { return handler }
   })
 }

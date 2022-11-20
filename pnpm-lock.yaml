@@ -45,7 +45,7 @@ importers:
       husky: 8.0.1
       jest: 27.5.1
       jest-watch-suspend: 1.1.2_jest@27.5.1
-      jest-watch-toggle-config: 2.0.1_qpxqe4azscpp6ff7thvuzrn5s4
+      jest-watch-toggle-config: 2.0.1_cyjj23dofktqqhirexetoaoaby
       jest-watch-typeahead: 2.2.0_jest@27.5.1
       npm-check-updates: 16.3.11
       npm-run-all: 4.1.5
@@ -83,11 +83,11 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       iso-error: 4.4.0
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -135,12 +135,12 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.1.0
       standard-log: ^11.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       '@just-func/types': 0.5.0
       standard-log: 11.1.0
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -180,7 +180,7 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.1.0
       standard-log: ^11.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     devDependencies:
       '@babel/core': 7.20.2
@@ -200,7 +200,7 @@ importers:
       rimraf: 3.0.2
       size-limit: 8.1.0
       standard-log: 11.1.0
-      type-plus: 4.16.0
+      type-plus: 4.18.0
       typescript: 4.8.4
 
   libraries/states:
@@ -224,13 +224,13 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.1.0
       tersify: ^3.10.2
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       '@just-web/log': link:../../frameworks/log
       immer: github.com/unional/immer/b74706f08e74afffb4ccadf628d12348e811af17
       tersify: 3.10.2
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -274,11 +274,11 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       iso-error: 4.4.0
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -329,11 +329,11 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       mousetrap: 1.6.5
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -390,14 +390,14 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       '@just-web/states': link:../../libraries/states
       '@types/base-64': 1.0.0
       base-64: 1.0.0
       immer: github.com/unional/immer/b74706f08e74afffb4ccadf628d12348e811af17
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -445,7 +445,6 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.0.0
-      just-func: ^0.2.3
       npm-check-updates: ~16.4.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
@@ -453,13 +452,12 @@ importers:
       size-limit: ~8.1.0
       standard-log: ^11.1.0
       tersify: ^3.10.2
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
-      just-func: 0.2.3
       sentence-case: 3.0.4
       tersify: 3.10.2
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -558,10 +556,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -608,7 +606,7 @@ importers:
       platform: ~1.3.6
       rimraf: ~3.0.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       platform: 1.3.6
@@ -632,7 +630,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
-      type-plus: 4.16.0
+      type-plus: 4.18.0
       typescript: 4.8.4
 
   plugins/preferences:
@@ -661,7 +659,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       '@just-web/states': link:../../libraries/states
@@ -689,7 +687,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
-      type-plus: 4.16.0
+      type-plus: 4.18.0
       typescript: 4.8.4
 
   plugins/routes:
@@ -715,10 +713,10 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     devDependencies:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-runtime': 7.19.1_@babel+core@7.20.2
@@ -770,7 +768,7 @@ importers:
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       '@just-web/browser': link:../../plugins/browser
@@ -799,7 +797,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
-      type-plus: 4.16.0
+      type-plus: 4.18.0
       typescript: 4.8.4
 
   tools/repo-scripts:
@@ -876,7 +874,7 @@ importers:
       rimraf: ~3.0.2
       satisfier: ^5.4.2
       size-limit: ~8.1.0
-      type-plus: ^4.16.0
+      type-plus: ^4.18.0
       typescript: ^4.8.4
     dependencies:
       '@just-web/log': link:../../frameworks/log
@@ -899,7 +897,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
-      type-plus: 4.16.0
+      type-plus: 4.18.0
       typescript: 4.8.4
 
 packages:
@@ -1892,6 +1890,18 @@ packages:
       '@types/yargs': 17.0.13
       chalk: 4.1.2
 
+  /@jest/types/29.3.1:
+    resolution: {integrity: sha512-d0S0jmmTpjnhCmNpApgX3jrUZgZ22ivKJRvL2lli5hpCRoNnp1f85r2/wpKfXuYu8E7Jjh1hGfhPyup1NM5AmA==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dependencies:
+      '@jest/schemas': 29.0.0
+      '@types/istanbul-lib-coverage': 2.0.4
+      '@types/istanbul-reports': 3.0.1
+      '@types/node': 18.11.9
+      '@types/yargs': 17.0.13
+      chalk: 4.1.2
+    dev: true
+
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
     engines: {node: '>=6.0.0'}
@@ -1939,7 +1949,7 @@ packages:
   /@just-func/types/0.4.0:
     resolution: {integrity: sha512-JsBoSndz/rN/cmBgUC9DOFyWdMMJzBwEcaNnayZgzZ30mRnQVKEot5Xqy6X3Cc3+RwAmrowQFudLGTH3kfzXxA==}
     dependencies:
-      type-plus: 4.16.0
+      type-plus: 4.18.0
     dev: false
 
   /@just-func/types/0.5.0:
@@ -2321,6 +2331,10 @@ packages:
 
   /@types/node/18.11.8:
     resolution: {integrity: sha512-uGwPWlE0Hj972KkHtCDVwZ8O39GmyjfMane1Z3GUBGGnkZ2USDq7SxLpVIiIHpweY9DS0QTDH0Nw7RNBsAAZ5A==}
+
+  /@types/node/18.11.9:
+    resolution: {integrity: sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==}
+    dev: true
 
   /@types/node/18.7.23:
     resolution: {integrity: sha512-DWNcCHolDq0ZKGizjx2DZjR/PqsYwAcYUJmfMWqtVU2MBMG5Mo+xFZrhGId5r/O5HOuMPyQEcM6KUBp5lBZZBg==}
@@ -2895,7 +2909,7 @@ packages:
       path-equal: 1.2.2
       satisfier: 5.4.2
       tersify: 3.10.2
-      type-plus: 4.16.0
+      type-plus: 4.18.0
 
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
@@ -5729,16 +5743,16 @@ packages:
       leven: 3.1.0
       pretty-format: 27.5.1
 
-  /jest-validate/29.2.2:
-    resolution: {integrity: sha512-eJXATaKaSnOuxNfs8CLHgdABFgUrd0TtWS8QckiJ4L/QVDF4KVbZFBBOwCBZHOS0Rc5fOxqngXeGXE3nGQkpQA==}
+  /jest-validate/29.3.1:
+    resolution: {integrity: sha512-N9Lr3oYR2Mpzuelp1F8negJR3YE+L1ebk1rYA5qYo9TTY3f9OWdptLoNSPP9itOCBIRBqjt/S5XHlzYglLN67g==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@jest/types': 29.2.1
+      '@jest/types': 29.3.1
       camelcase: 6.3.0
       chalk: 4.1.2
       jest-get-type: 29.2.0
       leven: 3.1.0
-      pretty-format: 29.2.1
+      pretty-format: 29.3.1
     dev: true
 
   /jest-watch-suspend/1.1.2_jest@27.5.1:
@@ -5750,6 +5764,18 @@ packages:
       jest: 27.5.1
       unpartial: 0.6.4
 
+  /jest-watch-toggle-config/2.0.1_cyjj23dofktqqhirexetoaoaby:
+    resolution: {integrity: sha512-qOOPo8vPlDX/hfHCQbJT5NKUvR+Uah+rsCtt+cCmg8oiMNtUvWUO2sqYW/X5PXmWyaoxwI14D8lVEmFy3w6BwQ==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      jest: '>= 23.4.1'
+      jest-validate: '>= 23.4.0'
+    dependencies:
+      chalk: 4.1.2
+      jest: 27.5.1
+      jest-validate: 29.3.1
+    dev: true
+
   /jest-watch-toggle-config/2.0.1_oppp7y6x7mqpudsh7mhqghjaqy:
     resolution: {integrity: sha512-qOOPo8vPlDX/hfHCQbJT5NKUvR+Uah+rsCtt+cCmg8oiMNtUvWUO2sqYW/X5PXmWyaoxwI14D8lVEmFy3w6BwQ==}
     engines: {node: '>= 10'}
@@ -5760,18 +5786,6 @@ packages:
       chalk: 4.1.2
       jest: 27.5.1
       jest-validate: 27.5.1
-
-  /jest-watch-toggle-config/2.0.1_qpxqe4azscpp6ff7thvuzrn5s4:
-    resolution: {integrity: sha512-qOOPo8vPlDX/hfHCQbJT5NKUvR+Uah+rsCtt+cCmg8oiMNtUvWUO2sqYW/X5PXmWyaoxwI14D8lVEmFy3w6BwQ==}
-    engines: {node: '>= 10'}
-    peerDependencies:
-      jest: '>= 23.4.1'
-      jest-validate: '>= 23.4.0'
-    dependencies:
-      chalk: 4.1.2
-      jest: 27.5.1
-      jest-validate: 29.2.2
-    dev: true
 
   /jest-watch-typeahead/2.2.0_jest@27.5.1:
     resolution: {integrity: sha512-cM3Qbw9P+jUYxqUSt53KdDDFRVBG96XA6bsIAG0zffl/gUkNK/kjWcCX7R559BgPWs2/UDrsJHPIw2f6b0qZCw==}
@@ -5959,13 +5973,6 @@ packages:
   /jsonparse/1.3.1:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
     engines: {'0': node >= 0.2.0}
-
-  /just-func/0.2.3:
-    resolution: {integrity: sha512-Rb/dLVchcrT2Fzbn6Ibshn4E3tGRTHomSqStpvpcYJZcnrk8mfe404MkrSMas/lkD6ntqv4yPV1lQFMtwNmguA==}
-    dependencies:
-      '@just-func/types': 0.4.0
-      type-plus: 4.16.0
-    dev: false
 
   /keyv/4.5.0:
     resolution: {integrity: sha512-2YvuMsA+jnFGtBareKqgANOEKe1mk3HKiXu2fRmAfyxG0MJAywNhi5ttWA3PMjl4NmpyjZNbFifR2vNjW1znfA==}
@@ -7230,6 +7237,15 @@ packages:
       ansi-styles: 5.2.0
       react-is: 18.2.0
 
+  /pretty-format/29.3.1:
+    resolution: {integrity: sha512-FyLnmb1cYJV8biEIiRyzRFvs2lry7PPIvOqKVe1GCUEYg4YGmlx1qG9EJNMxArYm7piII4qb8UV1Pncq5dxmcg==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dependencies:
+      '@jest/schemas': 29.0.0
+      ansi-styles: 5.2.0
+      react-is: 18.2.0
+    dev: true
+
   /proc-log/2.0.1:
     resolution: {integrity: sha512-Kcmo2FhfDTXdcbfDH76N7uBYHINxc/8GW7UAVuVP9I+Va3uHSerrnKV6dLooga/gh7GlgzuCCr/eoldnL1muGw==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
@@ -7880,7 +7896,7 @@ packages:
       '@just-func/types': 0.2.1
       iso-error: 4.4.0
       ms: 2.1.3
-      type-plus: 4.16.0
+      type-plus: 4.18.0
       upper-case: 2.0.2
 
   /stream-transform/2.1.3:
@@ -8340,8 +8356,8 @@ packages:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
 
-  /type-plus/4.16.0:
-    resolution: {integrity: sha512-JSfonNaQ7K/8H7F89+xkAcOGIiTUcyO3Unm8qC6/bfVAGgQBiOFBY131Ag56qp9GOAVpo134xm7jJn6GmLhjcg==}
+  /type-plus/4.18.0:
+    resolution: {integrity: sha512-Hds5neDmogRcQheEmdjbEqVq/cE9UUdd9Ic7eCRI2/AzUH1JB+0ha3Hb3Spn2m1PQRBA61kNjbgSLaljNp0L9Q==}
     dependencies:
       tersify: 3.10.2
       unpartial: 1.0.4

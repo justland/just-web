@@ -1,6 +1,5 @@
 import { KeyboardContext } from '@just-web/keyboard'
 import type { Registry, WithAdder } from '@just-web/states'
-import { JustEmpty, JustFunction, JustValues } from 'just-func'
 import type { AnyFunction } from 'type-plus'
 
 export type CommandHandler = {
@@ -16,7 +15,6 @@ export type HandlerRegistry = {
    * register handler for the specified command.
    */
   register(id: string, handler: AnyFunction): void,
-  register(info: CommandHandler): void,
   /**
    * invoke a registered command.
    * @param args arguments for the command
@@ -85,51 +83,15 @@ export type CommandsContext = {
   }
 }
 
-export namespace JustCommand {
-  export type Base<
-    Param extends JustValues = JustEmpty,
-    R extends JustValues = JustEmpty
-  > = JustFunction<Param, R> & {
-    id: string,
-    defineHandler(handler: JustFunction<Param, R>): JustFunction<Param, R>
-  } & (Param extends JustEmpty ? {
-    defineArgs<A extends JustEmpty>(): A
-  } : {
-    defineArgs(...args: Param): Param
-  })
-}
-
-export type JustCommand<
-  Params extends JustValues = JustEmpty,
-  R extends JustValues = JustEmpty
-> = JustCommand.Base<Params, R> & {
-  connect(param: [ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R]): void,
-}
-
-export type JustCommand_WithDefault<
-  Params extends JustValues = JustEmpty,
-  R extends JustValues = JustEmpty
-> = JustCommand.Base<Params, R> & {
-  handler: JustFunction<Params, R>,
-  connect(param: [ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R]): void,
-}
-
-export namespace Command {
-  export type Base<
-    Params extends any[] = [],
-    R = void
-  > = {
-    (...args: Params): R,
-    id: string,
-    defineHandler(handler: (...args: Params) => R): (...args: Params) => R,
-    defineArgs(...args: Params): Params
-  }
-}
-
 export type Command<
-  Params extends any[] = [],
-  R = void
-> = Command.Base<Params, R> & {
+  F extends AnyFunction = () => void
+> = F & {
+  /**
+   * Id of the command.
+   * It should be unique across the application.
+   * It should follow the `<plugin>.<name>` pattern.
+   */
+  id: string,
   /**
    * Connects a command to the app context.
    *
@@ -146,33 +108,6 @@ export type Command<
    * If you want the command to be available outside (i.e. register to contributions),
    * use the object form `command({...}, ...)`.
    */
-  connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R): void,
-}
-
-export type Command_WithDefault<
-  Params extends any[] = [],
-  R = void
-> = Command.Base<Params, R> & {
-  handler: (...args: Params) => R,
-  /**
-   * Connects a command to the app context.
-   *
-   * After calling this,
-   * the command function can be called directly which will invoke the command.
-   *
-   * If contribution and/or keybindings are defined in the command,
-   * They will also be registered automatically.
-   *
-   * If the command is defined with string, i.e. `command('name',...)`,
-   * it will not be added to contribution.
-   * It's a shortcut so that local commands can also use `connect()` to setup itself.
-   *
-   * If you want the command to be available outside (i.e. register to contributions),
-   * use the object form `command({...}, ...)`.
-   *
-   * @param handler overrides the default handler.
-   * This is useful if the plugin wants to provide a different implementation.
-   * e.g. implementation for specific platform.
-   */
-  connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: (...args: Params) => R): void,
+  connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: F): void,
+  defineHandler(handler: F): F
 }

@@ -2,7 +2,7 @@ import { LogContext, logLevels } from '@just-web/log'
 import { createRegistry } from '@just-web/states'
 import { tersify } from 'tersify'
 import type { AnyFunction } from 'type-plus'
-import type { CommandHandler, HandlerRegistry } from './types'
+import type { HandlerRegistry } from './types'
 
 export namespace handlerRegistry {
   export type Options = Record<string, AnyFunction>
@@ -19,17 +19,14 @@ export function handlerRegistry(
     /**
      * register handler for specified command.
      */
-    register(command: string | CommandHandler, handler?: AnyFunction) {
-      const [id, hdr] = typeof command === 'string'
-        ? [command, handler!]
-        : [command.id, command.handler]
+    register(id: string, handler: AnyFunction) {
       logger.trace('register', id)
       const commands = registry.get()
       if (commands[id]) {
         logger.notice(`Registring a new handler for '${id}'. Please make sure this is expected.`)
-        logger.on(logLevels.debug, log => log(`overrideing handler: ${tersify(hdr)}`))
+        logger.on(logLevels.debug, log => log(`overrideing handler: ${tersify(handler)}`))
       }
-      registry.update(m => { m[id] = hdr })
+      registry.update(m => { m[id] = handler })
     },
     invoke(id: string, ...args: any[]) {
       logger.trace('invoke', id)

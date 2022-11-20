@@ -45,7 +45,7 @@
     "@types/base-64": "^1.0.0",
     "base-64": "^1.0.0",
     "immer": "github:unional/immer#master",
-    "type-plus": "^4.16.0"
+    "type-plus": "^4.18.0"
   },
   "devDependencies": {
     "@babel/core": "~7.20.0",
