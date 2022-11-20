@@ -5,7 +5,7 @@ on:
 
 jobs:
   code:
-    uses: justland/.github/.github/workflows/pnpm-verify-cross-platform.yml@main
+    uses: justland/.github/.github/workflows/pnpm-verify.yml@main
 
   release:
     uses: justland/.github/.github/workflows/pnpm-release-changeset.yml@main
