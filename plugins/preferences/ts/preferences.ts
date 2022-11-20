@@ -1,8 +1,8 @@
 import { command, CommandsContext } from '@just-web/commands'
 import type { KeyboardContext } from '@just-web/keyboard'
 import { isNothing, SetStateValue, Updater } from '@just-web/states'
-import { definePlugin } from '@just-web/types'
-import { AnyFunction, isType, JSONTypes, MaybePromise } from 'type-plus'
+import { definePlugin, PluginContext } from '@just-web/types'
+import { AnyFunction, extractFunction, isType, JSONTypes, MaybePromise } from 'type-plus'
 
 /**
  * Gets a specific user preference
@@ -12,7 +12,7 @@ import { AnyFunction, isType, JSONTypes, MaybePromise } from 'type-plus'
  * So that will work in MFE.
  * @param defaultValue Optional. The default value to return if the preference doesn't exist.
  */
-export const getUserPreference = command<[key: string, defaultValue?: string], string | undefined>('just-web.getUserPreference')
+export const getUserPreference = command<(key: string, defaultValue?: string) => string | undefined>('just-web.getUserPreference')
 /**
  * Set the specified user preference.
  * @param key The key of the preference to be updated.
@@ -20,7 +20,7 @@ export const getUserPreference = command<[key: string, defaultValue?: string], s
  * If the value or the result of the handler is undefined,
  * the preference should be removed.
  */
-export const setUserPreference = command<[key: string, value: SetStateValue<string | undefined>]>('just-web.setUserPreference')
+export const setUserPreference = command<(key: string, value: SetStateValue<string | undefined>) => void>('just-web.setUserPreference')
 export const clearAllUserPreferences = command({ id: 'just-web.clearAllUserPreferences' })
 
 /**
@@ -37,9 +37,9 @@ const plugin = definePlugin(() => ({
 
     return [{
       preferences: {
-        get: getUserPreference,
-        set: setUserPreference,
-        clearAll: clearAllUserPreferences,
+        get: extractFunction(getUserPreference),
+        set: extractFunction(setUserPreference),
+        clearAll: extractFunction(clearAllUserPreferences),
         createStore
       }
     }]
@@ -48,7 +48,7 @@ const plugin = definePlugin(() => ({
 
 export default plugin
 
-export type PreferencesContext = ReturnType<ReturnType<typeof plugin>['init']>[0]
+export type PreferencesContext = PluginContext<typeof plugin>
 
 function createStore<T extends JSONTypes>(
   this: PreferencesContext['preferences'],
