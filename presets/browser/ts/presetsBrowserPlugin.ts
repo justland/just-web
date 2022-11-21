@@ -9,7 +9,7 @@ import { BrowserHistoryOptions, createBrowserHistory } from 'history'
 export type { ReadonlyErrorStore } from '@just-web/browser'
 export type { BrowserHistory } from 'history'
 
-export const presetsBrowserPlugin = definePlugin((options?: BrowserOptions & { history: BrowserHistoryOptions }) => ({
+const presetsBrowserPlugin = definePlugin((options?: BrowserOptions & { history: BrowserHistoryOptions }) => ({
   name: '@just-web/presets-browser',
   init: (ctx: AppBaseContext & LogContext & CommandsContext & KeyboardContext) => {
     const [{ browser }] = browserPlugin(options).init(ctx)
@@ -22,3 +22,5 @@ export const presetsBrowserPlugin = definePlugin((options?: BrowserOptions & { h
 }))
 
 export type PresetsBrowserContext = PluginContext<typeof presetsBrowserPlugin>
+
+export default presetsBrowserPlugin

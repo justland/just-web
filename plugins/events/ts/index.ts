@@ -20,17 +20,15 @@ export type EventsContext<E extends EventEmitterLike> = {
 // I have to do this to get the inferred type.
 const e = new EventEmitter()
 
-const plugin = <E extends EventEmitterLike = typeof e>(options?: EventsOptions<E>) => ({
+const eventsPlugin = <E extends EventEmitterLike = typeof e>(options?: EventsOptions<E>) => ({
   name: '@just-web/events',
   init: (ctx: LogContext): [EventsContext<E>] => [
     {
       events: {
-        emitter: options?.events?.emitter
-          ? trapError(options?.events?.emitter, ctx.log)
-          : trapError(new EventEmitter(), ctx.log)
+        emitter: trapError(options?.events?.emitter ?? new EventEmitter(), ctx.log)
       }
     }
   ] as any
 })
 
-export default plugin
+export default eventsPlugin

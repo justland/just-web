@@ -3,12 +3,12 @@ import { createMemoryLogReporter, LogOptions, logTestPlugin } from '@just-web/lo
 import { a } from 'assertron'
 import { configGlobal } from 'standard-log'
 import { CanAssign, ExtractFunction, isType } from 'type-plus'
-import plugin, { command, CommandsContext, CommandsOptions } from '.'
+import commandsPlugin, { command, CommandsContext, CommandsOptions } from '.'
 
 function setupPlugin(options?: LogOptions & KeyboardOptions & CommandsOptions) {
   const [{ log }] = logTestPlugin(options).init()
   const [{ keyboard }] = keyboardPlugin(options).init({ log })
-  const [{ commands }] = plugin(options).init({ log, keyboard })
+  const [{ commands }] = commandsPlugin(options).init({ log, keyboard })
   return [{ log, keyboard, commands }]
 }
 

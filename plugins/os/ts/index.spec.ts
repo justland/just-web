@@ -1,10 +1,10 @@
 import { logTestPlugin } from '@just-web/log'
-import plugin from '.'
+import osPlugin from '.'
 
 describe(`default().init()`, () => {
   it('adds `os` to the applcation', () => {
     const [{ log }] = logTestPlugin().init()
-    const [{ os }] = plugin().init({ log })
+    const [{ os }] = osPlugin().init({ log })
 
     expect(os.isMac).toBeDefined()
   })
