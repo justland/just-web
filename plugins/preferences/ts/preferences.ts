@@ -28,7 +28,7 @@ export const clearAllUserPreferences = command({ id: 'just-web.clearAllUserPrefe
  * @uses `@just-web/commands`
  * @optional `@just-web/keyboard`
  */
-const plugin = definePlugin(() => ({
+const preferencesPlugin = definePlugin(() => ({
   name: '@just-web/preferences',
   init: (ctx: CommandsContext & Partial<KeyboardContext>) => {
     getUserPreference.connect(ctx)
@@ -46,9 +46,9 @@ const plugin = definePlugin(() => ({
   }
 }))
 
-export default plugin
+export default preferencesPlugin
 
-export type PreferencesContext = PluginContext<typeof plugin>
+export type PreferencesContext = PluginContext<typeof preferencesPlugin>
 
 function createStore<T extends JSONTypes>(
   this: PreferencesContext['preferences'],

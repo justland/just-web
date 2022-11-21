@@ -2,7 +2,7 @@ import { createTestApp } from '@just-web/app'
 import commandsPlugin from '@just-web/commands'
 import { BrowserHistory } from 'history'
 import { isType } from 'type-plus'
-import { presetsBrowserPlugin } from './presetsBrowserPlugin'
+import presetsBrowserPlugin from './presetsBrowserPlugin'
 
 describe(`browserPresetsPlugin`, () => {
   it('provides history', () => {

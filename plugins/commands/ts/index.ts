@@ -25,7 +25,7 @@ export type CommandsOptions = {
   }
 }
 
-const plugin = definePlugin((options?: CommandsOptions) => ({
+const commandsPlugin = definePlugin((options?: CommandsOptions) => ({
   name: '@just-web/commands',
   init: (ctx: LogContext & Partial<KeyboardContext>): [CommandsContext] => {
     const contributions = contributionRegistry(ctx, options?.commands?.contributions)
@@ -44,4 +44,4 @@ const plugin = definePlugin((options?: CommandsOptions) => ({
   }
 }))
 
-export default plugin
+export default commandsPlugin

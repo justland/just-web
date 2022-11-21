@@ -9,7 +9,7 @@ import { produce } from 'immer'
 import { MaybePromise } from 'type-plus'
 import { ctx } from './browserPreferences.ctx'
 
-const plugin = definePlugin(() => ({
+const browserPreferencesPlugin = definePlugin(() => ({
   name: '@just-web/browser-preferences',
   init({ name, commands, keyboard, log }: AppBaseContext & LogContext & CommandsContext & Partial<KeyboardContext>) {
     getUserPreference.connect({ commands, keyboard }, (key, defaultValue) => {
@@ -40,7 +40,7 @@ const plugin = definePlugin(() => ({
   }
 }))
 
-export default plugin
+export default browserPreferencesPlugin
 
 function getKey(id: string, key: string) {
   return `${id}:${key}`

@@ -1,4 +1,1 @@
-import { presetsBrowserPlugin } from './presetsBrowserPlugin'
-
-export type { PresetsBrowserContext } from './presetsBrowserPlugin'
-export default presetsBrowserPlugin
+export type { PresetsBrowserContext, BrowserHistory, ReadonlyErrorStore, default } from './presetsBrowserPlugin'
