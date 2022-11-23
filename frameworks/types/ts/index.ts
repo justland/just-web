@@ -1,10 +1,10 @@
-import { getLogger, Logger } from 'standard-log'
-import { AnyFunction, LeftJoin, Omit } from 'type-plus'
+import type { GetLogger, Logger } from 'standard-log'
+import type { AnyFunction, LeftJoin, Omit } from 'type-plus'
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export type AppBaseContext = { name: string, id: string }
 
-export type StartContextBase = { log: Omit<Logger, 'id' | 'level' | 'write'> & { getLogger: typeof getLogger } }
+export type StartContextBase = { log: Omit<Logger, 'id' | 'level' | 'write'> & { getLogger: GetLogger } }
 
 /**
  * This PluginModule namespace describes the key exports within your module.

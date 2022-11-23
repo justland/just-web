@@ -1,7 +1,7 @@
 import { Draft } from 'immer'
 import { KeyTypes, pick, record, Widen } from 'type-plus'
-import { OnStateChange, ResetState, SetState } from './state'
-import { createStore } from './store'
+import { OnStateChange, ResetState, SetState } from './state.js'
+import { createStore } from './store.js'
 
 export type ReadonlyRegistry<K extends KeyTypes, T> = {
   get(): Record<K, T>,

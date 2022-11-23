@@ -1,5 +1,5 @@
 import { logTestPlugin } from '@just-web/log'
-import eventsPlugin, { justEvent } from '.'
+import eventsPlugin, { justEvent } from './index.js'
 
 it('can create just event', () => {
   const addEvent = justEvent('add')

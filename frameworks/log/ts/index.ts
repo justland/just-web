@@ -15,6 +15,7 @@ export {
 } from 'standard-log'
 export type {
   ConsoleLogFormatter, ConsoleLogReporter, ConsoleLogReporterOptions,
+  GetLogger,
   LogEntry, LogFilter, LogFormatter, LogFunction, Logger, LoggerOptions,
   LogLevel, LogMethod, LogMethodNames, LogReporter,
   LogReporterOptions, MemoryLogReporter, StandardLog, StandardLogOptions, TimestampFormat

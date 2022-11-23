@@ -6,7 +6,7 @@ import { definePlugin } from '@just-web/types'
 import { AssertOrder } from 'assertron'
 import { nothing, produce } from 'immer'
 import { isType, JSONTypes, MaybePromise, record } from 'type-plus'
-import preferencesPlugin, { clearAllUserPreferences, getUserPreference, setUserPreference } from './index'
+import preferencesPlugin, { clearAllUserPreferences, getUserPreference, setUserPreference } from './index.js'
 
 const inMemoryPrefPlugin = definePlugin(() => ({
   name: 'in-memory.pref',

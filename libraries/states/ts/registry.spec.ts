@@ -1,6 +1,6 @@
 import { CanAssign, isType, KeyTypes } from 'type-plus'
-import { createRegistry, Registry, withAdder } from '.'
-import { ReadonlyRegistry, toReadonlyRegistry } from './registry'
+import { createRegistry, Registry, withAdder } from './index.js'
+import { ReadonlyRegistry, toReadonlyRegistry } from './registry.js'
 
 describe('createRegistry()', () => {
   test('create empty registry', () => {

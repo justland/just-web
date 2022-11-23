@@ -1,8 +1,8 @@
-import { browserPlugin } from './browserPlugin'
-import type { ReadonlyErrorStore } from './types'
+import { browserPlugin } from './browserPlugin.js'
+import type { ReadonlyErrorStore } from './types.js'
 
-export * from './browserPlugin'
-export * from './errors'
+export * from './browserPlugin.js'
+export * from './errors.js'
 export { ReadonlyErrorStore }
 
 export default browserPlugin

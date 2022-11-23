@@ -4,9 +4,6 @@
     "build": {
       "dependsOn": [
         "^build"
-      ],
-      "outputs": [
-        "lib/**"
       ]
     },
     "clean": {
@@ -45,9 +42,6 @@
       "dependsOn": [
         "^build"
       ]
-    },
-    "verify": {
-      "dependsOn": ["build", "lint", "coverage", "depcheck", "size"]
     }
   }
 }

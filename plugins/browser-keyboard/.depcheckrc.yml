@@ -1,5 +1,6 @@
 ignores:
-  - "@size-limit/*"
-  - "@types/jest"
-  - npm-check-updates
+  - '@size-limit/*'
+  - '@types/jest'
+  - 'jest-*'
   - size-limit
+  - ts-jest

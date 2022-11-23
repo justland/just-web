@@ -2,7 +2,7 @@ import type { LogContext } from '@just-web/log'
 import { createStore, Store } from '@just-web/states'
 import { definePlugin } from '@just-web/types'
 import { record, requiredDeep } from 'type-plus'
-import type { Route, RoutesConfigOptions } from './types'
+import type { Route, RoutesConfigOptions } from './types.js'
 
 export { Route, RoutesConfigOptions }
 

@@ -1,9 +1,9 @@
 
 import { definePlugin } from '@just-web/types'
 import { unpartial } from 'type-plus'
-import { isMac } from './os'
+import { isMac } from './os.js'
 
-export * from './os'
+export * from './os.js'
 
 const osPlugin = definePlugin(() => ({
   name: '@just-web/os',

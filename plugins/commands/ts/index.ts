@@ -2,14 +2,14 @@ import type { KeyboardContext } from '@just-web/keyboard'
 import type { LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import type { AnyFunction } from 'type-plus'
-import { command } from './command'
-import { contributionRegistry } from './contributions'
-import { handlerRegistry } from './handlers'
-import type { CommandContribution, CommandsContext } from './types'
+import { command } from './command.js'
+import { contributionRegistry } from './contributions.js'
+import { handlerRegistry } from './handlers.js'
+import type { CommandContribution, CommandsContext } from './types.js'
 
-export * from './command'
-export * from './formatCommand'
-export type { CommandContribution, CommandHandler, CommandsContext, ContributionRegistry, HandlerRegistry, Command } from './types'
+export * from './command.js'
+export * from './formatCommand.js'
+export type { CommandContribution, CommandHandler, CommandsContext, ContributionRegistry, HandlerRegistry, Command } from './types.js'
 
 export const showCommandPalette = command({
   id: 'just-web.showCommandPalette',

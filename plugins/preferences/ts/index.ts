@@ -1,2 +1,2 @@
-export * from './preferences'
-export { default } from './preferences'
+export * from './preferences.js'
+export { default } from './preferences.js'

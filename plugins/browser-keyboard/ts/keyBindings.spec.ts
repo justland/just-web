@@ -6,7 +6,7 @@ import { logTestPlugin } from '@just-web/log'
 import osPlugin from '@just-web/os'
 import { logEqual } from '@just-web/testing'
 import mousetrap from 'mousetrap'
-import { startKeyBindings } from './keyBindings'
+import { startKeyBindings } from './keyBindings.js'
 
 type StubCommand = KeyBindingContribution & CommandContribution & {
   handler(command: KeyBindingContribution & CommandContribution): void

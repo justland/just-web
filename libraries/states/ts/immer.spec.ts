@@ -1,5 +1,5 @@
 import { isType } from 'type-plus'
-import { isNothing, nothing } from './index'
+import { isNothing, nothing } from './index.js'
 
 describe(`${isNothing}()`, () => {
   it('guard undefined as not `nothing`', () => {

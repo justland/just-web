@@ -1,6 +1,6 @@
 import { logTestPlugin, TestLogContext } from '@just-web/log'
 import { isType } from 'type-plus'
-import { logEqual, logMatchSome } from './log'
+import { logEqual, logMatchSome } from './log.js'
 
 let ctx: TestLogContext
 beforeEach(() => ctx = logTestPlugin().init()[0])

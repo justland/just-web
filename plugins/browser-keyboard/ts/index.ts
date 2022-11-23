@@ -1,3 +1,3 @@
-import { browserKeyboardPlugin } from './browserKeyboardPlugin'
+import { browserKeyboardPlugin } from './browserKeyboardPlugin.js'
 
 export default browserKeyboardPlugin

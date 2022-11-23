@@ -2,12 +2,12 @@ import { createTestApp } from '@just-web/app'
 import commandsPlugin from '@just-web/commands'
 import keyboardPlugin from '@just-web/keyboard'
 import { logLevels } from '@just-web/log'
-import preferencesPlugin, { clearAllUserPreferences } from '@just-web/preferences/lib/preferences'
+import preferencesPlugin, { clearAllUserPreferences } from '@just-web/preferences'
 import { nothing } from '@just-web/states'
 import { a, AssertOrder } from 'assertron'
 import { hasAll, some } from 'satisfier'
-import browserPreferencePlugin from '.'
-import { ctx } from './browserPreferences.ctx'
+import { ctx } from './browserPreferences.ctx.js'
+import browserPreferencePlugin from './index.js'
 
 afterEach(() => ctx.localStorage = localStorage)
 

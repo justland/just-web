@@ -1,1 +1,1 @@
-export type { PresetsBrowserContext, BrowserHistory, ReadonlyErrorStore, default } from './presetsBrowserPlugin'
+export type { PresetsBrowserContext, BrowserHistory, ReadonlyErrorStore, default } from './presetsBrowserPlugin.js'

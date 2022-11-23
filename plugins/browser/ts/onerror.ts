@@ -1,7 +1,7 @@
 import { LogContext } from '@just-web/log'
-import { BrowserError } from './errors'
-import { ErrorStore } from './errorStore'
-import { ctx } from './onerror.ctx'
+import { BrowserError } from './errors.js'
+import { ErrorStore } from './errorStore.js'
+import { ctx } from './onerror.ctx.js'
 
 export namespace registerOnErrorHandler {
   export interface Ctx {

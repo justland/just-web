@@ -1,6 +1,6 @@
 import { createStandardLog, LogMethodNames, StandardLogOptions } from 'standard-log'
 import { isType, LeftJoin } from 'type-plus'
-import { defineInitialize, definePlugin, defineStart, PluginContext, StartContextBase } from '.'
+import { defineInitialize, definePlugin, defineStart, PluginContext, StartContextBase } from './index.js'
 
 describe(defineInitialize.name, () => {
   it('accepts function returning a PluginContext', () => {

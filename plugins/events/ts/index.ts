@@ -16,11 +16,7 @@ export type EventsContext<E extends EventEmitterLike> = {
   }
 }
 
-// unfortunately since `eventemitter3` is not exposing the `EventEmitter` class declaration,
-// I have to do this to get the inferred type.
-const e = new EventEmitter()
-
-const eventsPlugin = <E extends EventEmitterLike = typeof e>(options?: EventsOptions<E>) => ({
+const eventsPlugin = <E extends EventEmitterLike = EventEmitter>(options?: EventsOptions<E>) => ({
   name: '@just-web/events',
   init: (ctx: LogContext): [EventsContext<E>] => [
     {

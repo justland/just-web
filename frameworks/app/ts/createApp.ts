@@ -2,7 +2,7 @@
 import logPlugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, LogContext, LogMethodNames, LogOptions, logTestPlugin, TestLogContext } from '@just-web/log'
 import type { AppBaseContext, PluginModule } from '@just-web/types'
 import { isType, LeftJoin, pick } from 'type-plus'
-import { ctx } from './createApp.ctx'
+import { ctx } from './createApp.ctx.js'
 
 export namespace createApp {
   export type Options<N extends string = LogMethodNames> = { name: string } & LogOptions<N>

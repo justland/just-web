@@ -1,5 +1,5 @@
 import { createMemoryLogReporter, logLevels } from 'standard-log'
-import plugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, logTestPlugin } from './index'
+import plugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, logTestPlugin } from './index.js'
 
 describe(`plugin().init()`, () => {
   it('provides app log methods', () => {

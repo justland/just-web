@@ -1,6 +1,7 @@
+import { jest } from '@jest/globals'
 import { logTestPlugin } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
-import { handlerRegistry } from './handlers'
+import { handlerRegistry } from './handlers.js'
 
 function setupTest(options?: handlerRegistry.Options) {
   const [logctx] = logTestPlugin().init()
