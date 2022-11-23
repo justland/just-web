@@ -1,7 +1,7 @@
 /** @type {import('jest').Config} */
 export default {
   displayName: 'presets-browser',
-  preset: 'ts-jest/presets/default-esm',
+  extensionsToTreatAsEsm: ['.ts'],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },

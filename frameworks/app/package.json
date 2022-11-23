@@ -48,7 +48,7 @@
     "lint": "cross-env TIMING=1 eslint --ext=ts,tsx,js,yaml,yml .",
     "nuke": "rimraf node_modules",
     "size": "size-limit",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules TS_JEST_LOG=ts-jest.log jest",
     "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },

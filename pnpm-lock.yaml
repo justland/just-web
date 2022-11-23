@@ -375,10 +375,8 @@ importers:
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~8.1.0
-      '@types/base-64': ^1.0.0
       '@types/jest': ^29.2.3
       assertron: ^10.0.0
-      base-64: ^1.0.0
       cross-env: ^7.0.3
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -389,6 +387,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.2.1
+      js-base64: ^3.7.3
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
@@ -399,8 +398,8 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@just-web/states': link:../../libraries/states
-      base-64: 1.0.0
       immer: github.com/unional/immer/b74706f08e74afffb4ccadf628d12348e811af17
+      js-base64: 3.7.3
       type-plus: 4.18.0
     devDependencies:
       '@just-web/app': link:../../frameworks/app
@@ -410,7 +409,6 @@ importers:
       '@just-web/preferences': link:../preferences
       '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
-      '@types/base-64': 1.0.0
       '@types/jest': 29.2.3
       assertron: 10.0.1
       cross-env: 7.0.3
@@ -517,7 +515,7 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@unional/events-plus': 2.2.5
-      eventemitter3: github.com/unional/eventemitter3/02b8756d46d99d11040066281a8f32ce7a27019c
+      eventemitter3: github.com/unional/eventemitter3/f9664d0d199fe0fa4ed2f5e95f4790824a410990
     devDependencies:
       '@just-web/log': link:../../frameworks/log
       '@just-web/testing': link:../../tools/testing
@@ -756,7 +754,6 @@ importers:
       '@just-web/commands': workspace:^
       '@just-web/keyboard': workspace:^
       '@just-web/log': workspace:^
-      '@just-web/states': workspace:^
       '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
@@ -786,7 +783,6 @@ importers:
       '@just-web/commands': link:../../plugins/commands
       '@just-web/keyboard': link:../../plugins/keyboard
       '@just-web/log': link:../../frameworks/log
-      '@just-web/states': link:../../libraries/states
       '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
@@ -2190,10 +2186,6 @@ packages:
     dependencies:
       '@babel/types': 7.20.2
 
-  /@types/base-64/1.0.0:
-    resolution: {integrity: sha512-AvCJx/HrfYHmOQRFdVvgKMplXfzTUizmh0tz9GFTpDePWgCY4uoKll84zKlaRoeiYiCr7c9ZnqSTzkl0BUVD6g==}
-    dev: true
-
   /@types/eslint/8.4.10:
     resolution: {integrity: sha512-Sl/HOqN8NKPmhWo2VBEPm0nvHnu2LL3v9vKo8MEq0EtbJ4eVzGPl41VNPvn5E1i5poMk4/XD8UriLHpJvEP/Nw==}
     dependencies:
@@ -2976,10 +2968,6 @@ packages:
 
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
-
-  /base-64/1.0.0:
-    resolution: {integrity: sha512-kwDPIFCGx0NZHog36dj+tHiwP4QMzsZ3AgMViUBKI0+V5n4U0ufTCUMhnQ04diaRI8EX/QcPfql7zlhZ7j4zgg==}
-    dev: false
 
   /base64-js/1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
@@ -5996,6 +5984,10 @@ packages:
   /jju/1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
 
+  /js-base64/3.7.3:
+    resolution: {integrity: sha512-PAr6Xg2jvd7MCR6Ld9Jg3BmTcjYsHEBx1VlwEwULb/qowPf5VD9kEMagj23Gm7JRnSvE/Da/57nChZjnvL8v6A==}
+    dev: false
+
   /js-sdsl/4.1.5:
     resolution: {integrity: sha512-08bOAKweV2NUC1wqTtf3qZlnpOX/R2DU9ikpjOHs0H+ibQv3zpncVQg6um4uYtRtrwIX8M4Nh3ytK4HGlYAq7Q==}
 
@@ -8813,8 +8805,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  github.com/unional/eventemitter3/02b8756d46d99d11040066281a8f32ce7a27019c:
-    resolution: {tarball: https://codeload.github.com/unional/eventemitter3/tar.gz/02b8756d46d99d11040066281a8f32ce7a27019c}
+  github.com/unional/eventemitter3/f9664d0d199fe0fa4ed2f5e95f4790824a410990:
+    resolution: {tarball: https://codeload.github.com/unional/eventemitter3/tar.gz/f9664d0d199fe0fa4ed2f5e95f4790824a410990}
     name: eventemitter3
     version: 4.0.7
     dev: false
