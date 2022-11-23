@@ -2,7 +2,7 @@ import keyboardPlugin from '@just-web/keyboard'
 import { logTestPlugin } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
 import { AssertOrder } from 'assertron'
-import commandsPlugin, { showCommandPalette } from '.'
+import commandsPlugin, { showCommandPalette } from './index.js'
 
 describe('plugin.init()', () => {
   test('basic case', () => {

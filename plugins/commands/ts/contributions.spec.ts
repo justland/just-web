@@ -1,7 +1,7 @@
 import { logTestPlugin } from '@just-web/log'
 import { logEqual } from '@just-web/testing'
-import { CommandContribution, formatCommand } from '.'
-import { contributionRegistry } from './contributions'
+import { CommandContribution, formatCommand } from './index.js'
+import { contributionRegistry } from './contributions.js'
 
 function setupTest(options?: CommandContribution[]) {
   const [logctx] = logTestPlugin().init()

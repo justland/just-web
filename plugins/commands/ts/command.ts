@@ -1,7 +1,7 @@
 import { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
 import { getLogger } from '@just-web/log'
 import { AnyFunction } from 'type-plus'
-import type { Command, CommandContribution, CommandsContext } from './types'
+import type { Command, CommandContribution, CommandsContext } from './types.js'
 
 /**
  * Creates a public command.

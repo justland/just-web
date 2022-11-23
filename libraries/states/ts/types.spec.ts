@@ -1,6 +1,6 @@
 import { nothing } from 'immer'
 import { JSONTypes } from 'type-plus'
-import type { Updater } from './types'
+import type { Updater } from './types.js'
 
 describe(`Updater<T>`, () => {
   it('allows returning `nothing` when T includes undefined', () => {

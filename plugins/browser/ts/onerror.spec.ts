@@ -1,9 +1,9 @@
 import { logLevels, logTestPlugin } from '@just-web/log'
 import { a } from 'assertron'
 import { startsWith } from 'satisfier'
-import { createErrorStore } from './errorStore'
-import { registerOnErrorHandler } from './onerror'
-import { ctx } from './onerror.ctx'
+import { createErrorStore } from './errorStore.js'
+import { registerOnErrorHandler } from './onerror.js'
+import { ctx } from './onerror.ctx.js'
 
 it('captures error', () => {
   ctx.window = {} as any

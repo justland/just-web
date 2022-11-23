@@ -2,7 +2,7 @@ import { LogContext, logLevels } from '@just-web/log'
 import { createRegistry } from '@just-web/states'
 import { tersify } from 'tersify'
 import type { AnyFunction } from 'type-plus'
-import type { HandlerRegistry } from './types'
+import type { HandlerRegistry } from './types.js'
 
 export namespace handlerRegistry {
   export type Options = Record<string, AnyFunction>

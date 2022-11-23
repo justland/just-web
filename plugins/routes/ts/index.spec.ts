@@ -3,7 +3,7 @@ import {
 } from '@just-web/app'
 import { createMemoryLogReporter, logLevels } from '@just-web/log'
 import { logMatchSome } from '@just-web/testing'
-import routePlugin from '.'
+import routePlugin from './index.js'
 
 describe('start()', () => {
   test('configure initial route', async () => {

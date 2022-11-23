@@ -1,7 +1,7 @@
 import { createStandardLogForTest, logLevels } from '@just-web/log'
 import { nothing } from 'immer'
 import { isType } from 'type-plus'
-import { createState, OnStateChange } from './state'
+import { createState, OnStateChange } from './state.js'
 
 it('returns initial value', () => {
   const [value] = createState([1, 2, 3])

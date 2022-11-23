@@ -1,6 +1,6 @@
 import { createTestApp } from '@just-web/app'
 import { logEqual } from '@just-web/testing'
-import routePlugin from '.'
+import routePlugin from './index.js'
 
 async function setupTest() {
   const app = createTestApp()

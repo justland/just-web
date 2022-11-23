@@ -6,9 +6,15 @@
       "ES2019",
       "ES2021.Promise"
     ],
-    "outDir": "lib",
+    "module": "ES2020",
+    "moduleResolution": "NodeNext",
+    "outDir": "esm",
     "rootDir": "ts"
   },
+  "include": [
+    "ts",
+    "typings"
+  ],
   "references": [
     {
       "path": "../../frameworks/log"
@@ -19,9 +25,5 @@
     {
       "path": "../../tools/repo-scripts"
     }
-  ],
-  "include": [
-    "ts",
-    "typings"
   ]
 }

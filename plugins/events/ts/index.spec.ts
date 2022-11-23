@@ -2,7 +2,7 @@ import { LogOptions, logTestPlugin } from '@just-web/log'
 import { logMatchSome } from '@just-web/testing'
 import { EventEmitterLike } from '@unional/events-plus'
 import { EventEmitter } from 'node:events'
-import eventsPlugin, { EventsOptions, justEvent } from '.'
+import eventsPlugin, { EventsOptions, justEvent } from './index.js'
 
 function setupPlugin<E extends EventEmitterLike>(options?: LogOptions & EventsOptions<E>) {
   const [l] = logTestPlugin(options).init()

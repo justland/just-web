@@ -1,7 +1,7 @@
 
 import { LogContext } from '@just-web/log'
 import { definePlugin, PluginContext } from '@just-web/types'
-import { keyBindingRegistry } from './keyBindings'
+import { keyBindingRegistry } from './keyBindings.js'
 
 export type KeyboardOptions = {
   keyboard?: {

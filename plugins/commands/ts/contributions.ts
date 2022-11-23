@@ -2,7 +2,7 @@
 import type { LogContext } from '@just-web/log'
 import { createRegistry, withAdder } from '@just-web/states'
 import { record } from 'type-plus'
-import type { CommandContribution, ContributionRegistry } from './types'
+import type { CommandContribution, ContributionRegistry } from './types.js'
 
 export namespace contributionRegistry {
   export type Options = CommandContribution[]

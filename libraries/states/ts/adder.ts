@@ -1,7 +1,7 @@
 import type { Draft } from 'immer'
 import type { ArrayValue, KeyTypes, Pick, RecordValue } from 'type-plus'
-import type { Registry, RegistryValue } from './registry'
-import type { Store, StoreValue } from './store'
+import type { Registry, RegistryValue } from './registry.js'
+import type { Store, StoreValue } from './store.js'
 
 export type Adder<T> = (...entries: T[]) => void
 

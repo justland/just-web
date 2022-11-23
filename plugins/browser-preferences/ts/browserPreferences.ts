@@ -1,13 +1,13 @@
 import { CommandsContext } from '@just-web/commands'
 import { KeyboardContext } from '@just-web/keyboard'
 import { LogContext } from '@just-web/log'
-import { clearAllUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences/lib/preferences'
+import { clearAllUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences'
 import { isNothing, nothing } from '@just-web/states'
 import { AppBaseContext, definePlugin } from '@just-web/types'
 import { decode, encode } from 'base-64'
 import { produce } from 'immer'
 import { MaybePromise } from 'type-plus'
-import { ctx } from './browserPreferences.ctx'
+import { ctx } from './browserPreferences.ctx.js'
 
 const browserPreferencesPlugin = definePlugin(() => ({
   name: '@just-web/browser-preferences',

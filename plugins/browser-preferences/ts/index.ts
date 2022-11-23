@@ -1,1 +1,1 @@
-export { default } from './browserPreferences'
+export { default } from './browserPreferences.js'

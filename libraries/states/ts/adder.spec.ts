@@ -3,7 +3,7 @@ import {
   adder, createRegistry, createStore,
   push, Registry, Store,
   unshift, WithAdder, withAdder
-} from '.'
+} from './index.js'
 
 describe('adder()', () => {
   describe('with array store', () => {

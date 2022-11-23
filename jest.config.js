@@ -4,7 +4,6 @@ module.exports = {
     '!<rootDir>/ts/bin.[jt]s'
   ],
   projects: [
-    'apps/*',
     'components/*',
     'frameworks/*',
     'libraries/*',

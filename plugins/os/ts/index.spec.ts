@@ -1,5 +1,5 @@
 import { logTestPlugin } from '@just-web/log'
-import osPlugin from '.'
+import osPlugin from './index.js'
 
 describe(`default().init()`, () => {
   it('adds `os` to the applcation', () => {

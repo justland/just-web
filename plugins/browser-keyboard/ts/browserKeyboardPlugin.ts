@@ -3,7 +3,7 @@ import { KeyboardContext } from '@just-web/keyboard'
 import type { LogContext } from '@just-web/log'
 import type { OSContext } from '@just-web/os'
 import { definePlugin } from '@just-web/types'
-import { startKeyBindings } from './keyBindings'
+import { startKeyBindings } from './keyBindings.js'
 
 export const browserKeyboardPlugin = definePlugin(() => {
   let context: LogContext & KeyboardContext & CommandsContext & OSContext

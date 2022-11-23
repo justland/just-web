@@ -1,5 +1,5 @@
 import { isType } from 'type-plus'
-import { createStore, ReadonlyStore, toReadonlyStore } from './store'
+import { createStore, ReadonlyStore, toReadonlyStore } from './store.js'
 
 describe('createStore()', () => {
   test('get() returns initial value', () => {

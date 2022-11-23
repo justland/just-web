@@ -6,9 +6,13 @@
       "ES2019",
       "ES2021.Promise"
     ],
-    "outDir": "lib",
+    "outDir": "esm",
     "rootDir": "ts"
   },
+  "include": [
+    "ts",
+    "typings"
+  ],
   "references": [
     {
       "path": "../../frameworks/log"
@@ -22,9 +26,5 @@
     {
       "path": "../../tools/testing"
     }
-  ],
-  "include": [
-    "ts",
-    "typings"
   ]
 }

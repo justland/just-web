@@ -5,7 +5,7 @@
       "ES2019",
       "ES2021.Promise"
     ],
-    "outDir": "lib",
+    "outDir": "esm",
     "rootDir": "ts"
   },
   "references": [

@@ -4,7 +4,7 @@ import { definePlugin, StartContextBase } from '@just-web/types'
 import { a } from 'assertron'
 import { some } from 'satisfier'
 import { CanAssign, isType } from 'type-plus'
-import { createApp, createTestApp } from './createApp'
+import { createApp, createTestApp } from './createApp.js'
 
 describe(`${createApp.name}()`, () => {
   it('needs name', () => {

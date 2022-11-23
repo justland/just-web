@@ -1,7 +1,7 @@
 import { logTestPlugin } from '@just-web/log'
 import { AssertOrder } from 'assertron'
-import browserPlugin from '.'
-import { ctx } from './browserPlugin.ctx'
+import browserPlugin from './index.js'
+import { ctx } from './browserPlugin.ctx.js'
 
 describe(`default().init()`, () => {
   it('can omit options', () => {

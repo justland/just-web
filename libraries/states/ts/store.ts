@@ -1,7 +1,7 @@
 import { getLogger, Logger, logLevels, LogMethodNames } from '@just-web/log'
 import { pick } from 'type-plus'
-import { createState, OnStateChange, ResetState, SetState } from './state'
-import type { Updater } from './types'
+import { createState, OnStateChange, ResetState, SetState } from './state.js'
+import type { Updater } from './types.js'
 
 export type ReadonlyStore<T> = {
   get(): T,

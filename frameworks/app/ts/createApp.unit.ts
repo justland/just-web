@@ -3,7 +3,7 @@ import { definePlugin } from '@just-web/types'
 import { a } from 'assertron'
 import { range } from 'ramda'
 import { record } from 'type-plus'
-import { createApp } from './createApp'
+import { createApp } from './createApp.js'
 
 describe(createApp.name, () => {
   it('randomize the app id', () => {
