@@ -1,2 +1,3 @@
 export * from './keyBindings.js'
-export { default, KeyboardContext, KeyboardOptions } from './keyboardPlugin.js'
+export type { KeyboardContext, KeyboardOptions } from './keyboardPlugin.js'
+export { default } from './keyboardPlugin.js'
