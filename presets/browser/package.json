@@ -85,7 +85,7 @@
   },
   "peerDependencies": {
     "@just-web/commands": "4.1.0",
-    "@just-web/keyboard": ">=5.0.0-beta.0"
+    "@just-web/keyboard": "4.1.0"
   },
   "peerDependenciesMeta": {
     "@just-web/keyboard": {
