@@ -58,6 +58,7 @@
   "devDependencies": {
     "@just-web/log": "workspace:^",
     "@just-web/os": "workspace:^",
+    "@just-web/repo-scripts": "workspace:^",
     "@just-web/states": "workspace:^",
     "@just-web/testing": "workspace:^",
     "@just-web/types": "workspace:^",

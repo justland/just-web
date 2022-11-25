@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@just-web/log": "workspace:^",
+    "@just-web/repo-scripts": "workspace:^",
     "@just-web/states": "workspace:^",
     "@just-web/types": "workspace:^",
     "@size-limit/preset-small-lib": "~8.1.0",

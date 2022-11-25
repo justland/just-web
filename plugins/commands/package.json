@@ -61,6 +61,7 @@
     "@jest/globals": "^29.3.1",
     "@just-web/keyboard": "workspace:^",
     "@just-web/log": "workspace:^",
+    "@just-web/repo-scripts": "workspace:^",
     "@just-web/states": "workspace:^",
     "@just-web/testing": "workspace:^",
     "@just-web/types": "workspace:^",

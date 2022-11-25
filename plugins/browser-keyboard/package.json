@@ -62,6 +62,7 @@
     "@just-web/keyboard": "workspace:^",
     "@just-web/log": "workspace:^",
     "@just-web/os": "workspace:^",
+    "@just-web/repo-scripts": "workspace:^",
     "@just-web/testing": "workspace:^",
     "@just-web/types": "workspace:^",
     "@size-limit/preset-small-lib": "~8.1.0",
