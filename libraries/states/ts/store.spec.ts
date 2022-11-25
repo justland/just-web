@@ -1,5 +1,5 @@
 import { isType } from 'type-plus'
-import { createStore, ReadonlyStore, toReadonlyStore } from './store.js'
+import { createStore, ReadonlyStore, Store, toReadonlyStore } from './store.js'
 
 describe('createStore()', () => {
   test('get() returns initial value', () => {
@@ -51,6 +51,19 @@ describe('createStore()', () => {
     const store = createStore(NaN)
     store.set(123)
     expect(store.get()).toBe(123)
+  })
+
+  it('infers Draft<S> behind generic', () => {
+    // It does not work if `S` is not constrainted,
+    // i.e. `fn<S>` will get `d: any`.
+    // This seems to be a limitation of TypeScript
+    // Other solutions doesn't work.
+    function fn<S extends { a: number }>(store: Store<S>) {
+      store.set((d) => {
+        isType.equal<true, number, typeof d.a>()
+      })
+    }
+    fn(createStore({ a: 1 }))
   })
 })
 

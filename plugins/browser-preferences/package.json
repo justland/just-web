@@ -54,8 +54,8 @@
   },
   "dependencies": {
     "@just-web/states": "workspace:^",
-    "js-base64": "^3.7.3",
     "immer": "github:unional/immer#master",
+    "js-base64": "^3.7.3",
     "type-plus": "^4.18.0"
   },
   "devDependencies": {
@@ -64,6 +64,7 @@
     "@just-web/keyboard": "workspace:^",
     "@just-web/log": "workspace:^",
     "@just-web/preferences": "workspace:^",
+    "@just-web/repo-scripts": "workspace:^",
     "@just-web/types": "workspace:^",
     "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^29.2.3",

@@ -1,4 +1,5 @@
 ignores:
+  - '@just-web/repo-scripts'
   - '@size-limit/*'
   - '@types/jest'
   - 'jest-*'

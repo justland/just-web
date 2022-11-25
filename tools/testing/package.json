@@ -59,6 +59,7 @@
     "satisfier": "^5.4.2"
   },
   "devDependencies": {
+    "@just-web/repo-scripts": "workspace:^",
     "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^29.2.3",
     "cross-env": "^7.0.3",
