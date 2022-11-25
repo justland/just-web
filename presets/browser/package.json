@@ -84,7 +84,7 @@
     "typescript": "^4.9.3"
   },
   "peerDependencies": {
-    "@just-web/commands": ">=5.0.0-beta.0",
+    "@just-web/commands": "4.1.0",
     "@just-web/keyboard": ">=5.0.0-beta.0"
   },
   "peerDependenciesMeta": {
