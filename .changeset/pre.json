@@ -19,11 +19,5 @@
     "@just-web/repo-scripts": "0.1.1",
     "@just-web/testing": "0.2.16"
   },
-  "changesets": [
-    "poor-fans-allow",
-    "rare-pianos-listen",
-    "smart-books-serve",
-    "thick-bats-double",
-    "wicked-humans-promise"
-  ]
+  "changesets": []
 }
