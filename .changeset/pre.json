@@ -16,7 +16,6 @@
     "@just-web/preferences": "4.1.0",
     "@just-web/routes": "4.1.0",
     "@just-web/presets-browser": "1.0.3",
-    "@just-web/repo-scripts": "0.1.1",
     "@just-web/testing": "0.2.16"
   },
   "changesets": []
