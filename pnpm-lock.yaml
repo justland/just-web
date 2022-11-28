@@ -516,7 +516,7 @@ importers:
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-plugin-harmony: ^7.1.1
-      eventemitter3: github:unional/eventemitter3#esm
+      eventemitter3: ^5.0.0
       jest: ^29.3.1
       jest-validate: ^29.3.1
       jest-watch-suspend: ^1.1.2
@@ -530,7 +530,7 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@unional/events-plus': 2.2.5
-      eventemitter3: github.com/unional/eventemitter3/e81d8f7a5808f8aef6b69b82594221a878c90a57
+      eventemitter3: 5.0.0
     devDependencies:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
@@ -4318,6 +4318,10 @@ packages:
   /esutils/2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
+
+  /eventemitter3/5.0.0:
+    resolution: {integrity: sha512-riuVbElZZNXLeLEoprfNYoDSwTBRR44X3mnhdI1YcnENpWTCsTTVZ2zFuqQcpoyqPQIUXdiPEU0ECAq0KQRaHg==}
+    dev: false
 
   /execa/5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
@@ -8824,12 +8828,6 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  github.com/unional/eventemitter3/e81d8f7a5808f8aef6b69b82594221a878c90a57:
-    resolution: {tarball: https://codeload.github.com/unional/eventemitter3/tar.gz/e81d8f7a5808f8aef6b69b82594221a878c90a57}
-    name: eventemitter3
-    version: 4.0.7
-    dev: false
 
   github.com/unional/immer/b74706f08e74afffb4ccadf628d12348e811af17:
     resolution: {tarball: https://codeload.github.com/unional/immer/tar.gz/b74706f08e74afffb4ccadf628d12348e811af17}

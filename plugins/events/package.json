@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@unional/events-plus": "~2.2.5",
-    "eventemitter3": "github:unional/eventemitter3#esm"
+    "eventemitter3": "^5.0.0"
   },
   "devDependencies": {
     "@just-web/log": "workspace:^",

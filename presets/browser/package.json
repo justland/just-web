@@ -84,8 +84,8 @@
     "typescript": "^4.9.3"
   },
   "peerDependencies": {
-    "@just-web/commands": "4.1.0",
-    "@just-web/keyboard": "4.1.0"
+    "@just-web/commands": "workspace:^",
+    "@just-web/keyboard": "workspace:^"
   },
   "peerDependenciesMeta": {
     "@just-web/keyboard": {
