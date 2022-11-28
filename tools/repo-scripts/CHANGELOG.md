@@ -1,5 +1,11 @@
 # @just-web/repo-scripts
 
+## 0.2.0
+
+### Minor Changes
+
+- 12576b56: Add ESM support
+
 ## 0.2.0-beta.0
 
 ### Minor Changes
