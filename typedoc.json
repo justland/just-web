@@ -1,0 +1,22 @@
+{
+  "customTitle": "@just-web Documentation",
+  "customTitleLink": "https://github.com/justland/just-web",
+  "entryPointStrategy": "packages",
+  "entryPoints": [
+    "frameworks/app",
+    "frameworks/log",
+    "frameworks/types",
+    "libraries/states",
+    "plugins/keyboard",
+    "plugins/commands",
+    "plugins/browser",
+    "plugins/browser-keyboard",
+    "plugins/browser-preferences",
+    "plugins/events",
+    "plugins/os",
+    "plugins/preferences",
+    "plugins/routes",
+    "tools/testing"
+  ],
+  "out": "docs"
+}

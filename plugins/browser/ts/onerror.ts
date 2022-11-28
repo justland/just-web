@@ -1,4 +1,4 @@
-import { LogContext } from '@just-web/log'
+import type { LogContext } from '@just-web/log'
 import { BrowserError } from './errors.js'
 import { ErrorStore } from './errorStore.js'
 import { ctx } from './onerror.ctx.js'

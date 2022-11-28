@@ -1,4 +1,4 @@
-import { LogContext } from '@just-web/log'
+import type { LogContext } from '@just-web/log'
 import { EventEmitterLike, trapError } from '@unional/events-plus'
 import { EventEmitter } from 'eventemitter3'
 

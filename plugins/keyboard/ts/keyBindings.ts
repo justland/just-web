@@ -1,5 +1,5 @@
-import { LogContext } from '@just-web/log'
-import { OSContext } from '@just-web/os'
+import type { LogContext } from '@just-web/log'
+import type { OSContext } from '@just-web/os'
 import { createRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
 import { record } from 'type-plus'
 

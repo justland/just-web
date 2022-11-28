@@ -1,7 +1,7 @@
 import type { CommandsContext } from '@just-web/commands'
-import { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
+import type { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
 import type { LogContext } from '@just-web/log'
-import { OSContext } from '@just-web/os'
+import type { OSContext } from '@just-web/os'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
 

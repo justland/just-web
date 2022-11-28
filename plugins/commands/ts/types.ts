@@ -1,4 +1,4 @@
-import { KeyboardContext } from '@just-web/keyboard'
+import type { KeyboardContext } from '@just-web/keyboard'
 import type { Registry, WithAdder } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
 
