@@ -66,7 +66,7 @@ importers:
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       '@types/ramda': ^0.28.14
-      assertron: ^10.0.0
+      assertron: ^11.0.0
       cross-env: ^7.0.3
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -97,7 +97,7 @@ importers:
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/ramda': 0.28.20
-      assertron: 10.0.1
+      assertron: 11.0.1
       cross-env: 7.0.3
       depcheck: 1.4.3
       eslint: 8.28.0
@@ -267,7 +267,7 @@ importers:
       '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
-      assertron: ^10.0.0
+      assertron: ^11.0.0
       cross-env: ^7.0.3
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -297,7 +297,7 @@ importers:
       '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
-      assertron: 10.0.1
+      assertron: 11.0.1
       cross-env: 7.0.3
       depcheck: 1.4.3
       eslint: 8.28.0
@@ -387,7 +387,7 @@ importers:
       '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
-      assertron: ^10.0.0
+      assertron: ^11.0.0
       cross-env: ^7.0.3
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -422,7 +422,7 @@ importers:
       '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
-      assertron: 10.0.1
+      assertron: 11.0.1
       cross-env: 7.0.3
       depcheck: 1.4.3
       eslint: 8.28.0
@@ -451,7 +451,7 @@ importers:
       '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
-      assertron: ^10.0.0
+      assertron: ^11.0.0
       cross-env: ^7.0.3
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -485,7 +485,7 @@ importers:
       '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
-      assertron: 10.0.1
+      assertron: 11.0.1
       cross-env: 7.0.3
       depcheck: 1.4.3
       eslint: 8.28.0
@@ -669,7 +669,7 @@ importers:
       '@just-web/types': workspace:^
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
-      assertron: ^10.0.0
+      assertron: ^11.0.0
       cross-env: ^7.0.3
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -698,7 +698,7 @@ importers:
       '@just-web/types': link:../../frameworks/types
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
-      assertron: 10.0.1
+      assertron: 11.0.1
       cross-env: 7.0.3
       depcheck: 1.4.3
       eslint: 8.28.0
@@ -890,7 +890,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
-      assertron: ^10.0.0
+      assertron: ^11.0.0
       cross-env: ^7.0.3
       depcheck: ~1.4.3
       eslint: ^8.11.0
@@ -910,7 +910,7 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@just-web/log': link:../../frameworks/log
-      assertron: 10.0.1
+      assertron: 11.0.1
       satisfier: 5.4.2
     devDependencies:
       '@just-web/repo-scripts': link:../repo-scripts
@@ -2865,8 +2865,8 @@ packages:
     resolution: {integrity: sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==}
     engines: {node: '>=8'}
 
-  /assertron/10.0.1:
-    resolution: {integrity: sha512-C1Y3kBcbuQC4cnWP7yALh2HLXZkWCSA3J4Zv9Cis+ii0oracI2cidXPrkRHvySJewHpuDKD4NFypaNm1wVc7gg==}
+  /assertron/11.0.1:
+    resolution: {integrity: sha512-D1U7weslbYgIoItGhuRqasdvZtU/1dtO9cmeMhuUbcNzd6Zztp3mlNlUF/EtZBfgjSFLjgUhBxw5uabsDR/b8A==}
     engines: {node: '>= 10'}
     dependencies:
       is-promise: 4.0.0
