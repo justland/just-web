@@ -1,5 +1,21 @@
 # @just-web/os
 
+## 5.0.0
+
+### Minor Changes
+
+- 12576b56: Add ESM support
+
+### Patch Changes
+
+- d3db351f: Update `type-plus`
+- 74329e86: Remove usage of `StartContext`.
+  `@just-web/presets-browser`: Export additional types.
+- Updated dependencies [d3db351f]
+- Updated dependencies [12576b56]
+  - @just-web/log@5.0.0
+  - @just-web/types@5.0.0
+
 ## 5.0.0-beta.0
 
 ### Minor Changes

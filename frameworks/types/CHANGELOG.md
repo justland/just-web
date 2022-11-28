@@ -1,5 +1,15 @@
 # @just-web/types
 
+## 5.0.0
+
+### Minor Changes
+
+- 12576b56: Add ESM support
+
+### Patch Changes
+
+- d3db351f: Update `type-plus`
+
 ## 5.0.0-beta.0
 
 ### Minor Changes

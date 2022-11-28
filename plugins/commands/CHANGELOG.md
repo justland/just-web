@@ -1,5 +1,39 @@
 # @just-web/commands
 
+## 5.0.0
+
+### Major Changes
+
+- d3db351f: Remove `JustCommand`.
+
+  Remove `Command_WithDefault`. Now use the same `Command` type.
+
+  `Command` generic type changed to `F` in order to work with function overloads.
+
+  `Command.handler` and `Command.defineArgs` are removed.
+
+  `connect()` is now the only way to setup the command.
+
+  `handlerRegistry.register` is simplified to just take `id`.
+
+### Minor Changes
+
+- 12576b56: Add ESM support
+
+### Patch Changes
+
+- d3db351f: Update `type-plus`
+- 74329e86: Remove usage of `StartContext`.
+  `@just-web/presets-browser`: Export additional types.
+- Updated dependencies [0e94214c]
+- Updated dependencies [d3db351f]
+- Updated dependencies [12576b56]
+- Updated dependencies [74329e86]
+  - @just-web/states@5.0.0
+  - @just-web/log@5.0.0
+  - @just-web/types@5.0.0
+  - @just-web/keyboard@5.0.0
+
 ## 5.0.0-beta.0
 
 ### Major Changes

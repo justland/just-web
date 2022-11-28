@@ -1,5 +1,18 @@
 # @just-web/testing
 
+## 0.3.0
+
+### Minor Changes
+
+- 12576b56: Add ESM support
+
+### Patch Changes
+
+- d3db351f: Update `type-plus`
+- Updated dependencies [d3db351f]
+- Updated dependencies [12576b56]
+  - @just-web/log@5.0.0
+
 ## 0.3.0-beta.0
 
 ### Minor Changes
