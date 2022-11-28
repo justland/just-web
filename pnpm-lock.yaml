@@ -71,7 +71,7 @@ importers:
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-plugin-harmony: ^7.1.1
-      iso-error: ~4.4.0
+      iso-error: ~5.0.0
       jest: ^29.3.1
       jest-validate: ^29.3.1
       jest-watch-suspend: ^1.1.2
@@ -87,7 +87,7 @@ importers:
       type-plus: ^4.18.0
       typescript: ^4.9.3
     dependencies:
-      iso-error: 4.4.1
+      iso-error: 5.0.0
       type-plus: 4.18.0
     devDependencies:
       '@just-web/log': link:../log
@@ -272,7 +272,7 @@ importers:
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-plugin-harmony: ^7.1.1
-      iso-error: ~4.4.0
+      iso-error: ~5.0.0
       jest: ^29.3.1
       jest-environment-jsdom: ^29.3.1
       jest-validate: ^29.3.1
@@ -288,7 +288,7 @@ importers:
       type-plus: ^4.18.0
       typescript: ^4.9.3
     dependencies:
-      iso-error: 4.4.1
+      iso-error: 5.0.0
       type-plus: 4.18.0
     devDependencies:
       '@just-web/log': link:../../frameworks/log
@@ -530,7 +530,7 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@unional/events-plus': 2.2.5
-      eventemitter3: github.com/unional/eventemitter3/f9664d0d199fe0fa4ed2f5e95f4790824a410990
+      eventemitter3: github.com/unional/eventemitter3/e81d8f7a5808f8aef6b69b82594221a878c90a57
     devDependencies:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
@@ -5258,6 +5258,11 @@ packages:
     resolution: {integrity: sha512-58c3PSbrzhZxVvT6WrQiGt3FEyL7WdXl4+Z+5QM1R2NnZ6xik7X9Nz0RBnkWep6906w0fiMU+YI9EOrYr1QjvQ==}
     engines: {node: '>= 10'}
 
+  /iso-error/5.0.0:
+    resolution: {integrity: sha512-+AhfqtuERYVT+weWCewUQNA0wqcL66OSfPcX5ojnrOSa/V051QFLHK3XlxTyH/fyk1k6TMfE4QDkESAnnvihOw==}
+    engines: {node: '>= 10'}
+    dev: false
+
   /isobject/3.0.1:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
@@ -8820,8 +8825,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  github.com/unional/eventemitter3/f9664d0d199fe0fa4ed2f5e95f4790824a410990:
-    resolution: {tarball: https://codeload.github.com/unional/eventemitter3/tar.gz/f9664d0d199fe0fa4ed2f5e95f4790824a410990}
+  github.com/unional/eventemitter3/e81d8f7a5808f8aef6b69b82594221a878c90a57:
+    resolution: {tarball: https://codeload.github.com/unional/eventemitter3/tar.gz/e81d8f7a5808f8aef6b69b82594221a878c90a57}
     name: eventemitter3
     version: 4.0.7
     dev: false
