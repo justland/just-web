@@ -1,5 +1,15 @@
 # @just-web/keyboard
 
+## 5.0.1
+
+### Patch Changes
+
+- 17e3bd65: adjust `import type` to reduce imports
+  - @just-web/log@5.0.1
+  - @just-web/os@5.0.1
+  - @just-web/states@5.0.1
+  - @just-web/types@5.0.1
+
 ## 5.0.0
 
 ### Minor Changes

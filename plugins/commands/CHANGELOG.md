@@ -1,5 +1,16 @@
 # @just-web/commands
 
+## 5.0.1
+
+### Patch Changes
+
+- 17e3bd65: adjust `import type` to reduce imports
+- Updated dependencies [17e3bd65]
+  - @just-web/keyboard@5.0.1
+  - @just-web/log@5.0.1
+  - @just-web/states@5.0.1
+  - @just-web/types@5.0.1
+
 ## 5.0.0
 
 ### Major Changes

@@ -1,5 +1,11 @@
 # @just-web/log
 
+## 5.0.1
+
+### Patch Changes
+
+- @just-web/types@5.0.1
+
 ## 5.0.0
 
 ### Minor Changes
