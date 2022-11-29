@@ -1,5 +1,18 @@
 # @just-web/browser-contributions
 
+## 5.0.1
+
+### Patch Changes
+
+- 8f44c87b: Remove extra deps
+- 17e3bd65: adjust `import type` to reduce imports
+- Updated dependencies [17e3bd65]
+  - @just-web/commands@5.0.1
+  - @just-web/keyboard@5.0.1
+  - @just-web/log@5.0.1
+  - @just-web/os@5.0.1
+  - @just-web/types@5.0.1
+
 ## 5.0.0
 
 ### Minor Changes

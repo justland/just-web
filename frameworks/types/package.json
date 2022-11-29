@@ -1,6 +1,6 @@
 {
   "name": "@just-web/types",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Type definitions for `@just-web` modules",
   "keywords": [
     "just-web",
