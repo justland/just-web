@@ -1,5 +1,15 @@
 # @just-web/preferences
 
+## 5.0.2
+
+### Patch Changes
+
+- @just-web/keyboard@5.0.2
+- @just-web/commands@5.0.2
+- @just-web/log@5.0.2
+- @just-web/states@5.0.2
+- @just-web/types@5.0.2
+
 ## 5.0.1
 
 ### Patch Changes

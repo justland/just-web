@@ -1,5 +1,16 @@
 # @just-web/browser-contributions
 
+## 5.0.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @just-web/os@5.0.2
+  - @just-web/keyboard@5.0.2
+  - @just-web/commands@5.0.2
+  - @just-web/log@5.0.2
+  - @just-web/types@5.0.2
+
 ## 5.0.1
 
 ### Patch Changes

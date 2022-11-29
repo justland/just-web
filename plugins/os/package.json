@@ -1,6 +1,6 @@
 {
   "name": "@just-web/os",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "just-web os plugin module",
   "keywords": [
     "just-web",
@@ -32,8 +32,8 @@
     }
   },
   "source": "./ts/index.ts",
-  "main": "./esm/index.js",
-  "module": "./cjs/index.js",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
   "types": "./esm/index.d.ts",
   "files": [
     "cjs",

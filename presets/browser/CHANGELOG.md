@@ -1,5 +1,14 @@
 # @just-web/presets-browser
 
+## 2.0.2
+
+### Patch Changes
+
+- @just-web/keyboard@5.0.2
+- @just-web/browser-preferences@5.0.2
+- @just-web/commands@5.0.2
+- @just-web/browser@5.0.2
+
 ## 2.0.1
 
 ### Patch Changes

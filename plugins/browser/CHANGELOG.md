@@ -1,5 +1,13 @@
 # @just-web/browser
 
+## 5.0.2
+
+### Patch Changes
+
+- @just-web/log@5.0.2
+- @just-web/states@5.0.2
+- @just-web/types@5.0.2
+
 ## 5.0.1
 
 ### Patch Changes

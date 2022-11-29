@@ -1,5 +1,13 @@
 # @just-web/os
 
+## 5.0.2
+
+### Patch Changes
+
+- fix main/module field
+  - @just-web/log@5.0.2
+  - @just-web/types@5.0.2
+
 ## 5.0.1
 
 ### Patch Changes
