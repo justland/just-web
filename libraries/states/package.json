@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@just-web/log": "workspace:^",
-    "immer": "github:unional/immer#master",
+    "immer": "npm:@unional/immer@^9.0.0-beta.2",
     "tersify": "^3.10.2",
     "type-plus": "^4.18.0"
   },

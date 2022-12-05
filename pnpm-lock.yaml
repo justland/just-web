@@ -1,8 +1,5 @@
 lockfileVersion: 5.4
 
-overrides:
-  immer: unional/immer#master
-
 importers:
 
   .:
@@ -220,7 +217,7 @@ importers:
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-plugin-harmony: ^7.1.1
-      immer: unional/immer#master
+      immer: npm:@unional/immer@^9.0.0-beta.2
       jest: ^29.3.1
       jest-validate: ^29.3.1
       jest-watch-suspend: ^1.1.2
@@ -236,7 +233,7 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@just-web/log': link:../../frameworks/log
-      immer: github.com/unional/immer/b74706f08e74afffb4ccadf628d12348e811af17
+      immer: /@unional/immer/9.0.0-beta.2
       tersify: 3.10.5
       type-plus: 4.18.0
     devDependencies:
@@ -392,7 +389,7 @@ importers:
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-plugin-harmony: ^7.1.1
-      immer: unional/immer#master
+      immer: npm:@unional/immer@^9.0.0-beta.2
       jest: ^29.3.1
       jest-validate: ^29.3.1
       jest-watch-suspend: ^1.1.2
@@ -409,7 +406,7 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@just-web/states': link:../../libraries/states
-      immer: github.com/unional/immer/b74706f08e74afffb4ccadf628d12348e811af17
+      immer: /@unional/immer/9.0.0-beta.2
       js-base64: 3.7.3
       type-plus: 4.18.0
     devDependencies:
@@ -674,7 +671,7 @@ importers:
       depcheck: ~1.4.3
       eslint: ^8.11.0
       eslint-plugin-harmony: ^7.1.1
-      immer: unional/immer#master
+      immer: npm:@unional/immer@^9.0.0-beta.2
       jest: ^29.3.1
       jest-validate: ^29.3.1
       jest-watch-suspend: ^1.1.2
@@ -703,7 +700,7 @@ importers:
       depcheck: 1.4.3
       eslint: 8.28.0
       eslint-plugin-harmony: 7.1.1_qetgvrdihu3si2gpjaebn7dd5e
-      immer: github.com/unional/immer/b74706f08e74afffb4ccadf628d12348e811af17
+      immer: /@unional/immer/9.0.0-beta.2
       jest: 29.3.1
       jest-validate: 29.3.1
       jest-watch-suspend: 1.1.2_jest@29.3.1
@@ -2763,6 +2760,9 @@ packages:
     dependencies:
       '@just-func/types': 0.5.0
     dev: false
+
+  /@unional/immer/9.0.0-beta.2:
+    resolution: {integrity: sha512-fJ4NxaKR4T/qfcSoPw8dFmKddmF7s2HqlUKSF0Xd1o1t6RZxQn7smhjJtFHfpr7gTQeoUBdZLiLt/8HMnzjGnQ==}
 
   /@vue/compiler-core/3.2.45:
     resolution: {integrity: sha512-rcMj7H+PYe5wBV3iYeUgbCglC+pbpN8hBLTJvRiK2eKQiWqu+fG9F+8sW99JdL4LQi7Re178UOxn09puSXvn4A==}
@@ -9025,8 +9025,3 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  github.com/unional/immer/b74706f08e74afffb4ccadf628d12348e811af17:
-    resolution: {tarball: https://codeload.github.com/unional/immer/tar.gz/b74706f08e74afffb4ccadf628d12348e811af17}
-    name: immer
-    version: 9.0.0-beta.1
