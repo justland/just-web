@@ -1,5 +1,22 @@
 # @just-web/browser-preferences
 
+## 5.0.3
+
+### Patch Changes
+
+- 11e57e0e: Use `@unional/immer` in-place of `immer`.
+
+  The `github:unional/immer#master` does not work in some environment where getting code from GitHub is prohibited.
+  Also, relying on `#master` is not a good idea to begin with.
+
+- Updated dependencies [3a4f7414]
+- Updated dependencies [11e57e0e]
+  - @just-web/log@5.0.3
+  - @just-web/types@5.0.3
+  - @just-web/commands@5.0.3
+  - @just-web/states@5.0.3
+  - @just-web/preferences@5.0.3
+
 ## 5.0.2
 
 ### Patch Changes

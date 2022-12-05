@@ -1,5 +1,17 @@
 # @just-web/commands
 
+## 5.0.3
+
+### Patch Changes
+
+- 3a4f7414: Update `standard-log`
+- Updated dependencies [3a4f7414]
+- Updated dependencies [11e57e0e]
+  - @just-web/log@5.0.3
+  - @just-web/types@5.0.3
+  - @just-web/states@5.0.3
+  - @just-web/keyboard@5.0.3
+
 ## 5.0.2
 
 ### Patch Changes

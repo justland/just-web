@@ -1,5 +1,16 @@
 # @just-web/presets-browser
 
+## 2.0.3
+
+### Patch Changes
+
+- Updated dependencies [3a4f7414]
+- Updated dependencies [11e57e0e]
+  - @just-web/commands@5.0.3
+  - @just-web/browser-preferences@5.0.3
+  - @just-web/browser@5.0.3
+  - @just-web/keyboard@5.0.3
+
 ## 2.0.2
 
 ### Patch Changes
