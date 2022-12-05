@@ -1,5 +1,11 @@
 # @just-web/types
 
+## 5.0.3
+
+### Patch Changes
+
+- 3a4f7414: Update `standard-log`
+
 ## 5.0.2
 
 ## 5.0.1

@@ -1,5 +1,16 @@
 # @just-web/keyboard
 
+## 5.0.3
+
+### Patch Changes
+
+- Updated dependencies [3a4f7414]
+- Updated dependencies [11e57e0e]
+  - @just-web/log@5.0.3
+  - @just-web/types@5.0.3
+  - @just-web/states@5.0.3
+  - @just-web/os@5.0.3
+
 ## 5.0.2
 
 ### Patch Changes
