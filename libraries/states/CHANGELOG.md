@@ -1,5 +1,12 @@
 # @just-web/states
 
+## 5.0.4
+
+### Patch Changes
+
+- 8e9d5955: Fix `add()` param type when use with array store.
+  - @just-web/log@5.0.4
+
 ## 5.0.3
 
 ### Patch Changes

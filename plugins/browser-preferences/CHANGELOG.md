@@ -1,5 +1,16 @@
 # @just-web/browser-preferences
 
+## 5.0.4
+
+### Patch Changes
+
+- Updated dependencies [8e9d5955]
+  - @just-web/states@5.0.4
+  - @just-web/commands@5.0.4
+  - @just-web/preferences@5.0.4
+  - @just-web/log@5.0.4
+  - @just-web/types@5.0.4
+
 ## 5.0.3
 
 ### Patch Changes
