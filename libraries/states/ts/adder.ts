@@ -39,8 +39,8 @@ export function withAdder<R extends Registry<any, any>>(
 ): R & WithAdder<RecordValue<RegistryValue<R>>>
 export function withAdder<A extends Array<any>, S extends Store<A>>(
   store: S,
-  addEntry: (record: Draft<A>, entry: ArrayValue<A>) => void
-): S & WithAdder<ArrayValue<A>>
+  addEntry: (record: Draft<A>, entry: ReturnType<S['get']>) => void
+): S & WithAdder<ArrayValue<ReturnType<S['get']>>>
 export function withAdder<S extends Store<Record<any, any>>>(
   store: S,
   addEntry: (record: Draft<StoreValue<S>>, entry: RecordValue<StoreValue<S>>) => void

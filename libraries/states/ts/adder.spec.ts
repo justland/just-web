@@ -58,6 +58,7 @@ describe('withAdder()', () => {
       createStore<string[]>([]),
       (array, entry) => { array.push(entry) })
     store.add('a', 'b')
+    isType.equal<true, string[], Parameters<typeof store.add>>()
     expect(store.get()).toEqual(['a', 'b'])
   })
 
