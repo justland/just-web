@@ -1,4 +1,5 @@
 module.exports = {
+  editorconfig: true,
   printWidth: 110,
   endOfLine: 'auto',
   semi: false,
