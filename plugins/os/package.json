@@ -25,13 +25,12 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./esm/index.d.ts",
       "import": "./esm/index.js",
       "require": "./cjs/index.js",
-      "default": "./esm/index.js",
-      "types": "./esm/index.d.ts"
+      "default": "./cjs/index.js"
     }
   },
-  "source": "./ts/index.ts",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "types": "./esm/index.d.ts",
