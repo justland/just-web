@@ -1,9 +1,10 @@
 ignores:
   - '@just-web/repo-scripts'
-  - '@just-func/types' # don't know why it doesn't detect correctly
+  - '@just-func/types' # type only imports are not detected correctly
+  - '@repobuddy/jest'
   - '@size-limit/*'
   - '@types/jest'
   - 'jest-*'
   - size-limit
   - ts-jest
-  - type-plus # don't know why it doesn't detect correctly
+  - type-plus # type only imports are not detected correctly

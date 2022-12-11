@@ -1,6 +1,7 @@
 ignores:
   - '@just-web/repo-scripts'
   - '@just-func/types' # don't know why it doesn't detect correctly
+  - '@repobuddy/jest'
   - '@size-limit/*'
   - '@types/jest'
   - 'jest-*'

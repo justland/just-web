@@ -61,6 +61,7 @@
     "@just-web/log": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@just-web/testing": "workspace:^",
+    "@repobuddy/jest": "^2.1.0",
     "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^29.2.3",
     "@types/node": "^14.18.33",
