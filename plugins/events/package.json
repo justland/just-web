@@ -54,7 +54,7 @@
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },
   "dependencies": {
-    "@unional/events-plus": "~2.2.5",
+    "@unional/events-plus": "~3.0.0",
     "eventemitter3": "^5.0.0"
   },
   "devDependencies": {
