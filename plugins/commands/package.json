@@ -66,7 +66,7 @@
     "@just-web/states": "workspace:^",
     "@just-web/testing": "workspace:^",
     "@just-web/types": "workspace:^",
-    "@repobuddy/jest": "^2.1.0",
+    "@repobuddy/jest": "^2.2.1",
     "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^29.2.3",
     "assertron": "^11.0.0",

@@ -62,7 +62,7 @@
     "@just-web/os": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@just-web/types": "workspace:^",
-    "@repobuddy/jest": "^2.1.0",
+    "@repobuddy/jest": "^2.2.1",
     "@size-limit/preset-small-lib": "~8.1.0",
     "@types/jest": "^29.2.3",
     "@types/ramda": "^0.28.14",
