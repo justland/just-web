@@ -1,5 +1,16 @@
 /** @type {import('jest').Config} */
 export default {
-  preset: '@repobuddy/jest/presets/jsdom-ts-esm',
   displayName: 'events',
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+  roots: ['<rootDir>/ts'],
+  testMatch: ['**/?(*.)+(spec|test|integrate|accept|system|unit).[jt]s?(x)'],
+  transform: {
+    '^.+\\.m?[t]sx?$': ['ts-jest', {
+      isolatedModules: true,
+      useESM: true
+    }],
+  }
 }

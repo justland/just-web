@@ -44,8 +44,6 @@
     "@changesets/cli": "^2.25.2",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
-    "@just-web/browser": "workspace:^",
-    "@just-web/browser-preferences": "workspace:^",
     "@just-web/types": "workspace:^",
     "@types/jest": "^29.2.3",
     "eslint": "^8.17.0",

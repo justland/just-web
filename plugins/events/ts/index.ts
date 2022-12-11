@@ -2,8 +2,7 @@ import type { LogContext } from '@just-web/log'
 import { EventEmitterLike, trapError } from '@unional/events-plus'
 import { EventEmitter } from 'eventemitter3'
 
-export { justEvent } from '@unional/events-plus'
-export type { JustEventDuo, JustEventEmpty, JustEventUno } from '@unional/events-plus'
+export { justEvent, JustEventDuo, JustEventEmpty, JustEventUno } from '@unional/events-plus'
 
 export type EventsOptions<E extends EventEmitterLike> = {
   events?: {

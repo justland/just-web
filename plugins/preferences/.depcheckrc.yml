@@ -1,8 +1,0 @@
-ignores:
-  - '@just-web/repo-scripts'
-  - '@repobuddy/jest'
-  - '@size-limit/*'
-  - '@types/jest'
-  - 'jest-*'
-  - size-limit
-  - ts-jest
