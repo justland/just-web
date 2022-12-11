@@ -1,6 +1,7 @@
 {
   "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
   "compilerOptions": {
+    "isolatedModules": true,
     "lib": [
       "DOM",
       "ES2019",

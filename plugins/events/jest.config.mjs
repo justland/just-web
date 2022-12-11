@@ -1,5 +1,5 @@
 /** @type {import('jest').Config} */
 export default {
-  preset: '@repobuddy/jest/presets/ts',
-  displayName: 'events'
+  preset: '@repobuddy/jest/presets/jsdom-ts-esm',
+  displayName: 'events',
 }
