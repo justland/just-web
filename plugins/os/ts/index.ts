@@ -1,4 +1,3 @@
-
 import { definePlugin } from '@just-web/types'
 import { unpartial } from 'type-plus'
 import { isMac } from './os.js'

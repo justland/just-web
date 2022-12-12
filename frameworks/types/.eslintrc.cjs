@@ -5,7 +5,7 @@ module.exports = {
   overrides: [
     {
       extends: [
-        'plugin:harmony/ts-recommended'
+        'plugin:harmony/ts-prettier'
       ],
       files: [
         '*.ts',
