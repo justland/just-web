@@ -1,5 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import logPlugin, { createPrefixedGetLogger, createPrefixedGetNonConsoleLogger, LogContext, LogMethodNames, LogOptions, logTestPlugin, TestLogContext } from '@just-web/log'
+import logPlugin, {
+  createPrefixedGetLogger,
+  createPrefixedGetNonConsoleLogger,
+  LogContext,
+  LogMethodNames,
+  LogOptions,
+  logTestPlugin,
+  TestLogContext
+} from '@just-web/log'
 import type { AppBaseContext, PluginModule } from '@just-web/types'
 import { isType, LeftJoin, pick } from 'type-plus'
 import { ctx } from './createApp.ctx.js'
@@ -9,11 +17,11 @@ export namespace createApp {
 }
 
 type AppNode = {
-  name: string,
-  started: boolean,
-  parent?: AppNode,
-  plugin?: () => Promise<void>,
-  children: AppNode[],
+  name: string
+  started: boolean
+  parent?: AppNode
+  plugin?: () => Promise<void>
+  children: AppNode[]
   start(): Promise<void>
 }
 
@@ -33,22 +41,17 @@ export function createApp<N extends string = LogMethodNames>(options: createApp.
 
 export type JustWebApp = ReturnType<typeof createApp>
 
-function appClosure<L extends LogContext>(
-  appContext: AppBaseContext & L,
-  appNode: AppNode) {
+function appClosure<L extends LogContext>(appContext: AppBaseContext & L, appNode: AppNode) {
   const log = appContext.log
 
-  function extend<
-    C extends Record<string | symbol, any>,
-    P
-  >(this: C, plugin: P)
-    : P extends PluginModule.TypeD<infer N, infer PM, infer S>
+  function extend<C extends Record<string | symbol, any>, P>(
+    this: C,
+    plugin: P
+  ): P extends PluginModule.TypeB<infer N, infer PM>
     ? LeftJoin<C, PM>
-    : (P extends PluginModule.TypeB<infer N, infer PM>
-      ? LeftJoin<C, PM>
-      : (P extends PluginModule.TypeB_WithStart<infer N, infer PM>
-        ? LeftJoin<C, PM>
-        : C))
+    : P extends PluginModule.TypeB_WithStart<infer N, infer PM>
+    ? LeftJoin<C, PM>
+    : C
   function extend(this: any, plugin: any) {
     const childAppNode = createAppNode(plugin.name, appNode)
 
@@ -61,7 +64,7 @@ function appClosure<L extends LogContext>(
     log.notice(`initializing ${plugin.name}`)
     const initResult = plugin.init({ ...this, log: pluginLogger })
     if (!initResult) {
-      if (isType<{ name: string, start(ctx: any): Promise<void> }>(plugin, p => !!p.start)) {
+      if (isType<{ name: string; start(ctx: any): Promise<void> }>(plugin, (p) => !!p.start)) {
         childAppNode.plugin = () => {
           log.notice(`starting ${plugin.name}`)
           return plugin.start({ log: pluginLogger } as any)
@@ -70,9 +73,12 @@ function appClosure<L extends LogContext>(
       return appClosure(appContext, childAppNode) as any
     }
     const [pluginContext, startContext] = initResult
-    if (isType<{
-      name: string, start(ctx: any): Promise<void>
-    }>(plugin, p => !!p.start)) {
+    if (
+      isType<{
+        name: string
+        start(ctx: any): Promise<void>
+      }>(plugin, (p) => !!p.start)
+    ) {
       childAppNode.plugin = () => {
         log.notice(`starting ${plugin.name}`)
         return plugin.start({ ...startContext, log: pluginLogger } as any)
@@ -113,7 +119,6 @@ function createAppNode(name: string, parent?: AppNode): AppNode {
 export namespace createTestApp {
   export type Options<N extends string = LogMethodNames> = { name?: string } & LogOptions<N>
 }
-
 
 export function createTestApp<N extends string = LogMethodNames>(options?: createTestApp.Options<N>) {
   const name = options?.name ?? 'test-app'
