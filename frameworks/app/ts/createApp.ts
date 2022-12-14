@@ -8,7 +8,7 @@ import logPlugin, {
   logTestPlugin,
   TestLogContext
 } from '@just-web/log'
-import type { AppBaseContext, PluginModule } from '@just-web/types'
+import type { AppBaseContext, PluginModule, StartContext } from '@just-web/types'
 import { isType, LeftJoin, pick } from 'type-plus'
 import { ctx } from './createApp.ctx.js'
 
@@ -64,15 +64,15 @@ function appClosure<L extends LogContext>(appContext: AppBaseContext & L, appNod
     log.notice(`initializing ${plugin.name}`)
     const initResult = plugin.init({ ...this, log: pluginLogger })
     if (!initResult) {
-      if (isType<{ name: string; start(ctx: any): Promise<void> }>(plugin, (p) => !!p.start)) {
+      if (isType<{ name: string; start(ctx: StartContext): Promise<void> }>(plugin, (p) => !!p.start)) {
         childAppNode.plugin = () => {
           log.notice(`starting ${plugin.name}`)
-          return plugin.start({ log: pluginLogger } as any)
+          return plugin.start({ log: pluginLogger })
         }
       }
-      return appClosure(appContext, childAppNode) as any
+      return appClosure(appContext, childAppNode)
     }
-    const [pluginContext, startContext] = initResult
+    const [pluginContext] = initResult
     if (
       isType<{
         name: string
@@ -81,7 +81,7 @@ function appClosure<L extends LogContext>(appContext: AppBaseContext & L, appNod
     ) {
       childAppNode.plugin = () => {
         log.notice(`starting ${plugin.name}`)
-        return plugin.start({ ...startContext, log: pluginLogger } as any)
+        return plugin.start({ log: pluginLogger } as any)
       }
     }
     return appClosure({ ...appContext, ...pluginContext! }, childAppNode) as any
