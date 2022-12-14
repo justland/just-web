@@ -58,7 +58,7 @@
     "@just-web/log": "workspace:^",
     "immer": "npm:@unional/immer@^9.0.0-beta.2",
     "tersify": "^3.10.2",
-    "type-plus": "^4.18.0"
+    "type-plus": "^5.0.0"
   },
   "devDependencies": {
     "@just-web/repo-scripts": "workspace:^",
