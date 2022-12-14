@@ -1,5 +1,23 @@
 # @just-web/presets-browser
 
+## 3.0.0
+
+### Patch Changes
+
+- 2122d01a: Update `type-plus`
+- 43fadc75: Fix `exports` fields.
+  `types` should go first,
+  `default` should go last, and point to CJS code.
+
+  Also added `main` and `module` to improve compatibility.
+
+- Updated dependencies [2122d01a]
+- Updated dependencies [43fadc75]
+  - @just-web/browser@6.0.0
+  - @just-web/browser-preferences@6.0.0
+  - @just-web/commands@6.0.0
+  - @just-web/keyboard@6.0.0
+
 ## 2.0.4
 
 ### Patch Changes
