@@ -1,5 +1,24 @@
 # @just-web/types
 
+## 6.0.0
+
+### Major Changes
+
+- f174e16f: Remove `StartContext` variants.
+
+  The `StartContextBase` is renamed as `StartContext`.
+
+  The return type of `init()` remains as `[PluginContext]`.
+
+### Patch Changes
+
+- 2122d01a: Update `type-plus`
+- 43fadc75: Fix `exports` fields.
+  `types` should go first,
+  `default` should go last, and point to CJS code.
+
+  Also added `main` and `module` to improve compatibility.
+
 ## 5.0.4
 
 ## 5.0.3

@@ -1,5 +1,21 @@
 # @just-web/events
 
+## 6.0.0
+
+### Patch Changes
+
+- 34902993: Update `@unional/events-plus`
+- 43fadc75: Fix `exports` fields.
+  `types` should go first,
+  `default` should go last, and point to CJS code.
+
+  Also added `main` and `module` to improve compatibility.
+
+- Updated dependencies [2122d01a]
+- Updated dependencies [f174e16f]
+- Updated dependencies [43fadc75]
+  - @just-web/log@6.0.0
+
 ## 5.0.4
 
 ### Patch Changes
