@@ -1,5 +1,11 @@
 # @just-web/presets-browser
 
+## 3.0.1
+
+### Patch Changes
+
+- 3146ecd2: fix export default
+
 ## 3.0.0
 
 ### Patch Changes
