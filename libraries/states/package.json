@@ -37,7 +37,7 @@
     "cjs",
     "esm",
     "ts",
-    "!**/*.spec.*"
+    "!**/*.{spec,test,unit,accept,integrate,system}.*"
   ],
   "scripts": {
     "build": "run-p build:cjs build:esm",

@@ -31,7 +31,7 @@
     "babel*",
     "jest*",
     "tsconfig.*",
-    "!**/*.spec.*"
+    "!**/*.{spec,test,unit,accept,integrate,system}.*"
   ],
   "scripts": {
     "build": "tsc",
