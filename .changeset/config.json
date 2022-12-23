@@ -16,6 +16,7 @@
       "@just-web/browser",
       "@just-web/commands",
       "@just-web/events",
+      "@just-web/history",
       "@just-web/keyboard",
       "@just-web/log",
       "@just-web/os",
