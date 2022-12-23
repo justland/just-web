@@ -1,18 +1,2 @@
-import type { LogContext } from '@just-web/log'
-import { definePlugin } from '@just-web/types'
-
-export type {{pascalCase name}}Options = {
-  {{name}}?: 1
-}
-
-const plugin = definePlugin((options?: {{pascalCase name}}Options) => ({
-  name: '@just-web/{{name}}',
-  init(ctx: LogContext) {
-    return [{ {{name}}: 1 }, ctx]
-  },
-  start(ctx) { }
-}))
-
-export type {{pascalCase name}}Context = ReturnType<ReturnType<typeof plugin>['init']>[0]
-
-export default plugin
+export * from './{{camelCase name}}Plugin.js'
+export { default } from './{{camelCase name}}Plugin.js'

@@ -1,13 +1,19 @@
 {
   "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
   "compilerOptions": {
+    "isolatedModules": true,
     "lib": [
+      "DOM",
       "ES2019",
       "ES2021.Promise"
     ],
-    "outDir": "lib",
+    "outDir": "esm",
     "rootDir": "ts"
   },
+  "include": [
+    "ts",
+    "typings"
+  ],
   "references": [
     {
       "path": "../../frameworks/log"
@@ -17,10 +23,9 @@
     },
     {
       "path": "../../tools/repo-scripts"
+    },
+    {
+      "path": "../../tools/testing"
     }
-  ],
-  "include": [
-    "ts",
-    "typings"
   ]
 }

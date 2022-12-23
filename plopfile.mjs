@@ -11,36 +11,44 @@ export default function (
     }],
     actions: [{
       type: 'add',
-      path: 'plugins/{{name}}/ts/index.spec.ts',
-      templateFile: 'plops/plugins/ts/index.spec.ts.hbs'
+      path: 'plugins/{{name}}/ts/{{camelCase name}}Plugin.spec.ts',
+      templateFile: 'plops/plugins/ts/plugin.spec.ts.hbs'
+    }, {
+      type: 'add',
+      path: 'plugins/{{name}}/ts/{{camelCase name}}Plugin.ts',
+      templateFile: 'plops/plugins/ts/plugin.ts.hbs'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/ts/index.ts',
       templateFile: 'plops/plugins/ts/index.ts.hbs'
     }, {
       type: 'add',
-      path: 'plugins/{{name}}/.editorconfig',
-      templateFile: 'plops/plugins/.editorconfig'
+      path: 'plugins/{{name}}/.depcheckrc.yml',
+      templateFile: 'plops/plugins/.depcheckrc.yml'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/.eslintignore',
       templateFile: 'plops/plugins/.eslintignore'
     }, {
       type: 'add',
-      path: 'plugins/{{name}}/.eslintrc.js',
-      templateFile: 'plops/plugins/.eslintrc.js'
+      path: 'plugins/{{name}}/.eslintrc.cjs',
+      templateFile: 'plops/plugins/.eslintrc.cjs'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/.gitignore',
       templateFile: 'plops/plugins/.gitignore'
     }, {
       type: 'add',
-      path: 'plugins/{{name}}/babel.config.js',
-      templateFile: 'plops/plugins/babel.config.js'
+      path: 'plugins/{{name}}/.size-limit.json',
+      templateFile: 'plops/plugins/.size-limit.json'
     }, {
       type: 'add',
-      path: 'plugins/{{name}}/jest.config.js',
-      templateFile: 'plops/plugins/jest.config.js'
+      path: 'plugins/{{name}}/jest.config.mjs',
+      templateFile: 'plops/plugins/jest.config.mjs.hbs'
+    }, {
+      type: 'add',
+      path: 'plugins/{{name}}/LICENSE',
+      templateFile: 'plops/plugins/LICENSE'
     }, {
       type: 'add',
       path: 'plugins/{{name}}/package.json',
@@ -51,8 +59,8 @@ export default function (
       templateFile: 'plops/plugins/tsconfig.json'
     }, {
       type: 'add',
-      path: 'plugins/{{name}}/.depcheckrc.yml',
-      templateFile: 'plops/plugins/.depcheckrc.yml'
+      path: 'plugins/{{name}}/tsconfig.cjs.json',
+      templateFile: 'plops/plugins/tsconfig.cjs.json'
     }]
   })
 }
