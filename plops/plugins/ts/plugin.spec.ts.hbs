@@ -1,12 +1,9 @@
 import { createTestApp } from '@just-web/app'
-import { a } from 'assertron'
 import {{camelCase name}}Plugin, { {{pascalCase name}}Options } from './index.js'
 
-describe('{{camelCase name}}Plugin.init()', () => {
-  it('something', () => {
-    const [{ {{name}} }] = setupTestApp()
-
-    a.satisfies({{name}}, ...)
+describe('{{camelCase name}}Plugin', () => {
+  it('...', () => {
+    const { {{name}} } = setupTestApp()
   })
 })
 

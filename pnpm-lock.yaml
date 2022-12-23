@@ -571,9 +571,9 @@ importers:
 
   plugins/history:
     specifiers:
-      '@just-web/app': workspace:^6.0.0
+      '@just-web/app': workspace:^
       '@just-web/repo-scripts': workspace:^
-      '@just-web/types': workspace:^6.0.0
+      '@just-web/types': workspace:^
       '@repobuddy/jest': ^2.2.1
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
@@ -2294,7 +2294,7 @@ packages:
       ts-jest:
         optional: true
     dependencies:
-      jest: 29.3.1
+      jest: 29.3.1_@types+node@18.11.9
       jest-resolve: 29.3.1
       jest-watch-suspend: 1.1.2_jest@29.3.1
       jest-watch-toggle-config-2: 2.1.0_jest@29.3.1
@@ -6159,7 +6159,7 @@ packages:
       jest: '>= 23.4.1'
     dependencies:
       chalk: 4.1.2
-      jest: 29.3.1
+      jest: 29.3.1_@types+node@18.11.9
     dev: true
 
   /jest-watch-toggle-config/2.0.1_5r7dcuxf46wmavd5vppjo4z2ka:

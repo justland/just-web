@@ -55,6 +55,10 @@ export default function (
       templateFile: 'plops/plugins/package.json.hbs'
     }, {
       type: 'add',
+      path: 'plugins/{{name}}/README.md',
+      templateFile: 'plops/plugins/README.md.hbs'
+    }, {
+      type: 'add',
       path: 'plugins/{{name}}/tsconfig.json',
       templateFile: 'plops/plugins/tsconfig.json'
     }, {
