@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "cjs",
     "module": "CommonJS",
-    "moduleResolution": "Node"
+    "moduleResolution": "Node16"
   },
   "exclude": [
     "**/*.spec.*"
