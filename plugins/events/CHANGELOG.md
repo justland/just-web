@@ -1,5 +1,11 @@
 # @just-web/events
 
+## 6.0.1
+
+### Patch Changes
+
+- @just-web/log@6.0.1
+
 ## 6.0.0
 
 ### Patch Changes

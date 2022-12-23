@@ -1,5 +1,24 @@
 # @just-web/presets-browser
 
+## 4.0.0
+
+### Major Changes
+
+- e09c4ebd: Use `@just-web/history`.
+
+  The options now pass in an history object of your choice,
+  instead of fixing to a browser history.
+
+### Patch Changes
+
+- Updated dependencies [eb559fd0]
+- Updated dependencies [117ced4c]
+  - @just-web/browser@6.0.1
+  - @just-web/history@1.0.0
+  - @just-web/browser-preferences@6.0.1
+  - @just-web/commands@6.0.1
+  - @just-web/keyboard@6.0.1
+
 ## 3.0.1
 
 ### Patch Changes
