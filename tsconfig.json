@@ -32,6 +32,9 @@
       "path": "plugins/events"
     },
     {
+      "path": "plugins/history"
+    },
+    {
       "path": "plugins/os"
     },
     {
