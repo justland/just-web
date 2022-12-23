@@ -13,7 +13,7 @@ export type BrowserOptions = {
   }
 }
 
-export const browserPlugin = definePlugin((options?: BrowserOptions) => ({
+const browserPlugin = definePlugin((options?: BrowserOptions) => ({
   name: '@just-web/browser',
   init: ({ log }: LogContext) => {
     const errors = createErrorStore()
@@ -34,3 +34,5 @@ export const browserPlugin = definePlugin((options?: BrowserOptions) => ({
 }))
 
 export type BrowserContext = PluginContext<typeof browserPlugin>
+
+export default browserPlugin
