@@ -849,6 +849,7 @@ importers:
       '@just-web/browser': workspace:^
       '@just-web/browser-preferences': workspace:^
       '@just-web/commands': workspace:^
+      '@just-web/history': workspace:^
       '@just-web/keyboard': workspace:^
       '@just-web/log': workspace:^
       '@just-web/repo-scripts': workspace:^
@@ -876,7 +877,7 @@ importers:
     dependencies:
       '@just-web/browser': link:../../plugins/browser
       '@just-web/browser-preferences': link:../../plugins/browser-preferences
-      history: 5.3.0
+      '@just-web/history': link:../../plugins/history
     devDependencies:
       '@just-web/app': link:../../frameworks/app
       '@just-web/commands': link:../../plugins/commands
@@ -891,6 +892,7 @@ importers:
       depcheck: 1.4.3
       eslint: 8.28.0
       eslint-plugin-harmony: 7.1.1_32tydemwe2lxhy3up5mpfxo2ji
+      history: 5.3.0
       jest: 29.3.1
       jest-validate: 29.3.1
       jest-watch-suspend: 1.1.2_jest@29.3.1
@@ -1387,6 +1389,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
+    dev: true
 
   /@babel/template/7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
@@ -5101,6 +5104,7 @@ packages:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
     dependencies:
       '@babel/runtime': 7.20.1
+    dev: true
 
   /homedir-polyfill/1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
@@ -7771,6 +7775,7 @@ packages:
 
   /regenerator-runtime/0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
+    dev: true
 
   /regexp.prototype.flags/1.4.3:
     resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==}
