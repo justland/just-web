@@ -6,7 +6,7 @@
     "just-web",
     "just-web-presets"
   ],
-  "homepage": "https://github.com/justland/just-web/tree/main/presets/browser-presets",
+  "homepage": "https://github.com/justland/just-web/tree/main/presets/browser",
   "bugs": {
     "url": "https://github.com/justland/just-web/issues"
   },
