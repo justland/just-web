@@ -1,5 +1,11 @@
 # @just-web/presets-browser
 
+## 4.0.1
+
+### Patch Changes
+
+- c1083a8c: Adjust homepage link
+
 ## 4.0.0
 
 ### Major Changes
