@@ -54,7 +54,7 @@
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },
   "dependencies": {
-    "iso-error": "~5.0.0",
+    "iso-error": "~6.0.0",
     "type-plus": "^5.0.0"
   },
   "devDependencies": {
