@@ -60,7 +60,7 @@ importers:
       '@just-web/os': workspace:^
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       '@types/ramda': ^0.28.14
@@ -92,7 +92,7 @@ importers:
       '@just-web/os': link:../../plugins/os
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/ramda': 0.28.20
@@ -120,7 +120,7 @@ importers:
       '@just-func/types': ^0.5.0
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
@@ -147,7 +147,7 @@ importers:
     devDependencies:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
@@ -169,7 +169,7 @@ importers:
   frameworks/types:
     specifiers:
       '@just-web/repo-scripts': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
@@ -194,7 +194,7 @@ importers:
       type-plus: 5.0.0
     devDependencies:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
@@ -217,7 +217,7 @@ importers:
     specifiers:
       '@just-web/log': workspace:^
       '@just-web/repo-scripts': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
@@ -245,7 +245,7 @@ importers:
       type-plus: 5.0.0
     devDependencies:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
@@ -270,7 +270,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
@@ -301,7 +301,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/states': link:../../libraries/states
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       assertron: 11.0.1
@@ -332,7 +332,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/testing': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       '@types/mousetrap': ~1.6.9
@@ -364,7 +364,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/mousetrap': 1.6.11
@@ -394,7 +394,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
@@ -430,7 +430,7 @@ importers:
       '@just-web/preferences': link:../preferences
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       assertron: 11.0.1
@@ -460,7 +460,7 @@ importers:
       '@just-web/states': workspace:^
       '@just-web/testing': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
@@ -495,7 +495,7 @@ importers:
       '@just-web/states': link:../../libraries/states
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       assertron: 11.0.1
@@ -521,7 +521,7 @@ importers:
       '@just-web/log': workspace:^
       '@just-web/repo-scripts': workspace:^
       '@just-web/testing': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       '@types/node': ^18.0.0
@@ -549,7 +549,7 @@ importers:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/testing': link:../../tools/testing
-      '@repobuddy/jest': 2.2.1_s5p33xs5dg6kbxtbrw7xhweyqi
+      '@repobuddy/jest': 3.0.0_s5p33xs5dg6kbxtbrw7xhweyqi
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/node': 18.11.9
@@ -574,7 +574,7 @@ importers:
       '@just-web/app': workspace:^
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
@@ -598,7 +598,7 @@ importers:
       '@just-web/app': link:../../frameworks/app
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_s5p33xs5dg6kbxtbrw7xhweyqi
+      '@repobuddy/jest': 3.0.0_s5p33xs5dg6kbxtbrw7xhweyqi
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
@@ -627,7 +627,7 @@ importers:
       '@just-web/states': workspace:^
       '@just-web/testing': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
@@ -655,7 +655,7 @@ importers:
       '@just-web/states': link:../../libraries/states
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
@@ -679,7 +679,7 @@ importers:
       '@just-web/log': workspace:^
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       '@types/platform': ~1.3.4
@@ -706,7 +706,7 @@ importers:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/platform': 1.3.4
@@ -736,7 +736,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
@@ -766,7 +766,7 @@ importers:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       assertron: 11.0.1
@@ -796,7 +796,7 @@ importers:
       '@just-web/states': workspace:^
       '@just-web/testing': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
@@ -824,7 +824,7 @@ importers:
       '@just-web/states': link:../../libraries/states
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
@@ -854,7 +854,7 @@ importers:
       '@just-web/log': workspace:^
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
@@ -885,7 +885,7 @@ importers:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
@@ -910,7 +910,7 @@ importers:
     specifiers:
       '@babel/core': ~7.20.0
       '@babel/plugin-transform-runtime': ~7.19.0
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@rushstack/eslint-patch': ^1.2.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
@@ -958,7 +958,7 @@ importers:
       ts-jest: 29.0.3_6crhf7ajeizammv76u753sn6i4
       typescript: 4.9.3
     devDependencies:
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       cross-env: 7.0.3
       size-limit: 8.1.0
@@ -967,7 +967,7 @@ importers:
     specifiers:
       '@just-web/log': workspace:^
       '@just-web/repo-scripts': workspace:^
-      '@repobuddy/jest': ^2.2.1
+      '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.1.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
@@ -994,7 +994,7 @@ importers:
       satisfier: 5.4.2
     devDependencies:
       '@just-web/repo-scripts': link:../repo-scripts
-      '@repobuddy/jest': 2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne
+      '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
@@ -2276,11 +2276,11 @@ packages:
       '@pnpm/network.ca-file': 1.0.1
       config-chain: 1.1.13
 
-  /@repobuddy/jest/2.2.1_s5p33xs5dg6kbxtbrw7xhweyqi:
-    resolution: {integrity: sha512-D54Rg0auxvOmQDOmMn9Q/epyU06Q8x06dfIn4nqnV1qntJXIm7sLx0KAoO2GI2hjI+KtzzgbfAa3f1jFMTpgcg==}
+  /@repobuddy/jest/3.0.0_s5p33xs5dg6kbxtbrw7xhweyqi:
+    resolution: {integrity: sha512-VNjT+l3dDEFSC5cAPsNEi05ik4wY1ZwCIgWbRiAb50WSiZ3CH+ctnfYSGrYQuqc31NPtiB1fSKMVjMD0qw/QUQ==}
     peerDependencies:
       '@kayahr/jest-electron-runner': ^29
-      jest: ^29
+      jest: '>=29.4.0'
       jest-watch-suspend: ^1
       jest-watch-toggle-config-2: ^2
       jest-watch-typeahead: ^2
@@ -2303,17 +2303,17 @@ packages:
       jest-watch-toggle-config-2: 2.1.0_jest@29.3.1
       jest-watch-typeahead: 2.2.1_jest@29.3.1
       read-pkg-up: 7.0.1
-      resolve.imports: 1.2.3
+      resolve.imports: 2.0.3
       satisfier: 5.4.2
       ts-jest: 29.0.3_gruvivcimsmdfhnjphbo3uejz4
-      type-plus: 4.18.1
+      type-plus: 5.0.0
     dev: true
 
-  /@repobuddy/jest/2.2.1_vxwm5bnd4dq4kuqxqmfbc4kvne:
-    resolution: {integrity: sha512-D54Rg0auxvOmQDOmMn9Q/epyU06Q8x06dfIn4nqnV1qntJXIm7sLx0KAoO2GI2hjI+KtzzgbfAa3f1jFMTpgcg==}
+  /@repobuddy/jest/3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne:
+    resolution: {integrity: sha512-VNjT+l3dDEFSC5cAPsNEi05ik4wY1ZwCIgWbRiAb50WSiZ3CH+ctnfYSGrYQuqc31NPtiB1fSKMVjMD0qw/QUQ==}
     peerDependencies:
       '@kayahr/jest-electron-runner': ^29
-      jest: ^29
+      jest: '>=29.4.0'
       jest-watch-suspend: ^1
       jest-watch-toggle-config-2: ^2
       jest-watch-typeahead: ^2
@@ -2335,10 +2335,10 @@ packages:
       jest-watch-suspend: 1.1.2_jest@29.3.1
       jest-watch-typeahead: 2.2.1_jest@29.3.1
       read-pkg-up: 7.0.1
-      resolve.imports: 1.2.3
+      resolve.imports: 2.0.3
       satisfier: 5.4.2
       ts-jest: 29.0.3_gruvivcimsmdfhnjphbo3uejz4
-      type-plus: 4.18.1
+      type-plus: 5.0.0
     dev: true
 
   /@rushstack/eslint-patch/1.2.0:
@@ -7541,6 +7541,10 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
 
+  /pattern-key-compare/2.0.0:
+    resolution: {integrity: sha512-b+yp/Q0KwFotxRgemVsNQ4qyqcA/LxzyfSjqJ7maKSlYTRmaUffwfX07l7KdxkVdc89k6WYtC3SwFCEo8GhbWQ==}
+    dev: true
+
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
@@ -7940,8 +7944,10 @@ packages:
     resolution: {integrity: sha512-J1l+Zxxp4XK3LUDZ9m60LRJF/mAe4z6a4xyabPHk7pvK5t35dACV32iIjJDFeWZFfZlO29w6SZ67knR0tHzJtQ==}
     engines: {node: '>=10'}
 
-  /resolve.imports/1.2.3:
-    resolution: {integrity: sha512-/NPVFOO6c/Rwy9jARc/8v2kb8Y9+Peh+JPKPZdKyPgaAIwkbw+Yipy5X5j9nKSbw2ZW2XiNouXC4Gik/w1HTIw==}
+  /resolve.imports/2.0.3:
+    resolution: {integrity: sha512-aQaI4EGxTXnhA9EWScjgcpuUAbm51MXGkIHQ0WOEUyFMNjb8Yp/jIKGUu6y1SXMYG3FhTqnnscFNxs2+Pjp9YQ==}
+    dependencies:
+      pattern-key-compare: 2.0.0
     dev: true
 
   /resolve/1.22.1:
