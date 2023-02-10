@@ -13,7 +13,7 @@ importers:
       '@types/jest': ^29.2.3
       eslint: ^8.17.0
       eslint-plugin-harmony: ^7.1.1
-      eslint-plugin-yml: ~1.4.0
+      eslint-plugin-yml: ~1.5.0
       husky: ^8.0.1
       jest: ^29.3.1
       jest-watch-suspend: ^1.1.2
@@ -38,7 +38,7 @@ importers:
       '@types/jest': 29.2.3
       eslint: 8.28.0
       eslint-plugin-harmony: 7.1.1_32tydemwe2lxhy3up5mpfxo2ji
-      eslint-plugin-yml: 1.4.0_eslint@8.28.0
+      eslint-plugin-yml: 1.5.0_eslint@8.28.0
       husky: 8.0.2
       jest: 29.3.1_t5wpzltkkzdw6ng6jmtbqvsf2q
       jest-watch-suspend: 1.1.2_jest@29.3.1
@@ -922,7 +922,7 @@ importers:
       eslint-config-prettier: ~8.6.0
       eslint-plugin-harmony: ^7.1.1
       eslint-plugin-storybook: ^0.6.6
-      eslint-plugin-yml: ~1.4.0
+      eslint-plugin-yml: ~1.5.0
       jest: ^29.3.1
       jest-validate: ^29.3.1
       jest-watch-suspend: ^1.1.2
@@ -946,7 +946,7 @@ importers:
       eslint-config-prettier: 8.6.0_eslint@8.28.0
       eslint-plugin-harmony: 7.1.1_kqazsqyhl4q2a3owkaj7zrtmnu
       eslint-plugin-storybook: 0.6.7_hsf322ms6xhhd4b5ne6lb74y4a
-      eslint-plugin-yml: 1.4.0_eslint@8.28.0
+      eslint-plugin-yml: 1.5.0_eslint@8.28.0
       jest: 29.3.1
       jest-validate: 29.3.1
       jest-watch-suspend: 1.1.2_jest@29.3.1
@@ -4486,8 +4486,8 @@ packages:
       - typescript
     dev: false
 
-  /eslint-plugin-yml/1.4.0_eslint@8.28.0:
-    resolution: {integrity: sha512-vzggXNfPKa+arIaNUGoC3DPRZCxNty+xD/v9xOcE5D3Bj9SbgIrEobqVB35I8QxHd2YjL/dOS0xIIFmjAalwbw==}
+  /eslint-plugin-yml/1.5.0_eslint@8.28.0:
+    resolution: {integrity: sha512-iygN054g+ZrnYmtOXMnT+sx9iDNXt89/m0+506cQHeG0+5jJN8hY5iOPQLd3yfd50AfK/mSasajBWruf1SoHpQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
