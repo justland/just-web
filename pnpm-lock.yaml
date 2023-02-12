@@ -61,7 +61,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       '@types/ramda': ^0.28.14
       assertron: ^11.0.0
@@ -93,7 +93,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/ramda': 0.28.20
       assertron: 11.0.1
@@ -121,7 +121,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
       depcheck: ~1.4.3
@@ -148,7 +148,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -170,7 +170,7 @@ importers:
     specifiers:
       '@just-web/repo-scripts': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
       depcheck: ~1.4.3
@@ -195,7 +195,7 @@ importers:
     devDependencies:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -218,7 +218,7 @@ importers:
       '@just-web/log': workspace:^
       '@just-web/repo-scripts': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
       depcheck: ~1.4.3
@@ -246,7 +246,7 @@ importers:
     devDependencies:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -271,7 +271,7 @@ importers:
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
       cross-env: ^7.0.3
@@ -302,7 +302,7 @@ importers:
       '@just-web/states': link:../../libraries/states
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       assertron: 11.0.1
       cross-env: 7.0.3
@@ -333,7 +333,7 @@ importers:
       '@just-web/testing': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       '@types/mousetrap': ~1.6.9
       cross-env: ^7.0.3
@@ -365,7 +365,7 @@ importers:
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/mousetrap': 1.6.11
       cross-env: 7.0.3
@@ -395,7 +395,7 @@ importers:
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
       cross-env: ^7.0.3
@@ -431,7 +431,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       assertron: 11.0.1
       cross-env: 7.0.3
@@ -461,7 +461,7 @@ importers:
       '@just-web/testing': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
       cross-env: ^7.0.3
@@ -496,7 +496,7 @@ importers:
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       assertron: 11.0.1
       cross-env: 7.0.3
@@ -522,7 +522,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/testing': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       '@types/node': ^18.0.0
       '@unional/events-plus': ^3.0.0
@@ -550,7 +550,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/testing': link:../../tools/testing
       '@repobuddy/jest': 3.0.0_s5p33xs5dg6kbxtbrw7xhweyqi
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/node': 18.11.9
       cross-env: 7.0.3
@@ -575,7 +575,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
       depcheck: ~1.4.3
@@ -599,7 +599,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_s5p33xs5dg6kbxtbrw7xhweyqi
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -628,7 +628,7 @@ importers:
       '@just-web/testing': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
       depcheck: ~1.4.3
@@ -656,7 +656,7 @@ importers:
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -680,7 +680,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       '@types/platform': ~1.3.4
       cross-env: ^7.0.3
@@ -707,7 +707,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       '@types/platform': 1.3.4
       cross-env: 7.0.3
@@ -737,7 +737,7 @@ importers:
       '@just-web/states': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
       cross-env: ^7.0.3
@@ -767,7 +767,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       assertron: 11.0.1
       cross-env: 7.0.3
@@ -797,7 +797,7 @@ importers:
       '@just-web/testing': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
       depcheck: ~1.4.3
@@ -825,7 +825,7 @@ importers:
       '@just-web/testing': link:../../tools/testing
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -855,7 +855,7 @@ importers:
       '@just-web/repo-scripts': workspace:^
       '@just-web/types': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       cross-env: ^7.0.3
       depcheck: ~1.4.3
@@ -886,7 +886,7 @@ importers:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../../frameworks/types
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -912,7 +912,7 @@ importers:
       '@babel/plugin-transform-runtime': ~7.19.0
       '@repobuddy/jest': ^3.0.0
       '@rushstack/eslint-patch': ^1.2.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       '@typescript-eslint/eslint-plugin': ^5.28.0
       '@typescript-eslint/parser': ^5.28.0
@@ -959,7 +959,7 @@ importers:
       typescript: 4.9.3
     devDependencies:
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       cross-env: 7.0.3
       size-limit: 8.1.0
 
@@ -968,7 +968,7 @@ importers:
       '@just-web/log': workspace:^
       '@just-web/repo-scripts': workspace:^
       '@repobuddy/jest': ^3.0.0
-      '@size-limit/preset-small-lib': ~8.1.0
+      '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
       assertron: ^11.0.0
       cross-env: ^7.0.3
@@ -995,7 +995,7 @@ importers:
     devDependencies:
       '@just-web/repo-scripts': link:../repo-scripts
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
-      '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.2.3_size-limit@8.1.0
       '@types/jest': 29.2.3
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -1804,8 +1804,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@esbuild/android-arm/0.15.14:
-    resolution: {integrity: sha512-+Rb20XXxRGisNu2WmNKk+scpanb7nL5yhuI1KR9wQFiC43ddPj/V1fmNyzlFC9bKiG4mYzxW7egtoHVcynr+OA==}
+  /@esbuild/android-arm/0.17.7:
+    resolution: {integrity: sha512-Np6Lg8VUiuzHP5XvHU7zfSVPN4ILdiOhxA1GQ1uvCK2T2l3nI8igQV0c9FJx4hTkq8WGqhGEvn5UuRH8jMkExg==}
     engines: {node: '>=12'}
     cpu: [arm]
     os: [android]
@@ -1813,11 +1813,191 @@ packages:
     dev: true
     optional: true
 
-  /@esbuild/linux-loong64/0.15.14:
-    resolution: {integrity: sha512-eQi9rosGNVQFJyJWV0HCA5WZae/qWIQME7s8/j8DMvnylfBv62Pbu+zJ2eUDqNf2O4u3WB+OEXyfkpBoe194sg==}
+  /@esbuild/android-arm64/0.17.7:
+    resolution: {integrity: sha512-fOUBZvcbtbQJIj2K/LMKcjULGfXLV9R4qjXFsi3UuqFhIRJHz0Fp6kFjsMFI6vLuPrfC5G9Dmh+3RZOrSKY2Lg==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/android-x64/0.17.7:
+    resolution: {integrity: sha512-6YILpPvop1rPAvaO/n2iWQL45RyTVTR/1SK7P6Xi2fyu+hpEeX22fE2U2oJd1sfpovUJOWTRdugjddX6QCup3A==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/darwin-arm64/0.17.7:
+    resolution: {integrity: sha512-7i0gfFsDt1BBiurZz5oZIpzfxqy5QkJmhXdtrf2Hma/gI9vL2AqxHhRBoI1NeWc9IhN1qOzWZrslhiXZweMSFg==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/darwin-x64/0.17.7:
+    resolution: {integrity: sha512-hRvIu3vuVIcv4SJXEKOHVsNssM5tLE2xWdb9ZyJqsgYp+onRa5El3VJ4+WjTbkf/A2FD5wuMIbO2FCTV39LE0w==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/freebsd-arm64/0.17.7:
+    resolution: {integrity: sha512-2NJjeQ9kiabJkVXLM3sHkySqkL1KY8BeyLams3ITyiLW10IwDL0msU5Lq1cULCn9zNxt1Seh1I6QrqyHUvOtQw==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/freebsd-x64/0.17.7:
+    resolution: {integrity: sha512-8kSxlbjuLYMoIgvRxPybirHJeW45dflyIgHVs+jzMYJf87QOay1ZUTzKjNL3vqHQjmkSn8p6KDfHVrztn7Rprw==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-arm/0.17.7:
+    resolution: {integrity: sha512-07RsAAzznWqdfJC+h3L2UVWwnUHepsFw5GmzySnUspHHb7glJ1+47rvlcH0SeUtoVOs8hF4/THgZbtJRyALaJA==}
+    engines: {node: '>=12'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-arm64/0.17.7:
+    resolution: {integrity: sha512-43Bbhq3Ia/mGFTCRA4NlY8VRH3dLQltJ4cqzhSfq+cdvdm9nKJXVh4NUkJvdZgEZIkf/ufeMmJ0/22v9btXTcw==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-ia32/0.17.7:
+    resolution: {integrity: sha512-ViYkfcfnbwOoTS7xE4DvYFv7QOlW8kPBuccc4erJ0jx2mXDPR7e0lYOH9JelotS9qe8uJ0s2i3UjUvjunEp53A==}
+    engines: {node: '>=12'}
+    cpu: [ia32]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-loong64/0.17.7:
+    resolution: {integrity: sha512-H1g+AwwcqYQ/Hl/sMcopRcNLY/fysIb/ksDfCa3/kOaHQNhBrLeDYw+88VAFV5U6oJL9GqnmUj72m9Nv3th3hA==}
     engines: {node: '>=12'}
     cpu: [loong64]
     os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-mips64el/0.17.7:
+    resolution: {integrity: sha512-MDLGrVbTGYtmldlbcxfeDPdhxttUmWoX3ovk9u6jc8iM+ueBAFlaXKuUMCoyP/zfOJb+KElB61eSdBPSvNcCEg==}
+    engines: {node: '>=12'}
+    cpu: [mips64el]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-ppc64/0.17.7:
+    resolution: {integrity: sha512-UWtLhRPKzI+v2bKk4j9rBpGyXbLAXLCOeqt1tLVAt1mfagHpFjUzzIHCpPiUfY3x1xY5e45/+BWzGpqqvSglNw==}
+    engines: {node: '>=12'}
+    cpu: [ppc64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-riscv64/0.17.7:
+    resolution: {integrity: sha512-3C/RTKqZauUwBYtIQAv7ELTJd+H2dNKPyzwE2ZTbz2RNrNhNHRoeKnG5C++eM6nSZWUCLyyaWfq1v1YRwBS/+A==}
+    engines: {node: '>=12'}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-s390x/0.17.7:
+    resolution: {integrity: sha512-x7cuRSCm998KFZqGEtSo8rI5hXLxWji4znZkBhg2FPF8A8lxLLCsSXe2P5utf0RBQflb3K97dkEH/BJwTqrbDw==}
+    engines: {node: '>=12'}
+    cpu: [s390x]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/linux-x64/0.17.7:
+    resolution: {integrity: sha512-1Z2BtWgM0Wc92WWiZR5kZ5eC+IetI++X+nf9NMbUvVymt74fnQqwgM5btlTW7P5uCHfq03u5MWHjIZa4o+TnXQ==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/netbsd-x64/0.17.7:
+    resolution: {integrity: sha512-//VShPN4hgbmkDjYNCZermIhj8ORqoPNmAnwSPqPtBB0xOpHrXMlJhsqLNsgoBm0zi/5tmy//WyL6g81Uq2c6Q==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [netbsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/openbsd-x64/0.17.7:
+    resolution: {integrity: sha512-IQ8BliXHiOsbQEOHzc7mVLIw2UYPpbOXJQ9cK1nClNYQjZthvfiA6rWZMz4BZpVzHZJ+/H2H23cZwRJ1NPYOGg==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [openbsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/sunos-x64/0.17.7:
+    resolution: {integrity: sha512-phO5HvU3SyURmcW6dfQXX4UEkFREUwaoiTgi1xH+CAFKPGsrcG6oDp1U70yQf5lxRKujoSCEIoBr0uFykJzN2g==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [sunos]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/win32-arm64/0.17.7:
+    resolution: {integrity: sha512-G/cRKlYrwp1B0uvzEdnFPJ3A6zSWjnsRrWivsEW0IEHZk+czv0Bmiwa51RncruHLjQ4fGsvlYPmCmwzmutPzHA==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/win32-ia32/0.17.7:
+    resolution: {integrity: sha512-/yMNVlMew07NrOflJdRAZcMdUoYTOCPbCHx0eHtg55l87wXeuhvYOPBQy5HLX31Ku+W2XsBD5HnjUjEUsTXJug==}
+    engines: {node: '>=12'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@esbuild/win32-x64/0.17.7:
+    resolution: {integrity: sha512-K9/YybM6WZO71x73Iyab6mwieHtHjm9hrPR/a9FBPZmFO3w+fJaM2uu2rt3JYf/rZR24MFwTliI8VSoKKOtYtg==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [win32]
     requiresBuild: true
     dev: true
     optional: true
@@ -2361,34 +2541,34 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.5
 
-  /@size-limit/esbuild/8.1.0_size-limit@8.1.0:
-    resolution: {integrity: sha512-Lq+vJAUO13RXbiNF4bZOB07LmzMURkbV8Z6dhAkhTdAVWYLUn0zjfIe3O6IMwhj9dqJ0WtadhKHJvNQKG+po3w==}
+  /@size-limit/esbuild/8.2.3_size-limit@8.1.0:
+    resolution: {integrity: sha512-jqbg23dnheXNQg1YVItUiEViALwsFycaHpv94pldWakwEHqPApcIEH6WqbI3utdyQ9hYJzyhwT9BkcJIyzD2tg==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
-      size-limit: 8.1.0
+      size-limit: 8.2.3
     dependencies:
-      esbuild: 0.15.14
+      esbuild: 0.17.7
       nanoid: 3.3.4
       size-limit: 8.1.0
     dev: true
 
-  /@size-limit/file/8.1.0_size-limit@8.1.0:
-    resolution: {integrity: sha512-Ur+NgJSRHBnbQBrD8X2doxXYdBcVJsMxe2KfWrUmnZ6wYz09YKhQ1iYLqNztjf2yf/JEp00zp1vyhmimUQfUHQ==}
+  /@size-limit/file/8.2.3_size-limit@8.1.0:
+    resolution: {integrity: sha512-2H6XENiKr/45epwvvIGvYkZTr/pm5Pq4R1xR0aiVbElTrf4TiFQrd0p+U8vnaq68Y0Z//KQvflqhE+SdE7DLRQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
-      size-limit: 8.1.0
+      size-limit: 8.2.3
     dependencies:
-      semver: 7.3.7
+      semver: 7.3.8
       size-limit: 8.1.0
     dev: true
 
-  /@size-limit/preset-small-lib/8.1.0_size-limit@8.1.0:
-    resolution: {integrity: sha512-fs0XD0+rN4SVKGUwae7VMX1uDqK+oUYNGlPe7E0oKhwAH6ek08iH8qiEm0q9IKDrsCfZ9/d/pqNpg9di3p1SVw==}
+  /@size-limit/preset-small-lib/8.2.3_size-limit@8.1.0:
+    resolution: {integrity: sha512-F2PhXWITMUkc3pzFSYBbwjcjinv5NFQAZ6mS976p36wej/IfMrzuqYXxfhxqD+zooPJFNNp1UnxogTDQHmocaQ==}
     peerDependencies:
-      size-limit: 8.1.0
+      size-limit: 8.2.3
     dependencies:
-      '@size-limit/esbuild': 8.1.0_size-limit@8.1.0
-      '@size-limit/file': 8.1.0_size-limit@8.1.0
+      '@size-limit/esbuild': 8.2.3_size-limit@8.1.0
+      '@size-limit/file': 8.2.3_size-limit@8.1.0
       size-limit: 8.1.0
     dev: true
 
@@ -4177,214 +4357,34 @@ packages:
       is-date-object: 1.0.5
       is-symbol: 1.0.4
 
-  /esbuild-android-64/0.15.14:
-    resolution: {integrity: sha512-HuilVIb4rk9abT4U6bcFdU35UHOzcWVGLSjEmC58OVr96q5UiRqzDtWjPlCMugjhgUGKEs8Zf4ueIvYbOStbIg==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [android]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-android-arm64/0.15.14:
-    resolution: {integrity: sha512-/QnxRVxsR2Vtf3XottAHj7hENAMW2wCs6S+OZcAbc/8nlhbAL/bCQRCVD78VtI5mdwqWkVi3wMqM94kScQCgqg==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [android]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-darwin-64/0.15.14:
-    resolution: {integrity: sha512-ToNuf1uifu8hhwWvoZJGCdLIX/1zpo8cOGnT0XAhDQXiKOKYaotVNx7pOVB1f+wHoWwTLInrOmh3EmA7Fd+8Vg==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-darwin-arm64/0.15.14:
-    resolution: {integrity: sha512-KgGP+y77GszfYJgceO0Wi/PiRtYo5y2Xo9rhBUpxTPaBgWDJ14gqYN0+NMbu+qC2fykxXaipHxN4Scaj9tUS1A==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-freebsd-64/0.15.14:
-    resolution: {integrity: sha512-xr0E2n5lyWw3uFSwwUXHc0EcaBDtsal/iIfLioflHdhAe10KSctV978Te7YsfnsMKzcoGeS366+tqbCXdqDHQA==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-freebsd-arm64/0.15.14:
-    resolution: {integrity: sha512-8XH96sOQ4b1LhMlO10eEWOjEngmZ2oyw3pW4o8kvBcpF6pULr56eeYVP5radtgw54g3T8nKHDHYEI5AItvskZg==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-32/0.15.14:
-    resolution: {integrity: sha512-6ssnvwaTAi8AzKN8By2V0nS+WF5jTP7SfuK6sStGnDP7MCJo/4zHgM9oE1eQTS2jPmo3D673rckuCzRlig+HMA==}
-    engines: {node: '>=12'}
-    cpu: [ia32]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-64/0.15.14:
-    resolution: {integrity: sha512-ONySx3U0wAJOJuxGUlXBWxVKFVpWv88JEv0NZ6NlHknmDd1yCbf4AEdClSgLrqKQDXYywmw4gYDvdLsS6z0hcw==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-arm/0.15.14:
-    resolution: {integrity: sha512-D2LImAIV3QzL7lHURyCHBkycVFbKwkDb1XEUWan+2fb4qfW7qAeUtul7ZIcIwFKZgPcl+6gKZmvLgPSj26RQ2Q==}
-    engines: {node: '>=12'}
-    cpu: [arm]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-arm64/0.15.14:
-    resolution: {integrity: sha512-kle2Ov6a1e5AjlHlMQl1e+c4myGTeggrRzArQFmWp6O6JoqqB9hT+B28EW4tjFWgV/NxUq46pWYpgaWXsXRPAg==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-mips64le/0.15.14:
-    resolution: {integrity: sha512-FVdMYIzOLXUq+OE7XYKesuEAqZhmAIV6qOoYahvUp93oXy0MOVTP370ECbPfGXXUdlvc0TNgkJa3YhEwyZ6MRA==}
-    engines: {node: '>=12'}
-    cpu: [mips64el]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-ppc64le/0.15.14:
-    resolution: {integrity: sha512-2NzH+iuzMDA+jjtPjuIz/OhRDf8tzbQ1tRZJI//aT25o1HKc0reMMXxKIYq/8nSHXiJSnYV4ODzTiv45s+h73w==}
-    engines: {node: '>=12'}
-    cpu: [ppc64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-riscv64/0.15.14:
-    resolution: {integrity: sha512-VqxvutZNlQxmUNS7Ac+aczttLEoHBJ9e3OYGqnULrfipRvG97qLrAv9EUY9iSrRKBqeEbSvS9bSfstZqwz0T4Q==}
-    engines: {node: '>=12'}
-    cpu: [riscv64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-linux-s390x/0.15.14:
-    resolution: {integrity: sha512-+KVHEUshX5n6VP6Vp/AKv9fZIl5kr2ph8EUFmQUJnDpHwcfTSn2AQgYYm0HTBR2Mr4d0Wlr0FxF/Cs5pbFgiOw==}
-    engines: {node: '>=12'}
-    cpu: [s390x]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-netbsd-64/0.15.14:
-    resolution: {integrity: sha512-6D/dr17piEgevIm1xJfZP2SjB9Z+g8ERhNnBdlZPBWZl+KSPUKLGF13AbvC+nzGh8IxOH2TyTIdRMvKMP0nEzQ==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [netbsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-openbsd-64/0.15.14:
-    resolution: {integrity: sha512-rREQBIlMibBetgr2E9Lywt2Qxv2ZdpmYahR4IUlAQ1Efv/A5gYdO0/VIN3iowDbCNTLxp0bb57Vf0LFcffD6kA==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [openbsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-sunos-64/0.15.14:
-    resolution: {integrity: sha512-DNVjSp/BY4IfwtdUAvWGIDaIjJXY5KI4uD82+15v6k/w7px9dnaDaJJ2R6Mu+KCgr5oklmFc0KjBjh311Gxl9Q==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [sunos]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-windows-32/0.15.14:
-    resolution: {integrity: sha512-pHBWrcA+/oLgvViuG9FO3kNPO635gkoVrRQwe6ZY1S0jdET07xe2toUvQoJQ8KT3/OkxqUasIty5hpuKFLD+eg==}
-    engines: {node: '>=12'}
-    cpu: [ia32]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-windows-64/0.15.14:
-    resolution: {integrity: sha512-CszIGQVk/P8FOS5UgAH4hKc9zOaFo69fe+k1rqgBHx3CSK3Opyk5lwYriIamaWOVjBt7IwEP6NALz+tkVWdFog==}
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild-windows-arm64/0.15.14:
-    resolution: {integrity: sha512-KW9W4psdZceaS9A7Jsgl4WialOznSURvqX/oHZk3gOP7KbjtHLSsnmSvNdzagGJfxbAe30UVGXRe8q8nDsOSQw==}
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /esbuild/0.15.14:
-    resolution: {integrity: sha512-pJN8j42fvWLFWwSMG4luuupl2Me7mxciUOsMegKvwCmhEbJ2covUdFnihxm0FMIBV+cbwbtMoHgMCCI+pj1btQ==}
+  /esbuild/0.17.7:
+    resolution: {integrity: sha512-+5hHlrK108fT6C6/40juy0w4DYKtyZ5NjfBlTccBdsFutR7WBxpIY633JzZJewdsCy8xWA/u2z0MSniIJwufYg==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      '@esbuild/android-arm': 0.15.14
-      '@esbuild/linux-loong64': 0.15.14
-      esbuild-android-64: 0.15.14
-      esbuild-android-arm64: 0.15.14
-      esbuild-darwin-64: 0.15.14
-      esbuild-darwin-arm64: 0.15.14
-      esbuild-freebsd-64: 0.15.14
-      esbuild-freebsd-arm64: 0.15.14
-      esbuild-linux-32: 0.15.14
-      esbuild-linux-64: 0.15.14
-      esbuild-linux-arm: 0.15.14
-      esbuild-linux-arm64: 0.15.14
-      esbuild-linux-mips64le: 0.15.14
-      esbuild-linux-ppc64le: 0.15.14
-      esbuild-linux-riscv64: 0.15.14
-      esbuild-linux-s390x: 0.15.14
-      esbuild-netbsd-64: 0.15.14
-      esbuild-openbsd-64: 0.15.14
-      esbuild-sunos-64: 0.15.14
-      esbuild-windows-32: 0.15.14
-      esbuild-windows-64: 0.15.14
-      esbuild-windows-arm64: 0.15.14
+      '@esbuild/android-arm': 0.17.7
+      '@esbuild/android-arm64': 0.17.7
+      '@esbuild/android-x64': 0.17.7
+      '@esbuild/darwin-arm64': 0.17.7
+      '@esbuild/darwin-x64': 0.17.7
+      '@esbuild/freebsd-arm64': 0.17.7
+      '@esbuild/freebsd-x64': 0.17.7
+      '@esbuild/linux-arm': 0.17.7
+      '@esbuild/linux-arm64': 0.17.7
+      '@esbuild/linux-ia32': 0.17.7
+      '@esbuild/linux-loong64': 0.17.7
+      '@esbuild/linux-mips64el': 0.17.7
+      '@esbuild/linux-ppc64': 0.17.7
+      '@esbuild/linux-riscv64': 0.17.7
+      '@esbuild/linux-s390x': 0.17.7
+      '@esbuild/linux-x64': 0.17.7
+      '@esbuild/netbsd-x64': 0.17.7
+      '@esbuild/openbsd-x64': 0.17.7
+      '@esbuild/sunos-x64': 0.17.7
+      '@esbuild/win32-arm64': 0.17.7
+      '@esbuild/win32-ia32': 0.17.7
+      '@esbuild/win32-x64': 0.17.7
     dev: true
 
   /escalade/3.1.1:

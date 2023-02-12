@@ -60,7 +60,7 @@
   "devDependencies": {
     "@just-web/repo-scripts": "workspace:^",
     "@repobuddy/jest": "^3.0.0",
-    "@size-limit/preset-small-lib": "~8.1.0",
+    "@size-limit/preset-small-lib": "~8.2.0",
     "@types/jest": "^29.2.3",
     "cross-env": "^7.0.3",
     "depcheck": "~1.4.3",
