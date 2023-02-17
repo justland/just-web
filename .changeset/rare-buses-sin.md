@@ -2,4 +2,4 @@
 '@just-web/browser-preferences': patch
 ---
 
-wrap `localStorage` in function
+Wrap `localStorage` in function to avoid load time failure.
