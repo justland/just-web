@@ -1,5 +1,14 @@
 # @just-web/browser
 
+## 6.0.2
+
+### Patch Changes
+
+- 42eada47: Wrap `window` in function to avoid load time failure.
+  - @just-web/log@6.0.2
+  - @just-web/states@6.0.2
+  - @just-web/types@6.0.2
+
 ## 6.0.1
 
 ### Patch Changes

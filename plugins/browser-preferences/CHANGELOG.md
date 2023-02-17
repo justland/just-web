@@ -1,5 +1,16 @@
 # @just-web/browser-preferences
 
+## 6.0.2
+
+### Patch Changes
+
+- a15cdc1a: Wrap `localStorage` in function to avoid load time failure.
+  - @just-web/commands@6.0.2
+  - @just-web/log@6.0.2
+  - @just-web/preferences@6.0.2
+  - @just-web/states@6.0.2
+  - @just-web/types@6.0.2
+
 ## 6.0.1
 
 ### Patch Changes

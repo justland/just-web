@@ -1,5 +1,11 @@
 # @just-web/log
 
+## 6.0.2
+
+### Patch Changes
+
+- @just-web/types@6.0.2
+
 ## 6.0.1
 
 ### Patch Changes
