@@ -1,5 +1,14 @@
 # @just-web/commands
 
+## 6.0.2
+
+### Patch Changes
+
+- @just-web/keyboard@6.0.2
+- @just-web/log@6.0.2
+- @just-web/states@6.0.2
+- @just-web/types@6.0.2
+
 ## 6.0.1
 
 ### Patch Changes
