@@ -9,15 +9,13 @@ import { hasAll, some } from 'satisfier'
 import { ctx } from './browserPreferences.ctx.js'
 import browserPreferencePlugin from './index.js'
 
-afterEach(() => ctx.localStorage = localStorage)
+afterEach(() => (ctx.getLocalStorage = () => localStorage))
 
 describe('browserPreferencePlugin.init()', () => {
   it('register just-web.clearAllUserPreferences contribution', () => {
     const { commands } = setupTestApp()
 
-    a.satisfies(commands.contributions.keys(), hasAll(
-      clearAllUserPreferences.id
-    ))
+    a.satisfies(commands.contributions.keys(), hasAll(clearAllUserPreferences.id))
   })
 })
 
@@ -31,7 +29,9 @@ describe(`app.preferences.get()`, () => {
   it('can specify a default value (which is not saved to the store)', () => {
     const { preferences } = setupTestApp()
     stubStorage({
-      setItem() { fail('should not reach') }
+      setItem() {
+        fail('should not reach')
+      }
     })
     const result = preferences.get('some-key', 'abc')
     expect(result).toEqual('abc')
@@ -58,7 +58,6 @@ describe('app.preferences.set()', () => {
     o.end()
   })
 
-
   it('encode the value when save to the store', () => {
     const { preferences } = setupTestApp()
     const o = new AssertOrder(1)
@@ -77,9 +76,12 @@ describe('app.preferences.set()', () => {
     preferences.set('emit-trace-log', 'hello-world')
 
     const messages = log.reporter.getLogMessagesWithIdAndLevel()
-    a.satisfies(messages, some(
-      "test-app:@just-web/browser-preferences (TRACE) set: 'test-app:emit-trace-log' undefined -> hello-world"
-    ))
+    a.satisfies(
+      messages,
+      some(
+        "test-app:@just-web/browser-preferences (TRACE) set: 'test-app:emit-trace-log' undefined -> hello-world"
+      )
+    )
   })
 
   it('clear the value if set to undefined', () => {
@@ -98,11 +100,11 @@ describe('app.preferences.set()', () => {
 
   it('accepts a handler', () => {
     const { preferences, log } = setupTestApp({ log: { logLevel: logLevels.all } })
-    preferences.set('accept-handler', v => {
+    preferences.set('accept-handler', (v) => {
       expect(v).toBeUndefined()
       return '1'
     })
-    preferences.set('accept-handler', v => {
+    preferences.set('accept-handler', (v) => {
       expect(v).toEqual('1')
       return '2'
     })
@@ -112,20 +114,24 @@ describe('app.preferences.set()', () => {
     expect(preferences.get('accept-handler')).toBeUndefined()
 
     const messages = log.reporter.getLogMessagesWithIdAndLevel()
-    a.satisfies(messages, hasAll(
-      "test-app:@just-web/browser-preferences (TRACE) set: 'test-app:accept-handler' undefined -> 1",
-      "test-app:@just-web/browser-preferences (TRACE) set: 'test-app:accept-handler' 1 -> 2",
-      "test-app:@just-web/browser-preferences (TRACE) set: clear 'test-app:accept-handler'",
-    ))
+    a.satisfies(
+      messages,
+      hasAll(
+        "test-app:@just-web/browser-preferences (TRACE) set: 'test-app:accept-handler' undefined -> 1",
+        "test-app:@just-web/browser-preferences (TRACE) set: 'test-app:accept-handler' 1 -> 2",
+        "test-app:@just-web/browser-preferences (TRACE) set: clear 'test-app:accept-handler'"
+      )
+    )
   })
 
   it('clear not set value is ok', () => {
     const { preferences, log } = setupTestApp({ log: { logLevel: logLevels.all } })
     preferences.set('unknown', undefined) // do not throw
 
-    a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
-      `test-app:@just-web/browser-preferences (TRACE) set: clear 'test-app:unknown'`
-    ))
+    a.satisfies(
+      log.reporter.getLogMessagesWithIdAndLevel(),
+      some(`test-app:@just-web/browser-preferences (TRACE) set: clear 'test-app:unknown'`)
+    )
   })
 })
 
@@ -134,16 +140,17 @@ describe('app.preferences.clearAll()', () => {
     const { preferences, log } = setupTestApp()
     preferences.set('x', '123')
     preferences.set('y', 'abc')
-
-    ctx.localStorage.setItem('someone-else-value', 'hello')
+    const localStorage = ctx.getLocalStorage()
+    localStorage.setItem('someone-else-value', 'hello')
     preferences.clearAll()
     expect(preferences.get('x')).toBeUndefined()
     expect(preferences.get('y')).toBeUndefined()
-    expect(ctx.localStorage.getItem('someone-else-value')).toEqual('hello')
+    expect(localStorage.getItem('someone-else-value')).toEqual('hello')
 
-    a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
-      `test-app:@just-web/browser-preferences (NOTICE) clear all: 'test-app'`
-    ))
+    a.satisfies(
+      log.reporter.getLogMessagesWithIdAndLevel(),
+      some(`test-app:@just-web/browser-preferences (NOTICE) clear all: 'test-app'`)
+    )
   })
 })
 
@@ -156,9 +163,10 @@ function setupTestApp(options: createTestApp.Options = { log: { logLevel: logLev
 }
 
 function stubStorage(stub: Partial<Storage>) {
-  ctx.localStorage = new Proxy(ctx.localStorage, {
-    get(target, p: any) {
-      return stub[p] ? stub[p] : target[p]
-    }
-  })
+  ctx.getLocalStorage = () =>
+    new Proxy(localStorage, {
+      get(target, p: any) {
+        return stub[p] ? stub[p] : target[p]
+      }
+    })
 }

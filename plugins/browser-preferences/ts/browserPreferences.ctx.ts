@@ -1,3 +1,5 @@
 export const ctx = {
-  localStorage
+  getLocalStorage() {
+    return localStorage
+  }
 }

@@ -11,7 +11,12 @@ import { ctx } from './browserPreferences.ctx.js'
 
 const browserPreferencesPlugin = definePlugin(() => ({
   name: '@just-web/browser-preferences',
-  init({ name, commands, keyboard, log }: AppBaseContext & LogContext & CommandsContext & Partial<KeyboardContext>) {
+  init({
+    name,
+    commands,
+    keyboard,
+    log
+  }: AppBaseContext & LogContext & CommandsContext & Partial<KeyboardContext>) {
     getUserPreference.connect({ commands, keyboard }, (key, defaultValue) => {
       const k = getKey(name, key)
       log.planck(`get: '${k}'`)
@@ -21,20 +26,22 @@ const browserPreferencesPlugin = definePlugin(() => ({
       const k = getKey(name, key)
       const original = getItem(k)
       const v = typeof value === 'function' ? produce(original, value as any) : value
-      MaybePromise.transform(v, v => setHandler({ log }, k, original, v))
+      MaybePromise.transform(v, (v) => setHandler({ log }, k, original, v))
     })
     clearAllUserPreferences.connect({ commands, keyboard }, () => {
       log.notice(`clear all: '${name}'`)
       const keys: string[] = []
+      const localStorage = ctx.getLocalStorage()
       // have to iterate and get all keys first.
       // removing item mid-loop screw up key index.
-      for (let i = 0; i < ctx.localStorage.length; i++) {
-        keys.push(ctx.localStorage.key(i)!)
+      for (let i = 0; i < localStorage.length; i++) {
+        keys.push(localStorage.key(i)!)
       }
-      keys.filter(k => k.startsWith(`${name}:`))
-        .forEach(k => {
+      keys
+        .filter((k) => k.startsWith(`${name}:`))
+        .forEach((k) => {
           log.trace(`clear all: clear '${k}'`)
-          ctx.localStorage.removeItem(k)
+          localStorage.removeItem(k)
         })
     })
   }
@@ -50,7 +57,7 @@ function getKey(id: string, key: string) {
  * @param k resolved key
  */
 function getItem(k: string) {
-  return deserialize(ctx.localStorage.getItem(k))
+  return deserialize(ctx.getLocalStorage().getItem(k))
 }
 
 function serialize(value: string) {
@@ -61,13 +68,19 @@ function deserialize(value: string | null) {
   return value === null ? undefined : decode(value)
 }
 
-function setHandler({ log }: LogContext, k: string, original: string | undefined, v: string | undefined | typeof nothing) {
+function setHandler(
+  { log }: LogContext,
+  k: string,
+  original: string | undefined,
+  v: string | undefined | typeof nothing
+) {
+  const localStorage = ctx.getLocalStorage()
   if (isNothing(v) || v === undefined) {
     log.trace(`set: clear '${k}'`)
-    ctx.localStorage.removeItem(k)
+    localStorage.removeItem(k)
   }
   else {
     log.trace(`set: '${k}' ${original} -> ${v}`)
-    ctx.localStorage.setItem(k, serialize(v))
+    localStorage.setItem(k, serialize(v))
   }
 }
