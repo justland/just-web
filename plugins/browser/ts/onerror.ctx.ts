@@ -1,1 +1,5 @@
-export const ctx = { window }
+export const ctx = {
+  getWindow() {
+    return window
+  }
+ }

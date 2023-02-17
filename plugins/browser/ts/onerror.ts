@@ -9,16 +9,14 @@ export namespace registerOnErrorHandler {
   }
 
   export type Options = {
-    errors: ErrorStore,
+    errors: ErrorStore
     preventDefault: boolean
   } & LogContext
 }
 
-export function registerOnErrorHandler(
-  { errors, preventDefault, log }: registerOnErrorHandler.Options
-) {
+export function registerOnErrorHandler({ errors, preventDefault, log }: registerOnErrorHandler.Options) {
   const logger = log.getNonConsoleLogger('@just-web/browser')
-  const { window } = ctx
+  const window = ctx.getWindow()
   window.onerror = function justWebOnError(event, source, lineno, colno, error) {
     const e = new BrowserError(event, source, lineno, colno, error)
     errors.add(e)
