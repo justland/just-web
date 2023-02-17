@@ -4,12 +4,8 @@ import { ErrorStore } from './errorStore.js'
 import { ctx } from './onerror.ctx.js'
 
 export namespace registerOnErrorHandler {
-  export interface Ctx {
-    window: Window & typeof globalThis
-  }
-
   export type Options = {
-    errors: ErrorStore
+    errors: ErrorStore,
     preventDefault: boolean
   } & LogContext
 }
