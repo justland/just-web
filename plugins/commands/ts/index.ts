@@ -14,8 +14,8 @@ export type { CommandContribution, CommandHandler, CommandsContext, Contribution
 export const showCommandPalette = command({
   id: 'just-web.showCommandPalette',
   commandPalette: false,
-  key: 'ctrl+p',
-  mac: 'cmd+p'
+  key: 'ctrl+k',
+  mac: 'cmd+k'
 })
 
 export type CommandsOptions = {
