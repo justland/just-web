@@ -2,12 +2,12 @@ import { createTestApp } from '@just-web/app'
 import {{camelCase name}}Plugin, { {{pascalCase name}}Options } from './index.js'
 
 describe('{{camelCase name}}Plugin', () => {
-  it('...', () => {
-    const { {{name}} } = setupTestApp()
-  })
+	it('...', () => {
+		const { {{name}} } = setupTestApp()
+	})
 })
 
 function setupTestApp(options?: {{pascalCase name}}Options) {
-  return createTestApp()
-    .extend({{camelCase name}}Plugin(options))
+	return createTestApp()
+		.extend({{camelCase name}}Plugin(options))
 }

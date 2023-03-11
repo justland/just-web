@@ -1,5 +1,5 @@
 /** @type {import('jest').Config} */
 export default {
-  preset: '@repobuddy/jest/presets/ts-esm-watch',
-  displayName: 'log'
+	preset: '@repobuddy/jest/presets/ts-esm-watch',
+	displayName: 'log'
 }

@@ -1,53 +1,51 @@
 {
-  "files": [],
-  "exclude": [
-    "plops"
-  ],
-  "references": [
-    {
-      "path": "frameworks/app"
-    },
-    {
-      "path": "frameworks/log"
-    },
-    {
-      "path": "frameworks/types"
-    },
-    {
-      "path": "libraries/states"
-    },
-    {
-      "path": "plugins/browser"
-    },
-    {
-      "path": "plugins/browser-keyboard"
-    },
-    {
-      "path": "plugins/commands"
-    },
-    {
-      "path": "plugins/keyboard"
-    },
-    {
-      "path": "plugins/events"
-    },
-    {
-      "path": "plugins/history"
-    },
-    {
-      "path": "plugins/os"
-    },
-    {
-      "path": "plugins/routes"
-    },
-    {
-      "path": "presets/browser"
-    },
-    {
-      "path": "tools/repo-scripts"
-    },
-    {
-      "path": "tools/testing"
-    }
-  ]
+	"files": [],
+	"exclude": ["plops"],
+	"references": [
+		{
+			"path": "frameworks/app"
+		},
+		{
+			"path": "frameworks/log"
+		},
+		{
+			"path": "frameworks/types"
+		},
+		{
+			"path": "libraries/states"
+		},
+		{
+			"path": "plugins/browser"
+		},
+		{
+			"path": "plugins/browser-keyboard"
+		},
+		{
+			"path": "plugins/commands"
+		},
+		{
+			"path": "plugins/keyboard"
+		},
+		{
+			"path": "plugins/events"
+		},
+		{
+			"path": "plugins/history"
+		},
+		{
+			"path": "plugins/os"
+		},
+		{
+			"path": "plugins/routes"
+		},
+		{
+			"path": "presets/browser"
+		},
+		{
+			"path": "tools/repo-scripts"
+		},
+		{
+			"path": "tools/testing"
+		}
+	]
 }

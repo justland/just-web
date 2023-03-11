@@ -5,44 +5,41 @@ import { AssertOrder } from 'assertron'
 import commandsPlugin, { showCommandPalette } from './index.js'
 
 describe('plugin.init()', () => {
-  test('basic case', () => {
-    const [{ log }] = logTestPlugin().init()
-    const [{ keyboard }] = keyboardPlugin().init({ log })
-    commandsPlugin().init({ log, keyboard })
-  })
+	test('basic case', () => {
+		const [{ log }] = logTestPlugin().init()
+		const [{ keyboard }] = keyboardPlugin().init({ log })
+		commandsPlugin().init({ log, keyboard })
+	})
 
-  it('supports predefined commands', () => {
-    const [{ log }] = logTestPlugin().init()
-    const [{ keyboard }] = keyboardPlugin().init({ log })
+	it('supports predefined commands', () => {
+		const [{ log }] = logTestPlugin().init()
+		const [{ keyboard }] = keyboardPlugin().init({ log })
 
-    const d = log.getLogger('test')
-    const [{ commands }] = commandsPlugin({
-      commands: {
-        handlers: {
-          'a': () => d.info('exec a'),
-          'b': () => d.info('exec b')
-        }
-      }
-    }).init({ log, keyboard })
+		const d = log.getLogger('test')
+		const [{ commands }] = commandsPlugin({
+			commands: {
+				handlers: {
+					a: () => d.info('exec a'),
+					b: () => d.info('exec b')
+				}
+			}
+		}).init({ log, keyboard })
 
-    commands.handlers.invoke('a')
-    commands.handlers.invoke('b')
+		commands.handlers.invoke('a')
+		commands.handlers.invoke('b')
 
-    logEqual(log.reporter,
-      '(INFO) exec a',
-      '(INFO) exec b'
-    )
-  })
+		logEqual(log.reporter, '(INFO) exec a', '(INFO) exec b')
+	})
 
-  it('provides showCommandPalette()', () => {
-    const [{ log }] = logTestPlugin().init()
-    const [{ keyboard }] = keyboardPlugin().init({ log })
-    const [{ commands }] = commandsPlugin().init({ log, keyboard })
-    const o = new AssertOrder(1)
+	it('provides showCommandPalette()', () => {
+		const [{ log }] = logTestPlugin().init()
+		const [{ keyboard }] = keyboardPlugin().init({ log })
+		const [{ commands }] = commandsPlugin().init({ log, keyboard })
+		const o = new AssertOrder(1)
 
-    showCommandPalette.connect({ commands, keyboard }, () => o.once(1))
+		showCommandPalette.connect({ commands, keyboard }, () => o.once(1))
 
-    commands.showCommandPalette()
-    o.end()
-  })
+		commands.showCommandPalette()
+		o.end()
+	})
 })

@@ -5,35 +5,35 @@ import type { AnyFunction } from 'type-plus'
 import type { HandlerRegistry } from './types.js'
 
 export namespace handlerRegistry {
-  export type Options = Record<string, AnyFunction>
+	export type Options = Record<string, AnyFunction>
 }
 
-export function handlerRegistry(
-  { log }: LogContext,
-  options?: handlerRegistry.Options): HandlerRegistry {
-  const logger = log.getLogger('@just-web/commands')
+export function handlerRegistry({ log }: LogContext, options?: handlerRegistry.Options): HandlerRegistry {
+	const logger = log.getLogger('@just-web/commands')
 
-  const registry = createRegistry<string, (...args: any[]) => void>(options)
+	const registry = createRegistry<string, (...args: any[]) => void>(options)
 
-  return {
-    /**
-     * register handler for specified command.
-     */
-    register(id: string, handler: AnyFunction) {
-      logger.trace('register', id)
-      const commands = registry.get()
-      if (commands[id]) {
-        logger.notice(`Registring a new handler for '${id}'. Please make sure this is expected.`)
-        logger.on(logLevels.debug, log => log(`overrideing handler: ${tersify(handler)}`))
-      }
-      registry.update(m => { m[id] = handler })
-    },
-    invoke(id: string, ...args: any[]) {
-      logger.trace('invoke', id)
-      const handler = registry.get()[id]
-      return handler ? handler(...args) : logger.error(`Invoking not registered command: '${id}'`)
-    },
-    keys: registry.keys.bind(registry),
-    has: registry.has.bind(registry)
-  }
+	return {
+		/**
+		 * register handler for specified command.
+		 */
+		register(id: string, handler: AnyFunction) {
+			logger.trace('register', id)
+			const commands = registry.get()
+			if (commands[id]) {
+				logger.notice(`Registring a new handler for '${id}'. Please make sure this is expected.`)
+				logger.on(logLevels.debug, log => log(`overrideing handler: ${tersify(handler)}`))
+			}
+			registry.update(m => {
+				m[id] = handler
+			})
+		},
+		invoke(id: string, ...args: any[]) {
+			logger.trace('invoke', id)
+			const handler = registry.get()[id]
+			return handler ? handler(...args) : logger.error(`Invoking not registered command: '${id}'`)
+		},
+		keys: registry.keys.bind(registry),
+		has: registry.has.bind(registry)
+	}
 }

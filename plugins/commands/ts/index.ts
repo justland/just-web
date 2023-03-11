@@ -9,39 +9,48 @@ import type { CommandContribution, CommandsContext } from './types.js'
 
 export * from './command.js'
 export * from './formatCommand.js'
-export type { CommandContribution, CommandHandler, CommandsContext, ContributionRegistry, HandlerRegistry, Command } from './types.js'
+export type {
+	CommandContribution,
+	CommandHandler,
+	CommandsContext,
+	ContributionRegistry,
+	HandlerRegistry,
+	Command
+} from './types.js'
 
 export const showCommandPalette = command({
-  id: 'just-web.showCommandPalette',
-  commandPalette: false,
-  key: 'ctrl+k',
-  mac: 'cmd+k'
+	id: 'just-web.showCommandPalette',
+	commandPalette: false,
+	key: 'ctrl+k',
+	mac: 'cmd+k'
 })
 
 export type CommandsOptions = {
-  commands?: {
-    contributions?: Array<CommandContribution>,
-    handlers?: Record<string, AnyFunction>,
-  }
+	commands?: {
+		contributions?: Array<CommandContribution>
+		handlers?: Record<string, AnyFunction>
+	}
 }
 
 const commandsPlugin = definePlugin((options?: CommandsOptions) => ({
-  name: '@just-web/commands',
-  init: (ctx: LogContext & Partial<KeyboardContext>): [CommandsContext] => {
-    const contributions = contributionRegistry(ctx, options?.commands?.contributions)
-    const handlers = handlerRegistry(ctx, options?.commands?.handlers)
+	name: '@just-web/commands',
+	init: (ctx: LogContext & Partial<KeyboardContext>): [CommandsContext] => {
+		const contributions = contributionRegistry(ctx, options?.commands?.contributions)
+		const handlers = handlerRegistry(ctx, options?.commands?.handlers)
 
-    contributions.add(showCommandPalette)
-    ctx.keyboard?.keyBindingContributions.add(showCommandPalette)
+		contributions.add(showCommandPalette)
+		ctx.keyboard?.keyBindingContributions.add(showCommandPalette)
 
-    return [{
-      commands: {
-        contributions,
-        handlers,
-        showCommandPalette
-      }
-    }]
-  }
+		return [
+			{
+				commands: {
+					contributions,
+					handlers,
+					showCommandPalette
+				}
+			}
+		]
+	}
 }))
 
 export default commandsPlugin

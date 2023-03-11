@@ -2,12 +2,12 @@ import { createStore, push, Store, withAdder, WithAdder } from '@just-web/states
 import { pick } from 'type-plus'
 import { ReadonlyErrorStore } from './types.js'
 
-export interface ErrorStore extends Store<Error[]>, WithAdder<Error> { }
+export interface ErrorStore extends Store<Error[]>, WithAdder<Error> {}
 
 export function createErrorStore(): ErrorStore {
-  return withAdder(createStore<Error[]>([]), push)
+	return withAdder(createStore<Error[]>([]), push)
 }
 
 export function toReadonlyErrorStore(store: ErrorStore): ReadonlyErrorStore {
-  return pick(store, 'get', 'onChange')
+	return pick(store, 'get', 'onChange')
 }

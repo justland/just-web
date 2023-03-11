@@ -1,32 +1,32 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
-  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
-    "onlyUpdatePeerDependentsWhenOutOfRange": true,
-    "updateInternalDependents": "always"
-  },
-  "access": "public",
-  "baseBranch": "main",
-  "changelog": "@changesets/cli/changelog",
-  "commit": false,
-  "fixed": [
-    [
-      "@just-web/app",
-      "@just-web/browser-keyboard",
-      "@just-web/browser-preferences",
-      "@just-web/browser",
-      "@just-web/commands",
-      "@just-web/events",
-      "@just-web/keyboard",
-      "@just-web/log",
-      "@just-web/os",
-      "@just-web/preferences",
-      "@just-web/routes",
-      "@just-web/states",
-      "@just-web/types"
-    ]
-  ],
-  "ignore": [],
-  "linked": [],
-  "title": "chore: version packages",
-  "updateInternalDependencies": "patch"
+	"$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
+	"___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+		"onlyUpdatePeerDependentsWhenOutOfRange": true,
+		"updateInternalDependents": "always"
+	},
+	"access": "public",
+	"baseBranch": "main",
+	"changelog": "@changesets/cli/changelog",
+	"commit": false,
+	"fixed": [
+		[
+			"@just-web/app",
+			"@just-web/browser-keyboard",
+			"@just-web/browser-preferences",
+			"@just-web/browser",
+			"@just-web/commands",
+			"@just-web/events",
+			"@just-web/keyboard",
+			"@just-web/log",
+			"@just-web/os",
+			"@just-web/preferences",
+			"@just-web/routes",
+			"@just-web/states",
+			"@just-web/types"
+		]
+	],
+	"ignore": [],
+	"linked": [],
+	"title": "chore: version packages",
+	"updateInternalDependencies": "patch"
 }

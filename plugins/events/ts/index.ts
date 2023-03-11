@@ -6,27 +6,27 @@ export { justEvent } from '@unional/events-plus'
 export type { JustEventDuo, JustEventEmpty, JustEventUno } from '@unional/events-plus'
 
 export type EventsOptions<E extends EventEmitterLike> = {
-  events?: {
-    emitter?: E
-  }
+	events?: {
+		emitter?: E
+	}
 }
 
 export type EventsContext<E extends EventEmitterLike> = {
-  events: {
-    emitter: E
-  }
+	events: {
+		emitter: E
+	}
 }
 
 const eventsPlugin = <E extends EventEmitterLike = EventEmitter>(options?: EventsOptions<E>) => ({
-  name: '@just-web/events',
-  init: (ctx: LogContext): [EventsContext<E>] =>
-    [
-      {
-        events: {
-          emitter: trapError(options?.events?.emitter ?? new EventEmitter(), ctx.log)
-        }
-      }
-    ] as any
+	name: '@just-web/events',
+	init: (ctx: LogContext): [EventsContext<E>] =>
+		[
+			{
+				events: {
+					emitter: trapError(options?.events?.emitter ?? new EventEmitter(), ctx.log)
+				}
+			}
+		] as any
 })
 
 export default eventsPlugin

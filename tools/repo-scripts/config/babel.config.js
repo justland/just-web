@@ -1,18 +1,19 @@
 module.exports = {
-  env: {
-    test: {
-      presets: [[
-        '@babel/preset-env',
-        {
-          // debug: true,
-          targets: {
-            node: 'current',
-          },
-        },
-      ], ['@babel/preset-typescript', { allowNamespaces: true }]],
-      plugins: [
-        '@babel/plugin-transform-runtime'
-      ]
-    }
-  }
+	env: {
+		test: {
+			presets: [
+				[
+					'@babel/preset-env',
+					{
+						// debug: true,
+						targets: {
+							node: 'current'
+						}
+					}
+				],
+				['@babel/preset-typescript', { allowNamespaces: true }]
+			],
+			plugins: ['@babel/plugin-transform-runtime']
+		}
+	}
 }

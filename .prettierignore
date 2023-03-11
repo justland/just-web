@@ -1,0 +1,9 @@
+cjs/
+coverage/
+esm/
+fixtures/
+lib/
+*.hbs
+*.md
+*.yml
+*.yaml
