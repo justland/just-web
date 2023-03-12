@@ -35,7 +35,7 @@ export namespace PluginModule {
 	}
 
 	/**
-	 * TypeB are plugins with `PluginContext` but no `StartContext`.
+	 * TypeB are plugins with `PluginContext`.
 	 */
 	export type TypeB<
 		NeedContext extends Record<string | symbol, any>,
@@ -45,7 +45,7 @@ export namespace PluginModule {
 	}
 
 	/**
-	 * TypeB are plugins with `PluginContext` but no `StartContext`.
+	 * TypeB are plugins with `PluginContext`.
 	 */
 	export type TypeB_WithStart<
 		NeedContext extends Record<string | symbol, any>,
@@ -58,8 +58,7 @@ export namespace PluginModule {
 
 export type PluginModule<
 	NeedContext extends Record<string | symbol, any> = Record<string | symbol, any>,
-	PluginContext extends Record<string | symbol, any> = Record<string | symbol, any>,
-	StartContext extends Record<string | symbol, any> = Record<string | symbol, any>
+	PluginContext extends Record<string | symbol, any> = Record<string | symbol, any>
 > =
 	| PluginModule.TypeA<NeedContext>
 	| PluginModule.TypeA_WithStart<NeedContext>
