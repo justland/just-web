@@ -20,7 +20,7 @@ export const requiredPlugin = definePlugin(() => ({
 	name: 'required',
 	required: [simplePlugin],
 	async define(ctx) {
-		isType.equal<true, Plugin.Loader & { simple: { foo(): number } }, typeof ctx>()
+		isType.equal<true, { simple: { foo(): number } }, typeof ctx>()
 		return {
 			required: {
 				foo() {
@@ -35,7 +35,7 @@ export const optionalPlugin = definePlugin(() => ({
 	name: 'optional',
 	optional: [simplePlugin],
 	async define(ctx) {
-		isType.equal<true, Plugin.Loader & { simple?: { foo(): number } }, typeof ctx>()
+		isType.equal<true, { simple?: { foo(): number } }, typeof ctx>()
 		return {
 			optional: {
 				foo(): number {
@@ -50,11 +50,7 @@ export const requiredBothPlugin = definePlugin(() => ({
 	name: 'required-both',
 	required: [optionalPlugin, requiredPlugin],
 	async define(ctx) {
-		isType.equal<
-			true,
-			Plugin.Loader & { optional: { foo(): number }; required: { foo(): number } },
-			typeof ctx
-		>()
+		isType.equal<true, { optional: { foo(): number }; required: { foo(): number } }, typeof ctx>()
 		return {
 			required_both: {
 				optional() {
@@ -72,11 +68,7 @@ export const optionalBothPlugin = definePlugin(() => ({
 	name: 'optional-both',
 	optional: [optionalPlugin, requiredPlugin],
 	async define(ctx) {
-		isType.equal<
-			true,
-			Plugin.Loader & { optional?: { foo(): number }; required?: { foo(): number } },
-			typeof ctx
-		>()
+		isType.equal<true, { optional?: { foo(): number }; required?: { foo(): number } }, typeof ctx>()
 		return {
 			optional_both: {
 				optional() {
@@ -95,11 +87,7 @@ export const mixPlugin = definePlugin(() => ({
 	required: [requiredPlugin],
 	optional: [optionalPlugin],
 	async define(ctx) {
-		isType.equal<
-			true,
-			Plugin.Loader & { optional?: { foo(): number }; required: { foo(): number } },
-			typeof ctx
-		>()
+		isType.equal<true, { optional?: { foo(): number }; required: { foo(): number } }, typeof ctx>()
 		return {
 			optional_both: {
 				optional() {
@@ -113,10 +101,11 @@ export const mixPlugin = definePlugin(() => ({
 	}
 }))
 
-export const useDynamicPlugin = definePlugin<[Simple2Plugin]>(() => ({
+export const useDynamicPlugin = definePlugin<{ simple2: Simple2Plugin }>(() => ({
 	name: 'use-dynamic',
 	async define(ctx) {
-		const d = await ctx.load<Simple2Plugin>('simple2')
+		isType.equal<true, Plugin.Loader<{ simple2: Simple2Plugin }>, typeof ctx>()
+		const d = await ctx.load('simple2')
 		return {
 			dynamic: {
 				foo() {
