@@ -1,7 +1,7 @@
 import { isType } from 'type-plus'
-import { Simple2Plugin } from './plugin.fixtures.simple2.js'
+import type { Simple2Plugin } from './plugin.fixtures.simple2.js'
 import { definePlugin } from './plugin.js'
-import { Plugin } from './plugin.types.js'
+import type { Plugin } from './plugin.types.js'
 
 export const simplePlugin = definePlugin(() => ({
 	name: 'simple',
@@ -101,7 +101,7 @@ export const mixPlugin = definePlugin(() => ({
 	}
 }))
 
-export const useDynamicPlugin = definePlugin<{ simple2: Simple2Plugin }>(() => ({
+export const useDynamicPlugin = definePlugin<void, { simple2: Simple2Plugin }>(() => ({
 	name: 'use-dynamic',
 	async define(ctx) {
 		isType.equal<true, Plugin.Loader<{ simple2: Simple2Plugin }>, typeof ctx>()
@@ -110,6 +110,42 @@ export const useDynamicPlugin = definePlugin<{ simple2: Simple2Plugin }>(() => (
 			dynamic: {
 				foo() {
 					return d.simple2.foo()
+				}
+			}
+		}
+	}
+}))
+
+export type NavigateContext = {
+	navigate: {
+		goBack(): void
+	}
+}
+
+export const implementPlugin = definePlugin(() => ({
+	name: 'implement',
+	async define(): Promise<NavigateContext> {
+		return {
+			navigate: {
+				goBack() {}
+			}
+		}
+	}
+}))
+
+export type NavigatePlugin = Plugin<{
+	navigate: {
+		goBack(): void
+	}
+}>
+
+export const useAbstractPlugin = definePlugin<NavigatePlugin>(() => ({
+	name: 'use-abstract',
+	async define(ctx) {
+		return {
+			use_abstract: {
+				goBack() {
+					return ctx.navigate.goBack()
 				}
 			}
 		}
