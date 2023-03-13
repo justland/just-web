@@ -79,7 +79,7 @@ export namespace Plugin {
 
 	export type AllPlugins<
 		Static extends AllPlugins<any, any, any> | void = void,
-		Dynamic extends Record<string, AllPlugins<any, any, any>> | void = Record<string, any>,
+		Dynamic extends Record<string, AllPlugins<any, any, any>> | void = void,
 		Params extends any[] = [],
 		RequiredPlugins extends Array<AllPlugins<any, any, any>> = [],
 		OptionalPlugins extends Array<AllPlugins<any, any, any>> = [],
