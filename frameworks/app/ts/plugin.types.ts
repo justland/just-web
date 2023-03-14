@@ -26,7 +26,7 @@ export namespace Plugin {
 		Dynamic extends Record<string, AllPlugins<any, any, any>> | void,
 		PluginContext extends Record<string | symbol, any>
 	> = PluginBase & {
-		define(ctx: Loader<Dynamic> & PluginResultContext<Static>): Promise<PluginContext>
+		define(ctx: ContextBase & Loader<Dynamic> & PluginResultContext<Static>): Promise<PluginContext>
 	}
 
 	export type TypeB<
@@ -37,7 +37,7 @@ export namespace Plugin {
 	> = PluginBase & {
 		required: RequiredPlugins
 		define(
-			ctx: Loader<Dynamic> & PluginResultContext<Static> & DefineContexts<RequiredPlugins>
+			ctx: ContextBase & Loader<Dynamic> & PluginResultContext<Static> & DefineContexts<RequiredPlugins>
 		): Promise<PluginContext>
 	}
 
@@ -49,7 +49,10 @@ export namespace Plugin {
 	> = PluginBase & {
 		optional: OptionalPlugins
 		define(
-			ctx: Loader<Dynamic> & PluginResultContext<Static> & Partial<DefineContexts<OptionalPlugins>>
+			ctx: ContextBase &
+				Loader<Dynamic> &
+				PluginResultContext<Static> &
+				Partial<DefineContexts<OptionalPlugins>>
 		): Promise<PluginContext>
 	}
 
@@ -63,11 +66,16 @@ export namespace Plugin {
 		required: RequiredPlugins
 		optional: OptionalPlugins
 		define(
-			ctx: Loader<Dynamic> &
+			ctx: ContextBase &
+				Loader<Dynamic> &
 				PluginResultContext<Static> &
 				DefineContexts<RequiredPlugins> &
 				Partial<DefineContexts<OptionalPlugins>>
 		): Promise<PluginContext>
+	}
+
+	export type ContextBase = {
+		name: string
 	}
 
 	export type Loader<Dynamic extends Record<string, AllPlugins<any, any, any>> | void> =
@@ -80,7 +88,7 @@ export namespace Plugin {
 	export type AllPlugins<
 		Static extends AllPlugins<any, any, any> | void = void,
 		Dynamic extends Record<string, AllPlugins<any, any, any>> | void = void,
-		Params extends any[] = [],
+		Params extends any[] = any[],
 		RequiredPlugins extends Array<AllPlugins<any, any, any>> = [],
 		OptionalPlugins extends Array<AllPlugins<any, any, any>> = [],
 		PluginContext extends Record<string | symbol, any> = Record<string | symbol, any>
@@ -93,8 +101,10 @@ export namespace Plugin {
 		| Plugin.TypeD<Static, Dynamic, RequiredPlugins, OptionalPlugins, PluginContext>
 }
 
-export type Plugin<PluginContext extends Record<string | symbol, any> = Record<string | symbol, any>> =
-	Plugin.AllPlugins<void, void, [], [], [], PluginContext>
+export type Plugin<
+	PluginContext extends Record<string | symbol, any> = Record<string | symbol, any>,
+	Params extends any[] = any[]
+> = Plugin.AllPlugins<void, void, Params, [], [], PluginContext>
 
 /**
  * Gets the `PluginContext` type from the plugin.
