@@ -6,7 +6,7 @@ it(`requires a name`, async () => {
 	expect(app.name).toEqual('app-name')
 })
 
-it('generates an 15 chars long app id', async () => {
+it('generates a 15 chars long app id', async () => {
 	const app = await appBuilder({ name: 'test' }).build()
 
 	expect(app.id.length).toEqual(15)

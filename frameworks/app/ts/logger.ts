@@ -1,8 +1,6 @@
-import {
-	getLogger, type LogMethodNames
-} from 'standard-log'
-import { LogPlugin } from './log_plugin.types.js'
-import { PluginContext } from './plugin.types.js'
+import { getLogger, type LogMethodNames } from 'standard-log'
+import type { LogPlugin } from './log_plugin.types.js'
+import type { PluginContext } from './plugin.types.js'
 
 export function createPrefixedGetLogger<N extends string = LogMethodNames>(
 	context: PluginContext<LogPlugin<N>>,
