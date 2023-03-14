@@ -33,3 +33,8 @@ export function definePlugin<
 export function definePlugin(plugin: unknown): typeof plugin {
 	return plugin
 }
+
+/**
+ * definePlugin -> defineAsyncClassMacro
+ * passing asyncContext?
+ */
