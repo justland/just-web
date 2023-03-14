@@ -2,8 +2,8 @@ import {
 	DEFAULT_LOG_METHOD_NAMES, type LogMethodNames, type StandardLog
 } from 'standard-log'
 import { getLoggerID } from './logger.js'
-import { LogOptions, LogPlugin } from './log_plugin.types.js'
-import { PluginContext } from './plugin.types.js'
+import type { LogOptions, LogPlugin } from './log_plugin.types.js'
+import type { PluginContext } from './plugin.types.js'
 
 export function buildLogContext<N extends string = LogMethodNames>(
 	name: string,
