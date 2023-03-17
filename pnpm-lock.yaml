@@ -82,11 +82,11 @@ importers:
       satisfier: ^5.4.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       iso-error: 6.0.0
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/log': link:../log
       '@just-web/os': link:../../plugins/os
@@ -138,12 +138,12 @@ importers:
       size-limit: ~8.2.0
       standard-log: ^11.5.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       '@just-func/types': 0.5.0
       standard-log: 11.5.0
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@just-web/types': link:../types
@@ -187,11 +187,11 @@ importers:
       size-limit: ~8.2.0
       standard-log: ^11.5.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       standard-log: 11.5.0
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
@@ -236,13 +236,13 @@ importers:
       size-limit: ~8.2.0
       tersify: ^3.10.2
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       '@just-web/log': link:../../frameworks/log
       immer: /@unional/immer/9.0.0-beta.2
       tersify: 3.10.5
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/repo-scripts': link:../../tools/repo-scripts
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
@@ -291,11 +291,11 @@ importers:
       satisfier: ^5.4.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       iso-error: 6.0.0
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/log': link:../../frameworks/log
       '@just-web/repo-scripts': link:../../tools/repo-scripts
@@ -351,11 +351,11 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       mousetrap: 1.6.5
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/commands': link:../commands
       '@just-web/keyboard': link:../keyboard
@@ -415,13 +415,13 @@ importers:
       satisfier: ^5.4.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       '@just-web/states': link:../../libraries/states
       immer: /@unional/immer/9.0.0-beta.2
       js-base64: 3.7.3
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/app': link:../../frameworks/app
       '@just-web/commands': link:../commands
@@ -481,12 +481,12 @@ importers:
       standard-log: ^11.5.0
       tersify: ^3.10.2
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       sentence-case: 3.0.4
       tersify: 3.10.5
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@jest/globals': 29.3.1
       '@just-web/keyboard': link:../keyboard
@@ -592,7 +592,7 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     devDependencies:
       '@just-web/app': link:../../frameworks/app
@@ -616,7 +616,7 @@ importers:
       rimraf: 3.0.2
       size-limit: 8.2.3
       ts-jest: 29.0.3_mijwgoo2vxn4kjsshpqqvgpncu
-      type-plus: 5.0.0
+      type-plus: 6.0.0
       typescript: 5.0.2
 
   plugins/keyboard:
@@ -644,10 +644,10 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/log': link:../../frameworks/log
       '@just-web/os': link:../os
@@ -698,7 +698,7 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       platform: 1.3.6
@@ -724,7 +724,7 @@ importers:
       rimraf: 3.0.2
       size-limit: 8.2.3
       ts-jest: 29.0.3_mijwgoo2vxn4kjsshpqqvgpncu
-      type-plus: 5.0.0
+      type-plus: 6.0.0
       typescript: 5.0.2
 
   plugins/preferences:
@@ -755,7 +755,7 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       '@just-web/states': link:../../libraries/states
@@ -785,7 +785,7 @@ importers:
       rimraf: 3.0.2
       size-limit: 8.2.3
       ts-jest: 29.0.3_mijwgoo2vxn4kjsshpqqvgpncu
-      type-plus: 5.0.0
+      type-plus: 6.0.0
       typescript: 5.0.2
 
   plugins/routes:
@@ -813,10 +813,10 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@just-web/app': link:../../frameworks/app
       '@just-web/log': link:../../frameworks/log
@@ -872,7 +872,7 @@ importers:
       rimraf: ~3.0.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       '@just-web/browser': link:../../plugins/browser
@@ -903,7 +903,7 @@ importers:
       rimraf: 3.0.2
       size-limit: 8.2.3
       ts-jest: 29.0.3_mijwgoo2vxn4kjsshpqqvgpncu
-      type-plus: 5.0.0
+      type-plus: 6.0.0
       typescript: 5.0.2
 
   tools/repo-scripts:
@@ -986,7 +986,7 @@ importers:
       satisfier: ^5.4.2
       size-limit: ~8.2.0
       ts-jest: ^29.0.3
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       '@just-web/log': link:../../frameworks/log
@@ -1011,7 +1011,7 @@ importers:
       rimraf: 3.0.2
       size-limit: 8.2.3
       ts-jest: 29.0.3_mijwgoo2vxn4kjsshpqqvgpncu
-      type-plus: 5.0.0
+      type-plus: 6.0.0
       typescript: 5.0.2
 
 packages:
@@ -8696,6 +8696,13 @@ packages:
 
   /type-plus/5.0.0:
     resolution: {integrity: sha512-nKp5pOQDldmR9BdEjLplLFwiXTVhOK2kReBSgVJ65URDLXCqENYzVDCONaExADIIc1CAGzvzTkB0TUgMAWR2qQ==}
+    dependencies:
+      tersify: 3.11.1
+      unpartial: 1.0.4
+    dev: true
+
+  /type-plus/6.0.0:
+    resolution: {integrity: sha512-ezkCTr6LGC87w9LHc83XJnJFfaeEa/nPhr4yzBKv2+Pw0y4FXKHgrJ2GWM4H1nSKzcEPv4q/Sfw4MKmi8NTxbg==}
     dependencies:
       tersify: 3.11.1
       unpartial: 1.0.4

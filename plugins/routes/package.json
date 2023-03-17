@@ -53,7 +53,7 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"type-plus": "^5.0.0"
+		"type-plus": "^6.0.0"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",

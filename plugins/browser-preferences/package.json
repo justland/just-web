@@ -57,7 +57,7 @@
 		"@just-web/states": "workspace:^",
 		"immer": "npm:@unional/immer@^9.0.0-beta.2",
 		"js-base64": "^3.7.3",
-		"type-plus": "^5.0.0"
+		"type-plus": "^6.0.0"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",

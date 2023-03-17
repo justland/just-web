@@ -55,7 +55,7 @@
 	},
 	"dependencies": {
 		"iso-error": "~6.0.0",
-		"type-plus": "^5.0.0"
+		"type-plus": "^6.0.0"
 	},
 	"devDependencies": {
 		"@just-web/log": "workspace:^",
