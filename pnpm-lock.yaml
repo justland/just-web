@@ -928,7 +928,7 @@ importers:
       jest-watch-suspend: ^1.1.2
       jest-watch-toggle-config: ^2.0.1
       jest-watch-typeahead: ^2.2.1
-      npm-check-updates: ~16.8.0
+      npm-check-updates: ~16.9.0
       npm-run-all: ^4.1.5
       rimraf: ~3.0.2
       size-limit: ~8.2.0
@@ -952,7 +952,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@29.3.1
       jest-watch-toggle-config: 2.0.1_5r7dcuxf46wmavd5vppjo4z2ka
       jest-watch-typeahead: 2.2.1_jest@29.3.1
-      npm-check-updates: 16.8.0
+      npm-check-updates: 16.9.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       ts-jest: 29.0.3_mijwgoo2vxn4kjsshpqqvgpncu
@@ -4805,7 +4805,7 @@ packages:
     resolution: {integrity: sha512-MhaJDcFRTuLidHrIttu0RDGyyXs/IYHVmlcxfLAEFIWjc1vdLAkdwT7Ace2u7DbitWC0toKMl5eJZRYNVreIMw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      minipass: 4.0.3
+      minipass: 4.2.5
     dev: false
 
   /fs.realpath/1.0.0:
@@ -6842,11 +6842,6 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /minipass/4.0.3:
-    resolution: {integrity: sha512-OW2r4sQ0sI+z5ckEt5c1Tri4xTgZwYDxpE54eqWlQloQRoWtXjqt9udJ5Z4dSv7wK+nfFI7FRXyCpBSft+gpFw==}
-    engines: {node: '>=8'}
-    dev: false
-
   /minipass/4.2.5:
     resolution: {integrity: sha512-+yQl7SX3bIT83Lhb4BVorMAHVuqsskxRdlmO9kTpyukp8vsm2Sn/fUOV9xlnG8/a5JsypJzap21lz/y3FBMJ8Q==}
     engines: {node: '>=8'}
@@ -7063,8 +7058,8 @@ packages:
       - supports-color
     dev: true
 
-  /npm-check-updates/16.8.0:
-    resolution: {integrity: sha512-2xpFtUPa2OyswC8kpIpxRqQcP/D0uqaBgfiOQAtvGlnDhmHr3QwR2gWjjWtS6xnNvgyyVly/4edY0Uu24c46ew==}
+  /npm-check-updates/16.9.0:
+    resolution: {integrity: sha512-AOAAre4AAPzB5p41E8vbkisx7FypdNCy4mkiF4mMUl6ptOUVkaMGlWVx1eqgmaoraeAnvhyByIGS+4LN7U+XHg==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
@@ -7397,7 +7392,7 @@ packages:
       '@npmcli/run-script': 6.0.0
       cacache: 17.0.2
       fs-minipass: 3.0.1
-      minipass: 4.0.3
+      minipass: 4.2.5
       npm-package-arg: 10.0.0
       npm-packlist: 7.0.2
       npm-pick-manifest: 8.0.1
