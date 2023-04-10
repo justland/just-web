@@ -10,7 +10,7 @@ import logPlugin, {
 } from '@just-web/log'
 import type { AppBaseContext, PluginModule, StartContext } from '@just-web/types'
 import { isType, LeftJoin, pick } from 'type-plus'
-import { ctx } from './createApp.ctx.js'
+import { ctx } from './app_gizmo.ctx.js'
 
 export namespace createApp {
 	export type Options<N extends string = LogMethodNames> = { name: string } & LogOptions<N>
