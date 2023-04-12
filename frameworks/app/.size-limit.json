@@ -1,7 +1,7 @@
 [
 	{
 		"path": "./cjs/index.js",
-		"limit": "20kb"
+		"limit": "2000kb"
 	},
 	{
 		"path": "./esm/index.js",

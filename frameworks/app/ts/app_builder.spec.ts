@@ -1,13 +1,38 @@
+import { define } from '@unional/gizmo'
+import { sideEffectGizmo } from '@unional/gizmo/testing'
+import { testType } from 'type-plus'
 import { appBuilder } from './app_builder.js'
+import { AppGizmo } from './app_gizmo.js'
+import { LogGizmo } from './log_gizmo.js'
 
 it(`requires a name`, async () => {
-	const app = await appBuilder({ name: 'app-name' }).build()
+	// @ts-expect-error
+	appBuilder({})
+
+	const app = await appBuilder({ name: 'app-name' }).create()
 
 	expect(app.name).toEqual('app-name')
 })
 
 it('generates a 15 chars long app id', async () => {
-	const app = await appBuilder({ name: 'test' }).build()
+	const app = await appBuilder({ name: 'test' }).create()
 
 	expect(app.id.length).toEqual(15)
+})
+
+it('can use a gizmo with only side effects', async () => {
+	const app = await appBuilder({ name: 'test' }).with(sideEffectGizmo).create()
+
+	testType.equal<typeof app, AppGizmo & LogGizmo>(true)
+})
+
+it('can use a gizmo returning single value tuple', async () => {
+	const g = define({
+		async create() {
+			return [{ a: 1 }]
+		}
+	})
+	const app = await appBuilder({ name: 'test' }).with(g).create()
+
+	testType.canAssign<typeof app, { a: number }>(true)
 })
