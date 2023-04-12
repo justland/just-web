@@ -8,18 +8,6 @@
 	"include": ["ts", "typings"],
 	"references": [
 		{
-			"path": "../../frameworks/log"
-		},
-		{
-			"path": "../../frameworks/framework"
-		},
-		{
-			"path": "../../frameworks/types"
-		},
-		{
-			"path": "../../plugins/os"
-		},
-		{
 			"path": "../../tools/repo-scripts"
 		}
 	]

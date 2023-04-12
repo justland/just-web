@@ -1,9 +1,7 @@
-import { define } from '@unional/gizmo'
-import { sideEffectGizmo } from '@unional/gizmo/testing'
+import { AppGizmo, LogGizmo, define } from '@just-web/framework'
+import { sideEffectGizmo } from '@just-web/framework/testing'
 import { testType } from 'type-plus'
 import { appBuilder } from './app_builder.js'
-import { AppGizmo } from './app_gizmo.js'
-import { LogGizmo } from './log_gizmo.js'
 
 it(`requires a name`, async () => {
 	// @ts-expect-error
