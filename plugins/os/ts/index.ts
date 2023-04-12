@@ -3,6 +3,7 @@ import { unpartial } from 'type-plus'
 import { isMac } from './os.js'
 
 export * from './os.js'
+export * from './os_gizmo.js'
 
 const osPlugin = definePlugin(() => ({
 	name: '@just-web/os',
