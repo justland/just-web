@@ -25,10 +25,24 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"types": "./esm/index.d.ts",
-			"import": "./esm/index.js",
-			"require": "./cjs/index.js",
-			"default": "./cjs/index.js"
+			"import": {
+				"types": "./esm/index.d.ts",
+				"default": "./esm/index.js"
+			},
+			"require": {
+				"types": "./cjs/index.d.ts",
+				"default": "./cjs/index.js"
+			}
+		},
+		"./testing": {
+			"import": {
+				"types": "./esm/testing/index.d.ts",
+				"default": "./esm/testing/index.js"
+			},
+			"require": {
+				"types": "./cjs/testing/index.d.ts",
+				"require": "./cjs/testing/index.js"
+			}
 		}
 	},
 	"main": "./cjs/index.js",
@@ -80,10 +94,11 @@
 		"rimraf": "~3.0.2",
 		"size-limit": "~8.2.0",
 		"ts-jest": "^29.0.3",
-		"type-plus": "^6.0.0",
+		"type-plus": "^6.4.0",
 		"typescript": "^5.0.0"
 	},
 	"peerDependencies": {
+		"@just-web/framework": "workspace:^",
 		"@just-web/log": "workspace:^",
 		"@just-web/types": "workspace:^"
 	},
