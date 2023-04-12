@@ -1,6 +1,4 @@
-import { incubate } from '@unional/gizmo'
-import { appGizmo, type AppGizmoOptions } from './app_gizmo.js'
-import { logGizmo, type LogGizmoOptions } from './log_gizmo.js'
+import { appGizmo, incubate, logGizmo, type AppGizmoOptions, type LogGizmoOptions } from '@just-web/framework'
 
 export type AppBuilderOptions = AppGizmoOptions & LogGizmoOptions
 

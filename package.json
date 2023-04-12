@@ -16,6 +16,7 @@
 		"dev": "turbo run dev --parallel",
 		"errors": "pnpm --filter=@just-web/errors",
 		"events": "pnpm --filter=@just-web/events",
+		"framework": "pnpm --filter=@just-web/framework",
 		"history": "pnpm --filter=@just-web/history",
 		"keyboard": "pnpm --filter=@just-web/keyboard",
 		"lint": "turbo run lint",

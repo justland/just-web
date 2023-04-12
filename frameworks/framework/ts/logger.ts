@@ -1,9 +1,8 @@
 import { getLogger, type LogMethodNames } from 'standard-log'
-import type { LogPlugin } from './log_plugin.types.js'
-import type { PluginContext } from './plugin.types.js'
+import type { LogGizmo } from './log_gizmo.js'
 
 export function createPrefixedGetLogger<N extends string = LogMethodNames>(
-	context: PluginContext<LogPlugin<N>>,
+	context: LogGizmo<N>,
 	prefix: string
 ): typeof getLogger<N> {
 	return function getLogger(id, options) {
@@ -12,7 +11,7 @@ export function createPrefixedGetLogger<N extends string = LogMethodNames>(
 }
 
 export function createPrefixedGetNonConsoleLogger<N extends string = LogMethodNames>(
-	context: PluginContext<LogPlugin<N>>,
+	context: LogGizmo<N>,
 	prefix: string
 ): typeof getLogger<N> {
 	return function getNonConsoleLogger(id, options) {
@@ -20,6 +19,6 @@ export function createPrefixedGetNonConsoleLogger<N extends string = LogMethodNa
 	}
 }
 
-export function getLoggerID(prefix: string, id: string) {
+function getLoggerID(prefix: string, id: string) {
 	return id ? `${prefix}:${id}` : prefix
 }

@@ -10,7 +10,12 @@ import logPlugin, {
 } from '@just-web/log'
 import type { AppBaseContext, PluginModule, StartContext } from '@just-web/types'
 import { isType, LeftJoin, pick } from 'type-plus'
-import { logic } from './app_gizmo.logic.js'
+
+const logic = {
+	genAppID() {
+		return (Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).substring(0, 15)
+	}
+}
 
 export namespace createApp {
 	export type Options<N extends string = LogMethodNames> = { name: string } & LogOptions<N>

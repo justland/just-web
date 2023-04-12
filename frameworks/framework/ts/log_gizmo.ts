@@ -1,11 +1,8 @@
 import { define } from '@unional/gizmo'
-import { StandardLogOptions, createStandardLog, type LogMethodNames } from 'standard-log'
+import { createStandardLog, type LogMethodNames } from 'standard-log'
 import { appGizmo, type AppGizmo } from './app_gizmo.js'
-import { buildLogContext } from './log_plugin.shared.js'
-
-export type LogGizmoOptions<N extends string = LogMethodNames> = {
-	log?: StandardLogOptions<N>
-}
+import { buildLogContext } from './log_gizmo.logic.js'
+import type { LogGizmoOptions } from './log_gizmo.types.js'
 
 export const logGizmo = define(<N extends string = LogMethodNames>(options?: LogGizmoOptions<N>) => ({
 	static: define.require(appGizmo),
