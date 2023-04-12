@@ -85,7 +85,7 @@ importers:
       type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
-      '@unional/gizmo': 1.0.1
+      '@unional/gizmo': 1.0.2
       iso-error: 6.0.0
       type-plus: 6.0.0
     devDependencies:
@@ -3301,8 +3301,8 @@ packages:
       '@just-func/types': 0.5.0
     dev: false
 
-  /@unional/gizmo/1.0.1:
-    resolution: {integrity: sha512-EpvEn9S0tvtM/ya8reY6sq8TygxaXf0427ojb3u6KOYeJiymwEzCfPjgs4crA1z4DyDKfWbZuF7WME5UNP4ssQ==}
+  /@unional/gizmo/1.0.2:
+    resolution: {integrity: sha512-PZgkomXjXZWcyvJ3xbOl0m5IRVhs+sh2pBugNtvDPHFD2hgmWUPLPud8NsrKL65kQe7xtr90cJTFghalZMWgFA==}
     engines: {node: '>= 14.16'}
     dev: false
 

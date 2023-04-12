@@ -54,7 +54,7 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"@unional/gizmo": "^1.0.1",
+		"@unional/gizmo": "^1.0.2",
 		"iso-error": "~6.0.0",
 		"type-plus": "^6.0.0"
 	},

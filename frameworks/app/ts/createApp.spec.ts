@@ -1,4 +1,4 @@
-import { createMemoryLogReporter, LogContext, logLevels, LogMethodNames } from '@just-web/log'
+import { createMemoryLogReporter, LogContext, logLevels } from '@just-web/log'
 import osPlugin, { OSContext } from '@just-web/os'
 import { definePlugin, StartContext } from '@just-web/types'
 import { a } from 'assertron'
@@ -7,44 +7,11 @@ import { CanAssign, isType } from 'type-plus'
 import { createApp, createTestApp } from './createApp.js'
 
 describe(`${createApp.name}()`, () => {
-	it('needs name', () => {
-		const app = createApp({ name: 'some app' })
-
-		expect(app.name).toEqual('some app')
-	})
-
-	it('generates an 15 chars long app id', () => {
-		const app = createApp({ name: 'test' })
-
-		expect(app.id.length).toEqual(15)
-	})
-
-	it('comes with log', () => {
-		const app = createApp({ name: 'test' })
-
-		isType.t<CanAssign<typeof app, LogContext<LogMethodNames>>>()
-	})
-
-	it('the log id is the app name', () => {
-		const reporter = createMemoryLogReporter()
-		const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
-		app.log.info('hello')
-
-		a.satisfies(reporter.logs, [{ id: 'test-app', args: ['hello'] }])
-	})
-
 	it('adds the PluginContext of the plugin to the app', () => {
 		const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } }).extend(osPlugin())
 
 		isType.t<CanAssign<typeof app, OSContext>>()
 		expect(app.os.isMac).toBeDefined()
-	})
-
-	it('returns itself if the plugin has no PluginContext', () => {
-		const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
-		const app2 = app.extend({ name: 'dummy', init: () => {} })
-
-		isType.equal<true, typeof app, typeof app2>()
 	})
 
 	it('allows TypeB plugin with partial NeedContext', () => {

@@ -1,5 +1,5 @@
 import { define } from '@unional/gizmo'
-import { ctx } from './app_gizmo.ctx.js'
+import { logic } from './app_gizmo.logic.js'
 
 export type AppGizmoOptions = {
 	name: string
@@ -9,7 +9,7 @@ export const appGizmo = define(({ name }: AppGizmoOptions) => ({
 	async create() {
 		return {
 			name,
-			id: ctx.genAppID()
+			id: logic.genAppID()
 		}
 	}
 }))
