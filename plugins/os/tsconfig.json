@@ -10,6 +10,9 @@
 	"include": ["ts", "typings"],
 	"references": [
 		{
+			"path": "../../frameworks/framework"
+		},
+		{
 			"path": "../../frameworks/log"
 		},
 		{
