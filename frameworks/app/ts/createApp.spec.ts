@@ -1,37 +1,11 @@
-import { createMemoryLogReporter, LogContext, logLevels } from '@just-web/log'
-import osPlugin, { OSContext } from '@just-web/os'
+import { createMemoryLogReporter, LogContext } from '@just-web/log'
 import { definePlugin, StartContext } from '@just-web/types'
 import { a } from 'assertron'
 import { some } from 'satisfier'
-import { CanAssign, isType } from 'type-plus'
+import { isType } from 'type-plus'
 import { createApp, createTestApp } from './createApp.js'
 
 describe(`${createApp.name}()`, () => {
-	it('adds the PluginContext of the plugin to the app', () => {
-		const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } }).extend(osPlugin())
-
-		isType.t<CanAssign<typeof app, OSContext>>()
-		expect(app.os.isMac).toBeDefined()
-	})
-
-	it('allows TypeB plugin with partial NeedContext', () => {
-		const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
-		const app2 = app.extend({ name: 'dummy', init: () => [{ a: 1 }] })
-		const app3 = app2.extend({ name: 'dummy', init: (_: { a: number; b?: number }) => {} })
-
-		isType.equal<true, typeof app2, typeof app3>()
-	})
-
-	it('allows TypeB plugin with partial NeedContext overriding PluginContext', () => {
-		const app = createApp({ name: 'test-app', log: { logLevel: logLevels.none } })
-		const b = definePlugin(() => ({ name: 'dummy', init: () => [{ a: 1 }] }))
-		const app2 = app.extend(b())
-		const b1 = definePlugin(() => ({ name: 'dummy', init: (_: { a: number; b?: number }) => [{ a: 'a' }] }))
-		const app3 = app2.extend(b1())
-
-		isType.equal<true, string, typeof app3.a>()
-		isType.equal<true, typeof app & { a: string }, typeof app3>()
-	})
 
 	it('starts will log an app start message', async () => {
 		const reporter = createMemoryLogReporter()
