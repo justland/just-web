@@ -1,2 +1,2 @@
-export * from './app_builder.js'
+export * from './just_app.js'
 export * from './createApp.js'
