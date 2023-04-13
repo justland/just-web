@@ -56,7 +56,7 @@
 	},
 	"dependencies": {
 		"@just-web/log": "workspace:^",
-		"assertron": "^11.0.0",
+		"assertron": "^11.2.0",
 		"satisfier": "^5.4.2"
 	},
 	"devDependencies": {
