@@ -63,7 +63,7 @@ importers:
       '@repobuddy/jest': ^3.0.0
       '@size-limit/preset-small-lib': ~8.2.0
       '@types/jest': ^29.2.3
-      '@types/ramda': ^0.28.14
+      '@types/ramda': ^0.29.0
       assertron: ^11.0.0
       cross-env: ^7.0.3
       depcheck: ~1.4.3
@@ -95,7 +95,7 @@ importers:
       '@repobuddy/jest': 3.0.0_vxwm5bnd4dq4kuqxqmfbc4kvne
       '@size-limit/preset-small-lib': 8.2.3_size-limit@8.2.3
       '@types/jest': 29.2.3
-      '@types/ramda': 0.28.20
+      '@types/ramda': 0.29.0
       assertron: 11.0.1
       cross-env: 7.0.3
       depcheck: 1.4.3
@@ -2676,10 +2676,10 @@ packages:
   /@types/prettier/2.7.1:
     resolution: {integrity: sha512-ri0UmynRRvZiiUJdiz38MmIblKK+oH30MztdBVR95dv/Ubw6neWSb8u1XpRb72L4qsZOhz+L+z9JD40SJmfWow==}
 
-  /@types/ramda/0.28.20:
-    resolution: {integrity: sha512-MeUhzGSXQTRsY19JGn5LIBTLxVEnyF6HDNr08KSJqybsm4DlfLIgK1jBHjhpiSyk252tXYmp+UOe0UFg0UiFsA==}
+  /@types/ramda/0.29.0:
+    resolution: {integrity: sha512-TY9eKsklU43CmAbFJPKDUyBjleZ4EFAkbJeQRF4e8byGkOw1CjDcwg5EGa0Bgf0Kgs9BE9OU4UzQWnQDHnvMtA==}
     dependencies:
-      ts-toolbelt: 6.15.5
+      types-ramda: 0.29.1
     dev: true
 
   /@types/semver/6.2.3:
@@ -8617,8 +8617,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-toolbelt/6.15.5:
-    resolution: {integrity: sha512-FZIXf1ksVyLcfr7M317jbB67XFJhOO1YqdTcuGaq9q5jLUoTikukZ+98TPjKiP2jC5CgmYdWWYs0s2nLSU0/1A==}
+  /ts-toolbelt/9.6.0:
+    resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
     dev: true
 
   /tslib/1.14.1:
@@ -8832,6 +8832,12 @@ packages:
       minimatch: 7.4.3
       shiki: 0.14.1
       typescript: 5.0.2
+    dev: true
+
+  /types-ramda/0.29.1:
+    resolution: {integrity: sha512-pdEF8VXcBTSu3fPupZahieG6Lh8eBWPtcaH/OB5QPCoN2hz4vBbspoMLB3X9kwzXRD3lwD4/j0hwj3Z/PAzzcA==}
+    dependencies:
+      ts-toolbelt: 9.6.0
     dev: true
 
   /typescript/4.9.3:
