@@ -134,7 +134,7 @@ describe('set()', () => {
 	})
 
 	it('can use a custom logger', () => {
-		const sl = createStandardLogForTest(logLevels.all)
+		const sl = createStandardLogForTest({ logLevel: logLevels.all })
 		const [, set] = createState([1])
 		set([2], { logger: sl.getLogger('test') })
 
@@ -167,7 +167,7 @@ describe('onChange()', () => {
 	})
 
 	it('can use a custom logger', () => {
-		const sl = createStandardLogForTest(logLevels.all)
+		const sl = createStandardLogForTest({ logLevel: logLevels.all })
 		const [, , onChange] = createState([1])
 
 		let count = 0
@@ -180,7 +180,7 @@ describe('onChange()', () => {
 	})
 
 	it('skip if the same handler is already registered', () => {
-		const sl = createStandardLogForTest(logLevels.all)
+		const sl = createStandardLogForTest({ logLevel: logLevels.all })
 		const [, , onChange] = createState([1])
 
 		let count = 0
@@ -195,7 +195,7 @@ describe('onChange()', () => {
 	})
 
 	it('returns a dispose function', () => {
-		const sl = createStandardLogForTest(logLevels.all)
+		const sl = createStandardLogForTest({ logLevel: logLevels.all })
 		const logger = sl.getLogger('test')
 
 		const [, , onChange] = createState([1])
@@ -214,7 +214,7 @@ describe('onChange()', () => {
 	})
 
 	it(`the dup handler's dispose function does nothing`, () => {
-		const sl = createStandardLogForTest(logLevels.all)
+		const sl = createStandardLogForTest({ logLevel: logLevels.all })
 		const logger = sl.getLogger('test')
 
 		const [, set, onChange] = createState([1])

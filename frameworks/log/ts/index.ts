@@ -11,15 +11,14 @@ import {
 	LogReporter,
 	ReporterFilter,
 	StandardLog,
-	StandardLogForTest,
 	StandardLogOptions
 } from 'standard-log'
+import { StandardLogForTest } from 'standard-log/testing'
 import { omit, Omit, requiredDeep } from 'type-plus'
 
 export {
 	createConsoleLogReporter,
 	createMemoryLogReporter,
-	createStandardLogForTest,
 	createTimestampFormatter,
 	formatLogLevel,
 	getLogger,
@@ -54,6 +53,8 @@ export type {
 	StandardLogOptions,
 	TimestampFormat
 } from 'standard-log'
+
+export { createStandardLogForTest } from 'standard-log/testing'
 
 export namespace justLog {
 	export interface Param<N extends string = LogMethodNames> extends StandardLogOptions<N> {

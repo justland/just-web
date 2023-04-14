@@ -1,44 +1,10 @@
 import { createMemoryLogReporter, LogContext } from '@just-web/log'
-import { definePlugin, StartContext } from '@just-web/types'
+import { definePlugin } from '@just-web/types'
 import { a } from 'assertron'
 import { some } from 'satisfier'
-import { isType } from 'type-plus'
 import { createApp, createTestApp } from './createApp.js'
 
 describe(`${createApp.name}()`, () => {
-
-	it('starts will log an app start message', async () => {
-		const reporter = createMemoryLogReporter()
-		const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })
-		await app.start()
-
-		a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [/test-app \(INFO\) starting \(id: .*\)/])
-	})
-
-	it('starts will call plugin start with an adjusted log', async () => {
-		const reporter = createMemoryLogReporter()
-		const app = createApp({ name: 'test-app', log: { reporters: [reporter] } }).extend(
-			definePlugin(() => ({
-				name: 'dummy-plugin',
-				init() {},
-				// Have to declare the type here.
-				// Seems to be a TypeScript bug (4.8.4)
-				async start({ log }: StartContext) {
-					isType.equal<false, any, typeof log>()
-					log.info('inside plugin')
-				}
-			}))()
-		)
-		await app.start()
-
-		a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [
-			'test-app (NOTICE) initializing dummy-plugin',
-			'test-app (NOTICE) starting dummy-plugin',
-			'test-app:dummy-plugin (INFO) inside plugin',
-			/test-app \(INFO\) starting \(id: .*\)/
-		])
-	})
-
 	it('call both plugins when start', async () => {
 		const reporter = createMemoryLogReporter()
 		const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })

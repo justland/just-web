@@ -54,8 +54,8 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"standard-log": "^11.5.0",
-		"type-plus": "^6.0.0"
+		"standard-log": "^12.0.3",
+		"type-plus": "^6.4.0"
 	},
 	"devDependencies": {
 		"@just-web/repo-scripts": "workspace:^",
