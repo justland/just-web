@@ -77,3 +77,21 @@ it('starts will log an app start message', async () => {
 
 	a.satisfies(reporter.getLogMessagesWithIdAndLevel(), [/test-app \(INFO\) created \(id: .*\)/])
 })
+
+it('starts will call plugin start with an adjusted log', async () => {
+	const app = await justTestApp({ name: 'test-app' })
+		.with(
+			define({
+				static: define.require<LogGizmo>(),
+				async create({ log }) {
+					log.info('starting gizmo')
+				}
+			})
+		)
+		.create()
+
+	a.satisfies(app.log.reporter.getLogMessagesWithIdAndLevel(), [
+		'test-app (INFO) starting gizmo',
+		/test-app \(INFO\) created \(id: .*\)/
+	])
+})

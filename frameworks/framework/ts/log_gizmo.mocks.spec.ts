@@ -24,7 +24,7 @@ it('works with app name', async () => {
 	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual(['some-app (NOTICE) hello'])
 })
 
-it('works with additional reporters', async () => {
+it('uses reporter from options if specified', async () => {
 	const r = createMemoryLogReporter()
 	const { log } = await incubate()
 		.with(appGizmo({ name: 'test' }))
@@ -33,8 +33,6 @@ it('works with additional reporters', async () => {
 
 	log.notice('hello')
 
-	// the build-in one will not be used
-	expect(log.reporter.logs).toEqual([])
-
-	expect(r.getLogMessagesWithIdAndLevel()).toEqual(['test (NOTICE) hello'])
+	expect(log.reporter).toEqual(r)
+	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual(['test (NOTICE) hello'])
 })

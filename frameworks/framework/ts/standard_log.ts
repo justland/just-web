@@ -2,7 +2,6 @@
 export {
 	createConsoleLogReporter,
 	createMemoryLogReporter,
-	createStandardLogForTest,
 	createTimestampFormatter,
 	formatLogLevel,
 	getLogger,
