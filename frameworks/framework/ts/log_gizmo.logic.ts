@@ -17,7 +17,7 @@ export function buildLogContext<N extends string = LogMethodNames>(
 	} as StandardLog<N> & Omit<Logger<LogMethodNames | N>, 'id' | 'level' | 'write'>
 
 	const appLogger = sl.getLogger(name)
-	const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.log?.customLevels ?? {})).concat([
+	const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.customLevels ?? {})).concat([
 		'on',
 		'count'
 	])

@@ -1,6 +1,3 @@
-import {
-	type AppGizmoOptions,
-	type LogGizmoOptions
-} from '@just-web/framework'
+import type { AppGizmoOptions, LogGizmoOptions } from '@just-web/framework'
 
-export type AppBuilderOptions = AppGizmoOptions & LogGizmoOptions
+export type AppBuilderOptions = AppGizmoOptions & { log?: LogGizmoOptions }

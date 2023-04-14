@@ -24,7 +24,8 @@ describe(`${createPrefixedGetLogger.name}()`, () => {
 			.with(appGizmo({ name: 'test' }))
 			.with(logTestGizmo())
 			.create()
-		const getLogger = createPrefixedGetLogger({ log }, 'some-plugin')
+
+			const getLogger = createPrefixedGetLogger({ log }, 'some-plugin')
 		const r = getLogger('')
 		r.notice('hello')
 
