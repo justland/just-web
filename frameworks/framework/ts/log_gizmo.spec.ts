@@ -13,7 +13,7 @@ it('provides app log methods', async () => {
 	const reporter = createMemoryLogReporter()
 	const { log } = await incubate()
 		.with(appGizmo({ name: 'test-app' }))
-		.with(logGizmo({ log: { logLevel: logLevels.all, reporters: [reporter] } }))
+		.with(logGizmo({ logLevel: logLevels.all, reporters: [reporter] }))
 		.create()
 
 	log.alert('alert')
@@ -49,7 +49,7 @@ it('can add custom levels', async () => {
 	const reporter = createMemoryLogReporter()
 	const ctx = await incubate()
 		.with(appGizmo({ name: 'test-app' }))
-		.with(logGizmo({ log: { customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] } }))
+		.with(logGizmo({ customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] }))
 		.create()
 
 	const l = ctx.log.getLogger('test logger')
@@ -61,4 +61,17 @@ it('can add custom levels', async () => {
 			.filter(l => l.id === 'test-app:test logger')
 			.map(l => `${ctx.log.toLogLevelName(l.level)}: ${l.args}`)
 	).toEqual([`spicy: it's spicy`, `silly: what's up`])
+})
+
+it('get logger prefixed with name', async () => {
+	const reporter = createMemoryLogReporter()
+	const app = await incubate()
+		.with(appGizmo({ name: 'test' }))
+		.with(logGizmo({ reporters: [reporter] }))
+		.create()
+
+	const l = app.log.getLogger('test logger')
+	l.info('hello')
+
+	expect(reporter.getLogMessagesWithIdAndLevel()).toEqual(['test:test logger (INFO) hello'])
 })

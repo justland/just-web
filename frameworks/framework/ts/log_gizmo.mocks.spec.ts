@@ -28,7 +28,7 @@ it('uses reporter from options if specified', async () => {
 	const r = createMemoryLogReporter()
 	const { log } = await incubate()
 		.with(appGizmo({ name: 'test' }))
-		.with(logTestGizmo({ log: { reporters: [r] } }))
+		.with(logTestGizmo({ reporters: [r] }))
 		.create()
 
 	log.notice('hello')

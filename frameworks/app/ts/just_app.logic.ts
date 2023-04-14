@@ -14,7 +14,7 @@ export function incubateApp(options: AppBuilderOptions): GizmoIncubator<AppGizmo
 			const log =
 				typeof (app as any).log?.info === 'function'
 					? (app as any).log
-					: (await incubate(appGizmo(options)).with(logGizmo(options)).create()).log
+					: (await incubate(appGizmo(options)).with(logGizmo(options.log)).create()).log
 			log.info(`created (id: ${app.id})`)
 			return app
 		}

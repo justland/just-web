@@ -9,7 +9,7 @@ import type { LogGizmoOptions } from './log_gizmo.types.js'
 export const logTestGizmo = define(<N extends string = LogMethodNames>(options?: LogGizmoOptions<N>) => ({
 	static: define.require(appGizmo),
 	async create(ctx: AppGizmo) {
-		const sl = createStandardLogForTest<N>(options?.log)
+		const sl = createStandardLogForTest<N>(options)
 		return {
 			log: Object.assign(buildLogContext<N>(ctx.name, sl, options), {
 				reporter: sl.reporter

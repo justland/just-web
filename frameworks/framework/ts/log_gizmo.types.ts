@@ -3,6 +3,4 @@ import type {
 	StandardLogOptions
 } from 'standard-log'
 
-export type LogGizmoOptions<N extends string = LogMethodNames> = {
-	log?: StandardLogOptions<N>
-}
+export type LogGizmoOptions<N extends string = LogMethodNames> = StandardLogOptions<N>
