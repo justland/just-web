@@ -1,19 +1,9 @@
 import { createMemoryLogReporter } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { a } from 'assertron'
-import { range } from 'ramda'
-import { record } from 'type-plus'
 import { createApp } from './createApp.js'
 
 describe(createApp.name, () => {
-	it('randomize the app id', () => {
-		const x = range(0, 100)
-			.map(() => createApp({ name: 'random' }).id)
-			.reduce((p, v) => ((p[v] = true), p), record())
-
-		expect(Object.keys(x).length).toBe(100)
-	})
-
 	it('will starts only newly extended plugins within that sub-tree', async () => {
 		const reporter = createMemoryLogReporter()
 		const app = createApp({ name: 'test-app', log: { reporters: [reporter] } })

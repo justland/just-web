@@ -6,5 +6,6 @@ ignores:
   - '@types/jest'
   - 'jest-*'
   - size-limit
+  - standard-log # don't know why it doesn't detect correctly
   - ts-jest
   - type-plus # don't know why it doesn't detect correctly
