@@ -1,4 +1,4 @@
-import { IdGizmo, LogGizmo, createMemoryLogReporter, define, logLevels } from '@just-web/framework'
+import { IdGizmoFn, LogGizmo, createMemoryLogReporter, define, logLevels } from '@just-web/framework'
 import { sideEffectGizmo } from '@just-web/framework/testing'
 import { OSGizmo, osGizmo } from '@just-web/os'
 import { a } from 'assertron'
@@ -24,7 +24,7 @@ it('generates a 15 chars long app id', async () => {
 it('can use a gizmo with only side effects', async () => {
 	const app = await justTestApp({ name: 'test' }).with(sideEffectGizmo).create()
 
-	testType.canAssign<typeof app, IdGizmo & LogGizmo>(true)
+	testType.canAssign<typeof app, IdGizmoFn & LogGizmo>(true)
 })
 
 it('can use a gizmo returning single value tuple', async () => {

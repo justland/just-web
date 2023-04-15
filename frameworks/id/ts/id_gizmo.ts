@@ -5,7 +5,7 @@ export type IdGizmoOptions = {
 	name: string
 }
 
-export const idGizmo = define((options: IdGizmoOptions) => ({
+export const idGizmoFn = define((options: IdGizmoOptions) => ({
 	async create() {
 		return {
 			...options,
@@ -14,4 +14,4 @@ export const idGizmo = define((options: IdGizmoOptions) => ({
 	}
 }))
 
-export type IdGizmo = define.Infer<typeof idGizmo>
+export type IdGizmoFn = define.Infer<typeof idGizmoFn>
