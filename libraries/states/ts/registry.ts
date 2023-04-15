@@ -1,6 +1,6 @@
 import { Draft } from 'immer'
-import { KeyTypes, pick, record, Widen } from 'type-plus'
-import { OnStateChange, ResetState, SetState } from './state.js'
+import { KeyTypes, pick, Widen } from 'type-plus'
+import { OnStateChange, ResetState, SetState, StateMeta } from './state.js'
 import { createStore } from './store.js'
 
 export type ReadonlyRegistry<K extends KeyTypes, T> = {
@@ -26,8 +26,11 @@ export type Registry<K extends KeyTypes, T> = ReadonlyRegistry<K, T> & {
  */
 export type RegistryValue<R extends Registry<any, any>> = ReturnType<R['get']>
 
-export function createRegistry<K extends KeyTypes, T>(init?: Record<K, T>): Registry<Widen<K>, T> {
-	const store = createStore<Record<Widen<K>, T>>(record(init))
+export function createRegistry<K extends KeyTypes, T>(
+	init = {} as Record<K, T>,
+	meta?: StateMeta
+): Registry<Widen<K>, T> {
+	const store = createStore<Record<Widen<K>, T>>(init as any, meta)
 
 	return {
 		...store,
