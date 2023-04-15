@@ -1,18 +1,11 @@
 {
 	"extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
 	"compilerOptions": {
-		"lib": [
-			"DOM",
-			"ES2019",
-			"ES2021.Promise"
-		],
+		"lib": ["DOM", "ES2019", "ES2021.Promise"],
 		"outDir": "esm",
 		"rootDir": "ts"
 	},
-	"include": [
-		"ts",
-		"types"
-	],
+	"include": ["ts", "types"],
 	"references": [
 		{
 			"path": "../../tools/repo-scripts"

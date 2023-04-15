@@ -1,19 +1,19 @@
 {
-	"name": "@just-web/framework",
+	"name": "@just-web/id",
 	"version": "6.0.2",
-	"description": "Just web framework",
+	"description": "Just web ID gizmo",
 	"keywords": [
 		"just-web",
 		"framework"
 	],
-	"homepage": "https://github.com/justland/just-web/tree/main/frameworks/app",
+	"homepage": "https://github.com/justland/just-web/tree/main/frameworks/id",
 	"bugs": {
 		"url": "https://github.com/justland/just-web/issues"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/justland/just-web.git",
-		"directory": "frameworks/framework"
+		"directory": "frameworks/id"
 	},
 	"license": "MIT",
 	"author": {
@@ -31,7 +31,7 @@
 			},
 			"require": {
 				"types": "./cjs/index.d.ts",
-				"default": "./cjs/index.js"
+				"require": "./cjs/index.js"
 			}
 		},
 		"./testing": {
@@ -41,7 +41,7 @@
 			},
 			"require": {
 				"types": "./cjs/testing/index.d.ts",
-				"default": "./cjs/testing/index.js"
+				"require": "./cjs/testing/index.js"
 			}
 		}
 	},
@@ -51,6 +51,7 @@
 	"files": [
 		"cjs",
 		"esm",
+		"testing",
 		"ts",
 		"!**/*.{spec,test,unit,accept,integrate,system}.*"
 	],
@@ -70,17 +71,14 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"@unional/gizmo": "^1.0.2",
-		"@just-web/id": "workspace:^",
-		"@just-web/log": "workspace:^",
-		"iso-error": "~6.0.0",
-		"type-plus": "^6.4.0"
+		"@unional/gizmo": "^1.0.2"
 	},
 	"devDependencies": {
 		"@just-web/repo-scripts": "workspace:^",
 		"@repobuddy/jest": "^3.0.0",
 		"@size-limit/preset-small-lib": "~8.2.0",
 		"@types/jest": "^29.2.3",
+		"@types/ramda": "^0.28.14",
 		"cross-env": "^7.0.3",
 		"depcheck": "~1.4.3",
 		"eslint": "^8.11.0",
@@ -92,9 +90,11 @@
 		"jest-watch-typeahead": "^2.2.1",
 		"ncp": "^2.0.0",
 		"npm-run-all": "^4.1.5",
+		"ramda": "^0.28.0",
 		"rimraf": "~3.0.2",
 		"size-limit": "~8.2.0",
 		"ts-jest": "^29.0.3",
+		"type-plus": "^6.4.0",
 		"typescript": "^4.9.3"
 	},
 	"typedoc": {
