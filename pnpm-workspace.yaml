@@ -1,6 +1,7 @@
 packages:
   - apps/*/*
   - components/*
+  - examples/*
   - frameworks/*
   - libraries/*
   - plugins/*
