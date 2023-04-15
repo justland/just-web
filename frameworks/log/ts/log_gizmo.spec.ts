@@ -1,11 +1,11 @@
 import { idGizmoFn } from '@just-web/id'
 import { incubate } from '@unional/gizmo'
-import { createMemoryLogReporter, logGizmo, logLevels } from './index.js'
+import { createMemoryLogReporter, logGizmoFn, logLevels } from './index.js'
 
 it('default log level to info', async () => {
 	const { log } = await incubate()
 		.with(idGizmoFn({ name: 'test' }))
-		.with(logGizmo())
+		.with(logGizmoFn())
 		.create()
 	expect(log.logLevel).toEqual(logLevels.info)
 })
@@ -14,7 +14,7 @@ it('provides app log methods', async () => {
 	const reporter = createMemoryLogReporter()
 	const { log } = await incubate()
 		.with(idGizmoFn({ name: 'test-app' }))
-		.with(logGizmo({ logLevel: logLevels.all, reporters: [reporter] }))
+		.with(logGizmoFn({ logLevel: logLevels.all, reporters: [reporter] }))
 		.create()
 
 	log.alert('alert')
@@ -50,7 +50,7 @@ it('can add custom levels', async () => {
 	const reporter = createMemoryLogReporter()
 	const ctx = await incubate()
 		.with(idGizmoFn({ name: 'test-app' }))
-		.with(logGizmo({ customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] }))
+		.with(logGizmoFn({ customLevels: { silly: 500, spicy: 50 }, reporters: [reporter] }))
 		.create()
 
 	const l = ctx.log.getLogger('test logger')
@@ -68,7 +68,7 @@ it('get logger prefixed with name', async () => {
 	const reporter = createMemoryLogReporter()
 	const app = await incubate()
 		.with(idGizmoFn({ name: 'test' }))
-		.with(logGizmo({ reporters: [reporter] }))
+		.with(logGizmoFn({ reporters: [reporter] }))
 		.create()
 
 	const l = app.log.getLogger('test logger')
@@ -81,7 +81,7 @@ it('can create a logger without specifying a name. which will use the name from 
 	const reporter = createMemoryLogReporter()
 	const app = await incubate()
 		.with(idGizmoFn({ name: 'test' }))
-		.with(logGizmo({ reporters: [reporter] }))
+		.with(logGizmoFn({ reporters: [reporter] }))
 		.create()
 
 	const l = app.log.getLogger()

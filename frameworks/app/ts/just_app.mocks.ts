@@ -1,4 +1,4 @@
-import { logTestGizmo } from '@just-web/framework/testing'
+import { logTestGizmoFn } from '@just-web/framework/testing'
 import { incubateApp } from './just_app.logic.js'
 import type { AppBuilderOptions } from './just_app.types.js'
 
@@ -14,5 +14,5 @@ import type { AppBuilderOptions } from './just_app.types.js'
  * ```
  */
 export function justTestApp(options: AppBuilderOptions = { name: 'test' }) {
-	return incubateApp(options).with(logTestGizmo(options.log))
+	return incubateApp(options).with(logTestGizmoFn(options.log))
 }

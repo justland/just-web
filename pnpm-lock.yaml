@@ -252,9 +252,6 @@ importers:
       iso-error:
         specifier: ~6.0.0
         version: 6.0.0
-      standard-log:
-        specifier: ^12.0.5
-        version: 12.0.5
       type-plus:
         specifier: ^6.4.0
         version: 6.4.0
@@ -337,7 +334,7 @@ importers:
         version: 29.2.3
       '@types/ramda':
         specifier: ^0.28.14
-        version: 0.28.20
+        version: 0.28.14
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -349,7 +346,7 @@ importers:
         version: 8.28.0
       eslint-plugin-harmony:
         specifier: ^7.1.2
-        version: 7.1.2(@typescript-eslint/eslint-plugin@5.43.0)(eslint-config-prettier@8.7.0)(eslint@8.28.0)(typescript@4.9.3)
+        version: 7.1.2(@typescript-eslint/eslint-plugin@5.43.0)(eslint-config-prettier@8.8.0)(eslint@8.28.0)(typescript@5.0.2)
       jest:
         specifier: ^29.3.1
         version: 29.3.1(@types/node@14.18.42)(ts-node@10.9.1)
@@ -538,9 +535,15 @@ importers:
 
   libraries/states:
     dependencies:
+      '@just-web/id':
+        specifier: workspace:^
+        version: link:../../frameworks/id
       '@just-web/log':
         specifier: workspace:^
         version: link:../../frameworks/log
+      '@unional/gizmo':
+        specifier: ^1.0.2
+        version: 1.0.2
       immer:
         specifier: npm:@unional/immer@^9.0.0-beta.2
         version: /@unional/immer@9.0.0-beta.2
@@ -3503,6 +3506,12 @@ packages:
 
   /@types/prettier@2.7.1:
     resolution: {integrity: sha512-ri0UmynRRvZiiUJdiz38MmIblKK+oH30MztdBVR95dv/Ubw6neWSb8u1XpRb72L4qsZOhz+L+z9JD40SJmfWow==}
+
+  /@types/ramda@0.28.14:
+    resolution: {integrity: sha512-hLgAeKxS5MpIEROaIRHscFqWf+V04CB+A0Kq+OjnTs1fEGHXEs4aeOhXIRovAPe6PfWYKHEwEkVIYWf98OjxnA==}
+    dependencies:
+      ts-toolbelt: 6.15.5
+    dev: true
 
   /@types/ramda@0.29.0:
     resolution: {integrity: sha512-TY9eKsklU43CmAbFJPKDUyBjleZ4EFAkbJeQRF4e8byGkOw1CjDcwg5EGa0Bgf0Kgs9BE9OU4UzQWnQDHnvMtA==}
@@ -8347,6 +8356,10 @@ packages:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
 
+  /ramda@0.28.0:
+    resolution: {integrity: sha512-9QnLuG/kPVgWvMQ4aODhsBUFKOUmnbUnsSXACv+NCQZcHbeb+v8Lodp8OVxtRULN1/xOyYLLaL6npE6dMq5QTA==}
+    dev: true
+
   /ramda@0.29.0:
     resolution: {integrity: sha512-BBea6L67bYLtdbOqfp8f58fPMqEwx0doL+pAi8TZyp2YWz8R9G8z9x75CZI8W+ftqhFHCpEX2cRnUUXK130iKA==}
     dev: true
@@ -9342,6 +9355,10 @@ packages:
       typescript: 5.0.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+
+  /ts-toolbelt@6.15.5:
+    resolution: {integrity: sha512-FZIXf1ksVyLcfr7M317jbB67XFJhOO1YqdTcuGaq9q5jLUoTikukZ+98TPjKiP2jC5CgmYdWWYs0s2nLSU0/1A==}
+    dev: true
 
   /ts-toolbelt@9.6.0:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}

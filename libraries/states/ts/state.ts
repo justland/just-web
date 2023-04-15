@@ -20,12 +20,14 @@ export type OnStateChange<T> = (handler: StateChangeHandler<T>) => () => void
 
 export type ResetState = () => void
 
+export type StateMeta = { logger?: Logger }
+
 /**
  * creates a functional style state to track changes of a value.
  */
 export function createState<T>(
 	init: T,
-	meta?: { logger?: Logger }
+	meta?: StateMeta
 ): [value: T, set: SetState<T>, onChange: OnStateChange<T>, reset: ResetState] {
 	const handlers: StateChangeHandler<T>[] = []
 	let value = Object.freeze(init)
