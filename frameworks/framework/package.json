@@ -73,7 +73,7 @@
 	"dependencies": {
 		"@unional/gizmo": "^1.0.2",
 		"iso-error": "~6.0.0",
-		"standard-log": "^12.0.3",
+		"standard-log": "^12.0.5",
 		"type-plus": "^6.4.0"
 	},
 	"devDependencies": {

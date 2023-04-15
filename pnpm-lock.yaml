@@ -177,8 +177,8 @@ importers:
         specifier: ~6.0.0
         version: 6.0.0
       standard-log:
-        specifier: ^12.0.3
-        version: 12.0.3
+        specifier: ^12.0.5
+        version: 12.0.5
       type-plus:
         specifier: ^6.4.0
         version: 6.4.0
@@ -247,8 +247,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       standard-log:
-        specifier: ^12.0.3
-        version: 12.0.3
+        specifier: ^12.0.5
+        version: 12.0.5
       type-plus:
         specifier: ^6.4.0
         version: 6.4.0
@@ -317,8 +317,8 @@ importers:
   frameworks/types:
     dependencies:
       standard-log:
-        specifier: ^12.0.3
-        version: 12.0.3
+        specifier: ^12.0.5
+        version: 12.0.5
       type-plus:
         specifier: ^6.4.0
         version: 6.4.0
@@ -809,8 +809,8 @@ importers:
         specifier: ~8.2.0
         version: 8.2.3
       standard-log:
-        specifier: ^12.0.3
-        version: 12.0.3
+        specifier: ^12.0.5
+        version: 12.0.5
       ts-jest:
         specifier: ^29.0.3
         version: 29.0.3(@babel/core@7.21.4)(jest@29.3.1)(typescript@5.0.2)
@@ -8818,8 +8818,8 @@ packages:
     dependencies:
       escape-string-regexp: 2.0.0
 
-  /standard-log@12.0.3:
-    resolution: {integrity: sha512-R7SIHhN7lE3PSOjuAjK9GRn5Bn0IuZSeea0v7qWdYAfgD4TcjaLpGiRfC5KsjgmgBXLHfNoZevdVnIUnWE1IqQ==}
+  /standard-log@12.0.5:
+    resolution: {integrity: sha512-l4akSZAXdKdy1/EdYPIoRsUT5MB3KkTuOBpVNnUzRHu2Kv/2K1kN7FrIhpTkyz48XjZ8LWHPiao6BEzTH4LfqA==}
     dependencies:
       '@just-func/types': 0.5.1
       iso-error: 6.0.1
