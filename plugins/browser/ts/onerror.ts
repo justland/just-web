@@ -1,13 +1,13 @@
-import type { LogContext } from '@just-web/log'
+import type { LogGizmo } from '@just-web/log'
+import type { ErrorStore } from './errorStore.js'
 import { BrowserError } from './errors.js'
-import { ErrorStore } from './errorStore.js'
 import { ctx } from './onerror.ctx.js'
 
 export namespace registerOnErrorHandler {
 	export type Options = {
 		errors: ErrorStore
 		preventDefault: boolean
-	} & LogContext
+	} & LogGizmo
 }
 
 export function registerOnErrorHandler({ errors, preventDefault, log }: registerOnErrorHandler.Options) {
