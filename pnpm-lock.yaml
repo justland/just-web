@@ -155,9 +155,6 @@ importers:
       rimraf:
         specifier: ~3.0.2
         version: 3.0.2
-      satisfier:
-        specifier: ^5.4.2
-        version: 5.4.2
       size-limit:
         specifier: ~8.2.0
         version: 8.2.3
@@ -246,6 +243,9 @@ importers:
       '@just-func/types':
         specifier: ^0.5.0
         version: 0.5.0
+      '@just-web/types':
+        specifier: workspace:^
+        version: link:../types
       standard-log:
         specifier: ^12.0.5
         version: 12.0.5
@@ -256,9 +256,6 @@ importers:
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../types
       '@repobuddy/jest':
         specifier: ^3.0.0
         version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.1)(jest@29.3.1)(ts-jest@29.0.3)
@@ -3602,7 +3599,7 @@ packages:
   /@unional/events-plus@3.0.0:
     resolution: {integrity: sha512-iK0mUkE4XFyT2TWOzmuQHaKp/ed+3DHloNGqhs9YOPsrfGbPXOvr79E033TDxUOt8ykXMCfimMpwBQfHkPHdbw==}
     dependencies:
-      '@just-func/types': 0.5.0
+      '@just-func/types': 0.5.1
     dev: false
 
   /@unional/gizmo@1.0.2:

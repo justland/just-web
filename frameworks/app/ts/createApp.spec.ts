@@ -1,8 +1,7 @@
 import { createMemoryLogReporter, LogContext } from '@just-web/log'
 import { definePlugin } from '@just-web/types'
 import { a } from 'assertron'
-import { some } from 'satisfier'
-import { createApp, createTestApp } from './createApp.js'
+import { createApp } from './createApp.js'
 
 describe(`${createApp.name}()`, () => {
 	it('call both plugins when start', async () => {
@@ -167,38 +166,6 @@ describe(`${createApp.name}()`, () => {
 		])
 	})
 
-	it(`gives plugin a prefixed getLogger()`, async () => {
-		const reporter = createMemoryLogReporter()
-		const app = createApp({ name: 'a', log: { reporters: [reporter] } }).extend(
-			definePlugin(() => ({
-				name: 'plugin-a',
-				init: (ctx: LogContext) => {
-					const log = ctx.log.getLogger('custom')
-					log.info('info')
-				}
-			}))()
-		)
-		await app.start()
-
-		a.satisfies(reporter.getLogMessagesWithIdAndLevel(), some('a:plugin-a:custom (INFO) info'))
-	})
-
-	it('gives plugin a prefixed getNonConsoleLogger()', async () => {
-		const reporter = createMemoryLogReporter()
-		const app = createApp({ name: 'a', log: { reporters: [reporter] } }).extend(
-			definePlugin(() => ({
-				name: 'plugin-a',
-				init: (ctx: LogContext) => {
-					const log = ctx.log.getNonConsoleLogger('custom')
-					log.info('info')
-				}
-			}))()
-		)
-		await app.start()
-
-		a.satisfies(reporter.getLogMessagesWithIdAndLevel(), some('a:plugin-a:custom (INFO) info'))
-	})
-
 	it('supports plugin expecting custom log levels, but cannot enforce requirement', async () => {
 		const customPlugin = definePlugin(() => ({
 			name: 'custom',
@@ -208,17 +175,5 @@ describe(`${createApp.name}()`, () => {
 		}))
 
 		createApp({ name: 'a', log: { customLevels: { want: 1 } } }).extend(customPlugin())
-	})
-})
-
-describe(`${createTestApp.name}()`, () => {
-	it('can be called without param', () => {
-		createTestApp()
-	})
-
-	it('provides log.reporter', () => {
-		const app = createTestApp()
-		app.log.info('hello')
-		expect(app.log.reporter.getLogMessagesWithIdAndLevel()).toEqual(['test-app (INFO) hello'])
 	})
 })
