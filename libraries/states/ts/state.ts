@@ -4,7 +4,7 @@ import { tersify } from 'tersify'
 import { AnyFunction, isPromise } from 'type-plus'
 import type { Updater } from './types.js'
 
-export const stateLog = getLogger('@just-web/states:state')
+const stateLog = getLogger('@just-web/states:state')
 
 export type SetStateValue<T> = T | Updater<T>
 
