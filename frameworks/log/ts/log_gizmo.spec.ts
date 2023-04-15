@@ -76,3 +76,16 @@ it('get logger prefixed with name', async () => {
 
 	expect(reporter.getLogMessagesWithIdAndLevel()).toEqual(['test:test logger (INFO) hello'])
 })
+
+it('can create a logger without specifying a name. which will use the name from the id gizmo', async () => {
+	const reporter = createMemoryLogReporter()
+	const app = await incubate()
+		.with(idGizmo({ name: 'test' }))
+		.with(logGizmo({ reporters: [reporter] }))
+		.create()
+
+	const l = app.log.getLogger()
+	l.info('hello')
+
+	expect(reporter.getLogMessagesWithIdAndLevel()).toEqual(['test (INFO) hello'])
+})

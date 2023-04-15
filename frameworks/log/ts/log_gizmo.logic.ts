@@ -1,5 +1,17 @@
-import { DEFAULT_LOG_METHOD_NAMES, type Logger, type LogMethodNames, type StandardLog } from 'standard-log'
+import {
+	DEFAULT_LOG_METHOD_NAMES,
+	LoggerOptions,
+	type LogMethodNames,
+	type Logger,
+	type StandardLog
+} from 'standard-log'
+import type { Omit } from 'type-plus'
 import type { LogGizmoOptions } from './log_gizmo.types.js'
+
+export type GizmoLog<N extends string = LogMethodNames> = Omit<StandardLog<N>, 'getLogger'> &
+	Omit<Logger<LogMethodNames | N>, 'id' | 'level' | 'write'> & {
+		getLogger(id?: string, options?: LoggerOptions): Logger<LogMethodNames | N>
+	}
 
 export function buildLogContext<N extends string = LogMethodNames>(
 	name: string,
@@ -8,13 +20,13 @@ export function buildLogContext<N extends string = LogMethodNames>(
 ) {
 	const log = {
 		...sl,
-		getLogger(id, options) {
-			return sl.getLogger(getLoggerID(name, id), options)
+		getLogger(id?: string, options?: LoggerOptions) {
+			return sl.getLogger(id ? getLoggerID(name, id) : name, options)
 		},
-		getNonConsoleLogger(id, options) {
+		getNonConsoleLogger(id: string, options?: LoggerOptions) {
 			return sl.getNonConsoleLogger(getLoggerID(name, id), options)
 		}
-	} as StandardLog<N> & Omit<Logger<LogMethodNames | N>, 'id' | 'level' | 'write'>
+	} as unknown as GizmoLog<N>
 
 	const appLogger = sl.getLogger(name)
 	const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.customLevels ?? {})).concat([

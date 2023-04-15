@@ -39,6 +39,20 @@ const app = createApp({
 })
 ```
 
+You can create a logger without an id:
+
+```ts
+const log = app.log.getLogger()
+```
+
+But creating a non-console logger, the id is required:
+
+```ts
+const log = app.log.getNonConsoleLogger('something')
+```
+
+This ensure they have different id so their logs can be distinguished.
+
 Please refer to the `handbook` to learn more about it.
 
 [`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
