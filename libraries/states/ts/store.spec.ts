@@ -1,4 +1,4 @@
-import { isType } from 'type-plus'
+import { testType } from 'type-plus'
 import { createStore, ReadonlyStore, Store, toReadonlyStore } from './store.js'
 
 describe('createStore()', () => {
@@ -64,7 +64,7 @@ describe('createStore()', () => {
 		// Other solutions doesn't work.
 		function fn<S extends { a: number }>(store: Store<S>) {
 			store.set(d => {
-				isType.equal<true, number, typeof d.a>()
+				testType.equal<typeof d.a, number>(true)
 			})
 		}
 		fn(createStore({ a: 1 }))
@@ -77,7 +77,7 @@ describe('toReadonly()', () => {
 		const r = toReadonlyStore(s)
 
 		expect(Object.keys(r)).toEqual(['get', 'onChange'])
-		isType.equal<true, ReadonlyStore<number>, typeof r>()
+		testType.equal<typeof r, ReadonlyStore<number>>(true)
 	})
 	test('for record store', () => {
 		// `createStore(record({ a: 1 }))` is better
@@ -86,13 +86,13 @@ describe('toReadonly()', () => {
 		const r = toReadonlyStore(s)
 
 		expect(Object.keys(r)).toEqual(['get', 'onChange'])
-		isType.equal<true, ReadonlyStore<{ a: number }>, typeof r>()
+		testType.equal<typeof r, ReadonlyStore<{ a: number }>>(true)
 	})
 	test('for array store', () => {
 		const s = createStore([1, 2])
 		const r = toReadonlyStore(s)
 
 		expect(Object.keys(r)).toEqual(['get', 'onChange'])
-		isType.equal<true, ReadonlyStore<number[]>, typeof r>()
+		testType.equal<typeof r, ReadonlyStore<number[]>>(true)
 	})
 })
