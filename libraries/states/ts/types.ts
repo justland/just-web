@@ -1,7 +1,5 @@
 import { nothing, type Draft } from 'immer'
 
-export type UpdaterResult<T> = undefined extends T ? Exclude<T, undefined> | void | typeof nothing : T | void
-
 /**
  * Updater for type `T`.
  *
@@ -13,3 +11,5 @@ export type UpdaterResult<T> = undefined extends T ? Exclude<T, undefined> | voi
  * the value will be cleared.
  */
 export type Updater<T> = (draft: Draft<T>) => UpdaterResult<T> | Promise<UpdaterResult<T>>
+
+export type UpdaterResult<T> = undefined extends T ? Exclude<T, undefined> | void | typeof nothing : T | void

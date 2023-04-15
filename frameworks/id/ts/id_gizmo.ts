@@ -14,4 +14,4 @@ export const idGizmoFn = define((options: IdGizmoOptions) => ({
 	}
 }))
 
-export type IdGizmoFn = define.Infer<typeof idGizmoFn>
+export type IdGizmo = define.Infer<typeof idGizmoFn>

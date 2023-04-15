@@ -1,12 +1,12 @@
 import { idGizmoFn } from '@just-web/id'
 import { incubate } from '@unional/gizmo'
-import { logTestGizmo } from './log_gizmo.mocks.js'
+import { logTestGizmoFn } from './log_gizmo.mocks.js'
 import { createPrefixedGetLogger } from './logger.js'
 
 it('prefix logger id', async () => {
 	const { log } = await incubate()
 		.with(idGizmoFn({ name: 'test' }))
-		.with(logTestGizmo())
+		.with(logTestGizmoFn())
 		.create()
 
 	const getLogger = createPrefixedGetLogger({ log }, 'some-plugin')
@@ -19,7 +19,7 @@ it('prefix logger id', async () => {
 it('gets `app:prefix` as logger id when given empty id', async () => {
 	const { log } = await incubate()
 		.with(idGizmoFn({ name: 'test' }))
-		.with(logTestGizmo())
+		.with(logTestGizmoFn())
 		.create()
 
 	const getLogger = createPrefixedGetLogger({ log }, 'some-plugin')

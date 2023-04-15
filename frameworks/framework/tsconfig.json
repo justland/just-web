@@ -15,6 +15,12 @@
 	],
 	"references": [
 		{
+			"path": "../../frameworks/id"
+		},
+		{
+			"path": "../../frameworks/log"
+		},
+		{
 			"path": "../../tools/repo-scripts"
 		}
 	]
