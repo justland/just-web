@@ -20,11 +20,13 @@ const browserPlugin = definePlugin((options?: BrowserOptions) => ({
 		// Normally plugin should not do work during init.
 		// However this is a special case as we want to listen to any error,
 		// including those occurs during the setup/loading phrase.
-		ctx.registerOnErrorHandler({
-			errors,
-			log,
-			preventDefault: options?.browser?.preventDefault ?? false
-		})
+		ctx.registerOnErrorHandler(
+			{
+				errors,
+				preventDefault: options?.browser?.preventDefault ?? false
+			},
+			{ log }
+		)
 		return [
 			{
 				browser: {
