@@ -1,11 +1,11 @@
+import { idGizmo } from '@just-web/id'
 import { incubate } from '@unional/gizmo'
 import { createMemoryLogReporter, logLevels } from 'standard-log'
-import { appGizmo } from './app_gizmo.js'
 import { logTestGizmo } from './log_gizmo.mocks.js'
 
 it('defaults logLevel to debug and provides memory reporter', async () => {
 	const { log } = await incubate()
-		.with(appGizmo({ name: 'test-app' }))
+		.with(idGizmo({ name: 'test-app' }))
 		.with(logTestGizmo())
 		.create()
 
@@ -16,7 +16,7 @@ it('defaults logLevel to debug and provides memory reporter', async () => {
 
 it('works with app name', async () => {
 	const { log } = await incubate()
-		.with(appGizmo({ name: 'some-app' }))
+		.with(idGizmo({ name: 'some-app' }))
 		.with(logTestGizmo())
 		.create()
 	log.notice('hello')
@@ -27,7 +27,7 @@ it('works with app name', async () => {
 it('uses reporter from options if specified', async () => {
 	const r = createMemoryLogReporter()
 	const { log } = await incubate()
-		.with(appGizmo({ name: 'test' }))
+		.with(idGizmo({ name: 'test' }))
 		.with(logTestGizmo({ reporters: [r] }))
 		.create()
 

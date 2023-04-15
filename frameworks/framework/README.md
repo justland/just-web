@@ -1,4 +1,4 @@
-# @just-web/app
+# @just-web/framework
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]

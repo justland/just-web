@@ -1,2 +1,2 @@
+export * from '@just-web/log/testing'
 export * from '@unional/gizmo/testing'
-export * from '../log_gizmo.mocks.js'
