@@ -6,3 +6,9 @@ it('default name to "test"', async () => {
 
 	expect(name).toEqual('test')
 })
+
+it('can specify name', async () => {
+	const { name } = await incubate().with(idTestGizmoFn({ name:'test-x'})).create()
+
+	expect(name).toEqual('test-x')
+})
