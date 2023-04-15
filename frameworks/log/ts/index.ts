@@ -13,7 +13,7 @@ import {
 	StandardLog,
 	StandardLogOptions
 } from 'standard-log'
-import { StandardLogForTest } from 'standard-log/testing'
+import type { StandardLogForTest } from 'standard-log/testing'
 import { omit, Omit, requiredDeep } from 'type-plus'
 
 export {
