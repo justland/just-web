@@ -1,4 +1,4 @@
-import { isType } from 'type-plus'
+import { testType } from 'type-plus'
 import {
 	adder,
 	createRegistry,
@@ -37,7 +37,7 @@ describe('adder()', () => {
 		})
 	})
 
-	describe('wtih record store', () => {
+	describe('with record store', () => {
 		it('creates an add function for the store', () => {
 			const store = createStore<Record<string, { key: string; value: number }>>({})
 			const add = adder(store, (r, entry) => {
@@ -68,7 +68,7 @@ describe('withAdder()', () => {
 			array.push(entry)
 		})
 		store.add('a', 'b')
-		isType.equal<true, string[], Parameters<typeof store.add>>()
+		testType.equal<Parameters<typeof store.add>, string[]>(true)
 		expect(store.get()).toEqual(['a', 'b'])
 	})
 
@@ -80,7 +80,7 @@ describe('withAdder()', () => {
 			store[entry.id] = entry
 		})
 
-		isType.equal<true, Store<Record<K, T>> & WithAdder<T>, typeof store>()
+		testType.equal<typeof store, Store<Record<K, T>> & WithAdder<T>>(true)
 
 		store.add({ id: 'a', value: 1 }, { id: 'b', value: 2 })
 		expect(store.get()).toEqual({ a: { id: 'a', value: 1 }, b: { id: 'b', value: 2 } })
@@ -94,7 +94,7 @@ describe('withAdder()', () => {
 			record[entry.a] = entry
 		})
 
-		isType.equal<true, Registry<K, T> & WithAdder<T>, typeof registry>()
+		testType.equal<typeof registry, Registry<K, T> & WithAdder<T>>(true)
 
 		registry.add({ a: 'x' }, { a: 'y' })
 		expect(registry.get()).toEqual({ x: { a: 'x' }, y: { a: 'y' } })

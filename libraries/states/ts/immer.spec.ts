@@ -1,4 +1,4 @@
-import { isType } from 'type-plus'
+import { testType } from 'type-plus'
 import { isNothing, nothing } from './index.js'
 
 describe(`${isNothing}()`, () => {
@@ -6,10 +6,10 @@ describe(`${isNothing}()`, () => {
 		const und: string | typeof nothing | undefined = undefined as any
 
 		if (isNothing(und)) {
-			isType.equal<true, typeof nothing, typeof und>()
+			testType.equal<typeof und, typeof nothing>(true)
 			fail('should not reach')
 		} else {
-			isType.equal<true, string | undefined, typeof und>()
+			testType.equal<typeof und, string | undefined>(true)
 		}
 	})
 
@@ -17,9 +17,9 @@ describe(`${isNothing}()`, () => {
 		const und: string | typeof nothing | undefined = nothing as any
 
 		if (isNothing(und)) {
-			isType.equal<true, typeof nothing, typeof und>()
+			testType.equal<typeof und, typeof nothing>(true)
 		} else {
-			isType.equal<true, string | undefined, typeof und>()
+			testType.equal<typeof und, string | undefined>(true)
 			fail('should not reach')
 		}
 	})

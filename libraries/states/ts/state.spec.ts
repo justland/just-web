@@ -1,7 +1,7 @@
 import { createStandardLogForTest, logLevels } from '@just-web/log'
 import { nothing } from 'immer'
-import { isType } from 'type-plus'
-import { createState, OnStateChange } from './state.js'
+import { testType } from 'type-plus'
+import { OnStateChange, createState } from './state.js'
 
 it('returns initial value', () => {
 	const [value] = createState([1, 2, 3])
@@ -35,7 +35,7 @@ describe('set()', () => {
 		const [, set, on] = createState(1)
 		const t = trap(on)
 		const actual = set(2)
-		isType.equal<true, number, typeof actual>()
+		testType.equal<typeof actual, number>(true)
 		expect(actual).toEqual(2)
 		expect(t.get()).toEqual(2)
 	})
@@ -46,7 +46,7 @@ describe('set()', () => {
 		const [, set, on] = createState<number | undefined>(1)
 		const t = trap(on)
 		const actual = set(undefined)
-		isType.equal<true, number | undefined, typeof actual>()
+		testType.equal<typeof actual, number | undefined>(true)
 		expect(actual).toEqual(undefined)
 		expect(t.get()).toEqual(undefined)
 	})
@@ -55,7 +55,7 @@ describe('set()', () => {
 		const [, set, on] = createState(1)
 		const t = trap(on)
 		const actual = set(() => 2)
-		isType.equal<true, number, typeof actual>()
+		testType.equal<typeof actual, number>(true)
 		expect(actual).toEqual(2)
 		expect(t.get()).toEqual(2)
 	})
@@ -66,7 +66,7 @@ describe('set()', () => {
 		const actual = set(v => {
 			v.a = 2
 		})
-		isType.equal<true, { a: number }, typeof actual>()
+		testType.equal<typeof actual, { a: number }>(true)
 		expect(actual).toEqual({ a: 2 })
 		expect(t.get()).toEqual({ a: 2 })
 	})
@@ -75,7 +75,7 @@ describe('set()', () => {
 		const [, set, on] = createState<{ a: number } | undefined>({ a: 1 })
 		const t = trap(on)
 		const actual = set(() => nothing)
-		isType.equal<true, { a: number } | undefined, typeof actual>()
+		testType.equal<typeof actual, { a: number } | undefined>(true)
 		expect(actual).toEqual(undefined)
 		expect(t.get()).toEqual(undefined)
 	})
@@ -84,7 +84,7 @@ describe('set()', () => {
 		const [, set, on] = createState(1)
 		const t = trap(on)
 		const r = set(async () => 2)
-		isType.equal<true, Promise<number>, typeof r>()
+		testType.equal<typeof r, Promise<number>>(true)
 		const actual = await r
 		expect(actual).toEqual(2)
 		expect(t.get()).toEqual(2)
@@ -96,7 +96,7 @@ describe('set()', () => {
 		const r = set(async v => {
 			v.a = 2
 		})
-		isType.equal<true, Promise<{ a: number }>, typeof r>()
+		testType.equal<typeof r, Promise<{ a: number }>>(true)
 		const actual = await r
 		expect(actual).toEqual({ a: 2 })
 		expect(t.get()).toEqual({ a: 2 })
@@ -106,7 +106,7 @@ describe('set()', () => {
 		const [, set, on] = createState<{ a: number } | undefined>({ a: 1 })
 		const t = trap(on)
 		const r = set(async () => nothing)
-		isType.equal<true, Promise<{ a: number } | undefined>, typeof r>()
+		testType.equal<typeof r, Promise<{ a: number } | undefined>>(true)
 		const actual = await r
 		expect(actual).toEqual(undefined)
 		expect(t.get()).toEqual(undefined)

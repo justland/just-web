@@ -1,18 +1,18 @@
-import { CanAssign, isType, KeyTypes } from 'type-plus'
-import { createRegistry, Registry, withAdder } from './index.js'
+import { KeyTypes, testType } from 'type-plus'
+import { Registry, createRegistry, withAdder } from './index.js'
 import { ReadonlyRegistry, toReadonlyRegistry } from './registry.js'
 
 describe('createRegistry()', () => {
 	test('create empty registry', () => {
 		const a = createRegistry()
 		expect(a.size()).toBe(0)
-		isType.equal<true, Registry<KeyTypes, unknown>, typeof a>()
+		testType.equal<typeof a, Registry<KeyTypes, unknown>>(true)
 	})
 
 	test('create with initial records', () => {
 		const a = createRegistry({ a: 1, b: 2 })
 		expect(a.size()).toBe(2)
-		isType.equal<true, Registry<string, number>, typeof a>()
+		testType.equal<typeof a, Registry<string, number>>(true)
 	})
 
 	test('key of the init record can be symbol', () => {
@@ -20,7 +20,7 @@ describe('createRegistry()', () => {
 		const a = createRegistry({ [s]: 's', b: 'b' })
 		expect(a.size()).toBe(2)
 		expect(a.get()[s]).toBe('s')
-		isType.equal<true, true, CanAssign<typeof a, Registry<string | symbol, string>>>()
+		testType.canAssign<typeof a, Registry<string | symbol, string>>(true)
 	})
 
 	describe('keys()', () => {
@@ -96,6 +96,6 @@ describe('toReadonlyRegistry()', () => {
 		const r = toReadonlyRegistry(s)
 
 		expect(Object.keys(r)).toEqual(['get', 'onChange', 'keys', 'has', 'size', 'list'])
-		isType.equal<true, ReadonlyRegistry<string | number | symbol, unknown>, typeof r>()
+		testType.equal<typeof r, ReadonlyRegistry<string | number | symbol, unknown>>(true)
 	})
 })
