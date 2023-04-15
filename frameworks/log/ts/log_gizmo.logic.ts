@@ -1,17 +1,5 @@
-import {
-	DEFAULT_LOG_METHOD_NAMES,
-	LoggerOptions,
-	type LogMethodNames,
-	type Logger,
-	type StandardLog
-} from 'standard-log'
-import type { Omit } from 'type-plus'
-import type { LogGizmoOptions } from './log_gizmo.types.js'
-
-export type GizmoLog<N extends string = LogMethodNames> = Omit<StandardLog<N>, 'getLogger'> &
-	Omit<Logger<LogMethodNames | N>, 'id' | 'level' | 'write'> & {
-		getLogger(id?: string, options?: LoggerOptions): Logger<LogMethodNames | N>
-	}
+import { DEFAULT_LOG_METHOD_NAMES, LoggerOptions, type LogMethodNames, type StandardLog } from 'standard-log'
+import type { GizmoLog, LogGizmoOptions } from './log_gizmo.types.js'
 
 export function buildLogContext<N extends string = LogMethodNames>(
 	name: string,
