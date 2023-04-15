@@ -135,8 +135,8 @@ describe('set()', () => {
 
 	it('can use a custom logger', () => {
 		const sl = createStandardLogForTest({ logLevel: logLevels.all })
-		const [, set] = createState([1])
-		set([2], { logger: sl.getLogger('test') })
+		const [, set] = createState([1], { logger: sl.getLogger('test') })
+		set([2])
 
 		expect(sl.reporter.getLogMessagesWithIdAndLevel()).toEqual(['test (PLANCK) state changed: [ 1 ] [ 2 ]'])
 	})
@@ -168,11 +168,11 @@ describe('onChange()', () => {
 
 	it('can use a custom logger', () => {
 		const sl = createStandardLogForTest({ logLevel: logLevels.all })
-		const [, , onChange] = createState([1])
+		const [, , onChange] = createState([1], { logger: sl.getLogger('test') })
 
 		let count = 0
 		const handler = () => count++
-		onChange(handler, { logger: sl.getLogger('test') })
+		onChange(handler)
 
 		expect(sl.reporter.getLogMessagesWithIdAndLevel()).toEqual([
 			'test (TRACE) new onChange handler: () => count++'
@@ -181,12 +181,12 @@ describe('onChange()', () => {
 
 	it('skip if the same handler is already registered', () => {
 		const sl = createStandardLogForTest({ logLevel: logLevels.all })
-		const [, , onChange] = createState([1])
+		const [, , onChange] = createState([1], { logger: sl.getLogger('test') })
 
 		let count = 0
 		const handler = () => count++
-		onChange(handler, { logger: sl.getLogger('test') })
-		onChange(handler, { logger: sl.getLogger('test') })
+		onChange(handler)
+		onChange(handler)
 
 		// show that setting only occurs once
 		expect(sl.reporter.getLogMessagesWithIdAndLevel()).toEqual([
@@ -198,14 +198,14 @@ describe('onChange()', () => {
 		const sl = createStandardLogForTest({ logLevel: logLevels.all })
 		const logger = sl.getLogger('test')
 
-		const [, , onChange] = createState([1])
+		const [, , onChange] = createState([1], { logger })
 
 		let count = 0
 		const handler = () => count++
-		const dispose = onChange(handler, { logger })
+		const dispose = onChange(handler)
 		dispose()
 
-		onChange(handler, { logger })
+		onChange(handler)
 
 		expect(sl.reporter.getLogMessagesWithIdAndLevel()).toEqual([
 			'test (TRACE) new onChange handler: () => count++',
@@ -217,12 +217,12 @@ describe('onChange()', () => {
 		const sl = createStandardLogForTest({ logLevel: logLevels.all })
 		const logger = sl.getLogger('test')
 
-		const [, set, onChange] = createState([1])
+		const [, set, onChange] = createState([1], { logger })
 
 		let count = 0
 		const handler = () => count++
-		onChange(handler, { logger })
-		const dispose = onChange(handler, { logger })
+		onChange(handler)
+		const dispose = onChange(handler)
 		dispose()
 
 		set([2])

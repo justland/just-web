@@ -1,6 +1,5 @@
-import { getLogger, Logger, logLevels, LogMethodNames } from '@just-web/log'
 import { pick } from 'type-plus'
-import { createState, OnStateChange, ResetState, SetState } from './state.js'
+import { createState, type OnStateChange, type ResetState, type SetState } from './state.js'
 import type { Updater } from './types.js'
 
 export type ReadonlyStore<T> = {
@@ -13,7 +12,7 @@ export type Store<T> = ReadonlyStore<T> & {
 	/**
 	 * @deprecated `set()` covers all use cases
 	 */
-	update(handler: Updater<T>, meta?: { logger: Logger }): void
+	update(handler: Updater<T>): void
 	reset: ResetState
 }
 
@@ -28,15 +27,15 @@ export type StoreValue<S extends Store<any>> = ReturnType<S['get']>
 export function createStore<T>(value: T): Store<T> {
 	const state = createState(value)
 	const [, set, onChange, reset] = state
-	onChange(v => (state[0] = v), { logger: getLogger<LogMethodNames>('noop', { level: logLevels.none }) })
+	onChange(v => (state[0] = v))
 
 	return {
 		get() {
 			return state[0]
 		},
 		set,
-		update(handler, meta) {
-			set(handler, meta)
+		update(handler) {
+			set(handler)
 		},
 		onChange,
 		reset

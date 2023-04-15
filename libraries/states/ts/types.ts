@@ -1,4 +1,4 @@
-import { Draft, nothing } from 'immer'
+import { nothing, type Draft } from 'immer'
 
 export type UpdaterResult<T> = undefined extends T ? Exclude<T, undefined> | void | typeof nothing : T | void
 

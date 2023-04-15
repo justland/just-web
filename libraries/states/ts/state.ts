@@ -1,10 +1,9 @@
-import { getLogger, Logger, logLevels } from '@just-web/log'
-import { produce, nothing } from 'immer'
+import { logLevels, type Logger } from '@just-web/log'
+import { nothing, produce } from 'immer'
 import { tersify } from 'tersify'
-import { AnyFunction, isPromise } from 'type-plus'
+import { isPromise, type AnyFunction } from 'type-plus'
+import { getDefaultLogger } from './log.js'
 import type { Updater } from './types.js'
-
-const stateLog = getLogger('@just-web/states:state')
 
 export type SetStateValue<T> = T | Updater<T>
 
@@ -12,13 +11,12 @@ export type SetStateValue<T> = T | Updater<T>
  * set or update the state.
  */
 export type SetState<T> = <V extends SetStateValue<T> = SetStateValue<T>>(
-	value: V,
-	meta?: { logger?: Logger }
+	value: V
 ) => V extends AnyFunction<any, Promise<any>> ? Promise<T> : T
 
 export type StateChangeHandler<T> = (value: T, prev: T) => void
 
-export type OnStateChange<T> = (handler: StateChangeHandler<T>, meta?: { logger?: Logger }) => () => void
+export type OnStateChange<T> = (handler: StateChangeHandler<T>) => () => void
 
 export type ResetState = () => void
 
@@ -26,13 +24,14 @@ export type ResetState = () => void
  * creates a functional style state to track changes of a value.
  */
 export function createState<T>(
-	init: T
+	init: T,
+	meta?: { logger?: Logger }
 ): [value: T, set: SetState<T>, onChange: OnStateChange<T>, reset: ResetState] {
 	const handlers: StateChangeHandler<T>[] = []
 	let value = Object.freeze(init)
+	const log = meta?.logger ?? getDefaultLogger()
 
-	function notifyAfterSet(old: T, value: T, meta?: { logger?: Logger }) {
-		const log = meta?.logger ?? stateLog
+	function notifyAfterSet(old: T, value: T) {
 		log.planck(`state changed:`, old, value)
 		handlers.forEach(h => h(value, old))
 		return value
@@ -42,8 +41,7 @@ export function createState<T>(
 		newValue:
 			| T
 			| ((draft: T) => T | void | typeof nothing)
-			| ((draft: T) => Promise<T | void | typeof nothing>),
-		meta?: { logger?: Logger }
+			| ((draft: T) => Promise<T | void | typeof nothing>)
 	) {
 		if (Object.is(value, newValue)) return newValue
 
@@ -55,18 +53,17 @@ export function createState<T>(
 			if (isPromise(r)) {
 				return r.then(v => {
 					value = Object.freeze(v)
-					return notifyAfterSet(old, value, meta)
+					return notifyAfterSet(old, value)
 				})
 			} else {
 				value = Object.freeze(r)
 			}
 		}
-		return notifyAfterSet(old, value, meta)
+		return notifyAfterSet(old, value)
 	}
 
-	function onChange(handler: StateChangeHandler<T>, meta?: { logger?: Logger }) {
+	function onChange(handler: StateChangeHandler<T>) {
 		if (handlers.includes(handler)) return () => {}
-		const log = meta?.logger ?? stateLog
 		log.on(logLevels.trace, log => log(`new onChange handler: ${tersify(handler)}`))
 		handlers.push(handler)
 		return () => {
