@@ -1,5 +1,5 @@
 import type { Draft } from 'immer'
-import type { ArrayValue, KeyTypes, Pick, RecordValue } from 'type-plus'
+import type { UnionOfValues, KeyTypes, Pick, RecordValue } from 'type-plus'
 import type { Registry, RegistryValue } from './registry.js'
 import type { Store, StoreValue } from './store.js'
 
@@ -18,8 +18,8 @@ export function adder<R extends Registry<any, any>>(
 ): R & Adder<ReturnType<RecordValue<RegistryValue<R>>>>
 export function adder<A extends Array<any>, S extends Store<A>>(
 	store: S,
-	handler: (record: Draft<A>, entry: ArrayValue<A>) => void
-): Adder<ArrayValue<A>>
+	handler: (record: Draft<A>, entry: UnionOfValues<A>) => void
+): Adder<UnionOfValues<A>>
 export function adder<S extends Store<Record<KeyTypes, any>>>(
 	store: S,
 	handler: (record: Draft<StoreValue<S>>, entry: RecordValue<StoreValue<S>>) => void
@@ -37,7 +37,7 @@ export function withAdder<R extends Registry<any, any>>(
 export function withAdder<A extends Array<any>, S extends Store<A>>(
 	store: S,
 	addEntry: (record: Draft<A>, entry: ReturnType<S['get']>) => void
-): S & WithAdder<ArrayValue<ReturnType<S['get']>>>
+): S & WithAdder<UnionOfValues<ReturnType<S['get']>>>
 export function withAdder<S extends Store<Record<any, any>>>(
 	store: S,
 	addEntry: (record: Draft<StoreValue<S>>, entry: RecordValue<StoreValue<S>>) => void
@@ -52,10 +52,10 @@ export function withAdder<S extends Store<any>>(
 	}
 }
 
-export function push<A extends Array<any>>(record: Draft<A>, entry: ArrayValue<A>) {
+export function push<A extends Array<any>>(record: Draft<A>, entry: UnionOfValues<A>) {
 	record.push(entry)
 }
 
-export function unshift<A extends Array<any>>(record: Draft<A>, entry: ArrayValue<A>) {
+export function unshift<A extends Array<any>>(record: Draft<A>, entry: UnionOfValues<A>) {
 	record.unshift(entry)
 }

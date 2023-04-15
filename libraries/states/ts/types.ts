@@ -6,7 +6,7 @@ export type UpdaterResult<T> = undefined extends T ? Exclude<T, undefined> | voi
  * Updater for type `T`.
  *
  * If the function does not return,
- * or the resulting promise does not resovle to a value,
+ * or the resulting promise does not resolve to a value,
  * the value is assumed to be updated in-place.
  *
  * If the function returns `nothing` or resolves to `nothing`,
