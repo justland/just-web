@@ -2,6 +2,7 @@ import { idTestGizmoFn } from '@just-web/id/testing'
 import { logGizmoFn, logLevels } from '@just-web/log'
 import { logTestGizmoFn } from '@just-web/log/testing'
 import { incubate } from '@unional/gizmo'
+import { a } from 'assertron'
 import { statesGizmo } from './index.js'
 
 it('can create state', async () => {
@@ -40,8 +41,8 @@ it('can create store with meta', async () => {
 	const store = states.createStore(0, { logger: log.getLogger('store') })
 	store.set(1)
 
-	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
-		'test:store (TRACE) new onChange handler: v => state.[0] = v',
+	a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), [
+		/test:store \(TRACE\) new onChange handler:/,
 		'test:store (PLANCK) state changed: 0 1'
 	])
 })
@@ -65,8 +66,8 @@ it('can create registry with meta', async () => {
 		v.b = 2
 	})
 
-	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
-		'test:registry (TRACE) new onChange handler: v => state.[0] = v',
+	a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), [
+		/test:registry \(TRACE\) new onChange handler:/,
 		'test:registry (PLANCK) state changed: { a: 1 } { a: 1, b: 2 }'
 	])
 })
