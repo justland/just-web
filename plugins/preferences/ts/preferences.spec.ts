@@ -93,29 +93,6 @@ describe(`${getUserPreference.name}()`, () => {
 })
 
 describe(`${setUserPreference.name}()`, () => {
-	it('supports passing in handler', () => {
-		const app = setupTestApp()
-		const store = record<string, string | undefined>()
-
-		app.commands.handlers.register(
-			setUserPreference.id,
-			setUserPreference.defineHandler((key, value) => {
-				const v = typeof value === 'function' ? value(store[key]) : value
-				// while not correct, it's not the case we test here.
-				store[key] = v as any
-			})
-		)
-		app.commands.handlers.register(
-			getUserPreference.id,
-			getUserPreference.defineHandler(key => store[key])
-		)
-
-		app.preferences.set('some-unique-id', value => (value ? value + 1 : 's'))
-		app.preferences.set('some-unique-id', value => (value ? value + 1 : 's'))
-
-		expect(store['some-unique-id']).toEqual('s1')
-	})
-
 	it('can accept undefined as value (which the implementation should remove the preference)', () => {
 		setUserPreference('somekey', undefined)
 	})

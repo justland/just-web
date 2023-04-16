@@ -1,5 +1,5 @@
 import { command } from '@just-web/commands'
-import { SetStateValue } from '@just-web/states'
+import type { SetStateValue } from '@just-web/states'
 
 /**
  * Gets a specific user preference
