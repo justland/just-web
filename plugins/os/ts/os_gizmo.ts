@@ -1,4 +1,4 @@
-import { define } from '@just-web/framework'
+import { define } from '@just-web/app'
 import { isMac } from './os.js'
 
 export const osGizmo = define({

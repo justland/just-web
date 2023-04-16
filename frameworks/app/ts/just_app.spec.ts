@@ -1,10 +1,7 @@
-import { IdGizmo, LogGizmo, createMemoryLogReporter, define, logLevels } from '@just-web/framework'
-import { sideEffectGizmo } from '@just-web/framework/testing'
-import { OSGizmo, osGizmo } from '@just-web/os'
 import { a } from 'assertron'
 import { testType } from 'type-plus'
-import { justApp } from './just_app.js'
-import { justTestApp } from './just_app.mocks.js'
+import { IdGizmo, LogGizmo, createMemoryLogReporter, define, justApp, logLevels } from './index.js'
+import { LeafGizmo, justTestApp, leafGizmo, sideEffectGizmo } from './testing/index.js'
 
 it(`requires a name`, async () => {
 	// @ts-expect-error
@@ -40,11 +37,11 @@ it('can use a gizmo returning single value tuple', async () => {
 
 it('adds gizmo to the app', async () => {
 	const app = await justTestApp({ name: 'test-app', log: { logLevel: logLevels.none } })
-		.with(osGizmo)
+		.with(leafGizmo)
 		.create()
 
-	testType.canAssign<typeof app, OSGizmo>(true)
-	expect(app.os.isMac).toBeDefined()
+	testType.canAssign<typeof app, LeafGizmo>(true)
+	expect(app.leaf.foo).toBeDefined()
 })
 
 it('can use a gizmo needing partial context', async () => {

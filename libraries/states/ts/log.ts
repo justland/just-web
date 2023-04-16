@@ -1,4 +1,4 @@
-import { getLogger, type Logger } from '@just-web/log'
+import { getLogger, type Logger } from '@just-web/app'
 
 let stateLog: Logger
 export function getDefaultLogger() {

@@ -1,5 +1,5 @@
-import type { LogGizmo } from '@just-web/log'
-import { define } from '@unional/gizmo'
+import type { LogGizmo } from '@just-web/app'
+import { define } from '@just-web/app'
 import type { KeyTypes } from 'type-plus'
 import { createRegistry } from './registry.js'
 import { createState, type StateMeta } from './state.js'

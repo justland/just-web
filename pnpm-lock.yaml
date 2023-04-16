@@ -152,22 +152,22 @@ importers:
 
   frameworks/app:
     dependencies:
+      '@just-web/id':
+        specifier: workspace:^
+        version: link:../id
+      '@just-web/log':
+        specifier: workspace:^
+        version: link:../log
       '@unional/gizmo':
         specifier: ^1.0.2
         version: 1.0.2
       iso-error:
         specifier: ~6.0.0
-        version: 6.0.0
+        version: 6.0.1
       type-plus:
-        specifier: ^6.0.0
+        specifier: ^6.4.0
         version: 6.4.0
     devDependencies:
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../log
-      '@just-web/os':
-        specifier: workspace:^
-        version: link:../../plugins/os
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
@@ -535,15 +535,6 @@ importers:
 
   libraries/states:
     dependencies:
-      '@just-web/id':
-        specifier: workspace:^
-        version: link:../../frameworks/id
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../../frameworks/log
-      '@unional/gizmo':
-        specifier: ^1.0.2
-        version: 1.0.2
       immer:
         specifier: npm:@unional/immer@^9.0.0-beta.2
         version: /@unional/immer@9.0.0-beta.2
@@ -554,6 +545,9 @@ importers:
         specifier: ^6.0.0
         version: 6.4.0
     devDependencies:
+      '@just-web/app':
+        specifier: workspace:^
+        version: link:../../frameworks/app
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
@@ -1221,6 +1215,9 @@ importers:
         specifier: ~1.3.6
         version: 1.3.6
     devDependencies:
+      '@just-web/app':
+        specifier: workspace:^
+        version: link:../../frameworks/app
       '@just-web/log':
         specifier: workspace:^
         version: link:../../frameworks/log

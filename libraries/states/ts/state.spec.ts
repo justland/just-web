@@ -1,7 +1,9 @@
-import { createStandardLogForTest, logLevels } from '@just-web/log'
+import { logLevels } from '@just-web/app'
+import { justTestApp } from '@just-web/app/testing'
 import { nothing } from 'immer'
 import { testType } from 'type-plus'
 import { OnStateChange, createState } from './state.js'
+import { a, has, some } from 'assertron'
 
 it('returns initial value', () => {
 	const [value] = createState([1, 2, 3])
@@ -133,12 +135,12 @@ describe('set()', () => {
 		set(value)
 	})
 
-	it('can use a custom logger', () => {
-		const sl = createStandardLogForTest({ logLevel: logLevels.all })
-		const [, set] = createState([1], { logger: sl.getLogger('test') })
+	it('can use a custom logger', async () => {
+		const { log } = await justTestApp({ log: { logLevel: logLevels.all } }).create()
+		const [, set] = createState([1], { logger: log.getLogger() })
 		set([2])
 
-		expect(sl.reporter.getLogMessagesWithIdAndLevel()).toEqual(['test (PLANCK) state changed: [ 1 ] [ 2 ]'])
+		a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some('test (PLANCK) state changed: [ 1 ] [ 2 ]'))
 	})
 })
 
@@ -166,22 +168,23 @@ describe('onChange()', () => {
 		expect(count).toBe(1)
 	})
 
-	it('can use a custom logger', () => {
-		const sl = createStandardLogForTest({ logLevel: logLevels.all })
-		const [, , onChange] = createState([1], { logger: sl.getLogger('test') })
+	it('can use a custom logger', async () => {
+		const { log } = await justTestApp({ log: { logLevel: logLevels.all } }).create()
+		const [, , onChange] = createState([1], { logger: log.getLogger() })
 
 		let count = 0
 		const handler = () => count++
 		onChange(handler)
 
-		expect(sl.reporter.getLogMessagesWithIdAndLevel()).toEqual([
-			'test (TRACE) new onChange handler: () => count++'
-		])
+		a.satisfies(
+			log.reporter.getLogMessagesWithIdAndLevel(),
+			some('test (TRACE) new onChange handler: () => count++')
+		)
 	})
 
-	it('skip if the same handler is already registered', () => {
-		const sl = createStandardLogForTest({ logLevel: logLevels.all })
-		const [, , onChange] = createState([1], { logger: sl.getLogger('test') })
+	it('skip if the same handler is already registered', async () => {
+		const { log } = await justTestApp({ log: { logLevel: logLevels.all } }).create()
+		const [, , onChange] = createState([1], { logger: log.getLogger() })
 
 		let count = 0
 		const handler = () => count++
@@ -189,14 +192,15 @@ describe('onChange()', () => {
 		onChange(handler)
 
 		// show that setting only occurs once
-		expect(sl.reporter.getLogMessagesWithIdAndLevel()).toEqual([
-			'test (TRACE) new onChange handler: () => count++'
-		])
+		a.satisfies(
+			log.reporter.getLogMessagesWithIdAndLevel(),
+			some('test (TRACE) new onChange handler: () => count++')
+		)
 	})
 
-	it('returns a dispose function', () => {
-		const sl = createStandardLogForTest({ logLevel: logLevels.all })
-		const logger = sl.getLogger('test')
+	it('returns a dispose function', async () => {
+		const { log } = await justTestApp({ log: { logLevel: logLevels.all } }).create()
+		const logger = log.getLogger()
 
 		const [, , onChange] = createState([1], { logger })
 
@@ -207,15 +211,18 @@ describe('onChange()', () => {
 
 		onChange(handler)
 
-		expect(sl.reporter.getLogMessagesWithIdAndLevel()).toEqual([
-			'test (TRACE) new onChange handler: () => count++',
-			'test (TRACE) new onChange handler: () => count++'
-		])
+		a.satisfies(
+			log.reporter.getLogMessagesWithIdAndLevel(),
+			has(
+				'test (TRACE) new onChange handler: () => count++',
+				'test (TRACE) new onChange handler: () => count++'
+			)
+		)
 	})
 
-	it(`the dup handler's dispose function does nothing`, () => {
-		const sl = createStandardLogForTest({ logLevel: logLevels.all })
-		const logger = sl.getLogger('test')
+	it(`the dup handler's dispose function does nothing`, async () => {
+		const { log } = await justTestApp({ log: { logLevel: logLevels.all } }).create()
+		const logger = log.getLogger('test')
 
 		const [, set, onChange] = createState([1], { logger })
 

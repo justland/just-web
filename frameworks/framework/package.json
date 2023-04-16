@@ -51,6 +51,7 @@
 	"files": [
 		"cjs",
 		"esm",
+		"testing",
 		"ts",
 		"!**/*.{spec,test,unit,accept,integrate,system}.*"
 	],

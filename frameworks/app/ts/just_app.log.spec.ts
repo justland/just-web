@@ -1,9 +1,8 @@
-import type { LogGizmo } from '@just-web/framework'
-import { createMemoryLogReporter, logLevels } from '@just-web/framework'
 import { a, some } from 'assertron'
 import { testType } from 'type-plus'
-import { justApp } from './just_app.js'
-import { justTestApp } from './just_app.mocks.js'
+import type { LogGizmo } from './index.js'
+import { createMemoryLogReporter, justApp, logLevels } from './index.js'
+import { justTestApp } from './testing/index.js'
 
 it('comes with log', async () => {
 	const app = await justTestApp({ name: 'test' }).create()

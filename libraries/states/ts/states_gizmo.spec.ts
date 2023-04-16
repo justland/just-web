@@ -1,40 +1,36 @@
-import { idTestGizmoFn } from '@just-web/id/testing'
-import { logGizmoFn, logLevels } from '@just-web/log'
-import { logTestGizmoFn } from '@just-web/log/testing'
-import { incubate } from '@unional/gizmo'
+import { logLevels } from '@just-web/app'
+import { justTestApp } from '@just-web/app/testing'
 import { a } from 'assertron'
 import { statesGizmo } from './index.js'
 
 it('can create state', async () => {
-	const { states } = await incubate().with(idTestGizmoFn()).with(logGizmoFn()).with(statesGizmo).create()
+	const { states } = await justTestApp().with(statesGizmo).create()
 	const [value] = states.createState(0)
 	expect(value).toEqual(0)
 })
 
 it('can create state with meta', async () => {
-	const { states, log } = await incubate()
-		.with(idTestGizmoFn())
-		.with(logTestGizmoFn({ logLevel: logLevels.all }))
+	const { id, states, log } = await justTestApp({ log: { logLevel: logLevels.all } })
 		.with(statesGizmo)
 		.create()
 
 	const [, set] = states.createState(0, { logger: log.getLogger('state') })
 	set(1)
 
-	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual(['test:state (PLANCK) state changed: 0 1'])
+	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
+		`test (INFO) created (id: ${id})`,
+		'test:state (PLANCK) state changed: 0 1'])
 })
 
 it('can create store', async () => {
-	const { states } = await incubate().with(idTestGizmoFn()).with(logGizmoFn()).with(statesGizmo).create()
+	const { states } = await justTestApp().with(statesGizmo).create()
 
 	const store = states.createStore(0)
 	expect(store.get()).toEqual(0)
 })
 
 it('can create store with meta', async () => {
-	const { states, log } = await incubate()
-		.with(idTestGizmoFn())
-		.with(logTestGizmoFn({ logLevel: logLevels.all }))
+	const { states, log, id } = await justTestApp({ log: { logLevel: logLevels.all } })
 		.with(statesGizmo)
 		.create()
 
@@ -42,22 +38,21 @@ it('can create store with meta', async () => {
 	store.set(1)
 
 	a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), [
+		`test (INFO) created (id: ${id})`,
 		/test:store \(TRACE\) new onChange handler:/,
 		'test:store (PLANCK) state changed: 0 1'
 	])
 })
 
 it('can create registry', async () => {
-	const { states } = await incubate().with(idTestGizmoFn()).with(logGizmoFn()).with(statesGizmo).create()
+	const { states } = await justTestApp().with(statesGizmo).create()
 
 	const registry = states.createRegistry()
 	expect(registry).toBeDefined()
 })
 
 it('can create registry with meta', async () => {
-	const { states, log } = await incubate()
-		.with(idTestGizmoFn())
-		.with(logTestGizmoFn({ logLevel: logLevels.all }))
+	const { states, log, id } = await justTestApp({ log: { logLevel: logLevels.all } })
 		.with(statesGizmo)
 		.create()
 
@@ -67,6 +62,7 @@ it('can create registry with meta', async () => {
 	})
 
 	a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), [
+		`test (INFO) created (id: ${id})`,
 		/test:registry \(TRACE\) new onChange handler:/,
 		'test:registry (PLANCK) state changed: { a: 1 } { a: 1, b: 2 }'
 	])

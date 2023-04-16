@@ -1,4 +1,4 @@
-import { logLevels, type Logger } from '@just-web/log'
+import { logLevels, type Logger } from '@just-web/app'
 import { nothing, produce } from 'immer'
 import { tersify } from 'tersify'
 import { isPromise, type AnyFunction } from 'type-plus'

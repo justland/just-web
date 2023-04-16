@@ -10,6 +10,9 @@
 			"path": "../../frameworks/log"
 		},
 		{
+			"path": "../../plugins/os"
+		},
+		{
 			"path": "../../frameworks/types"
 		},
 		{
@@ -17,6 +20,9 @@
 		},
 		{
 			"path": "../../tools/repo-scripts"
+		},
+		{
+			"path": "../../tools/testing"
 		}
 	],
 	"include": ["ts", "typings"]

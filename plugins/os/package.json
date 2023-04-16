@@ -73,6 +73,7 @@
 		"platform": "~1.3.6"
 	},
 	"devDependencies": {
+		"@just-web/app": "workspace:^",
 		"@just-web/log": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
 		"@just-web/types": "workspace:^",
