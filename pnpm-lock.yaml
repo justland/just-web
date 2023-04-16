@@ -611,9 +611,6 @@ importers:
 
   plugins/browser:
     dependencies:
-      '@unional/gizmo':
-        specifier: ^1.0.3
-        version: 1.0.3
       iso-error:
         specifier: ~6.0.0
         version: 6.0.0
@@ -621,9 +618,9 @@ importers:
         specifier: ^6.0.0
         version: 6.4.0
     devDependencies:
-      '@just-web/id':
+      '@just-web/app':
         specifier: workspace:^
-        version: link:../../frameworks/id
+        version: link:../../frameworks/app
       '@just-web/log':
         specifier: workspace:^
         version: link:../../frameworks/log
@@ -1208,9 +1205,6 @@ importers:
 
   plugins/os:
     dependencies:
-      '@just-web/framework':
-        specifier: workspace:^
-        version: link:../../frameworks/framework
       platform:
         specifier: ~1.3.6
         version: 1.3.6

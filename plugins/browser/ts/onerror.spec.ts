@@ -4,7 +4,7 @@ import { logTestGizmoFn } from '@just-web/log/testing'
 import { incubate } from '@unional/gizmo'
 import { a } from 'assertron'
 import { startsWith } from 'satisfier'
-import { createErrorStore } from './errorStore.js'
+import { createErrorStore } from './error_store.js'
 import { ctx } from './onerror.ctx.js'
 import { registerOnErrorHandler } from './onerror.js'
 
