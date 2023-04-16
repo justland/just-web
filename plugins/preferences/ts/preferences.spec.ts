@@ -224,7 +224,7 @@ describe(`preferences.createState()`, () => {
 		})
 
 		it('accepts handler that update value in-place', () => {
-			const store = setupTestStore<TestPref>('set-with-hanler-in-place', { a: 1 })
+			const store = setupTestStore<TestPref>('set-with-handler-in-place', { a: 1 })
 			const r = store.set(v => {
 				v!.a = 2
 			})
@@ -236,7 +236,7 @@ describe(`preferences.createState()`, () => {
 		})
 
 		it('accepts handler that return nothing', () => {
-			const store = setupTestStore<TestPref>('set-with-hanler->nothing')
+			const store = setupTestStore<TestPref>('set-with-handler->nothing')
 			store.set({ a: 1 })
 			store.set(_ => nothing)
 			const result = store.get()
