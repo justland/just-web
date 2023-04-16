@@ -1,5 +1,5 @@
 import { DEFAULT_LOG_METHOD_NAMES, LoggerOptions, type LogMethodNames, type StandardLog } from 'standard-log'
-import type { GizmoLog, LogGizmoOptions } from './log_gizmo.types.js'
+import type { GizmoStandardLog, LogGizmoOptions } from './log_gizmo.types.js'
 
 export function buildLogContext<N extends string = LogMethodNames>(
 	name: string,
@@ -14,7 +14,7 @@ export function buildLogContext<N extends string = LogMethodNames>(
 		getNonConsoleLogger(id: string, options?: LoggerOptions) {
 			return sl.getNonConsoleLogger(getLoggerID(name, id), options)
 		}
-	} as unknown as GizmoLog<N>
+	} as unknown as GizmoStandardLog<N>
 
 	const appLogger = sl.getLogger(name)
 	const logMethods = DEFAULT_LOG_METHOD_NAMES.concat(Object.keys(options?.customLevels ?? {})).concat([

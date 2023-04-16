@@ -1,4 +1,4 @@
-import { idTestGizmoFn } from '@just-web/id/testing'
+import { GizmoStandardLog, logLevels } from '@just-web/app'
 import { logLevels } from '@just-web/log'
 import { logTestGizmoFn } from '@just-web/log/testing'
 import { incubate } from '@unional/gizmo'
