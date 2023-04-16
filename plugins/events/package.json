@@ -51,6 +51,7 @@
 		"size": "size-limit",
 		"test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
 		"test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest --watch",
+		"w": "pnpm test:watch",
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
@@ -66,6 +67,7 @@
 		"@size-limit/preset-small-lib": "~8.2.0",
 		"@types/jest": "^29.2.3",
 		"@types/node": "^18.15.11",
+		"assertron": "^11.2.0",
 		"cross-env": "^7.0.3",
 		"depcheck": "~1.4.3",
 		"eslint": "^8.11.0",
