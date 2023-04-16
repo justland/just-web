@@ -1,8 +1,8 @@
 import { LogGizmo, Logger, getLogger } from '@just-web/log'
-import type { ErrorStore } from './errorStore.js'
+import { isType } from 'type-plus'
+import type { ErrorStore } from './error_store.types.js'
 import { BrowserError } from './errors.js'
 import { ctx } from './onerror.ctx.js'
-import { isType } from 'type-plus'
 
 export namespace registerOnErrorHandler {
 	export type Options = {

@@ -1,7 +1,7 @@
 import type { LogContext } from '@just-web/log'
 import { definePlugin, PluginContext } from '@just-web/types'
 import { ctx } from './browserPlugin.ctx.js'
-import { createErrorStore, toReadonlyErrorStore } from './errorStore.js'
+import { createErrorStore, toReadonlyErrorStore } from './error_store.js'
 
 export type BrowserOptions = {
 	browser?: {
