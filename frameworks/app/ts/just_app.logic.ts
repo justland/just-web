@@ -1,9 +1,9 @@
 import { idGizmoFn, type IdGizmo } from '@just-web/id'
 import { logGizmoFn } from '@just-web/log'
 import { incubate, type Gizmo, type GizmoIncubator } from '@unional/gizmo'
-import type { AppBuilderOptions } from './just_app.types.js'
+import type { JustAppOptions } from './just_app.types.js'
 
-export function incubateApp(options: AppBuilderOptions): GizmoIncubator<IdGizmo> {
+export function incubateApp(options: JustAppOptions): GizmoIncubator<IdGizmo> {
 	let incubator = incubate(idGizmoFn(options))
 	return {
 		with<G extends Gizmo>(gizmo: G) {
