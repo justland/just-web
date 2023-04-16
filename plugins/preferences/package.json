@@ -33,6 +33,16 @@
         "types": "./cjs/index.d.ts",
         "default": "./cjs/index.js"
       }
+    },
+    "./testing": {
+      "import": {
+        "types": "./esm/testing/index.d.ts",
+        "default": "./esm/testing/index.js"
+      },
+      "require": {
+        "types": "./cjs/testing/index.d.ts",
+        "default": "./cjs/testing/index.js"
+      }
     }
   },
   "main": "./cjs/index.js",
@@ -41,6 +51,7 @@
   "files": [
     "cjs",
     "esm",
+    "testing",
     "ts",
     "!**/*.{spec,test,unit,accept,integrate,system}.*"
   ],
