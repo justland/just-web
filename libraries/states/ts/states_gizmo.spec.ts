@@ -19,7 +19,8 @@ it('can create state with meta', async () => {
 
 	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual([
 		`test (INFO) created (id: ${id})`,
-		'test:state (PLANCK) state changed: 0 1'])
+		'test:state (PLANCK) state changed: 0 1'
+	])
 })
 
 it('can create store', async () => {

@@ -3,10 +3,7 @@ import { incubate } from '@unional/gizmo'
 import { createMemoryLogReporter, logGizmoFn, logLevels } from './index.js'
 
 it('default log level to info', async () => {
-	const { log } = await incubate()
-		.with(idTestGizmoFn())
-		.with(logGizmoFn())
-		.create()
+	const { log } = await incubate().with(idTestGizmoFn()).with(logGizmoFn()).create()
 	expect(log.logLevel).toEqual(logLevels.info)
 })
 
