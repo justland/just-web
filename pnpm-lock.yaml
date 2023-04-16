@@ -897,6 +897,9 @@ importers:
       '@jest/globals':
         specifier: ^29.3.1
         version: 29.3.1
+      '@just-web/app':
+        specifier: workspace:^
+        version: link:../../frameworks/app
       '@just-web/keyboard':
         specifier: workspace:^
         version: link:../keyboard
