@@ -4,10 +4,7 @@ import { createMemoryLogReporter, logLevels } from 'standard-log'
 import { logTestGizmoFn } from './log_gizmo.mocks.js'
 
 it('defaults logLevel to debug and provides memory reporter', async () => {
-	const { log } = await incubate()
-		.with(idTestGizmoFn())
-		.with(logTestGizmoFn())
-		.create()
+	const { log } = await incubate().with(idTestGizmoFn()).with(logTestGizmoFn()).create()
 
 	expect(log.logLevel).toEqual(logLevels.debug)
 	log.info('hello')
@@ -15,10 +12,7 @@ it('defaults logLevel to debug and provides memory reporter', async () => {
 })
 
 it('works with app name', async () => {
-	const { log } = await incubate()
-		.with(idTestGizmoFn())
-		.with(logTestGizmoFn())
-		.create()
+	const { log } = await incubate().with(idTestGizmoFn()).with(logTestGizmoFn()).create()
 	log.notice('hello')
 
 	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual(['test (NOTICE) hello'])

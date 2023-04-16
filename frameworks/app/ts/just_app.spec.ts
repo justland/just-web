@@ -71,7 +71,7 @@ it('allows one gizmo to override another', async () => {
 	})
 
 	const app = await justTestApp({ name: 'test-app' }).with(log2).create()
-	testType.equal<typeof app['log'], { info(value: string): void }>(true)
+	testType.equal<(typeof app)['log'], { info(value: string): void }>(true)
 })
 
 it('starts will log an app start message', async () => {

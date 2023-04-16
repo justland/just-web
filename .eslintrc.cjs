@@ -5,7 +5,7 @@ module.exports = {
 	},
 	extends: ['plugin:harmony/latest', 'plugin:yml/standard'],
 	rules: {
-		'yml/quotes': ['error', { prefer: 'single' }],
+		'yml/quotes': ['error', { prefer: 'single' }]
 	},
 	root: true
 }

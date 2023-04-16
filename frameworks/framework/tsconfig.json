@@ -1,27 +1,27 @@
 {
-	"extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
-	"compilerOptions": {
-		"lib": [
-			"DOM",
-			"ES2019",
-			"ES2021.Promise"
-		],
-		"outDir": "esm",
-		"rootDir": "ts"
-	},
-	"include": [
-		"ts",
-		"types"
-	],
-	"references": [
-		{
-			"path": "../../frameworks/id"
-		},
-		{
-			"path": "../../frameworks/log"
-		},
-		{
-			"path": "../../tools/repo-scripts"
-		}
-	]
+  "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "ES2019",
+      "ES2021.Promise"
+    ],
+    "outDir": "esm",
+    "rootDir": "ts"
+  },
+  "include": [
+    "ts",
+    "types"
+  ],
+  "references": [
+    {
+      "path": "../../frameworks/id"
+    },
+    {
+      "path": "../../frameworks/log"
+    },
+    {
+      "path": "../../tools/repo-scripts"
+    }
+  ]
 }

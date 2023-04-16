@@ -5,7 +5,12 @@ import { createMemoryLogReporter } from '@just-web/log'
 
 it('randomize the app id', async () => {
 	const ids = await Promise.all(
-		range(0, 100).map(async () => (await justApp({ name: 'random', log: { reporters: [createMemoryLogReporter()]} }).create()).id)
+		range(0, 100).map(
+			async () =>
+				(
+					await justApp({ name: 'random', log: { reporters: [createMemoryLogReporter()] } }).create()
+				).id
+		)
 	)
 
 	const x = ids.reduce((p, v) => ((p[v] = true), p), record())
