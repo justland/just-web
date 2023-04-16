@@ -1,5 +1,5 @@
 import { justTestApp } from '@just-web/app/testing'
-import { keyboardGizmoFn } from './keyboard_gizmo.js'
+import { keyboardGizmoFn } from './index.js'
 
 it('can be created with no options', async () => {
 	const app = await justTestApp().with(keyboardGizmoFn()).create()
