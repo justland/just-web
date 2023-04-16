@@ -1,7 +1,7 @@
-import { define, DepBuilder, GizmoStatic, type LogGizmo } from '@just-web/app'
+import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
 import { ctx } from './browser_gizmo.ctx.js'
 import { createErrorStore, toReadonlyErrorStore } from './error_store.js'
-import { ReadonlyErrorStore } from './error_store.types.js'
+import type { ReadonlyErrorStore } from './error_store.types.js'
 
 export type BrowserGizmoOptions = {
 	/**
