@@ -22,7 +22,7 @@ export type {
 	ConsoleLogReporter,
 	ConsoleLogReporterOptions,
 	GetLogger,
-	GizmoLog,
+	GizmoStandardLog,
 	LogEntry,
 	LogFilter,
 	LogFormatter,
