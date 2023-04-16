@@ -57,15 +57,21 @@ it('can use a gizmo needing partial context', async () => {
 })
 
 it('allows one gizmo to override another', async () => {
+	expect.assertions(1)
 	const log2 = define({
 		async create() {
-			return { log: console }
+			return {
+				log: {
+					info(value: string) {
+						expect(value).toMatch(/^created \(id: .*\)$/)
+					}
+				}
+			}
 		}
 	})
 
 	const app = await justTestApp({ name: 'test-app' }).with(log2).create()
-	testType.canAssign<typeof app, { log: typeof console }>(true)
-	expect(app.log).toEqual(console)
+	testType.equal<typeof app['log'], { info(value: string): void }>(true)
 })
 
 it('starts will log an app start message', async () => {
