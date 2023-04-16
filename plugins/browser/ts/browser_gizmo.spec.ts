@@ -14,6 +14,8 @@ describe(`default().init()`, () => {
 			expect(options.preventDefault).toBe(true)
 		}
 
-		await justTestApp().with(browserGizmoFn({ preventDefault: true })).create()
+		await justTestApp()
+			.with(browserGizmoFn({ preventDefault: true }))
+			.create()
 	})
 })
