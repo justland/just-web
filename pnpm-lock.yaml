@@ -988,6 +988,9 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
     devDependencies:
+      '@just-web/app':
+        specifier: workspace:^
+        version: link:../../frameworks/app
       '@just-web/log':
         specifier: workspace:^
         version: link:../../frameworks/log
