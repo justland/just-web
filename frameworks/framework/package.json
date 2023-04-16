@@ -71,9 +71,9 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"@unional/gizmo": "^1.0.2",
 		"@just-web/id": "workspace:^",
 		"@just-web/log": "workspace:^",
+		"@unional/gizmo": "^1.0.3",
 		"iso-error": "~6.0.0",
 		"type-plus": "^6.4.0"
 	},

@@ -159,8 +159,8 @@ importers:
         specifier: workspace:^
         version: link:../log
       '@unional/gizmo':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
       iso-error:
         specifier: ~6.0.0
         version: 6.0.1
@@ -247,8 +247,8 @@ importers:
         specifier: workspace:^
         version: link:../log
       '@unional/gizmo':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
       iso-error:
         specifier: ~6.0.0
         version: 6.0.0
@@ -317,8 +317,8 @@ importers:
   frameworks/id:
     dependencies:
       '@unional/gizmo':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
     devDependencies:
       '@just-web/repo-scripts':
         specifier: workspace:^
@@ -399,8 +399,8 @@ importers:
         specifier: workspace:^
         version: link:../types
       '@unional/gizmo':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
       standard-log:
         specifier: ^12.0.5
         version: 12.0.5
@@ -612,8 +612,8 @@ importers:
   plugins/browser:
     dependencies:
       '@unional/gizmo':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
       iso-error:
         specifier: ~6.0.0
         version: 6.0.0
@@ -3749,8 +3749,8 @@ packages:
       '@just-func/types': 0.5.1
     dev: false
 
-  /@unional/gizmo@1.0.2:
-    resolution: {integrity: sha512-PZgkomXjXZWcyvJ3xbOl0m5IRVhs+sh2pBugNtvDPHFD2hgmWUPLPud8NsrKL65kQe7xtr90cJTFghalZMWgFA==}
+  /@unional/gizmo@1.0.3:
+    resolution: {integrity: sha512-MkEJOiBJ22Nx/VwVLnVrfW1XRq2dlKqrdyrDaANwkwuxOIZwXeOE8sKdf9mDkC5+z+MA9AUHnw3T/KvO2SYJnA==}
     engines: {node: '>= 14.16'}
     dev: false
 
