@@ -56,14 +56,12 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"@just-web/id": "workspace:^",
-		"@just-web/log": "workspace:^",
-		"@unional/gizmo": "^1.0.2",
 		"immer": "npm:@unional/immer@^9.0.0-beta.2",
 		"tersify": "^3.10.2",
 		"type-plus": "^6.0.0"
 	},
 	"devDependencies": {
+		"@just-web/app": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
 		"@repobuddy/jest": "^3.0.0",
 		"@size-limit/preset-small-lib": "~8.2.0",

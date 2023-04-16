@@ -1,4 +1,4 @@
-import { logGizmoFn } from '@just-web/framework'
+import { logGizmoFn } from '@just-web/log'
 import { incubateApp } from './just_app.logic.js'
 import type { AppBuilderOptions } from './just_app.types.js'
 

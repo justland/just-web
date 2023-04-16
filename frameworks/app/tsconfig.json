@@ -8,6 +8,9 @@
 	"include": ["ts", "typings"],
 	"references": [
 		{
+			"path": "../../frameworks/id"
+		},
+		{
 			"path": "../../frameworks/log"
 		},
 		{

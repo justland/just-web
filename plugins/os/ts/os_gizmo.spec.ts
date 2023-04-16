@@ -1,8 +1,8 @@
-import { incubate } from '@just-web/framework'
+import { justTestApp } from '@just-web/app/testing'
 import { osGizmo } from './index.js'
 
 it('exposes isMac()', async () => {
-	const { os } = await incubate().with(osGizmo).create()
+	const { os } = await justTestApp().with(osGizmo).create()
 
 	expect(os.isMac).toBeDefined()
 })

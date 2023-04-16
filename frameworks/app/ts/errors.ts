@@ -1,4 +1,4 @@
-import { ModuleError } from '@just-web/framework'
+import { ModuleError } from 'iso-error'
 
 export class JustWebAppError extends ModuleError {
 	constructor(message: string, options?: ModuleError.Options) {

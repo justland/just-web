@@ -1,6 +1,6 @@
-import { createStore, push, Store, withAdder, WithAdder } from '@just-web/states'
+import { createStore, push, withAdder, type Store, type WithAdder } from '@just-web/states'
 import { pick } from 'type-plus'
-import { ReadonlyErrorStore } from './types.js'
+import type { ReadonlyErrorStore } from './types.js'
 
 export interface ErrorStore extends Store<Error[]>, WithAdder<Error> {}
 

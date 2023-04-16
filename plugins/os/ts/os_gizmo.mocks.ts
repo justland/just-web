@@ -1,4 +1,4 @@
-import { define } from '@just-web/framework'
+import { define } from '@just-web/app'
 import { unpartial } from 'type-plus'
 import { isMac } from './os.js'
 import type { OSGizmo } from './os_gizmo.js'

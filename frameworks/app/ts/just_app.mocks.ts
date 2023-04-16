@@ -1,4 +1,5 @@
-import { logTestGizmoFn } from '@just-web/framework/testing'
+import { logTestGizmoFn } from '@just-web/log/testing'
+import type { PartialPick } from 'type-plus'
 import { incubateApp } from './just_app.logic.js'
 import type { AppBuilderOptions } from './just_app.types.js'
 
@@ -13,6 +14,7 @@ import type { AppBuilderOptions } from './just_app.types.js'
  * app.log.reporter.... // to inspect the logs
  * ```
  */
-export function justTestApp(options: AppBuilderOptions = { name: 'test' }) {
-	return incubateApp(options).with(logTestGizmoFn(options.log))
+export function justTestApp(options?: PartialPick<AppBuilderOptions, 'name'>) {
+	const name = options?.name ?? 'test'
+	return incubateApp({ name }).with(logTestGizmoFn(options?.log))
 }
