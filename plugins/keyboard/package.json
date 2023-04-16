@@ -51,21 +51,23 @@
 		"size": "size-limit",
 		"test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
 		"test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest --watch",
+		"w": "pnpm test:watch",
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
 		"type-plus": "^6.0.0"
 	},
 	"devDependencies": {
+		"@just-web/app": "workspace:^",
 		"@just-web/log": "workspace:^",
 		"@just-web/os": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
 		"@just-web/states": "workspace:^",
-		"@just-web/testing": "workspace:^",
 		"@just-web/types": "workspace:^",
 		"@repobuddy/jest": "^3.0.0",
 		"@size-limit/preset-small-lib": "~8.2.0",
 		"@types/jest": "^29.2.3",
+		"assertron": "^11.2.0",
 		"cross-env": "^7.0.3",
 		"depcheck": "~1.4.3",
 		"eslint": "^8.11.0",
@@ -83,6 +85,7 @@
 		"typescript": "^5.0.0"
 	},
 	"peerDependencies": {
+		"@just-web/app": "workspace:^",
 		"@just-web/log": "workspace:^",
 		"@just-web/os": "workspace:^",
 		"@just-web/states": "workspace:^",

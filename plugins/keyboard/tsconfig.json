@@ -6,6 +6,9 @@
 		"rootDir": "ts"
 	},
 	"references": [
+    {
+			"path": "../../frameworks/app"
+    },
 		{
 			"path": "../../frameworks/log"
 		},
@@ -20,9 +23,6 @@
 		},
 		{
 			"path": "../../tools/repo-scripts"
-		},
-		{
-			"path": "../../tools/testing"
 		}
 	],
 	"include": ["ts", "typings"]

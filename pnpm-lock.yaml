@@ -1133,6 +1133,9 @@ importers:
         specifier: ^6.0.0
         version: 6.4.0
     devDependencies:
+      '@just-web/app':
+        specifier: workspace:^
+        version: link:../../frameworks/app
       '@just-web/log':
         specifier: workspace:^
         version: link:../../frameworks/log
@@ -1145,9 +1148,6 @@ importers:
       '@just-web/states':
         specifier: workspace:^
         version: link:../../libraries/states
-      '@just-web/testing':
-        specifier: workspace:^
-        version: link:../../tools/testing
       '@just-web/types':
         specifier: workspace:^
         version: link:../../frameworks/types
@@ -1160,6 +1160,9 @@ importers:
       '@types/jest':
         specifier: ^29.2.3
         version: 29.2.3
+      assertron:
+        specifier: ^11.2.0
+        version: 11.2.0
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
