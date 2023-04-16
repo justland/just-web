@@ -5,10 +5,10 @@ export type IdGizmoOptions = {
 	name: string
 }
 
-export const idGizmoFn = define((options: IdGizmoOptions) => ({
+export const idGizmoFn = define(({ name }: IdGizmoOptions) => ({
 	async create() {
 		return {
-			...options,
+			name,
 			id: logic.genAppID()
 		}
 	}
