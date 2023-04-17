@@ -9,6 +9,9 @@
 	"include": ["ts", "typings"],
 	"references": [
 		{
+			"path": "../../frameworks/app"
+		},
+		{
 			"path": "../../frameworks/log"
 		},
 		{

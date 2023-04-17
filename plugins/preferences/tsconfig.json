@@ -11,6 +11,9 @@
   },
   "references": [
     {
+      "path": "../../frameworks/app"
+    },
+    {
       "path": "../../plugins/commands"
     },
     {
