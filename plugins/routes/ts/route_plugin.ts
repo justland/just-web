@@ -114,11 +114,11 @@ function getLogger(store: Store<ModuleStore>) {
  * Check if the specified route is registered or not.
  * This is used mostly for testing purposes
  */
-export function hasRoute(store: Store<ModuleStore>, route: string) {
+function hasRoute(store: Store<ModuleStore>, route: string) {
 	return !!store.get().routes[route]
 }
 
-export function clearRoutes(store: Store<ModuleStore>) {
+function clearRoutes(store: Store<ModuleStore>) {
 	store.set(s => {
 		s.routes = record<string, Route>()
 	})
