@@ -62,7 +62,7 @@
   },
   "dependencies": {
     "iso-error": "~6.0.0",
-    "type-plus": "^6.0.0"
+    "type-plus": "^6.6.0"
   },
   "devDependencies": {
     "@just-web/app": "workspace:^",

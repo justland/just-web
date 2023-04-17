@@ -24,16 +24,16 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-    ".": {
-      "import": {
-        "types": "./esm/index.d.ts",
-        "default": "./esm/index.js"
-      },
-      "require": {
-        "types": "./cjs/index.d.ts",
-        "default": "./cjs/index.js"
-      }
-    }
+		".": {
+			"import": {
+				"types": "./esm/index.d.ts",
+				"default": "./esm/index.js"
+			},
+			"require": {
+				"types": "./cjs/index.d.ts",
+				"default": "./cjs/index.js"
+			}
+		}
 	},
 	"main": "./cjs/index.js",
 	"module": "./esm/index.js",
@@ -61,7 +61,7 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"type-plus": "^6.0.0"
+		"type-plus": "^6.6.0"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
