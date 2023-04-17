@@ -6,7 +6,7 @@ import preferencesPlugin, { clearAllUserPreferences } from '@just-web/preference
 import { nothing } from '@just-web/states'
 import { a, AssertOrder } from 'assertron'
 import { hasAll, some } from 'satisfier'
-import { ctx } from './browserPreferences.ctx.js'
+import { ctx } from './local_storage_store.ctx.js'
 import browserPreferencePlugin from './index.js'
 
 afterEach(() => (ctx.getLocalStorage = () => localStorage))
