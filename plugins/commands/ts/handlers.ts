@@ -21,7 +21,7 @@ export function handlerRegistry({ log }: LogContext, options?: handlerRegistry.O
 			logger.trace('register', id)
 			const commands = registry.get()
 			if (commands[id]) {
-				logger.notice(`Registring a new handler for '${id}'. Please make sure this is expected.`)
+				logger.notice(`Registering a new handler for '${id}'. Please make sure this is expected.`)
 				logger.on(logLevels.debug, log => log(`overrideing handler: ${tersify(handler)}`))
 			}
 			registry.update(m => {
