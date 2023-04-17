@@ -39,3 +39,5 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 		}
 	}
 }))
+
+export type BrowserGizmo = define.Infer<typeof browserGizmoFn>

@@ -24,14 +24,20 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		"types": "./esm/index.d.ts",
-		"import": "./esm/index.js",
-		"require": "./cjs/index.js",
-		"default": "./cjs/index.js"
+    ".": {
+      "import": {
+        "types": "./esm/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "require": {
+        "types": "./cjs/index.d.ts",
+        "require": "./cjs/index.js"
+      }
+    }
 	},
 	"main": "./cjs/index.js",
 	"module": "./esm/index.js",
-	"types": "./esm/index.d.ts",
+	"types": "./cjs/index.d.ts",
 	"files": [
 		"cjs",
 		"esm",
@@ -51,6 +57,7 @@
 		"size": "size-limit",
 		"test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
 		"test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest --watch",
+    "w": "pnpm test:watch",
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
@@ -87,6 +94,7 @@
 		"typescript": "^5.0.0"
 	},
 	"peerDependencies": {
+		"@just-web/app": "workspace:^",
 		"@just-web/commands": "workspace:^",
 		"@just-web/keyboard": "workspace:^"
 	},
