@@ -2,12 +2,11 @@ import type { CommandsContext } from '@just-web/commands'
 import type { KeyboardContext } from '@just-web/keyboard'
 import type { LogContext } from '@just-web/log'
 import { clearAllUserPreferences, getUserPreference, setUserPreference } from '@just-web/preferences'
-import { isNothing, nothing } from '@just-web/states'
 import { AppBaseContext, definePlugin } from '@just-web/types'
 import { produce } from 'immer'
-import { decode, encode } from 'js-base64'
 import { MaybePromise } from 'type-plus'
-import { ctx } from './browserPreferences.ctx.js'
+import { ctx } from './local_storage_store.ctx.js'
+import { getItem, getKey, setHandler } from './local_storage_store.js'
 
 const browserPreferencesPlugin = definePlugin(() => ({
 	name: '@just-web/browser-preferences',
@@ -48,38 +47,3 @@ const browserPreferencesPlugin = definePlugin(() => ({
 }))
 
 export default browserPreferencesPlugin
-
-function getKey(id: string, key: string) {
-	return `${id}:${key}`
-}
-
-/**
- * @param k resolved key
- */
-function getItem(k: string) {
-	return deserialize(ctx.getLocalStorage().getItem(k))
-}
-
-function serialize(value: string) {
-	return encode(value)
-}
-
-function deserialize(value: string | null) {
-	return value === null ? undefined : decode(value)
-}
-
-function setHandler(
-	{ log }: LogContext,
-	k: string,
-	original: string | undefined,
-	v: string | undefined | typeof nothing
-) {
-	const localStorage = ctx.getLocalStorage()
-	if (isNothing(v) || v === undefined) {
-		log.trace(`set: clear '${k}'`)
-		localStorage.removeItem(k)
-	} else {
-		log.trace(`set: '${k}' ${original} -> ${v}`)
-		localStorage.setItem(k, serialize(v))
-	}
-}
