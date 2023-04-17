@@ -1421,6 +1421,9 @@ importers:
       '@types/jest':
         specifier: ^29.2.3
         version: 29.2.3
+      assertron:
+        specifier: ^11.2.0
+        version: 11.2.0
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -7328,7 +7331,7 @@ packages:
   /jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
     dev: true
 
   /jsonfile@6.1.0:
