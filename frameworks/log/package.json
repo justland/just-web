@@ -75,7 +75,7 @@
     "@just-func/types": "^0.5.0",
     "@just-web/id": "workspace:^",
     "@just-web/types": "workspace:^",
-    "@unional/gizmo": "^1.0.4",
+    "@unional/gizmo": "^1.1.0",
     "standard-log": "^12.1.0",
     "type-plus": "^6.4.0"
   },
