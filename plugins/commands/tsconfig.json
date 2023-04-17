@@ -6,6 +6,9 @@
 		"rootDir": "ts"
 	},
 	"references": [
+    {
+      "path": "../../frameworks/app"
+    },
 		{
 			"path": "../../frameworks/log"
 		},

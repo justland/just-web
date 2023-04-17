@@ -24,14 +24,20 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		"types": "./esm/index.d.ts",
-		"import": "./esm/index.js",
-		"require": "./cjs/index.js",
-		"default": "./cjs/index.js"
+    ".": {
+      "import": {
+        "types": "./esm/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "require": {
+        "types": "./cjs/index.d.ts",
+        "default": "./cjs/index.js"
+      }
+    }
 	},
 	"main": "./cjs/index.js",
 	"module": "./esm/index.js",
-	"types": "./esm/index.d.ts",
+	"types": "./cjs/index.d.ts",
 	"files": [
 		"cjs",
 		"esm",
