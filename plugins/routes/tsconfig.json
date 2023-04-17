@@ -25,5 +25,5 @@
 			"path": "../../tools/testing"
 		}
 	],
-	"include": ["ts", "typings"]
+	"include": ["ts", "types"]
 }

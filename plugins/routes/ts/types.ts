@@ -1,4 +1,4 @@
-export interface RoutesConfigOptions {
+export type RoutesConfigOptions = {
 	/**
 	 * The initial route. Default to `/`
 	 */
