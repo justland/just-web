@@ -77,7 +77,7 @@
     "@just-web/types": "workspace:^",
     "@unional/gizmo": "^1.1.0",
     "standard-log": "^12.1.0",
-    "type-plus": "^6.4.0"
+    "type-plus": "^6.6.0"
   },
   "devDependencies": {
     "@just-web/repo-scripts": "workspace:^",
