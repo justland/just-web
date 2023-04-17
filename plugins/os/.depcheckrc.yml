@@ -5,6 +5,7 @@ ignores:
   - '@size-limit/*'
   - '@types/jest'
   - 'jest-*'
+  - rimraf # https://github.com/depcheck/depcheck/issues/776
   - size-limit
   - ts-jest
   - type-plus # type only imports are not detected correctly

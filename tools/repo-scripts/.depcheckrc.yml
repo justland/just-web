@@ -5,4 +5,5 @@ ignores:
   - '@typescript-eslint/parser'
   - eslint-plugin-storybook
   - npm-check-updates
+  - rimraf # https://github.com/depcheck/depcheck/issues/776
   - size-limit

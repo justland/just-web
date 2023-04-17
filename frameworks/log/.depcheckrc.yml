@@ -5,6 +5,7 @@ ignores:
   - '@size-limit/*'
   - '@types/jest'
   - 'jest-*'
+  - rimraf # https://github.com/depcheck/depcheck/issues/776
   - size-limit
   - standard-log # don't know why it doesn't detect correctly
   - ts-jest
