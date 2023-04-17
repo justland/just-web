@@ -2,7 +2,7 @@ import { JustAppTestOptions, justTestApp } from '@just-web/app/testing'
 import { commandsGizmoFn } from '@just-web/commands'
 import { keyboardGizmoFn } from '@just-web/keyboard'
 import { preferencesGizmo } from '@just-web/preferences'
-import { browserPreferencesGizmo } from './browser_preferences_gizmo.js'
+import { browserPreferencesGizmo } from './index.js'
 import { ctx } from './local_storage_store.ctx.js'
 
 export function browserPreferencesGizmoTestApp(options?: JustAppTestOptions) {
