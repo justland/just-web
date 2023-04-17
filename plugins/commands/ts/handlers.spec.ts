@@ -40,7 +40,7 @@ describe('register()', () => {
 		r.register('just-web.showCommandPalette', () => {})
 		logEqual(
 			log.reporter,
-			`(NOTICE) Registring a new handler for 'just-web.showCommandPalette'. Please make sure this is expected.`,
+			`(NOTICE) Registering a new handler for 'just-web.showCommandPalette'. Please make sure this is expected.`,
 			`(DEBUG) overrideing handler: () => {}`
 		)
 	})
