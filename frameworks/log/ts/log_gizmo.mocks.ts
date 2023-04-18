@@ -5,10 +5,22 @@ import { createStandardLogForTest } from 'standard-log/testing'
 import { buildLogContext } from './log_gizmo.logic.js'
 import type { GizmoStandardLog, LogGizmoOptions } from './log_gizmo.types.js'
 
-export type TestGizmoStandardLog<N extends string = LogMethodNames> = GizmoStandardLog<N> & {
-	reporter: MemoryLogReporter
-}
-
+/**
+ * A gizmo function that creates a log gizmo for testing.
+ *
+ * It defaults log level to `debug` and exposes a memory reporter for log inspection.
+ *
+ * @require `IDGizmo`
+ *
+ * It is part of `justTestApp` and you normally don't need to create it directly.
+ *
+ * @example
+ * ```ts
+ * const app = await justTestApp().create()
+ * app.log.info('hello world')
+ * app.log.reporter.getLogMessagesWithLevel() // `(INFO) hello world`
+ * ```
+ */
 export const logTestGizmoFn = define(<N extends string = LogMethodNames>(options?: LogGizmoOptions<N>) => ({
 	static: define.require(idGizmoFn),
 	async create(ctx: IdGizmo) {
@@ -16,11 +28,20 @@ export const logTestGizmoFn = define(<N extends string = LogMethodNames>(options
 		return {
 			log: Object.assign(buildLogContext<N>(ctx.name, sl, options), {
 				reporter: sl.reporter
-			}) as unknown as TestGizmoStandardLog<N>
+			}) as unknown as GizmoStandardLog<N> & {
+				reporter: MemoryLogReporter
+			}
 		}
 	}
 }))
 
+/**
+ * A test gizmo with log.
+ *
+ * It defaults log level to `debug` and exposes a memory reporter for log inspection.
+ */
 export type LogTestGizmo<N extends string = LogMethodNames> = {
-	log: TestGizmoStandardLog<N>
+	log: GizmoStandardLog<N> & {
+		reporter: MemoryLogReporter
+	}
 }

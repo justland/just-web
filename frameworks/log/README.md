@@ -3,61 +3,80 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 
-[`@just-web/log`] provides a consistent logging API to `@just-web` applications.
+[@just-web/log] provides logging capability to a [just-web] application.
 
-It supports customization with runtime protection, sanitization, remote reporting, log level control, etc.
+It is build on top of [standard-log] which supports customization with runtime protection,
+sanitization, remote reporting, log level control, etc.
 
-This is a core module of `@just-web`.
-You do not need to reference this module directly.
+This is part of the core [just-web] framework.
+Every [just-web] application uses [`LogGizmo`] to provide logging capability.
 
-The features of this module are exposed through [`@just-web/app`].
+You normally would not use this package directly,
+but instead use the [@just-web/app](../app/README.md) package.
 
 ## Usage
 
-Import from [`@just-web/app`] to write logs:
-
 ```ts
-import { log, getLogger } from '@just-web/app'
+import { justApp } from '@just-web/app'
 
-function work() {
-  // ad-hoc logging
-  log.info('module', 'some log message')
+const app = await justApp({ name: 'my-app' }).create()
 
-  // create a custom logger
-  const myLog = getLogger('module')
-  myLog.info('some log message')
-}
+// emits log message to console
+app.log.info('some log message')
 ```
 
-Configure when creating the application:
+You can customize it behavior by providing the `log` option when creating the application:
 
 ```ts
-import { createApp } from '@just-web/app'
-
-const app = createApp({
-  log: { /* log options */ }
+const app = await justApp({
+  name: 'my-app',
+  log: {
+    // define the log level (default: `logLevels.info`)
+    logLevel: logLevels.all,
+    // define reporters to handle the log messages (default: color console reporter)
+    reporters: [reporter],
+    /// add custom log levels
+    customLevels: {
+      happy: 500
+    }
+  }
 })
+
+// the `happy()` method will be available
+app.log.happy('some log message')
 ```
 
-You can create a logger without an id:
+You can create a logger with the `getLogger()` method:
 
 ```ts
-const log = app.log.getLogger()
+// logger id: `my-app:something`
+const log = app.log.getLogger('something')
 ```
 
-But creating a non-console logger, the id is required:
+If you do not pass in and id,
+you will get the base logger:
+
+```ts
+// logger id: `my-app`
+const logger = app.log.getLogger()
+```
+
+You can also create a "non-console" logger,
+which will not emit log message to console.
 
 ```ts
 const log = app.log.getNonConsoleLogger('something')
 ```
 
-This ensure they have different id so their logs can be distinguished.
+Besides [`LogGizmo`],
+there are also functions re-exported from [standard-log].
+For more information, please refer to the [standard-log] documentation.
 
-Please refer to the `handbook` to learn more about it.
-
-[`@just-web/app`]: https://github.com/justland/just-web/tree/main/frameworks/app
-[`@just-web/log`]: https://github.com/justland/just-web/tree/main/frameworks/log
+[`LogGizmo`]: ./ts/log_gizmo.ts
+[@just-web/log]: https://github.com/justland/just-web/tree/main/frameworks/log
 [downloads-image]: https://img.shields.io/npm/dm/@just-web/log.svg?style=flat
 [downloads-url]: https://npmjs.org/package/@just-web/log
 [npm-image]: https://img.shields.io/npm/v/@just-web/log.svg?style=flat
 [npm-url]: https://npmjs.org/package/@just-web/log
+[just-web]: https://github.com/justland/just-web
+[standard-log]: https://github.com/unional/standard-log
