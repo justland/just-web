@@ -3,9 +3,13 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 
-ID Gizmo provides a name and a randomized id to the gizmo.
+[`IDGizmo`] is a gizmo that provides a name and a randomized id.
 
-This is part of the core [just-web] framework and you normally would use [@just-web/app] directly instead.
+This is part of the core [just-web] framework .
+Every [just-web] application uses [`IDGizmo`] to provide a name and id.
+
+You normally would not use this package directly,
+but instead use the [@just-web/app](../app/README.md) package.
 
 ## Install
 
@@ -29,11 +33,10 @@ rush add -p @just-web/app
 import { incubate } from '@unional/gizmo'
 import { idGizmo } from '@just-web/id'
 
-void (async () => {
-  const app = await incubate(idGizmo({ name: 'my-app' })).create()
+const app = await incubate(idGizmo({ name: 'my-app' })).create()
 
-  app.id // 'my-app'
-})
+app.name // 'my-app'
+app.id   // '...some random id...'
 ```
 
 [downloads-image]: https://img.shields.io/npm/dm/@just-web/id.svg?style=flat
@@ -41,3 +44,4 @@ void (async () => {
 [just-web]: https://github.com/justland/just-web
 [npm-image]: https://img.shields.io/npm/v/@just-web/id.svg?style=flat
 [npm-url]: https://npmjs.org/package/@just-web/id
+[`IDGizmo`]: ./ts/id_gizmo.ts
