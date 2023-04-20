@@ -54,7 +54,7 @@
 	},
 	"dependencies": {
 		"@just-web/app": "workspace:^",
-		"@just-web/log": "workspace:^",
+		"@just-web/commands": "workspace:^",
 		"@just-web/presets-browser": "workspace:^",
 		"@just-web/states": "workspace:^"
 	},

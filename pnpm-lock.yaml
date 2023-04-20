@@ -73,9 +73,9 @@ importers:
       '@just-web/app':
         specifier: workspace:^
         version: link:../../frameworks/app
-      '@just-web/log':
+      '@just-web/commands':
         specifier: workspace:^
-        version: link:../../frameworks/log
+        version: link:../../plugins/commands
       '@just-web/presets-browser':
         specifier: workspace:^
         version: link:../../presets/browser
