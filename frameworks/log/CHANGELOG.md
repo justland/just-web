@@ -1,5 +1,15 @@
 # @just-web/log
 
+## 7.0.0-beta.0
+
+### Minor Changes
+
+- 10489f4f: `getLogger()` can omit id.
+
+### Patch Changes
+
+- @just-web/types@7.0.0-beta.0
+
 ## 6.0.2
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @just-web/os
 
+## 7.0.0-beta.0
+
+### Minor Changes
+
+- 0d44bfd1: Add `osGizmo`
+- 7d9c1c71: expose `@just-web/os/testing`
+
+### Patch Changes
+
+- Updated dependencies [10489f4f]
+  - @just-web/log@7.0.0-beta.0
+  - @just-web/app@7.0.0-beta.0
+  - @just-web/types@7.0.0-beta.0
+
 ## 6.0.2
 
 ### Patch Changes

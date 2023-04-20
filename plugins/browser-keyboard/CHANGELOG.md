@@ -1,5 +1,20 @@
 # @just-web/browser-contributions
 
+## 7.0.0-beta.0
+
+### Patch Changes
+
+- Updated dependencies [0d44bfd1]
+- Updated dependencies [7d9c1c71]
+- Updated dependencies [10489f4f]
+- Updated dependencies [3c0c09c2]
+  - @just-web/os@7.0.0-beta.0
+  - @just-web/log@7.0.0-beta.0
+  - @just-web/commands@7.0.0-beta.0
+  - @just-web/keyboard@7.0.0-beta.0
+  - @just-web/app@7.0.0-beta.0
+  - @just-web/types@7.0.0-beta.0
+
 ## 6.0.2
 
 ### Patch Changes

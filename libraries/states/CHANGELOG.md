@@ -1,5 +1,28 @@
 # @just-web/states
 
+## 7.0.0-beta.0
+
+### Major Changes
+
+- a2ef64fb: Move `meta?` to `createState()`.
+
+  There is no use case for adding different logger in each `set()` or `onChange()` call.
+
+  Creation of default logger is now deferred.
+
+- c2c26431: Drop `update()`.
+  Update JSDocs.
+
+### Minor Changes
+
+- 977e1d30: Add `statesGizmo`.
+
+  `createStore()` and `createRegistry()` both support optional `meta` parameter.
+
+  `registry` now using plain object as base.
+  The `record()` is nice but the log messages are polluted with `[Object: null prototype]`.
+  The benefit is pretty minimal so it is removed.
+
 ## 6.0.2
 
 ### Patch Changes

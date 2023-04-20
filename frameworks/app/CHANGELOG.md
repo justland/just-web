@@ -1,5 +1,13 @@
 # @just-web/app
 
+## 7.0.0-beta.0
+
+### Patch Changes
+
+- Updated dependencies [10489f4f]
+  - @just-web/log@7.0.0-beta.0
+  - @just-web/types@7.0.0-beta.0
+
 ## 6.0.2
 
 ### Patch Changes
@@ -249,13 +257,13 @@
   import { createApp } from '@just-web/app'
 
   createApp({ name: 'now-required' }).extend({
-    name: 'plugin-name',
-    init() {
-      /* required */
-    },
-    start() {
-      /* optional */
-    }
+  	name: 'plugin-name',
+  	init() {
+  		/* required */
+  	},
+  	start() {
+  		/* optional */
+  	}
   })
   ```
 

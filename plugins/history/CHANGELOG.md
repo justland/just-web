@@ -1,5 +1,12 @@
 # @just-web/history
 
+## 2.0.0-beta.0
+
+### Patch Changes
+
+- @just-web/app@7.0.0-beta.0
+- @just-web/types@7.0.0-beta.0
+
 ## 1.0.1
 
 ### Patch Changes

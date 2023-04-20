@@ -19,7 +19,17 @@
     "@just-web/routes": "6.0.2",
     "@just-web/presets-browser": "4.0.2",
     "@just-web/repo-scripts": "0.2.0",
-    "@just-web/testing": "0.3.7"
+    "@just-web/testing": "0.3.7",
+    "@just-web/examples-browser": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "happy-worms-tickle",
+    "large-spies-enjoy",
+    "nine-mirrors-appear",
+    "rare-bags-dance",
+    "red-trees-invent",
+    "short-starfishes-cheer",
+    "slimy-dingos-explain",
+    "twenty-dots-report"
+  ]
 }

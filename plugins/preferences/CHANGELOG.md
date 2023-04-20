@@ -1,5 +1,21 @@
 # @just-web/preferences
 
+## 7.0.0-beta.0
+
+### Patch Changes
+
+- Updated dependencies [977e1d30]
+- Updated dependencies [a2ef64fb]
+- Updated dependencies [c2c26431]
+- Updated dependencies [10489f4f]
+- Updated dependencies [3c0c09c2]
+  - @just-web/states@7.0.0-beta.0
+  - @just-web/log@7.0.0-beta.0
+  - @just-web/commands@7.0.0-beta.0
+  - @just-web/keyboard@7.0.0-beta.0
+  - @just-web/app@7.0.0-beta.0
+  - @just-web/types@7.0.0-beta.0
+
 ## 6.0.2
 
 ### Patch Changes
