@@ -5,6 +5,17 @@ export type KeyboardGizmoOptions = {
 	keyBindingContributions?: keyBindingRegistry.Options
 }
 
+/**
+ * Gizmo function to create a KeyboardGizmo.
+ *
+ * A KeyboardGizmo provides a key binding contribution registry.
+ * Which you can use to register key bindings.
+ *
+ * @require LogGizmo
+ *
+ * @example
+ * ```ts
+ */
 export const keyboardGizmoFn: (options?: KeyboardGizmoOptions | undefined) => GizmoStatic<
 	DepBuilder<LogGizmo, unknown>,
 	{
@@ -23,4 +34,8 @@ export const keyboardGizmoFn: (options?: KeyboardGizmoOptions | undefined) => Gi
 	}
 }))
 
+/**
+ * A KeyboardGizmo provides a key binding contribution registry.
+ * Which you can use to register key bindings.
+ */
 export type KeyboardGizmo = define.Infer<typeof keyboardGizmoFn>
