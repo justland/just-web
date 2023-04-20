@@ -11,29 +11,35 @@ Meaning you have the freedom to choose your tech stacks or even changing them as
 You can use:
 
 - [React], [Vue.js], [SolidJS], [Svelte], etc. as your rendering library,
-- [Redux] or [MobX] or anything else to manage your application state,
-- [Axios] or [cross-fetch] or vanilla fetch as your fetching mechanism,
+- [Redux], [MobX] or anything else to manage your application state,
+- [Axios], [cross-fetch] or vanilla fetch as your fetching mechanism,
 - ...and so on.
 
 ## Installing
 
-For application development:
+For application:
 
 ```sh
 npm install @just-web/app
+
+yarn add @just-web/app
+
+pnpm add @just-web/app
 ```
 
-For plugin development:
+For library:
 
 ```sh
 npm install --save-peer @just-web/app
+
+yarn add --peer @just-web/app
+
+pnpm add --save-peer @just-web/app
 ```
 
 ## Frameworks
 
 - [@just-web/app]: provides the entry point for creating a [@just-web] application.
-- [@just-web/log]: provides logging mechanism for a [@just-web] application, based on [standard-log].
-- [@just-web/types]: provides [@just-web] types for all packages
 
 ## Libraries
 
@@ -70,7 +76,6 @@ Here are the plugins provided in this repository:
 
 - `@just-web/create`: 🚧 [@just-web] initializer package (for `npm create`) to scaffold your project.
 - [@just-web/repo-scripts]: provides scripts and default configs to help maintain your repository.
-- [@just-web/testing]: testing utility module.
 
 ## Contribute
 
@@ -84,7 +89,6 @@ Please check out the [contributing guide](./CONTRIBUTING.md)
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/plugins/commands
 [@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/keyboard
 [@just-web/events]: https://github.com/justland/just-web/tree/main/plugins/events
-[@just-web/log]: https://github.com/justland/just-web/tree/main/frameworks/log
 [@just-web/os]: https://github.com/justland/just-web/tree/main/plugins/os
 [@just-web/preferences]: https://github.com/justland/just-web/tree/main/plugins/preferences
 [@just-web/react-commands]: https://github.com/justland/just-web/tree/main/components/react-commands
@@ -92,8 +96,6 @@ Please check out the [contributing guide](./CONTRIBUTING.md)
 [@just-web/repo-scripts]: https://github.com/justland/just-web/tree/main/tools/repo-scripts
 [@just-web/routes]: https://github.com/justland/just-web/tree/main/plugins/routes
 [@just-web/states]: https://github.com/justland/just-web/tree/main/libraries/states
-[@just-web/testing]: https://github.com/justland/just-web/tree/main/tools/testing
-[@just-web/types]: https://github.com/justland/just-web/tree/main/frameworks/types
 [Axios]: https://axios-http.com/
 [cross-fetch]: https://www.npmjs.com/package/cross-fetch
 [downloads-image]: https://img.shields.io/npm/dm/@just-web/app.svg?style=flat
@@ -104,6 +106,5 @@ Please check out the [contributing guide](./CONTRIBUTING.md)
 [React]: https://reactjs.org/
 [Redux]: https://redux.js.org/
 [SolidJS]: https://www.solidjs.com/
-[standard-log]: https://github.com/unional/standard-log
 [Svelte]: https://svelte.dev/
 [Vue.js]: https://vuejs.org/

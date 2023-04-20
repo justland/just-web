@@ -1,4 +1,4 @@
-import { nothing, type Draft } from 'immer'
+import { nothing, type Draft } from './immer.js'
 
 /**
  * Updater for type `T`.

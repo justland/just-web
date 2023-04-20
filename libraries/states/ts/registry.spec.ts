@@ -41,7 +41,7 @@ describe('createRegistry()', () => {
 		test('list all values', () => {
 			const s = Symbol()
 			const a = createRegistry({ [s]: 's', b: 'b' })
-			expect(a.list()).toEqual(['b', 's'])
+			expect(a.values()).toEqual(['b', 's'])
 		})
 	})
 
@@ -49,6 +49,13 @@ describe('createRegistry()', () => {
 		it('returns false if not available', () => {
 			const r = createRegistry<string, { id: string; value: number }>()
 			expect(r.has('key')).toEqual(false)
+		})
+
+		it('returns true if value is false', () => {
+			const r = createRegistry<string, boolean>({
+				key: false
+			})
+			expect(r.has('key')).toEqual(true)
 		})
 
 		it('returns true if exist', () => {
@@ -69,7 +76,7 @@ describe('createRegistry()', () => {
 				[s1]: { id: 'x', value: 2 }
 			})
 
-			r.update(r => {
+			r.set(r => {
 				r['0'] = { id: 'new', value: 3 }
 			})
 
@@ -94,7 +101,7 @@ describe('toReadonlyRegistry()', () => {
 		const s = createRegistry()
 		const r = toReadonlyRegistry(s)
 
-		expect(Object.keys(r)).toEqual(['get', 'onChange', 'keys', 'has', 'size', 'list'])
+		expect(Object.keys(r)).toEqual(['get', 'onChange', 'keys', 'has', 'size', 'values'])
 		testType.equal<typeof r, ReadonlyRegistry<string | number | symbol, unknown>>(true)
 	})
 })
