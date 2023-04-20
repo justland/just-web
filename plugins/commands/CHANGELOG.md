@@ -1,5 +1,21 @@
 # @just-web/commands
 
+## 7.0.0-beta.0
+
+### Patch Changes
+
+- 3c0c09c2: Change default key for command palette to +k.
+  It's patch as it is not used at the moment.
+- Updated dependencies [977e1d30]
+- Updated dependencies [a2ef64fb]
+- Updated dependencies [c2c26431]
+- Updated dependencies [10489f4f]
+  - @just-web/states@7.0.0-beta.0
+  - @just-web/log@7.0.0-beta.0
+  - @just-web/keyboard@7.0.0-beta.0
+  - @just-web/app@7.0.0-beta.0
+  - @just-web/types@7.0.0-beta.0
+
 ## 6.0.2
 
 ### Patch Changes
@@ -240,10 +256,10 @@
 
   ```ts
   command({
-    id: 'plugin-a.increment',
-    name: 'Increment',
-    description: 'Increment input value by 1',
-    key: 'ctrl+k'
+  	id: 'plugin-a.increment',
+  	name: 'Increment',
+  	description: 'Increment input value by 1',
+  	key: 'ctrl+k'
   })
   ```
 
