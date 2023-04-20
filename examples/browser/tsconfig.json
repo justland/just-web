@@ -10,6 +10,12 @@
 			"path": "../../frameworks/app"
 		},
 		{
+			"path": "../../plugins/commands"
+		},
+		{
+			"path": "../../libraries/states"
+		},
+		{
 			"path": "../../presets/browser"
 		},
 		{
