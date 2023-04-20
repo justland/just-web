@@ -11,7 +11,7 @@ export function startKeyBindings(param: LogContext & KeyboardContext & CommandsC
 
 	keys = record()
 
-	keyBindings.list().forEach(keybinding => bindKey(param, keybinding))
+	keyBindings.values().forEach(keybinding => bindKey(param, keybinding))
 	keyBindings.onChange(value => {
 		Mousetrap.reset()
 		keys = record()

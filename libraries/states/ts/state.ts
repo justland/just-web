@@ -24,6 +24,20 @@ export type StateMeta = { logger?: Logger }
 
 /**
  * creates a functional style state to track changes of a value.
+ *
+ * @param init initial value T
+ * @param meta optional meta data for custom logger.
+ * @returns [value: T, set: SetState<T>, onChange: OnStateChange<T>, reset: ResetState]
+ *
+ * @example
+ * ```ts
+ * const [value, set, onChange, reset] = app.states.createState(0)
+ *
+ * value // 0
+ * set(1) // value: 1
+ * onChange(v => console.log(v)) // trigger when set
+ * reset() // reset value to the initial value
+ * ```
  */
 export function createState<T>(
 	init: T,

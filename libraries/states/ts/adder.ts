@@ -15,7 +15,7 @@ export type WithAdder<T> = {
 export function adder<R extends Registry<any, any>>(
 	registry: R,
 	handler: (record: Draft<RegistryValue<R>>, entry: RecordValue<RegistryValue<R>>) => void
-): R & Adder<ReturnType<RecordValue<RegistryValue<R>>>>
+): Adder<ReturnType<RecordValue<RegistryValue<R>>>>
 export function adder<A extends Array<any>, S extends Store<A>>(
 	store: S,
 	handler: (record: Draft<A>, entry: UnionOfValues<A>) => void

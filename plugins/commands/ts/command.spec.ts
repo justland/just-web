@@ -66,7 +66,7 @@ describe(`${command.name}()`, () => {
 		})
 		commands.contributions.add(inc)
 
-		const actual = commands.contributions.list().find(c => c.id === 'plugin-a.increment')!
+		const actual = commands.contributions.values().find(c => c.id === 'plugin-a.increment')!
 		a.satisfies(actual, {
 			id: 'plugin-a.increment',
 			title: 'Increment',
