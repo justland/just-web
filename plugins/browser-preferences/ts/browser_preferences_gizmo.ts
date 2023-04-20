@@ -7,6 +7,9 @@ import { MaybePromise } from 'type-plus'
 import { ctx } from './local_storage_store.ctx.js'
 import { getItem, getKey, setHandler } from './local_storage_store.js'
 
+/**
+ * Preferences Gizmo implementation for the browser.
+ */
 export const browserPreferencesGizmo = define({
 	static: define.require<IdGizmo>().require<LogGizmo>().require<CommandsGizmo>().optional<KeyboardGizmo>(),
 	async create({ name, commands, keyboard, log }) {

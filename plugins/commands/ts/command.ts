@@ -1,6 +1,6 @@
-import { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
+import type { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
 import { getLogger } from '@just-web/log'
-import { AnyFunction } from 'type-plus'
+import type { AnyFunction } from 'type-plus'
 import type { Command, CommandContribution, CommandsContext } from './types.js'
 
 /**
@@ -12,6 +12,7 @@ export function command<F extends AnyFunction = () => void>(
 	info: CommandContribution & KeyBindingContribution,
 	handler?: F
 ): Command<F>
+
 /**
  * Creates a local command.
  * Local commands can be used within the plugin but the application and other plugins will not see them.

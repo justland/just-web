@@ -1,4 +1,4 @@
-import { define, DepBuilder, GizmoStatic, type IdGizmo } from '@just-web/app'
+import { define, type DepBuilder, type GizmoStatic, type IdGizmo } from '@just-web/app'
 import { browserGizmoFn, type BrowserGizmo, type BrowserGizmoOptions } from '@just-web/browser'
 import { browserPreferencesGizmo } from '@just-web/browser-preferences'
 import type { CommandsGizmo } from '@just-web/commands'

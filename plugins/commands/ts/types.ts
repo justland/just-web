@@ -32,7 +32,7 @@ export type CommandContribution = {
 	 * The command id. e.g. `just-web.showCommandPalette`
 	 *
 	 * It should be unique across the application.
-	 * It should follow the `<plugin>.<name>` pattern.
+	 * It should follow the `<gizmo>.<name>` pattern.
 	 *
 	 * For example: `just-web.showCommandPalette`
 	 * The resulting command function will also have this as the name.
@@ -88,7 +88,7 @@ export type Command<F extends AnyFunction = () => void> = F & {
 	/**
 	 * Id of the command.
 	 * It should be unique across the application.
-	 * It should follow the `<plugin>.<name>` pattern.
+	 * It should follow the `<gizmo>.<name>` pattern.
 	 */
 	id: string
 	/**

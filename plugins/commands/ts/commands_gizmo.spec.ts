@@ -46,3 +46,10 @@ it('registers showCommandPalette to keyboard', async () => {
 
 	expect(keyboard.keyBindingContributions.keys()).toEqual(['just-web.showCommandPalette'])
 })
+
+it('can register command contributions', async () => {
+	const app = await justTestApp().with(commandsGizmoFn()).create()
+	app.commands.contributions.add({ id: 'some.command' })
+
+	a.satisfies(app.commands.contributions.keys(), some('some.command'))
+})
