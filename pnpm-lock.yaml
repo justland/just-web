@@ -13,15 +13,6 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^17.0.2
         version: 17.2.0
-      '@just-web/browser':
-        specifier: workspace:^
-        version: link:plugins/browser
-      '@just-web/browser-preferences':
-        specifier: workspace:^
-        version: link:plugins/browser-preferences
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:frameworks/types
       '@types/jest':
         specifier: ^29.2.3
         version: 29.2.3
@@ -92,9 +83,6 @@ importers:
         specifier: workspace:^
         version: link:../../libraries/states
     devDependencies:
-      '@just-web/browser':
-        specifier: workspace:^
-        version: link:../../plugins/browser
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
@@ -9725,12 +9713,12 @@ packages:
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.9.3
-      turbo-darwin-arm64: 1.9.3
-      turbo-linux-64: 1.9.3
-      turbo-linux-arm64: 1.9.3
-      turbo-windows-64: 1.9.3
-      turbo-windows-arm64: 1.9.3
+      turbo-darwin-64: 1.9.1
+      turbo-darwin-arm64: 1.9.1
+      turbo-linux-64: 1.9.1
+      turbo-linux-arm64: 1.9.1
+      turbo-windows-64: 1.9.1
+      turbo-windows-arm64: 1.9.1
     dev: true
 
   /type-check@0.3.2:
