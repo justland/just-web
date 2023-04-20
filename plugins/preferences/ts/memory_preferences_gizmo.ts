@@ -1,5 +1,5 @@
 import { define } from '@just-web/app'
-import { CommandsGizmo } from '@just-web/commands'
+import type { CommandsGizmo } from '@just-web/commands'
 import { isNothing } from '@just-web/states'
 import { produce } from 'immer'
 import { MaybePromise, record } from 'type-plus'
