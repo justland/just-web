@@ -1,5 +1,17 @@
 # @just-web/browser-preferences
 
+## 7.0.0-beta.2
+
+### Patch Changes
+
+- Updated dependencies [78becd0d]
+  - @just-web/app@7.0.0-beta.2
+  - @just-web/states@7.0.0-beta.2
+  - @just-web/commands@7.0.0-beta.2
+  - @just-web/preferences@7.0.0-beta.2
+  - @just-web/log@7.0.0-beta.2
+  - @just-web/types@7.0.0-beta.2
+
 ## 7.0.0-beta.1
 
 ### Patch Changes
