@@ -6,6 +6,7 @@ export type {
 	GizmoBase,
 	GizmoBoth,
 	GizmoDynamic,
+	GizmoIncubator,
 	GizmoStatic,
-	MissingDependency,
+	MissingDependency
 } from '@unional/gizmo'
