@@ -1,5 +1,13 @@
 # @just-web/history
 
+## 2.0.0-beta.1
+
+### Patch Changes
+
+- Updated dependencies [ab9f056d]
+  - @just-web/app@7.0.0-beta.1
+  - @just-web/types@7.0.0-beta.1
+
 ## 2.0.0-beta.0
 
 ### Patch Changes

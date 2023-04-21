@@ -23,6 +23,7 @@
     "@just-web/examples-browser": "0.0.0"
   },
   "changesets": [
+    "dry-geese-boil",
     "happy-worms-tickle",
     "large-spies-enjoy",
     "nine-mirrors-appear",

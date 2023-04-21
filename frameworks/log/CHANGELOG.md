@@ -1,5 +1,11 @@
 # @just-web/log
 
+## 7.0.0-beta.1
+
+### Patch Changes
+
+- @just-web/types@7.0.0-beta.1
+
 ## 7.0.0-beta.0
 
 ### Minor Changes

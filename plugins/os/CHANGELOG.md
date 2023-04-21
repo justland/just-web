@@ -1,5 +1,14 @@
 # @just-web/os
 
+## 7.0.0-beta.1
+
+### Patch Changes
+
+- Updated dependencies [ab9f056d]
+  - @just-web/app@7.0.0-beta.1
+  - @just-web/log@7.0.0-beta.1
+  - @just-web/types@7.0.0-beta.1
+
 ## 7.0.0-beta.0
 
 ### Minor Changes
