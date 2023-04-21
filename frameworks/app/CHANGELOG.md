@@ -1,5 +1,13 @@
 # @just-web/app
 
+## 7.0.0-beta.2
+
+### Patch Changes
+
+- 78becd0d: Add `JestTestApp` type
+  - @just-web/log@7.0.0-beta.2
+  - @just-web/types@7.0.0-beta.2
+
 ## 7.0.0-beta.1
 
 ### Patch Changes
