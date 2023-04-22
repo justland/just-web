@@ -1,10 +1,8 @@
-import { logTestGizmoFn, type LogTestGizmo } from '@just-web/log/testing'
-import type { PartialPick } from 'type-plus'
+import { LogTestGizmoOptions, logTestGizmoFn, type LogTestGizmo } from '@just-web/log/testing'
 import { incubateApp } from './just_app.logic.js'
-import type { JustAppOptions } from './just_app.types.js'
-import type { IdGizmo } from './just_web_id.js'
+import type { IdGizmo, IdGizmoOptions } from './just_web_id.js'
 
-export type JustAppTestOptions = PartialPick<JustAppOptions, 'name'>
+export type JustAppTestOptions = Partial<IdGizmoOptions> & { log?: LogTestGizmoOptions }
 
 /**
  * Create a test jest-app.

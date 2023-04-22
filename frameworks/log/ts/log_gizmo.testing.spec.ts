@@ -1,7 +1,7 @@
 import { idTestGizmoFn } from '@just-web/id/testing'
 import { incubate } from '@unional/gizmo'
 import { createMemoryLogReporter, logLevels } from 'standard-log'
-import { logTestGizmoFn } from './log_gizmo.mocks.js'
+import { logTestGizmoFn } from './log_gizmo.testing.js'
 
 it('defaults logLevel to debug and provides memory reporter', async () => {
 	const { log } = await incubate().with(idTestGizmoFn()).with(logTestGizmoFn()).create()
@@ -29,4 +29,14 @@ it('uses reporter from options if specified', async () => {
 
 	expect(log.reporter).toEqual(r)
 	expect(log.reporter.getLogMessagesWithIdAndLevel()).toEqual(['test (NOTICE) hello'])
+})
+
+it('can use emitLog to send log to console', async () => {
+	const { log } = await incubate()
+		.with(idTestGizmoFn())
+		.with(logTestGizmoFn({ emitLog: true }))
+		.create()
+
+	log.info('expected log emitted to console')
+	expect(log.reporter.getLogMessages()).toEqual(['expected log emitted to console'])
 })

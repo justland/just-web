@@ -1,6 +1,6 @@
 import { idTestGizmoFn } from '@just-web/id/testing'
 import { incubate } from '@unional/gizmo'
-import { logTestGizmoFn } from './log_gizmo.mocks.js'
+import { logTestGizmoFn } from './log_gizmo.testing.js'
 import { createPrefixedGetNonConsoleLogger } from './logger.js'
 
 it('prefix logger id', async () => {

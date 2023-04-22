@@ -54,7 +54,7 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"standard-log": "^12.1.0",
+		"standard-log": "^12.1.1",
 		"type-plus": "^6.6.0"
 	},
 	"devDependencies": {
