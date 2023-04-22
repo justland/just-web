@@ -1,5 +1,20 @@
 # @just-web/commands
 
+## 7.0.0-beta.4
+
+### Patch Changes
+
+- b3af3da7: @just-web/commands should not pre-register "show command palette".
+
+  It should be registered by the app or components that actually provides the implementation.
+
+- Updated dependencies [736fa4b4]
+  - @just-web/app@7.0.0-beta.4
+  - @just-web/states@7.0.0-beta.4
+  - @just-web/keyboard@7.0.0-beta.4
+  - @just-web/log@7.0.0-beta.4
+  - @just-web/types@7.0.0-beta.4
+
 ## 7.0.0-beta.3
 
 ### Patch Changes

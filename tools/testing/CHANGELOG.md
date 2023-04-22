@@ -1,5 +1,11 @@
 # @just-web/testing
 
+## 0.3.8-beta.4
+
+### Patch Changes
+
+- @just-web/log@7.0.0-beta.4
+
 ## 0.3.8-beta.3
 
 ### Patch Changes
