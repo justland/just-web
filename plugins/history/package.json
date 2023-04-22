@@ -85,10 +85,6 @@
     "type-plus": "^6.6.0",
     "typescript": "^5.0.0"
   },
-  "typedoc": {
-    "entryPoint": "./ts/index.ts",
-    "readmeFile": "./README.md"
-  },
   "peerDependencies": {
     "@just-web/app": "workspace:^",
     "@just-web/types": "workspace:^"

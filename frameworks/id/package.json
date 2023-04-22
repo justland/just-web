@@ -97,9 +97,5 @@
     "ts-jest": "^29.1.0",
     "type-plus": "^6.6.0",
     "typescript": "^4.9.3"
-  },
-  "typedoc": {
-    "entryPoint": "./ts/index.ts",
-    "readmeFile": "./README.md"
   }
 }

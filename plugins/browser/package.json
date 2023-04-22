@@ -97,9 +97,5 @@
     "@just-web/log": "workspace:^",
     "@just-web/states": "workspace:^",
     "@just-web/types": "workspace:^"
-  },
-  "typedoc": {
-    "entryPoint": "./ts/index.ts",
-    "readmeFile": "./README.md"
   }
 }

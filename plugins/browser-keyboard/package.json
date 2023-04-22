@@ -117,9 +117,5 @@
     "@just-web/keyboard": {
       "optional": true
     }
-  },
-  "typedoc": {
-    "entryPoint": "./ts/index.ts",
-    "readmeFile": "./README.md"
   }
 }

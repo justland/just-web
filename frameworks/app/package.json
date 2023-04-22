@@ -105,9 +105,5 @@
   },
   "peerDependencies": {
     "@just-web/types": "workspace:^"
-  },
-  "typedoc": {
-    "entryPoint": "./ts/index.ts",
-    "readmeFile": "./README.md"
   }
 }

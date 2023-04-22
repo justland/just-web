@@ -109,9 +109,5 @@
     "@just-web/keyboard": "workspace:^",
     "@just-web/log": "workspace:^",
     "@just-web/types": "workspace:^"
-  },
-  "typedoc": {
-    "entryPoint": "./ts/index.ts",
-    "readmeFile": "./README.md"
   }
 }
