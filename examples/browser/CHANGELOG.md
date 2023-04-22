@@ -1,5 +1,16 @@
 # @just-web/examples-browser
 
+## 0.0.1-beta.4
+
+### Patch Changes
+
+- Updated dependencies [736fa4b4]
+- Updated dependencies [b3af3da7]
+  - @just-web/app@7.0.0-beta.4
+  - @just-web/commands@7.0.0-beta.4
+  - @just-web/states@7.0.0-beta.4
+  - @just-web/presets-browser@5.0.0-beta.4
+
 ## 0.0.1-beta.3
 
 ### Patch Changes
