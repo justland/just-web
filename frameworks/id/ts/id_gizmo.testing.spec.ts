@@ -1,5 +1,5 @@
 import { incubate } from '@unional/gizmo'
-import { idTestGizmoFn } from './id_gizmo.mocks.js'
+import { idTestGizmoFn } from './testing/index.js'
 
 it('default name to "test"', async () => {
 	const { name } = await incubate().with(idTestGizmoFn()).create()

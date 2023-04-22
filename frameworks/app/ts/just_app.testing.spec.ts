@@ -1,5 +1,5 @@
 import { a, has } from 'assertron'
-import { justTestApp } from './just_app.mocks.js'
+import { justTestApp } from './testing/index.js'
 
 it('can be called without param', () => {
 	justTestApp()

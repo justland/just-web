@@ -1,7 +1,7 @@
 import { incubate } from '@unional/gizmo'
 import { range } from 'ramda'
 import { record } from 'type-plus'
-import { idGizmoFn } from './id_gizmo.js'
+import { idGizmoFn } from './index.js'
 
 it('randomize the app id', async () => {
 	const ids = await Promise.all(

@@ -1,1 +1,1 @@
-export * from '../id_gizmo.mocks.js'
+export * from '../id_gizmo.testing.js'

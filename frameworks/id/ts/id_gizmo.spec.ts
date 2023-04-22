@@ -1,5 +1,5 @@
 import { incubate } from '@unional/gizmo'
-import { idGizmoFn } from './id_gizmo.js'
+import { idGizmoFn } from './index.js'
 
 it(`requires a name`, async () => {
 	// @ts-expect-error
