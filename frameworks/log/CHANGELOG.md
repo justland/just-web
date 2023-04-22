@@ -1,5 +1,12 @@
 # @just-web/log
 
+## 7.0.0-beta.3
+
+### Patch Changes
+
+- 18455d27: Add `emitLog` support during tests
+  - @just-web/types@7.0.0-beta.3
+
 ## 7.0.0-beta.2
 
 ### Patch Changes

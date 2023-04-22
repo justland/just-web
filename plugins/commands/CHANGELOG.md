@@ -1,5 +1,16 @@
 # @just-web/commands
 
+## 7.0.0-beta.3
+
+### Patch Changes
+
+- Updated dependencies [18455d27]
+  - @just-web/app@7.0.0-beta.3
+  - @just-web/log@7.0.0-beta.3
+  - @just-web/states@7.0.0-beta.3
+  - @just-web/keyboard@7.0.0-beta.3
+  - @just-web/types@7.0.0-beta.3
+
 ## 7.0.0-beta.2
 
 ### Patch Changes
