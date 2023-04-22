@@ -1,11 +1,11 @@
 import { define, type DepBuilder, type GizmoStatic } from '@just-web/app'
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import type { LogGizmo } from '@just-web/log'
-import type { AnyFunction } from 'type-plus'
+import type { AnyFunction, ExtractFunction } from 'type-plus'
 import { showCommandPalette } from './commands.js'
 import { contributionRegistry } from './contributions.js'
 import { handlerRegistry } from './handlers.js'
-import type { Command, CommandContribution, ContributionRegistry, HandlerRegistry } from './types.js'
+import type { CommandContribution, ContributionRegistry, HandlerRegistry } from './types.js'
 
 export type CommandsGizmoOptions = {
 	contributions?: Array<CommandContribution>
@@ -23,7 +23,7 @@ export const commandsGizmoFn: (options?: CommandsGizmoOptions) => GizmoStatic<
 		commands: {
 			contributions: ContributionRegistry
 			handlers: HandlerRegistry
-			showCommandPalette: Command
+			showCommandPalette: () => void
 		}
 	}
 > = define((options?: CommandsGizmoOptions) => ({
@@ -32,14 +32,11 @@ export const commandsGizmoFn: (options?: CommandsGizmoOptions) => GizmoStatic<
 		const contributions = contributionRegistry(ctx, options?.contributions)
 		const handlers = handlerRegistry(ctx, options?.handlers)
 
-		contributions.add(showCommandPalette)
-		ctx.keyboard?.keyBindingContributions.add(showCommandPalette)
-
 		return {
 			commands: {
 				contributions,
 				handlers,
-				showCommandPalette
+				showCommandPalette: showCommandPalette as ExtractFunction<typeof showCommandPalette>
 			}
 		}
 	}
