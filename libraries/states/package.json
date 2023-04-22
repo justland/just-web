@@ -1,6 +1,6 @@
 {
   "name": "@just-web/states",
-  "version": "7.0.0-beta.2",
+  "version": "7.0.0-beta.3",
   "description": "State management for just-web application",
   "keywords": [
     "just-web",
