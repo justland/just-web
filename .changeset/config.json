@@ -21,8 +21,7 @@
 			"@just-web/os",
 			"@just-web/preferences",
 			"@just-web/routes",
-			"@just-web/states",
-			"@just-web/types"
+			"@just-web/states"
 		]
 	],
 	"ignore": [],

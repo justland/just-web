@@ -1,9 +1,0 @@
-ignores:
-  - '@just-web/repo-scripts'
-  - '@repobuddy/jest'
-  - '@size-limit/*'
-  - '@types/jest'
-  - 'jest-*'
-  - rimraf # https://github.com/depcheck/depcheck/issues/776
-  - size-limit
-  - ts-jest

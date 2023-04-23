@@ -10,9 +10,6 @@
       "path": "../../frameworks/app"
     },
 		{
-			"path": "../../frameworks/types"
-		},
-		{
 			"path": "../../plugins/browser"
 		},
 		{

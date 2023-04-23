@@ -16,9 +16,6 @@
 			"path": "../../plugins/os"
 		},
 		{
-			"path": "../../frameworks/types"
-		},
-		{
 			"path": "../../libraries/states"
 		},
 		{

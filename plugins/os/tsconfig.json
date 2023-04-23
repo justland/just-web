@@ -16,9 +16,6 @@
 			"path": "../../frameworks/log"
 		},
 		{
-			"path": "../../frameworks/types"
-		},
-		{
 			"path": "../../tools/repo-scripts"
 		}
 	]

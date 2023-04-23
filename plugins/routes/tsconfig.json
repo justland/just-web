@@ -13,17 +13,10 @@
 			"path": "../../frameworks/log"
 		},
 		{
-			"path": "../../frameworks/types"
-		},
-		{
 			"path": "../../libraries/states"
 		},
 		{
 			"path": "../../tools/repo-scripts"
-		},
-		{
-			"path": "../../tools/testing"
-		}
-	],
+		}	],
 	"include": ["ts", "types"]
 }

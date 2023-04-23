@@ -11,9 +11,6 @@
 			"path": "../../frameworks/id"
 		},
 		{
-			"path": "../../frameworks/types"
-		},
-		{
 			"path": "../../tools/repo-scripts"
 		}
 	]

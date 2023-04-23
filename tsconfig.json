@@ -43,9 +43,6 @@
 		},
 		{
 			"path": "tools/repo-scripts"
-		},
-		{
-			"path": "tools/testing"
 		}
 	]
 }

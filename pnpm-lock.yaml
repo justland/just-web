@@ -153,9 +153,6 @@ importers:
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../types
       '@repobuddy/jest':
         specifier: ^3.0.0
         version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
@@ -301,79 +298,9 @@ importers:
       '@just-web/id':
         specifier: workspace:^
         version: link:../id
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../types
       '@unional/gizmo':
         specifier: ^1.2.0
         version: 1.2.0
-      standard-log:
-        specifier: ^12.1.1
-        version: 12.1.1
-      type-plus:
-        specifier: ^6.6.0
-        version: 6.6.0
-    devDependencies:
-      '@just-web/repo-scripts':
-        specifier: workspace:^
-        version: link:../../tools/repo-scripts
-      '@repobuddy/jest':
-        specifier: ^3.0.0
-        version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
-      '@size-limit/preset-small-lib':
-        specifier: ~8.2.0
-        version: 8.2.3(size-limit@8.2.3)
-      '@types/jest':
-        specifier: ^29.2.3
-        version: 29.2.3
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
-      depcheck:
-        specifier: ~1.4.3
-        version: 1.4.3
-      eslint:
-        specifier: ^8.17.0
-        version: 8.28.0
-      eslint-plugin-harmony:
-        specifier: ^7.1.2
-        version: 7.1.2(@typescript-eslint/eslint-plugin@5.43.0)(eslint-config-prettier@8.8.0)(eslint@8.28.0)(typescript@5.0.2)
-      jest:
-        specifier: ^29.5.0
-        version: 29.5.0(@types/node@14.18.42)(ts-node@10.9.1)
-      jest-validate:
-        specifier: ^29.5.0
-        version: 29.5.0
-      jest-watch-suspend:
-        specifier: ^1.1.2
-        version: 1.1.2(jest@29.5.0)
-      jest-watch-toggle-config-2:
-        specifier: ^2.1.0
-        version: 2.1.0(jest@29.5.0)
-      jest-watch-typeahead:
-        specifier: ^2.2.2
-        version: 2.2.2(jest@29.5.0)
-      ncp:
-        specifier: ^2.0.0
-        version: 2.0.0
-      npm-run-all:
-        specifier: ^4.1.5
-        version: 4.1.5
-      rimraf:
-        specifier: ~5.0.0
-        version: 5.0.0
-      size-limit:
-        specifier: ~8.2.0
-        version: 8.2.3
-      ts-jest:
-        specifier: ^29.1.0
-        version: 29.1.0(@babel/core@7.21.4)(jest@29.5.0)(typescript@5.0.2)
-      typescript:
-        specifier: ^5.0.0
-        version: 5.0.2
-
-  frameworks/types:
-    dependencies:
       standard-log:
         specifier: ^12.1.1
         version: 12.1.1
@@ -791,21 +718,12 @@ importers:
       '@just-web/keyboard':
         specifier: workspace:^
         version: link:../keyboard
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../../frameworks/log
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@just-web/states':
         specifier: workspace:^
         version: link:../../libraries/states
-      '@just-web/testing':
-        specifier: workspace:^
-        version: link:../../tools/testing
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../../frameworks/types
       '@repobuddy/jest':
         specifier: ^3.0.0
         version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
@@ -879,15 +797,9 @@ importers:
       '@just-web/app':
         specifier: workspace:^
         version: link:../../frameworks/app
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../../frameworks/log
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
-      '@just-web/testing':
-        specifier: workspace:^
-        version: link:../../tools/testing
       '@repobuddy/jest':
         specifier: ^3.0.0
         version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
@@ -957,9 +869,6 @@ importers:
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../../frameworks/types
       '@repobuddy/jest':
         specifier: ^3.0.0
         version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
@@ -1030,9 +939,6 @@ importers:
       '@just-web/app':
         specifier: workspace:^
         version: link:../../frameworks/app
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../../frameworks/log
       '@just-web/os':
         specifier: workspace:^
         version: link:../os
@@ -1042,9 +948,6 @@ importers:
       '@just-web/states':
         specifier: workspace:^
         version: link:../../libraries/states
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../../frameworks/types
       '@repobuddy/jest':
         specifier: ^3.0.0
         version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
@@ -1112,15 +1015,9 @@ importers:
       '@just-web/app':
         specifier: workspace:^
         version: link:../../frameworks/app
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../../frameworks/log
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../../frameworks/types
       '@repobuddy/jest':
         specifier: ^3.0.0
         version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
@@ -1197,15 +1094,9 @@ importers:
       '@just-web/keyboard':
         specifier: workspace:^
         version: link:../keyboard
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../../frameworks/log
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../../frameworks/types
       '@repobuddy/jest':
         specifier: ^3.0.0
         version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
@@ -1272,12 +1163,6 @@ importers:
 
   plugins/routes:
     dependencies:
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../../frameworks/log
-      '@just-web/types':
-        specifier: workspace:^
-        version: link:../../frameworks/types
       type-plus:
         specifier: ^6.6.0
         version: 6.6.0
@@ -1512,79 +1397,6 @@ importers:
       size-limit:
         specifier: ~8.2.0
         version: 8.2.3
-
-  tools/testing:
-    dependencies:
-      '@just-web/log':
-        specifier: workspace:^
-        version: link:../../frameworks/log
-      assertron:
-        specifier: ^11.2.0
-        version: 11.2.0
-      satisfier:
-        specifier: ^5.4.2
-        version: 5.4.2
-    devDependencies:
-      '@just-web/repo-scripts':
-        specifier: workspace:^
-        version: link:../repo-scripts
-      '@repobuddy/jest':
-        specifier: ^3.0.0
-        version: 3.0.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
-      '@size-limit/preset-small-lib':
-        specifier: ~8.2.0
-        version: 8.2.3(size-limit@8.2.3)
-      '@types/jest':
-        specifier: ^29.2.3
-        version: 29.2.3
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
-      depcheck:
-        specifier: ~1.4.3
-        version: 1.4.3
-      eslint:
-        specifier: ^8.11.0
-        version: 8.28.0
-      eslint-plugin-harmony:
-        specifier: ^7.1.2
-        version: 7.1.2(@typescript-eslint/eslint-plugin@5.43.0)(eslint-config-prettier@8.8.0)(eslint@8.28.0)(typescript@5.0.2)
-      jest:
-        specifier: ^29.5.0
-        version: 29.5.0(@types/node@14.18.42)(ts-node@10.9.1)
-      jest-validate:
-        specifier: ^29.5.0
-        version: 29.5.0
-      jest-watch-suspend:
-        specifier: ^1.1.2
-        version: 1.1.2(jest@29.5.0)
-      jest-watch-toggle-config-2:
-        specifier: ^2.1.0
-        version: 2.1.0(jest@29.5.0)
-      jest-watch-typeahead:
-        specifier: ^2.2.2
-        version: 2.2.2(jest@29.5.0)
-      ncp:
-        specifier: ^2.0.0
-        version: 2.0.0
-      npm-run-all:
-        specifier: ^4.1.5
-        version: 4.1.5
-      rimraf:
-        specifier: ~5.0.0
-        version: 5.0.0
-      size-limit:
-        specifier: ~8.2.0
-        version: 8.2.3
-      ts-jest:
-        specifier: ^29.1.0
-        version: 29.1.0(@babel/core@7.21.4)(jest@29.5.0)(typescript@5.0.2)
-      type-plus:
-        specifier: ^6.6.0
-        version: 6.6.0
-      typescript:
-        specifier: ^5.0.0
-        version: 5.0.2
 
 packages:
 
@@ -4058,6 +3870,7 @@ packages:
       satisfier: 5.4.2
       tersify: 3.12.1
       type-plus: 6.6.0
+    dev: true
 
   /asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
@@ -6256,6 +6069,7 @@ packages:
 
   /is-promise@4.0.0:
     resolution: {integrity: sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==}
+    dev: true
 
   /is-regex@1.1.4:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
@@ -8314,6 +8128,7 @@ packages:
 
   /path-equal@1.2.5:
     resolution: {integrity: sha512-i73IctDr3F2W+bsOWDyyVm/lqsXO47aY9nsFZUjTT/aljSbkxHxxCoyZ9UUrM8jK0JVod+An+rl48RCsvWM+9g==}
+    dev: true
 
   /path-exists@4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
@@ -8893,6 +8708,7 @@ packages:
     resolution: {integrity: sha512-K1QPzEPjiC/7FcwiCwRH218SS3OVEWlx56EcHI+tZIf+TaAs+OHwwruAD4ke6xvRk/QniwSPkP98o9Oo84RxGQ==}
     dependencies:
       tersify: 3.10.5
+    dev: true
 
   /saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
