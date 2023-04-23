@@ -17,7 +17,10 @@ export type JustAppTestOptions = Partial<IdGizmoOptions> & { log?: LogTestGizmoO
  */
 export function justTestApp(options?: JustAppTestOptions) {
 	const name = options?.name ?? 'test'
-	return incubateApp({ name }).with(logTestGizmoFn(options?.log))
+	return incubateApp({
+		...options,
+		name
+	}).with(logTestGizmoFn(options?.log))
 }
 
 export type JustTestApp = IdGizmo & LogTestGizmo
