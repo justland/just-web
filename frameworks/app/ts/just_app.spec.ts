@@ -71,7 +71,7 @@ it('allows one gizmo to override another', async () => {
 	})
 
 	const app = await justTestApp({ name: 'test-app' }).with(log2).create()
-	testType.equal<(typeof app)['log'], { info(value: string): void }>(true)
+	testType.equal<typeof app['log'], { info(value: string): void }>(true)
 })
 
 it('starts will log an app start message', async () => {
@@ -97,4 +97,30 @@ it('starts will call plugin start with an adjusted log', async () => {
 		'test-app (INFO) starting gizmo',
 		/test-app \(INFO\) created \(id: .*\)/
 	])
+})
+
+it('accepts a start function during create', async () => {
+	expect.assertions(2)
+	const app = await justTestApp().create(app => {
+		expect(app.name).toEqual('test')
+	})
+	expect(app.name).toEqual('test')
+})
+
+it('can init the app with init function', async () => {
+	expect.assertions(3)
+	const app = await justTestApp()
+		.init(app => {
+			expect(app.name).toEqual('test')
+		})
+		.create(app => {
+			expect(app.name).toEqual('test')
+		})
+	expect(app.name).toEqual('test')
+})
+
+it('can merge gizmo instance with merge function', async () => {
+	const instance = { a: 1 }
+	const app = await justTestApp().merge(instance).create()
+	expect(app.a).toBe(1)
 })

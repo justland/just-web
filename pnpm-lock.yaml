@@ -141,8 +141,8 @@ importers:
         specifier: workspace:^
         version: link:../log
       '@unional/gizmo':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.2.0
+        version: 1.2.0
       iso-error:
         specifier: ~6.0.0
         version: 6.0.1
@@ -223,8 +223,8 @@ importers:
   frameworks/id:
     dependencies:
       '@unional/gizmo':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.2.0
+        version: 1.2.0
     devDependencies:
       '@just-web/repo-scripts':
         specifier: workspace:^
@@ -305,8 +305,8 @@ importers:
         specifier: workspace:^
         version: link:../types
       '@unional/gizmo':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.2.0
+        version: 1.2.0
       standard-log:
         specifier: ^12.1.1
         version: 12.1.1
@@ -3828,8 +3828,8 @@ packages:
       '@just-func/types': 0.5.1
     dev: false
 
-  /@unional/gizmo@1.1.0:
-    resolution: {integrity: sha512-Ckwc6AxFWHyIBCoRWbiRvohtZQlb14COqZMR1Ikag2E55LnlJP2WL/GuydwcIwUZuz9CammYdBWqYGhk4SrjpA==}
+  /@unional/gizmo@1.2.0:
+    resolution: {integrity: sha512-nP8iHl/red9t5mkuNLrlDnvFldU/JlxoiIcGwvgEBrxjtZBjars+f7+/JpuMJdl7xTZium3NcWghMq+NKBEIdw==}
     engines: {node: '>= 14.16'}
     dev: false
 
@@ -7228,7 +7228,7 @@ packages:
   /jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
-      graceful-fs: 4.2.11
+      graceful-fs: 4.2.10
     dev: true
 
   /jsonfile@6.1.0:
