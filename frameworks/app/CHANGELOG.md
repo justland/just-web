@@ -1,5 +1,18 @@
 # @just-web/app
 
+## 7.0.0-beta.5
+
+### Minor Changes
+
+- 6684e0ef: Update `@unional/gizmo` to 1.2.0.
+
+  Add support of `init()`, `merge()`, and the `create(start)` feature.
+
+### Patch Changes
+
+- @just-web/log@7.0.0-beta.5
+- @just-web/types@7.0.0-beta.5
+
 ## 7.0.0-beta.4
 
 ### Patch Changes
