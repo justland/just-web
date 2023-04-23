@@ -3,56 +3,7 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 
-[@just-web/app] provides the entry point for creating a [@just-web] application.
-
-```ts
-// app.ts
-import { justApp } from '@just-web/app'
-
-export async function yourApp() {
-  // use the `with()` method to add features and functionalities to your app.
-  return justApp({ name: 'your-app' }).with(...).create()
-}
-
-export type YourApp = ReturnType<typeof yourApp>
-```
-
-You can then use this app in any framework you like.
-
-For example, in [React]:
-
-```ts
-// main.tsx
-import { AppContext } from '@just-web/react'
-import ReactDOM from 'react-dom'
-import { yourApp } from './app'
-import { AppComponent } from './app_component'
-
-void (async () => {
-  const app = await yourApp()
-  ReactDOM.render(
-    <React.StrictMode>
-      <AppContext.Provider value={app}>
-        <AppComponent />
-      </AppContext.Provider>
-    <React.StrictMode>,
-    document.getElementById('root')
-  )
-})
-```
-
-Then, in any component:
-
-```ts
-import { useAppContext } from '@just-web/react'
-import type { YourApp } from './app'
-
-const MyComponent = () => {
-  const app = useAppContext<YourApp>()
-
-  return <div>{app.name}</div>
-}
-```
+[@just-web/app] is the entry point of the [just-web] framework.
 
 ## Install
 
@@ -70,37 +21,109 @@ pnpm install @just-web/app
 rush add -p @just-web/app
 ```
 
-## Adding Features
+## Overview
 
-All features are implemented as [gizmos][gizmo].
+Each [just-web] app has two parts: features and host.
 
-[gizmo] is an object that can be created asynchronously.
-You can specify the dependencies it needs,
-which `justApp()` will ensure the dependencies are added accordingly.
+Every feature of a [just-web] app is implemented in a [gizmo].
+
+[Gizmo] allows you to define and compose asynchronous features.
+
+The host then compose these [gizmos][gizmo] into an app.
+
+## Usage
+
+[Gizmo] is defined using the `define()` function.
+
+It is the same `define()` function provided by [@unional/gizmo][gizmo].
+[@just-web/app] simply re-exports it.
+
+Here is an example to create a [gizmo] of a music store:
 
 ```ts
 import { define } from '@just-web/app'
 
-const gizmo = define({
+export const musicStoreGizmo = define({
   async create() {
-    return {
-      auth: {
-        login(username, password) { /* ... */ },
-        logout() { /* ... */ },
-      }
-    }
-   }
+    return { musicStore: { loadSong(id) { /* ... */ } } }
+  }
+})
+
+export type MusicStoreGizmo = define.Infer<typeof musticStoreGizmo>
+```
+
+Note that you can infer the type of the [gizmo] using `define.Infer<typeof gizmo>`.
+
+Then, let's create a [gizmo] of [Miku]:
+
+```ts
+import { define } from '@just-web/app'
+import type { MusicStoreGizmo } from './music_store_gizmo'
+
+export const mikuGizmo = define({
+  static: define.require<MusicStoreGizmo>(),
+  async create({ musicStore }) {
+    return { miku: { sing() { /* ... */ } } }
+  }
 })
 ```
 
-There are other things you can do with a gizmo.
+By using `static: define.require<MusicStoreGizmo>()`,
+you define that the `mikuGizmo` depends on the `MusicStoreGizmo`.
+
+Since you only specify the type,
+the `mikuGizmo` does not care about the implementation of the `MusicStoreGizmo`.
+
+Any [gizmo] that implements the `MusicStoreGizmo` can be used.
+
+There are other things you can do with [gizmo].
 For more information, please check out the [gizmo] documentation.
 
-[React]: https://reactjs.org/
+---
+
+Now, let's create an app that uses the `mikuGizmo`:
+
+```ts
+import { justApp, type JustApp } from '@just-web/app'
+import { mikuGizmo, type MikuGizmo } from './miku_gizmo'
+import { musicStoreGizmo, type MusicStoreGizmo } from './music_store_gizmo'
+
+export const singAlongApp = justApp({ name: 'sing-along' })
+  .with(musicStoreGizmo)
+  .with(mikuGizmo)
+
+export type SingAlongApp = JustApp & MikuGizmo & MusicStoreGizmo
+
+const app = await singAlongApp.create()
+app.miku.sing()
+```
+
+The `justApp()` creates an *app incubator*,
+which can use the `with()` method to add features to the app,
+then the `create()` method creates the actual app.
+
+## With UI Framework
+
+You can see the [just-web] focus on the app logic.
+It does not care about the UI framework you use.
+
+You can use any UI framework you like.
+
+For example, check out the [React] example in [@just-web/react].
+
+## Other features
+
+The [just-web] framework provides other features that you can use in your app.
+
+Refer to the [just-web] documentation for more information.
+
+[@just-web/app]: https://github.com/justland/just-web/tree/main/frameworks/app
+[@just-web/react]: https://github.com/justland/just-web-react/tree/main/libraries/react
 [downloads-image]: https://img.shields.io/npm/dm/@just-web/app.svg?style=flat
 [downloads-url]: https://npmjs.org/package/@just-web/app
+[gizmo]: https://github.com/unional/async-fp/tree/main/packages/gizmo
+[just-web]: https://justland.github.io/just-web/
+[miku]: https://ec.crypton.co.jp/pages/prod/virtualsinger/cv01_us
 [npm-image]: https://img.shields.io/npm/v/@just-web/app.svg?style=flat
 [npm-url]: https://npmjs.org/package/@just-web/app
-[gizmo]: https://github.com/unional/async-fp/tree/main/packages/gizmo
-[@just-web/app]: https://github.com/justland/just-web/tree/main/frameworks/app
-[@just-web]: https://justland.github.io/just-web/
+[React]: https://reactjs.org/

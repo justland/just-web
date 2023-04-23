@@ -24,7 +24,7 @@ app.id   // '...some random id...'
 ```
 
 [`IDGizmo`]: ./ts/id_gizmo.ts
-[downloads-image]: https://img.shields.io/npm/dm/@just-**web**/id.svg?style=flat
+[downloads-image]: https://img.shields.io/npm/dm/@just-web/id.svg?style=flat
 [downloads-url]: https://npmjs.org/package/@just-web/id
 [just-web]: https://github.com/justland/just-web
 [npm-image]: https://img.shields.io/npm/v/@just-web/id.svg?style=flat

@@ -3,7 +3,7 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 
-[@just-web] is a plugin-based application framework.
+[just-web] is a plugin-based application framework.
 
 As a good framework, it defers making decisions as much as possible.
 Meaning you have the freedom to choose your tech stacks or even changing them as the landscape of web development changes.
@@ -39,14 +39,14 @@ pnpm add --save-peer @just-web/app
 
 ## Frameworks
 
-- [@just-web/app]: provides the entry point for creating a [@just-web] application.
+- [@just-web/app]: provides the entry point for creating a [just-web] application.
 
 ## Libraries
 
 Libraries are additional packages that you can use for specific scenarios.
 
-- [@just-web/react]: additional utilities when using [@just-web] with [React].
-- [@just-web/states]: state management library used by [@just-web].
+- [@just-web/react]: additional utilities when using [just-web] with [React].
+- [@just-web/states]: state management library used by [just-web].
 
 ## Components
 
@@ -72,16 +72,16 @@ Here are the plugins provided in this repository:
 
 ## Tools
 
-[@just-web] provides some tools to make it easier for you to develop your application:
+[just-web] provides some tools to make it easier for you to develop your application:
 
-- `@just-web/create`: 🚧 [@just-web] initializer package (for `npm create`) to scaffold your project.
+- `@just-web/create`: 🚧 [just-web] initializer package (for `npm create`) to scaffold your project.
 - [@just-web/repo-scripts]: provides scripts and default configs to help maintain your repository.
 
 ## Contribute
 
 Please check out the [contributing guide](./CONTRIBUTING.md)
 
-[@just-web]: https://github.com/justland/just-web
+[just-web]: https://github.com/justland/just-web
 [@just-web/app]: https://github.com/justland/just-web/tree/main/frameworks/app
 [@just-web/browser-keyboard]: https://github.com/justland/just-web/tree/main/plugins/browser-keyboard
 [@just-web/browser-preferences]: https://github.com/justland/just-web/tree/main/plugins/browser-preferences
