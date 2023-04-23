@@ -1,7 +1,8 @@
-import { logLevels } from '@just-web/app'
+import { createMemoryLogReporter, logLevels } from '@just-web/app'
 import { justTestApp } from '@just-web/app/testing'
 import { a, some } from 'assertron'
 import { startsWith } from 'satisfier'
+import { configGlobal } from 'standard-log'
 import { createErrorStore } from './error_store.js'
 import { ctx } from './onerror.ctx.js'
 import { registerOnErrorHandler } from './onerror.js'
@@ -43,13 +44,14 @@ it('logs captured error', async () => {
 	)
 	window.onerror!('some error occurred')
 
-	a.satisfies(log.reporter.logs, some(
-		{
+	a.satisfies(
+		log.reporter.logs,
+		some({
 			id: 'test:@just-web/browser',
 			level: logLevels.error,
 			args: startsWith(['onerror detected'])
-		}
-	))
+		})
+	)
 })
 
 it('invoke original onerror', async () => {
@@ -96,4 +98,49 @@ it('original onerror returns true, result will be true', async () => {
 	expect(actual!.length).toBe(1)
 	expect(actual![0].message).toBe('some error occurred')
 	expect(result).toBe(true)
+})
+
+it('accepts a logger meta', async () => {
+	const window = { onerror: () => true } as any
+	ctx.getWindow = () => window
+	const app = await justTestApp().create()
+	const logger = app.log.getLogger('browser')
+	const errors = createErrorStore()
+	registerOnErrorHandler(
+		{
+			errors,
+			preventDefault: false
+		},
+		{ logger }
+	)
+
+	window.onerror!('some error occurred')
+
+	a.satisfies(
+		app.log.reporter.getLogMessagesWithIdAndLevel(),
+		some(/test:browser \(ERROR\) onerror detected BrowserError: some error occurred/)
+	)
+})
+
+it('uses @just-web/browser logger if not specified', async () => {
+	const window = { onerror: () => true } as any
+	ctx.getWindow = () => window
+
+	const reporter = createMemoryLogReporter()
+	configGlobal({
+		reporters: [reporter]
+	})
+	await justTestApp().create()
+	const errors = createErrorStore()
+	registerOnErrorHandler({
+		errors,
+		preventDefault: false
+	})
+
+	window.onerror!('some error occurred')
+
+	a.satisfies(
+		reporter.getLogMessagesWithIdAndLevel(),
+		some(/@just-web\/browser \(ERROR\) onerror detected BrowserError: some error occurred/)
+	)
 })
