@@ -1,5 +1,16 @@
 # @just-web/keyboard
 
+## 7.0.0-beta.5
+
+### Patch Changes
+
+- Updated dependencies [6684e0ef]
+  - @just-web/app@7.0.0-beta.5
+  - @just-web/states@7.0.0-beta.5
+  - @just-web/os@7.0.0-beta.5
+  - @just-web/log@7.0.0-beta.5
+  - @just-web/types@7.0.0-beta.5
+
 ## 7.0.0-beta.4
 
 ### Patch Changes
