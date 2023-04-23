@@ -1,5 +1,16 @@
 # @just-web/events
 
+## 7.0.0
+
+### Patch Changes
+
+- Updated dependencies [ab9f056d]
+- Updated dependencies [6684e0ef]
+- Updated dependencies [78becd0d]
+- Updated dependencies [736fa4b4]
+- Updated dependencies [18455d27]
+  - @just-web/app@7.0.0
+
 ## 7.0.0-beta.5
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @just-web/log
 
+## 7.0.0
+
+### Minor Changes
+
+- 10489f4f: `getLogger()` can omit id.
+
+### Patch Changes
+
+- 18455d27: Add `emitLog` support during tests
+
 ## 7.0.0-beta.5
 
 ### Patch Changes
