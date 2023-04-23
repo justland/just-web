@@ -2,6 +2,16 @@
 
 ## 7.0.0
 
+### Major Changes
+
+- Underlying plugin system is replaced by [@unional/gizmo](https://www.npmjs.com/package/@unional/gizmo).
+  The pre-tree instantiation is removed.\
+  Each *gizmo* will create a new instance every time.\
+  This is the `always-create` instantiation strategy.
+  Other strategies will be supported later,\
+  including bringing back the `pre-tree` instantiation.\
+  For more info, please refer to [this issue](https://github.com/unional/async-fp/issues/162)
+
 ### Minor Changes
 
 - 6684e0ef: Update `@unional/gizmo` to 1.2.0.
