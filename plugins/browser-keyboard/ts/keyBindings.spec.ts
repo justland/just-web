@@ -1,8 +1,9 @@
-import commandsPlugin, { CommandContribution } from '@just-web/commands'
-import keyboardPlugin, { KeyBindingContribution } from '@just-web/keyboard'
-import { logTestPlugin } from '@just-web/log'
-import osPlugin from '@just-web/os'
-import { logEqual } from '@just-web/testing'
+import { } from '@just-web/app'
+import { justTestApp } from '@just-web/app/testing'
+import { CommandContribution, commandsGizmoFn } from '@just-web/commands'
+import { KeyBindingContribution, keyboardGizmoFn } from '@just-web/keyboard'
+import { osGizmo } from '@just-web/os'
+import { a, has } from 'assertron'
 import mousetrap from 'mousetrap'
 import { startKeyBindings } from './keyBindings.js'
 
@@ -11,32 +12,24 @@ type StubCommand = KeyBindingContribution &
 		handler(command: KeyBindingContribution & CommandContribution): void
 	}
 
-function setupTest(...stubCommands: StubCommand[]) {
-	const [{ log }] = logTestPlugin().init()
-	const [{ keyboard }] = keyboardPlugin().init({ log })
-	const [{ commands }] = commandsPlugin().init({ log, keyboard })
-	const [{ os }] = osPlugin().init({ log })
+async function setupTest(...stubCommands: StubCommand[]) {
+	const app = await justTestApp().with(keyboardGizmoFn()).with(commandsGizmoFn()).with(osGizmo).create()
 
 	stubCommands.forEach(stubCommand => {
-		commands.contributions.add(stubCommand)
-		commands.handlers.register(stubCommand.id, () => stubCommand.handler(stubCommand))
-		keyboard.keyBindingContributions.add(stubCommand)
+		app.commands.contributions.add(stubCommand)
+		app.commands.handlers.register(stubCommand.id, () => stubCommand.handler(stubCommand))
+		app.keyboard.keyBindingContributions.add(stubCommand)
 	})
-	return {
-		os,
-		log,
-		commands,
-		keyboard
-	}
+	return app
 }
 
 beforeEach(() => {
 	mousetrap.reset()
 })
 
-test('trigger command', () => {
+test('trigger command', async () => {
 	const invoked: string[] = []
-	const options = setupTest({
+	const app = await setupTest({
 		id: 'just-test.showJob',
 		description: 'show job',
 		key: 'ctrl+j',
@@ -44,15 +37,15 @@ test('trigger command', () => {
 			invoked.push(cmd.description!)
 		}
 	})
-	startKeyBindings(options)
+	startKeyBindings(app)
 
 	mousetrap.trigger('ctrl+j')
 	expect(invoked).toEqual(['show job'])
 })
 
-test('trigger cmd command', () => {
+test('trigger cmd command', async () => {
 	const invoked: string[] = []
-	const options = setupTest({
+	const app = await setupTest({
 		id: 'just-test.showJob',
 		description: 'show job',
 		key: 'cmd+j',
@@ -60,7 +53,7 @@ test('trigger cmd command', () => {
 			invoked.push(cmd.description!)
 		}
 	})
-	startKeyBindings(options)
+	startKeyBindings(app)
 
 	// mousetrap takes `command+` instead of `cmd+`
 	mousetrap.trigger('command+j')
@@ -68,7 +61,7 @@ test('trigger cmd command', () => {
 })
 
 test('emit warning for duplicate key binding', async () => {
-	const options = setupTest(
+	const app = await setupTest(
 		{
 			id: 'just-test.showJob',
 			description: 'show job',
@@ -82,10 +75,10 @@ test('emit warning for duplicate key binding', async () => {
 			handler() {}
 		}
 	)
-	startKeyBindings(options)
+	startKeyBindings(app)
 
-	logEqual(
-		options.log.reporter,
-		'(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j'
+	a.satisfies(
+		app.log.reporter.getLogMessagesWithLevel(),
+		has('(WARN) Registering a duplicate key binding, ignored: just-test.diffJob - ctrl+j')
 	)
 })

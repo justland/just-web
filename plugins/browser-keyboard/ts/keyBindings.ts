@@ -1,12 +1,12 @@
-import type { CommandsContext } from '@just-web/commands'
-import type { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
-import type { LogContext } from '@just-web/log'
-import type { OSContext } from '@just-web/os'
+import type { LogGizmo } from '@just-web/app'
+import type { CommandsGizmo } from '@just-web/commands'
+import type { KeyBindingContribution, KeyboardGizmo } from '@just-web/keyboard'
+import type { OSGizmo } from '@just-web/os'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
 
 let keys: Record<string, boolean>
-export function startKeyBindings(param: LogContext & KeyboardContext & CommandsContext & OSContext) {
+export function startKeyBindings(param: LogGizmo & KeyboardGizmo & CommandsGizmo& OSGizmo) {
 	const keyBindings = param.keyboard.keyBindingContributions
 
 	keys = record()
@@ -21,7 +21,7 @@ export function startKeyBindings(param: LogContext & KeyboardContext & CommandsC
 }
 
 function bindKey(
-	{ log: logContext, commands, os }: LogContext & CommandsContext & OSContext,
+	{ log: logContext, commands, os }: LogGizmo&CommandsGizmo&OSGizmo,
 	keyBinding: KeyBindingContribution
 ) {
 	const key = getKey({ os }, keyBinding)
@@ -42,7 +42,7 @@ function bindKey(
 	}
 }
 
-function getKey(ctx: OSContext, keyBinding: any): string {
+function getKey(ctx: OSGizmo, keyBinding: any): string {
 	if (ctx.os.isMac()) return (keyBinding.mac ?? keyBinding.key) as string
 	return keyBinding.key as string
 }
