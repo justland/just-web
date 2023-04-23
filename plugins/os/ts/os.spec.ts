@@ -3,13 +3,18 @@ import { isMac } from './os.js'
 import { ctx } from './os.ctx.js'
 
 describe('isMac()', () => {
-	test(`'OS X' is mac`, () => {
+	it(`returns true for 'OS X'`, () => {
 		ctx.os = stub<ctx.OperatingSystem>({ family: 'OS X' })
 		expect(isMac()).toEqual(true)
 	})
 
-	test('`Windows` is not mac', () => {
+	it('returns false for `Windows`', () => {
 		ctx.os = stub<ctx.OperatingSystem>({ family: 'Windows' })
+		expect(isMac()).toEqual(false)
+	})
+
+	it('returns false for no os', () => {
+		ctx.os = undefined
 		expect(isMac()).toEqual(false)
 	})
 })
