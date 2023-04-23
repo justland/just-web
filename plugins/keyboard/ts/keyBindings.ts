@@ -1,6 +1,6 @@
-import type { LogContext } from '@just-web/log'
-import type { OSContext } from '@just-web/os'
-import { createRegistry, Registry, withAdder, WithAdder } from '@just-web/states'
+import type { LogGizmo } from '@just-web/log'
+import type { OSGizmo } from '@just-web/os'
+import { createRegistry, withAdder, type Registry, type WithAdder } from '@just-web/states'
 import { record } from 'type-plus'
 
 export type KeyBindingContribution =
@@ -43,7 +43,7 @@ export namespace keyBindingRegistry {
 }
 
 export function keyBindingRegistry(
-	ctx: LogContext,
+	ctx: LogGizmo,
 	options?: keyBindingRegistry.Options
 ): KeyBindingContributionRegistry {
 	return withAdder(createRegistry<string, KeyBindingContribution>(getInitRecord(options)), function (r, kb) {
@@ -61,7 +61,7 @@ function getInitRecord(options?: keyBindingRegistry.Options) {
 	}, record<string, KeyBindingContribution>())
 }
 
-export function formatKeyBinding({ os }: OSContext, keyBinding: KeyBindingContribution) {
+export function formatKeyBinding({ os }: OSGizmo, keyBinding: KeyBindingContribution) {
 	const m = os.isMac()
 	return {
 		id: keyBinding.id,
