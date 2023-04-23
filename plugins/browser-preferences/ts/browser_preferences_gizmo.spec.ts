@@ -1,7 +1,9 @@
 import { logLevels } from '@just-web/app'
 import { clearAllUserPreferences } from '@just-web/preferences'
+import { nothing } from '@just-web/states'
 import { a, hasAll, some } from 'assertron'
 import { browserPreferencesGizmoTestApp, resetLocalStorage, stubLocalStorage } from './testing/index.js'
+import { ctx } from './local_storage_store.ctx.js'
 
 afterEach(resetLocalStorage)
 
@@ -64,4 +66,56 @@ it('emits a trace log', async () => {
 
 	const messages = log.reporter.getLogMessagesWithIdAndLevel()
 	a.satisfies(messages, some("test (TRACE) set: 'test:emit-trace-log' undefined -> hello-world"))
+})
+
+it('accepts a handler', async () => {
+	const { preferences, log } = await browserPreferencesGizmoTestApp({ log: { logLevel: logLevels.all } })
+	preferences.set('accept-handler', v => {
+		expect(v).toBeUndefined()
+		return '1'
+	})
+	preferences.set('accept-handler', v => {
+		expect(v).toEqual('1')
+		return '2'
+	})
+
+	expect(preferences.get('accept-handler')).toEqual('2')
+	preferences.set('accept-handler', () => nothing)
+	expect(preferences.get('accept-handler')).toBeUndefined()
+
+	const messages = log.reporter.getLogMessagesWithIdAndLevel()
+	a.satisfies(
+		messages,
+		hasAll(
+			"test (TRACE) set: 'test:accept-handler' undefined -> 1",
+			"test (TRACE) set: 'test:accept-handler' 1 -> 2",
+			"test (TRACE) set: clear 'test:accept-handler'"
+		)
+	)
+})
+
+it('clear not set value is ok', async () => {
+	const { preferences, log } = await browserPreferencesGizmoTestApp({ log: { logLevel: logLevels.all } })
+	preferences.set('unknown', undefined) // do not throw
+
+	a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(`test (TRACE) set: clear 'test:unknown'`))
+})
+
+describe('app.preferences.clearAll()', () => {
+	it('only clear preference for the current app', async () => {
+		const { preferences, log } = await browserPreferencesGizmoTestApp()
+		preferences.set('x', '123')
+		preferences.set('y', 'abc')
+		const localStorage = ctx.getLocalStorage()
+		localStorage.setItem('someone-else-value', 'hello')
+		preferences.clearAll()
+		expect(preferences.get('x')).toBeUndefined()
+		expect(preferences.get('y')).toBeUndefined()
+		expect(localStorage.getItem('someone-else-value')).toEqual('hello')
+
+		a.satisfies(
+			log.reporter.getLogMessagesWithIdAndLevel(),
+			some(`test (NOTICE) clear all: 'test'`)
+		)
+	})
 })
