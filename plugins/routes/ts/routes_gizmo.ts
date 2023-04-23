@@ -21,7 +21,8 @@ export const routesGizmo = define({
 		})
 		const log = ctx.log.getLogger('@just-web/routes')
 		const routes = {
-			navigate(route: string) {
+			navigate(route?: string) {
+				route = route ?? store.get().config.initialRoute
 				const r = store.get().routes[route]
 				if (!r) log.error(`navigate target not found: '${route}'`)
 				else {
@@ -57,12 +58,7 @@ export const routesGizmo = define({
 				})
 			}
 		}
-		return [
-			{ routes },
-			() => {
-				routes.navigate(store.get().config.initialRoute)
-			}
-		]
+		return { routes }
 	}
 })
 

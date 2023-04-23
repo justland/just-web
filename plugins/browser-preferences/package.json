@@ -81,10 +81,8 @@
     "@just-web/app": "workspace:^",
     "@just-web/commands": "workspace:^",
     "@just-web/keyboard": "workspace:^",
-    "@just-web/log": "workspace:^",
     "@just-web/preferences": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
-    "@just-web/types": "workspace:^",
     "@repobuddy/jest": "^3.0.0",
     "@size-limit/preset-small-lib": "~8.2.0",
     "@types/jest": "^29.2.3",
@@ -101,7 +99,6 @@
     "ncp": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "~5.0.0",
-    "satisfier": "^5.4.2",
     "size-limit": "~8.2.0",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.0"
@@ -109,8 +106,6 @@
   "peerDependencies": {
     "@just-web/app": "workspace:^",
     "@just-web/commands": "workspace:^",
-    "@just-web/log": "workspace:^",
-    "@just-web/preferences": "workspace:^",
-    "@just-web/types": "workspace:^"
+    "@just-web/preferences": "workspace:^"
   }
 }

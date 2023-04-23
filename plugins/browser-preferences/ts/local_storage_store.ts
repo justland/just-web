@@ -1,4 +1,4 @@
-import type { LogGizmo } from '@just-web/log'
+import type { LogGizmo } from '@just-web/app'
 import { isNothing, nothing } from '@just-web/states'
 import { decode, encode } from 'js-base64'
 import { ctx } from './local_storage_store.ctx.js'

@@ -5,6 +5,8 @@
 
 [@just-web/routes] is a plugin that provides client side routing capability.
 
+NOTE: This plugin is still in development and is not ready for production use.
+
 ## Features
 
 - routing

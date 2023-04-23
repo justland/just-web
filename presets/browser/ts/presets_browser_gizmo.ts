@@ -1,10 +1,9 @@
-import { define, type DepBuilder, type GizmoStatic, type IdGizmo } from '@just-web/app'
+import { define, type DepBuilder, type GizmoStatic, type IdGizmo, type LogGizmo } from '@just-web/app'
 import { browserGizmoFn, type BrowserGizmo, type BrowserGizmoOptions } from '@just-web/browser'
 import { browserPreferencesGizmo } from '@just-web/browser-preferences'
 import type { CommandsGizmo } from '@just-web/commands'
 import { historyGizmoFn, type HistoryGizmo, type HistoryGizmoOptions } from '@just-web/history'
 import type { KeyboardGizmo } from '@just-web/keyboard'
-import type { LogGizmo } from '@just-web/log'
 
 export type { ReadonlyErrorStore } from '@just-web/browser'
 export type { BrowserHistory } from 'history'

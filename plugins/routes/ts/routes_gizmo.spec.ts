@@ -44,4 +44,6 @@ describe('navigate()', () => {
 		app.routes.register('/route1', () => expect('called').toBe('called'))
 		app.routes.navigate('/route1')
 	})
+
+	it.todo('uses initial route if no route is specified')
 })

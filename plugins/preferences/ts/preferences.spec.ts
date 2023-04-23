@@ -1,42 +1,29 @@
-import { createTestApp } from '@just-web/app'
-import commandsPlugin, { CommandsContext } from '@just-web/commands'
-import keyboardPlugin from '@just-web/keyboard'
-import { isNothing } from '@just-web/states'
-import { definePlugin } from '@just-web/types'
+import { justTestApp } from '@just-web/app/testing'
+import { commandsGizmoFn } from '@just-web/commands'
+import { keyboardGizmoFn } from '@just-web/keyboard'
 import { AssertOrder } from 'assertron'
-import { nothing, produce } from 'immer'
-import { isType, JSONTypes, MaybePromise, record } from 'type-plus'
-import preferencesPlugin, { clearAllUserPreferences, getUserPreference, setUserPreference } from './index.js'
-
-const inMemoryPrefPlugin = definePlugin(() => ({
-	name: 'in-memory.pref',
-	init(ctx: CommandsContext) {
-		let storage = record<string, any>()
-		getUserPreference.connect(ctx, (key, defaultValue) => {
-			return storage[key] ?? defaultValue
-		})
-		setUserPreference.connect(ctx, (key, value) => {
-			const v = typeof value === 'function' ? produce(storage[key], value as any) : value
-			return MaybePromise.transform(v, v => {
-				if (isNothing(v)) delete storage[key]
-				else storage[key] = v
-			})
-		})
-		clearAllUserPreferences.connect(ctx, () => void (storage = record<string, any>()))
-	}
-}))
+import { nothing } from 'immer'
+import { JSONTypes, isType } from 'type-plus'
+import {
+	clearAllUserPreferences,
+	getUserPreference,
+	memoryPreferencesGizmo,
+	preferencesGizmo,
+	setUserPreference
+} from './index.js'
 
 function setupTestApp() {
-	return createTestApp()
-		.extend(keyboardPlugin())
-		.extend(commandsPlugin())
-		.extend(preferencesPlugin())
-		.extend(inMemoryPrefPlugin())
+	return justTestApp()
+		.with(keyboardGizmoFn())
+		.with(commandsGizmoFn())
+		.with(preferencesGizmo)
+		.with(memoryPreferencesGizmo)
+		.create()
 }
 
 describe(`plugin.init()`, () => {
-	it('provides getUserPreference() API', () => {
-		const app = setupTestApp()
+	it('provides getUserPreference() API', async () => {
+		const app = await setupTestApp()
 		const o = new AssertOrder(1)
 		app.commands.handlers.register(
 			getUserPreference.id,
@@ -52,8 +39,8 @@ describe(`plugin.init()`, () => {
 		o.end()
 	})
 
-	it('provides setUserPreference() API', () => {
-		const app = setupTestApp()
+	it('provides setUserPreference() API', async () => {
+		const app = await setupTestApp()
 		const o = new AssertOrder(1)
 		app.commands.handlers.register(
 			setUserPreference.id,
@@ -69,8 +56,8 @@ describe(`plugin.init()`, () => {
 		o.end()
 	})
 
-	it('provides clearAllUserPreferences() API', () => {
-		const app = setupTestApp()
+	it('provides clearAllUserPreferences() API', async () => {
+		const app = await setupTestApp()
 
 		const o = new AssertOrder(1)
 		app.commands.handlers.register(
@@ -85,8 +72,8 @@ describe(`plugin.init()`, () => {
 })
 
 describe(`${getUserPreference.name}()`, () => {
-	it('can specify a default value', () => {
-		setupTestApp()
+	it('can specify a default value', async () => {
+		await setupTestApp()
 		const result = getUserPreference('new-key', 'abc')
 		expect(result).toEqual(result)
 	})
@@ -103,21 +90,21 @@ describe(`${setUserPreference.name}()`, () => {
 })
 
 describe(`preferences.createState()`, () => {
-	function setupTestStore<T extends JSONTypes>(key: string, defaultValue?: T) {
-		const { preferences } = setupTestApp()
+	async function setupTestStore<T extends JSONTypes>(key: string, defaultValue?: T) {
+		const { preferences } = await setupTestApp()
 		return preferences.createStore(key, defaultValue)
 	}
 
-	it('can specify the type of the value', () => {
-		const { preferences } = setupTestApp()
+	it('can specify the type of the value', async () => {
+		const { preferences } = await setupTestApp()
 		const store = preferences.createStore<{ b: string }>('some-pref')
 		const result = store.get()
 		isType.equal<true, { b: string }, typeof result>()
 	})
 
 	describe(`get()`, () => {
-		it('returns undefined if not exist', () => {
-			const store = setupTestStore('not exist')
+		it('returns undefined if not exist', async () => {
+			const store = await setupTestStore('not exist')
 
 			const result = store.get()
 
@@ -125,8 +112,8 @@ describe(`preferences.createState()`, () => {
 			expect(result).toBeUndefined()
 		})
 
-		it('returns default value if defined', () => {
-			const store = setupTestStore('get-default', { a: 1 })
+		it('returns default value if defined', async () => {
+			const store = await setupTestStore('get-default', { a: 1 })
 
 			const result = store.get()
 
@@ -137,8 +124,8 @@ describe(`preferences.createState()`, () => {
 
 	describe(`set()`, () => {
 		type TestPref = { a: number; b?: string }
-		it('can set value directly', () => {
-			const store = setupTestStore<TestPref>('set-value')
+		it('can set value directly', async () => {
+			const store = await setupTestStore<TestPref>('set-value')
 			const r = store.set({ a: 2 })
 
 			isType.equal<true, void, typeof r>()
@@ -149,8 +136,8 @@ describe(`preferences.createState()`, () => {
 			expect(result).toEqual({ a: 2 })
 		})
 
-		it('can set value to undefined', () => {
-			const store = setupTestStore<TestPref>('set-value-to-undefined')
+		it('can set value to undefined', async () => {
+			const store = await setupTestStore<TestPref>('set-value-to-undefined')
 			const r = store.set({ a: 2 })
 			isType.equal<true, void, typeof r>()
 			expect(r).toBeUndefined()
@@ -162,8 +149,8 @@ describe(`preferences.createState()`, () => {
 			expect(result).toBeUndefined()
 		})
 
-		it('can set value to null', () => {
-			const store = setupTestStore<TestPref | null>('set-to-null')
+		it('can set value to null', async () => {
+			const store = await setupTestStore<TestPref | null>('set-to-null')
 			const r = store.set(null)
 			isType.equal<true, void, typeof r>()
 			expect(r).toBeUndefined()
@@ -172,8 +159,8 @@ describe(`preferences.createState()`, () => {
 			expect(result).toEqual(null)
 		})
 
-		it('can set value from null to something', () => {
-			const store = setupTestStore('set-from-null')
+		it('can set value from null to something', async () => {
+			const store = await setupTestStore('set-from-null')
 			store.set(null)
 			store.set(v => {
 				expect(v).toBeNull()
@@ -183,15 +170,15 @@ describe(`preferences.createState()`, () => {
 			expect(result).toEqual(1)
 		})
 
-		it('can set value from null to something', () => {
-			const store = setupTestStore('set-with-handler->null')
+		it('can set value from null to something', async () => {
+			const store = await setupTestStore('set-with-handler->null')
 			store.set(_ => null)
 			const result = store.get()
 			expect(result).toEqual(null)
 		})
 
-		it('accepts handler that returns new value', () => {
-			const store = setupTestStore<TestPref>('set-with-handler->value')
+		it('accepts handler that returns new value', async () => {
+			const store = await setupTestStore<TestPref>('set-with-handler->value')
 			const r = store.set(v => ({ ...v, a: 1 }))
 			isType.equal<true, void, typeof r>()
 			expect(r).toBeUndefined()
@@ -200,8 +187,8 @@ describe(`preferences.createState()`, () => {
 			expect(result).toEqual({ a: 1 })
 		})
 
-		it('accepts handler that update value in-place', () => {
-			const store = setupTestStore<TestPref>('set-with-handler-in-place', { a: 1 })
+		it('accepts handler that update value in-place',async  () => {
+			const store = await setupTestStore<TestPref>('set-with-handler-in-place', { a: 1 })
 			const r = store.set(v => {
 				v!.a = 2
 			})
@@ -212,8 +199,8 @@ describe(`preferences.createState()`, () => {
 			expect(result).toEqual({ a: 2 })
 		})
 
-		it('accepts handler that return nothing', () => {
-			const store = setupTestStore<TestPref>('set-with-handler->nothing')
+		it('accepts handler that return nothing',async () => {
+			const store = await setupTestStore<TestPref>('set-with-handler->nothing')
 			store.set({ a: 1 })
 			store.set(_ => nothing)
 			const result = store.get()
@@ -221,7 +208,7 @@ describe(`preferences.createState()`, () => {
 		})
 
 		it('accepts async handler that returns new value', async () => {
-			const store = setupTestStore<TestPref>('set-with-async-handler->value')
+			const store = await setupTestStore<TestPref>('set-with-async-handler->value')
 			const r = store.set(async v => ({ ...v, a: 1 }))
 			isType.equal<true, Promise<void>, typeof r>()
 			expect(await r).toBeUndefined()
@@ -231,7 +218,7 @@ describe(`preferences.createState()`, () => {
 		})
 
 		it('accepts async handler that update value in-place', async () => {
-			const store = setupTestStore<TestPref>('set-with-async-handler-in-place', { a: 1 })
+			const store = await setupTestStore<TestPref>('set-with-async-handler-in-place', { a: 1 })
 			const r = store.set(async v => {
 				v!.a = 2
 			})
@@ -243,7 +230,7 @@ describe(`preferences.createState()`, () => {
 		})
 
 		it('accepts async handler that return nothing', async () => {
-			const store = setupTestStore<TestPref>('set-with-async-handler->nothing')
+			const store = await setupTestStore<TestPref>('set-with-async-handler->nothing')
 			store.set({ a: 1 })
 			const r = store.set(async _ => nothing)
 			isType.equal<true, Promise<void>, typeof r>()
