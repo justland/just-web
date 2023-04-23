@@ -1,6 +1,5 @@
-import { define, type DepBuilder, type GizmoStatic } from '@just-web/app'
+import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
 import type { KeyboardGizmo } from '@just-web/keyboard'
-import type { LogGizmo } from '@just-web/log'
 import type { AnyFunction, ExtractFunction } from 'type-plus'
 import { showCommandPalette } from './commands.js'
 import { contributionRegistry } from './contributions.js'

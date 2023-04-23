@@ -1,4 +1,4 @@
-import type { LogGizmo } from '@just-web/log'
+import type { LogGizmo } from '@just-web/app'
 import type { OSGizmo } from '@just-web/os'
 import { createRegistry, withAdder, type Registry, type WithAdder } from '@just-web/states'
 import { record } from 'type-plus'

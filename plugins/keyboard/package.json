@@ -65,11 +65,9 @@
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
-		"@just-web/log": "workspace:^",
 		"@just-web/os": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
 		"@just-web/states": "workspace:^",
-		"@just-web/types": "workspace:^",
 		"@repobuddy/jest": "^3.0.0",
 		"@size-limit/preset-small-lib": "~8.2.0",
 		"@types/jest": "^29.2.3",
@@ -92,9 +90,7 @@
 	},
 	"peerDependencies": {
 		"@just-web/app": "workspace:^",
-		"@just-web/log": "workspace:^",
 		"@just-web/os": "workspace:^",
-		"@just-web/states": "workspace:^",
-		"@just-web/types": "workspace:^"
+		"@just-web/states": "workspace:^"
 	}
 }

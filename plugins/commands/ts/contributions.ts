@@ -1,4 +1,4 @@
-import type { LogContext } from '@just-web/log'
+import type { LogGizmo } from '@just-web/app'
 import { createRegistry, withAdder } from '@just-web/states'
 import { record } from 'type-plus'
 import type { CommandContribution, ContributionRegistry } from './types.js'
@@ -8,7 +8,7 @@ export namespace contributionRegistry {
 }
 
 export function contributionRegistry(
-	ctx: LogContext,
+	ctx: LogGizmo,
 	options?: contributionRegistry.Options
 ): ContributionRegistry {
 	return withAdder(createRegistry<string, CommandContribution>(getInitRecord(options)), function (r, cmd) {

@@ -1,15 +1,13 @@
-import keyboardPlugin, { KeyboardContext, KeyboardOptions } from '@just-web/keyboard'
-import { createMemoryLogReporter, LogOptions, logTestPlugin } from '@just-web/log'
+import { createMemoryLogReporter, LogGizmoOptions } from '@just-web/app'
+import { justTestApp } from '@just-web/app/testing'
+import { KeyboardGizmo, keyboardGizmoFn, KeyboardGizmoOptions } from '@just-web/keyboard'
 import { a } from 'assertron'
 import { configGlobal } from 'standard-log'
 import { CanAssign, ExtractFunction, isType } from 'type-plus'
-import commandsPlugin, { command, CommandsContext, CommandsOptions } from './index.js'
+import { command, CommandsGizmo, commandsGizmoFn, CommandsGizmoOptions } from './index.js'
 
-function setupPlugin(options?: LogOptions & KeyboardOptions & CommandsOptions) {
-	const [{ log }] = logTestPlugin(options).init()
-	const [{ keyboard }] = keyboardPlugin(options).init({ log })
-	const [{ commands }] = commandsPlugin(options).init({ log, keyboard })
-	return [{ log, keyboard, commands }]
+function setupPlugin(options?: LogGizmoOptions & KeyboardGizmoOptions & CommandsGizmoOptions) {
+	return justTestApp().with(keyboardGizmoFn(options)).with(commandsGizmoFn(options)).create()
 }
 
 describe(`${command.name}()`, () => {
@@ -57,8 +55,8 @@ describe(`${command.name}()`, () => {
 		isType.t<CanAssign<C, { (): number; (v: string): string }>>()
 	})
 
-	it('can be added directly to contributions', () => {
-		const [{ commands }] = setupPlugin()
+	it('can be added directly to contributions', async () => {
+		const { commands } = await setupPlugin()
 		const inc = command({
 			id: 'plugin-a.increment',
 			title: 'Increment',
@@ -74,7 +72,7 @@ describe(`${command.name}()`, () => {
 		})
 	})
 
-	it('uses id as the function name', () => {
+	it('uses id as the function name', async () => {
 		const cmd = command('someCommand')
 
 		expect(cmd.name).toEqual('someCommand')
@@ -93,8 +91,8 @@ describe(`${command.name}()`, () => {
 			])
 		})
 
-		it('returns the result of the command', () => {
-			const [{ commands, keyboard }] = setupPlugin()
+		it('returns the result of the command', async () => {
+			const { commands, keyboard } = await setupPlugin()
 			const inc = command({ id: 'increment' }, (v: number) => v + 1)
 			inc.connect({ commands, keyboard })
 
@@ -105,25 +103,25 @@ describe(`${command.name}()`, () => {
 	})
 
 	describe('connect()', () => {
-		it('does not require handler even if no default handler defined', () => {
+		it('does not require handler even if no default handler defined', async () => {
 			// this is the case when one package defines the command,
 			// and another package provides the implementation.
-			const [{ commands, keyboard }] = setupPlugin()
+			const { commands, keyboard } = await setupPlugin()
 			const inc = command<(value: number) => number>({ id: 'plugin-a.increment' })
 
 			inc.connect({ commands, keyboard })
 
 			isType.equal<
 				true,
-				[context: CommandsContext & Partial<KeyboardContext>, handler?: (value: number) => number],
+				[context: CommandsGizmo & Partial<KeyboardGizmo>, handler?: (value: number) => number],
 				Parameters<typeof inc.connect>
 			>()
 		})
 
-		it('can override with another handler', () => {
+		it('can override with another handler', async () => {
 			// this is the case when there is a general way to implement a command,
 			// but it can be overridden in specific platform
-			const [{ commands, keyboard }] = setupPlugin()
+			const { commands, keyboard } = await setupPlugin()
 			const inc = command({ id: 'plugin-a.increment' }, (v: number) => v + 1)
 
 			inc.connect({ commands, keyboard }, v => v + 2)
@@ -131,10 +129,10 @@ describe(`${command.name}()`, () => {
 			expect(inc(3)).toEqual(5)
 		})
 
-		it('can be called without handler if the command already have one', () => {
+		it('can be called without handler if the command already have one', async () => {
 			// this is the case when the package defines the command,
 			// and provides the implementation together.
-			const [{ commands, keyboard }] = setupPlugin()
+			const { commands, keyboard } = await setupPlugin()
 			const inc = command({ id: 'plugin-a.increment' }, (v: number) => v + 1)
 
 			inc.connect({ commands, keyboard })
@@ -142,10 +140,10 @@ describe(`${command.name}()`, () => {
 			expect(inc(3)).toEqual(4)
 		})
 
-		it('string based command will not add to contributions', () => {
+		it('string based command will not add to contributions', async () => {
 			// i.e. without default handler, the `connect()` call is doing nothing.
 			// may improve the type to disallow this usage.
-			const [{ commands, keyboard }] = setupPlugin()
+			const { commands, keyboard } = await setupPlugin()
 			const inc = command('plugin-a.increment', (v: number) => v + 1)
 
 			inc.connect({ commands, keyboard })
@@ -154,8 +152,8 @@ describe(`${command.name}()`, () => {
 			expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(false)
 		})
 
-		it('object/info based command will be add to contributions', () => {
-			const [{ commands, keyboard }] = setupPlugin()
+		it('object/info based command will be add to contributions', async () => {
+			const { commands, keyboard } = await setupPlugin()
 			const inc = command({ id: 'plugin-a.increment' }, (v: number) => v + 1)
 
 			inc.connect({ commands, keyboard })
@@ -164,8 +162,8 @@ describe(`${command.name}()`, () => {
 			expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(false)
 		})
 
-		it('object/info based command with key/mac will be add to keybindings', () => {
-			const [{ commands, keyboard }] = setupPlugin()
+		it('object/info based command with key/mac will be add to keybindings', async () => {
+			const { commands, keyboard } = await setupPlugin()
 			const inc = command({ id: 'plugin-a.increment', key: 'ctrl+a' }, (v: number) => v + 1)
 
 			inc.connect({ commands, keyboard })
@@ -174,10 +172,10 @@ describe(`${command.name}()`, () => {
 			expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(true)
 		})
 
-		it('will note add to contribution if handler is not defined', () => {
+		it('will note add to contribution if handler is not defined', async () => {
 			// this allows the implementation to connect the command,
 			// instead of getting duplicate registration and get ignored.
-			const [{ commands, keyboard }] = setupPlugin()
+			const { commands, keyboard } = await setupPlugin()
 			const inc = command({ id: 'plugin-a.increment', key: 'ctrl+a' })
 
 			inc.connect({ commands, keyboard })
@@ -186,8 +184,8 @@ describe(`${command.name}()`, () => {
 			expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(false)
 		})
 
-		it(`works without KeyboardContext, which will skip the registration`, () => {
-			const [{ commands }] = setupPlugin()
+		it(`works without KeyboardContext, which will skip the registration`, async () => {
+			const { commands } = await setupPlugin()
 			const inc = command(
 				{
 					id: 'plugin-a.increment',

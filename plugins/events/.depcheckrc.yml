@@ -3,6 +3,7 @@ ignores:
   - '@repobuddy/jest'
   - '@size-limit/*'
   - '@types/jest'
+  - eventemitter3 # depcheck doesn't recognize it
   - 'jest-*'
   - rimraf # https://github.com/depcheck/depcheck/issues/776
   - size-limit

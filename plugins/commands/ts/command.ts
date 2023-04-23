@@ -1,7 +1,8 @@
-import type { KeyBindingContribution, KeyboardContext } from '@just-web/keyboard'
-import { getLogger } from '@just-web/log'
+import { getLogger } from '@just-web/app'
+import type { KeyBindingContribution, KeyboardGizmo } from '@just-web/keyboard'
 import type { AnyFunction } from 'type-plus'
-import type { Command, CommandContribution, CommandsContext } from './types.js'
+import { CommandsGizmo } from './commands_gizmo.js'
+import type { Command, CommandContribution } from './types.js'
 
 /**
  * Creates a public command.
@@ -31,7 +32,7 @@ export function command<F extends AnyFunction = () => void>(
 ): any {
 	const withIdString = typeof idOrInfo === 'string'
 	const info = typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo
-	let ctx: CommandsContext & Partial<KeyboardContext>
+	let ctx: CommandsGizmo & Partial<KeyboardGizmo>
 
 	const fn = Object.defineProperty(
 		function (...args: Parameters<F>) {
@@ -49,7 +50,7 @@ export function command<F extends AnyFunction = () => void>(
 
 	return Object.assign(fn, {
 		...info,
-		connect(context: CommandsContext & Partial<KeyboardContext>, hdr?: F) {
+		connect(context: CommandsGizmo & Partial<KeyboardGizmo>, hdr?: F) {
 			ctx = context
 			hdr = hdr ?? handler
 			if (!hdr) return

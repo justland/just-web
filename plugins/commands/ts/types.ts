@@ -1,6 +1,7 @@
-import type { KeyboardContext } from '@just-web/keyboard'
+import type { KeyboardGizmo } from '@just-web/keyboard'
 import type { Registry, WithAdder } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
+import { CommandsGizmo } from './commands_gizmo.js'
 
 export type CommandHandler = {
 	/**
@@ -76,14 +77,6 @@ export interface ContributionRegistry
 	extends Registry<string, CommandContribution>,
 		WithAdder<CommandContribution> {}
 
-export type CommandsContext = {
-	commands: {
-		contributions: ContributionRegistry
-		handlers: HandlerRegistry
-		showCommandPalette(): void
-	}
-}
-
 export type Command<F extends AnyFunction = () => void> = F & {
 	/**
 	 * Id of the command.
@@ -107,6 +100,6 @@ export type Command<F extends AnyFunction = () => void> = F & {
 	 * If you want the command to be available outside (i.e. register to contributions),
 	 * use the object form `command({...}, ...)`.
 	 */
-	connect(ctx: CommandsContext & Partial<KeyboardContext>, handler?: F): void
+	connect(ctx: CommandsGizmo & Partial<KeyboardGizmo>, handler?: F): void
 	defineHandler(handler: F): F
 }

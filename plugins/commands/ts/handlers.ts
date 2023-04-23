@@ -1,4 +1,4 @@
-import { logLevels, type LogContext } from '@just-web/log'
+import { logLevels, type LogGizmo } from '@just-web/app'
 import { createRegistry } from '@just-web/states'
 import { tersify } from 'tersify'
 import type { AnyFunction } from 'type-plus'
@@ -8,7 +8,7 @@ export namespace handlerRegistry {
 	export type Options = Record<string, AnyFunction>
 }
 
-export function handlerRegistry({ log }: LogContext, options?: handlerRegistry.Options): HandlerRegistry {
+export function handlerRegistry({ log }: LogGizmo, options?: handlerRegistry.Options): HandlerRegistry {
 	const logger = log.getLogger('@just-web/commands')
 
 	const registry = createRegistry<string, (...args: any[]) => void>(options)

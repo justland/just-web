@@ -63,7 +63,6 @@
   "devDependencies": {
     "@just-web/app": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
-    "@just-web/types": "workspace:^",
     "@repobuddy/jest": "^3.0.0",
     "@size-limit/preset-small-lib": "~8.2.0",
     "@types/jest": "^29.2.3",
@@ -86,7 +85,6 @@
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
-    "@just-web/app": "workspace:^",
-    "@just-web/types": "workspace:^"
+    "@just-web/app": "workspace:^"
   }
 }

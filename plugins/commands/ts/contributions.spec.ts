@@ -1,47 +1,50 @@
-import { logTestPlugin } from '@just-web/log'
-import { logEqual } from '@just-web/testing'
+import { justTestApp } from '@just-web/app/testing'
+import { a, some } from 'assertron'
 import { contributionRegistry } from './contributions.js'
 import { formatCommand, type CommandContribution } from './index.js'
 
-function setupTest(options?: CommandContribution[]) {
-	const [logctx] = logTestPlugin().init()
-	return [contributionRegistry(logctx, options), logctx.log] as const
+async function setupTest(options?: CommandContribution[]) {
+	const app = await justTestApp().create()
+	return [contributionRegistry(app, options), app.log] as const
 }
 
-it('creates as empty registory', () => {
-	const [r] = setupTest()
+it('creates as empty registory', async () => {
+	const [r] = await setupTest()
 	expect(r.keys()).toEqual([])
 })
 
-it('creates with prefilled command contributions', () => {
-	const [r] = setupTest([{ id: 'some.command' }])
+it('creates with prefilled command contributions', async () => {
+	const [r] = await setupTest([{ id: 'some.command' }])
 	expect(r.keys()).toEqual(['some.command'])
 })
 
 describe('add()', () => {
-	it('adds a new command', () => {
-		const [store] = setupTest()
+	it('adds a new command', async () => {
+		const [store] = await setupTest()
 		const cmd = { id: 'a', description: 'a' }
 		store.add(cmd)
 		const a = store.get()['a']
 
 		expect(a).toBe(cmd)
 	})
-	it('logs an error and ignore if a command with the name ID already exist', () => {
-		const [store, log] = setupTest()
+	it('logs an error and ignore if a command with the name ID already exist', async () => {
+		const [store, log] = await setupTest()
 		const cmd1 = { id: 'a', description: 'a' }
 		const cmd2 = { id: 'a', description: 'a' }
 		store.add(cmd1)
 		store.add(cmd2)
 
-		logEqual(log.reporter, '(ERROR) Registering a duplicate command contribution, ignored: a')
+		a.satisfies(
+			log.reporter.getLogMessagesWithLevel(),
+			some('(ERROR) Registering a duplicate command contribution, ignored: a')
+		)
 
-		const a = store.get()['a']
-		expect(a).toBe(cmd1)
+		const value = store.get()['a']
+		expect(value).toBe(cmd1)
 	})
 
-	it('adds multiple commands', () => {
-		const [store] = setupTest()
+	it('adds multiple commands', async () => {
+		const [store] = await setupTest()
 		const cmd1 = { id: 'a', description: 'a' }
 		const cmd2 = { id: 'b', description: 'b' }
 		store.add(cmd1, cmd2)

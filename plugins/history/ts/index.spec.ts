@@ -1,7 +1,7 @@
 import type { History } from 'history'
 import { testType } from 'type-plus'
-import type { HistoryContext } from './index.js'
+import type { HistoryGizmo } from './index.js'
 
 it('exports HistoryContext', () => {
-	testType.equal<HistoryContext, { history: History }>(true)
+	testType.equal<HistoryGizmo, { history: History }>(true)
 })
