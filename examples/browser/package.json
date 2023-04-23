@@ -1,6 +1,6 @@
 {
   "name": "@just-web/examples-browser",
-  "version": "0.0.1-beta.5",
+  "version": "0.0.1",
   "private": true,
   "description": "Browser examples for just-web",
   "keywords": [

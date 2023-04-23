@@ -1,5 +1,27 @@
 # @just-web/commands
 
+## 7.0.0
+
+### Patch Changes
+
+- 3c0c09c2: Change default key for command palette to +k.
+  It's patch as it is not used at the moment.
+- b3af3da7: @just-web/commands should not pre-register "show command palette".
+
+  It should be registered by the app or components that actually provides the implementation.
+
+- Updated dependencies [ab9f056d]
+- Updated dependencies [977e1d30]
+- Updated dependencies [6684e0ef]
+- Updated dependencies [78becd0d]
+- Updated dependencies [a2ef64fb]
+- Updated dependencies [c2c26431]
+- Updated dependencies [736fa4b4]
+- Updated dependencies [18455d27]
+  - @just-web/app@7.0.0
+  - @just-web/states@7.0.0
+  - @just-web/keyboard@7.0.0
+
 ## 7.0.0-beta.5
 
 ### Patch Changes

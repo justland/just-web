@@ -1,5 +1,32 @@
 # @just-web/app
 
+## 7.0.0
+
+### Minor Changes
+
+- 6684e0ef: Update `@unional/gizmo` to 1.2.0.
+
+  Add support of `init()`, `merge()`, and the `create(start)` feature.
+
+### Patch Changes
+
+- ab9f056d: Expose `GizmoIncubator`.
+
+  Exposing the needed type one by one to identify the behavior causing:
+
+  ```txt
+  The inferred type of 'app1' cannot be named without a reference to '.../node_modules/@unional/gizmo'. This is likely not portable. A type annotation is necessary
+  ```
+
+  This release test if exposing just on `index` side is enough to fix the issue also for `testing`.
+
+- 78becd0d: Add `JestTestApp` type
+- 736fa4b4: Export additional types and code through `/testing`
+- 18455d27: Add `emitLog` support during tests
+- Updated dependencies [10489f4f]
+- Updated dependencies [18455d27]
+  - @just-web/log@7.0.0
+
 ## 7.0.0-beta.5
 
 ### Minor Changes
