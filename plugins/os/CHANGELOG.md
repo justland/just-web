@@ -1,5 +1,13 @@
 # @just-web/os
 
+## 7.0.1
+
+### Patch Changes
+
+- 6403b822: Improve code quality with newer TypeScript settings (using `@repobuddy/typescript`)
+- Updated dependencies [6403b822]
+  - @just-web/app@7.0.1
+
 ## 7.0.0
 
 ### Minor Changes

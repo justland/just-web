@@ -1,5 +1,18 @@
 # @just-web/presets-browser
 
+## 5.0.1
+
+### Patch Changes
+
+- 6403b822: Improve code quality with newer TypeScript settings (using `@repobuddy/typescript`)
+- Updated dependencies [6403b822]
+  - @just-web/app@7.0.1
+  - @just-web/browser@7.0.1
+  - @just-web/browser-preferences@7.0.1
+  - @just-web/commands@7.0.1
+  - @just-web/history@2.0.1
+  - @just-web/keyboard@7.0.1
+
 ## 5.0.0
 
 ### Patch Changes
