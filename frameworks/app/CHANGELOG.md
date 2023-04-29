@@ -1,12 +1,21 @@
 # @just-web/app
 
+## 7.0.1
+
+### Patch Changes
+
+- 6403b822: Improve code quality with newer TypeScript settings (using `@repobuddy/typescript`)
+- Updated dependencies [6403b822]
+  - @just-web/id@6.0.3
+  - @just-web/log@7.0.1
+
 ## 7.0.0
 
 ### Major Changes
 
 - Underlying plugin system is replaced by [@unional/gizmo](https://www.npmjs.com/package/@unional/gizmo).
   The pre-tree instantiation is removed.\
-  Each *gizmo* will create a new instance every time.\
+  Each _gizmo_ will create a new instance every time.\
   This is the `always-create` instantiation strategy.
   Other strategies will be supported later,\
   including bringing back the `pre-tree` instantiation.\

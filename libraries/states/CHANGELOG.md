@@ -1,5 +1,11 @@
 # @just-web/states
 
+## 7.0.1
+
+### Patch Changes
+
+- 6403b822: Improve code quality with newer TypeScript settings (using `@repobuddy/typescript`)
+
 ## 7.0.0
 
 ### Major Changes
