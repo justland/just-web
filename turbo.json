@@ -2,7 +2,12 @@
 	"$schema": "https://turborepo.org/schema.json",
 	"pipeline": {
 		"build": {
-			"dependsOn": ["^build"]
+			"dependsOn": ["^build"],
+      "inputs": [
+        "ts/**",
+        "tsconfig.*",
+        "package.json"
+      ]
 		},
 		"clean": {
 			"cache": false
@@ -18,13 +23,19 @@
 			"cache": false
 		},
 		"lint": {
-			"dependsOn": ["^build"]
+			"dependsOn": ["^build"],
+      "inputs": [
+        ".eslint*"
+      ]
 		},
 		"nuke": {
 			"cache": false
 		},
 		"size": {
-			"dependsOn": ["build"]
+			"dependsOn": ["build"],
+      "inputs": [
+        ".size-limit.json"
+      ]
 		},
 		"test": {
 			"dependsOn": ["^build"]
