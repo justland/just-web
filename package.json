@@ -4,7 +4,6 @@
   "scripts": {
     "app": "pnpm --filter=@just-web/app",
     "build": "turbo run build",
-    "build:doc": "typedoc",
     "browser": "pnpm --filter=@just-web/browser",
     "browser-keyboard": "pnpm --filter=@just-web/browser-keyboard",
     "browser-preferences": "pnpm --filter=@just-web/browser-preferences",
