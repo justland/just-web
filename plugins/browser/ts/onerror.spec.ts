@@ -26,7 +26,7 @@ it('captures error', async () => {
 	window.onerror!('some error occurred')
 
 	expect(actual!.length).toBe(1)
-	expect(actual![0].message).toBe('some error occurred')
+	expect(actual![0]?.message).toBe('some error occurred')
 })
 
 it('logs captured error', async () => {
@@ -62,7 +62,7 @@ it('invoke original onerror', async () => {
 	const { log } = await justTestApp().create()
 	const errors = createErrorStore()
 	errors.onChange(v => {
-		expect(v[0].message).toBe('some error occurred')
+		expect(v[0]?.message).toBe('some error occurred')
 	})
 
 	registerOnErrorHandler(
@@ -96,7 +96,7 @@ it('original onerror returns true, result will be true', async () => {
 	const result = window.onerror!('some error occurred')
 
 	expect(actual!.length).toBe(1)
-	expect(actual![0].message).toBe('some error occurred')
+	expect(actual![0]?.message).toBe('some error occurred')
 	expect(result).toBe(true)
 })
 

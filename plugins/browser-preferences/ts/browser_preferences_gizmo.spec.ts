@@ -2,8 +2,8 @@ import { logLevels } from '@just-web/app'
 import { clearAllUserPreferences } from '@just-web/preferences'
 import { nothing } from '@just-web/states'
 import { a, hasAll, some } from 'assertron'
-import { browserPreferencesGizmoTestApp, resetLocalStorage, stubLocalStorage } from './testing/index.js'
 import { ctx } from './local_storage_store.ctx.js'
+import { browserPreferencesGizmoTestApp, resetLocalStorage, stubLocalStorage } from './testing/index.js'
 
 afterEach(resetLocalStorage)
 
@@ -113,9 +113,6 @@ describe('app.preferences.clearAll()', () => {
 		expect(preferences.get('y')).toBeUndefined()
 		expect(localStorage.getItem('someone-else-value')).toEqual('hello')
 
-		a.satisfies(
-			log.reporter.getLogMessagesWithIdAndLevel(),
-			some(`test (NOTICE) clear all: 'test'`)
-		)
+		a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(`test (NOTICE) clear all: 'test'`))
 	})
 })

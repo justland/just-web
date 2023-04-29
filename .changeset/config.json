@@ -24,7 +24,7 @@
 			"@just-web/states"
 		]
 	],
-	"ignore": [],
+	"ignore": ["examples-*"],
 	"linked": [],
 	"title": "chore: version packages",
 	"updateInternalDependencies": "patch"

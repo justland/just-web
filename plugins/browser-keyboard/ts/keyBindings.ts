@@ -16,7 +16,7 @@ export function startKeyBindings(param: LogGizmo & KeyboardGizmo & CommandsGizmo
 		Mousetrap.reset()
 		keys = record()
 		// @todo: use `immer` patch support to only update the delta
-		forEachKey(value, name => bindKey(param, value[name]))
+		forEachKey(value, name => bindKey(param, value[name]!))
 	})
 }
 

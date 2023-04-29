@@ -1,7 +1,8 @@
 !.depcheckrc.yml
 !.storybook
-build
-dist*
-lib*
-node_modules
-out*
+cjs/
+coverage/
+esm/
+lib/
+node_modules/
+tslib/

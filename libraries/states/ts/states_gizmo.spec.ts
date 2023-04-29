@@ -59,7 +59,7 @@ it('can create registry with meta', async () => {
 
 	const registry = states.createRegistry({ a: 1 }, { logger: log.getLogger('registry') })
 	registry.set(v => {
-		v.b = 2
+		v['b'] = 2
 	})
 
 	a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), [

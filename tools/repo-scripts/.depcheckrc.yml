@@ -1,5 +1,5 @@
 ignores:
-  - '@repobuddy/jest'
+  - '@repobuddy/*'
   - '@size-limit/*'
   - '@types/jest'
   - '@typescript-eslint/parser'
@@ -7,3 +7,4 @@ ignores:
   - npm-check-updates
   - rimraf # https://github.com/depcheck/depcheck/issues/776
   - size-limit
+  - tslib

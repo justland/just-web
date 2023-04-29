@@ -1,5 +1,5 @@
 {
-	"extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
+	"extends": "@repobuddy/typescript/tsconfig/monorepo",
 	"compilerOptions": {
 		"lib": ["DOM", "ES2019", "ES2021.Promise"],
 		"outDir": "esm",

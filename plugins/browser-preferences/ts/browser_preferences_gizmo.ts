@@ -12,20 +12,20 @@ import { getItem, getKey, setHandler } from './local_storage_store.js'
  */
 export const browserPreferencesGizmo = define({
 	static: define.require<IdGizmo>().require<LogGizmo>().require<CommandsGizmo>().optional<KeyboardGizmo>(),
-	async create({ name, commands, keyboard, log }) {
-		getUserPreference.connect({ commands, keyboard }, (key, defaultValue) => {
-			const k = getKey(name, key)
-			log.planck(`get: '${k}'`)
+	async create(context) {
+		getUserPreference.connect(context, (key, defaultValue) => {
+			const k = getKey(context.name, key)
+			context.log.planck(`get: '${k}'`)
 			return getItem(k) ?? defaultValue
 		})
-		setUserPreference.connect({ commands, keyboard }, async (key, value) => {
-			const k = getKey(name, key)
+		setUserPreference.connect(context, async (key, value) => {
+			const k = getKey(context.name, key)
 			const original = getItem(k)
 			const v = typeof value === 'function' ? produce(original, value as any) : value
-			MaybePromise.transform(v, v => setHandler({ log }, k, original, v))
+			MaybePromise.transform(v, v => setHandler(context, k, original, v))
 		})
-		clearAllUserPreferences.connect({ commands, keyboard }, () => {
-			log.notice(`clear all: '${name}'`)
+		clearAllUserPreferences.connect(context, () => {
+			context.log.notice(`clear all: '${context.name}'`)
 			const keys: string[] = []
 			const localStorage = ctx.getLocalStorage()
 			// have to iterate and get all keys first.
@@ -34,9 +34,9 @@ export const browserPreferencesGizmo = define({
 				keys.push(localStorage.key(i)!)
 			}
 			keys
-				.filter(k => k.startsWith(`${name}:`))
+				.filter(k => k.startsWith(`${context.name}:`))
 				.forEach(k => {
-					log.trace(`clear all: clear '${k}'`)
+					context.log.trace(`clear all: clear '${k}'`)
 					localStorage.removeItem(k)
 				})
 		})

@@ -3,7 +3,7 @@ import { justTestApp } from '@just-web/app/testing'
 import { KeyboardGizmo, keyboardGizmoFn, KeyboardGizmoOptions } from '@just-web/keyboard'
 import { a } from 'assertron'
 import { configGlobal } from 'standard-log'
-import { CanAssign, ExtractFunction, isType } from 'type-plus'
+import { ExtractFunction, testType } from 'type-plus'
 import { command, CommandsGizmo, commandsGizmoFn, CommandsGizmoOptions } from './index.js'
 
 function setupPlugin(options?: LogGizmoOptions & KeyboardGizmoOptions & CommandsGizmoOptions) {
@@ -31,18 +31,18 @@ describe(`${command.name}()`, () => {
 
 		type P = Parameters<typeof cmd>
 		type R = ReturnType<typeof cmd>
-		isType.equal<true, [v: number], P>()
-		isType.equal<true, number, R>()
+		testType.equal<P, [v: number]>(true)
+		testType.equal<R, number>(true)
 	})
 
 	it('can specify the type of the command', () => {
 		const cmd = command<() => number>('some-command')
 
-		isType.equal<true, () => number, ExtractFunction<typeof cmd>>()
+		testType.equal<ExtractFunction<typeof cmd>, () => number>(true)
 
 		cmd.defineHandler(() => 1)
 		type PDH = Parameters<typeof cmd.defineHandler>
-		isType.equal<true, [() => number], PDH>()
+		testType.equal<PDH, [() => number]>(true)
 	})
 
 	it('can specify type with function overloads', () => {
@@ -52,7 +52,7 @@ describe(`${command.name}()`, () => {
 		}>('overload')
 
 		type C = typeof cmd
-		isType.t<CanAssign<C, { (): number; (v: string): string }>>()
+		testType.canAssign<C, { (): number; (v: string): string }>(true)
 	})
 
 	it('can be added directly to contributions', async () => {
@@ -111,11 +111,10 @@ describe(`${command.name}()`, () => {
 
 			inc.connect({ commands, keyboard })
 
-			isType.equal<
-				true,
-				[context: CommandsGizmo & Partial<KeyboardGizmo>, handler?: (value: number) => number],
-				Parameters<typeof inc.connect>
-			>()
+			testType.equal<
+				Parameters<typeof inc.connect>,
+				[context: CommandsGizmo & Partial<KeyboardGizmo>, handler?: ((value: number) => number)|undefined]
+			>(true)
 		})
 
 		it('can override with another handler', async () => {

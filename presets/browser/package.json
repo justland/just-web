@@ -42,7 +42,7 @@
 		"cjs",
 		"esm",
 		"ts",
-		"!**/*.{spec,test,unit,accept,integrate,system}.*"
+		"!**/*.{spec,test,unit,accept,integrate,system,perf,stress}.*"
 	],
 	"scripts": {
 		"build": "run-p build:cjs build:esm",
@@ -63,16 +63,19 @@
 	"dependencies": {
 		"@just-web/browser": "workspace:^",
 		"@just-web/browser-preferences": "workspace:^",
-		"@just-web/history": "workspace:^"
+		"@just-web/history": "workspace:^",
+		"@repobuddy/typescript": "^1.1.2",
+		"repobuddy": "^1.0.1",
+		"tslib": "^2.5.0"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
 		"@just-web/commands": "workspace:^",
 		"@just-web/keyboard": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
-		"@repobuddy/jest": "^3.0.0",
+		"@repobuddy/jest": "^3.3.0",
 		"@size-limit/preset-small-lib": "~8.2.0",
-		"@types/jest": "^29.2.3",
+		"@types/jest": "^29.5.1",
 		"cross-env": "^7.0.3",
 		"depcheck": "~1.4.3",
 		"eslint": "^8.11.0",

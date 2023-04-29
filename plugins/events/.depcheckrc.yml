@@ -1,10 +1,12 @@
 ignores:
   - '@just-web/repo-scripts'
-  - '@repobuddy/jest'
+  - '@repobuddy/*'
   - '@size-limit/*'
   - '@types/jest'
   - eventemitter3 # depcheck doesn't recognize it
   - 'jest-*'
+  - repobuddy
   - rimraf # https://github.com/depcheck/depcheck/issues/776
   - size-limit
   - ts-jest
+  - tslib

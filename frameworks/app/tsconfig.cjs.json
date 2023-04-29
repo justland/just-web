@@ -2,8 +2,6 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"outDir": "cjs",
-		"module": "CommonJS",
-		"moduleResolution": "Node16"
-	},
-	"exclude": ["**/*.spec.*"]
+		"module": "CommonJS"
+	}
 }
