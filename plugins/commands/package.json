@@ -90,7 +90,7 @@
     "size-limit": "~8.2.0",
     "standard-log": "^12.1.1",
     "ts-jest": "^29.1.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.4"
   },
   "peerDependencies": {
     "@just-web/app": "workspace:^",
