@@ -16,6 +16,8 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 	{
 		browser: {
 			errors: ReadonlyErrorStore
+			sessionStorage: Storage
+			localStorage: Storage
 		}
 	}
 > = define((options?: BrowserGizmoOptions) => ({
@@ -34,7 +36,9 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 		)
 		return {
 			browser: {
-				errors: toReadonlyErrorStore(errors)
+				errors: toReadonlyErrorStore(errors),
+				sessionStorage,
+				localStorage
 			}
 		}
 	}

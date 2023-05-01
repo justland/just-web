@@ -3,6 +3,8 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 
+[![Wallaby.js][wallaby_image]][wallaby_url]
+
 [just-web] is a plugin-based application framework.
 
 As a good framework, it defers making decisions as much as possible.
@@ -41,20 +43,16 @@ pnpm add --save-peer @just-web/app
 
 - [@just-web/app]: provides the entry point for creating a [just-web] application.
 
+## UI Libraries
+
+- [@just-web/react]: additional utilities when using [just-web] with [React].
+- [@just-web/react-commands]: [React] components to the [@just-web/commands] module.
+
 ## Libraries
 
 Libraries are additional packages that you can use for specific scenarios.
 
-- [@just-web/react]: additional utilities when using [just-web] with [React].
 - [@just-web/states]: state management library used by [just-web].
-
-## Components
-
-Components refer to UI components.
-
-Here are the components provided in this repository:
-
-- [@just-web/react-commands]: [React] components to the [@just-web/commands] module.
 
 ## Plugins
 
@@ -75,11 +73,21 @@ Here are the plugins provided in this repository:
 [just-web] provides some tools to make it easier for you to develop your application:
 
 - `@just-web/create`: 🚧 [just-web] initializer package (for `npm create`) to scaffold your project.
-- [@just-web/repo-scripts]: provides scripts and default configs to help maintain your repository.
+- [@just-web/repo-scripts]: provides scripts and default configs to help maintain your repository\
+  (will deprecate in favor of `@repobuddy`).
 
 ## Contribute
 
 Please check out the [contributing guide](./CONTRIBUTING.md)
+
+## Wallaby.js
+
+[![Wallaby.js][wallaby_image_lg]][wallaby_url]
+
+This repository contributors are welcome to use
+[Wallaby.js OSS License][wallaby_url] to get
+test results immediately as you type, and see the results in
+your editor right next to your code.
 
 [just-web]: https://github.com/justland/just-web
 [@just-web/app]: https://github.com/justland/just-web/tree/main/frameworks/app
@@ -91,8 +99,8 @@ Please check out the [contributing guide](./CONTRIBUTING.md)
 [@just-web/events]: https://github.com/justland/just-web/tree/main/plugins/events
 [@just-web/os]: https://github.com/justland/just-web/tree/main/plugins/os
 [@just-web/preferences]: https://github.com/justland/just-web/tree/main/plugins/preferences
-[@just-web/react-commands]: https://github.com/justland/just-web/tree/main/components/react-commands
-[@just-web/react]: https://github.com/justland/just-web/tree/main/libraries/react
+[@just-web/react-commands]: https://github.com/justland/just-web-react/tree/main/components/react-commands
+[@just-web/react]: https://github.com/justland/just-web-react/tree/main/libraries/react
 [@just-web/repo-scripts]: https://github.com/justland/just-web/tree/main/tools/repo-scripts
 [@just-web/routes]: https://github.com/justland/just-web/tree/main/plugins/routes
 [@just-web/states]: https://github.com/justland/just-web/tree/main/libraries/states
@@ -108,3 +116,6 @@ Please check out the [contributing guide](./CONTRIBUTING.md)
 [SolidJS]: https://www.solidjs.com/
 [Svelte]: https://svelte.dev/
 [Vue.js]: https://vuejs.org/
+[wallaby_image]: https://img.shields.io/badge/wallaby.js-powered-blue.svg?style=flat&logo=github
+[wallaby_image_lg]: https://img.shields.io/badge/wallaby.js-powered-blue.svg?style=for-the-badge&logo=github
+[wallaby_url]: https://wallabyjs.com/oss/

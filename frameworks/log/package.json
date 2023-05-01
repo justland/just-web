@@ -81,7 +81,7 @@
     "repobuddy": "^1.0.1",
     "standard-log": "^12.1.1",
     "tslib": "^2.5.0",
-    "type-plus": "^6.6.0"
+    "type-plus": "^6.7.0"
   },
   "devDependencies": {
     "@just-web/repo-scripts": "workspace:^",
