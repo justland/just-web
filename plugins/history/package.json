@@ -64,6 +64,7 @@
     "@just-web/app": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@repobuddy/jest": "^3.3.0",
+    "@repobuddy/typescript": "^1.2.0",
     "@size-limit/preset-small-lib": "~8.2.0",
     "@types/jest": "^29.5.1",
     "cross-env": "^7.0.3",
@@ -86,7 +87,6 @@
     "@just-web/app": "workspace:^"
   },
   "dependencies": {
-    "@repobuddy/typescript": "^1.1.2",
     "repobuddy": "^1.0.1",
     "tslib": "^2.5.0"
   }

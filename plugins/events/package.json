@@ -61,7 +61,6 @@
 		"verify": "npm-run-all -p build lint coverage depcheck -p size"
 	},
 	"dependencies": {
-		"@repobuddy/typescript": "^1.1.2",
 		"@unional/events-plus": "^3.0.0",
 		"eventemitter3": "^5.0.0",
 		"repobuddy": "^1.0.1",
@@ -71,6 +70,7 @@
 		"@just-web/app": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
 		"@repobuddy/jest": "^3.3.0",
+		"@repobuddy/typescript": "^1.2.0",
 		"@size-limit/preset-small-lib": "~8.2.0",
 		"@types/jest": "^29.5.1",
 		"@types/node": "^18.16.3",

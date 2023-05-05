@@ -64,7 +64,6 @@
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },
   "dependencies": {
-    "@repobuddy/typescript": "^1.1.2",
     "immer": "npm:@unional/immer@^9.0.0-beta.2",
     "repobuddy": "^1.0.1",
     "tersify": "^3.10.2",
@@ -75,6 +74,7 @@
     "@just-web/app": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@repobuddy/jest": "^3.3.0",
+    "@repobuddy/typescript": "^1.2.0",
     "@size-limit/preset-small-lib": "~8.2.0",
     "@types/jest": "^29.5.1",
     "assertron": "^11.2.0",

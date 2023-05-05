@@ -74,7 +74,6 @@
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },
   "dependencies": {
-    "@repobuddy/typescript": "^1.1.2",
     "mousetrap": "~1.6.5",
     "repobuddy": "^1.0.1",
     "tslib": "^2.5.0",
@@ -87,6 +86,7 @@
     "@just-web/os": "workspace:^",
     "@just-web/repo-scripts": "workspace:^",
     "@repobuddy/jest": "^3.3.0",
+    "@repobuddy/typescript": "^1.2.0",
     "@size-limit/preset-small-lib": "~8.2.0",
     "@types/jest": "^29.5.1",
     "@types/mousetrap": "~1.6.9",
