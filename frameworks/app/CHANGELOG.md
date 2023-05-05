@@ -1,5 +1,20 @@
 # @just-web/app
 
+## 8.0.0
+
+### Minor Changes
+
+- 76b36bfa: Add `justApp.Infer<A>`
+
+### Patch Changes
+
+- 793a4747: Move `@repobuddy/typescript` from `dependencies` to `devDependencies`.
+- 29c25aaa: Update `type-plus` 6.7.0
+- Updated dependencies [793a4747]
+- Updated dependencies [29c25aaa]
+  - @just-web/id@6.0.4
+  - @just-web/log@8.0.0
+
 ## 7.0.1
 
 ### Patch Changes

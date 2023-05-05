@@ -1,5 +1,19 @@
 # @just-web/browser-contributions
 
+## 8.0.0
+
+### Patch Changes
+
+- 793a4747: Move `@repobuddy/typescript` from `dependencies` to `devDependencies`.
+- 29c25aaa: Update `type-plus` 6.7.0
+- Updated dependencies [793a4747]
+- Updated dependencies [29c25aaa]
+- Updated dependencies [76b36bfa]
+  - @just-web/app@8.0.0
+  - @just-web/commands@8.0.0
+  - @just-web/keyboard@8.0.0
+  - @just-web/os@8.0.0
+
 ## 7.0.1
 
 ### Patch Changes

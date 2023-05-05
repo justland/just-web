@@ -1,5 +1,15 @@
 # @just-web/events
 
+## 8.0.0
+
+### Patch Changes
+
+- 793a4747: Move `@repobuddy/typescript` from `dependencies` to `devDependencies`.
+- Updated dependencies [793a4747]
+- Updated dependencies [29c25aaa]
+- Updated dependencies [76b36bfa]
+  - @just-web/app@8.0.0
+
 ## 7.0.1
 
 ### Patch Changes

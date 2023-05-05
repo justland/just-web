@@ -1,5 +1,12 @@
 # @just-web/states
 
+## 8.0.0
+
+### Patch Changes
+
+- 793a4747: Move `@repobuddy/typescript` from `dependencies` to `devDependencies`.
+- 29c25aaa: Update `type-plus` 6.7.0
+
 ## 7.0.1
 
 ### Patch Changes
