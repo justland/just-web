@@ -92,7 +92,7 @@ export const singAlongApp = justApp({ name: 'sing-along' })
   .with(musicStoreGizmo)
   .with(mikuGizmo)
 
-export type SingAlongApp = JustApp & MikuGizmo & MusicStoreGizmo
+export type SingAlongApp = justApp.Infer<typeof singAlongApp>
 
 const app = await singAlongApp.create()
 app.miku.sing()
