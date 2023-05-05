@@ -1,5 +1,16 @@
 # @just-web/os
 
+## 7.1.0
+
+### Patch Changes
+
+- 793a4747: Move `@repobuddy/typescript` from `dependencies` to `devDependencies`.
+- 29c25aaa: Update `type-plus` 6.7.0
+- Updated dependencies [793a4747]
+- Updated dependencies [29c25aaa]
+- Updated dependencies [76b36bfa]
+  - @just-web/app@7.1.0
+
 ## 7.0.1
 
 ### Patch Changes
