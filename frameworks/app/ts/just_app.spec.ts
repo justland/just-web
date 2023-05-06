@@ -1,7 +1,7 @@
 import { a } from 'assertron'
 import { testType } from 'type-plus'
-import { IdGizmo, LogGizmo, createMemoryLogReporter, define, justApp, logLevels } from './index.js'
-import { LeafGizmo, justTestApp, leafGizmo, sideEffectGizmo } from './testing/index.js'
+import { createMemoryLogReporter, define, justApp, logLevels, type IdGizmo, type LogGizmo } from './index.js'
+import { justTestApp, leafGizmo, sideEffectGizmo, type LeafGizmo } from './testing/index.js'
 
 it(`requires a name`, async () => {
 	// @ts-expect-error
