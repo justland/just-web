@@ -1,29 +1,26 @@
 {
-	"extends": "@repobuddy/typescript/tsconfig/monorepo",
-	"compilerOptions": {
-		"lib": ["DOM", "ES2019", "ES2021.Promise"],
-		"outDir": "esm",
-		"rootDir": "ts"
-	},
-	"references": [
-		{
-			"path": "../../frameworks/app"
-		},
-		{
-			"path": "../../frameworks/log"
-		},
-		{
-			"path": "../../plugins/commands"
-		},
-		{
-			"path": "../../plugins/keyboard"
-		},
-		{
-			"path": "../../plugins/preferences"
-		},
-		{
-			"path": "../../tools/repo-scripts"
-		}
-	],
-	"include": ["ts", "typings"]
+  "extends": "@repobuddy/typescript/tsconfig/monorepo",
+  "compilerOptions": {
+    "outDir": "esm",
+    "rootDir": "ts",
+    "verbatimModuleSyntax": true
+  },
+  "references": [
+    {
+      "path": "../../frameworks/app"
+    },
+    {
+      "path": "../../plugins/commands"
+    },
+    {
+      "path": "../../plugins/keyboard"
+    },
+    {
+      "path": "../../plugins/preferences"
+    }
+  ],
+  "include": [
+    "ts",
+    "typings"
+  ]
 }

@@ -1,4 +1,4 @@
-import { JustAppTestOptions, justTestApp } from '@just-web/app/testing'
+import { justTestApp, type JustAppTestOptions } from '@just-web/app/testing'
 import { commandsGizmoFn } from '@just-web/commands'
 import { keyboardGizmoFn } from '@just-web/keyboard'
 import { preferencesGizmo } from '@just-web/preferences'
