@@ -1,5 +1,11 @@
 # @just-web/id
 
+## 6.0.6
+
+### Patch Changes
+
+- e1f71278: Move `repobuddy` and `tslib` to devDependency
+
 ## 6.0.5
 
 ### Patch Changes

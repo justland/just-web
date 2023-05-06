@@ -1,5 +1,21 @@
 # @just-web/presets-browser
 
+## 5.0.4
+
+### Patch Changes
+
+- e1f71278: Move `repobuddy` and `tslib` to devDependency
+- Updated dependencies [6abe1504]
+- Updated dependencies [2d2cbbb5]
+- Updated dependencies [e1f71278]
+- Updated dependencies [d9b97f22]
+  - @just-web/history@2.0.4
+  - @just-web/commands@7.1.2
+  - @just-web/app@7.1.2
+  - @just-web/browser@7.1.2
+  - @just-web/browser-preferences@7.1.2
+  - @just-web/keyboard@7.1.2
+
 ## 5.0.3
 
 ### Patch Changes
