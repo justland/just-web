@@ -144,8 +144,8 @@ importers:
         specifier: workspace:^
         version: link:../log
       '@unional/gizmo':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.0.2
+        version: 2.0.2
       iso-error:
         specifier: ~6.0.2
         version: 6.0.2
@@ -223,8 +223,8 @@ importers:
   frameworks/id:
     dependencies:
       '@unional/gizmo':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.0.2
+        version: 2.0.2
     devDependencies:
       '@repobuddy/jest':
         specifier: ^3.3.0
@@ -299,8 +299,8 @@ importers:
         specifier: workspace:^
         version: link:../id
       '@unional/gizmo':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.0.2
+        version: 2.0.2
       standard-log:
         specifier: ^12.1.1
         version: 12.1.1
@@ -3518,9 +3518,11 @@ packages:
       '@just-func/types': 0.5.1
     dev: false
 
-  /@unional/gizmo@2.0.0:
-    resolution: {integrity: sha512-RdxNd4uGQQI4B/33K9HK1LMZYBqGiClK1hkuOXB61U8kod56H4ZiCtD6MWlXpdAy1A9P12f0cHUckVu0i/27yw==}
+  /@unional/gizmo@2.0.2:
+    resolution: {integrity: sha512-7yeva38w0jN4XNL7lV3Z0u0pb85T3WCCVdD9LOMJKCVzY3LqrB+ESqywWvajVI9C6eTW2cY+QYvebwAImLhAxw==}
     engines: {node: '>= 14.16'}
+    dependencies:
+      type-plus: 6.7.0
     dev: false
 
   /@unional/immer@9.0.0-beta.2:

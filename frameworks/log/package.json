@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "@just-web/id": "workspace:^",
-    "@unional/gizmo": "^2.0.0",
+    "@unional/gizmo": "^2.0.2",
     "standard-log": "^12.1.1",
     "type-plus": "^6.7.0"
   },
