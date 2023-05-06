@@ -62,7 +62,7 @@
     "build:cjs": "buddy ts build cjs",
     "build:esm": "tsc",
     "build:tslib": "buddy ts build tslib",
-    "clean": "rimraf cjs esm coverage lib --glob *.tsbuildinfo",
+    "clean": "rimraf cjs esm coverage tslib --glob *.tsbuildinfo",
     "coverage": "cross-env NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest --coverage",
     "depcheck": "depcheck",
     "lint": "cross-env TIMING=1 eslint --ext=ts,tsx,js,yaml,yml .",
@@ -74,14 +74,12 @@
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },
   "dependencies": {
-    "@just-func/types": "^0.5.0",
     "@just-web/id": "workspace:^",
     "@unional/gizmo": "^2.0.0",
     "standard-log": "^12.1.1",
     "type-plus": "^6.7.0"
   },
   "devDependencies": {
-    "@just-web/repo-scripts": "workspace:^",
     "@repobuddy/jest": "^3.3.0",
     "@repobuddy/typescript": "^1.2.0",
     "@size-limit/preset-small-lib": "~8.2.0",

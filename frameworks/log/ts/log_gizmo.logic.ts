@@ -1,5 +1,10 @@
-import { DEFAULT_LOG_METHOD_NAMES, LoggerOptions, type LogMethodNames, type StandardLog } from 'standard-log'
 import type { GizmoStandardLog, LogGizmoOptions } from './log_gizmo.types.js'
+import {
+	DEFAULT_LOG_METHOD_NAMES,
+	type LoggerOptions,
+	type LogMethodNames,
+	type StandardLog
+} from './standard_log.js'
 
 export function buildLogContext<N extends string = LogMethodNames>(
 	name: string,

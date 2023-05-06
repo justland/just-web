@@ -1,6 +1,5 @@
 ignores:
   - '@just-web/repo-scripts'
-  - '@just-func/types' # type only imports are not detected correctly
   - '@repobuddy/*'
   - '@size-limit/*'
   - '@types/jest'

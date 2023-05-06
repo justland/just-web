@@ -2,6 +2,7 @@ export {
 	createConsoleLogReporter,
 	createMemoryLogReporter,
 	createTimestampFormatter,
+	DEFAULT_LOG_METHOD_NAMES,
 	formatLogLevel,
 	getLogger,
 	InvalidId,
