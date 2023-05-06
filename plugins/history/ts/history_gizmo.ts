@@ -1,4 +1,4 @@
-import { define, GizmoBase } from '@just-web/app'
+import { define, type GizmoBase } from '@just-web/app'
 import { createBrowserHistory, type History } from 'history'
 
 export type HistoryGizmoOptions = {
