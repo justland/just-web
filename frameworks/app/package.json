@@ -82,7 +82,6 @@
     "type-plus": "^6.7.0"
   },
   "devDependencies": {
-    "@just-web/repo-scripts": "workspace:^",
     "@repobuddy/jest": "^3.3.0",
     "@repobuddy/typescript": "^1.2.0",
     "@size-limit/preset-small-lib": "~8.2.0",
