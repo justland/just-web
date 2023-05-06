@@ -1,5 +1,18 @@
 # @just-web/presets-browser
 
+## 5.0.3
+
+### Patch Changes
+
+- 61477ae9: Update to use `@unional/gizmo` v2
+- Updated dependencies [61477ae9]
+  - @just-web/app@7.1.1
+  - @just-web/browser@7.1.1
+  - @just-web/browser-preferences@7.1.1
+  - @just-web/commands@7.1.1
+  - @just-web/history@2.0.3
+  - @just-web/keyboard@7.1.1
+
 ## 5.0.2
 
 ### Patch Changes

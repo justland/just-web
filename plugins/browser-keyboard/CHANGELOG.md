@@ -1,5 +1,15 @@
 # @just-web/browser-contributions
 
+## 7.1.1
+
+### Patch Changes
+
+- Updated dependencies [61477ae9]
+  - @just-web/app@7.1.1
+  - @just-web/commands@7.1.1
+  - @just-web/keyboard@7.1.1
+  - @just-web/os@7.1.1
+
 ## 7.1.0
 
 ### Patch Changes
