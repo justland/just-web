@@ -1,5 +1,5 @@
 import { define, type LogGizmo } from '@just-web/app'
-import { Store, createStore } from '@just-web/states'
+import { createStore, type Store } from '@just-web/states'
 import { record, requiredDeep } from 'type-plus'
 import type { Route, RoutesConfigOptions } from './types.js'
 

@@ -1179,9 +1179,6 @@ importers:
       '@just-web/app':
         specifier: workspace:^
         version: link:../../frameworks/app
-      '@just-web/repo-scripts':
-        specifier: workspace:^
-        version: link:../../tools/repo-scripts
       '@just-web/states':
         specifier: workspace:^
         version: link:../../libraries/states
