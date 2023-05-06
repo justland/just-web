@@ -1,5 +1,13 @@
 # @just-web/log
 
+## 7.1.3
+
+### Patch Changes
+
+- dc0291fa: Update `@unional/gizmo`
+- Updated dependencies [dc0291fa]
+  - @just-web/id@6.0.7
+
 ## 7.1.2
 
 ### Patch Changes
