@@ -4,6 +4,10 @@
 		"limit": "15kb"
 	},
 	{
+		"path": "./tslib/index.js",
+		"limit": "15kb"
+	},
+	{
 		"path": "./esm/index.js",
 		"limit": "10kb"
 	}
