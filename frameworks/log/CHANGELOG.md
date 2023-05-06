@@ -1,5 +1,14 @@
 # @just-web/log
 
+## 7.1.2
+
+### Patch Changes
+
+- e1f71278: Move `repobuddy` and `tslib` to devDependency
+- d0fc1710: Export `DEFAULT_LOG_METHOD_NAMES`
+- Updated dependencies [e1f71278]
+  - @just-web/id@6.0.6
+
 ## 7.1.1
 
 ### Patch Changes

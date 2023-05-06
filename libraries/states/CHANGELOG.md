@@ -1,5 +1,11 @@
 # @just-web/states
 
+## 7.1.2
+
+### Patch Changes
+
+- e1f71278: Move `repobuddy` and `tslib` to devDependency
+
 ## 7.1.1
 
 ## 7.1.0

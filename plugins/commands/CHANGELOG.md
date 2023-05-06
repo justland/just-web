@@ -1,5 +1,16 @@
 # @just-web/commands
 
+## 7.1.2
+
+### Patch Changes
+
+- 2d2cbbb5: enable `verbatimModuleSyntax`
+- Updated dependencies [e1f71278]
+- Updated dependencies [d9b97f22]
+  - @just-web/app@7.1.2
+  - @just-web/states@7.1.2
+  - @just-web/keyboard@7.1.2
+
 ## 7.1.1
 
 ### Patch Changes

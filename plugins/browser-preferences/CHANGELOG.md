@@ -1,5 +1,18 @@
 # @just-web/browser-preferences
 
+## 7.1.2
+
+### Patch Changes
+
+- e1f71278: Move `repobuddy` and `tslib` to devDependency
+- Updated dependencies [2d2cbbb5]
+- Updated dependencies [e1f71278]
+- Updated dependencies [d9b97f22]
+  - @just-web/commands@7.1.2
+  - @just-web/app@7.1.2
+  - @just-web/states@7.1.2
+  - @just-web/preferences@7.1.2
+
 ## 7.1.1
 
 ### Patch Changes
