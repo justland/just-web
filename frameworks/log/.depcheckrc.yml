@@ -2,6 +2,7 @@ ignores:
   - '@repobuddy/*'
   - '@size-limit/*'
   - '@types/jest'
+  - eslint*
   - 'jest-*'
   - repobuddy
   - rimraf # https://github.com/depcheck/depcheck/issues/776
