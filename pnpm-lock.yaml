@@ -548,9 +548,6 @@ importers:
       '@just-web/os':
         specifier: workspace:^
         version: link:../os
-      '@just-web/repo-scripts':
-        specifier: workspace:^
-        version: link:../../tools/repo-scripts
       '@repobuddy/jest':
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
