@@ -1,5 +1,5 @@
 import { nothing } from '@just-web/states'
-import { JSONTypes, testType } from 'type-plus'
+import { testType, type JSONTypes } from 'type-plus'
 import { clearAllUserPreferences, getUserPreference } from './index.js'
 import { setupMemoryPreferencesTestApp } from './testing/index.js'
 

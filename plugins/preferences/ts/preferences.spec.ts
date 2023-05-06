@@ -3,7 +3,7 @@ import { commandsGizmoFn } from '@just-web/commands'
 import { keyboardGizmoFn } from '@just-web/keyboard'
 import { AssertOrder } from 'assertron'
 import { nothing } from 'immer'
-import { JSONTypes, isType } from 'type-plus'
+import { isType, type JSONTypes } from 'type-plus'
 import {
 	clearAllUserPreferences,
 	getUserPreference,
@@ -187,7 +187,7 @@ describe(`preferences.createState()`, () => {
 			expect(result).toEqual({ a: 1 })
 		})
 
-		it('accepts handler that update value in-place',async  () => {
+		it('accepts handler that update value in-place', async () => {
 			const store = await setupTestStore<TestPref>('set-with-handler-in-place', { a: 1 })
 			const r = store.set(v => {
 				v!.a = 2
@@ -199,7 +199,7 @@ describe(`preferences.createState()`, () => {
 			expect(result).toEqual({ a: 2 })
 		})
 
-		it('accepts handler that return nothing',async () => {
+		it('accepts handler that return nothing', async () => {
 			const store = await setupTestStore<TestPref>('set-with-handler->nothing')
 			store.set({ a: 1 })
 			store.set(_ => nothing)

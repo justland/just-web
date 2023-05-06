@@ -1,13 +1,9 @@
 {
-  "extends": "@just-web/repo-scripts/config/tsconfig.settings.json",
+  "extends": "@repobuddy/typescript/tsconfig/monorepo",
   "compilerOptions": {
-    "lib": [
-      "DOM",
-      "ES2019",
-      "ES2021.Promise"
-    ],
     "outDir": "esm",
-    "rootDir": "ts"
+    "rootDir": "ts",
+    "verbatimModuleSyntax": true
   },
   "references": [
     {
@@ -20,13 +16,7 @@
       "path": "../../plugins/keyboard"
     },
     {
-      "path": "../../frameworks/log"
-    },
-    {
       "path": "../../libraries/states"
-    },
-    {
-      "path": "../../tools/repo-scripts"
     }
   ],
   "include": [
