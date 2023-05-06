@@ -1,5 +1,7 @@
 # @just-web/states
 
+## 7.1.1
+
 ## 7.1.0
 
 ### Patch Changes

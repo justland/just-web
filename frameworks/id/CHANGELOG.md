@@ -1,5 +1,11 @@
 # @just-web/id
 
+## 6.0.5
+
+### Patch Changes
+
+- 61477ae9: Update to use `@unional/gizmo` v2
+
 ## 6.0.4
 
 ### Patch Changes

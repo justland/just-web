@@ -1,5 +1,14 @@
 # @just-web/app
 
+## 7.1.1
+
+### Patch Changes
+
+- 61477ae9: Update to use `@unional/gizmo` v2
+- Updated dependencies [61477ae9]
+  - @just-web/id@6.0.5
+  - @just-web/log@7.1.1
+
 ## 7.1.0
 
 ### Minor Changes
