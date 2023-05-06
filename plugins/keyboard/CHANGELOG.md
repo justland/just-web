@@ -1,5 +1,14 @@
 # @just-web/keyboard
 
+## 7.1.3
+
+### Patch Changes
+
+- Updated dependencies [dc0291fa]
+  - @just-web/app@7.1.3
+  - @just-web/states@7.1.3
+  - @just-web/os@7.1.3
+
 ## 7.1.2
 
 ### Patch Changes
