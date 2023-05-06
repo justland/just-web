@@ -1,9 +1,9 @@
 import { logLevels } from '@just-web/app'
 import { justTestApp } from '@just-web/app/testing'
+import { a, has, some } from 'assertron'
 import { nothing } from 'immer'
 import { testType } from 'type-plus'
-import { OnStateChange, createState } from './state.js'
-import { a, has, some } from 'assertron'
+import { createState, type OnStateChange } from './state.js'
 
 it('returns initial value', () => {
 	const [value] = createState([1, 2, 3])

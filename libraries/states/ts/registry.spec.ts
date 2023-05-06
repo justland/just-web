@@ -1,5 +1,5 @@
-import { KeyTypes, testType } from 'type-plus'
-import { ReadonlyRegistry, Registry, createRegistry, toReadonlyRegistry, withAdder } from './index.js'
+import { testType, type KeyTypes } from 'type-plus'
+import { createRegistry, toReadonlyRegistry, withAdder, type ReadonlyRegistry, type Registry } from './index.js'
 
 describe('createRegistry()', () => {
 	test('create empty registry', () => {

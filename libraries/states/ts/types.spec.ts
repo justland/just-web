@@ -1,5 +1,5 @@
 import { nothing } from 'immer'
-import { JSONTypes } from 'type-plus'
+import type { JSONTypes } from 'type-plus'
 import type { Updater } from './types.js'
 
 describe(`Updater<T>`, () => {
