@@ -1,7 +1,7 @@
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import type { Registry, WithAdder } from '@just-web/states'
 import type { AnyFunction } from 'type-plus'
-import { CommandsGizmo } from './commands_gizmo.js'
+import type { CommandsGizmo } from './commands_gizmo.js'
 
 export type CommandHandler = {
 	/**

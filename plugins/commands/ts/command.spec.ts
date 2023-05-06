@@ -1,10 +1,10 @@
-import { createMemoryLogReporter, LogGizmoOptions } from '@just-web/app'
+import { createMemoryLogReporter, type LogGizmoOptions } from '@just-web/app'
 import { justTestApp } from '@just-web/app/testing'
-import { KeyboardGizmo, keyboardGizmoFn, KeyboardGizmoOptions } from '@just-web/keyboard'
+import { keyboardGizmoFn, type KeyboardGizmo, type KeyboardGizmoOptions } from '@just-web/keyboard'
 import { a } from 'assertron'
 import { configGlobal } from 'standard-log'
-import { ExtractFunction, testType } from 'type-plus'
-import { command, CommandsGizmo, commandsGizmoFn, CommandsGizmoOptions } from './index.js'
+import { testType, type ExtractFunction } from 'type-plus'
+import { command, commandsGizmoFn, type CommandsGizmo, type CommandsGizmoOptions } from './index.js'
 
 function setupPlugin(options?: LogGizmoOptions & KeyboardGizmoOptions & CommandsGizmoOptions) {
 	return justTestApp().with(keyboardGizmoFn(options)).with(commandsGizmoFn(options)).create()

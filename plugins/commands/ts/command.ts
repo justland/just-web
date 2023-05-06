@@ -1,7 +1,7 @@
 import { getLogger } from '@just-web/app'
 import type { KeyBindingContribution, KeyboardGizmo } from '@just-web/keyboard'
 import type { AnyFunction } from 'type-plus'
-import { CommandsGizmo } from './commands_gizmo.js'
+import type { CommandsGizmo } from './commands_gizmo.js'
 import type { Command, CommandContribution } from './types.js'
 
 /**

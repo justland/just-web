@@ -721,9 +721,6 @@ importers:
       '@just-web/keyboard':
         specifier: workspace:^
         version: link:../keyboard
-      '@just-web/repo-scripts':
-        specifier: workspace:^
-        version: link:../../tools/repo-scripts
       '@just-web/states':
         specifier: workspace:^
         version: link:../../libraries/states
