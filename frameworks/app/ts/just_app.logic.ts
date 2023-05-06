@@ -4,7 +4,7 @@ import { incubate, type GizmoIncubator } from '@unional/gizmo'
 import type { JustAppOptions } from './just_app.types.js'
 
 export function incubateApp(options: JustAppOptions): GizmoIncubator<IdGizmo> {
-	const incubator = incubate(idGizmoFn(options))
+	const incubator = incubate().with(idGizmoFn(options))
 	return new Proxy(incubator, {
 		get(target, prop) {
 			if (prop === 'create') {
@@ -14,7 +14,7 @@ export function incubateApp(options: JustAppOptions): GizmoIncubator<IdGizmo> {
 					const log =
 						typeof (app as any).log?.info === 'function'
 							? (app as any).log
-							: (await incubate(idGizmoFn(options)).with(logGizmoFn(options.log)).create()).log
+							: (await incubate().with(idGizmoFn(options)).with(logGizmoFn(options.log)).create()).log
 					log.info(`created (id: ${app.id})`)
 					return app
 				}

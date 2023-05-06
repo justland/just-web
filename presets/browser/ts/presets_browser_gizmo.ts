@@ -1,4 +1,11 @@
-import { define, type DepBuilder, type GizmoStatic, type IdGizmo, type LogGizmo } from '@just-web/app'
+import {
+	define,
+	incubate,
+	type DepBuilder,
+	type GizmoStatic,
+	type IdGizmo,
+	type LogGizmo
+} from '@just-web/app'
 import { browserGizmoFn, type BrowserGizmo, type BrowserGizmoOptions } from '@just-web/browser'
 import { browserPreferencesGizmo } from '@just-web/browser-preferences'
 import type { CommandsGizmo } from '@just-web/commands'
@@ -17,13 +24,11 @@ export const presetsBrowserGizmoFn: (options?: {
 > = define((options?: { browser?: BrowserGizmoOptions; history?: HistoryGizmoOptions }) => ({
 	static: define.require<IdGizmo>().require<LogGizmo>().require<CommandsGizmo>().optional<KeyboardGizmo>(),
 	async create(ctx) {
-		const browser = await ctx.with(browserGizmoFn(options?.browser))
-		await ctx.with(browserPreferencesGizmo)
-		const history = await ctx.with(historyGizmoFn(options?.history))
-		return {
-			...browser,
-			...history
-		}
+		return incubate(ctx)
+			.with(browserGizmoFn(options?.browser))
+			.with(browserPreferencesGizmo)
+			.with(historyGizmoFn(options?.history))
+			.create()
 	}
 }))
 

@@ -1,4 +1,4 @@
-export { define } from '@unional/gizmo'
+export { define, incubate } from '@unional/gizmo'
 export type {
 	DepBuilder,
 	DynamicLoader,

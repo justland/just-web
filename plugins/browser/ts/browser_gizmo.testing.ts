@@ -1,4 +1,4 @@
-import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
+import { define, incubate, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
 import { browserGizmoFn, type BrowserGizmo, type BrowserGizmoOptions } from './browser_gizmo.js'
 
 export type BrowserTestGizmoOptions = BrowserGizmoOptions & {
@@ -12,7 +12,7 @@ export const browserTestGizmoFn: (
 	(options?: BrowserTestGizmoOptions) => ({
 		static: define.require<LogGizmo>(),
 		async create(ctx) {
-			const { browser } = await ctx.with(browserGizmoFn(options))
+			const { browser } = await incubate(ctx).with(browserGizmoFn(options)).create()
 
 			return {
 				browser: {

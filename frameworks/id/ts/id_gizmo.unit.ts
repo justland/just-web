@@ -5,7 +5,14 @@ import { idGizmoFn } from './index.js'
 
 it('randomize the app id', async () => {
 	const ids = await Promise.all(
-		range(0, 100).map(async () => (await incubate(idGizmoFn({ name: 'random' })).create()).id)
+		range(0, 100).map(
+			async () =>
+				(
+					await incubate()
+						.with(idGizmoFn({ name: 'random' }))
+						.create()
+				).id
+		)
 	)
 
 	const x = ids.reduce((p, v) => ((p[v] = true), p), record())

@@ -9,6 +9,7 @@ import { presetsBrowserGizmoFn } from './index.js'
 it('provides history', async () => {
 	const app = await justTestApp().with(commandsGizmoFn()).with(presetsBrowserGizmoFn()).create()
 	testType.canAssign<typeof app, HistoryGizmo>(true)
+	expect(app.history).toBeDefined()
 })
 
 it('customize history', async () => {
@@ -25,4 +26,5 @@ it('customize history', async () => {
 it('provide browser', async () => {
 	const app = await justTestApp().with(commandsGizmoFn()).with(presetsBrowserGizmoFn()).create()
 	testType.canAssign<typeof app, BrowserGizmo>(true)
+	expect(app.browser).toBeDefined()
 })
