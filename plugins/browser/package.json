@@ -79,7 +79,6 @@
   },
   "devDependencies": {
     "@just-web/app": "workspace:^",
-    "@just-web/repo-scripts": "workspace:^",
     "@just-web/states": "workspace:^",
     "@repobuddy/jest": "^3.3.0",
     "@repobuddy/typescript": "^1.2.0",

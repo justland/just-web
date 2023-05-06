@@ -1,26 +1,20 @@
 {
-	"extends": "@repobuddy/typescript/tsconfig/monorepo",
-	"compilerOptions": {
-		"lib": ["DOM", "ES2019", "ES2021.Promise"],
-		"outDir": "esm",
-		"rootDir": "ts"
-	},
-	"references": [
+  "extends": "@repobuddy/typescript/tsconfig/monorepo",
+  "compilerOptions": {
+    "outDir": "esm",
+    "rootDir": "ts",
+    "verbatimModuleSyntax": true
+  },
+  "references": [
     {
       "path": "../../frameworks/app"
     },
-		{
-			"path": "../../frameworks/id"
-		},
-		{
-			"path": "../../frameworks/log"
-		},
-		{
-			"path": "../../libraries/states"
-		},
-		{
-			"path": "../../tools/repo-scripts"
-		}
-	],
-	"include": ["ts", "typings"]
+    {
+      "path": "../../libraries/states"
+    }
+  ],
+  "include": [
+    "ts",
+    "typings"
+  ]
 }
