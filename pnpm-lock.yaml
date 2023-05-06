@@ -144,7 +144,7 @@ importers:
         specifier: workspace:^
         version: link:../log
       '@unional/gizmo':
-        specifier: ^2.0.2
+        specifier: ^2.0.1
         version: 2.0.2
       iso-error:
         specifier: ~6.0.2
@@ -223,7 +223,7 @@ importers:
   frameworks/id:
     dependencies:
       '@unional/gizmo':
-        specifier: ^2.0.2
+        specifier: ^2.0.1
         version: 2.0.2
     devDependencies:
       '@repobuddy/jest':
@@ -299,7 +299,7 @@ importers:
         specifier: workspace:^
         version: link:../id
       '@unional/gizmo':
-        specifier: ^2.0.2
+        specifier: ^2.0.1
         version: 2.0.2
       standard-log:
         specifier: ^12.1.1

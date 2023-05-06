@@ -74,7 +74,7 @@
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },
   "dependencies": {
-    "@unional/gizmo": "^2.0.2"
+    "@unional/gizmo": "^2.0.1"
   },
   "devDependencies": {
     "@repobuddy/jest": "^3.3.0",
