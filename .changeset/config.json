@@ -17,6 +17,7 @@
 			"@just-web/commands",
 			"@just-web/events",
 			"@just-web/keyboard",
+      "@just-web/id",
 			"@just-web/log",
 			"@just-web/os",
 			"@just-web/preferences",
