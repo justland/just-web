@@ -18,6 +18,7 @@
     "ex-browser": "pnpm --filter=./examples/browser",
     "framework": "pnpm --filter=@just-web/framework",
     "history": "pnpm --filter=@just-web/history",
+    "i18n": "pnpm --filter=@just-web/i18n",
     "id": "pnpm --filter=@just-web/id",
     "keyboard": "pnpm --filter=@just-web/keyboard",
     "lint": "turbo run lint",

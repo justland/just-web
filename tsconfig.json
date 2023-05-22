@@ -30,6 +30,9 @@
 			"path": "plugins/history"
 		},
 		{
+			"path": "plugins/i18n"
+		},
+		{
 			"path": "plugins/os"
 		},
 		{
