@@ -73,6 +73,9 @@ export type CommandContribution = {
 	// when?: string,
 }
 
+// this is a workaround
+export type Partial<T> = { [P in keyof T]?: T[P] | undefined }
+
 export interface ContributionRegistry
 	extends Registry<string, CommandContribution>,
 		WithAdder<CommandContribution> {}
@@ -100,6 +103,6 @@ export type Command<F extends AnyFunction = () => void> = F & {
 	 * If you want the command to be available outside (i.e. register to contributions),
 	 * use the object form `command({...}, ...)`.
 	 */
-	connect(ctx: CommandsGizmo & Partial<KeyboardGizmo>, handler?: F): void
+	connect(ctx: CommandsGizmo & Partial<KeyboardGizmo | undefined>, handler?: F): void
 	defineHandler(handler: F): F
 }

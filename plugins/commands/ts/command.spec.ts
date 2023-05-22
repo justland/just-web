@@ -4,7 +4,13 @@ import { keyboardGizmoFn, type KeyboardGizmo, type KeyboardGizmoOptions } from '
 import { a } from 'assertron'
 import { configGlobal } from 'standard-log'
 import { testType, type ExtractFunction } from 'type-plus'
-import { command, commandsGizmoFn, type CommandsGizmo, type CommandsGizmoOptions } from './index.js'
+import {
+	command,
+	commandsGizmoFn,
+	type CommandsGizmo,
+	type CommandsGizmoOptions
+} from './index.js'
+import { type Partial } from './types.js'
 
 function setupPlugin(options?: LogGizmoOptions & KeyboardGizmoOptions & CommandsGizmoOptions) {
 	return justTestApp().with(keyboardGizmoFn(options)).with(commandsGizmoFn(options)).create()
@@ -113,7 +119,7 @@ describe(`${command.name}()`, () => {
 
 			testType.equal<
 				Parameters<typeof inc.connect>,
-				[context: CommandsGizmo & Partial<KeyboardGizmo>, handler?: ((value: number) => number)|undefined]
+				[context: CommandsGizmo & Partial<KeyboardGizmo>, handler?: ((value: number) => number) | undefined]
 			>(true)
 		})
 
