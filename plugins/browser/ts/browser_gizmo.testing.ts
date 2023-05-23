@@ -24,3 +24,31 @@ export const browserTestGizmoFn: (
 		}
 	})
 )
+
+export function stubStorage(): Storage {
+	const m = new Map<string, string>()
+	return {
+		clear() {
+			m.clear()
+		},
+		getItem(key: string) {
+			return m.get(key) ?? null
+		},
+		get length() {
+			return m.size
+		},
+		key(index) {
+			let c = 0
+			for (const e of m.keys()) {
+				if (++c > index) return e
+			}
+			return null
+		},
+		removeItem(key: string) {
+			m.delete(key)
+		},
+		setItem(key: string, value: string) {
+			m.set(key, value)
+		}
+	}
+}
