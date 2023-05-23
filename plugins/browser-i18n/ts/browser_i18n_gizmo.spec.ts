@@ -1,24 +1,12 @@
 import { justTestApp } from '@just-web/app/testing'
 import { browserTestGizmoFn, stubStorage } from '@just-web/browser/testing'
-import { browserI18nGizmoFn } from './index.js'
-import { setLanguageCommand } from '@just-web/i18n'
 import { commandsGizmoFn } from '@just-web/commands'
+import { setLanguageCommand } from '@just-web/i18n'
 import { ctx } from './browser_i18n_gizmo.ctx.js'
-
-it('can define the initial language', async () => {
-	const app = await justTestApp()
-		.with(browserTestGizmoFn())
-		.with(browserI18nGizmoFn({ language: 'en' }))
-		.create()
-
-	expect(app.i18n.getLanguage()).toEqual('en')
-})
+import { browserI18nGizmo } from './index.js'
 
 it('can change the language', async () => {
-	const app = await justTestApp()
-		.with(browserTestGizmoFn())
-		.with(browserI18nGizmoFn({ language: 'en' }))
-		.create()
+	const app = await justTestApp().with(browserTestGizmoFn()).with(browserI18nGizmo).create()
 
 	app.i18n.setLanguage('fr')
 	expect(app.i18n.getLanguage()).toEqual('fr')
@@ -29,10 +17,11 @@ it('can listen to language changes', async () => {
 	const app = await justTestApp()
 		.with(
 			browserTestGizmoFn({
-				localStorage: stubStorage()
+				localStorage: stubStorage(),
+				navigator: { language: 'en' }
 			})
 		)
-		.with(browserI18nGizmoFn({ language: 'en' }))
+		.with(browserI18nGizmo)
 		.create()
 
 	app.i18n.languageChanged((newLanguage, oldLanguage) => {
@@ -47,10 +36,11 @@ it('can reset the language', async () => {
 	const app = await justTestApp()
 		.with(
 			browserTestGizmoFn({
-				localStorage: stubStorage()
+				localStorage: stubStorage(),
+				navigator: { language: 'en' }
 			})
 		)
-		.with(browserI18nGizmoFn({ language: 'en' }))
+		.with(browserI18nGizmo)
 		.create()
 
 	app.i18n.setLanguage('fr')
@@ -64,10 +54,11 @@ it('can use setLanguageCommand', async () => {
 		.with(commandsGizmoFn())
 		.with(
 			browserTestGizmoFn({
-				localStorage: stubStorage()
+				localStorage: stubStorage(),
+				navigator: { language: 'en' }
 			})
 		)
-		.with(browserI18nGizmoFn({ language: 'en' }))
+		.with(browserI18nGizmo)
 		.create()
 	app.i18n.languageChanged((newLanguage, oldLanguage) => {
 		expect(newLanguage).toEqual('fr')
