@@ -1,5 +1,17 @@
 # @just-web/browser-i18n
 
+## 2.0.0
+
+### Major Changes
+
+- d7a98cd6: Remove options.
+  Change from `browserI18nGizmoFn()` to `browserI18nGizmo`.
+
+### Patch Changes
+
+- Updated dependencies [74b3e839]
+  - @just-web/browser@7.1.4
+
 ## 1.0.0
 
 ### Major Changes
