@@ -11,18 +11,17 @@
 	"fixed": [
 		[
 			"@just-web/app",
+      "@just-web/id",
+			"@just-web/log"
+		],
+		[
+			"@just-web/commands",
+			"@just-web/keyboard"
+		],
+		[
 			"@just-web/browser-keyboard",
 			"@just-web/browser-preferences",
-			"@just-web/browser",
-			"@just-web/commands",
-			"@just-web/events",
-			"@just-web/keyboard",
-      "@just-web/id",
-			"@just-web/log",
-			"@just-web/os",
-			"@just-web/preferences",
-			"@just-web/routes",
-			"@just-web/states"
+			"@just-web/browser"
 		]
 	],
 	"ignore": ["examples-*"],
