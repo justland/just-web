@@ -4,6 +4,8 @@ import { browserGizmoFn, type BrowserGizmo, type BrowserGizmoOptions } from './b
 export type BrowserTestGizmoOptions = BrowserGizmoOptions & {
 	sessionStorage?: Storage | undefined
 	localStorage?: Storage | undefined
+	navigator?: Partial<Navigator> | undefined
+	location?: Partial<Location> | undefined
 }
 
 export const browserTestGizmoFn: (
@@ -18,7 +20,9 @@ export const browserTestGizmoFn: (
 				browser: {
 					...browser,
 					sessionStorage: options?.sessionStorage ?? browser.sessionStorage,
-					localStorage: options?.localStorage ?? browser.localStorage
+					localStorage: options?.localStorage ?? browser.localStorage,
+					navigator: (options?.navigator ?? browser.navigator) as Navigator,
+					location: (options?.location ?? browser.location) as Location
 				}
 			}
 		}
