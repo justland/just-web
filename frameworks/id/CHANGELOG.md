@@ -1,5 +1,11 @@
 # @just-web/id
 
+## 7.1.4
+
+### Patch Changes
+
+- 33b354e8: Update version to v7
+
 ## 6.0.7
 
 ### Patch Changes

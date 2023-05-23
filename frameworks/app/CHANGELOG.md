@@ -1,5 +1,13 @@
 # @just-web/app
 
+## 7.1.4
+
+### Patch Changes
+
+- Updated dependencies [33b354e8]
+  - @just-web/id@7.1.4
+  - @just-web/log@7.1.4
+
 ## 7.1.3
 
 ### Patch Changes

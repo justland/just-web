@@ -1,5 +1,21 @@
 # @just-web/commands
 
+## 7.1.4
+
+### Patch Changes
+
+- 4dd88bd8: Workaround `Partial<T>` issue with `exactOptionalPropertyType`.
+
+  <https://github.com/microsoft/TypeScript/issues/46969#issuecomment-1528886328>
+
+  This `Partial<T>` will be added to `type-plus`,
+  but since `type-plus` is currently making some changes and will take a few more days to complete,
+  the type is added here as a workaround.
+
+  - @just-web/app@7.1.4
+  - @just-web/states@7.1.4
+  - @just-web/keyboard@7.1.4
+
 ## 7.1.3
 
 ### Patch Changes

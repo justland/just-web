@@ -1,5 +1,13 @@
 # @just-web/browser
 
+## 7.1.4
+
+### Patch Changes
+
+- 9bbc1096: Add `stubStorage()` for testing
+- @just-web/app@7.1.4
+- @just-web/states@7.1.4
+
 ## 7.1.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @just-web/history
 
+## 2.0.6
+
+### Patch Changes
+
+- @just-web/app@7.1.4
+
 ## 2.0.5
 
 ### Patch Changes

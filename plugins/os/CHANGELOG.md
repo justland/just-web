@@ -1,5 +1,11 @@
 # @just-web/os
 
+## 7.1.4
+
+### Patch Changes
+
+- @just-web/app@7.1.4
+
 ## 7.1.3
 
 ### Patch Changes
