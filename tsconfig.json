@@ -15,6 +15,9 @@
 			"path": "plugins/browser"
 		},
 		{
+			"path": "plugins/browser-i18n"
+		},
+		{
 			"path": "plugins/browser-keyboard"
 		},
 		{
