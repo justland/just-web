@@ -21,8 +21,7 @@
 		[
 			"@just-web/browser-keyboard",
 			"@just-web/browser-preferences",
-			"@just-web/browser",
-      "@just-web/presets-browser"
+			"@just-web/browser"
 		]
 	],
 	"ignore": ["examples-*"],
