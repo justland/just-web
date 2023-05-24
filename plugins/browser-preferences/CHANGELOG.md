@@ -1,5 +1,7 @@
 # @just-web/browser-preferences
 
+## 7.2.0
+
 ## 7.1.4
 
 ### Patch Changes

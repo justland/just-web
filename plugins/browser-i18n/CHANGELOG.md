@@ -1,5 +1,12 @@
 # @just-web/browser-i18n
 
+## 3.0.0
+
+### Patch Changes
+
+- Updated dependencies
+  - @just-web/browser@7.2.0
+
 ## 2.0.0
 
 ### Major Changes

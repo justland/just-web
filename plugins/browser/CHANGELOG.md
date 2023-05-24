@@ -1,5 +1,11 @@
 # @just-web/browser
 
+## 7.2.0
+
+### Minor Changes
+
+- Add `navigator` and `location`
+
 ## 7.1.4
 
 ### Patch Changes
