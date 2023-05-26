@@ -46,8 +46,8 @@
 		"verify": "run-p build lint coverage depcheck"
 	},
 	"dependencies": {
-		"@babel/core": "~7.21.0",
-		"@babel/plugin-transform-runtime": "~7.21.0",
+		"@babel/core": "~7.22.0",
+		"@babel/plugin-transform-runtime": "~7.22.0",
 		"@rushstack/eslint-patch": "^1.2.0",
 		"@types/jest": "^29.5.1",
 		"@typescript-eslint/eslint-plugin": "^5.28.0",
