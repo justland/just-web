@@ -144,8 +144,8 @@ importers:
         specifier: ~6.0.2
         version: 6.0.2
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@repobuddy/jest':
         specifier: ^3.3.0
@@ -269,8 +269,8 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -287,8 +287,8 @@ importers:
         specifier: ^12.1.1
         version: 12.1.1
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@repobuddy/jest':
         specifier: ^3.3.0
@@ -351,8 +351,8 @@ importers:
         specifier: ^3.10.2
         version: 3.10.5
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -418,8 +418,8 @@ importers:
         specifier: ~6.0.2
         version: 6.0.2
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -567,8 +567,8 @@ importers:
         specifier: ~1.6.5
         version: 1.6.5
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -652,8 +652,8 @@ importers:
         specifier: ^3.7.3
         version: 3.7.3
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -731,8 +731,8 @@ importers:
         specifier: ^3.10.2
         version: 3.10.5
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@jest/globals':
         specifier: ^29.5.0
@@ -935,8 +935,8 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -998,8 +998,8 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1070,8 +1070,8 @@ importers:
   plugins/keyboard:
     dependencies:
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -1201,8 +1201,8 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1277,8 +1277,8 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1286,8 +1286,8 @@ importers:
   plugins/routes:
     dependencies:
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -1426,8 +1426,8 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0
       type-plus:
-        specifier: ^6.7.0
-        version: 6.7.0
+        specifier: ^7.0.0
+        version: 7.0.0
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -9220,6 +9220,12 @@ packages:
 
   /type-plus@6.7.0:
     resolution: {integrity: sha512-aHQ+U55rc5l0aYar7kh0A61byC71lTqQstuNzqdkdqPCmGiHzRFo8uXclXJJL4N+6W0LXnms1YA8G4XggBk12w==}
+    dependencies:
+      tersify: 3.12.1
+      unpartial: 1.0.4
+
+  /type-plus@7.0.0:
+    resolution: {integrity: sha512-QPKWJGAjXOgPt0ecl7A1BZvII1BN8Y3IYpiG/ycxHL7ZpN41qz9ktaVGANj6foJEMUVVNaukVI7l9DMijcIK/A==}
     dependencies:
       tersify: 3.12.1
       unpartial: 1.0.4
