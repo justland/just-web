@@ -15,6 +15,7 @@
     "codeql",
     "depcheckrc",
     "filenamify",
+    "formatjs",
     "immer",
     "mdbook",
     "miku",
