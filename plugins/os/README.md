@@ -27,10 +27,14 @@ rush add -p @just-web/os
 ## Usage
 
 ```ts
-import { createApp } from '@just-web/app'
-import osPlugin from '@just-web/os'
+import { justApp } from '@just-web/app'
+import { osGizmo } from '@just-web/os'
 
-createApp({ name: 'your-awesome-app' }).extend(osPlugin())
+const app = await justApp({ name: 'your-awesome-app' })
+  .with(osGizmo)
+  .create()
+
+app.os.isMac()
 ```
 
 [@just-web]: https://github.com/justland/just-web

@@ -7,7 +7,7 @@
   },
   "include": [
     "ts",
-    "typings"
+    "types"
   ],
   "references": [
     {
