@@ -1,5 +1,16 @@
 # @just-web/browser-preferences
 
+## 7.2.1
+
+### Patch Changes
+
+- db021cdf: Update type-plus
+- Updated dependencies [db021cdf]
+  - @just-web/app@7.1.5
+  - @just-web/states@7.1.5
+  - @just-web/commands@7.1.5
+  - @just-web/preferences@7.1.5
+
 ## 7.2.0
 
 ## 7.1.4
