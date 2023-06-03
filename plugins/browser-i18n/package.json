@@ -4,7 +4,7 @@
   "description": "just-web i18n plugin module for browser",
   "keywords": [
     "just-web",
-    "framework"
+    "i18n"
   ],
   "homepage": "https://github.com/justland/just-web/tree/main/plugins/browser-i18n",
   "bugs": {

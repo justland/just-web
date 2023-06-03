@@ -1,5 +1,5 @@
 /** @type {import('jest').Config} */
 export default {
 	preset: '@repobuddy/jest/presets/jsdom-ts-watch',
-	displayName: 'preferences'
+	displayName: 'browser-i18n'
 }

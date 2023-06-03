@@ -19,7 +19,7 @@ export const browserI18nGizmo = define({
 		i18n.languageChanged(newLanguage => {
 			browser.localStorage.setItem(storageKey, newLanguage)
 		})
-		const gizmo = {
+		return {
 			i18n: {
 				...i18n,
 				clearLanguage() {
@@ -28,8 +28,6 @@ export const browserI18nGizmo = define({
 				}
 			}
 		}
-
-		return gizmo
 	}
 })
 

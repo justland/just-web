@@ -3,7 +3,7 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 
-[@just-web/i18n] provides basic i18n support for browser.
+[@just-web/browser-i18n] provides basic i18n support for browser.
 
 The setting is persisted in local storage.
 
@@ -30,7 +30,7 @@ import { justApp } from '@just-web/app'
 import { i18nGizmoFn } from '@just-web/i18n'
 
 const app = await justApp({ name: 'your-app' })
-  .extend(i18nGizmoFn(navigator))
+  .with(i18nGizmoFn(navigator))
   .create()
 
 app.i18n.getLanguage() // 'en'
@@ -48,15 +48,15 @@ import { keyboardGizmoFn } from '@just-web/keyboard' // optional
 import { i18nGizmoFn } from '@just-web/i18n'
 
 const app = await justApp({ name: 'your-app' })
-  .extend(commandsGizmoFn())
-  .extend(keyboardGizmoFn())
-  .extend(i18nGizmoFn(navigator))
+  .with(commandsGizmoFn())
+  .with(keyboardGizmoFn())
+  .with(i18nGizmoFn(navigator))
   .create()
 
 setLanguageCommand('fr')
 ```
 
-[@just-web/i18n]: https://github.com/justland/just-web/tree/main/plugins/i18n
+[@just-web/browser-i18n]: https://github.com/justland/just-web/tree/main/plugins/browser-i18n
 [downloads-image]: https://img.shields.io/npm/dm/@just-web/preferences.svg?style=flat
 [downloads-url]: https://npmjs.org/package/@just-web/preferences
 [npm-image]: https://img.shields.io/npm/v/@just-web/preferences.svg?style=flat
