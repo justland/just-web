@@ -7,15 +7,14 @@ jobs:
   code:
     uses: justland/.github/.github/workflows/pnpm-verify.yml@main
     with:
-      node-version: '[16, 18]'
-      pnpm-version: 8.2.0
+      pnpm-version: 8.6.0
 
   release:
     uses: justland/.github/.github/workflows/pnpm-release-changeset.yml@main
     needs: code
     secrets: inherit
     with:
-      pnpm-version: 8.2.0
+      pnpm-version: 8.6.0
 
   # docgen:
   #     uses: justland/.github/.github/workflows/pnpm-docs.yml@main
