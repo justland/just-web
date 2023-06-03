@@ -63,7 +63,7 @@
   "dependencies": {
     "sentence-case": "~3.0.4",
     "tersify": "^3.10.2",
-    "type-plus": "^6.7.0"
+    "type-plus": "^7.0.1"
   },
   "devDependencies": {
     "@jest/globals": "^29.5.0",

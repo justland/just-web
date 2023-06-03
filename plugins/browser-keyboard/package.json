@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "mousetrap": "~1.6.5",
-    "type-plus": "^6.7.0"
+    "type-plus": "^7.0.1"
   },
   "devDependencies": {
     "@just-web/app": "workspace:^",

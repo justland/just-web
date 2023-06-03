@@ -79,7 +79,7 @@
     "@just-web/log": "workspace:^",
     "@unional/gizmo": "^2.0.2",
     "iso-error": "~6.0.2",
-    "type-plus": "^6.7.0"
+    "type-plus": "^7.0.1"
   },
   "devDependencies": {
     "@repobuddy/jest": "^3.3.0",
