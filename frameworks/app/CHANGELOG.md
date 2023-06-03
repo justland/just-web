@@ -1,5 +1,14 @@
 # @just-web/app
 
+## 7.1.5
+
+### Patch Changes
+
+- db021cdf: Update type-plus
+- Updated dependencies [db021cdf]
+  - @just-web/log@7.1.5
+  - @just-web/id@7.1.5
+
 ## 7.1.4
 
 ### Patch Changes

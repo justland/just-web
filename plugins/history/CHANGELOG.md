@@ -1,5 +1,12 @@
 # @just-web/history
 
+## 2.0.7
+
+### Patch Changes
+
+- Updated dependencies [db021cdf]
+  - @just-web/app@7.1.5
+
 ## 2.0.6
 
 ### Patch Changes

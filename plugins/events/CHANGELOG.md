@@ -1,5 +1,12 @@
 # @just-web/events
 
+## 7.1.5
+
+### Patch Changes
+
+- Updated dependencies [db021cdf]
+  - @just-web/app@7.1.5
+
 ## 7.1.4
 
 ### Patch Changes
