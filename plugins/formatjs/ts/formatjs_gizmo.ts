@@ -6,6 +6,11 @@ export interface FormatJSGizmoOptions<T = string> {
 	cache?: IntlCache
 }
 
+/**
+ * FormatJS Gizmo function.
+ *
+ * @param options The option contains the same params as in `createIntl()`
+ */
 export const formatJSGizmoFn = define(<T = string>(options: FormatJSGizmoOptions<T>) => ({
 	async create() {
 		return {
