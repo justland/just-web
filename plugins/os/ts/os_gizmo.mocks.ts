@@ -3,7 +3,9 @@ import { unpartial } from 'type-plus'
 import { isMac } from './os.js'
 import type { OSGizmo } from './os_gizmo.js'
 
-export type OSTestGizmoOptions = Partial<OSGizmo>
+export interface OSTestGizmoOptions {
+	isMac?: () => boolean
+}
 
 /**
  * Gizmo function to create a test OSGizmo.
@@ -13,7 +15,7 @@ export type OSTestGizmoOptions = Partial<OSGizmo>
 export const osTestGizmoFn: (options: OSTestGizmoOptions) => GizmoBase<OSGizmo> = define(
 	(options: OSTestGizmoOptions) => ({
 		async create() {
-			return { os: unpartial({ isMac }, options.os) }
+			return { os: unpartial({ isMac }, options) }
 		}
 	})
 )

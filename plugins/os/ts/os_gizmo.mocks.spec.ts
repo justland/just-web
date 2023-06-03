@@ -3,7 +3,7 @@ import { osTestGizmoFn } from './testing/index.js'
 
 it('can mock isMac()', async () => {
 	const { os } = await justTestApp()
-		.with(osTestGizmoFn({ os: { isMac: () => true } }))
+		.with(osTestGizmoFn({ isMac: () => true }))
 		.create()
 
 	expect(os.isMac()).toBe(true)
