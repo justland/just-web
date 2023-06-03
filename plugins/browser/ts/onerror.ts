@@ -2,20 +2,18 @@ import { getLogger, type LogGizmo, type Logger } from '@just-web/app'
 import { isType } from 'type-plus'
 import type { ErrorStore } from './error_store.types.js'
 import { BrowserError } from './errors.js'
-import { ctx } from './onerror.ctx.js'
 
 export namespace registerOnErrorHandler {
-	export type Options = {
+	export interface Options {
 		errors: ErrorStore
 		preventDefault: boolean
 	}
-	export type Meta = { logger: Logger }
+	export interface Meta {
+		logger: Logger
+	}
 }
 
-export function registerOnErrorHandler(
-	options: registerOnErrorHandler.Options,
-	gizmo?: LogGizmo
-): void
+export function registerOnErrorHandler(options: registerOnErrorHandler.Options, gizmo?: LogGizmo): void
 export function registerOnErrorHandler(
 	options: registerOnErrorHandler.Options,
 	meta?: registerOnErrorHandler.Meta
@@ -25,21 +23,14 @@ export function registerOnErrorHandler(
 	gizmoOrMeta?: LogGizmo | registerOnErrorHandler.Meta
 ): void {
 	const logger = pickLogger(gizmoOrMeta)
-	const window = ctx.getWindow()
-	const justWebOnError: OnErrorEventHandler = (event, source, lineno, colno, error) => {
-		const e = new BrowserError(event, source, lineno, colno, error)
+
+	window.addEventListener('error', ev => {
+		if (preventDefault) ev.preventDefault()
+		const e = new BrowserError(ev.message, ev.filename, ev.lineno, ev.colno, ev.error)
 		errors.add(e)
 		logger.error(`onerror detected`, e)
 		return preventDefault
-	}
-	const lastOnError = window.onerror
-	window.onerror = lastOnError
-		? function (...args) {
-				const lastPreventDefault = lastOnError(...args)
-				const preventDefault = justWebOnError(...args)
-				return lastPreventDefault || preventDefault
-		  }
-		: justWebOnError
+	})
 }
 
 function pickLogger(gizmoOrMeta?: LogGizmo | registerOnErrorHandler.Meta): Logger {

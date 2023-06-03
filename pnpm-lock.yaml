@@ -449,6 +449,9 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
+      delay:
+        specifier: ^6.0.0
+        version: 6.0.0
       depcheck:
         specifier: ~1.4.3
         version: 1.4.3
@@ -4647,6 +4650,11 @@ packages:
       p-map: 4.0.0
       rimraf: 3.0.2
       slash: 3.0.0
+    dev: true
+
+  /delay@6.0.0:
+    resolution: {integrity: sha512-2NJozoOHQ4NuZuVIr5CWd0iiLVIRSDepakaovIN+9eIDHEhdCAEvSy2cuf1DCrPPQLvHmbqTHODlhHg8UCy4zw==}
+    engines: {node: '>=16'}
     dev: true
 
   /delayed-stream@1.0.0:
