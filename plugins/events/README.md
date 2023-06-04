@@ -24,13 +24,12 @@ rush add -p @just-web/events
 ## Usage
 
 ```ts
-import { createApp } from '@just-web/app'
-import eventsPlugin from '@just-web/events'
+import { justApp } from '@just-web/app'
+import { eventsGizmoFn } from '@just-web/events'
 
-const app = createApp({ name: 'your-awesom-app' })
-  .extend(eventsPlugin)
-
-await app.start()
+const app = await justApp({ name: 'your-awesom-app' })
+  .with(eventsGizmoFn())
+  .create()
 
 app.events.emitter.emit(...)
 ```
