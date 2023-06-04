@@ -56,6 +56,9 @@ importers:
       plop:
         specifier: ^3.1.1
         version: 3.1.1
+      rimraf:
+        specifier: ~5.0.0
+        version: 5.0.0
       turbo:
         specifier: 1.10.1
         version: 1.10.1
@@ -7293,13 +7296,6 @@ packages:
     dependencies:
       minipass: 3.3.6
 
-  /minipass@3.3.4:
-    resolution: {integrity: sha512-I9WPbWHCGu8W+6k1ZiGpPu0GkoKBeorkfKNuAFBNS1HNFJvke82sxvI5bzcCNpWPorkOO5QQ+zomzzwRxejXiw==}
-    engines: {node: '>=8'}
-    dependencies:
-      yallist: 4.0.0
-    dev: true
-
   /minipass@3.3.6:
     resolution: {integrity: sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw==}
     engines: {node: '>=8'}
@@ -7867,7 +7863,7 @@ packages:
       '@npmcli/run-script': 6.0.0
       cacache: 17.0.2
       fs-minipass: 2.1.0
-      minipass: 3.3.4
+      minipass: 3.3.6
       npm-package-arg: 10.0.0
       npm-packlist: 7.0.2
       npm-pick-manifest: 8.0.1
