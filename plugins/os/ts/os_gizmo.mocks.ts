@@ -12,8 +12,8 @@ export interface OSTestGizmoOptions {
  *
  * It allows you to define the `os` object.
  */
-export const osTestGizmoFn: (options: OSTestGizmoOptions) => GizmoBase<OSGizmo> = define(
-	(options: OSTestGizmoOptions) => ({
+export const osTestGizmoFn: (options?: OSTestGizmoOptions) => GizmoBase<OSGizmo> = define(
+	(options?: OSTestGizmoOptions) => ({
 		async create() {
 			return { os: unpartial({ isMac }, options) }
 		}

@@ -8,3 +8,7 @@ it('can mock isMac()', async () => {
 
 	expect(os.isMac()).toBe(true)
 })
+
+it('options is optional', async () => {
+	justTestApp().with(osTestGizmoFn())
+})
