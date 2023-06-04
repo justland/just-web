@@ -1,5 +1,25 @@
 # @just-web/browser-preferences
 
+## 8.0.0
+
+### Major Changes
+
+- 38e5b2e9: It now uses `localStorage` from `@just-web/browser`.
+  Internalize `@just-web/preferences`.
+
+### Patch Changes
+
+- Updated dependencies [a4198e2a]
+- Updated dependencies [854d601e]
+- Updated dependencies [ec8df311]
+- Updated dependencies [eac446e6]
+- Updated dependencies [b1ed9372]
+- Updated dependencies [be2ff309]
+  - @just-web/browser@8.0.0
+  - @just-web/preferences@7.2.0
+  - @just-web/commands@7.2.0
+  - @just-web/keyboard@7.2.0
+
 ## 7.2.1
 
 ### Patch Changes

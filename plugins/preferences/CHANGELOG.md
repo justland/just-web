@@ -1,5 +1,25 @@
 # @just-web/preferences
 
+## 7.2.0
+
+### Minor Changes
+
+- 854d601e: Internalize `preferencesGizmo` inside `memoryPreferencesGizmo`.
+  Fix it to take optional `KeyboardGizmo`.
+
+  Remove extra `connect()` call in `preferencesGizmo`.
+  The implementation needs to call `connect()` anyway.
+
+  Update docs.
+
+### Patch Changes
+
+- Updated dependencies [eac446e6]
+- Updated dependencies [b1ed9372]
+- Updated dependencies [be2ff309]
+  - @just-web/commands@7.2.0
+  - @just-web/keyboard@7.2.0
+
 ## 7.1.5
 
 ### Patch Changes
