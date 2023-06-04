@@ -1,5 +1,12 @@
 # @just-web/preferences
 
+## 7.2.1
+
+### Patch Changes
+
+- @just-web/keyboard@7.2.1
+- @just-web/commands@7.2.1
+
 ## 7.2.0
 
 ### Minor Changes

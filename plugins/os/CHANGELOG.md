@@ -1,5 +1,11 @@
 # @just-web/os
 
+## 7.2.1
+
+### Patch Changes
+
+- 9a3fe036: `osTestGizmoFn()` options should be optional.
+
 ## 7.2.0
 
 ### Minor Changes

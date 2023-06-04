@@ -1,5 +1,14 @@
 # @just-web/browser-preferences
 
+## 8.0.1
+
+### Patch Changes
+
+- @just-web/keyboard@7.2.1
+- @just-web/commands@7.2.1
+- @just-web/preferences@7.2.1
+- @just-web/browser@8.0.1
+
 ## 8.0.0
 
 ### Major Changes
