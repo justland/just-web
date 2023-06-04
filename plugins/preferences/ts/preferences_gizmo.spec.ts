@@ -1,7 +1,16 @@
+import { justTestApp } from '@just-web/app/testing'
+import { commandsGizmoFn } from '@just-web/commands'
 import { nothing } from '@just-web/states'
 import { testType, type JSONTypes } from 'type-plus'
-import { clearAllUserPreferences, getUserPreference } from './index.js'
+import { clearAllUserPreferences, getUserPreference, preferencesGizmo, setUserPreference } from './index.js'
 import { setupMemoryPreferencesTestApp } from './testing/index.js'
+
+beforeEach(() => {
+	// these clear the context for testing
+	getUserPreference.connect(undefined as any)
+	setUserPreference.connect(undefined as any)
+	clearAllUserPreferences.connect(undefined as any)
+})
 
 it('can get/set user preferences', async () => {
 	const app = await setupMemoryPreferencesTestApp()
@@ -201,4 +210,13 @@ describe(`createStore()`, () => {
 		const result = store.get()
 		expect(result).toBeUndefined()
 	})
+})
+
+it('cannot be used directly. Will fail with error', async () => {
+	const app = await justTestApp()
+		.with(commandsGizmoFn())
+		.with(preferencesGizmo)
+		.create()
+
+	app.preferences.get('some-key')
 })

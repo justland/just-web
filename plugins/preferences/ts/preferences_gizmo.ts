@@ -21,11 +21,7 @@ import { clearAllUserPreferences, getUserPreference, setUserPreference } from '.
  */
 export const preferencesGizmo = define({
 	static: define.require<CommandsGizmo>().optional<KeyboardGizmo>(),
-	async create(ctx) {
-		getUserPreference.connect(ctx)
-		setUserPreference.connect(ctx)
-		clearAllUserPreferences.connect(ctx)
-
+	async create() {
 		return {
 			preferences: {
 				get: extractFunction(getUserPreference),

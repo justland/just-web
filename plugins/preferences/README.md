@@ -7,7 +7,8 @@
 
 Where the preferences are saved depends on how it is implemented in the details.
 
-You will need one of the following plugin, or create your own:
+This package provides a `memoryPreferencesGizmo` that stores preferences in memory.
+But in practice, most likely you should use a different implementation such as:
 
 - [@just-web/browser-preferences]: Save preference in browser local storage.
 - 🚧 `@just-web/service-preferences`: Save preference in a remote service.
@@ -30,18 +31,19 @@ rush add -p @just-web/preferences
 
 ## Usage
 
-```ts
-import { createApp } from '@just-web/app'
-import commandsPlugin from '@just-web/commands'
-import keyboardPlugin from '@just-web/keyboard' // optional
-import preferencesPlugin from '@just-web/preferences'
-import browserPreferencesPlugin from '@just-web/browser-preferences'
+Here is how to use `memoryPreferencesGizmo`:
 
-const app = createApp({ name: 'your-app' })
-  .extend(commandsPlugin())
-  .extend(keyboardPlugin())
-  .extend(preferencesPlugin())
-  .extend(browserPreferencesPlugin())
+```ts
+import { justApp } from '@just-web/app'
+import { commandsGizmoFn } from '@just-web/commands'
+import { keyboardGizmoFn } from '@just-web/keyboard' // optional
+import { memoryPreferencesGizmo } from '@just-web/preferences'
+
+const app = await justApp({ name: 'your-app' })
+  .with(commandsGizmoFn())
+  .with(keyboardGizmoFn())
+  .with(memoryPreferencesGizmo)
+  .create()
 ```
 
 [@just-web/preferences]: https://github.com/justland/just-web/tree/main/plugins/preferences

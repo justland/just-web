@@ -1,9 +1,11 @@
-import { define } from '@just-web/app'
+import { define, incubate } from '@just-web/app'
 import type { CommandsGizmo } from '@just-web/commands'
+import type { KeyboardGizmo } from '@just-web/keyboard'
 import { isNothing } from '@just-web/states'
 import { produce } from 'immer'
 import { MaybePromise, record } from 'type-plus'
 import { clearAllUserPreferences, getUserPreference, setUserPreference } from './preferences.js'
+import { preferencesGizmo } from './preferences_gizmo.js'
 
 /**
  * In Memory Preferences Gizmo.
@@ -14,11 +16,11 @@ import { clearAllUserPreferences, getUserPreference, setUserPreference } from '.
  *
  * It can be used during testing.
  *
+ * @example
  * ```ts
  * const app = await justApp()
  * 	.with(keyboardGizmo) // optional
  * 	.with(commandsGizmo)
- * 	.with(preferencesGizmo)
  * 	.with(memoryPreferencesGizmo).create()
  *
  * app.preferences.set('foo', 'bar')
@@ -26,12 +28,10 @@ import { clearAllUserPreferences, getUserPreference, setUserPreference } from '.
  * ```
  */
 export const memoryPreferencesGizmo = define({
-	static: define.require<CommandsGizmo>(),
+	static: define.require<CommandsGizmo>().optional<KeyboardGizmo>(),
 	async create(ctx) {
 		let storage = record<string, any>()
-		getUserPreference.connect(ctx, (key, defaultValue) => {
-			return storage[key] ?? defaultValue
-		})
+		getUserPreference.connect(ctx, (key, defaultValue) => storage[key] ?? defaultValue)
 		setUserPreference.connect(ctx, (key, value) => {
 			const v = typeof value === 'function' ? produce(storage[key], value as any) : value
 			return MaybePromise.transform(v, v => {
@@ -42,5 +42,7 @@ export const memoryPreferencesGizmo = define({
 		clearAllUserPreferences.connect(ctx, () => {
 			storage = record<string, any>()
 		})
+		const { preferences } = await incubate(ctx).with(preferencesGizmo).create()
+		return { preferences }
 	}
 })
