@@ -8,11 +8,12 @@
 Commands are basically functions.
 There are a few situations to use commands over functions:
 
-- Tracking: execution of commands are tracked. They are logged at `logLevels.trace`.
+- Type-safe: the signature of the command is defined when the command is created. This means they are more similar to signals then events.
 - Polymorphic: command can be defined by a higher-level module, and implement by a lower-level detail module. Allows you to handle the same command differently depending on the environment and condition.
 - Menu, Command Palette, Keyboard shortcuts: along with [@just-web/keyboard], commands can be displayed and invoked in different ways.
 - Cross-boundary: command can be invoked by different modules, without directly depends on the defining module (*1)
-- Dynamic dispatch: command type is a string, meaning you can dynamically construct it and invoke the command. This is useful for free from or user-based input.
+- Tracking: execution of commands are tracked. They are logged at `logLevels.trace`.
+- Dynamic dispatch: command type is a string, meaning you can dynamically construct it and invoke the command. This is useful for free from or user-based input. The command provides helper functions.
 
 *1: while this is possible,
 you do lose the ability of using the helper functions (if provided by the defining module).
@@ -38,65 +39,74 @@ rush add -p @just-web/commands
 
 ## command
 
-[`command()`] is a helper function to help you create a command.
+To create a command, you use the [`command()`] function.
 
-There are several ways to use it.
-Here are three:
+The basic way to use it is passing in an `id` and a `handler`:
 
 ```ts
-import { command, CommandsContext } from '@just-web/commands'
-import { command, KeyboardContext } from '@just-web/keyboard'
+const singCommand = command('party.sing', (songName: string) => sing(songName))
 
-export const singCommand = command<(songName: string) => void>('party.sing')
-export const danceCommand = command<(danceNumber: string) => void>({
-    id: 'party.dance',
-    desciption: 'World End Dancehall',
-    key: 'ctrl+d'
-  },
-  (danceNumber) => dance(danceNumber)
-)
-// this will be implement in another plugin
-export const drinkCommand = command<(drink: string) => void>('party.drink')
-
-const partyPlugin = definePlugin(() => ({
-  name: 'party',
-  init({ commands, keyboard }: CommandsContext & KeyboardContext) {
-    commands.handler.register(
-      singCommand.type,
-      singCommand.defineHandler((songName) => sing(songName))
-    )
-
-    danceCommand.connect({ commands, keyboard })
-
-    return [{
-      party: {
-        sing(songName: string) {
-          commands.handlers.invoke(singCommand.type, ...singCommand.defineArgs(songName))
-          // or this, as you don't really need the `defineArgs()` type helper
-          commands.handlers.invoke(singCommand.type, songName)
-        },
-        // yes, this will work, since you called `.connect({ commands })`
-        dance: danceCommand
-      }
-    }]
-  }
-}))
-
-// in drinking party plugin
-export drinkingPartyPlugin = definePlugin(() => ({
-  name: 'drinking-party',
-  init({ commands }: CommandsContext) {
-    drinkCommand.connect({ commands }, (drink) => drinkMore(drink))
-
-    return [{
-      drinkingParty: {
-        drink: drinkCommand
-      }
-    }]
-  }
-}))
+singCommand('Dancing Queen')
 ```
 
+You can also separate the declaration of the command and the implementation by specifying the type and omit the `handler`:
+
+```ts
+const singCommand = command<(name: string) => void>('party.sing')
+
+// in another file or package
+singCommand.defaultHandler((name) => sing(name))
+```
+
+However, its true power is when you use it with [@just-web].
+
+```ts
+import { define } from '@just-web/app'
+import { command, type CommandsGizmo } from '@just-web/commands'
+import { type KeyboardGizmo } from '@just-web/keyboard'
+import { extractFunction } from 'type-plus'
+
+export const singCommand = command<(songName: string) => void>('party.sing')
+export const danceCommand = command({
+    id: 'party.dance',
+    description: `World's End Dancehall`,
+    key: 'ctrl+d'
+  },
+  (danceNumber: string) => dance(danceNumber)
+)
+
+const partyPlugin = define({
+  static: define.require<CommandsGizmo>().optional<KeyboardGizmo>(),
+  async create(ctx) {
+    singCommand.connect(ctx, (songName) => sing(songName))
+    danceCommand.connect(ctx)
+
+    return {
+      party: {
+        sing(songName: string) {
+          singCommand(songName)
+        },
+        // yes, this will work, since the command is connected.
+        // the `extractFunction()` extracts the function signature from the command.
+        dance: extractFunction(danceCommand)
+      }
+    }
+  }
+})
+```
+
+In the example above, you can see that the [`command()`] function also accepts an `info` object,
+which includes additional information about the command,
+including key bindings.
+
+Then within the `gizmo`, you can connect the command to an application by calling the `connect()` function.
+
+This enables the tracking, key bindings, and command palette support for the command.
+
+You can also expose the command within the `gizmo` by wrapping (as in the `sing()` example),
+or by using the `extractFunction()` function from [type-plus].
+
+[@just-web]: https://github.com/justland/just-web
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/frameworks/commands
 [@just-web/keyboard]: https://github.com/justland/just-web/tree/main/frameworks/keyboard
 [`command()`]: https://github.com/justland/just-web/tree/main/frameworks/commands/ts/command.ts
@@ -104,3 +114,4 @@ export drinkingPartyPlugin = definePlugin(() => ({
 [downloads-url]: https://npmjs.org/package/@just-web/commands
 [npm-image]: https://img.shields.io/npm/v/@just-web/commands.svg?style=flat
 [npm-url]: https://npmjs.org/package/@just-web/commands
+[type-plus]: https://github.com/unional/type-plus

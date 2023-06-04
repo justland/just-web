@@ -2,7 +2,7 @@ import { getLogger } from '@just-web/app'
 import type { KeyBindingContribution, KeyboardGizmo } from '@just-web/keyboard'
 import type { AnyFunction } from 'type-plus'
 import type { CommandsGizmo } from './commands_gizmo.js'
-import type { Command, CommandContribution } from './types.js'
+import type { Command, CommandContribution, OverloadFallback } from './types.js'
 
 /**
  * Creates a public command.
@@ -13,7 +13,6 @@ export function command<F extends AnyFunction = () => void>(
 	info: CommandContribution & KeyBindingContribution,
 	handler?: F
 ): Command<F>
-
 /**
  * Creates a local command.
  * Local commands can be used within the plugin but the application and other plugins will not see them.
@@ -25,19 +24,23 @@ export function command<F extends AnyFunction = () => void>(
  * For example: `just-web.showCommandPalette`
  * The resulting command function will also have this as the name.
  */
-export function command<F extends AnyFunction = () => void>(id: string, handler?: F): Command<F>
+export function command<F extends AnyFunction = () => void>(id: string, handler?: OverloadFallback<F>): Command<F>
 export function command<F extends AnyFunction = () => void>(
 	idOrInfo: string | (CommandContribution & KeyBindingContribution),
 	handler?: F
 ): any {
 	const withIdString = typeof idOrInfo === 'string'
 	const info = typeof idOrInfo === 'string' ? { id: idOrInfo } : idOrInfo
+	let h = handler
 	let ctx: CommandsGizmo & Partial<KeyboardGizmo>
 
 	const fn = Object.defineProperty(
 		function (...args: Parameters<F>) {
-			if (!ctx) return getLogger('@just-web/commands').error(`cannot call '${info.id}' before connect().`)
-			return ctx.commands.handlers.invoke(info.id, ...args)
+			if (ctx) return ctx.commands.handlers.invoke(info.id, ...args)
+
+			if (h) return h(...args)
+
+			getLogger('@just-web/commands').error(`cannot call '${info.id}' before connect() or defineHandler().`)
 		},
 		'name',
 		{
@@ -50,12 +53,12 @@ export function command<F extends AnyFunction = () => void>(
 
 	return Object.assign(fn, {
 		...info,
-		connect(context: CommandsGizmo & Partial<KeyboardGizmo>, hdr?: F) {
+		connect(context: CommandsGizmo & Partial<KeyboardGizmo>, handler?: F) {
 			ctx = context
-			hdr = hdr ?? handler
-			if (!hdr) return
+			h = handler ?? h
+			if (!ctx || !h) return
 
-			ctx.commands.handlers.register(info.id, hdr)
+			ctx.commands.handlers.register(info.id, h)
 
 			if (withIdString) return
 
@@ -65,7 +68,7 @@ export function command<F extends AnyFunction = () => void>(
 			}
 		},
 		defineHandler(handler: F) {
-			return handler
+			return h = handler
 		}
 	})
 }

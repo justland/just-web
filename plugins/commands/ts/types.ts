@@ -1,9 +1,9 @@
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import type { Registry, WithAdder } from '@just-web/states'
-import type { AnyFunction } from 'type-plus'
+import type { AnyFunction, CanAssign, ExtractFunction } from 'type-plus'
 import type { CommandsGizmo } from './commands_gizmo.js'
 
-export type CommandHandler = {
+export interface CommandHandler {
 	/**
 	 * The command id. e.g. `just-web.showCommandPalette`
 	 */
@@ -11,7 +11,7 @@ export type CommandHandler = {
 	handler: AnyFunction
 }
 
-export type HandlerRegistry = {
+export interface HandlerRegistry {
 	/**
 	 * register handler for the specified command.
 	 */
@@ -28,7 +28,7 @@ export type HandlerRegistry = {
 	has(id: string): boolean
 }
 
-export type CommandContribution = {
+export interface CommandContribution {
 	/**
 	 * The command id. e.g. `just-web.showCommandPalette`
 	 *
@@ -76,6 +76,13 @@ export type CommandContribution = {
 // this is a workaround
 export type Partial<T> = { [P in keyof T]?: T[P] | undefined }
 
+export type OverloadFallback<T extends AnyFunction, Then = AnyFunction, Else = T> = CanAssign<
+	ExtractFunction<T>,
+	T,
+	Else,
+	Then
+>
+
 export interface ContributionRegistry
 	extends Registry<string, CommandContribution>,
 		WithAdder<CommandContribution> {}
@@ -104,5 +111,6 @@ export type Command<F extends AnyFunction = () => void> = F & {
 	 * use the object form `command({...}, ...)`.
 	 */
 	connect(ctx: CommandsGizmo & Partial<KeyboardGizmo | undefined>, handler?: F): void
-	defineHandler(handler: F): F
+	defineHandler(handler: OverloadFallback<F>): F
+	// defineHandler(handler: AnyFunction): F
 }

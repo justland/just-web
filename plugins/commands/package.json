@@ -32,7 +32,8 @@
       "require": {
         "types": "./cjs/index.d.ts",
         "default": "./cjs/index.js"
-      }
+      },
+      "default": "./esm/index.js"
     }
   },
   "main": "./cjs/index.js",
