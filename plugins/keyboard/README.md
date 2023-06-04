@@ -29,21 +29,22 @@ rush add -p @just-web/keyboard
 ## Usage
 
 ```ts
-import { createApp } from '@just-web/app'
-import keyboardPlugin from '@just-web/keyboard'
-import osPlugin from '@just-web/os'
+import { justApp } from '@just-web/app'
+import { keyboardGizmoFn } from '@just-web/keyboard'
 
-creatApp({ name: 'your-awesome-app' })
-  .extend(osPlugin())
-  .extend(keyboardPlugin())
+const app = await justApp({ name: 'your-awesome-app' })
+  .with(keyboardGizmoFn())
+  .create()
+
+app.keyboard.keyBindingContributions
 ```
 
-## Depends On
+It provides a `keyBindingContributions` to register key bindings.
 
-- [@just-web/os]
+Typically, you don't need to use it directly.
+Instead, use `command()` from [@just-web/command](../command/README.md).
 
 [@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/keyboard
-[@just-web/os]: https://github.com/justland/just-web/tree/main/plugins/os
 [downloads-image]: https://img.shields.io/npm/dm/@just-web/keyboard.svg?style=flat
 [downloads-url]: https://npmjs.org/package/@just-web/keyboard
 [npm-image]: https://img.shields.io/npm/v/@just-web/keyboard.svg?style=flat
