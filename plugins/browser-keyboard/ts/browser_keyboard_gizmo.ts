@@ -1,5 +1,4 @@
-import type { LogGizmo } from '@just-web/app'
-import { define } from '@just-web/app'
+import { define, type LogGizmo } from '@just-web/app'
 import type { CommandsGizmo } from '@just-web/commands'
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import type { OSGizmo } from '@just-web/os'

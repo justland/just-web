@@ -24,17 +24,18 @@ rush add -p @just-web/browser-keyboard
 ## Usage
 
 ```ts
-import { createApp } from '@just-web/app'
-import keyboardPlugin from '@just-web/keyboard'
-import commandsPlugin from '@just-web/commands'
-import osPlugin from '@just-web/os'
-import browserKeyboadrPlugin from '@just-web/browser-keyboard'
+import { justApp } from '@just-web/app'
+import { commandsGizmoFn } from '@just-web/commands'
+import { keyboardGizmoFn } from '@just-web/keyboard'
+import { osGizmo } from '@just-web/os'
+import { browserKeyboardGizmo } from '@just-web/browser-keyboard'
 
-createApp({ name: 'your-awesome-app' })
-  .extend(keyboardPlugin())
-  .extend(commandsPlugin())
-  .extend(osPlugin())
-  .extend(browserKeyboardPlugin())
+const app = await justApp({ name: 'your-awesome-app' })
+  .with(commandsGizmoFn())
+  .with(keyboardGizmoFn())
+  .with(osGizmo)
+  .with(browserKeyboardGizmo)
+  .create()
 ```
 
 ## To-do

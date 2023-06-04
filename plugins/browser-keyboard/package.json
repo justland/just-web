@@ -4,6 +4,7 @@
   "description": "browser implementation for @just-web/keyboard",
   "keywords": [
     "just-web",
+    "keyboard",
     "framework"
   ],
   "homepage": "https://github.com/justland/just-web/tree/main/plugins/browser-keyboard",
