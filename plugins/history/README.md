@@ -21,22 +21,26 @@ rush add -p @just-web/history
 ## Usage
 
 ```ts
-import { createApp } from '@just-web/app'
-import historyPlugin from '@just-web/history'
+import { justApp } from '@just-web/app'
+import { historyGizmoFn } from '@just-web/history'
 
-createApp({ name: 'your-awesome-app' })
-  .extend(historyPlugin())
+const app = await justApp({ name: 'your-awesome-app' })
+  .with(historyGizmoFn())
+  .create()
+
+app.history...
 ```
 
 You can also provide a custom history instance:
 
 ```ts
-import { createApp } from '@just-web/app'
-import historyPlugin from '@just-web/history'
+import { justApp } from '@just-web/app'
+import { historyGizmoFn } from '@just-web/history'
 import { createMemoryHistory } from 'history'
 
-createApp({ name: 'your-awesome-app' })
-  .extend(historyPlugin({ history:createMemoryHistory() }))
+const app = await justApp({ name: 'your-awesome-app' })
+  .with(historyGizmoFn({ history:createMemoryHistory() }))
+  .create()
 ```
 
 [@just-web]: https://github.com/justland/just-web
