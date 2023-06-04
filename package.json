@@ -12,7 +12,6 @@
     "commands": "pnpm --filter=@just-web/commands",
     "coverage": "turbo run coverage",
     "cs": "changeset",
-    "cs:patch": "patch -d node_modules/@changesets/assemble-release-plan/dist -s -p0 < .changeset/assemble-release-plan.patch",
     "depcheck": "turbo run depcheck",
     "dev": "turbo run dev --parallel",
     "errors": "pnpm --filter=@just-web/errors",
@@ -43,7 +42,7 @@
     "verify": "turbo run lint build coverage depcheck size",
     "version": "changeset version && pnpm install",
     "watch": "jest --watch",
-    "prepare": "husky install && pnpm cs:patch",
+    "prepare": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
   },
@@ -69,5 +68,10 @@
     "turbo": "1.10.1",
     "typescript": "^5.0.4"
   },
-  "packageManager": "pnpm@8.6.0"
+  "packageManager": "pnpm@8.6.0",
+  "pnpm": {
+    "patchedDependencies": {
+      "@changesets/assemble-release-plan@5.2.3": "patches/@changesets__assemble-release-plan@5.2.3.patch"
+    }
+  }
 }
