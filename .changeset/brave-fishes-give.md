@@ -1,5 +1,5 @@
 ---
-'@just-web/browser': fix
+'@just-web/browser': patch
 ---
 
 Use `addEventListener` over `onerror`.
