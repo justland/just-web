@@ -1,5 +1,8 @@
-import { registerOnErrorHandler } from './onerror.js'
-
 export const ctx = {
-	registerOnErrorHandler
+	sessionStorage,
+	localStorage,
+	navigator,
+	location,
+	addEventListener,
+	removeEventListener
 }

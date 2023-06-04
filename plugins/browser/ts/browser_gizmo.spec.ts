@@ -1,11 +1,13 @@
 import { justTestApp } from '@just-web/app/testing'
-import { testType } from 'type-plus'
+import { AssertOrder, a, some, startsWith } from 'assertron'
+import { logLevels } from 'standard-log'
+import { stub, testType } from 'type-plus'
 import { ctx } from './browser_gizmo.ctx.js'
+import { throwBrowserError } from './errors.testing.js'
 import { browserGizmoFn } from './index.js'
-import { registerOnErrorHandler } from './onerror.js'
 
 afterEach(() => {
-	ctx.registerOnErrorHandler = registerOnErrorHandler
+	ctx.addEventListener = addEventListener
 	localStorage.clear()
 	sessionStorage.clear()
 })
@@ -15,15 +17,44 @@ it('can omit options', async () => {
 	expect(browser.errors).toBeDefined()
 })
 
-it('sends preventDefault to registerOnErrorHandler', async () => {
+it('calls preventDefault() when set to true', async () => {
+	const o = new AssertOrder(1)
 	expect.assertions(1)
-	ctx.registerOnErrorHandler = options => {
-		expect(options.preventDefault).toBe(true)
-	}
+	ctx.addEventListener = ((event: string, listener: (ev: ErrorEvent) => any) => {
+		expect(event).toEqual('error')
+		const preventDefault = () => {
+			o.once(1)
+		}
+		listener(
+			stub<ErrorEvent>({
+				preventDefault,
+				message: 'stub'
+			})
+		)
+	}) as any
 
 	await justTestApp()
 		.with(browserGizmoFn({ preventDefault: true }))
 		.create()
+
+	await o.end()
+})
+
+it('logs captured error', async () => {
+	const { log } = await justTestApp()
+		.with(browserGizmoFn({ preventDefault: true }))
+		.create()
+
+	await throwBrowserError()
+
+	a.satisfies(
+		log.reporter.logs,
+		some({
+			id: 'test:@just-web/browser',
+			level: logLevels.error,
+			args: startsWith(['onerror detected'])
+		})
+	)
 })
 
 it('provides sessionStorage', async () => {

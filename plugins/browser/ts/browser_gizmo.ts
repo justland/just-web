@@ -2,6 +2,7 @@ import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-
 import { ctx } from './browser_gizmo.ctx.js'
 import { createErrorStore, toReadonlyErrorStore } from './error_store.js'
 import type { ReadonlyErrorStore } from './error_store.types.js'
+import { BrowserError } from './errors.js'
 
 export interface BrowserGizmoOptions {
 	/**
@@ -13,39 +14,52 @@ export interface BrowserGizmoOptions {
 
 export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 	DepBuilder<LogGizmo, unknown>,
-	{
-		browser: {
-			errors: ReadonlyErrorStore
-			sessionStorage: Storage
-			localStorage: Storage
-			navigator: Navigator
-			location: Location
-		}
-	}
+	[
+		{
+			browser: {
+				errors: ReadonlyErrorStore
+				sessionStorage: Storage
+				localStorage: Storage
+				navigator: Navigator
+				location: Location
+			}
+		},
+		() => () => void
+	]
 > = define((options?: BrowserGizmoOptions) => ({
 	static: define.require<LogGizmo>(),
 	async create({ log }) {
 		const errors = createErrorStore()
+		const logger = log.getLogger(`@just-web/browser`)
+		const preventDefault = options?.preventDefault ?? false
+
 		// Normally, gizmo should not do work during create.
 		// However this is a special case as we want to listen to any error,
 		// including those occurs during the creation phase.
-		ctx.registerOnErrorHandler(
-			{
-				errors,
-				preventDefault: options?.preventDefault ?? false
-			},
-			{ log }
-		)
-
-		return {
-			browser: {
-				errors: toReadonlyErrorStore(errors),
-				sessionStorage,
-				localStorage,
-				navigator,
-				location
-			}
+		function listener(ev: ErrorEvent) {
+			if (preventDefault) ev.preventDefault()
+			const e = new BrowserError(ev.message, ev.filename, ev.lineno, ev.colno, ev.error)
+			errors.add(e)
+			logger.error(`onerror detected`, e)
+			return preventDefault
 		}
+		ctx.addEventListener('error', listener)
+
+		const { sessionStorage, localStorage, navigator, location } = ctx
+
+		return [
+			{
+				browser: {
+					errors: toReadonlyErrorStore(errors),
+					sessionStorage,
+					localStorage,
+					navigator,
+					location
+				}
+			},
+			// This is no effect right now as `just-web` does not yet support clean up
+			() => () => ctx.removeEventListener('error', listener)
+		]
 	}
 }))
 

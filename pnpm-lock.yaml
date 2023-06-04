@@ -490,9 +490,6 @@ importers:
       rimraf:
         specifier: ~5.0.0
         version: 5.0.0
-      satisfier:
-        specifier: ^5.4.2
-        version: 5.4.2
       size-limit:
         specifier: ~8.2.0
         version: 8.2.3
