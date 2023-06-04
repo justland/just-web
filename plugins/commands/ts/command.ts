@@ -36,7 +36,7 @@ export function command<F extends AnyFunction = () => void>(
 
 	const fn = Object.defineProperty(
 		function (...args: Parameters<F>) {
-			if (!ctx) return getLogger('@just-web/log').error(`cannot call '${info.id}' before connect().`)
+			if (!ctx) return getLogger('@just-web/commands').error(`cannot call '${info.id}' before connect().`)
 			return ctx.commands.handlers.invoke(info.id, ...args)
 		},
 		'name',
