@@ -74,6 +74,7 @@
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },
   "dependencies": {
+    "@just-web/preferences": "workspace:^",
     "@just-web/states": "workspace:^",
     "immer": "npm:@unional/immer@^9.0.0-beta.2",
     "js-base64": "^3.7.3",
@@ -81,9 +82,9 @@
   },
   "devDependencies": {
     "@just-web/app": "workspace:^",
+    "@just-web/browser": "workspace:^",
     "@just-web/commands": "workspace:^",
     "@just-web/keyboard": "workspace:^",
-    "@just-web/preferences": "workspace:^",
     "@repobuddy/jest": "^3.3.0",
     "@repobuddy/typescript": "^1.2.0",
     "@size-limit/preset-small-lib": "~8.2.0",
@@ -105,7 +106,13 @@
   },
   "peerDependencies": {
     "@just-web/app": "workspace:^",
+    "@just-web/browser": "workspace:^",
     "@just-web/commands": "workspace:^",
-    "@just-web/preferences": "workspace:^"
+    "@just-web/keyboard": "workspace:^"
+  },
+  "peerDependenciesMeta": {
+    "@just-web/keyboard": {
+      "optional": true
+    }
   }
 }

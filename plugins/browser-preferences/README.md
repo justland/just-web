@@ -23,26 +23,25 @@ rush add -p @just-web/browser-preferences
 
 ## Depends on
 
-- [@just-web/keyboard]: dependency of [@just-web/commands]
+- [@just-web/keyboard]
 - [@just-web/commands]
-- [@just-web/preferences]
+- [@just-web/browser]
 
 ## Usage
 
 ```ts
-import { createApp } from '@just-web/app'
-import keyboardPlugin from '@just-web/keyboard'
-import commandsPlugin from '@just-web/commands'
-import preferencesPlugin from '@just-web/preferences'
-import bpPlugin from '@just-web/browser-preferences'
+import { justApp } from '@just-web/app'
+import { browserGizmoFn } from '@just-web/browser'
+import { commandsGizmoFn } from '@just-web/commands'
+import { keyboardGizmoFn } from '@just-web/keyboard' // optional
+import { browserPreferencesGizmo } from '@just-web/browser-preferences'
 
-const app = createApp({name: 'your-awesome-app'})
-  .extend(keyboardPlugin())
-  .extend(commandsPlugin())
-  .extend(perferencesPlugin())
-  .extend(bpPlugin())
-
-await app.start()
+const app = await justApp({name: 'your-awesome-app'})
+  .with(commandsGizmoFn())
+  .with(keyboardGizmoFn())
+  .with(browserGizmoFn())
+  .with(browserPreferencesGizmo)
+  .create()
 
 // using the `preferences` API.
 app.preferences.get(...)
@@ -52,6 +51,7 @@ app.preferences.clearAll()
 ```
 
 [@just-web/browser-preferences]: https://github.com/justland/just-web/tree/main/plugins/browser-preferences
+[@just-web/browser]: https://github.com/justland/just-web/tree/main/plugins/browser
 [@just-web/commands]: https://github.com/justland/just-web/tree/main/plugins/commands
 [@just-web/keyboard]: https://github.com/justland/just-web/tree/main/plugins/keyboard
 [@just-web/preferences]: https://github.com/justland/just-web/tree/main/plugins/preferences

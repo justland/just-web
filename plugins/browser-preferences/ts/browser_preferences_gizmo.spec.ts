@@ -2,10 +2,8 @@ import { logLevels } from '@just-web/app'
 import { clearAllUserPreferences } from '@just-web/preferences'
 import { nothing } from '@just-web/states'
 import { a, hasAll, some } from 'assertron'
-import { ctx } from './local_storage_store.ctx.js'
-import { browserPreferencesGizmoTestApp, resetLocalStorage, stubLocalStorage } from './testing/index.js'
-
-afterEach(resetLocalStorage)
+import { browserPreferencesGizmoTestApp } from './testing/index.js'
+import { stubLocalStorage } from '@just-web/browser/testing'
 
 it('register just-web.clearAllUserPreferences contribution', async () => {
 	const { commands } = await browserPreferencesGizmoTestApp()
@@ -20,12 +18,16 @@ it('gets undefined if the preference does not exist', async () => {
 })
 
 it('can specify a default value (which is not saved to the store)', async () => {
-	const { preferences } = await browserPreferencesGizmoTestApp()
-	stubLocalStorage({
-		setItem() {
-			fail('should not reach')
+	const { preferences } = await browserPreferencesGizmoTestApp({
+		browser: {
+			localStorage: stubLocalStorage({
+				setItem() {
+					fail('should not reach')
+				}
+			})
 		}
 	})
+
 	const result = preferences.get('some-key', 'abc')
 	expect(result).toEqual('abc')
 })
@@ -39,10 +41,13 @@ it('uses set to save', async () => {
 it('save with key prefixed with app name, so that preferences are unique across micro front end apps', async () => {
 	expect.assertions(1)
 
-	const { preferences } = await browserPreferencesGizmoTestApp()
-	stubLocalStorage({
-		setItem(key) {
-			expect(key).toEqual('test:my-key')
+	const { preferences } = await browserPreferencesGizmoTestApp({
+		browser: {
+			localStorage: stubLocalStorage({
+				setItem(key) {
+					expect(key).toEqual('test:my-key')
+				}
+			})
 		}
 	})
 
@@ -50,13 +55,17 @@ it('save with key prefixed with app name, so that preferences are unique across 
 })
 
 it('encodes the value when save to the store', async () => {
-	const { preferences } = await browserPreferencesGizmoTestApp()
-	expect.assertions(1)
-	stubLocalStorage({
-		setItem: (_, value) => {
-			expect(value).not.toEqual('hello')
+	const { preferences } = await browserPreferencesGizmoTestApp({
+		browser: {
+			localStorage: stubLocalStorage({
+				setItem: (_, value) => {
+					expect(value).not.toEqual('hello')
+				}
+			})
 		}
 	})
+	expect.assertions(1)
+
 	preferences.set('my-key', 'hello')
 })
 
@@ -106,7 +115,6 @@ describe('app.preferences.clearAll()', () => {
 		const { preferences, log } = await browserPreferencesGizmoTestApp()
 		preferences.set('x', '123')
 		preferences.set('y', 'abc')
-		const localStorage = ctx.getLocalStorage()
 		localStorage.setItem('someone-else-value', 'hello')
 		preferences.clearAll()
 		expect(preferences.get('x')).toBeUndefined()
