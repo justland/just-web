@@ -1,5 +1,19 @@
 # @just-web/browser-contributions
 
+## 8.0.0
+
+### Patch Changes
+
+- ee642ea4: Update docs
+- Updated dependencies [524c758a]
+- Updated dependencies [0f945d08]
+- Updated dependencies [eac446e6]
+- Updated dependencies [b1ed9372]
+- Updated dependencies [be2ff309]
+  - @just-web/os@7.2.0
+  - @just-web/commands@7.2.0
+  - @just-web/keyboard@7.2.0
+
 ## 7.2.1
 
 ### Patch Changes

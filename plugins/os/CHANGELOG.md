@@ -1,5 +1,15 @@
 # @just-web/os
 
+## 7.2.0
+
+### Minor Changes
+
+- 524c758a: Adjust `OSTestGizmoOptions` type.
+
+### Patch Changes
+
+- 0f945d08: Update docs
+
 ## 7.1.5
 
 ### Patch Changes

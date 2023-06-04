@@ -1,5 +1,23 @@
 # @just-web/presets-browser
 
+## 7.0.2
+
+### Patch Changes
+
+- 9ab6d601: Remove extra peer deps
+- Updated dependencies [a4198e2a]
+- Updated dependencies [ec8df311]
+- Updated dependencies [ac6c1d7f]
+- Updated dependencies [eac446e6]
+- Updated dependencies [38e5b2e9]
+- Updated dependencies [b1ed9372]
+- Updated dependencies [be2ff309]
+  - @just-web/browser@8.0.0
+  - @just-web/history@2.0.8
+  - @just-web/commands@7.2.0
+  - @just-web/browser-preferences@8.0.0
+  - @just-web/keyboard@7.2.0
+
 ## 7.0.1
 
 ### Patch Changes

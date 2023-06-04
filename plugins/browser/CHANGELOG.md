@@ -1,5 +1,16 @@
 # @just-web/browser
 
+## 8.0.0
+
+### Minor Changes
+
+- ec8df311: Add `stubLocalStorage()` and `stubSessionStorage()`.
+
+### Patch Changes
+
+- a4198e2a: Use `addEventListener` over `onerror`.
+  Update some types to use `inferface` over `type` to improve performance.
+
 ## 7.2.1
 
 ### Patch Changes

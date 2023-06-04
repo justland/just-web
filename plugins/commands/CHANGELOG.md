@@ -1,5 +1,20 @@
 # @just-web/commands
 
+## 7.2.0
+
+### Minor Changes
+
+- b1ed9372: Allow `command` to be used without `connect()`.
+  Fix support on function overload.
+  Fix `defaultHandler()` support.
+  Change some type to `interface` for performance.
+
+### Patch Changes
+
+- eac446e6: Adjust logger id
+- Updated dependencies [be2ff309]
+  - @just-web/keyboard@7.2.0
+
 ## 7.1.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @just-web/events
 
+## 7.1.6
+
+### Patch Changes
+
+- 501df971: Update docs
+
 ## 7.1.5
 
 ### Patch Changes

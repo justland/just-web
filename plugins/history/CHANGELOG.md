@@ -1,5 +1,11 @@
 # @just-web/history
 
+## 2.0.8
+
+### Patch Changes
+
+- ac6c1d7f: Update docs
+
 ## 2.0.7
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @just-web/keyboard
 
+## 7.2.0
+
+### Patch Changes
+
+- be2ff309: Update docs.
+- Updated dependencies [524c758a]
+- Updated dependencies [0f945d08]
+  - @just-web/os@7.2.0
+
 ## 7.1.5
 
 ### Patch Changes
