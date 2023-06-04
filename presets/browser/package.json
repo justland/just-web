@@ -93,10 +93,7 @@
   },
   "peerDependencies": {
     "@just-web/app": "workspace:^",
-    "@just-web/browser": "workspace:^",
-    "@just-web/browser-preferences": "workspace:^",
     "@just-web/commands": "workspace:^",
-    "@just-web/history": "workspace:^",
     "@just-web/keyboard": "workspace:^"
   },
   "peerDependenciesMeta": {

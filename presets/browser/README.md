@@ -9,7 +9,7 @@ This presets includes:
 
 - [@just-web/browser](https://www.npmjs.com/package/@just-web/browser)
 - [@just-web/browser-preferences](https://www.npmjs.com/package/@just-web/browser-preferences)
-- [history](https://www.npmjs.com/package/history)
+- [@just-web/history](https://www.npmjs.com/package/@just-web/history)
 
 As a presets, you do not need to install any of the included packages yourself.
 
@@ -37,10 +37,16 @@ rush add -p @just-web/presets-browser
 ## Usage
 
 ```ts
-import { createApp } from '@just-web/app'
-import browserPresetsPlugin from '@just-web/presets-browser'
+import { justApp } from '@just-web/app'
+import { commandsGizmoFn } from '@just-web/commands'
+import { keyboardGizmoFn } from '@just-web/keyboard' // optional
+import { presetsBrowserGizmoFn } from '@just-web/presets-browser'
 
-createApp({ name: 'your-awesome-app' }).extend(browserPresetsPlugin())
+const app = await justApp({ name: 'your-awesome-app' })
+  .with(commandsGizmoFn())
+  .with(keyboardGizmoFn())
+  .with(presetsBrowserGizmoFn())
+  .create()
 ```
 
 [`@just-web/presets-browser`]: https://github.com/justland/just-web/tree/main/plugins/presets-browser
