@@ -12,6 +12,7 @@
     "commands": "pnpm --filter=@just-web/commands",
     "coverage": "turbo run coverage",
     "cs": "changeset",
+    "cs:patch": "patch -d node_modules/@changesets/assemble-release-plan/dist -s -p0 < .changeset/assemble-release-plan.patch",
     "depcheck": "turbo run depcheck",
     "dev": "turbo run dev --parallel",
     "errors": "pnpm --filter=@just-web/errors",
@@ -42,11 +43,12 @@
     "verify": "turbo run lint build coverage depcheck size",
     "version": "changeset version && pnpm install",
     "watch": "jest --watch",
-    "prepare": "husky install",
+    "prepare": "husky install && pnpm cs:patch",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
   },
   "devDependencies": {
+    "@changesets/assemble-release-plan": "^5.2.3",
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",

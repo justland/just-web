@@ -1,0 +1,36 @@
+diff -Naru ../dist.orig/assemble-release-plan.cjs.dev.js ./assemble-release-plan.cjs.dev.js
+--- ../dist.orig/assemble-release-plan.cjs.dev.js	2023-06-04 13:59:19.094694817 -0700
++++ ./assemble-release-plan.cjs.dev.js	2023-06-04 13:59:31.314692215 -0700
+@@ -251,7 +251,7 @@
+   // we check if it is a peerDependency because if it is, our dependent bump type might need to be major.
+   return depType === "peerDependencies" && nextRelease.type !== "none" && nextRelease.type !== "patch" && ( // 1. If onlyUpdatePeerDependentsWhenOutOfRange set to true, bump major if the version is leaving the range.
+   // 2. If onlyUpdatePeerDependentsWhenOutOfRange set to false, bump major regardless whether or not the version is leaving the range.
+-  !onlyUpdatePeerDependentsWhenOutOfRange || !semver__default['default'].satisfies(incrementVersion(nextRelease, preInfo), versionRange)) && ( // bump major only if the dependent doesn't already has a major release.
++  !onlyUpdatePeerDependentsWhenOutOfRange) && ( // bump major only if the dependent doesn't already has a major release.
+   !releases.has(dependent) || releases.has(dependent) && releases.get(dependent).type !== "major");
+ }
+
+diff -Naru ../dist.orig/assemble-release-plan.cjs.prod.js ./assemble-release-plan.cjs.prod.js
+--- ../dist.orig/assemble-release-plan.cjs.prod.js	2023-06-04 13:59:19.094694817 -0700
++++ ./assemble-release-plan.cjs.prod.js	2023-06-04 13:59:50.894688247 -0700
+@@ -130,7 +130,7 @@
+ }
+
+ function shouldBumpMajor({dependent: dependent, depType: depType, versionRange: versionRange, releases: releases, nextRelease: nextRelease, preInfo: preInfo, onlyUpdatePeerDependentsWhenOutOfRange: onlyUpdatePeerDependentsWhenOutOfRange}) {
+-  return "peerDependencies" === depType && "none" !== nextRelease.type && "patch" !== nextRelease.type && (!onlyUpdatePeerDependentsWhenOutOfRange || !semver__default.default.satisfies(incrementVersion(nextRelease, preInfo), versionRange)) && (!releases.has(dependent) || releases.has(dependent) && "major" !== releases.get(dependent).type);
++  return "peerDependencies" === depType && "none" !== nextRelease.type && "patch" !== nextRelease.type && (!onlyUpdatePeerDependentsWhenOutOfRange) && (!releases.has(dependent) || releases.has(dependent) && "major" !== releases.get(dependent).type);
+ }
+
+ function flattenReleases(changesets, packagesByName, ignoredPackages) {
+diff -Naru ../dist.orig/assemble-release-plan.esm.js ./assemble-release-plan.esm.js
+--- ../dist.orig/assemble-release-plan.esm.js	2023-06-04 13:59:19.094694817 -0700
++++ ./assemble-release-plan.esm.js	2023-06-04 14:00:10.054683934 -0700
+@@ -243,7 +243,7 @@
+   // we check if it is a peerDependency because if it is, our dependent bump type might need to be major.
+   return depType === "peerDependencies" && nextRelease.type !== "none" && nextRelease.type !== "patch" && ( // 1. If onlyUpdatePeerDependentsWhenOutOfRange set to true, bump major if the version is leaving the range.
+   // 2. If onlyUpdatePeerDependentsWhenOutOfRange set to false, bump major regardless whether or not the version is leaving the range.
+-  !onlyUpdatePeerDependentsWhenOutOfRange || !semver.satisfies(incrementVersion(nextRelease, preInfo), versionRange)) && ( // bump major only if the dependent doesn't already has a major release.
++  !onlyUpdatePeerDependentsWhenOutOfRange) && ( // bump major only if the dependent doesn't already has a major release.
+   !releases.has(dependent) || releases.has(dependent) && releases.get(dependent).type !== "major");
+ }
+
