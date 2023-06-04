@@ -649,6 +649,9 @@ importers:
 
   plugins/browser-preferences:
     dependencies:
+      '@just-web/preferences':
+        specifier: workspace:^
+        version: link:../preferences
       '@just-web/states':
         specifier: workspace:^
         version: link:../../libraries/states
@@ -674,9 +677,6 @@ importers:
       '@just-web/keyboard':
         specifier: workspace:^
         version: link:../keyboard
-      '@just-web/preferences':
-        specifier: workspace:^
-        version: link:../preferences
       '@repobuddy/jest':
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
