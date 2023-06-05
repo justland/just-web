@@ -1,5 +1,11 @@
 # @just-web/browser
 
+## 8.0.2
+
+### Patch Changes
+
+- 086a298b: Fix addEventListener "Illegal Invocation"
+
 ## 8.0.1
 
 ## 8.0.0
