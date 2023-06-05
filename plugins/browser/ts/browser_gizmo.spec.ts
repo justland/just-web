@@ -7,7 +7,7 @@ import { throwBrowserError } from './errors.testing.js'
 import { browserGizmoFn } from './index.js'
 
 afterEach(() => {
-	ctx.addEventListener = addEventListener
+	ctx.addEventListener = addEventListener.bind(window)
 	localStorage.clear()
 	sessionStorage.clear()
 })
