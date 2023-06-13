@@ -35,8 +35,8 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(@typescript-eslint/eslint-plugin@5.43.0)(eslint@8.28.0)(typescript@5.0.4)
       eslint-plugin-yml:
-        specifier: ~1.7.0
-        version: 1.7.0(eslint@8.28.0)
+        specifier: ~1.8.0
+        version: 1.8.0(eslint@8.28.0)
       husky:
         specifier: ^8.0.1
         version: 8.0.2
@@ -1486,8 +1486,8 @@ importers:
         specifier: ^0.6.6
         version: 0.6.7(eslint@8.28.0)(typescript@5.0.4)
       eslint-plugin-yml:
-        specifier: ~1.7.0
-        version: 1.7.0(eslint@8.28.0)
+        specifier: ~1.8.0
+        version: 1.8.0(eslint@8.28.0)
       jest:
         specifier: ^29.5.0
         version: 29.5.0(@types/node@14.18.43)(ts-node@10.9.1)
@@ -5033,8 +5033,8 @@ packages:
       - typescript
     dev: false
 
-  /eslint-plugin-yml@1.7.0(eslint@8.28.0):
-    resolution: {integrity: sha512-qq61FQJk+qIgWl0R06bec7UQQEIBrUH22jS+MroTbFUKu+3/iVlGRpZd8mjpOAm/+H/WEDFwy4x/+kKgVGbsWw==}
+  /eslint-plugin-yml@1.8.0(eslint@8.28.0):
+    resolution: {integrity: sha512-fgBiJvXD0P2IN7SARDJ2J7mx8t0bLdG6Zcig4ufOqW5hOvSiFxeUyc2g5I1uIm8AExbo26NNYCcTGZT0MXTsyg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
