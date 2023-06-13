@@ -1,5 +1,7 @@
 # @just-web/browser
 
+## 8.0.3
+
 ## 8.0.2
 
 ### Patch Changes

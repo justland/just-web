@@ -1,5 +1,12 @@
 # @just-web/presets-browser
 
+## 7.0.5
+
+### Patch Changes
+
+- @just-web/browser-preferences@8.0.3
+- @just-web/browser@8.0.3
+
 ## 7.0.4
 
 ### Patch Changes
