@@ -1,5 +1,11 @@
 # @just-web/preferences
 
+## 7.2.2
+
+### Patch Changes
+
+- 5cdcaa75: Re-export `SetStateValue` for inferred type cannot be named error.
+
 ## 7.2.1
 
 ### Patch Changes
