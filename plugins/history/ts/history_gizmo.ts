@@ -1,5 +1,6 @@
 import { define, type GizmoBase } from '@just-web/app'
-import { createBrowserHistory, type History } from 'history'
+import { createBrowserHistory } from 'history'
+import type { History } from './history.types.js'
 
 export type HistoryGizmoOptions = {
 	history: History
