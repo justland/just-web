@@ -1,5 +1,13 @@
 # @just-web/presets-browser
 
+## 7.0.6
+
+### Patch Changes
+
+- fd71ed32: Re-export types for "Inferred type cannot be named" errors
+- Updated dependencies [fd71ed32]
+  - @just-web/history@2.0.9
+
 ## 7.0.5
 
 ### Patch Changes
