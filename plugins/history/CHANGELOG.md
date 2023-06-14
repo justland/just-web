@@ -1,5 +1,11 @@
 # @just-web/history
 
+## 2.0.9
+
+### Patch Changes
+
+- fd71ed32: Re-export types for "Inferred type cannot be named" errors
+
 ## 2.0.8
 
 ### Patch Changes
