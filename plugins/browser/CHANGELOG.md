@@ -1,5 +1,12 @@
 # @just-web/browser
 
+## 8.1.0
+
+### Minor Changes
+
+- 80722ebb: Add `throwBrowserError()` for testing
+  Adjust to use inferface instead of type
+
 ## 8.0.3
 
 ## 8.0.2

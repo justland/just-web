@@ -1,6 +1,6 @@
 {
   "name": "@just-web/browser-preferences",
-  "version": "8.0.3",
+  "version": "8.1.0",
   "description": "browser implementation for @just-web/preferences",
   "keywords": [
     "just-web",

@@ -1,5 +1,11 @@
 # @just-web/history
 
+## 2.1.0
+
+### Minor Changes
+
+- 198707ec: Add `@just-web/history/testing`
+
 ## 2.0.9
 
 ### Patch Changes

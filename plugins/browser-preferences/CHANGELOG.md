@@ -1,5 +1,16 @@
 # @just-web/browser-preferences
 
+## 8.1.0
+
+### Minor Changes
+
+- e0bc7198: Reexport `@just-web/browser/testing`
+
+### Patch Changes
+
+- Updated dependencies [80722ebb]
+  - @just-web/browser@8.1.0
+
 ## 8.0.3
 
 ### Patch Changes
