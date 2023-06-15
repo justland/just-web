@@ -1,10 +1,8 @@
 import { justTestApp } from '@just-web/app/testing'
-import type { BrowserGizmo } from '@just-web/browser'
 import { commandsGizmoFn } from '@just-web/commands'
-import type { HistoryGizmo } from '@just-web/history'
-import { createMemoryHistory } from 'history'
 import { testType } from 'type-plus'
-import { presetsBrowserGizmoFn } from './index.js'
+import { presetsBrowserGizmoFn, type BrowserGizmo, type HistoryGizmo } from './index.js'
+import { createMemoryHistory } from './testing/index.js'
 
 it('provides history', async () => {
 	const app = await justTestApp().with(commandsGizmoFn()).with(presetsBrowserGizmoFn()).create()
