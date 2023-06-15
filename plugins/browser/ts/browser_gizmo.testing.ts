@@ -1,7 +1,7 @@
 import { define, incubate, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
 import { browserGizmoFn, type BrowserGizmo, type BrowserGizmoOptions } from './browser_gizmo.js'
 
-export type BrowserTestGizmoOptions = BrowserGizmoOptions & {
+export interface BrowserTestGizmoOptions extends BrowserGizmoOptions {
 	sessionStorage?: Storage | undefined
 	localStorage?: Storage | undefined
 	navigator?: Partial<Navigator> | undefined

@@ -1,6 +1,6 @@
 import { justTestApp } from '@just-web/app/testing'
 import { stub } from 'type-plus'
-import { browserTestGizmoFn } from './browser_gizmo.testing.js'
+import { browserTestGizmoFn } from './testing/index.js'
 
 afterEach(() => {
 	localStorage.clear()

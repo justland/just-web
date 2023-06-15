@@ -1,8 +1,7 @@
 import { justTestApp } from '@just-web/app/testing'
 import { assertType } from 'type-plus'
-import { browserGizmoFn } from './browser_gizmo.js'
-import { BrowserError } from './errors.js'
-import { throwBrowserError } from './errors.testing.js'
+import { BrowserError, browserGizmoFn } from './index.js'
+import { throwBrowserError } from './testing/index.js'
 
 it('captures error', async () => {
 	// adding this suppresses jest catching the error for some reason
