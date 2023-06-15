@@ -2,8 +2,7 @@ import { logLevels } from '@just-web/app'
 import { clearAllUserPreferences } from '@just-web/preferences'
 import { nothing } from '@just-web/states'
 import { a, hasAll, some } from 'assertron'
-import { browserPreferencesGizmoTestApp } from './testing/index.js'
-import { stubLocalStorage } from '@just-web/browser/testing'
+import { browserPreferencesGizmoTestApp, stubLocalStorage } from './testing/index.js'
 
 it('register just-web.clearAllUserPreferences contribution', async () => {
 	const { commands } = await browserPreferencesGizmoTestApp()
