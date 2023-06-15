@@ -1,5 +1,20 @@
 # @just-web/presets-browser
 
+## 7.1.0
+
+### Minor Changes
+
+- 2c3465b4: Add `@just-web/presets-browser/testing
+
+### Patch Changes
+
+- Updated dependencies [80722ebb]
+- Updated dependencies [198707ec]
+- Updated dependencies [e0bc7198]
+  - @just-web/browser@8.1.0
+  - @just-web/history@2.1.0
+  - @just-web/browser-preferences@8.1.0
+
 ## 7.0.6
 
 ### Patch Changes
