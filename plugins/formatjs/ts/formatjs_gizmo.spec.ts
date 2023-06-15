@@ -1,7 +1,6 @@
-import { type IntlShape } from '@formatjs/intl'
 import { justTestApp } from '@just-web/app/testing'
 import { testType } from 'type-plus'
-import { formatJSGizmoFn } from './index.js'
+import { formatJSGizmoFn, type IntlShape } from './index.js'
 
 it('provides formatjs.intl', async () => {
 	const app = await justTestApp()
