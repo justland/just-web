@@ -1,6 +1,7 @@
 import { justTestApp } from '@just-web/app/testing'
-import { createBrowserHistory, createMemoryHistory } from 'history'
+import { createBrowserHistory } from 'history'
 import { historyGizmoFn } from './index.js'
+import { createMemoryHistory } from './testing/index.js'
 
 it('creates browser history by default', async () => {
 	const { history } = await justTestApp().with(historyGizmoFn()).create()
