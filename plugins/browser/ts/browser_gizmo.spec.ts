@@ -3,7 +3,7 @@ import { AssertOrder, a, some, startsWith } from 'assertron'
 import { logLevels } from 'standard-log'
 import { stub, testType } from 'type-plus'
 import { ctx } from './browser_gizmo.ctx.js'
-import { throwBrowserError } from './errors.testing.js'
+import { throwBrowserError } from './testing/index.js'
 import { browserGizmoFn } from './index.js'
 
 afterEach(() => {

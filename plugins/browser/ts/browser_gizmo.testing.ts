@@ -6,6 +6,7 @@ export interface BrowserTestGizmoOptions extends BrowserGizmoOptions {
 	localStorage?: Storage | undefined
 	navigator?: Partial<Navigator> | undefined
 	location?: Partial<Location> | undefined
+	fetch?: ((input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>) | undefined
 }
 
 export const browserTestGizmoFn: (
@@ -23,7 +24,8 @@ export const browserTestGizmoFn: (
 					localStorage: options?.localStorage ?? browser.localStorage,
 					navigator: (options?.navigator ?? browser.navigator) as Navigator,
 					location: (options?.location ?? browser.location) as Location
-				}
+				},
+				fetch: options?.fetch ?? fetch
 			}
 		}
 	})

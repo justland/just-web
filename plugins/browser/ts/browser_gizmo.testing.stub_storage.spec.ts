@@ -1,4 +1,4 @@
-import { stubStorage } from './browser_gizmo.testing.js'
+import { stubStorage } from './testing/index.js'
 
 it('key', () => {
 	const s = stubStorage()

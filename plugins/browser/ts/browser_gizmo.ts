@@ -23,6 +23,7 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 				navigator: Navigator
 				location: Location
 			}
+			fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
 		},
 		() => () => void
 	]
@@ -45,7 +46,7 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 		}
 		ctx.addEventListener('error', listener)
 
-		const { sessionStorage, localStorage, navigator, location } = ctx
+		const { fetch, sessionStorage, localStorage, navigator, location } = ctx
 
 		return [
 			{
@@ -55,7 +56,8 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 					localStorage,
 					navigator,
 					location
-				}
+				},
+				fetch
 			},
 			// This is no effect right now as `just-web` does not yet support clean up
 			() => () => ctx.removeEventListener('error', listener)

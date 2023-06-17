@@ -32,3 +32,18 @@ it('can mock local storage', async () => {
 		.create()
 	expect(browser.localStorage.getItem('abc')).toEqual('value')
 })
+
+it('can mock fetch', async () => {
+	expect.assertions(1)
+	const { fetch } = await justTestApp()
+		.with(
+			browserTestGizmoFn({
+				async fetch(input) {
+					expect(input).toEqual('abc.com')
+					return new Response()
+				}
+			})
+		)
+		.create()
+	await fetch('abc.com')
+})

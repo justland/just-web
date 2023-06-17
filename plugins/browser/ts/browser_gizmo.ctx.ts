@@ -3,6 +3,7 @@ export const ctx = {
 	localStorage,
 	navigator,
 	location,
+	fetch,
 	addEventListener: addEventListener.bind(window),
 	removeEventListener: removeEventListener.bind(window)
 }
