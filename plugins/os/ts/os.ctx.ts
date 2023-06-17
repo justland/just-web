@@ -1,7 +1,7 @@
 import platform from 'platform'
 
 export namespace ctx {
-	export type OperatingSystem = {
+	export interface OperatingSystem {
 		family?: string | undefined
 	}
 }
