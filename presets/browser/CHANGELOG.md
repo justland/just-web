@@ -1,5 +1,15 @@
 # @just-web/presets-browser
 
+## 7.1.1
+
+### Patch Changes
+
+- Updated dependencies [1ef492ba]
+  - @just-web/browser@8.2.0
+  - @just-web/keyboard@7.2.2
+  - @just-web/browser-preferences@8.2.0
+  - @just-web/commands@7.2.2
+
 ## 7.1.0
 
 ### Minor Changes

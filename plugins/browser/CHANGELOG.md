@@ -1,5 +1,11 @@
 # @just-web/browser
 
+## 8.2.0
+
+### Minor Changes
+
+- 1ef492ba: Add fetch
+
 ## 8.1.0
 
 ### Minor Changes

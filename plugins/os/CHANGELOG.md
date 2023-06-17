@@ -1,5 +1,12 @@
 # @just-web/os
 
+## 7.2.2
+
+### Patch Changes
+
+- 28b94b4b: use `interface` over `type`.
+  add JSDoc.
+
 ## 7.2.1
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @just-web/browser-i18n
 
+## 3.0.7
+
+### Patch Changes
+
+- Updated dependencies [1ef492ba]
+  - @just-web/browser@8.2.0
+  - @just-web/keyboard@7.2.2
+  - @just-web/commands@7.2.2
+  - @just-web/i18n@1.0.4
+
 ## 3.0.6
 
 ### Patch Changes

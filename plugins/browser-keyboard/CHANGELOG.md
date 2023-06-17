@@ -1,5 +1,14 @@
 # @just-web/browser-contributions
 
+## 8.2.0
+
+### Patch Changes
+
+- Updated dependencies [28b94b4b]
+  - @just-web/os@7.2.2
+  - @just-web/keyboard@7.2.2
+  - @just-web/commands@7.2.2
+
 ## 8.1.0
 
 ## 8.0.3

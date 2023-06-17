@@ -1,5 +1,12 @@
 # @just-web/i18n
 
+## 1.0.4
+
+### Patch Changes
+
+- @just-web/keyboard@7.2.2
+- @just-web/commands@7.2.2
+
 ## 1.0.3
 
 ### Patch Changes
