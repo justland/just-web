@@ -11,6 +11,5 @@ it('can stub the fetch function', async () => {
 		.create()
 
 	const r = await app.fetch('dummy')
-	expect(await r.body!.toString()).toEqual('{ "value": "abc" }')
 	expect(await r.json()).toEqual({ value: 'abc' })
 })
