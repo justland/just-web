@@ -77,7 +77,7 @@
   "dependencies": {
     "@just-web/id": "workspace:^",
     "@just-web/log": "workspace:^",
-    "@unional/gizmo": "^2.0.2",
+    "@unional/gizmo": "^2.2.0",
     "iso-error": "~6.0.2",
     "type-plus": "^7.0.1"
   },

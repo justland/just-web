@@ -17,6 +17,7 @@
     "errors": "pnpm --filter=@just-web/errors",
     "events": "pnpm --filter=@just-web/events",
     "ex-browser": "pnpm --filter=./examples/browser",
+    "just-fetch": "pnpm --filter=@just-web/fetch",
     "formatjs": "pnpm --filter=@just-web/formatjs",
     "framework": "pnpm --filter=@just-web/framework",
     "history": "pnpm --filter=@just-web/history",
