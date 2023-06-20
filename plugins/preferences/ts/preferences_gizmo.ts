@@ -5,8 +5,6 @@ import { isNothing, type SetStateValue, type Updater } from '@just-web/states'
 import { extractFunction, isType, MaybePromise, type AnyFunction, type JSONTypes } from 'type-plus'
 import { clearAllUserPreferences, getUserPreference, setUserPreference } from './preferences.js'
 
-export type { SetStateValue }
-
 /**
  * Preferences Gizmo.
  * This gizmo provides the commands to get/set user preferences.
