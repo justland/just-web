@@ -1,4 +1,5 @@
 import { define, incubate, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
+import type { Fetch } from '@just-web/fetch'
 import { browserGizmoFn, type BrowserGizmo, type BrowserGizmoOptions } from './browser_gizmo.js'
 
 export interface BrowserTestGizmoOptions extends BrowserGizmoOptions {
@@ -6,7 +7,7 @@ export interface BrowserTestGizmoOptions extends BrowserGizmoOptions {
 	localStorage?: Storage | undefined
 	navigator?: Partial<Navigator> | undefined
 	location?: Partial<Location> | undefined
-	fetch?: ((input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>) | undefined
+	fetch?: Fetch
 }
 
 export const browserTestGizmoFn: (

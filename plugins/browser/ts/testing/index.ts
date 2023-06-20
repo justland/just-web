@@ -1,4 +1,4 @@
-import 'cross-fetch/polyfill'
+export * from '@just-web/fetch/testing'
 export * from '../browser_gizmo.testing.js'
 export type { ErrorStore, ReadonlyErrorStore } from '../error_store.types.js'
 export * from '../errors.js'

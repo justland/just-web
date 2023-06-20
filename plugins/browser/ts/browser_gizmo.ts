@@ -1,4 +1,5 @@
 import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
+import type { Fetch } from '@just-web/fetch'
 import { ctx } from './browser_gizmo.ctx.js'
 import { createErrorStore, toReadonlyErrorStore } from './error_store.js'
 import type { ReadonlyErrorStore } from './error_store.types.js'
@@ -23,7 +24,7 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 				navigator: Navigator
 				location: Location
 			}
-			fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
+			fetch: Fetch
 		},
 		() => () => void
 	]
