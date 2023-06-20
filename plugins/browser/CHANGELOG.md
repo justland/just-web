@@ -1,5 +1,14 @@
 # @just-web/browser
 
+## 8.2.1
+
+### Patch Changes
+
+- f08838bf: Export error_store types for testing exports.
+
+  The `@just-web/browser/testing` is separated from `@just-web/browser`.
+  TypeScript was reporting the "inferred type cannot be named" error.
+
 ## 8.2.0
 
 ### Minor Changes

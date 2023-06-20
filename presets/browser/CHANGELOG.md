@@ -1,5 +1,13 @@
 # @just-web/presets-browser
 
+## 7.1.2
+
+### Patch Changes
+
+- Updated dependencies [f08838bf]
+  - @just-web/browser@8.2.1
+  - @just-web/browser-preferences@8.2.1
+
 ## 7.1.1
 
 ### Patch Changes
