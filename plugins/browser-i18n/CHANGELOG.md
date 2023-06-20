@@ -1,5 +1,12 @@
 # @just-web/browser-i18n
 
+## 3.0.8
+
+### Patch Changes
+
+- Updated dependencies [f08838bf]
+  - @just-web/browser@8.2.1
+
 ## 3.0.7
 
 ### Patch Changes
