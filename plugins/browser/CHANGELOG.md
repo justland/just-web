@@ -1,5 +1,19 @@
 # @just-web/browser
 
+## 8.3.0
+
+### Minor Changes
+
+- e3495e9e: Use `@just-web/fetch` with better type support
+
+### Patch Changes
+
+- Updated dependencies [8eeca3e0]
+- Updated dependencies [8eeca3e0]
+  - @just-web/app@7.2.0
+  - @just-web/fetch@1.0.0
+  - @just-web/states@7.1.5
+
 ## 8.2.1
 
 ### Patch Changes

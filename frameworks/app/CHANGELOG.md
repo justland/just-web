@@ -1,5 +1,17 @@
 # @just-web/app
 
+## 7.2.0
+
+### Minor Changes
+
+- 8eeca3e0: Update `@unional/gizmo` to add support of sync `create()`.
+
+### Patch Changes
+
+- Updated dependencies [8eeca3e0]
+  - @just-web/log@7.2.0
+  - @just-web/id@7.2.0
+
 ## 7.1.5
 
 ### Patch Changes
