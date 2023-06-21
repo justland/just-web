@@ -1,5 +1,14 @@
 # @just-web/commands
 
+## 7.2.3
+
+### Patch Changes
+
+- Updated dependencies [8eeca3e0]
+  - @just-web/app@7.2.0
+  - @just-web/states@7.1.5
+  - @just-web/keyboard@7.2.3
+
 ## 7.2.2
 
 ### Patch Changes

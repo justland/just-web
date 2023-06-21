@@ -1,5 +1,11 @@
 # @just-web/id
 
+## 7.2.0
+
+### Minor Changes
+
+- 8eeca3e0: Update `@unional/gizmo` to add support of sync `create()`.
+
 ## 7.1.5
 
 ## 7.1.4

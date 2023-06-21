@@ -1,5 +1,13 @@
 # @just-web/routes
 
+## 7.1.6
+
+### Patch Changes
+
+- Updated dependencies [8eeca3e0]
+  - @just-web/app@7.2.0
+  - @just-web/states@7.1.5
+
 ## 7.1.5
 
 ### Patch Changes

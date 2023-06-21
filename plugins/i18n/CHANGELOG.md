@@ -1,5 +1,14 @@
 # @just-web/i18n
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [8eeca3e0]
+  - @just-web/app@7.2.0
+  - @just-web/commands@7.2.3
+  - @just-web/keyboard@7.2.3
+
 ## 1.0.4
 
 ### Patch Changes

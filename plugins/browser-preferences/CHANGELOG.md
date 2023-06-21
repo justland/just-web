@@ -1,5 +1,18 @@
 # @just-web/browser-preferences
 
+## 8.3.0
+
+### Patch Changes
+
+- Updated dependencies [e3495e9e]
+- Updated dependencies [8eeca3e0]
+  - @just-web/browser@8.3.0
+  - @just-web/app@7.2.0
+  - @just-web/states@7.1.5
+  - @just-web/commands@7.2.3
+  - @just-web/keyboard@7.2.3
+  - @just-web/preferences@7.2.4
+
 ## 8.2.1
 
 ### Patch Changes
