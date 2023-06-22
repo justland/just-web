@@ -1,24 +1,23 @@
 import { define, incubate, type IdGizmo, type LogGizmo } from '@just-web/app'
-import { browserGizmoFn, type BrowserGizmoOptions } from '@just-web/browser'
 import { browserPreferencesGizmo } from '@just-web/browser-preferences'
+import { browserTestGizmoFn, type BrowserTestGizmoOptions } from '@just-web/browser/testing'
 import type { CommandsGizmo } from '@just-web/commands'
 import { historyGizmoFn, type HistoryGizmoOptions } from '@just-web/history'
 import type { KeyboardGizmo } from '@just-web/keyboard'
+import type { PresetsBrowserGizmo } from './presets_browser_gizmo.js'
 
-export interface PresetsBrowserGizmoOptions {
-	browser?: BrowserGizmoOptions
+export interface PresetsBrowserTestGizmoOptions {
+	browser?: BrowserTestGizmoOptions
 	history?: HistoryGizmoOptions
 }
 
-export const presetsBrowserGizmoFn = define((options?: PresetsBrowserGizmoOptions) => ({
+export const presetsBrowserTestGizmoFn = define((options?: PresetsBrowserTestGizmoOptions) => ({
 	static: define.require<IdGizmo>().require<LogGizmo>().require<CommandsGizmo>().optional<KeyboardGizmo>(),
-	async create(ctx) {
+	create(ctx): Promise<PresetsBrowserGizmo> {
 		return incubate(ctx)
-			.with(browserGizmoFn(options?.browser))
+			.with(browserTestGizmoFn(options?.browser))
 			.with(browserPreferencesGizmo)
 			.with(historyGizmoFn(options?.history))
 			.create()
 	}
 }))
-
-export type PresetsBrowserGizmo = define.Infer<typeof presetsBrowserGizmoFn>
