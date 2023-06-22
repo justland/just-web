@@ -1,5 +1,16 @@
 # @just-web/preferences
 
+## 7.2.5
+
+### Patch Changes
+
+- ef288022: Update `typescript` to 5.1.3. This fix the gizmo function type issue.
+- Updated dependencies [ef288022]
+  - @just-web/states@7.1.6
+  - @just-web/commands@7.2.4
+  - @just-web/keyboard@7.2.4
+  - @just-web/app@7.2.1
+
 ## 7.2.4
 
 ### Patch Changes

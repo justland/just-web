@@ -1,5 +1,13 @@
 # @just-web/log
 
+## 7.2.1
+
+### Patch Changes
+
+- ef288022: Update `typescript` to 5.1.3. This fix the gizmo function type issue.
+- Updated dependencies [ef288022]
+  - @just-web/id@7.2.1
+
 ## 7.2.0
 
 ### Minor Changes
