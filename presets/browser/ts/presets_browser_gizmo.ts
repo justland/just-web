@@ -1,4 +1,9 @@
-import { define, incubate, type IdGizmo, type LogGizmo } from '@just-web/app'
+import {
+	define,
+	incubate,
+	type IdGizmo,
+	type LogGizmo
+} from '@just-web/app'
 import { browserGizmoFn, type BrowserGizmoOptions } from '@just-web/browser'
 import { browserPreferencesGizmo } from '@just-web/browser-preferences'
 import type { CommandsGizmo } from '@just-web/commands'

@@ -1,4 +1,6 @@
 ignores:
+  - '@just-web/fetch'  # inferred type needs
+  - '@just-web/states' # inferred type needs
   - '@repobuddy/*'
   - '@size-limit/*'
   - '@types/jest'
