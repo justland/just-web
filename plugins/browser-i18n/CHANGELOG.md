@@ -1,5 +1,17 @@
 # @just-web/browser-i18n
 
+## 3.0.10
+
+### Patch Changes
+
+- ef288022: Update `typescript` to 5.1.3. This fix the gizmo function type issue.
+- Updated dependencies [ef288022]
+  - @just-web/commands@7.2.4
+  - @just-web/keyboard@7.2.4
+  - @just-web/browser@8.3.1
+  - @just-web/app@7.2.1
+  - @just-web/i18n@1.0.6
+
 ## 3.0.9
 
 ### Patch Changes

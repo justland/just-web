@@ -1,5 +1,25 @@
 # @just-web/presets-browser
 
+## 7.2.0
+
+### Minor Changes
+
+- d202d3e7: Add `presetsBrowserTestGizmoFn` to `@just-web/presets-browser/testing`
+
+### Patch Changes
+
+- ef288022: Update `typescript` to 5.1.3. This fix the gizmo function type issue.
+- ef288022: Add depends on `@just-web/fetch` and `@just-web/states` for inferred type.
+- Updated dependencies [ef288022]
+  - @just-web/browser-preferences@8.3.1
+  - @just-web/states@7.1.6
+  - @just-web/commands@7.2.4
+  - @just-web/keyboard@7.2.4
+  - @just-web/browser@8.3.1
+  - @just-web/history@2.1.2
+  - @just-web/app@7.2.1
+  - @just-web/fetch@1.0.1
+
 ## 7.1.3
 
 ### Patch Changes
