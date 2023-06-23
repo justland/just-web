@@ -1,5 +1,13 @@
 # @just-web/presets-browser
 
+## 7.2.1
+
+### Patch Changes
+
+- 3dfb75b2: It should not overridden subGizmos.
+
+  `presetsBrowserTestGizmoFn` defaults history to `memory`.
+
 ## 7.2.0
 
 ### Minor Changes
