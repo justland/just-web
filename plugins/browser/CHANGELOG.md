@@ -1,5 +1,12 @@
 # @just-web/browser
 
+## 8.4.0
+
+### Minor Changes
+
+- 0c29bbe9: Supports getting `fetch` from optional `FetchGizmo`.
+  Supports using custom `fetch` from options.
+
 ## 8.3.2
 
 ### Patch Changes
