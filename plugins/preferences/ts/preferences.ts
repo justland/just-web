@@ -1,6 +1,8 @@
 import { command } from '@just-web/commands'
 import type { SetStateValue } from '@just-web/states'
 
+export type { SetStateValue }
+
 /**
  * Gets a specific user preference
  *

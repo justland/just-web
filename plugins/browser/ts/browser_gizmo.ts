@@ -5,6 +5,8 @@ import { createErrorStore, toReadonlyErrorStore } from './error_store.js'
 import type { ReadonlyErrorStore } from './error_store.types.js'
 import { BrowserError } from './errors.js'
 
+export type { Fetch }
+
 export interface BrowserGizmoOptions {
 	/**
 	 * Prevents the default event handler of `onerror` to be fired.

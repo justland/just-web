@@ -2,8 +2,10 @@ import { define } from '@just-web/app'
 import type { CommandsGizmo } from '@just-web/commands'
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import { isNothing, type SetStateValue, type Updater } from '@just-web/states'
-import { extractFunction, isType, MaybePromise, type AnyFunction, type JSONTypes } from 'type-plus'
+import { MaybePromise, extractFunction, isType, type AnyFunction, type JSONTypes } from 'type-plus'
 import { clearAllUserPreferences, getUserPreference, setUserPreference } from './preferences.js'
+
+export type { SetStateValue }
 
 /**
  * Preferences Gizmo.
