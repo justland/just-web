@@ -1,5 +1,13 @@
 # @just-web/browser-preferences
 
+## 8.3.2
+
+### Patch Changes
+
+- Updated dependencies [fe05170f]
+  - @just-web/preferences@7.2.6
+  - @just-web/browser@8.3.2
+
 ## 8.3.1
 
 ### Patch Changes

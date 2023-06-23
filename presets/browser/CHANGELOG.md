@@ -1,5 +1,14 @@
 # @just-web/presets-browser
 
+## 7.2.2
+
+### Patch Changes
+
+- fe05170f: Re-export used types to fix inferred type cannot be named issues.
+- Updated dependencies [fe05170f]
+  - @just-web/browser@8.3.2
+  - @just-web/browser-preferences@8.3.2
+
 ## 7.2.1
 
 ### Patch Changes

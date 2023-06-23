@@ -1,5 +1,11 @@
 # @just-web/preferences
 
+## 7.2.6
+
+### Patch Changes
+
+- fe05170f: Re-export used types to fix inferred type cannot be named issues.
+
 ## 7.2.5
 
 ### Patch Changes

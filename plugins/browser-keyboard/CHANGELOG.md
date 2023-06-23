@@ -1,5 +1,7 @@
 # @just-web/browser-contributions
 
+## 8.3.2
+
 ## 8.3.1
 
 ### Patch Changes
