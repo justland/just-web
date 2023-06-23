@@ -1,5 +1,11 @@
 # @just-web/browser
 
+## 8.3.2
+
+### Patch Changes
+
+- fe05170f: Re-export used types to fix inferred type cannot be named issues.
+
 ## 8.3.1
 
 ### Patch Changes
