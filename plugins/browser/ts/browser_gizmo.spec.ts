@@ -3,8 +3,8 @@ import { AssertOrder, a, some, startsWith } from 'assertron'
 import { logLevels } from 'standard-log'
 import { stub, testType } from 'type-plus'
 import { ctx } from './browser_gizmo.ctx.js'
-import { throwBrowserError } from './testing/index.js'
 import { browserGizmoFn } from './index.js'
+import { throwBrowserError } from './testing/index.js'
 
 afterEach(() => {
 	ctx.addEventListener = addEventListener.bind(window)
@@ -83,4 +83,26 @@ it('provides location', async () => {
 
 	testType.equal<typeof app.browser.location, Location>(true)
 	expect(app.browser.location).toBeDefined()
+})
+
+it('uses fetch from FetchGizmo if provided', async () => {
+	const app = await justTestApp()
+		.merge({ fetch: async () => new Response('{}') })
+		.with(browserGizmoFn())
+		.create()
+	const r = await app.fetch('abc')
+	expect(await r.json()).toEqual({})
+})
+
+it('uses fetch from options if provided, over from FetchGizmo', async () => {
+	const app = await justTestApp()
+		.merge({
+			fetch: async () => {
+				throw 'should not reach'
+			}
+		})
+		.with(browserGizmoFn({ fetch: async () => new Response('{}') }))
+		.create()
+	const r = await app.fetch('abc')
+	expect(await r.json()).toEqual({})
 })
