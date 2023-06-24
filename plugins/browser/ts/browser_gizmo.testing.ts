@@ -16,7 +16,7 @@ export const browserTestGizmoFn: (
 	(options?: BrowserTestGizmoOptions) => ({
 		static: define.require<LogGizmo>(),
 		async create(ctx) {
-			const { browser } = await incubate(ctx).with(browserGizmoFn(options)).create()
+			const { browser, fetch } = await incubate(ctx).with(browserGizmoFn(options)).create()
 
 			return {
 				browser: {
@@ -26,7 +26,7 @@ export const browserTestGizmoFn: (
 					navigator: (options?.navigator ?? browser.navigator) as Navigator,
 					location: (options?.location ?? browser.location) as Location
 				},
-				fetch: options?.fetch ?? fetch
+				fetch
 			}
 		}
 	})
