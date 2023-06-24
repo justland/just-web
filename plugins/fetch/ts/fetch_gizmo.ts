@@ -7,7 +7,7 @@ import { type Fetch } from './fetch.js'
 export const fetchGizmo = define({
 	create() {
 		return {
-			fetch: fetch as Fetch
+			fetch: globalThis.fetch.bind(globalThis) as Fetch
 		}
 	}
 })
