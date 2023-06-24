@@ -1,5 +1,12 @@
 # @just-web/browser-preferences
 
+## 8.4.1
+
+### Patch Changes
+
+- Updated dependencies [62ba2d2e]
+  - @just-web/browser@8.4.1
+
 ## 8.4.0
 
 ### Patch Changes

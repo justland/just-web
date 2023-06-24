@@ -1,5 +1,13 @@
 # @just-web/browser
 
+## 8.4.1
+
+### Patch Changes
+
+- 62ba2d2e: Bind `fetch`
+- Updated dependencies [62ba2d2e]
+  - @just-web/fetch@1.0.2
+
 ## 8.4.0
 
 ### Minor Changes
