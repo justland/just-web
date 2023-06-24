@@ -1,5 +1,7 @@
 # @just-web/browser-contributions
 
+## 8.4.2
+
 ## 8.4.1
 
 ## 8.4.0

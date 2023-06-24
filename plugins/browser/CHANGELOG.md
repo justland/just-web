@@ -1,5 +1,11 @@
 # @just-web/browser
 
+## 8.4.2
+
+### Patch Changes
+
+- 3140c0d2: Fix test gizmo to use the same fetch from browser gizmo
+
 ## 8.4.1
 
 ### Patch Changes
