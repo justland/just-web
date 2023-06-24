@@ -1,5 +1,11 @@
 # @just-web/fetch
 
+## 1.0.2
+
+### Patch Changes
+
+- 62ba2d2e: Bind `fetch`
+
 ## 1.0.1
 
 ### Patch Changes
