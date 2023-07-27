@@ -1487,11 +1487,11 @@ importers:
         specifier: ^8.11.0
         version: 8.28.0
       eslint-config-prettier:
-        specifier: ~8.8.0
-        version: 8.8.0(eslint@8.28.0)
+        specifier: ~8.9.0
+        version: 8.9.0(eslint@8.28.0)
       eslint-plugin-harmony:
         specifier: ^7.1.1
-        version: 7.1.2(@typescript-eslint/eslint-plugin@6.0.0)(eslint-config-prettier@8.8.0)(eslint@8.28.0)(typescript@5.0.4)
+        version: 7.1.2(@typescript-eslint/eslint-plugin@6.0.0)(eslint-config-prettier@8.9.0)(eslint@8.28.0)(typescript@5.0.4)
       eslint-plugin-storybook:
         specifier: ^0.6.6
         version: 0.6.7(eslint@8.28.0)(typescript@5.0.4)
@@ -5413,8 +5413,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-prettier@8.8.0(eslint@8.28.0):
-    resolution: {integrity: sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==}
+  /eslint-config-prettier@8.9.0(eslint@8.28.0):
+    resolution: {integrity: sha512-+sbni7NfVXnOpnRadUA8S28AUlsZt9GjgFvABIRL9Hkn8KqNzOp+7Lw4QWtrwn20KzU3wqu1QoOj2m+7rKRqkA==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -5442,7 +5442,7 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-harmony@7.1.2(@typescript-eslint/eslint-plugin@6.0.0)(eslint-config-prettier@8.8.0)(eslint@8.28.0)(typescript@5.0.4):
+  /eslint-plugin-harmony@7.1.2(@typescript-eslint/eslint-plugin@6.0.0)(eslint-config-prettier@8.9.0)(eslint@8.28.0)(typescript@5.0.4):
     resolution: {integrity: sha512-45MPltz+iTWdJ4FTXNOy3fB1kgsM8XFB6qum24qsclb9yh3kkBuk9Myzu8Rcyv8u/GldcTZQJ1xvHBNneISk9Q==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
@@ -5457,7 +5457,7 @@ packages:
       '@typescript-eslint/experimental-utils': 5.43.0(eslint@8.28.0)(typescript@5.0.4)
       '@typescript-eslint/parser': 5.60.0(eslint@8.28.0)(typescript@5.0.4)
       eslint: 8.28.0
-      eslint-config-prettier: 8.8.0(eslint@8.28.0)
+      eslint-config-prettier: 8.9.0(eslint@8.28.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
