@@ -50,8 +50,8 @@
   "devDependencies": {
     "@changesets/assemble-release-plan": "^5.2.3",
     "@changesets/cli": "^2.26.1",
-    "@commitlint/cli": "^17.0.2",
-    "@commitlint/config-conventional": "^17.0.2",
+    "@commitlint/cli": "^18.0.0",
+    "@commitlint/config-conventional": "^18.0.0",
     "@types/jest": "^29.5.1",
     "eslint": "^8.17.0",
     "eslint-plugin-harmony": "^7.1.2",
