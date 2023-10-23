@@ -71,7 +71,7 @@
 	},
 	"devDependencies": {
 		"@repobuddy/jest": "^3.3.0",
-		"@size-limit/preset-small-lib": "~9.0.0",
+		"@size-limit/preset-small-lib": "~10.0.0",
 		"cross-env": "^7.0.3",
 		"size-limit": "~9.0.0"
 	},
