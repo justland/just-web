@@ -62,7 +62,7 @@
     "jest-watch-toggle-config-2": "^2.1.0",
     "jest-watch-typeahead": "^2.2.2",
     "npm-check-updates": "^16.0.0",
-    "npm-run-all2": "^5.0.0",
+    "npm-run-all2": "^6.0.0",
     "pinst": "^3.0.0",
     "plop": "^4.0.0",
     "rimraf": "~5.0.0",
