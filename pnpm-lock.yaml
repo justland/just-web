@@ -163,8 +163,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -227,8 +227,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -300,8 +300,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -364,8 +364,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -434,8 +434,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -513,8 +513,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -583,8 +583,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -668,8 +668,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -744,8 +744,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -811,8 +811,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -878,8 +878,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -939,8 +939,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -996,8 +996,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -1062,8 +1062,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -1126,8 +1126,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -1193,8 +1193,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -1260,8 +1260,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -1330,8 +1330,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -1409,8 +1409,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(jest-watch-suspend@1.1.2)(jest-watch-toggle-config-2@2.1.0)(jest-watch-typeahead@2.2.2)(jest@29.5.0)(ts-jest@29.1.0)
       '@repobuddy/typescript':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@size-limit/preset-small-lib':
         specifier: ~11.1.0
         version: 11.1.0(size-limit@11.0.0)
@@ -3342,6 +3342,14 @@ packages:
       clibuilder: 8.0.17
       dirname-filename-esm: 1.1.1
       execa: 7.1.1
+    dev: true
+
+  /@repobuddy/typescript@2.0.0:
+    resolution: {integrity: sha512-Rt/YGq/UFVg9urdtpAmk4o2k3VjUSKiyCtAWjLASd1mOAngQl75yy8tZbpwB/06oJr0V7sroOavst59fha5uvA==}
+    dependencies:
+      clibuilder: 8.0.17
+      dirname-filename-esm: 1.1.1
+      execa: 8.0.1
     dev: true
 
   /@rushstack/eslint-patch@1.2.0:
