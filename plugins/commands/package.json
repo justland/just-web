@@ -62,7 +62,7 @@
     "verify": "npm-run-all -p build lint coverage depcheck -p size"
   },
   "dependencies": {
-    "sentence-case": "~3.0.4",
+    "sentence-case": "~4.0.0",
     "tersify": "^3.10.2",
     "type-plus": "^7.0.1"
   },
