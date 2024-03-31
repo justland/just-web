@@ -70,7 +70,7 @@
 		"typescript": "^5.0.4"
 	},
 	"devDependencies": {
-		"@repobuddy/jest": "^3.3.0",
+		"@repobuddy/jest": "^4.0.0",
 		"@size-limit/preset-small-lib": "~11.1.0",
 		"cross-env": "^7.0.3",
 		"size-limit": "~11.1.0"
