@@ -82,7 +82,7 @@
     "@just-web/keyboard": "workspace:^",
     "@repobuddy/jest": "^4.0.0",
     "@repobuddy/typescript": "^1.2.0",
-    "@size-limit/preset-small-lib": "~11.1.0",
+    "@size-limit/preset-small-lib": "~11.2.0",
     "@types/jest": "^29.5.1",
     "assertron": "^11.2.0",
     "cross-env": "^7.0.3",
