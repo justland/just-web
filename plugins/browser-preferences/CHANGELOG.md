@@ -1,5 +1,11 @@
 # @just-web/browser-preferences
 
+## 8.4.3
+
+### Patch Changes
+
+- @just-web/browser@8.4.3
+
 ## 8.4.2
 
 ### Patch Changes

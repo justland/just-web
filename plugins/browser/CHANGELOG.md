@@ -1,5 +1,12 @@
 # @just-web/browser
 
+## 8.4.3
+
+### Patch Changes
+
+- Updated dependencies [3dbc733a]
+  - @just-web/fetch@2.0.0
+
 ## 8.4.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @just-web/browser-i18n
 
+## 3.0.15
+
+### Patch Changes
+
+- @just-web/browser@8.4.3
+
 ## 3.0.14
 
 ### Patch Changes
