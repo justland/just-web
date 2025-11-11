@@ -2,6 +2,12 @@
 	"files": [],
 	"exclude": ["plops"],
 	"references": [
+    {
+      "path": "examples/browser"
+    },
+    {
+      "path": "frameworks/id"
+    },
 		{
 			"path": "frameworks/app"
 		},

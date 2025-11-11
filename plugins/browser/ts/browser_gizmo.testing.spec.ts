@@ -11,7 +11,7 @@ it('can mock session storage', async () => {
 	const { browser } = await justTestApp()
 		.with(
 			browserTestGizmoFn({
-				sessionStorage: stub({
+				sessionStorage: stub<any>({
 					getItem: () => 'value'
 				})
 			})
@@ -24,7 +24,7 @@ it('can mock local storage', async () => {
 	const { browser } = await justTestApp()
 		.with(
 			browserTestGizmoFn({
-				localStorage: stub({
+				localStorage: stub<any>({
 					getItem: () => 'value'
 				})
 			})

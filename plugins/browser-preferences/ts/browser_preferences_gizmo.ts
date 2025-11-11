@@ -1,5 +1,5 @@
 import { define, incubate, type IdGizmo, type LogGizmo } from '@just-web/app'
-import { type BrowserGizmo } from '@just-web/browser'
+import type { BrowserGizmo } from '@just-web/browser'
 import type { CommandsGizmo } from '@just-web/commands'
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import {

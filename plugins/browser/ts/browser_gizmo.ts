@@ -1,11 +1,9 @@
 import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
-import { type Fetch, type FetchGizmo } from '@just-web/fetch'
 import { ctx } from './browser_gizmo.ctx.js'
 import { createErrorStore, toReadonlyErrorStore } from './error_store.js'
 import type { ReadonlyErrorStore } from './error_store.types.js'
 import { BrowserError } from './errors.js'
-
-export type { Fetch, FetchGizmo }
+import type { Fetch, FetchGizmo } from './just-web/fetch.js'
 
 export interface BrowserGizmoOptions {
 	/**

@@ -99,7 +99,7 @@ describe(`preferences.createState()`, () => {
 		const { preferences } = await setupTestApp()
 		const store = preferences.createStore<{ b: string }>('some-pref')
 		const result = store.get()
-		isType.equal<true, { b: string }, typeof result>()
+		isType.equal<true, { b: string } | undefined, typeof result>()
 	})
 
 	describe(`get()`, () => {
@@ -108,7 +108,7 @@ describe(`preferences.createState()`, () => {
 
 			const result = store.get()
 
-			isType.equal<true, JSONTypes, typeof result>()
+			isType.equal<true, JSONTypes | undefined, typeof result>()
 			expect(result).toBeUndefined()
 		})
 
@@ -117,7 +117,7 @@ describe(`preferences.createState()`, () => {
 
 			const result = store.get()
 
-			isType.equal<true, { a: number }, typeof result>()
+			isType.equal<true, { a: number } | undefined, typeof result>()
 			expect(result).toEqual({ a: 1 })
 		})
 	})

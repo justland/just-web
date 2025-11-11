@@ -10,6 +10,12 @@
       "path": "../../frameworks/app"
     },
     {
+      "path": "../../plugins/browser"
+    },
+    {
+      "path": "../../plugins/fetch"
+    },
+    {
       "path": "../../plugins/commands"
     },
     {
