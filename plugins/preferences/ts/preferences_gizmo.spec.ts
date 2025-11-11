@@ -64,7 +64,7 @@ describe(`createStore()`, () => {
 		const app = await setupMemoryPreferencesTestApp()
 		const store = app.preferences.createStore<{ b: string }>('some-pref')
 		const result = store.get()
-		testType.equal<typeof result, { b: string }>(true)
+		testType.equal<typeof result, { b: string } | undefined>(true)
 	})
 
 	async function setupTestStore<T extends JSONTypes>(key: string, defaultValue?: T) {
@@ -77,7 +77,7 @@ describe(`createStore()`, () => {
 
 		const result = store.get()
 
-		testType.equal<typeof result, JSONTypes>(true)
+		testType.equal<typeof result, JSONTypes | undefined>(true)
 		expect(result).toBeUndefined()
 	})
 
@@ -86,7 +86,7 @@ describe(`createStore()`, () => {
 
 		const result = store.get()
 
-		testType.equal<typeof result, { a: number }>(true)
+		testType.equal<typeof result, { a: number } | undefined>(true)
 		expect(result).toEqual({ a: 1 })
 	})
 

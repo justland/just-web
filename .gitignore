@@ -64,6 +64,8 @@ common/autoinstallers/*/.npmrc
 # Heft
 .heft
 
+.turbo
+
 # project specific
 .nowhere
 apps/*/*/*.tsbuildinfo

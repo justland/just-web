@@ -7,3 +7,7 @@ packages:
   - plugins/*
   - presets/*
   - tools/*
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild

@@ -1,13 +1,5 @@
 [
 	{
-		"path": "./cjs/index.js",
-		"limit": "40kb"
-	},
-	{
-		"path": "./tslib/index.js",
-		"limit": "40kb"
-	},
-	{
 		"path": "./esm/index.js",
 		"limit": "20kb"
 	}

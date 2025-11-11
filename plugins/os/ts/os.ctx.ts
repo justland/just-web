@@ -1,4 +1,4 @@
-import platform from 'platform'
+import * as platform from 'platform'
 
 export namespace ctx {
 	export interface OperatingSystem {
@@ -6,4 +6,6 @@ export namespace ctx {
 	}
 }
 
-export const ctx: { os?: ctx.OperatingSystem | undefined } = platform
+export const ctx: { os?: ctx.OperatingSystem | undefined } = {
+	os: platform.os,
+}

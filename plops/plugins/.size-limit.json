@@ -1,6 +1,6 @@
 [
 	{
-		"path": "./cjs/index.js",
+		"path": "./cjs/index.cjs",
 		"limit": "20kb"
 	},
 	{

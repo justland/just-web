@@ -40,7 +40,7 @@ export const preferencesGizmo = define({
 				 * store.get() // 'bar'
 				 * ```
 				 */
-				createStore<T extends JSONTypes>(key: string, defaultValue?: T) {
+				createStore<T extends JSONTypes>(key: string, defaultValue?: T | undefined) {
 					// eslint-disable-next-line @typescript-eslint/no-this-alias
 					const self = this
 					function set<V extends SetStateValue<T | undefined> | undefined>(
@@ -62,7 +62,7 @@ export const preferencesGizmo = define({
 					}
 
 					return {
-						get(): T {
+						get(): T | undefined {
 							const s = self.get(key)
 							return s !== undefined ? JSON.parse(s) : defaultValue
 						},

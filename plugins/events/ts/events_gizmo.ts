@@ -12,7 +12,7 @@ export const eventsGizmoFn = define(
 		async create(ctx: LogGizmo) {
 			return {
 				events: {
-					emitter: trapError(options?.emitter ?? new EventEmitter(), ctx.log)
+					emitter: trapError((options?.emitter ?? new EventEmitter()) as E, ctx.log)
 				}
 			}
 		}
