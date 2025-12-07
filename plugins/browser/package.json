@@ -83,7 +83,7 @@
 		"@vitest/browser-playwright": "^4.0.15",
 		"@vitest/coverage-v8": "^4.0.15",
 		"assertron": "^11.2.0",
-		"delay": "^6.0.0",
+		"delay": "^7.0.0",
 		"npm-run-all2": "^6.0.0",
 		"repobuddy": "^1.0.1",
 		"rimraf": "~6.1.0",
