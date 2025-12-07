@@ -7,7 +7,7 @@ settings:
 importers:
 
   .:
-    devDependencies:
+    dependencies:
       '@changesets/assemble-release-plan':
         specifier: ^6.0.0
         version: 6.0.9
@@ -7205,7 +7205,7 @@ snapshots:
 
   '@jest/pattern@30.0.1':
     dependencies:
-      '@types/node': 24.10.0
+      '@types/node': 18.19.130
       jest-regex-util: 30.0.1
 
   '@jest/reporters@29.7.0':
@@ -7300,7 +7300,7 @@ snapshots:
       '@jest/schemas': 30.0.5
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 24.10.0
+      '@types/node': 18.19.130
       '@types/yargs': 17.0.34
       chalk: 4.1.2
 
