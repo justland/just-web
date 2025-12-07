@@ -26,19 +26,19 @@
 	"exports": {
 		".": {
 			"import": {
-				"types": "./esm/index.d.ts",
-				"default": "./esm/index.js"
+				"types": "./esm/index.d.mts",
+				"default": "./esm/index.mjs"
 			},
 			"require": {
 				"types": "./cjs/index.d.cts",
 				"default": "./cjs/index.cjs"
 			},
-			"default": "./esm/index.js"
+			"default": "./esm/index.mjs"
 		}
 	},
 	"main": "./cjs/index.cjs",
-	"module": "./esm/index.js",
-	"types": "./cjs/index.d.cts",
+	"module": "./esm/index.mjs",
+	"types": "./esm/index.d.mts",
 	"files": [
 		"cjs",
 		"esm",

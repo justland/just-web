@@ -4,7 +4,7 @@
 		"limit": "30kb"
 	},
 	{
-		"path": "./esm/index.js",
+		"path": "./esm/index.mjs",
 		"limit": "10kb"
 	}
 ]
