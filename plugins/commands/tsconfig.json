@@ -2,7 +2,7 @@
 	"extends": "@repobuddy/typescript/tsconfig/monorepo",
 	"compilerOptions": {
 		"outDir": "esm",
-		"rootDir": "ts",
+		"rootDir": "src",
 		"skipLibCheck": true,
 		"verbatimModuleSyntax": true
 	},
@@ -17,5 +17,5 @@
 			"path": "../../plugins/keyboard"
 		}
 	],
-	"include": ["ts", "typings"]
+	"include": ["src", "typings"]
 }

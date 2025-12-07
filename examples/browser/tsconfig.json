@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"lib": ["DOM", "ES2019", "ES2021.Promise"],
 		"outDir": "esm",
-		"rootDir": "ts"
+		"rootDir": "src"
 	},
 	"references": [
 		{
@@ -22,5 +22,5 @@
 			"path": "../../tools/repo-scripts"
 		}
 	],
-	"include": ["ts", "types"]
+	"include": ["src", "types"]
 }
