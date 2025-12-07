@@ -76,7 +76,7 @@
 		"@just-web/commands": "workspace:^",
 		"@just-web/keyboard": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
-		"@repobuddy/typescript": "^1.2.0",
+		"@repobuddy/typescript": "^2.0.0",
 		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~11.2.0",
 		"@vitest/coverage-v8": "^4.0.15",
