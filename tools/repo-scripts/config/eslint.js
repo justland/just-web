@@ -4,10 +4,9 @@ module.exports = {
 	jsx(project) {
 		return {
 			env: {
-				es6: true,
-				jest: true
+				es6: true
 			},
-			extends: ['react-app', 'react-app/jest', 'plugin:harmony/latest', 'plugin:yml/standard'],
+			extends: ['react-app', 'plugin:harmony/latest', 'plugin:yml/standard'],
 			overrides: [
 				{
 					extends: ['plugin:harmony/ts-prettier'],
@@ -54,8 +53,7 @@ module.exports = {
 		return {
 			env: {
 				node: true,
-				es6: true,
-				jest: true
+				es6: true
 			},
 			extends: ['plugin:harmony/latest', 'plugin:yml/standard'],
 			overrides: [

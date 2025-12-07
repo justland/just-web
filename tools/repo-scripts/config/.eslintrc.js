@@ -1,8 +1,7 @@
 module.exports = {
 	env: {
 		node: true,
-		es6: true,
-		jest: true
+		es6: true
 	},
 	extends: ['plugin:harmony/latest', 'plugin:yml/standard'],
 	overrides: [

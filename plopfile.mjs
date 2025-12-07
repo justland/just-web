@@ -49,11 +49,6 @@ export default function (
 			},
 			{
 				type: 'add',
-				path: 'plugins/{{name}}/jest.config.mjs',
-				templateFile: 'plops/plugins/jest.config.mjs.hbs'
-			},
-			{
-				type: 'add',
 				path: 'plugins/{{name}}/LICENSE',
 				templateFile: 'plops/plugins/LICENSE'
 			},
