@@ -98,10 +98,5 @@
 		"@just-web/commands": "workspace:^",
 		"@just-web/keyboard": "workspace:^",
 		"@just-web/os": "workspace:^"
-	},
-	"peerDependenciesMeta": {
-		"@just-web/keyboard": {
-			"optional": true
-		}
 	}
 }

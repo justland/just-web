@@ -100,10 +100,5 @@
 		"@just-web/commands": "workspace:^",
 		"@just-web/fetch": "workspace:^",
 		"@just-web/keyboard": "workspace:^"
-	},
-	"peerDependenciesMeta": {
-		"@just-web/keyboard": {
-			"optional": true
-		}
 	}
 }

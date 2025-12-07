@@ -45,7 +45,7 @@
 		"test": "turbo run test",
 		"testing": "pnpm --filter=@just-web/testing",
 		"types": "pnpm --filter=@just-web/types",
-		"verify": "run-p check verify:pkg",
+		"verify": "run-p check knip verify:pkg",
 		"verify:pkg": "turbo run build coverage size",
 		"version": "changeset version && pnpm install",
 		"watch": "vitest"
