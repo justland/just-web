@@ -112,9 +112,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -173,9 +170,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -222,9 +216,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -280,9 +271,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -335,9 +323,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -396,9 +381,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       delay:
         specifier: ^6.0.0
         version: 6.0.0
@@ -460,9 +442,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -527,9 +506,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -603,9 +579,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -667,9 +640,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -722,9 +692,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -771,9 +738,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -820,9 +784,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -865,9 +826,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       history:
         specifier: ^5.3.0
         version: 5.3.0
@@ -922,9 +880,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -977,9 +932,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -1029,9 +981,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -1084,9 +1033,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       immer:
         specifier: npm:@unional/immer@^9.0.0-beta.2
         version: '@unional/immer@9.0.0-beta.2'
@@ -1142,9 +1088,6 @@ importers:
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -1212,9 +1155,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -1297,9 +1237,6 @@ importers:
       '@size-limit/preset-small-lib':
         specifier: ~11.2.0
         version: 11.2.0(size-limit@11.2.0)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       size-limit:
         specifier: ~11.2.0
         version: 11.2.0
@@ -2938,11 +2875,6 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
-
-  cross-env@7.0.3:
-    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
-    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
-    hasBin: true
 
   cross-fetch@4.1.0:
     resolution: {integrity: sha512-uKm5PU+MHTootlWEY+mZ4vvXoCn4fLQxT9dSc1sXVMSFkINTJVN8cAQROpwcKm8bJ/c7rgZVIBWzH5T78sNZZw==}
@@ -7534,10 +7466,6 @@ snapshots:
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.9.3
-
-  cross-env@7.0.3:
-    dependencies:
-      cross-spawn: 7.0.6
 
   cross-fetch@4.1.0(encoding@0.1.13):
     dependencies:
