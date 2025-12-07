@@ -6,5 +6,3 @@ on:
 jobs:
   code:
     uses: justland/.github/.github/workflows/pnpm-verify.yml@main
-    with:
-      pnpm-version: 8.6.0
