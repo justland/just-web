@@ -1,3 +1,27 @@
+export type {
+	ConsoleLogFormatter,
+	ConsoleLogReporter,
+	ConsoleLogReporterOptions,
+	GetLogger,
+	GizmoStandardLog,
+	LogEntry,
+	LogFilter,
+	LogFormatter,
+	LogFunction,
+	LogGizmo,
+	LogGizmoOptions,
+	Logger,
+	LoggerOptions,
+	LogLevel,
+	LogMethod,
+	LogMethodNames,
+	LogReporter,
+	LogReporterOptions,
+	MemoryLogReporter,
+	StandardLog,
+	StandardLogOptions,
+	TimestampFormat
+} from '@just-web/log'
 export {
 	createConsoleLogReporter,
 	createMemoryLogReporter,
@@ -15,28 +39,4 @@ export {
 	toLogLevel,
 	toLogLevelName,
 	toMessageWithLevel
-} from '@just-web/log'
-export type {
-	ConsoleLogFormatter,
-	ConsoleLogReporter,
-	ConsoleLogReporterOptions,
-	GetLogger,
-	GizmoStandardLog,
-	LogEntry,
-	LogFilter,
-	LogFormatter,
-	LogFunction,
-	Logger,
-	LoggerOptions,
-	LogGizmo,
-	LogGizmoOptions,
-	LogLevel,
-	LogMethod,
-	LogMethodNames,
-	LogReporter,
-	LogReporterOptions,
-	MemoryLogReporter,
-	StandardLog,
-	StandardLogOptions,
-	TimestampFormat
 } from '@just-web/log'

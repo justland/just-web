@@ -1,6 +1,6 @@
+import { EventEmitter } from 'node:events'
 import { justTestApp } from '@just-web/app/testing'
 import { a, some } from 'assertron'
-import { EventEmitter } from 'node:events'
 import { expect, it } from 'vitest'
 import { eventsGizmoFn, justEvent } from './index.js'
 
