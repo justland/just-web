@@ -1,5 +1,5 @@
-export type Fetch = typeof fetch
+// export type Fetch = typeof fetch
 
-export interface FetchGizmo {
-	fetch: Fetch
-}
+// export interface FetchGizmo {
+// 	fetch: Fetch
+// }

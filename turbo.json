@@ -13,9 +13,6 @@
 			"dependsOn": ["^build"],
 			"outputs": ["coverage/**"]
 		},
-		"depcheck": {
-			"dependsOn": ["^build"]
-		},
 		"dev": {
 			"cache": false
 		},
