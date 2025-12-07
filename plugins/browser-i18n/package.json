@@ -81,7 +81,6 @@
 		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~11.2.0",
 		"@vitest/coverage-v8": "^4.0.15",
-		"jsdom": "^25.0.1",
 		"npm-run-all2": "^6.0.0",
 		"repobuddy": "^1.0.1",
 		"rimraf": "~5.0.0",
