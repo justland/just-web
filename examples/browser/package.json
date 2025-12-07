@@ -24,14 +24,21 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		"types": "./esm/index.d.ts",
-		"import": "./esm/index.js",
-		"require": "./cjs/index.cjs",
-		"default": "./cjs/index.cjs"
+		".": {
+			"import": {
+				"types": "./esm/index.d.mts",
+				"default": "./esm/index.mjs"
+			},
+			"require": {
+				"types": "./cjs/index.d.cts",
+				"default": "./cjs/index.cjs"
+			},
+			"default": "./esm/index.mjs"
+		}
 	},
 	"main": "./cjs/index.cjs",
-	"module": "./esm/index.js",
-	"types": "./esm/index.d.ts",
+	"module": "./esm/index.mjs",
+	"types": "./esm/index.d.mts",
 	"files": [
 		"cjs",
 		"esm",

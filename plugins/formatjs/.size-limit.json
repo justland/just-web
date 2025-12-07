@@ -1,6 +1,6 @@
 [
 	{
-		"path": "./esm/index.js",
+		"path": "./esm/index.mjs",
 		"limit": "20kb"
 	}
 ]
