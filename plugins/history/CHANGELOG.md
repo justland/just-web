@@ -1,5 +1,13 @@
 # @just-web/history
 
+## 2.2.1
+
+### Patch Changes
+
+- 4d16182: Update ESM module file extensions from `.js` to `.mjs` and type definitions from `.d.ts` to `.d.mts` to align with tsdown 0.17.0 build output format.
+- Updated dependencies [4d16182]
+  - @just-web/app@7.3.1
+
 ## 2.2.0
 
 ### Minor Changes
