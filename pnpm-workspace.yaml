@@ -10,3 +10,6 @@ packages:
 
 catalog:
   '@repobuddy/vitest': ^2.1.1
+
+patchedDependencies:
+  '@changesets/assemble-release-plan': patches/@changesets__assemble-release-plan.patch
