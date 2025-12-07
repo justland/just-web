@@ -7,3 +7,5 @@ packages:
   - plugins/*
   - presets/*
   - tools/*
+catalog:
+  "@repobuddy/vitest": "^2.1.1"

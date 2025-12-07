@@ -68,7 +68,7 @@
 	},
 	"devDependencies": {
 		"@repobuddy/jest": "^4.0.0",
-		"@repobuddy/vitest": "^2.1.0",
+		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~11.2.0",
 		"cross-env": "^7.0.3",
 		"size-limit": "~11.2.0"
