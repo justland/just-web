@@ -1,7 +1,8 @@
 {
 	"[javascript]": {
 		"editor.codeActionsOnSave": {
-			"source.organizeImports": "explicit"
+			"source.organizeImports.biome": "explicit",
+			"source.fixAll.biome": "explicit"
 		},
 		"editor.defaultFormatter": "biomejs.biome",
 		"editor.formatOnSave": true
@@ -12,7 +13,8 @@
 	},
 	"[javascriptreact]": {
 		"editor.codeActionsOnSave": {
-			"source.organizeImports": "explicit"
+			"source.organizeImports.biome": "explicit",
+			"source.fixAll.biome": "explicit"
 		},
 		"editor.defaultFormatter": "biomejs.biome",
 		"editor.formatOnSave": true
@@ -35,14 +37,16 @@
 	},
 	"[typescript]": {
 		"editor.codeActionsOnSave": {
-			"source.organizeImports": "explicit"
+			"source.organizeImports.biome": "explicit",
+			"source.fixAll.biome": "explicit"
 		},
 		"editor.defaultFormatter": "biomejs.biome",
 		"editor.formatOnSave": true
 	},
 	"[typescriptreact]": {
 		"editor.codeActionsOnSave": {
-			"source.organizeImports": "explicit"
+			"source.organizeImports.biome": "explicit",
+			"source.fixAll.biome": "explicit"
 		},
 		"editor.defaultFormatter": "biomejs.biome",
 		"editor.formatOnSave": true
