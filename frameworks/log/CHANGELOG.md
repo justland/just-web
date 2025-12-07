@@ -1,5 +1,16 @@
 # @just-web/log
 
+## 7.3.0
+
+### Minor Changes
+
+- cea9ef5: Build with `tsdown` to get around the TypeScript 5.2 issue with CJS builds.
+
+### Patch Changes
+
+- Updated dependencies [cea9ef5]
+  - @just-web/id@7.3.0
+
 ## 7.2.1
 
 ### Patch Changes

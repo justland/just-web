@@ -1,5 +1,25 @@
 # @just-web/browser-preferences
 
+## 8.5.0
+
+### Minor Changes
+
+- cea9ef5: Build with `tsdown` to get around the TypeScript 5.2 issue with CJS builds.
+
+### Patch Changes
+
+- cea9ef5: Add `@just-web/fetch` as a peerDependency.
+  TypeScript resolution causing a transitive dependency leak.
+- Updated dependencies [cea9ef5]
+- Updated dependencies [9d9a39d]
+  - @just-web/preferences@7.3.0
+  - @just-web/states@7.2.0
+  - @just-web/commands@7.3.0
+  - @just-web/keyboard@7.3.0
+  - @just-web/browser@8.5.0
+  - @just-web/app@7.3.0
+  - @just-web/fetch@1.1.0
+
 ## 8.4.2
 
 ### Patch Changes
