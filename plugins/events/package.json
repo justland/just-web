@@ -72,7 +72,7 @@
 		"repobuddy": "^1.0.1",
 		"rimraf": "~6.1.0",
 		"size-limit": "~11.2.0",
-		"tsdown": "^0.15.12",
+		"tsdown": "^0.17.0",
 		"vitest": "^4.0.15"
 	},
 	"peerDependencies": {
