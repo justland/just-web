@@ -1,1 +1,1 @@
-{ "ignores": [".changeset/*.md", "**/CHANGELOG.md", "LICENSE"] }
+{ "ignores": [".changeset/*.md", ".cursor/rules/**", "**/CHANGELOG.md", "LICENSE"] }
