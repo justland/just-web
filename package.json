@@ -8,13 +8,12 @@
 		"browser-keyboard": "pnpm --filter=@just-web/browser-keyboard",
 		"browser-preferences": "pnpm --filter=@just-web/browser-preferences",
 		"build": "turbo run build",
-		"clean": "turbo run clean",
 		"check": "biome check .",
 		"check:fix": "biome check --write .",
+		"clean": "turbo run clean",
 		"commands": "pnpm --filter=@just-web/commands",
 		"cov": "vitest run --coverage",
 		"cs": "changeset",
-		"knip": "knip",
 		"dev": "turbo run dev --parallel",
 		"errors": "pnpm --filter=@just-web/errors",
 		"events": "pnpm --filter=@just-web/events",
@@ -26,6 +25,7 @@
 		"id": "pnpm --filter=@just-web/id",
 		"just-fetch": "pnpm --filter=@just-web/fetch",
 		"keyboard": "pnpm --filter=@just-web/keyboard",
+		"knip": "knip",
 		"log": "pnpm --filter=@just-web/log",
 		"ncu": "ncu",
 		"nuke": "turbo run nuke && pnpm nuke:local",
@@ -50,7 +50,7 @@
 		"version": "changeset version && pnpm install",
 		"watch": "vitest"
 	},
-	"dependencies": {
+	"devDependencies": {
 		"@biomejs/biome": "2.3.8",
 		"@changesets/assemble-release-plan": "^6.0.0",
 		"@changesets/cli": "^2.26.1",
@@ -58,22 +58,21 @@
 		"@commitlint/config-conventional": "^19.0.0",
 		"@repobuddy/biome": "^2.2.0",
 		"@types/node": "^24.10.1",
+		"@vitest/coverage-v8": "^4.0.15",
 		"eslint": "^8.17.0",
 		"eslint-plugin-harmony": "^7.1.2",
 		"eslint-plugin-yml": "~1.14.0",
 		"husky": "^9.0.0",
+		"knip": "^5.71.0",
 		"npm-check-updates": "^16.0.0",
 		"npm-run-all2": "^6.0.0",
 		"pinst": "^3.0.0",
+		"playwright": "^1.57.0",
 		"plop": "^4.0.0",
 		"rimraf": "~5.0.0",
 		"turbo": "^2.6.0",
-		"typescript": "^5.9.3"
-	},
-	"packageManager": "pnpm@10.24.0",
-	"devDependencies": {
-		"@vitest/coverage-v8": "^4.0.15",
-		"knip": "^5.71.0",
+		"typescript": "^5.9.3",
 		"vitest": "^4.0.15"
-	}
+	},
+	"packageManager": "pnpm@10.24.0"
 }
