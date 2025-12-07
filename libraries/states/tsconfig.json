@@ -2,10 +2,10 @@
 	"extends": "@repobuddy/typescript/tsconfig/monorepo",
 	"compilerOptions": {
 		"outDir": "esm",
-		"rootDir": "ts",
+		"rootDir": "src",
 		"verbatimModuleSyntax": true
 	},
-	"include": ["ts", "typings"],
+	"include": ["src", "typings"],
 	"references": [
 		{
 			"path": "../../frameworks/app"

@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"esModuleInterop": true,
 		"outDir": "esm",
-		"rootDir": "ts",
+		"rootDir": "src",
 		"verbatimModuleSyntax": true
 	},
 	"references": [
@@ -20,5 +20,5 @@
 			"path": "../../plugins/os"
 		}
 	],
-	"include": ["ts", "typings"]
+	"include": ["src", "typings"]
 }
