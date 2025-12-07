@@ -1,5 +1,15 @@
 # @just-web/i18n
 
+## 1.1.1
+
+### Patch Changes
+
+- 4d16182: Update ESM module file extensions from `.js` to `.mjs` and type definitions from `.d.ts` to `.d.mts` to align with tsdown 0.17.0 build output format.
+- Updated dependencies [4d16182]
+  - @just-web/app@7.3.1
+  - @just-web/commands@7.3.1
+  - @just-web/keyboard@7.3.1
+
 ## 1.1.0
 
 ### Minor Changes
