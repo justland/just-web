@@ -75,10 +75,8 @@ export default () => definePreviewAddon(addonAnnotations) // ✅ For addon
 ## Code Organization
 
 - One primary export per file when possible
-- Group related exports together
-- Place types near usage or in dedicated type files
-- Keep functions focused on single responsibility
-- Use descriptive names
+- Group related exports, place types near usage or in dedicated type files
+- Keep functions focused on single responsibility, use descriptive names
 
 ## Error Handling
 
@@ -107,6 +105,6 @@ type State =
 
 ## Integration
 
-- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Master Reference](.cursor/rules/master.mdc)
 - [Naming Conventions](.cursor/rules/guidelines/naming.mdc)
 - [Storybook Stories](.cursor/rules/guidelines/storybook_stories.mdc)

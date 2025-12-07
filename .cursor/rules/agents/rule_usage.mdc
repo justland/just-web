@@ -10,15 +10,11 @@ Document which cursor rules were applied during work.
 
 ## When to Apply
 
-- Completing tasks that followed specific rules
-- Making code changes requiring rule guidance
+When completing tasks that followed specific rules or making code changes requiring rule guidance.
 
 ## Implementation
 
-After completing a task:
-1. Review relevant rules
-2. List actively applied rules
-3. Add "Rules Applied" section
+After completing a task: review relevant rules, list actively applied rules, add "Rules Applied" section.
 
 ## Format
 
@@ -40,5 +36,5 @@ After completing a task:
 
 ## Integration
 
-- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Master Reference](.cursor/rules/master.mdc)
 - All guideline and workflow rules
