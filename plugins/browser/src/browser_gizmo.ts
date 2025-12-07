@@ -1,4 +1,4 @@
-import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
+import { type DepBuilder, define, type GizmoStatic, type LogGizmo } from '@just-web/app'
 import { ctx } from './browser_gizmo.ctx.js'
 import { createErrorStore, toReadonlyErrorStore } from './error_store.js'
 import type { ReadonlyErrorStore } from './error_store.types.js'
@@ -10,11 +10,11 @@ export interface BrowserGizmoOptions {
 	 * Prevents the default event handler of `onerror` to be fired.
 	 * @see https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror
 	 */
-	preventDefault?: boolean
+	preventDefault?: boolean | undefined
 	/**
 	 * Custom fetch instance
 	 */
-	fetch?: Fetch
+	fetch?: Fetch | undefined
 }
 
 export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
