@@ -12,7 +12,7 @@
 		"check": "biome check .",
 		"check:fix": "biome check --write .",
 		"commands": "pnpm --filter=@just-web/commands",
-		"coverage": "turbo run coverage",
+		"cov": "vitest run --coverage",
 		"cs": "changeset",
 		"knip": "knip",
 		"dev": "turbo run dev --parallel",
@@ -72,6 +72,7 @@
 	},
 	"packageManager": "pnpm@10.24.0",
 	"devDependencies": {
+		"@vitest/coverage-v8": "^4.0.15",
 		"knip": "^5.71.0",
 		"vitest": "^4.0.15"
 	}
