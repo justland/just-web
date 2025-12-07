@@ -72,7 +72,7 @@
 		"@just-web/app": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
 		"@repobuddy/typescript": "^1.2.0",
-		"@repobuddy/vitest": "^2.1.0",
+		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~11.2.0",
 		"@vitest/coverage-v8": "^4.0.15",
 		"cross-env": "^7.0.3",

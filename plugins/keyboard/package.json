@@ -65,7 +65,7 @@
 		"@just-web/repo-scripts": "workspace:^",
 		"@just-web/states": "workspace:^",
 		"@repobuddy/typescript": "^1.2.0",
-		"@repobuddy/vitest": "^2.1.0",
+		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~11.2.0",
 		"@vitest/coverage-v8": "^4.0.15",
 		"assertron": "^11.2.0",
