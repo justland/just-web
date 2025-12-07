@@ -39,13 +39,13 @@ Brief description of the change for consumers.
 
 ## Content Guidelines
 
-**Target**: Package consumers. Focus on what changed and how it affects users. Clear, concise, actionable.
+**Target**: Package consumers. Focus on what changed and user impact.
 
 **Include**: New features/components, bug fixes, breaking changes (with migration), performance improvements, security fixes, API changes, config changes, dependency updates affecting behavior, new types, Storybook docs reflecting API changes.
 
 **Exclude**: Internal refactoring, code style, test-only, docs-only (unless fixing incorrect info), build/CI/CD changes, dev tooling, Storybook-only (non-API).
 
-**Style**: Proper English, sentences end with period. Code in backticks. Present tense for features, past tense for fixes. Be specific about impact.
+**Style**: Proper English, sentences end with period. Code in backticks. Present tense for features, past tense for fixes.
 
 ## Examples
 
@@ -54,7 +54,6 @@ Brief description of the change for consumers.
 ---
 "@storybook-community/storybook-dark-mode": minor
 ---
-
 Add new `useDarkMode` hook for accessing dark mode state in components.
 ```
 
@@ -62,7 +61,6 @@ Add new `useDarkMode` hook for accessing dark mode state in components.
 ---
 "@storybook-community/storybook-dark-mode": patch
 ---
-
 Fix dark mode class application to properly target preview iframe.
 ```
 
@@ -70,7 +68,6 @@ Fix dark mode class application to properly target preview iframe.
 ---
 "@storybook-community/storybook-dark-mode": major
 ---
-
 Remove `DarkModeStore` type from main export. Use `DarkModeParam` instead.
 
 Migration:
@@ -78,15 +75,7 @@ Migration:
 - Update imports if necessary
 ```
 
-**Bad:**
-```md
----
-"@storybook-community/storybook-dark-mode": patch
----
-
-Refactor internal component structure
-```
-(Internal refactoring - exclude)
+**Bad:** Internal refactoring (exclude)
 
 ## Implementation
 
@@ -96,12 +85,12 @@ Refactor internal component structure
 
 ## Best Practices
 
-- **Descriptive names**: Clear, include component/feature name, kebab-case
-- **Single responsibility**: One logical change per changeset
-- **Consumer focus**: Think about user impact, provide migration steps
-- **Consistency**: Consistent terminology and format
+- Descriptive names (kebab-case, include component/feature name)
+- Single responsibility (one logical change per changeset)
+- Consumer focus (user impact, migration steps)
+- Consistent terminology and format
 
 ## Integration
 
-- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Master Reference](.cursor/rules/master.mdc)
 - [Commit Message Guidelines](.cursor/rules/guidelines/commit_message.mdc)

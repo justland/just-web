@@ -30,37 +30,18 @@ PrimaryDisabled.test('should be disabled', () => { })
 
 ## Story Organization
 
-1. **Files**: Place next to component, name `your_component.stories.tsx`, `your_component.some_prop.stories.tsx`.
-2. **Naming**: Default story is `Specification`, others descriptive (`WithError`, `Loading`). Use `name` property if PascalCase is confusing.
+**Files**: Place next to component, name `your_component.stories.tsx`, `your_component.some_prop.stories.tsx`.
+**Naming**: Default story is `Specification`, others descriptive (`WithError`, `Loading`). Use `name` property if PascalCase is confusing.
 
 ## Story Implementation Patterns
 
 1. **Property order**: `name`, `tags`, `parameters`, `args`, `loaders`, `decorators`, `render`, `play`, `afterEach`
-2. **Render function**: Emphasize testing subject. Extract complex UI into components:
-```tsx
-export const OnChange: Story = {
-	render() {
-		const [logs, setLogs] = useState<string[]>([])
-		return (
-			<div>
-				<RadioGroup onChange={(v) => setLogs([...logs, `changed: ${v}`])}>
-					<Radio value="apple">Apple</Radio>
-				</RadioGroup>
-				<LogPanel logs={logs} />
-			</div>
-		)
-	},
-}
-```
-
+2. **Render function**: Emphasize testing subject. Extract complex UI into components.
 3. Prefer CSS classes or Tailwind CSS over inline styles.
 
 ## Testing and Documentation
 
-- Stories serve as visual tests and documentation
-- Include edge cases and error states
-- Document component props and usage
-- Use `play` function to interact and validate behavior
+Stories serve as visual tests and documentation. Include edge cases, error states, document props/usage, use `play` function for interaction validation.
 
 ## Example
 
@@ -104,6 +85,6 @@ export const WhenDisabled = Specification.extend({
 
 ## Integration
 
-- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Master Reference](.cursor/rules/master.mdc)
 - [Naming Conventions](.cursor/rules/guidelines/naming.mdc)
 - [TypeScript Guidelines](.cursor/rules/guidelines/typescript.mdc)

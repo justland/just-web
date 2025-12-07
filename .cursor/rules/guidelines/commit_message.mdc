@@ -79,5 +79,5 @@ Closes #123
 
 ## Integration
 
-- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Master Reference](.cursor/rules/master.mdc)
 - [Generate Changeset](.cursor/rules/workflows/generate_changeset.mdc)
