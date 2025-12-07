@@ -8,6 +8,8 @@ const config: KnipConfig = {
 	ignoreDependencies: [
 		// Need patching
 		'@changesets/assemble-release-plan',
+		// CI testing dependencies
+		'playwright',
 		// Build and tooling dependencies
 		'@repobuddy/*',
 		'@size-limit/*',
