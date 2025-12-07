@@ -1,5 +1,17 @@
 # @just-web/routes
 
+## 7.2.0
+
+### Minor Changes
+
+- cea9ef5: Build with `tsdown` to get around the TypeScript 5.2 issue with CJS builds.
+
+### Patch Changes
+
+- Updated dependencies [cea9ef5]
+  - @just-web/states@7.2.0
+  - @just-web/app@7.3.0
+
 ## 7.1.7
 
 ### Patch Changes
