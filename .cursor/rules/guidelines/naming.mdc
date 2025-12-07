@@ -1,0 +1,19 @@
+---
+description: File and folder naming conventions
+globs:
+alwaysApply: false
+---
+
+# Naming Conventions
+
+Use **snake_case**:
+
+- Files: `dark_mode_toggle.tsx`, `use_dark_mode.ts`
+- Folders: `components/`, `hooks/`
+- Stories: `dark_mode_toggle_component.stories.tsx`, `use_dark_mode_hook.stories.tsx`
+
+## Integration
+
+- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [TypeScript Guidelines](.cursor/rules/guidelines/typescript.mdc)
+- [Storybook Stories](.cursor/rules/guidelines/storybook_stories.mdc)

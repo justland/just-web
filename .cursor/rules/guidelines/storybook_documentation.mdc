@@ -1,0 +1,313 @@
+---
+description: How to organize Storybook for library documentation
+globs:
+alwaysApply: false
+---
+
+# Organizing Storybook for Library Documentation
+
+Storybook can serve as comprehensive documentation for your library. This guide outlines best practices for organizing your Storybook to maximize its value as documentation.
+
+## Table of Contents Structure
+
+Organize your Storybook sidebar with a clear hierarchy that guides users from getting started to advanced usage:
+
+### Recommended Order
+
+1. **Overview** - Introduction, installation, quick start
+2. **Getting Started** - Basic setup and configuration
+3. **API Reference** - Organized by feature/area (e.g., `preview/`, `components/`, `hooks/`)
+4. **Examples** - Real-world usage patterns
+5. **Changelog** - Version history
+6. **Migration Guides** - Breaking changes and upgrades
+
+### Current Structure
+
+Your current `storySort` in `.storybook/preview.tsx`:
+
+```tsx
+storySort: {
+  order: ['Overview', 'changelog', 'preview', 'components', 'hooks']
+}
+```
+
+Consider expanding to:
+
+```tsx
+storySort: {
+  order: [
+    'Overview',
+    'Getting Started',
+    'preview',
+    'components',
+    'hooks',
+    'Examples',
+    'changelog'
+  ]
+}
+```
+
+## Documentation Pages (MDX)
+
+### 1. Overview Page
+
+**Location**: `src/overview.mdx`
+
+- Import and display your README.md
+- Provides first impression and installation instructions
+- Include badges, examples, and key features
+
+**Example**:
+```tsx
+import { Markdown, Meta } from '@storybook/addon-docs/blocks'
+import README from '../readme.md?raw'
+
+<Meta title="Overview" />
+
+<Markdown>{README}</Markdown>
+```
+
+### 2. Getting Started Guide
+
+**Location**: `src/getting-started.mdx`
+
+Create a dedicated getting started page with:
+- Installation steps
+- Basic configuration
+- First example
+- Common setup patterns
+
+**Example**:
+
+```tsx
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Getting Started" />
+
+# Getting Started
+
+## Installation
+
+\`\`\`bash
+npm install @storybook-community/storybook-dark-mode
+\`\`\`
+
+## Basic Setup
+
+[Include step-by-step instructions]
+```
+
+### 3. API Documentation Pages
+
+**Location**: `src/{category}/{feature}/overview.mdx`
+
+For each major feature area, create an overview MDX file:
+
+- `src/preview/parameters/overview.mdx` - Parameter documentation
+- `src/preview/addons/overview.mdx` - Addon usage
+- `src/components/{component}/overview.mdx` - Component docs
+- `src/hooks/{hook}/overview.mdx` - Hook documentation
+
+**Structure**:
+```tsx
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="preview/parameters" />
+
+# darkMode Parameter
+
+[Description of the feature]
+
+## Configuration
+
+[Code examples]
+
+## Options
+
+[Detailed option descriptions]
+```
+
+### 4. Changelog
+
+**Location**: `src/changelog.mdx`
+
+- Import CHANGELOG.md
+- Keep it up to date
+- Link to migration guides for breaking changes
+
+## Story Organization
+
+### File Naming
+
+Follow your naming convention:
+- `{component}.stories.tsx` - Main component stories
+- `{component}.{feature}.stories.tsx` - Feature-specific stories
+- Place stories next to the component they document
+
+### Story Structure
+
+Use CSF Next format with clear organization:
+
+```tsx
+import preview from '../.storybook/preview.js'
+
+const meta = preview.meta({
+  title: 'components/YourComponent',
+  tags: ['autodocs'],
+  component: YourComponent,
+})
+
+export default meta
+
+// Default story showing the component in its standard state
+export const Specification = meta.story({
+  args: { /* default props */ },
+})
+
+// Variations
+export const WithCustomProps = Specification.extend({
+  args: { /* custom props */ },
+})
+```
+
+### Story Categories
+
+1. **Specification** - Default/standard usage
+2. **Variations** - Different prop combinations
+3. **States** - Loading, error, disabled, etc.
+4. **Edge Cases** - Boundary conditions
+5. **Integration** - How it works with other components
+
+## Documentation Best Practices
+
+### 1. Use Autodocs
+
+Enable `autodocs` tag to automatically generate API tables:
+
+```tsx
+const meta = preview.meta({
+  title: 'components/Button',
+  tags: ['autodocs'],
+  component: Button,
+})
+```
+
+### 2. Include Code Examples
+
+Every documentation page should include:
+- Installation/import statements
+- Basic usage examples
+- Configuration options
+- Real-world use cases
+
+### 3. Interactive Examples
+
+Use stories to show:
+- Live, editable examples
+- Different configurations
+- Edge cases and error states
+- Integration patterns
+
+### 4. Type Documentation
+
+- Use TypeScript for type safety
+- Document prop types in JSDoc comments
+- Let autodocs extract type information
+
+### 5. Visual Documentation
+
+- Include screenshots/GIFs for complex features
+- Show before/after comparisons
+- Demonstrate visual states
+
+## Sidebar Organization
+
+### Group Related Items
+
+Use nested titles to group related documentation:
+
+```tsx
+// Groups under "preview/"
+title: 'preview/parameters'
+title: 'preview/addons'
+
+// Groups under "components/"
+title: 'components/Button'
+title: 'components/Input'
+```
+
+### Hide Internal Documentation
+
+Use tags to hide internal/development stories from production:
+
+```tsx
+tags: {
+  unit: {
+    excludeFromSidebar: process.env.NODE_ENV === 'production'
+  }
+}
+```
+
+## Advanced Documentation Features
+
+### 1. Custom Docs Containers
+
+Use custom containers for enhanced documentation:
+
+```tsx
+import { DarkModeDocsContainer } from '@storybook-community/storybook-dark-mode'
+
+export const parameters = {
+  docs: {
+    container: DarkModeDocsContainer
+  }
+}
+```
+
+### 2. Code Panel
+
+Enable code panel for better code viewing:
+
+```tsx
+export const parameters = {
+  docs: {
+    codePanel: true
+  }
+}
+```
+
+### 3. Story Parameters
+
+Use parameters to enhance documentation:
+
+```tsx
+export const MyStory = {
+  parameters: {
+    docs: {
+      description: {
+        component: 'A comprehensive description of the component'
+      }
+    }
+  }
+}
+```
+
+## Checklist for Library Documentation
+
+- [ ] Overview page with README content
+- [ ] Getting started guide
+- [ ] API reference for all public APIs
+- [ ] Examples for common use cases
+- [ ] Changelog page
+- [ ] Migration guides for breaking changes
+- [ ] All stories have `autodocs` tag
+- [ ] Code examples are complete and runnable
+- [ ] Type documentation is comprehensive
+- [ ] Sidebar is logically organized
+- [ ] Internal/development stories are hidden in production
+
+## Integration
+
+- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Storybook Stories](.cursor/rules/guidelines/storybook_stories.mdc) - Story writing guidelines
+- [Naming Conventions](.cursor/rules/guidelines/naming.mdc) - File naming standards

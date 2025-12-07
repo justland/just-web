@@ -1,0 +1,107 @@
+---
+description: Generate changeset (cs)
+globs:
+alwaysApply: false
+---
+
+# Generate Changeset Workflow
+
+Create changeset files in `.changeset/` to document user-facing changes for CHANGELOG generation.
+
+Generate changeset files directly. Do not use the `changeset` command.
+
+## When to Apply
+
+- Changes affecting public API
+- New features or components
+- Bug fixes impacting users
+- Breaking changes
+- Dependency updates affecting functionality
+
+## File Structure
+
+**Location**: `.changeset/[unique-id].md` (e.g., `add-css-utilities.md`)
+
+**Content**:
+```md
+---
+"@storybook-community/storybook-dark-mode": patch
+---
+
+Brief description of the change for consumers.
+```
+
+## Change Types
+
+- **`major`**: Breaking changes requiring consumer action, API changes breaking existing code, removal of deprecated features, type changes breaking code
+- **`minor`**: New backward-compatible features, new components/utilities, new config options, performance improvements, new types/interfaces
+- **`patch`**: Bug fixes, dependency updates (non-breaking), minor type improvements (non-breaking)
+
+## Content Guidelines
+
+**Target**: Package consumers. Focus on what changed and how it affects users. Clear, concise, actionable.
+
+**Include**: New features/components, bug fixes, breaking changes (with migration), performance improvements, security fixes, API changes, config changes, dependency updates affecting behavior, new types, Storybook docs reflecting API changes.
+
+**Exclude**: Internal refactoring, code style, test-only, docs-only (unless fixing incorrect info), build/CI/CD changes, dev tooling, Storybook-only (non-API).
+
+**Style**: Proper English, sentences end with period. Code in backticks. Present tense for features, past tense for fixes. Be specific about impact.
+
+## Examples
+
+**Good:**
+```md
+---
+"@storybook-community/storybook-dark-mode": minor
+---
+
+Add new `useDarkMode` hook for accessing dark mode state in components.
+```
+
+```md
+---
+"@storybook-community/storybook-dark-mode": patch
+---
+
+Fix dark mode class application to properly target preview iframe.
+```
+
+```md
+---
+"@storybook-community/storybook-dark-mode": major
+---
+
+Remove `DarkModeStore` type from main export. Use `DarkModeParam` instead.
+
+Migration:
+- Replace `DarkModeStore` with `DarkModeParam` in type annotations
+- Update imports if necessary
+```
+
+**Bad:**
+```md
+---
+"@storybook-community/storybook-dark-mode": patch
+---
+
+Refactor internal component structure
+```
+(Internal refactoring - exclude)
+
+## Implementation
+
+1. Create file: `.changeset/[descriptive-name].md`
+2. Write content: appropriate change type, consumer-focused description, migration steps for breaking changes
+3. Review: targets consumers, correct change type, all affected packages listed
+
+## Best Practices
+
+- **Descriptive names**: Clear, include component/feature name, kebab-case
+- **Single responsibility**: One logical change per changeset
+- **Consumer focus**: Think about user impact, provide migration steps
+- **Consistency**: Consistent terminology and format
+
+## Integration
+
+- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Commit Message Guidelines](.cursor/rules/guidelines/commit_message.mdc)

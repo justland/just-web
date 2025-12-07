@@ -1,0 +1,44 @@
+---
+description: Add a "Rules Applied" section in agent response
+globs:
+alwaysApply: false
+---
+
+# Rule Usage
+
+Document which cursor rules were applied during work.
+
+## When to Apply
+
+- Completing tasks that followed specific rules
+- Making code changes requiring rule guidance
+
+## Implementation
+
+After completing a task:
+1. Review relevant rules
+2. List actively applied rules
+3. Add "Rules Applied" section
+
+## Format
+
+```markdown
+## Rules Applied
+
+- [Rule Name](.cursor/rules/category/rule_name.mdc) - How it was used
+- [Another Rule](.cursor/rules/category/another_rule.mdc) - Brief description
+```
+
+## Example
+
+```markdown
+## Rules Applied
+
+- [TypeScript Guidelines](.cursor/rules/guidelines/typescript.mdc) - Type safety and code structure
+- [Naming Conventions](.cursor/rules/guidelines/naming.mdc) - snake_case file naming
+```
+
+## Integration
+
+- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- All guideline and workflow rules

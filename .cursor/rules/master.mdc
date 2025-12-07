@@ -1,0 +1,32 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# AI Rules Master Reference
+
+Central reference for all AI rules. Read related rules before applying.
+
+## Locations
+
+Rules are in `.cursor/rules/` at repository root or project root in monorepos. Other `*.mdc` files are not rules unless referenced.
+
+## Rule List
+
+### Agents
+
+- [Cursor Rules](.cursor/rules/agents/cursor_rules.mdc) - Managing cursor rules
+- [Rule Usage](.cursor/rules/agents/rule_usage.mdc) - Add "Rules Applied" section
+
+### Guidelines
+
+- [Commit Message](.cursor/rules/guidelines/commit_message.mdc) - Commit message format
+- [Naming](.cursor/rules/guidelines/naming.mdc) - Naming conventions
+- [Storybook Documentation](.cursor/rules/guidelines/storybook_documentation.mdc) - Storybook documentation organization
+- [Storybook Stories](.cursor/rules/guidelines/storybook_stories.mdc) - Storybook story format
+- [TypeScript](.cursor/rules/guidelines/typescript.mdc) - TypeScript standards
+
+### Workflows
+
+- [Generate Changeset](.cursor/rules/workflows/generate_changeset.mdc) - Changeset generation

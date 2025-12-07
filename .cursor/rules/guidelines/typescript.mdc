@@ -1,0 +1,112 @@
+---
+description: TypeScript development guidelines
+globs: *.ts,*.tsx
+alwaysApply: false
+---
+
+# TypeScript Guidelines
+
+## Type Safety
+
+- Prefer implicit typing over explicit types
+- Prefer explicit types over `any` or implicit `any`
+- Use type annotations for function parameters and return types
+- Avoid `any` - use `unknown` if type is truly unknown
+
+```ts
+// ✅ Good
+function getTheme(): 'dark' | 'light' {
+	return 'dark'
+}
+
+// ❌ Bad
+function getTheme(): any {
+	return 'dark'
+}
+```
+
+### Type Inference
+
+- Let TypeScript infer simple types when obvious
+- Use explicit types for public APIs and complex types
+- Use `satisfies` for type checking without widening
+
+```ts
+const theme = 'dark' // ✅ Inferred
+export function getTheme(): Mode { return 'dark' } // ✅ Explicit for public API
+const config = { theme: 'dark' } satisfies Config // ✅ satisfies
+```
+
+## Interfaces vs Types
+
+- Prefer `interface` for object shapes that may be extended
+- Use `type` for unions, intersections, and computed types
+
+```ts
+interface DarkModeParam { current?: Mode } // ✅ Object shape
+type Mode = 'dark' | 'light' // ✅ Union
+type ThemeKeys = keyof ThemeVars // ✅ Computed
+```
+
+## Import and Export
+
+### Type-Only Imports
+
+- Use `import type` for type-only imports
+- Separate type imports from value imports when possible
+
+```ts
+import type { FC, PropsWithChildren } from 'react'
+import { useState } from 'react'
+```
+
+### Export Patterns
+
+- Named exports for utilities and types
+- Default exports sparingly (mainly addons/components)
+- Export types with `export type` when possible
+
+```ts
+export function useDarkMode(): boolean { }
+export type { DarkModeParam }
+export default () => definePreviewAddon(addonAnnotations) // ✅ For addon
+```
+
+## Code Organization
+
+- One primary export per file when possible
+- Group related exports together
+- Place types near usage or in dedicated type files
+- Keep functions focused on single responsibility
+- Use descriptive names
+
+## Error Handling
+
+- Create type guards for runtime type checking
+- Use discriminated unions for state management
+
+```ts
+function isDarkMode(value: unknown): value is 'dark' {
+	return value === 'dark'
+}
+
+type State =
+	| { status: 'loading' }
+	| { status: 'success'; data: Theme }
+	| { status: 'error'; error: Error }
+```
+
+## Best Practices
+
+1. Enable strict mode in `tsconfig.json`
+2. Use `const` assertions for literal types
+3. Prefer `readonly` for immutable data
+4. Use utility types (`Partial`, `Pick`, `Omit`) when appropriate
+5. Avoid type assertions (`as`) - use type guards instead
+6. Document complex types with JSDoc
+
+## Integration
+
+- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Naming Conventions](.cursor/rules/guidelines/naming.mdc)
+- [Storybook Stories](.cursor/rules/guidelines/storybook_stories.mdc)
