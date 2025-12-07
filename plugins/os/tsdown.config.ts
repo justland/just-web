@@ -1,1 +1,2 @@
-export { default } from '@just-web/repo-scripts/config/tsdown.config.js'
+export { default } from '@just-web/repo-scripts/config/tsdown.config.ts'
+
