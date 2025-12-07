@@ -42,7 +42,7 @@ describe('register()', () => {
 			log.reporter.getLogMessagesWithLevel(),
 			has(
 				`(NOTICE) Registering a new handler for 'just-web.showCommandPalette'. Please make sure this is expected.`,
-				`(DEBUG) overrideing handler: () => {}`
+				'(DEBUG) overrideing handler: () => {}'
 			)
 		)
 	})
@@ -77,10 +77,7 @@ describe('invoke()', () => {
 		const [r, log] = await setupTest()
 		r.invoke('not-exist')
 
-		a.satisfies(
-			log.reporter.getLogMessagesWithLevel(),
-			has(`(ERROR) Invoking not registered command: 'not-exist'`)
-		)
+		a.satisfies(log.reporter.getLogMessagesWithLevel(), has(`(ERROR) Invoking not registered command: 'not-exist'`))
 	})
 
 	test('invoke command', async () => {

@@ -26,9 +26,7 @@ it('provides app log methods', async () => {
 	log.planck('planck')
 	log.on(logLevels.error, log => log('on error'))
 
-	expect(
-		reporter.logs.filter(l => l.id === 'test').map(l => `${log.toLogLevelName(l.level)}: ${l.args}`)
-	).toEqual([
+	expect(reporter.logs.filter(l => l.id === 'test').map(l => `${log.toLogLevelName(l.level)}: ${l.args}`)).toEqual([
 		'alert: alert',
 		'debug: 1,count',
 		'debug: 2,count',
@@ -55,9 +53,7 @@ it('can add custom levels', async () => {
 	l.silly(`what's up`)
 
 	expect(
-		reporter.logs
-			.filter(l => l.id === 'test:test logger')
-			.map(l => `${ctx.log.toLogLevelName(l.level)}: ${l.args}`)
+		reporter.logs.filter(l => l.id === 'test:test logger').map(l => `${ctx.log.toLogLevelName(l.level)}: ${l.args}`)
 	).toEqual([`spicy: it's spicy`, `silly: what's up`])
 })
 

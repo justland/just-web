@@ -32,10 +32,7 @@ describe('navigate()', () => {
 	it('logs an error when it is an unknown route', async () => {
 		const app = await justTestApp().with(routesGizmo).create()
 		app.routes.navigate('/not-exist')
-		a.satisfies(
-			app.log.reporter.getLogMessagesWithLevel(),
-			some(`(ERROR) navigate target not found: '/not-exist'`)
-		)
+		a.satisfies(app.log.reporter.getLogMessagesWithLevel(), some(`(ERROR) navigate target not found: '/not-exist'`))
 	})
 
 	it('invokes registered route', async () => {

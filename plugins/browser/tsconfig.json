@@ -1,23 +1,20 @@
 {
-  "extends": "@repobuddy/typescript/tsconfig/monorepo",
-  "compilerOptions": {
-    "outDir": "esm",
-    "rootDir": "ts",
-    "verbatimModuleSyntax": true
-  },
-  "references": [
-    {
-      "path": "../../frameworks/app"
-    },
-    {
-      "path": "../../libraries/states"
-    },
-    {
-      "path": "../../plugins/fetch"
-    }
-  ],
-  "include": [
-    "ts",
-    "typings"
-  ]
+	"extends": "@repobuddy/typescript/tsconfig/monorepo",
+	"compilerOptions": {
+		"outDir": "esm",
+		"rootDir": "ts",
+		"verbatimModuleSyntax": true
+	},
+	"references": [
+		{
+			"path": "../../frameworks/app"
+		},
+		{
+			"path": "../../libraries/states"
+		},
+		{
+			"path": "../../plugins/fetch"
+		}
+	],
+	"include": ["ts", "typings"]
 }

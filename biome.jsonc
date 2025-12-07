@@ -1,0 +1,87 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+	"extends": ["@repobuddy/biome/recommended"],
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"includes": [
+			"**",
+			"!**/cjs/",
+			"!**/coverage/",
+			"!**/esm/",
+			"!**/fixtures/",
+			"!**/lib/",
+			"!**/*.hbs",
+			"!**/*.md",
+			"!**/*.yml",
+			"!**/*.yaml"
+		]
+	},
+	"formatter": {
+		"useEditorconfig": true
+	},
+	"linter": {
+		"rules": {
+			"suspicious": {
+				"noConfusingVoidType": "off"
+			}
+		}
+	},
+	// "linter": {
+	// 	"enabled": true,
+	// 	"rules": {
+	// 		"recommended": false,
+	// 		"correctness": {
+	// 			"noInvalidUseBeforeDeclaration": "error",
+	// 			"noUnusedVariables": "error"
+	// 		},
+	// 		"suspicious": {
+	// 			"noConsole": {
+	// 				"level": "error",
+	// 				"options": { "allow": ["error", "warn", "info", "assert"] }
+	// 			}
+	// 		}
+	// 	},
+	// 	"includes": [
+	// 		"**",
+	// 		"!**/cjs",
+	// 		"!**/coverage",
+	// 		"!**/esm",
+	// 		"!**/node_modules",
+	// 		"!**/tslib"
+	// 	]
+	// },
+	"javascript": {
+		"formatter": {
+			// "jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "none",
+			// "semicolons": "asNeeded",
+			"arrowParentheses": "asNeeded"
+			// "bracketSameLine": false,
+			// "quoteStyle": "single",
+			// "attributePosition": "auto",
+			// "bracketSpacing": true
+		}
+	},
+	"html": {
+		"formatter": {
+			"indentScriptAndStyle": false,
+			"selfCloseVoidElements": "always"
+		}
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on",
+				"useSortedAttributes": "on"
+			}
+		}
+	}
+}

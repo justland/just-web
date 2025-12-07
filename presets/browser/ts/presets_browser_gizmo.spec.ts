@@ -1,7 +1,7 @@
 import { justTestApp, type MemoryLogReporter } from '@just-web/app/testing'
 import { commandsGizmoFn } from '@just-web/commands'
 import { testType } from 'type-plus'
-import { presetsBrowserGizmoFn, type BrowserGizmo, type HistoryGizmo } from './index.js'
+import { type BrowserGizmo, type HistoryGizmo, presetsBrowserGizmoFn } from './index.js'
 import { createMemoryHistory } from './testing/index.js'
 
 it('provides history', async () => {

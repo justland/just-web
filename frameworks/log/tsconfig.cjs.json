@@ -3,6 +3,6 @@
 	"compilerOptions": {
 		"module": "CommonJS",
 		"outDir": "cjs",
-    "verbatimModuleSyntax": false
+		"verbatimModuleSyntax": false
 	}
 }

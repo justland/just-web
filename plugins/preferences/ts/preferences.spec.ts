@@ -21,7 +21,7 @@ function setupTestApp() {
 		.create()
 }
 
-describe(`plugin.init()`, () => {
+describe('plugin.init()', () => {
 	it('provides getUserPreference() API', async () => {
 		const app = await setupTestApp()
 		const o = new AssertOrder(1)
@@ -89,7 +89,7 @@ describe(`${setUserPreference.name}()`, () => {
 	})
 })
 
-describe(`preferences.createState()`, () => {
+describe('preferences.createState()', () => {
 	async function setupTestStore<T extends JSONTypes>(key: string, defaultValue?: T) {
 		const { preferences } = await setupTestApp()
 		return preferences.createStore(key, defaultValue)
@@ -102,7 +102,7 @@ describe(`preferences.createState()`, () => {
 		isType.equal<true, { b: string } | undefined, typeof result>()
 	})
 
-	describe(`get()`, () => {
+	describe('get()', () => {
 		it('returns undefined if not exist', async () => {
 			const store = await setupTestStore('not exist')
 
@@ -122,7 +122,7 @@ describe(`preferences.createState()`, () => {
 		})
 	})
 
-	describe(`set()`, () => {
+	describe('set()', () => {
 		type TestPref = { a: number; b?: string }
 		it('can set value directly', async () => {
 			const store = await setupTestStore<TestPref>('set-value')

@@ -1,1 +1,1 @@
-export type { Fetch, BrowserGizmo, BrowserGizmoOptions, ReadonlyErrorStore, ErrorStore } from '@just-web/browser'
+export type { BrowserGizmo, BrowserGizmoOptions, ErrorStore, Fetch, ReadonlyErrorStore } from '@just-web/browser'

@@ -1,20 +1,3 @@
-export {
-	createConsoleLogReporter,
-	createMemoryLogReporter,
-	createTimestampFormatter,
-	DEFAULT_LOG_METHOD_NAMES,
-	formatLogLevel,
-	getLogger,
-	InvalidId,
-	logLevels,
-	plainLogFormatter,
-	StandardLogError,
-	suppressLogs,
-	toConsoleMethod,
-	toLogLevel,
-	toLogLevelName,
-	toMessageWithLevel
-} from 'standard-log'
 export type {
 	ConsoleLogFormatter,
 	ConsoleLogReporter,
@@ -35,4 +18,21 @@ export type {
 	StandardLog,
 	StandardLogOptions,
 	TimestampFormat
+} from 'standard-log'
+export {
+	createConsoleLogReporter,
+	createMemoryLogReporter,
+	createTimestampFormatter,
+	DEFAULT_LOG_METHOD_NAMES,
+	formatLogLevel,
+	getLogger,
+	InvalidId,
+	logLevels,
+	plainLogFormatter,
+	StandardLogError,
+	suppressLogs,
+	toConsoleMethod,
+	toLogLevel,
+	toLogLevelName,
+	toMessageWithLevel
 } from 'standard-log'

@@ -1,4 +1,4 @@
-import { idGizmoFn, type IdGizmo } from '@just-web/id'
+import { type IdGizmo, idGizmoFn } from '@just-web/id'
 import { define } from '@unional/gizmo'
 import { createStandardLogForTest, type StandardLogForTestOptions } from 'standard-log/testing'
 import { buildLogContext } from './log_gizmo.logic.js'
@@ -23,21 +23,19 @@ export type LogTestGizmoOptions<N extends string = LogMethodNames> = StandardLog
  * app.log.reporter.getLogMessagesWithLevel() // `(INFO) hello world`
  * ```
  */
-export const logTestGizmoFn = define(
-	<N extends string = LogMethodNames>(options?: LogTestGizmoOptions<N>) => ({
-		static: define.require(idGizmoFn),
-		async create(ctx: IdGizmo) {
-			const sl = createStandardLogForTest<N>(options)
-			return {
-				log: Object.assign(buildLogContext<N>(ctx.name, sl, options), {
-					reporter: sl.reporter
-				}) as unknown as GizmoStandardLog<N> & {
-					reporter: MemoryLogReporter
-				}
+export const logTestGizmoFn = define(<N extends string = LogMethodNames>(options?: LogTestGizmoOptions<N>) => ({
+	static: define.require(idGizmoFn),
+	async create(ctx: IdGizmo) {
+		const sl = createStandardLogForTest<N>(options)
+		return {
+			log: Object.assign(buildLogContext<N>(ctx.name, sl, options), {
+				reporter: sl.reporter
+			}) as unknown as GizmoStandardLog<N> & {
+				reporter: MemoryLogReporter
 			}
 		}
-	})
-)
+	}
+}))
 
 /**
  * A test gizmo with log.

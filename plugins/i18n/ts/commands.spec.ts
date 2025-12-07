@@ -1,10 +1,10 @@
 import { justTestApp } from '@just-web/app/testing'
 import { commandsGizmoFn } from '@just-web/commands'
-import { i18nGizmoFn, setLanguageCommand } from './index.js'
 import { keyboardGizmoFn } from '@just-web/keyboard'
+import { i18nGizmoFn, setLanguageCommand } from './index.js'
 
 it('can invoke set language from command', async () => {
-	const app =await justTestApp()
+	const app = await justTestApp()
 		.with(commandsGizmoFn())
 		.with(keyboardGizmoFn())
 		.with(i18nGizmoFn({ language: 'en' }))

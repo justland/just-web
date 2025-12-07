@@ -1,7 +1,7 @@
 import { justTestApp } from '@just-web/app/testing'
 import { a, some } from 'assertron'
 import { contributionRegistry } from './contributions.js'
-import { formatCommand, type CommandContribution } from './index.js'
+import { type CommandContribution, formatCommand } from './index.js'
 
 async function setupTest(options?: CommandContribution[]) {
 	const app = await justTestApp().create()

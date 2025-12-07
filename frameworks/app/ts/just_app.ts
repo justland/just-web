@@ -1,4 +1,4 @@
-import { logGizmoFn, type LogGizmo } from '@just-web/log'
+import { type LogGizmo, logGizmoFn } from '@just-web/log'
 import { incubateApp } from './just_app.logic.js'
 import type { JustAppOptions } from './just_app.types.js'
 import type { IdGizmo } from './just_web_id.js'

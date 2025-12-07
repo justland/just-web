@@ -1,11 +1,11 @@
 import { createMemoryLogReporter, type LogGizmoOptions } from '@just-web/app'
 import { justTestApp } from '@just-web/app/testing'
-import { keyboardGizmoFn, type KeyboardGizmo, type KeyboardGizmoOptions } from '@just-web/keyboard'
+import { type KeyboardGizmo, type KeyboardGizmoOptions, keyboardGizmoFn } from '@just-web/keyboard'
 import { a } from 'assertron'
 import { configGlobal } from 'standard-log'
-import { testType, type ExtractFunction } from 'type-plus'
-import { command, commandsGizmoFn, type CommandsGizmo, type CommandsGizmoOptions } from './index.js'
-import { type Partial } from './types.js'
+import { type ExtractFunction, testType } from 'type-plus'
+import { type CommandsGizmo, type CommandsGizmoOptions, command, commandsGizmoFn } from './index.js'
+import type { Partial } from './types.js'
 
 function setupPlugin(options?: LogGizmoOptions & KeyboardGizmoOptions & CommandsGizmoOptions) {
 	return justTestApp().with(keyboardGizmoFn(options)).with(commandsGizmoFn(options)).create()
@@ -213,7 +213,7 @@ describe('connect()', () => {
 		expect(keyboard.keyBindingContributions.has('plugin-a.increment')).toBe(false)
 	})
 
-	it(`works without KeyboardContext, which will skip the registration`, async () => {
+	it('works without KeyboardContext, which will skip the registration', async () => {
 		const { commands } = await setupPlugin()
 		const inc = command(
 			{

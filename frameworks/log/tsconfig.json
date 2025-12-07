@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"outDir": "esm",
 		"rootDir": "ts",
-    "verbatimModuleSyntax": true
+		"verbatimModuleSyntax": true
 	},
 	"include": ["ts", "typings"],
 	"references": [

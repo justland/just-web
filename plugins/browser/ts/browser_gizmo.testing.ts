@@ -1,6 +1,6 @@
-import { define, incubate, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
+import { type DepBuilder, define, type GizmoStatic, incubate, type LogGizmo } from '@just-web/app'
 import type { Fetch } from '@just-web/fetch'
-import { browserGizmoFn, type BrowserGizmo, type BrowserGizmoOptions } from './browser_gizmo.js'
+import { type BrowserGizmo, type BrowserGizmoOptions, browserGizmoFn } from './browser_gizmo.js'
 
 export interface BrowserTestGizmoOptions extends BrowserGizmoOptions {
 	sessionStorage?: Storage | undefined
@@ -12,25 +12,23 @@ export interface BrowserTestGizmoOptions extends BrowserGizmoOptions {
 
 export const browserTestGizmoFn: (
 	options?: BrowserTestGizmoOptions
-) => GizmoStatic<DepBuilder<LogGizmo, unknown>, BrowserGizmo> = define(
-	(options?: BrowserTestGizmoOptions) => ({
-		static: define.require<LogGizmo>(),
-		async create(ctx) {
-			const { browser, fetch } = await incubate(ctx).with(browserGizmoFn(options)).create()
+) => GizmoStatic<DepBuilder<LogGizmo, unknown>, BrowserGizmo> = define((options?: BrowserTestGizmoOptions) => ({
+	static: define.require<LogGizmo>(),
+	async create(ctx) {
+		const { browser, fetch } = await incubate(ctx).with(browserGizmoFn(options)).create()
 
-			return {
-				browser: {
-					...browser,
-					sessionStorage: options?.sessionStorage ?? browser.sessionStorage,
-					localStorage: options?.localStorage ?? browser.localStorage,
-					navigator: (options?.navigator ?? browser.navigator) as Navigator,
-					location: (options?.location ?? browser.location) as Location
-				},
-				fetch
-			}
+		return {
+			browser: {
+				...browser,
+				sessionStorage: options?.sessionStorage ?? browser.sessionStorage,
+				localStorage: options?.localStorage ?? browser.localStorage,
+				navigator: (options?.navigator ?? browser.navigator) as Navigator,
+				location: (options?.location ?? browser.location) as Location
+			},
+			fetch
 		}
-	})
-)
+	}
+}))
 
 export function stubStorage(): Storage {
 	const m = new Map<string, string>()

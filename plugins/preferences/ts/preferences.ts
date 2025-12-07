@@ -11,9 +11,8 @@ export type { SetStateValue }
  * So that will work in MFE.
  * @param defaultValue Optional. The default value to return if the preference doesn't exist.
  */
-export const getUserPreference = command<(key: string, defaultValue?: string) => string | undefined>(
-	'just-web.getUserPreference'
-)
+export const getUserPreference =
+	command<(key: string, defaultValue?: string) => string | undefined>('just-web.getUserPreference')
 /**
  * Set the specified user preference.
  * @param key The key of the preference to be updated.
@@ -21,8 +20,7 @@ export const getUserPreference = command<(key: string, defaultValue?: string) =>
  * If the value or the result of the handler is undefined,
  * the preference should be removed.
  */
-export const setUserPreference = command<(key: string, value: SetStateValue<string | undefined>) => void>(
-	'just-web.setUserPreference'
-)
+export const setUserPreference =
+	command<(key: string, value: SetStateValue<string | undefined>) => void>('just-web.setUserPreference')
 
 export const clearAllUserPreferences = command({ id: 'just-web.clearAllUserPreferences' })

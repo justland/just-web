@@ -1,7 +1,7 @@
-import { logLevels, type Logger } from '@just-web/app'
-import { nothing, produce } from 'immer'
+import { type Logger, logLevels } from '@just-web/app'
+import { type nothing, produce } from 'immer'
 import { tersify } from 'tersify'
-import { isPromise, type AnyFunction } from 'type-plus'
+import { type AnyFunction, isPromise } from 'type-plus'
 import { getDefaultLogger } from './log.js'
 import type { Updater } from './types.js'
 
@@ -48,16 +48,15 @@ export function createState<T>(
 	const log = meta?.logger ?? getDefaultLogger()
 
 	function notifyAfterSet(old: T, value: T) {
-		log.planck(`state changed:`, old, value)
-		handlers.forEach(h => h(value, old))
+		log.planck('state changed:', old, value)
+		handlers.forEach(h => {
+			h(value, old)
+		})
 		return value
 	}
 
 	function set(
-		newValue:
-			| T
-			| ((draft: T) => T | void | typeof nothing)
-			| ((draft: T) => Promise<T | void | typeof nothing>)
+		newValue: T | ((draft: T) => T | void | typeof nothing) | ((draft: T) => Promise<T | void | typeof nothing>)
 	) {
 		if (Object.is(value, newValue)) return newValue
 
@@ -71,9 +70,8 @@ export function createState<T>(
 					value = Object.freeze(v)
 					return notifyAfterSet(old, value)
 				})
-			} else {
-				value = Object.freeze(r)
 			}
+			value = Object.freeze(r)
 		}
 		return notifyAfterSet(old, value)
 	}

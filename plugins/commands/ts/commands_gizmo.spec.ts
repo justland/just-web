@@ -23,7 +23,7 @@ it('can be created with prefilled command handlers', async () => {
 		.with(
 			commandsGizmoFn({
 				handlers: {
-					'some.command': function () {
+					'some.command': () => {
 						log.info('some.command')
 					}
 				}

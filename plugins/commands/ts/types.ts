@@ -83,9 +83,7 @@ export type OverloadFallback<T extends AnyFunction, Then = AnyFunction, Else = T
 	Then
 >
 
-export interface ContributionRegistry
-	extends Registry<string, CommandContribution>,
-		WithAdder<CommandContribution> {}
+export interface ContributionRegistry extends Registry<string, CommandContribution>, WithAdder<CommandContribution> {}
 
 export type Command<F extends AnyFunction = () => void> = F & {
 	/**

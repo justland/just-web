@@ -1,27 +1,24 @@
 {
-  "extends": "@repobuddy/typescript/tsconfig/monorepo",
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "outDir": "esm",
-    "rootDir": "ts",
-    "verbatimModuleSyntax": true
-  },
-  "references": [
-    {
-      "path": "../../frameworks/app"
-    },
-    {
-      "path": "../../plugins/commands"
-    },
-    {
-      "path": "../../plugins/keyboard"
-    },
-    {
-      "path": "../../plugins/os"
-    }
-  ],
-  "include": [
-    "ts",
-    "typings"
-  ]
+	"extends": "@repobuddy/typescript/tsconfig/monorepo",
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"outDir": "esm",
+		"rootDir": "ts",
+		"verbatimModuleSyntax": true
+	},
+	"references": [
+		{
+			"path": "../../frameworks/app"
+		},
+		{
+			"path": "../../plugins/commands"
+		},
+		{
+			"path": "../../plugins/keyboard"
+		},
+		{
+			"path": "../../plugins/os"
+		}
+	],
+	"include": ["ts", "typings"]
 }

@@ -33,9 +33,10 @@ describe('add()', () => {
 		store.add(cmd1)
 		store.add(cmd2)
 
-		a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some(
-			'test:@just-web/contributions (WARN) Registering a duplicate key binding contribution, ignored: a'
-		))
+		a.satisfies(
+			log.reporter.getLogMessagesWithIdAndLevel(),
+			some('test:@just-web/contributions (WARN) Registering a duplicate key binding contribution, ignored: a')
+		)
 
 		const r = store.get()['a']
 		expect(r).toBe(cmd1)

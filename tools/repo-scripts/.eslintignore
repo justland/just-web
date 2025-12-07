@@ -1,8 +1,0 @@
-!.depcheckrc.yml
-!.storybook
-cjs/
-coverage/
-esm/
-lib/
-node_modules/
-tslib/

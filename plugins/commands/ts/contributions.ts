@@ -7,11 +7,8 @@ export namespace contributionRegistry {
 	export type Options = CommandContribution[]
 }
 
-export function contributionRegistry(
-	ctx: LogGizmo,
-	options?: contributionRegistry.Options
-): ContributionRegistry {
-	return withAdder(createRegistry<string, CommandContribution>(getInitRecord(options)), function (r, cmd) {
+export function contributionRegistry(ctx: LogGizmo, options?: contributionRegistry.Options): ContributionRegistry {
+	return withAdder(createRegistry<string, CommandContribution>(getInitRecord(options)), (r, cmd) => {
 		const key = cmd.id
 		if (r[key]) return ctx.log.error(`Registering a duplicate command contribution, ignored: ${key}`)
 		r[key] = cmd

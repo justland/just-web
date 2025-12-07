@@ -4,11 +4,11 @@ import {
 	createRegistry,
 	createStore,
 	push,
-	unshift,
-	withAdder,
 	type Registry,
 	type Store,
-	type WithAdder
+	unshift,
+	type WithAdder,
+	withAdder
 } from './index.js'
 
 describe('adder()', () => {

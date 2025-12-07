@@ -1,31 +1,20 @@
 {
-	"$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
-	"___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
-		"onlyUpdatePeerDependentsWhenOutOfRange": true,
-		"updateInternalDependents": "always"
-	},
-	"access": "public",
-	"baseBranch": "main",
-	"changelog": "@changesets/cli/changelog",
-	"commit": false,
-	"fixed": [
-		[
-			"@just-web/app",
-      "@just-web/id",
-			"@just-web/log"
-		],
-		[
-			"@just-web/commands",
-			"@just-web/keyboard"
-		],
-		[
-			"@just-web/browser-keyboard",
-			"@just-web/browser-preferences",
-			"@just-web/browser"
-		]
-	],
-	"ignore": ["examples-*"],
-	"linked": [],
-	"title": "chore: version packages",
-	"updateInternalDependencies": "minor"
+  "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
+  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+    "onlyUpdatePeerDependentsWhenOutOfRange": true,
+    "updateInternalDependents": "always"
+  },
+  "access": "public",
+  "baseBranch": "main",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [
+    ["@just-web/app", "@just-web/id", "@just-web/log"],
+    ["@just-web/commands", "@just-web/keyboard"],
+    ["@just-web/browser-keyboard", "@just-web/browser-preferences", "@just-web/browser"]
+  ],
+  "ignore": ["examples-*"],
+  "linked": [],
+  "title": "chore: version packages",
+  "updateInternalDependencies": "minor"
 }

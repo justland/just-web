@@ -1,6 +1,6 @@
 import { justTestApp } from '@just-web/app/testing'
-import { commandsGizmoFn, type CommandContribution } from '@just-web/commands'
-import { keyboardGizmoFn, type KeyBindingContribution } from '@just-web/keyboard'
+import { type CommandContribution, commandsGizmoFn } from '@just-web/commands'
+import { type KeyBindingContribution, keyboardGizmoFn } from '@just-web/keyboard'
 import { osGizmo } from '@just-web/os'
 import { a, has } from 'assertron'
 import mousetrap from 'mousetrap'
