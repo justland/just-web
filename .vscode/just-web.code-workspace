@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../.github"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"**/common/config/rush/*.json": "jsonc",
+			"*.scss": "postcss",
+			"common/git-hooks/*": "shell",
+			"rush.json": "jsonc"
+		},
+		"yaml.schemas": {
+			"https://json.schemastore.org/github-workflow.json": "/.github/workflows/*"
+		},
+		"typescript.tsdk": "node_modules\\typescript\\lib"
+	}
+}
