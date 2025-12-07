@@ -441,6 +441,9 @@ importers:
       '@size-limit/preset-small-lib':
         specifier: ~11.2.0
         version: 11.2.0(size-limit@11.2.0)
+      '@vitest/browser-playwright':
+        specifier: ^4.0.15
+        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
@@ -499,6 +502,9 @@ importers:
       '@types/mousetrap':
         specifier: ~1.6.9
         version: 1.6.15
+      '@vitest/browser-playwright':
+        specifier: ^4.0.15
+        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
@@ -569,6 +575,9 @@ importers:
       '@size-limit/preset-small-lib':
         specifier: ~11.2.0
         version: 11.2.0(size-limit@11.2.0)
+      '@vitest/browser-playwright':
+        specifier: ^4.0.15
+        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
@@ -810,6 +819,9 @@ importers:
       '@size-limit/preset-small-lib':
         specifier: ~11.2.0
         version: 11.2.0(size-limit@11.2.0)
+      '@vitest/browser-playwright':
+        specifier: ^4.0.15
+        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
         version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(vitest@4.0.15))(vitest@4.0.15)
