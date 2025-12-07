@@ -80,6 +80,7 @@
 		"@repobuddy/typescript": "^1.2.0",
 		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~11.2.0",
+		"@vitest/browser-playwright": "^4.0.15",
 		"@vitest/coverage-v8": "^4.0.15",
 		"npm-run-all2": "^6.0.0",
 		"repobuddy": "^1.0.1",

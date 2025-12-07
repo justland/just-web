@@ -22,7 +22,7 @@ it('can specify a default value (which is not saved to the store)', async () => 
 		browser: {
 			localStorage: stubLocalStorage({
 				setItem() {
-					fail('should not reach')
+					expect.fail('should not reach')
 				}
 			})
 		}

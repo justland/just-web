@@ -21,7 +21,7 @@ export const browserPreferencesGizmo = define({
 	async create(ctx) {
 		const localStorage = ctx.browser.localStorage
 		function getItem(k: string) {
-			return deserialize(ctx.browser.localStorage.getItem(k))
+			return deserialize(localStorage.getItem(k))
 		}
 
 		getUserPreference.connect(ctx, (key, defaultValue) => {
