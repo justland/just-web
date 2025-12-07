@@ -6,12 +6,14 @@ import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
 
 let keys: Record<string, boolean>
-export function startKeyBindings(param: LogGizmo & KeyboardGizmo & CommandsGizmo& OSGizmo) {
+export function startKeyBindings(param: LogGizmo & KeyboardGizmo & CommandsGizmo & OSGizmo) {
 	const keyBindings = param.keyboard.keyBindingContributions
 
 	keys = record()
 
-	keyBindings.values().forEach(keybinding => bindKey(param, keybinding))
+	keyBindings.values().forEach(keybinding => {
+		bindKey(param, keybinding)
+	})
 	keyBindings.onChange(value => {
 		Mousetrap.reset()
 		keys = record()
@@ -21,7 +23,7 @@ export function startKeyBindings(param: LogGizmo & KeyboardGizmo & CommandsGizmo
 }
 
 function bindKey(
-	{ log: logContext, commands, os }: LogGizmo&CommandsGizmo&OSGizmo,
+	{ log: logContext, commands, os }: LogGizmo & CommandsGizmo & OSGizmo,
 	keyBinding: KeyBindingContribution
 ) {
 	const key = getKey({ os }, keyBinding)

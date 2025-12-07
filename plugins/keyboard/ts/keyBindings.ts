@@ -1,6 +1,6 @@
 import type { LogGizmo } from '@just-web/app'
 import type { OSGizmo } from '@just-web/os'
-import { createRegistry, withAdder, type Registry, type WithAdder } from '@just-web/states'
+import { createRegistry, type Registry, type WithAdder, withAdder } from '@just-web/states'
 import { record } from 'type-plus'
 
 export type KeyBindingContribution =
@@ -46,7 +46,7 @@ export function keyBindingRegistry(
 	ctx: LogGizmo,
 	options?: keyBindingRegistry.Options
 ): KeyBindingContributionRegistry {
-	return withAdder(createRegistry<string, KeyBindingContribution>(getInitRecord(options)), function (r, kb) {
+	return withAdder(createRegistry<string, KeyBindingContribution>(getInitRecord(options)), (r, kb) => {
 		const key = kb.id
 		const log = ctx.log.getLogger('@just-web/contributions')
 		if (r[key]) return log.warn(`Registering a duplicate key binding contribution, ignored: ${key}`)
@@ -65,6 +65,6 @@ export function formatKeyBinding({ os }: OSGizmo, keyBinding: KeyBindingContribu
 	const m = os.isMac()
 	return {
 		id: keyBinding.id,
-		key: (m ? keyBinding.mac ?? keyBinding.key : keyBinding.key) as string
+		key: (m ? (keyBinding.mac ?? keyBinding.key) : keyBinding.key) as string
 	}
 }

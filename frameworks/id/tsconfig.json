@@ -1,12 +1,9 @@
 {
-  "extends": "@repobuddy/typescript/tsconfig/monorepo",
-  "compilerOptions": {
-    "outDir": "esm",
-    "rootDir": "ts",
-    "verbatimModuleSyntax": true
-  },
-  "include": [
-    "ts",
-    "types"
-  ]
+	"extends": "@repobuddy/typescript/tsconfig/monorepo",
+	"compilerOptions": {
+		"outDir": "esm",
+		"rootDir": "ts",
+		"verbatimModuleSyntax": true
+	},
+	"include": ["ts", "types"]
 }

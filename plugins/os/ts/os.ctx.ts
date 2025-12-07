@@ -7,5 +7,5 @@ export namespace ctx {
 }
 
 export const ctx: { os?: ctx.OperatingSystem | undefined } = {
-	os: platform.os,
+	os: platform.os
 }

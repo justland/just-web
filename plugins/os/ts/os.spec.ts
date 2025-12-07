@@ -1,6 +1,6 @@
 import { stub } from 'type-plus'
-import { isMac } from './os.js'
 import { ctx } from './os.ctx.js'
+import { isMac } from './os.js'
 
 describe('isMac()', () => {
 	it(`returns true for 'OS X'`, () => {

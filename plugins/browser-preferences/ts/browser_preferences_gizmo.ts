@@ -1,13 +1,8 @@
-import { define, incubate, type IdGizmo, type LogGizmo } from '@just-web/app'
+import { define, type IdGizmo, incubate, type LogGizmo } from '@just-web/app'
 import type { BrowserGizmo } from '@just-web/browser'
 import type { CommandsGizmo } from '@just-web/commands'
 import type { KeyboardGizmo } from '@just-web/keyboard'
-import {
-	clearAllUserPreferences,
-	getUserPreference,
-	preferencesGizmo,
-	setUserPreference
-} from '@just-web/preferences'
+import { clearAllUserPreferences, getUserPreference, preferencesGizmo, setUserPreference } from '@just-web/preferences'
 import { isNothing } from '@just-web/states'
 import { produce } from 'immer'
 import { decode, encode } from 'js-base64'

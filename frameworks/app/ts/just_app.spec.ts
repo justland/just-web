@@ -1,9 +1,9 @@
 import { a } from 'assertron'
 import { testType } from 'type-plus'
-import { createMemoryLogReporter, define, justApp, logLevels, type IdGizmo, type LogGizmo } from './index.js'
-import { justTestApp, leafGizmo, sideEffectGizmo, type LeafGizmo } from './testing/index.js'
+import { createMemoryLogReporter, define, type IdGizmo, justApp, type LogGizmo, logLevels } from './index.js'
+import { justTestApp, type LeafGizmo, leafGizmo, sideEffectGizmo } from './testing/index.js'
 
-it(`requires a name`, async () => {
+it('requires a name', async () => {
 	// @ts-expect-error
 	justApp({})
 
@@ -71,7 +71,7 @@ it('allows one gizmo to override another', async () => {
 	})
 
 	const app = await justTestApp({ name: 'test-app' }).with(log2).create()
-	testType.equal<typeof app['log'], { info(value: string): void }>(true)
+	testType.equal<(typeof app)['log'], { info(value: string): void }>(true)
 })
 
 it('starts will log an app start message', async () => {

@@ -55,9 +55,7 @@ export function createStore<T>(value: T, meta?: StateMeta): Store<T> {
 /**
  * Convert a store to a readonly store.
  */
-export function toReadonlyStore<S extends Store<any>>(
-	store: S
-): S extends Store<infer T> ? ReadonlyStore<T> : never {
+export function toReadonlyStore<S extends Store<any>>(store: S): S extends Store<infer T> ? ReadonlyStore<T> : never {
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 	return pick(store, 'get', 'onChange') as any
 }

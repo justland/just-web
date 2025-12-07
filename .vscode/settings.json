@@ -1,59 +1,103 @@
 {
-  "cSpell.ignorePaths": [
-    "package-lock.json",
-    "node_modules",
-    "vscode-extension",
-    ".git/objects",
-    ".vscode",
-    ".vscode-insiders",
-    "__snapshots__",
-    "pnpm-lock.yaml"
-  ],
-  "cSpell.words": [
-    "clsx",
-    "cmds",
-    "codeql",
-    "depcheckrc",
-    "filenamify",
-    "formatjs",
-    "immer",
-    "mdbook",
-    "miku",
-    "noreply",
-    "npmjs",
-    "pinst",
-    "pnpm",
-    "pnpmfile",
-    "repobuddy",
-    "rushx",
-    "tersified",
-    "tersify",
-    "tsbuildinfo",
-    "TTFB",
-    "unpartial",
-    "unshift",
-    "vite",
-    "vmin"
-  ],
-  "eslint.validate": [
-    "yaml"
-  ],
-  "files.associations": {
-    "**/common/config/rush/*.json": "jsonc",
-    "*.scss": "postcss",
-    "common/git-hooks/*": "shell",
-    "rush.json": "jsonc"
-  },
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "tsconfig.*.json"
-      ],
-      "url": "http://json.schemastore.org/tsconfig"
-    }
-  ],
-  "yaml.schemas": {
-    "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*"
-  },
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+	"[javascript]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		},
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[tailwindcss]": {
+		"editor.defaultFormatter": "MishaLestev.tailwind-css-language-mode-formatter",
+		"editor.formatOnSave": true
+	},
+	"[javascriptreact]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		},
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true,
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true,
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace"
+	},
+	"[typescript]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		},
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[typescriptreact]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		},
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"cSpell.ignorePaths": [
+		"package-lock.json",
+		"node_modules",
+		"vscode-extension",
+		".git/objects",
+		".vscode",
+		".vscode-insiders",
+		"__snapshots__",
+		"pnpm-lock.yaml"
+	],
+	"cSpell.words": [
+		"clsx",
+		"cmds",
+		"codeql",
+		"depcheckrc",
+		"filenamify",
+		"formatjs",
+		"immer",
+		"mdbook",
+		"miku",
+		"noreply",
+		"npmjs",
+		"pinst",
+		"pnpm",
+		"pnpmfile",
+		"repobuddy",
+		"rushx",
+		"tersified",
+		"tersify",
+		"tsbuildinfo",
+		"TTFB",
+		"unpartial",
+		"unshift",
+		"vite",
+		"vmin"
+	],
+	"eslint.validate": ["yaml"],
+	"files.associations": {
+		"**/common/config/rush/*.json": "jsonc",
+		"*.scss": "postcss",
+		"common/git-hooks/*": "shell",
+		"rush.json": "jsonc"
+	},
+	"json.schemas": [
+		{
+			"fileMatch": ["tsconfig.*.json"],
+			"url": "http://json.schemastore.org/tsconfig"
+		}
+	],
+	"yaml.schemas": {
+		"https://json.schemastore.org/github-workflow.json": "/.github/workflows/*"
+	},
+	"typescript.tsdk": "node_modules\\typescript\\lib"
 }

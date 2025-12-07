@@ -2,7 +2,7 @@ import { nothing } from 'immer'
 import type { JSONTypes } from 'type-plus'
 import type { Updater } from './types.js'
 
-describe(`Updater<T>`, () => {
+describe('Updater<T>', () => {
 	it('allows returning `nothing` when T includes undefined', () => {
 		const foo: Updater<number | undefined> = () => nothing
 		foo(1)

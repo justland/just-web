@@ -1,4 +1,4 @@
-import { type MemoryLogReporter } from '@just-web/app'
+import type { MemoryLogReporter } from '@just-web/app'
 import { justTestApp } from '@just-web/app/testing'
 import { commandsGizmoFn } from '@just-web/commands'
 import { testType } from 'type-plus'

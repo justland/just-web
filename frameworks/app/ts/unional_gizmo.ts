@@ -1,4 +1,3 @@
-export { define, incubate } from '@unional/gizmo'
 export type {
 	DepBuilder,
 	DynamicLoader,
@@ -10,3 +9,4 @@ export type {
 	GizmoStatic,
 	MissingDependency
 } from '@unional/gizmo'
+export { define, incubate } from '@unional/gizmo'

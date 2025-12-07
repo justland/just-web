@@ -35,7 +35,7 @@ export function command<F extends AnyFunction = () => void>(
 	let ctx: CommandsGizmo & Partial<KeyboardGizmo>
 
 	const fn = Object.defineProperty(
-		function (...args: Parameters<F>) {
+		(...args: Parameters<F>) => {
 			if (ctx) return ctx.commands.handlers.invoke(info.id, ...args)
 
 			if (h) return h(...args)
@@ -68,7 +68,7 @@ export function command<F extends AnyFunction = () => void>(
 			}
 		},
 		defineHandler(handler: F) {
-			return h = handler
+			return (h = handler)
 		}
 	})
 }

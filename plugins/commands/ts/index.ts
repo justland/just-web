@@ -1,6 +1,6 @@
 export * from './command.js'
 export * from './commands.js'
-export { commandsGizmoFn, type CommandsGizmo, type CommandsGizmoOptions } from './commands_gizmo.js'
+export { type CommandsGizmo, type CommandsGizmoOptions, commandsGizmoFn } from './commands_gizmo.js'
 export * from './formatCommand.js'
 export type {
 	Command,

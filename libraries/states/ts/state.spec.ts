@@ -42,7 +42,7 @@ describe('set()', () => {
 		expect(t.get()).toEqual(2)
 	})
 
-	it(`accepts undefined, which set value to undefined`, () => {
+	it('accepts undefined, which set value to undefined', () => {
 		// can't test to make sure this is not possible if the type does not contain undefined,
 		// due to: https://github.com/microsoft/TypeScript/issues/29732
 		const [, set, on] = createState<number | undefined>(1)
@@ -53,7 +53,7 @@ describe('set()', () => {
 		expect(t.get()).toEqual(undefined)
 	})
 
-	it(`accepts an updater that returns the new value`, () => {
+	it('accepts an updater that returns the new value', () => {
 		const [, set, on] = createState(1)
 		const t = trap(on)
 		const actual = set(() => 2)
@@ -82,7 +82,7 @@ describe('set()', () => {
 		expect(t.get()).toEqual(undefined)
 	})
 
-	it(`accepts an async updater that returns the new value`, async () => {
+	it('accepts an async updater that returns the new value', async () => {
 		const [, set, on] = createState(1)
 		const t = trap(on)
 		const r = set(async () => 2)
@@ -144,7 +144,7 @@ describe('set()', () => {
 	})
 })
 
-describe(`reset()`, () => {
+describe('reset()', () => {
 	it('resets to the original value', () => {
 		const [, set, on, reset] = createState(1)
 
@@ -176,10 +176,7 @@ describe('onChange()', () => {
 		const handler = () => count++
 		onChange(handler)
 
-		a.satisfies(
-			log.reporter.getLogMessagesWithIdAndLevel(),
-			some('test (TRACE) new onChange handler: () => count++')
-		)
+		a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some('test (TRACE) new onChange handler: () => count++'))
 	})
 
 	it('skip if the same handler is already registered', async () => {
@@ -192,10 +189,7 @@ describe('onChange()', () => {
 		onChange(handler)
 
 		// show that setting only occurs once
-		a.satisfies(
-			log.reporter.getLogMessagesWithIdAndLevel(),
-			some('test (TRACE) new onChange handler: () => count++')
-		)
+		a.satisfies(log.reporter.getLogMessagesWithIdAndLevel(), some('test (TRACE) new onChange handler: () => count++'))
 	})
 
 	it('returns a dispose function', async () => {
@@ -213,10 +207,7 @@ describe('onChange()', () => {
 
 		a.satisfies(
 			log.reporter.getLogMessagesWithIdAndLevel(),
-			has(
-				'test (TRACE) new onChange handler: () => count++',
-				'test (TRACE) new onChange handler: () => count++'
-			)
+			has('test (TRACE) new onChange handler: () => count++', 'test (TRACE) new onChange handler: () => count++')
 		)
 	})
 
@@ -243,26 +234,26 @@ describe('onChange()', () => {
 describe('function as value', () => {
 	const initFn = (x: number) => x + 1
 	const init = Object.assign(initFn, { b: 1 })
-	it(`gets the init function as value`, () => {
+	it('gets the init function as value', () => {
 		const [v] = createState(initFn)
 
 		expect(v).toStrictEqual(initFn)
 	})
 
-	it(`gets the function object as value`, () => {
+	it('gets the function object as value', () => {
 		const [v] = createState(init)
 
 		expect(v).toStrictEqual(init)
 	})
 
 	describe('set()', () => {
-		it(`set new funcion`, () => {
+		it('set new funcion', () => {
 			const [, set] = createState(initFn)
 			const actual = set((a: number) => a - 1)
 			expect(actual!(2)).toEqual(1)
 		})
 
-		it(`set new funcion object`, () => {
+		it('set new funcion object', () => {
 			const [, set] = createState(init)
 			const actual = set(Object.assign((a: number) => a - 1, { b: 2 }))
 			expect(actual!(2)).toEqual(1)

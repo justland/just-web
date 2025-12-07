@@ -1,4 +1,4 @@
-import { idGizmoFn, type IdGizmo } from '@just-web/id'
+import { type IdGizmo, idGizmoFn } from '@just-web/id'
 import { define } from '@unional/gizmo'
 import { createStandardLog, type LogMethodNames } from 'standard-log'
 import { buildLogContext } from './log_gizmo.logic.js'

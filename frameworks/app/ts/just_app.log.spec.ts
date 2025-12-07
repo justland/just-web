@@ -1,6 +1,6 @@
 import { a, some } from 'assertron'
 import { testType } from 'type-plus'
-import { createMemoryLogReporter, define, justApp, logLevels, type LogGizmo } from './index.js'
+import { createMemoryLogReporter, define, justApp, type LogGizmo, logLevels } from './index.js'
 import { justTestApp } from './testing/index.js'
 
 it('comes with log', async () => {

@@ -1,4 +1,4 @@
-import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
+import { type DepBuilder, define, type GizmoStatic, type LogGizmo } from '@just-web/app'
 import { ctx } from './browser_gizmo.ctx.js'
 import { createErrorStore, toReadonlyErrorStore } from './error_store.js'
 import type { ReadonlyErrorStore } from './error_store.types.js'
@@ -36,7 +36,7 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 	static: define.require<LogGizmo>().optional<FetchGizmo>(),
 	async create(gizmoCtx) {
 		const errors = createErrorStore()
-		const logger = gizmoCtx.log.getLogger(`@just-web/browser`)
+		const logger = gizmoCtx.log.getLogger('@just-web/browser')
 		const preventDefault = options?.preventDefault ?? false
 
 		// Normally, gizmo should not do work during create.
@@ -46,7 +46,7 @@ export const browserGizmoFn: (options?: BrowserGizmoOptions) => GizmoStatic<
 			if (preventDefault) ev.preventDefault()
 			const e = new BrowserError(ev.message, ev.filename, ev.lineno, ev.colno, ev.error)
 			errors.add(e)
-			logger.error(`onerror detected`, e)
+			logger.error('onerror detected', e)
 			return preventDefault
 		}
 		ctx.addEventListener('error', listener)

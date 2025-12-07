@@ -5,6 +5,4 @@ export type RoutesConfigOptions = {
 	initialRoute: string
 }
 
-export interface Route {
-	(): void
-}
+export type Route = () => void

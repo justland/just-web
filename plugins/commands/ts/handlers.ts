@@ -1,4 +1,4 @@
-import { logLevels, type LogGizmo } from '@just-web/app'
+import { type LogGizmo, logLevels } from '@just-web/app'
 import { createRegistry } from '@just-web/states'
 import { tersify } from 'tersify'
 import type { AnyFunction } from 'type-plus'

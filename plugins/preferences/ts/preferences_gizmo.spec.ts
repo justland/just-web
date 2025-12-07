@@ -1,7 +1,7 @@
 import { justTestApp } from '@just-web/app/testing'
 import { commandsGizmoFn } from '@just-web/commands'
 import { nothing } from '@just-web/states'
-import { testType, type JSONTypes } from 'type-plus'
+import { type JSONTypes, testType } from 'type-plus'
 import { clearAllUserPreferences, getUserPreference, preferencesGizmo, setUserPreference } from './index.js'
 import { setupMemoryPreferencesTestApp } from './testing/index.js'
 
@@ -59,7 +59,7 @@ it('provides clearAllUserPreferences() API', async () => {
 	app.preferences.clearAll()
 })
 
-describe(`createStore()`, () => {
+describe('createStore()', () => {
 	it('can specify the type of the value through generics', async () => {
 		const app = await setupMemoryPreferencesTestApp()
 		const store = app.preferences.createStore<{ b: string }>('some-pref')
@@ -213,10 +213,7 @@ describe(`createStore()`, () => {
 })
 
 it('cannot be used directly. Will fail with error', async () => {
-	const app = await justTestApp()
-		.with(commandsGizmoFn())
-		.with(preferencesGizmo)
-		.create()
+	const app = await justTestApp().with(commandsGizmoFn()).with(preferencesGizmo).create()
 
 	app.preferences.get('some-key')
 })

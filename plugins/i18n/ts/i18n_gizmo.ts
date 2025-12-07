@@ -1,5 +1,5 @@
 import { define } from '@just-web/app'
-import { type CommandsGizmo } from '@just-web/commands'
+import type { CommandsGizmo } from '@just-web/commands'
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import { setLanguageCommand } from './commands.js'
 
@@ -24,7 +24,9 @@ export const i18nGizmoFn = define((options: I18nGizmoOptions) => ({
 				setLanguage(newLanguage: string) {
 					const oldLanguage = language
 					language = newLanguage
-					handlers.forEach(handler => handler(newLanguage, oldLanguage))
+					handlers.forEach(handler => {
+						handler(newLanguage, oldLanguage)
+					})
 				},
 				languageChanged(handler: (newLanguage: string, oldLanguage: string) => void) {
 					handlers.push(handler)

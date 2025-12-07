@@ -1,4 +1,4 @@
-import { pick, type KeyTypes, type Widen } from 'type-plus'
+import { type KeyTypes, pick, type Widen } from 'type-plus'
 import type { OnStateChange, ResetState, SetState, StateMeta } from './state.js'
 import { createStore } from './store.js'
 

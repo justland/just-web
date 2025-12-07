@@ -1,5 +1,5 @@
 import { define } from '@just-web/app'
-import { type Fetch } from './fetch.js'
+import type { Fetch } from './fetch.js'
 
 /**
  * Gizmo provides Fetch API

@@ -19,7 +19,6 @@ describe(`${stubLocalStorage.name}()`, () => {
 	})
 })
 
-
 describe(`${stubSessionStorage.name}()`, () => {
 	it('keeps the type as Storage', () => {
 		const actual = stubSessionStorage({})

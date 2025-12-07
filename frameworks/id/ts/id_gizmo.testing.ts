@@ -1,5 +1,5 @@
-import { define, incubate, type GizmoBase } from '@unional/gizmo'
-import { idGizmoFn, type IdGizmoOptions } from './id_gizmo.js'
+import { define, type GizmoBase, incubate } from '@unional/gizmo'
+import { type IdGizmoOptions, idGizmoFn } from './id_gizmo.js'
 
 /**
  * A gizmo function that creates a test id gizmo.

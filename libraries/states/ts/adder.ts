@@ -1,5 +1,5 @@
 import type { Draft } from 'immer'
-import type { UnionOfValues, KeyTypes, Pick, RecordValue } from 'type-plus'
+import type { KeyTypes, Pick, RecordValue, UnionOfValues } from 'type-plus'
 import type { Registry, RegistryValue } from './registry.js'
 import type { Store, StoreValue } from './store.js'
 
@@ -25,8 +25,12 @@ export function adder<S extends Store<Record<KeyTypes, any>>>(
 	handler: (record: Draft<StoreValue<S>>, entry: RecordValue<StoreValue<S>>) => void
 ): Adder<RecordValue<StoreValue<S>>>
 export function adder<T>(store: Pick<Store<any>, 'set'>, handler: (record: Draft<any>, entry: T) => void) {
-	return function (...entries: T[]) {
-		store.set((s: any) => entries.forEach(entry => handler(s, entry)))
+	return (...entries: T[]) => {
+		store.set((s: any) =>
+			entries.forEach(entry => {
+				handler(s, entry)
+			})
+		)
 	}
 }
 

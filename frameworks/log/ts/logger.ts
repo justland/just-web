@@ -1,4 +1,4 @@
-import { getLogger, type LogMethodNames } from 'standard-log'
+import type { getLogger, LogMethodNames } from 'standard-log'
 import type { LogGizmo } from './log_gizmo.js'
 
 /**

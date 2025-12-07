@@ -1,5 +1,5 @@
 import { testType } from 'type-plus'
-import { createStore, toReadonlyStore, type ReadonlyStore, type Store } from './store.js'
+import { createStore, type ReadonlyStore, type Store, toReadonlyStore } from './store.js'
 
 describe('createStore()', () => {
 	test('get() returns initial value', () => {
@@ -44,15 +44,15 @@ describe('createStore()', () => {
 	})
 
 	test('NaN -> NaN does not trigger onChange()', () => {
-		const store = createStore(NaN)
+		const store = createStore(Number.NaN)
 		store.onChange(() => {
 			throw 'should not reach'
 		})
-		store.set(NaN)
+		store.set(Number.NaN)
 	})
 
 	test('NaN -> number works as expected', () => {
-		const store = createStore(NaN)
+		const store = createStore(Number.NaN)
 		store.set(123)
 		expect(store.get()).toBe(123)
 	})
@@ -63,8 +63,8 @@ describe('createStore()', () => {
 		// This seems to be a limitation of TypeScript
 		// Other solutions doesn't work.
 		function fn<S extends { a: number }>(store: Store<S>) {
-			store.set(d => {
-				testType.equal<typeof d.a, number>(true)
+			store.set(_d => {
+				testType.equal<typeof _d.a, number>(true)
 			})
 		}
 		fn(createStore({ a: 1 }))

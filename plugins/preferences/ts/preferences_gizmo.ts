@@ -2,7 +2,7 @@ import { define } from '@just-web/app'
 import type { CommandsGizmo } from '@just-web/commands'
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import { isNothing, type SetStateValue, type Updater } from '@just-web/states'
-import { MaybePromise, extractFunction, isType, type AnyFunction, type JSONTypes } from 'type-plus'
+import { type AnyFunction, extractFunction, isType, type JSONTypes, MaybePromise } from 'type-plus'
 import { clearAllUserPreferences, getUserPreference, setUserPreference } from './preferences.js'
 
 export type { SetStateValue }
@@ -55,10 +55,9 @@ export const preferencesGizmo = define({
 									if (v !== undefined) return JSON.stringify(v)
 								})
 							})
-						} else {
-							const v = value !== undefined ? JSON.stringify(value) : value
-							self.set(key, v)
 						}
+						const v = value !== undefined ? JSON.stringify(value) : value
+						self.set(key, v)
 					}
 
 					return {

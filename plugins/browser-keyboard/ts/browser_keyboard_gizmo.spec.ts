@@ -2,6 +2,7 @@ import { command } from '@just-web/commands'
 import { a, some } from 'assertron'
 import mousetrap from 'mousetrap'
 import { browserKeyboardGizmoTestApp } from './testing/index.js'
+
 beforeEach(() => mousetrap.reset())
 
 it('triggers command by keyboard event', async () => {
