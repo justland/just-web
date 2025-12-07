@@ -21,6 +21,14 @@ pnpm install @just-web/fetch
 rush add -p @just-web/fetch
 ```
 
+## Migration
+
+### 2.0.0
+
+- Removed automatic importing `cross-fetch/polyfill` in testing entry.
+- Consumers running in Node environments (without native `fetch`) must now provide their own polyfill — for example, by using `undici` or importing `cross-fetch` explicitly in their test setup.
+- This change resolves ESM compatibility issues encountered when using Vitest, as the previous `cross-fetch/polyfill` import relied on CommonJS semantics.
+
 ## Usage
 
 ```ts
