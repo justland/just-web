@@ -85,7 +85,6 @@
 		"@types/mousetrap": "~1.6.9",
 		"@vitest/coverage-v8": "^4.0.15",
 		"assertron": "^11.2.0",
-		"jsdom": "^25.0.1",
 		"npm-run-all2": "^6.0.0",
 		"repobuddy": "^1.0.1",
 		"rimraf": "~5.0.0",
