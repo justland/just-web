@@ -1,4 +1,4 @@
-import { type LogGizmoOptions, createMemoryLogReporter } from '@just-web/app'
+import { createMemoryLogReporter, type LogGizmoOptions } from '@just-web/app'
 import { justTestApp } from '@just-web/app/testing'
 import { type KeyboardGizmo, type KeyboardGizmoOptions, keyboardGizmoFn } from '@just-web/keyboard'
 import { a } from 'assertron'

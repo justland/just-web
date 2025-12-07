@@ -1,4 +1,4 @@
-import { define, type DepBuilder, type GizmoStatic, type LogGizmo } from '@just-web/app'
+import { type DepBuilder, define, type GizmoStatic, type LogGizmo } from '@just-web/app'
 import { type KeyBindingContributionRegistry, keyBindingRegistry } from './keyBindings.js'
 
 export type KeyboardGizmoOptions = {
