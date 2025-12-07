@@ -78,7 +78,7 @@
 	},
 	"devDependencies": {
 		"@just-web/repo-scripts": "workspace:^",
-		"@repobuddy/typescript": "^2.0.0",
+		"@repobuddy/typescript": "^2.1.0",
 		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~11.2.0",
 		"@types/ramda": "^0.31.0",

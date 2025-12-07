@@ -64,7 +64,7 @@
 		"@just-web/os": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
 		"@just-web/states": "workspace:^",
-		"@repobuddy/typescript": "^2.0.0",
+		"@repobuddy/typescript": "^2.1.0",
 		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~11.2.0",
 		"@vitest/coverage-v8": "^4.0.15",
