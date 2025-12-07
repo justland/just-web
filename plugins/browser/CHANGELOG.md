@@ -1,5 +1,19 @@
 # @just-web/browser
 
+## 8.5.0
+
+### Minor Changes
+
+- cea9ef5: Build with `tsdown` to get around the TypeScript 5.2 issue with CJS builds.
+
+### Patch Changes
+
+- 9d9a39d: Bind function for `localStorage` stub.
+- Updated dependencies [cea9ef5]
+  - @just-web/states@7.2.0
+  - @just-web/app@7.3.0
+  - @just-web/fetch@1.1.0
+
 ## 8.4.2
 
 ### Patch Changes

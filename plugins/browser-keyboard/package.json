@@ -1,6 +1,6 @@
 {
 	"name": "@just-web/browser-keyboard",
-	"version": "8.4.2",
+	"version": "8.5.0",
 	"description": "browser implementation for @just-web/keyboard",
 	"keywords": [
 		"just-web",

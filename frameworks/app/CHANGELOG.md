@@ -1,5 +1,17 @@
 # @just-web/app
 
+## 7.3.0
+
+### Minor Changes
+
+- cea9ef5: Build with `tsdown` to get around the TypeScript 5.2 issue with CJS builds.
+
+### Patch Changes
+
+- Updated dependencies [cea9ef5]
+  - @just-web/log@7.3.0
+  - @just-web/id@7.3.0
+
 ## 7.2.1
 
 ### Patch Changes
@@ -437,17 +449,17 @@
   The plugin mechanism is updated that now through the `extend()` method:
 
   ```ts
-  import { createApp } from '@just-web/app'
+  import { createApp } from "@just-web/app";
 
-  createApp({ name: 'now-required' }).extend({
-  	name: 'plugin-name',
-  	init() {
-  		/* required */
-  	},
-  	start() {
-  		/* optional */
-  	}
-  })
+  createApp({ name: "now-required" }).extend({
+    name: "plugin-name",
+    init() {
+      /* required */
+    },
+    start() {
+      /* optional */
+    },
+  });
   ```
 
   Use the `definePlugin()` method from `@just-web/types` to define the plugin creator function `() => PluginModule`, which will do some sophisticate type checking and inferring for you.
