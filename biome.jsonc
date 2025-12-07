@@ -7,21 +7,6 @@
 		"useIgnoreFile": true,
 		"defaultBranch": "main"
 	},
-	"files": {
-		"ignoreUnknown": false,
-		"includes": [
-			"**",
-			"!**/cjs/",
-			"!**/coverage/",
-			"!**/esm/",
-			"!**/fixtures/",
-			"!**/lib/",
-			"!**/*.hbs",
-			"!**/*.md",
-			"!**/*.yml",
-			"!**/*.yaml"
-		]
-	},
 	"formatter": {
 		"useEditorconfig": true
 	},
@@ -32,41 +17,11 @@
 			}
 		}
 	},
-	// "linter": {
-	// 	"enabled": true,
-	// 	"rules": {
-	// 		"recommended": false,
-	// 		"correctness": {
-	// 			"noInvalidUseBeforeDeclaration": "error",
-	// 			"noUnusedVariables": "error"
-	// 		},
-	// 		"suspicious": {
-	// 			"noConsole": {
-	// 				"level": "error",
-	// 				"options": { "allow": ["error", "warn", "info", "assert"] }
-	// 			}
-	// 		}
-	// 	},
-	// 	"includes": [
-	// 		"**",
-	// 		"!**/cjs",
-	// 		"!**/coverage",
-	// 		"!**/esm",
-	// 		"!**/node_modules",
-	// 		"!**/tslib"
-	// 	]
-	// },
 	"javascript": {
 		"formatter": {
-			// "jsxQuoteStyle": "double",
+			"arrowParentheses": "asNeeded",
 			"quoteProperties": "asNeeded",
-			"trailingCommas": "none",
-			// "semicolons": "asNeeded",
-			"arrowParentheses": "asNeeded"
-			// "bracketSameLine": false,
-			// "quoteStyle": "single",
-			// "attributePosition": "auto",
-			// "bracketSpacing": true
+			"trailingCommas": "none"
 		}
 	},
 	"html": {
