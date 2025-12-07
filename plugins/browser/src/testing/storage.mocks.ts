@@ -11,7 +11,8 @@
 export function stubLocalStorage(stub: Partial<Storage>) {
 	return new Proxy(localStorage, {
 		get(target, p: any) {
-			return stub[p] ? stub[p] : target[p]
+			const v = stub[p] ? stub[p] : target[p]
+			return typeof v === 'function' ? v.bind(target) : v
 		}
 	})
 }
