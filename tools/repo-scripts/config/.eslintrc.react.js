@@ -1,9 +1,8 @@
 module.exports = {
 	env: {
-		es6: true,
-		jest: true
+		es6: true
 	},
-	extends: ['react-app', 'react-app/jest', 'plugin:yml/standard'],
+	extends: ['react-app', 'plugin:yml/standard'],
 	overrides: [
 		{
 			extends: ['plugin:harmony/ts-prettier'],
