@@ -1,0 +1,90 @@
+---
+description: How to add or edit Cursor rules in our project
+globs:
+alwaysApply: false
+---
+
+# Cursor Rules Guidelines
+
+## Categories
+
+- **Agents**: AI agent behavior and management (e.g., Commit Summary, Rule Usage)
+- **Guidelines**: Best practices and standards (e.g., Commit Message, Naming, TypeScript)
+- **Workflows**: Step-by-step task guides (e.g., Generate Changeset)
+
+## Directory Structure
+
+```
+.cursor/rules/
+├── master.mdc
+├── agents/
+├── guidelines/
+└── workflows/
+```
+
+## Naming Convention
+
+- Use **snake_case** with `.mdc` extension
+- Make names descriptive
+- Place in appropriate category subfolder
+
+✅ Good: `commit_message.mdc`, `storybook_stories.mdc`
+❌ Bad: `CommitMessage.mdc`, `react-component.mdc`, `component.md`
+
+## Rule File Structure
+
+### Frontmatter
+
+```yaml
+---
+description: Short description
+globs:
+alwaysApply: false
+---
+```
+
+**Fields:**
+- `description`: Optional brief explanation
+- `globs`: Optional file patterns (e.g., `src/**/*.tsx`)
+  - **Note**: Complex patterns not supported. Use `*.ts,*.tsx` not `*.{ts,tsx}`
+  - Supported: `*.ts`, `src/**/*.tsx`
+  - Not supported: `*.{ts,tsx}`
+- `alwaysApply`: Usually `false`
+
+### Content Structure
+
+```md
+# Rule Title
+
+Brief introduction and when to apply.
+
+## Section 1
+Content...
+
+## Examples
+### Good
+### Bad
+
+## Integration
+- [Related Rule](path) - Description
+```
+
+**Required sections:**
+1. Introduction
+2. Table of Contents (if multiple sections)
+3. Main Content
+4. Examples (when applicable)
+5. Integration
+
+## Creating New Rules
+
+1. **Determine category** (Agents/Guidelines/Workflows)
+2. **Create file** in appropriate subfolder with snake_case name and `.mdc` extension
+3. **Write content** following structure above
+4. **Update** `.cursor/rules/master.mdc`
+5. **Test** the rule
+
+## Integration
+
+- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Naming Guidelines](.cursor/rules/guidelines/naming.mdc)

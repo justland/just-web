@@ -1,0 +1,109 @@
+---
+description: How to write Storybook stories
+globs: *.stories.tsx
+alwaysApply: false
+---
+
+# Writing Storybook Stories
+
+Use CSF Next format.
+
+## Basic Structure
+
+```tsx
+import preview from '../.storybook/preview.js'
+
+const meta = preview.meta({
+	title: 'components/YourComponent',
+	tags: ['autodocs'],
+	component: YourComponent,
+})
+
+export default meta
+
+export const Primary = meta.story({ })
+
+export const PrimaryDisabled = Primary.extend({ })
+
+PrimaryDisabled.test('should be disabled', () => { })
+```
+
+## Story Organization
+
+1. **Files**: Place next to component, name `your_component.stories.tsx`, `your_component.some_prop.stories.tsx`.
+2. **Naming**: Default story is `Specification`, others descriptive (`WithError`, `Loading`). Use `name` property if PascalCase is confusing.
+
+## Story Implementation Patterns
+
+1. **Property order**: `name`, `tags`, `parameters`, `args`, `loaders`, `decorators`, `render`, `play`, `afterEach`
+2. **Render function**: Emphasize testing subject. Extract complex UI into components:
+```tsx
+export const OnChange: Story = {
+	render() {
+		const [logs, setLogs] = useState<string[]>([])
+		return (
+			<div>
+				<RadioGroup onChange={(v) => setLogs([...logs, `changed: ${v}`])}>
+					<Radio value="apple">Apple</Radio>
+				</RadioGroup>
+				<LogPanel logs={logs} />
+			</div>
+		)
+	},
+}
+```
+
+3. Prefer CSS classes or Tailwind CSS over inline styles.
+
+## Testing and Documentation
+
+- Stories serve as visual tests and documentation
+- Include edge cases and error states
+- Document component props and usage
+- Use `play` function to interact and validate behavior
+
+## Example
+
+```tsx
+// copy_button.is_disabled.stories.tsx
+import preview from '../.storybook/preview.js'
+import { CopyButton } from './copy_button.tsx'
+
+const meta = preview.meta({
+	title: 'components/CopyButton/isDisabled',
+	component: CopyButton,
+	tags: ['autodocs'],
+})
+
+export default meta
+
+export const Specification = meta.story({
+	args: { label: 'Copy Button', isDisabled: false },
+})
+
+export const WhenDisabled = Specification.extend({
+	name: 'true',
+	args: { label: 'Copy Button', isDisabled: true },
+})
+```
+
+## Best Practices
+
+1. Keep stories simple and focused
+2. Test all component variations
+3. Include interactive examples where relevant
+4. Use TypeScript for type safety
+
+## Checklist
+
+- [ ] `.stories.tsx` extension, placed next to component
+- [ ] CSF Next format with TypeScript
+- [ ] Default story named `Specification`
+- [ ] Properties follow recommended order
+- [ ] Complete, runnable code examples
+
+## Integration
+
+- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Naming Conventions](.cursor/rules/guidelines/naming.mdc)
+- [TypeScript Guidelines](.cursor/rules/guidelines/typescript.mdc)

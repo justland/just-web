@@ -1,0 +1,83 @@
+---
+description: Generate commit messages
+globs:
+alwaysApply: false
+---
+
+# Commit Message Guidelines
+
+Follow Conventional Commits:
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+## Type
+
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation only
+- `style`: Formatting, whitespace
+- `chore`: Other changes (not src/test)
+- `test`: Tests
+- `refactor`: Code change (not bug fix or feature)
+- `perf`: Performance improvement
+- `build`: Build system or dependencies
+- `ci`: CI configuration
+- `revert`: Revert previous commit
+
+## Scope (optional)
+
+Package name or area: `deps`, `config`
+
+## Subject
+
+- Imperative present tense: "change" not "changed"
+- Lowercase first letter
+- No trailing dot
+- Concise and descriptive
+
+## Body (optional)
+
+- Additional context
+- Explain "why" not "what"
+- Separated by blank line
+
+## Footer (optional)
+
+- Reference issues: `Closes #123`, `Fixes #456`
+- Breaking changes: `BREAKING CHANGE: description`
+
+## Examples
+
+```
+feat: add dark mode toggle component
+feat(storybook-dark-mode): add theme persistence to localStorage
+fix: correct dark mode class application on iframe
+feat!: remove DarkModeStore from public exports
+
+BREAKING CHANGE: DarkModeStore is now internal. Use DarkModeParam type instead.
+
+feat: add support for custom theme classes
+
+Allow users to specify custom class names for dark and light modes.
+
+Closes #123
+```
+
+## Best Practices
+
+1. Subject line under 72 characters
+2. Body explains what/why, not how
+3. Reference issues when applicable
+4. Use imperative mood
+5. Be consistent with scope
+
+## Integration
+
+- [Master Reference](.cursor/rules/master.mdc) - Central index of all rules
+- [Generate Changeset](.cursor/rules/workflows/generate_changeset.mdc)
