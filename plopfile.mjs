@@ -29,11 +29,6 @@ export default function (
 			},
 			{
 				type: 'add',
-				path: 'plugins/{{name}}/.depcheckrc.yml',
-				templateFile: 'plops/plugins/.depcheckrc.yml'
-			},
-			{
-				type: 'add',
 				path: 'plugins/{{name}}/.eslintignore',
 				templateFile: 'plops/plugins/.eslintignore'
 			},

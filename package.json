@@ -14,7 +14,7 @@
 		"commands": "pnpm --filter=@just-web/commands",
 		"coverage": "turbo run coverage",
 		"cs": "changeset",
-		"depcheck": "turbo run depcheck",
+		"knip": "knip",
 		"dev": "turbo run dev --parallel",
 		"errors": "pnpm --filter=@just-web/errors",
 		"events": "pnpm --filter=@just-web/events",
@@ -27,6 +27,7 @@
 		"just-fetch": "pnpm --filter=@just-web/fetch",
 		"keyboard": "pnpm --filter=@just-web/keyboard",
 		"log": "pnpm --filter=@just-web/log",
+		"ncu": "ncu",
 		"nuke": "turbo run nuke && pnpm nuke:local",
 		"nuke:local": "rimraf node_modules || true",
 		"os": "pnpm --filter=@just-web/os",
@@ -44,7 +45,8 @@
 		"test": "turbo run test",
 		"testing": "pnpm --filter=@just-web/testing",
 		"types": "pnpm --filter=@just-web/types",
-		"verify": "pnpm run check && turbo run build coverage depcheck size",
+		"verify": "run-p check verify:pkg",
+		"verify:pkg": "turbo run build coverage size",
 		"version": "changeset version && pnpm install",
 		"watch": "jest --watch"
 	},
@@ -72,5 +74,8 @@
 		"turbo": "^2.6.0",
 		"typescript": "^5.9.3"
 	},
-	"packageManager": "pnpm@10.24.0"
+	"packageManager": "pnpm@10.24.0",
+	"devDependencies": {
+		"knip": "^5.71.0"
+	}
 }
