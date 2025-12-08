@@ -70,7 +70,7 @@
 		"@just-web/repo-scripts": "workspace:^",
 		"@repobuddy/typescript": "^2.1.0",
 		"@repobuddy/vitest": "catalog:",
-		"@size-limit/preset-small-lib": "~11.2.0",
+		"@size-limit/preset-small-lib": "~12.0.0",
 		"@vitest/coverage-v8": "^4.0.15",
 		"assertron": "^11.2.0",
 		"npm-run-all2": "^6.0.0",
