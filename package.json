@@ -54,7 +54,7 @@
 		"@biomejs/biome": "2.3.8",
 		"@changesets/assemble-release-plan": "^6.0.0",
 		"@changesets/cli": "^2.26.1",
-		"@commitlint/cli": "^19.0.0",
+		"@commitlint/cli": "^20.2.0",
 		"@commitlint/config-conventional": "^20.2.0",
 		"@repobuddy/biome": "^2.2.0",
 		"@types/node": "^24.10.1",
