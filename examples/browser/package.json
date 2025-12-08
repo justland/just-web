@@ -56,10 +56,10 @@
 		"verify": "npm-run-all -p build lint coverage -p size"
 	},
 	"dependencies": {
-		"@just-web/app": "workspace:^",
-		"@just-web/commands": "workspace:^",
-		"@just-web/presets-browser": "workspace:^",
-		"@just-web/states": "workspace:^"
+		"@just-web/app": "7.3.1",
+		"@just-web/commands": "7.3.1",
+		"@just-web/presets-browser": "8.0.0",
+		"@just-web/states": "7.2.1"
 	},
 	"devDependencies": {
 		"@just-web/repo-scripts": "workspace:^",

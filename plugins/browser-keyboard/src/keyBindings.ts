@@ -1,9 +1,9 @@
 import type { LogGizmo } from '@just-web/app'
 import type { CommandsGizmo } from '@just-web/commands'
+import type { KeyBindingContribution, KeyboardGizmo } from '@just-web/keyboard'
+import type { OSGizmo } from '@just-web/os'
 import Mousetrap from 'mousetrap'
 import { forEachKey, record } from 'type-plus'
-import type { KeyBindingContribution, KeyboardGizmo } from '../../keyboard/src/keyBindings.js'
-import type { OSGizmo } from '../../os/src/os.js'
 
 let keys: Record<string, boolean>
 export function startKeyBindings(param: LogGizmo & KeyboardGizmo & CommandsGizmo & OSGizmo) {
