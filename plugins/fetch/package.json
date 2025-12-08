@@ -68,9 +68,6 @@
 		"w": "pnpm test:watch",
 		"verify": "npm-run-all -p build lint coverage -p size"
 	},
-	"dependencies": {
-		"cross-fetch": "^4.0.0"
-	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
 		"@just-web/repo-scripts": "workspace:^",
