@@ -1,5 +1,24 @@
 # @just-web/browser-i18n
 
+## 4.0.0
+
+### Major Changes
+
+- 5c9df79: Remove `peerDependenciesMeta` entries that marked peer dependencies as optional. Peer dependencies are now required.
+
+  Affected peer dependencies:
+
+  - `@just-web/commands` (in `@just-web/browser-i18n` and `@just-web/i18n`)
+  - `@just-web/keyboard` (in all affected packages)
+
+  Ensure these peer dependencies are installed when using these packages.
+
+### Patch Changes
+
+- Updated dependencies [5c9df79]
+  - @just-web/i18n@2.0.0
+  - @just-web/browser@9.0.0
+
 ## 3.1.1
 
 ### Patch Changes

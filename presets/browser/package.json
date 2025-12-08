@@ -1,6 +1,6 @@
 {
 	"name": "@just-web/presets-browser",
-	"version": "7.3.1",
+	"version": "8.0.0",
 	"description": "just-web presets for browser related features",
 	"keywords": [
 		"just-web",
