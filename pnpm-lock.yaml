@@ -92,17 +92,17 @@ importers:
   examples/browser:
     dependencies:
       '@just-web/app':
-        specifier: 7.3.1
-        version: 7.3.1
+        specifier: workspace:^
+        version: link:../../frameworks/app
       '@just-web/commands':
-        specifier: 7.3.1
-        version: 7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1)
+        specifier: workspace:^
+        version: link:../../plugins/commands
       '@just-web/presets-browser':
-        specifier: 8.0.0
-        version: 8.0.0(@just-web/app@7.3.1)(@just-web/commands@7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1))(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))
+        specifier: workspace:^
+        version: link:../../presets/browser
       '@just-web/states':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: workspace:^
+        version: link:../../libraries/states
     devDependencies:
       '@just-web/repo-scripts':
         specifier: workspace:^
@@ -1767,76 +1767,6 @@ packages:
 
   '@just-func/types@0.5.1':
     resolution: {integrity: sha512-yP+XbIIT5qGI/6TOZ0lRFHq2UubCfpf+2EKQPhEwOGsvh1vJTdDTPGyNWYHmLMLT5jx8h/SR3mAAVDmYyAjpwA==}
-
-  '@just-web/app@7.3.1':
-    resolution: {integrity: sha512-qsb9kbV9bTvKkN5M3B8aNT+JLNjuJ3v1s7nZiHMdFY46DIHTraXpXVVkI0qRuWgikPEmRGTwtu3slXQRu6GV+Q==}
-
-  '@just-web/browser-preferences@9.0.0':
-    resolution: {integrity: sha512-y3EemO9dzSOxz0zt0tRNGzJhRnvECp1zLlcZ5b+YqYUr91mlf+dRh6FUJZDfQlmou/nEhsUTlKgZChJq2KMsQQ==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-      '@just-web/browser': ^9.0.0
-      '@just-web/commands': ^7.3.1
-      '@just-web/fetch': ^2.0.0
-      '@just-web/keyboard': ^7.3.1
-
-  '@just-web/browser@9.0.0':
-    resolution: {integrity: sha512-2/Efl7WwK5Q/jtc3pufGQtgvmgb21VEqAT9KnMVnZuwfUS6e1Jdicz+wJ+PhXBhqTpMU8wzndagKdTuWw87OBg==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-      '@just-web/states': ^7.2.1
-
-  '@just-web/commands@7.3.1':
-    resolution: {integrity: sha512-wWZYO1s1RQw1gRpQOZ7L4tZkcJdnDs+n++WE5KHyzM2RY6RhTnbSMJItSvs6AA3TQDXR3t7wsJyc+pUjv/gsSg==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-      '@just-web/keyboard': ^7.3.1
-      '@just-web/states': ^7.2.1
-
-  '@just-web/fetch@2.0.0':
-    resolution: {integrity: sha512-e4+1I2UhQAfiC+kToWwESU15oOTPVrE2wmgMBqjqd/7LgUx8oMezKgFvjXuGnz4U6/mpxaH2v7eYCEGGzeKDeA==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-
-  '@just-web/history@2.2.1':
-    resolution: {integrity: sha512-5s1bZEUGNQo8niDhuK+cQua1YlNUA1bsLzcLokVXmymq97BkqQbNQLdNv/Idp4yS8NnQL80mW29CKZQ3VMJgQw==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-
-  '@just-web/id@7.3.1':
-    resolution: {integrity: sha512-kdXwnd/1KXIVGsc3ie42b9+zUMsWi+gr30DJxSMzYdP4Xatiobvv61YYGLgy41Jzuy5hS18ezrhyLpZtuAdTPg==}
-
-  '@just-web/keyboard@7.3.1':
-    resolution: {integrity: sha512-Fhi2c5O0UilfONF5D80Ix9bjnzx3KfWhRbHssAc2aM51gPMvVnSkIwSND6VWAj43zUZlxyhbgedlI7nyn3EPyA==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-      '@just-web/os': ^7.3.1
-      '@just-web/states': ^7.2.1
-
-  '@just-web/log@7.3.1':
-    resolution: {integrity: sha512-CIDa6RPOJ5Uh7IFS03ylV9xlArP08WQp5JVYsQfj1oUNoqdggtrzJ4DcQFW/7gatRZsr+OiP1QwVUdsab/7uxA==}
-
-  '@just-web/os@7.3.1':
-    resolution: {integrity: sha512-rTgjl0sGhLE8fiKFJ3/go1yb5JP8GUtYm3P/OhO/00JBaRYtn6YU3Nqgl3waDbEnhiJutmSGmOw6PPZCkDwSOA==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-
-  '@just-web/preferences@7.3.1':
-    resolution: {integrity: sha512-doQ+ZN1dHX87GuzkErOOdceUVwSKxTpnMYT9t9wcY8Fd/vUBlnvTqhS4YScrS+sjqzipyQ0GexWYIfn1lC1fYA==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-      '@just-web/commands': ^7.3.1
-      '@just-web/keyboard': ^7.3.1
-
-  '@just-web/presets-browser@8.0.0':
-    resolution: {integrity: sha512-E07vj21b/HyoJrKM3RIOSRX7nNAyKJ+fjU27/0oTtzAutn3kyD7eQE46aZ1mCDl8f/Xghf7WVLEltA3vLQ/EJQ==}
-    peerDependencies:
-      '@just-web/app': ^7.3.1
-      '@just-web/commands': ^7.3.1
-      '@just-web/keyboard': ^7.3.1
-
-  '@just-web/states@7.2.1':
-    resolution: {integrity: sha512-jUj3XZzxWiTMachQuGuUVink7cF/l2k+MoMuv/9x1qJyxKwaQhwn09MTEQ6IEf32GUorngu4RBokWUeHg1cpkA==}
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -6289,100 +6219,6 @@ snapshots:
   '@just-func/types@0.5.1':
     dependencies:
       type-plus: 5.6.0
-
-  '@just-web/app@7.3.1':
-    dependencies:
-      '@just-web/id': 7.3.1
-      '@just-web/log': 7.3.1
-      '@unional/gizmo': 2.3.0
-      iso-error: 6.0.3
-      type-plus: 8.0.0-beta.7
-
-  '@just-web/browser-preferences@9.0.0(@just-web/app@7.3.1)(@just-web/browser@9.0.0(@just-web/app@7.3.1)(@just-web/states@7.2.1))(@just-web/commands@7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1))(@just-web/fetch@2.0.0(@just-web/app@7.3.1))(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))':
-    dependencies:
-      '@just-web/app': 7.3.1
-      '@just-web/browser': 9.0.0(@just-web/app@7.3.1)(@just-web/states@7.2.1)
-      '@just-web/commands': 7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1)
-      '@just-web/fetch': 2.0.0(@just-web/app@7.3.1)
-      '@just-web/keyboard': 7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1)
-      '@just-web/preferences': 7.3.1(@just-web/app@7.3.1)(@just-web/commands@7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1))(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))
-      '@just-web/states': 7.2.1
-      immer: '@unional/immer@9.0.0-beta.2'
-      js-base64: 3.7.8
-      type-plus: 8.0.0-beta.7
-
-  '@just-web/browser@9.0.0(@just-web/app@7.3.1)(@just-web/states@7.2.1)':
-    dependencies:
-      '@just-web/app': 7.3.1
-      '@just-web/fetch': 2.0.0(@just-web/app@7.3.1)
-      '@just-web/states': 7.2.1
-      iso-error: 6.0.3
-      type-plus: 8.0.0-beta.7
-
-  '@just-web/commands@7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1)':
-    dependencies:
-      '@just-web/app': 7.3.1
-      '@just-web/keyboard': 7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1)
-      '@just-web/states': 7.2.1
-      sentence-case: 4.0.0
-      tersify: 3.12.1
-      type-plus: 8.0.0-beta.7
-
-  '@just-web/fetch@2.0.0(@just-web/app@7.3.1)':
-    dependencies:
-      '@just-web/app': 7.3.1
-
-  '@just-web/history@2.2.1(@just-web/app@7.3.1)':
-    dependencies:
-      '@just-web/app': 7.3.1
-
-  '@just-web/id@7.3.1':
-    dependencies:
-      '@unional/gizmo': 2.3.0
-
-  '@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1)':
-    dependencies:
-      '@just-web/app': 7.3.1
-      '@just-web/os': 7.3.1(@just-web/app@7.3.1)
-      '@just-web/states': 7.2.1
-      type-plus: 8.0.0-beta.7
-
-  '@just-web/log@7.3.1':
-    dependencies:
-      '@just-web/id': 7.3.1
-      '@unional/gizmo': 2.3.0
-      standard-log: 12.1.2
-      type-plus: 8.0.0-beta.7
-
-  '@just-web/os@7.3.1(@just-web/app@7.3.1)':
-    dependencies:
-      '@just-web/app': 7.3.1
-      platform: 1.3.6
-      type-plus: 8.0.0-beta.7
-
-  '@just-web/preferences@7.3.1(@just-web/app@7.3.1)(@just-web/commands@7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1))(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))':
-    dependencies:
-      '@just-web/app': 7.3.1
-      '@just-web/commands': 7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1)
-      '@just-web/keyboard': 7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1)
-      '@just-web/states': 7.2.1
-
-  '@just-web/presets-browser@8.0.0(@just-web/app@7.3.1)(@just-web/commands@7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1))(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))':
-    dependencies:
-      '@just-web/app': 7.3.1
-      '@just-web/browser': 9.0.0(@just-web/app@7.3.1)(@just-web/states@7.2.1)
-      '@just-web/browser-preferences': 9.0.0(@just-web/app@7.3.1)(@just-web/browser@9.0.0(@just-web/app@7.3.1)(@just-web/states@7.2.1))(@just-web/commands@7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1))(@just-web/fetch@2.0.0(@just-web/app@7.3.1))(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))
-      '@just-web/commands': 7.3.1(@just-web/app@7.3.1)(@just-web/keyboard@7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1))(@just-web/states@7.2.1)
-      '@just-web/fetch': 2.0.0(@just-web/app@7.3.1)
-      '@just-web/history': 2.2.1(@just-web/app@7.3.1)
-      '@just-web/keyboard': 7.3.1(@just-web/app@7.3.1)(@just-web/os@7.3.1(@just-web/app@7.3.1))(@just-web/states@7.2.1)
-      '@just-web/states': 7.2.1
-
-  '@just-web/states@7.2.1':
-    dependencies:
-      immer: '@unional/immer@9.0.0-beta.2'
-      tersify: 3.12.1
-      type-plus: 8.0.0-beta.7
 
   '@manypkg/find-root@1.1.0':
     dependencies:
