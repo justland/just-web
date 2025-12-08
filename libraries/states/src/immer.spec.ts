@@ -1,5 +1,5 @@
 import { testType } from 'type-plus'
-import { describe, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { isNothing, nothing } from './index.js'
 
 describe(`${isNothing}()`, () => {
@@ -8,7 +8,7 @@ describe(`${isNothing}()`, () => {
 
 		if (isNothing(und)) {
 			testType.equal<typeof und, typeof nothing>(true)
-			fail('should not reach')
+			expect.fail('should not reach')
 		} else {
 			testType.equal<typeof und, string | undefined>(true)
 		}
@@ -21,7 +21,7 @@ describe(`${isNothing}()`, () => {
 			testType.equal<typeof und, typeof nothing>(true)
 		} else {
 			testType.equal<typeof und, string | undefined>(true)
-			fail('should not reach')
+			expect.fail('should not reach')
 		}
 	})
 })

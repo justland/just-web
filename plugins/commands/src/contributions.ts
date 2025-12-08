@@ -1,6 +1,6 @@
+import type { LogGizmo } from '@just-web/app'
 import { createRegistry, withAdder } from '@just-web/states'
 import { record } from 'type-plus'
-import type { LogGizmo } from '../../../frameworks/app/src/just_app.types.js'
 import type { CommandContribution, ContributionRegistry } from './types.js'
 
 export namespace contributionRegistry {

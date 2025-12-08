@@ -1,6 +1,6 @@
+import { type IdGizmo, idGizmoFn } from '@just-web/id'
 import { define } from '@unional/gizmo'
 import { createStandardLogForTest, type StandardLogForTestOptions } from 'standard-log/testing'
-import { type IdGizmo, idGizmoFn } from '../../id/src/id_gizmo.js'
 import { buildLogContext } from './log_gizmo.logic.js'
 import type { GizmoStandardLog } from './log_gizmo.types.js'
 import type { LogMethodNames, MemoryLogReporter } from './standard_log.js'

@@ -27,7 +27,7 @@
 	"exports": {
 		".": {
 			"import": {
-				"types": "./esm/index.d.mts",
+				"types": "./esm/index.d.ts",
 				"default": "./esm/index.mjs"
 			},
 			"require": {
@@ -39,7 +39,7 @@
 	},
 	"main": "./cjs/index.cjs",
 	"module": "./esm/index.mjs",
-	"types": "./esm/index.d.mts",
+	"types": "./esm/index.d.ts",
 	"files": [
 		"cjs",
 		"esm",
@@ -47,7 +47,9 @@
 		"!**/*.{spec,test,unit,accept,integrate,system,perf,stress}.*"
 	],
 	"scripts": {
-		"build": "tsdown",
+		"build": "run-s build:code build:types",
+		"build:code": "tsdown --tsconfig tsconfig.build.json",
+		"build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly",
 		"build:watch": "tsc -w",
 		"clean": "rimraf cjs esm coverage tslib --glob *.tsbuildinfo",
 		"coverage": "vitest run --coverage",

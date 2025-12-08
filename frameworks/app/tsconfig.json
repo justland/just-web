@@ -1,17 +1,8 @@
 {
 	"extends": "@repobuddy/typescript/tsconfig/monorepo",
 	"compilerOptions": {
-		"outDir": "esm",
-		"rootDir": "src",
+		"outDir": ".nowhere",
 		"verbatimModuleSyntax": true
 	},
-	"include": ["src", "typings"],
-	"references": [
-		{
-			"path": "../../frameworks/id"
-		},
-		{
-			"path": "../../frameworks/log"
-		}
-	]
+	"include": ["src", "typings"]
 }
