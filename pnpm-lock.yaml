@@ -135,8 +135,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -196,8 +196,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -242,8 +242,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       type-plus:
         specifier: 8.0.0-beta.7
         version: 8.0.0-beta.7
@@ -294,8 +294,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -346,8 +346,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -410,8 +410,8 @@ importers:
         specifier: ^12.1.1
         version: 12.1.2
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -465,8 +465,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -529,8 +529,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -602,8 +602,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -663,8 +663,8 @@ importers:
         specifier: ^12.1.1
         version: 12.1.2
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -712,8 +712,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -754,8 +754,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -797,8 +797,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       type-plus:
         specifier: 8.0.0-beta.7
         version: 8.0.0-beta.7
@@ -845,8 +845,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       type-plus:
         specifier: 8.0.0-beta.7
         version: 8.0.0-beta.7
@@ -893,8 +893,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -945,8 +945,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -994,8 +994,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -1049,8 +1049,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       type-plus:
         specifier: 8.0.0-beta.7
         version: 8.0.0-beta.7
@@ -1101,8 +1101,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.1)
@@ -1165,8 +1165,8 @@ importers:
         specifier: ~12.0.0
         version: 12.0.0(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       type-plus:
         specifier: 8.0.0-beta.7
         version: 8.0.0-beta.7
@@ -1210,8 +1210,8 @@ importers:
         specifier: ~6.1.2
         version: 6.1.2
       tsdown:
-        specifier: ^0.17.1
-        version: 0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3)
+        specifier: ^0.17.4
+        version: 0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3)
       typescript:
         specifier: ^5.0.4
         version: 5.9.3
@@ -1968,10 +1968,6 @@ packages:
   '@npmcli/run-script@6.0.2':
     resolution: {integrity: sha512-NCcr1uQo1k5U+SYlnIrbAh3cxy+OQT1VtqiAbxdymSlptbzBb62AjH2xXgjNCoP073hoa1CfCAcwoZ8k96C4nA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-
-  '@oxc-project/runtime@0.101.0':
-    resolution: {integrity: sha512-t3qpfVZIqSiLQ5Kqt/MC4Ge/WCOGrrcagAdzTcDaggupjiGxUx4nJF2v6wUCXWSzWHn5Ns7XLv13fCJEwCOERQ==}
-    engines: {node: ^20.19.0 || >=22.12.0}
 
   '@oxc-project/types@0.101.0':
     resolution: {integrity: sha512-nuFhqlUzJX+gVIPPfuE6xurd4lST3mdcWOhyK/rZO0B9XWMKm79SuszIQEnSMmmDhq1DC8WWVYGVd+6F93o1gQ==}
@@ -3043,6 +3039,9 @@ packages:
     resolution: {integrity: sha512-8QmQKqEASLd5nx0U1B1okLElbUuuttJ/AnYmRXbbbGDWh6uS208EjD4Xqq/I9wK7u0v6O08XhTWnt5XtEbR6Dg==}
     engines: {node: '>= 0.4'}
 
+  defu@6.1.4:
+    resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
+
   delay@7.0.0:
     resolution: {integrity: sha512-C3vaGs818qzZjCvVJ98GQUMVyWeg7dr5w2Nwwb2t5K8G98jOyyVO2ti2bKYk5yoYElqH3F2yA53ykuEnwD6MCg==}
     engines: {node: '>=20'}
@@ -3704,8 +3703,8 @@ packages:
   import-meta-resolve@4.2.0:
     resolution: {integrity: sha512-Iqv2fzaTQN28s/FwZAoFq0ZSs/7hMAHJVX+w8PZl3cY19Pxk6jFFalxQoIfW2826i/fDLXv8IiEZRIT0lDuWcg==}
 
-  import-without-cache@0.2.2:
-    resolution: {integrity: sha512-4TTuRrZ0jBULXzac3EoX9ZviOs8Wn9iAbNhJEyLhTpAGF9eNmYSruaMMN/Tec/yqaO7H6yS2kALfQDJ5FxfatA==}
+  import-without-cache@0.2.3:
+    resolution: {integrity: sha512-roCvX171VqJ7+7pQt1kSRfwaJvFAC2zhThJWXal1rN8EqzPS3iapkAoNpHh4lM8Na1BDen+n9rVfo73RN+Y87g==}
     engines: {node: '>=20.19.0'}
 
   imurmurhash@0.1.4:
@@ -5311,8 +5310,8 @@ packages:
   ts-toolbelt@9.6.0:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
 
-  tsdown@0.17.1:
-    resolution: {integrity: sha512-SqRyd/wliY0CgOhxbE3gJVUQioHVWMibeiswOruBa9XxJuFTy7xEuC9vqCCkuJ6Owqt2/F7S3vG9tXCQWQN+Fg==}
+  tsdown@0.17.4:
+    resolution: {integrity: sha512-z+kNuv1rwM1POQIufDUVrdNc/uGy0ueRVafCyDH39IdHxin4JXgB8DNGSPoqdIpcOpqUoRbNreK8NxENFmlhKw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -5497,8 +5496,8 @@ packages:
     resolution: {integrity: sha512-yAqaXcachjgZUnM2yIkf+4KJhmyuoj7stBvlnlZpB15OYVbKnLhgJfmLW7qkpzLHCdsm1bEFvhyN9hCmlZ3uuw==}
     engines: {node: '>=6'}
 
-  unrun@0.2.17:
-    resolution: {integrity: sha512-mumOyjZp1K1bsa1QwfRPw7+9TxyVHSgx6LHB2dBWI4m1hGDG9b2TK3fS3H8vCl/Gl9YTSxhZ9XuLbWv3QF8GEA==}
+  unrun@0.2.19:
+    resolution: {integrity: sha512-DbwbJ9BvPEb3BeZnIpP9S5tGLO/JIgPQ3JrpMRFIfZMZfMG19f26OlLbC2ml8RRdrI2ZA7z2t+at5tsIHbh6Qw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -6514,8 +6513,6 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
       - supports-color
-
-  '@oxc-project/runtime@0.101.0': {}
 
   '@oxc-project/types@0.101.0': {}
 
@@ -7610,6 +7607,8 @@ snapshots:
       has-property-descriptors: 1.0.2
       object-keys: 1.1.1
 
+  defu@6.1.4: {}
+
   delay@7.0.0:
     dependencies:
       random-int: 3.1.0
@@ -8425,7 +8424,7 @@ snapshots:
 
   import-meta-resolve@4.2.0: {}
 
-  import-without-cache@0.2.2: {}
+  import-without-cache@0.2.3: {}
 
   imurmurhash@0.1.4: {}
 
@@ -10170,13 +10169,14 @@ snapshots:
 
   ts-toolbelt@9.6.0: {}
 
-  tsdown@0.17.1(oxc-resolver@11.15.0)(typescript@5.9.3):
+  tsdown@0.17.4(oxc-resolver@11.15.0)(typescript@5.9.3):
     dependencies:
       ansis: 4.2.0
       cac: 6.7.14
+      defu: 6.1.4
       empathic: 2.0.0
       hookable: 5.5.3
-      import-without-cache: 0.2.2
+      import-without-cache: 0.2.3
       obug: 2.1.1
       rolldown: 1.0.0-beta.53
       rolldown-plugin-dts: 0.18.3(oxc-resolver@11.15.0)(rolldown@1.0.0-beta.53)(typescript@5.9.3)
@@ -10185,7 +10185,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
       unconfig-core: 7.4.2
-      unrun: 0.2.17
+      unrun: 0.2.19
     optionalDependencies:
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -10356,9 +10356,8 @@ snapshots:
 
   unpartial@1.0.5: {}
 
-  unrun@0.2.17:
+  unrun@0.2.19:
     dependencies:
-      '@oxc-project/runtime': 0.101.0
       rolldown: 1.0.0-beta.53
 
   untildify@4.0.0: {}
