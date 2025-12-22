@@ -71,7 +71,7 @@
 		"verify": "npm-run-all -p build lint coverage -p size"
 	},
 	"dependencies": {
-		"@formatjs/intl": "~3.1.8"
+		"@formatjs/intl": "~4.0.4"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
