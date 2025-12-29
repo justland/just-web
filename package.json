@@ -61,7 +61,7 @@
 		"@vitest/coverage-v8": "^4.0.15",
 		"eslint": "^9.0.0",
 		"eslint-plugin-harmony": "^7.1.2",
-		"eslint-plugin-yml": "~1.19.0",
+		"eslint-plugin-yml": "~1.19.1",
 		"husky": "^9.0.0",
 		"knip": "^5.78.0",
 		"npm-check-updates": "^19.2.0",
