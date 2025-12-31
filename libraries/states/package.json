@@ -61,7 +61,7 @@
 		"verify": "npm-run-all -p build lint coverage -p size"
 	},
 	"dependencies": {
-		"immer": "npm:@unional/immer@^9.0.0-beta.2",
+		"immer": "^11.1.3",
 		"tersify": "^3.10.2",
 		"type-plus": "8.0.0-beta.7"
 	},

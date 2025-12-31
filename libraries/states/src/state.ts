@@ -1,5 +1,5 @@
 import { type Logger, logLevels } from '@just-web/app'
-import { type nothing, produce } from 'immer'
+import { nothing, produce } from 'immer'
 import { tersify } from 'tersify'
 import { type AnyFunction, isPromise } from 'type-plus'
 import { getDefaultLogger } from './log.js'
@@ -64,10 +64,18 @@ export function createState<T>(
 		if (typeof init === 'function' || typeof newValue !== 'function') {
 			value = Object.freeze(newValue as T)
 		} else {
-			const r = produce(old, newValue as any)
-			if (isPromise(r)) {
-				return r.then(v => {
-					value = Object.freeze(v)
+			let p: Promise<T | void> | undefined
+			const r = produce(old, draft => {
+				const x = (newValue as any)(draft)
+				if (isPromise(x)) p = x
+				else return x
+			})
+			if (p) {
+				return p.then(v => {
+					if (v === nothing) {
+						return notifyAfterSet(old, undefined as any)
+					}
+					value = Object.freeze(v ?? r)
 					return notifyAfterSet(old, value)
 				})
 			}

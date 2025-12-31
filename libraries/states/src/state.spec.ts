@@ -24,7 +24,7 @@ it('freezes the return value', () => {
 })
 
 function trap<T>(on: OnStateChange<T>) {
-	let actual: T
+	let actual: T | undefined
 	on(v => (actual = v))
 	return {
 		get() {
@@ -118,7 +118,7 @@ describe('set()', () => {
 	it('triggers onChange with new and prev value', () => {
 		const [, set, onChange] = createState([1, 2, 3])
 
-		let newValue: number[]
+		let newValue: number[] | undefined
 		let oldValue: number[]
 		onChange((value, prev) => ((newValue = value), (oldValue = prev)))
 		set([1, 2, 4])
@@ -149,7 +149,7 @@ describe('reset()', () => {
 	it('resets to the original value', () => {
 		const [, set, on, reset] = createState(1)
 
-		let a: number
+		let a: number | undefined
 		on(v => (a = v))
 		set(3)
 		reset()

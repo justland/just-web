@@ -1,6 +1,6 @@
 import { nothing } from 'immer'
 import type { JSONTypes } from 'type-plus'
-import { describe, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import type { Updater } from './types.js'
 
 describe('Updater<T>', () => {
@@ -14,8 +14,9 @@ describe('Updater<T>', () => {
 		foo(1)
 	})
 
-	it('allows returning `nothing` when T includes undefined', () => {
-		const foo: Updater<number | undefined> = async () => nothing
-		foo(1)
+	it('allows returning `nothing` when T includes undefined', async () => {
+		const fn = (up: Updater<number | undefined>) => up(1)
+
+		await expect(fn(async () => nothing)).resolves.toBe(nothing)
 	})
 })

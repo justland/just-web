@@ -1,8 +1,2 @@
-import { nothing } from 'immer'
-
-export type { Draft } from 'immer'
-export { nothing }
-
-export function isNothing(value: unknown): value is typeof nothing {
-	return value === nothing
-}
+export type { Draft, WritableDraft } from 'immer'
+export { nothing } from 'immer'
