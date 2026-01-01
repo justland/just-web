@@ -1,5 +1,12 @@
 # @just-web/browser
 
+## 9.1.0
+
+### Patch Changes
+
+- Updated dependencies [8a1a9a0]
+  - @just-web/states@7.3.0
+
 ## 9.0.1
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @just-web/keyboard
 
+## 7.3.3
+
+### Patch Changes
+
+- Updated dependencies [8a1a9a0]
+  - @just-web/states@7.3.0
+
 ## 7.3.2
 
 ### Patch Changes

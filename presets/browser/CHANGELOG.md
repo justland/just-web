@@ -1,5 +1,16 @@
 # @just-web/presets-browser
 
+## 8.0.2
+
+### Patch Changes
+
+- Updated dependencies [8a1a9a0]
+  - @just-web/states@7.3.0
+  - @just-web/browser-preferences@9.1.0
+  - @just-web/browser@9.1.0
+  - @just-web/commands@7.3.3
+  - @just-web/keyboard@7.3.3
+
 ## 8.0.1
 
 ### Patch Changes
