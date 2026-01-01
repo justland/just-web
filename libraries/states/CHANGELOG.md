@@ -1,5 +1,11 @@
 # @just-web/states
 
+## 7.3.0
+
+### Minor Changes
+
+- 8a1a9a0: Update to `immer` 11.1.3.
+
 ## 7.2.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @just-web/browser-i18n
 
+## 4.0.2
+
+### Patch Changes
+
+- @just-web/browser@9.1.0
+- @just-web/commands@7.3.3
+- @just-web/keyboard@7.3.3
+- @just-web/i18n@2.0.2
+
 ## 4.0.1
 
 ### Patch Changes

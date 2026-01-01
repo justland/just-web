@@ -1,5 +1,12 @@
 # @just-web/browser-contributions
 
+## 9.1.0
+
+### Patch Changes
+
+- @just-web/commands@7.3.3
+- @just-web/keyboard@7.3.3
+
 ## 9.0.1
 
 ### Patch Changes
