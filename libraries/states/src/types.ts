@@ -26,4 +26,4 @@ export type Updater<T> = (draft: Draft<T>) => UpdaterResult<T> | Promise<Updater
  * The return type cannot narrow to `typeof nothing` due to the limitation of TypeScript.
  * Need to use `symbol` instead.
  */
-export type UpdaterResult<T> = undefined extends T ? Exclude<T, undefined> | void | symbol : T | void
+export type UpdaterResult<T> = undefined extends T ? Exclude<T, undefined> | void | symbol : T | symbol | void

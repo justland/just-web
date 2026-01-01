@@ -547,8 +547,8 @@ importers:
         specifier: workspace:^
         version: link:../../libraries/states
       immer:
-        specifier: npm:@unional/immer@^9.0.0-beta.2
-        version: '@unional/immer@9.0.0-beta.2'
+        specifier: ^11.1.3
+        version: 11.1.3
       js-base64:
         specifier: ^3.7.3
         version: 3.7.8
@@ -1034,8 +1034,8 @@ importers:
         specifier: ^11.2.0
         version: 11.5.2
       immer:
-        specifier: npm:@unional/immer@^9.0.0-beta.2
-        version: '@unional/immer@9.0.0-beta.2'
+        specifier: ^11.1.3
+        version: 11.1.3
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -2531,9 +2531,6 @@ packages:
   '@unional/gizmo@2.3.0':
     resolution: {integrity: sha512-n8KXBTFSLrpv6QYn+6YLd3TC8I1sxb7MM/UC8jWNQwBs351LBH8nTEhx1l2xKNq65XPOR3o4KNc+pU8/wxdPMw==}
     engines: {node: '>= 14.16'}
-
-  '@unional/immer@9.0.0-beta.2':
-    resolution: {integrity: sha512-fJ4NxaKR4T/qfcSoPw8dFmKddmF7s2HqlUKSF0Xd1o1t6RZxQn7smhjJtFHfpr7gTQeoUBdZLiLt/8HMnzjGnQ==}
 
   '@vitest/browser-playwright@4.0.15':
     resolution: {integrity: sha512-94yVpDbb+ykiT7mK6ToonGnq2GIHEQGBTZTAzGxBGQXcVNCh54YKC2/WkfaDzxy0m6Kgw05kq3FYHKHu+wRdIA==}
@@ -6353,8 +6350,6 @@ snapshots:
   '@unional/gizmo@2.3.0':
     dependencies:
       type-plus: 8.0.0-beta.7
-
-  '@unional/immer@9.0.0-beta.2': {}
 
   '@vitest/browser-playwright@4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.3)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)':
     dependencies:

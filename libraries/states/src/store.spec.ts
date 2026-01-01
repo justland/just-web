@@ -1,3 +1,4 @@
+import { nothing } from 'immer'
 import { testType } from 'type-plus'
 import { describe, expect, it, test } from 'vitest'
 import { createStore, type ReadonlyStore, type Store, toReadonlyStore } from './store.js'
@@ -35,6 +36,13 @@ describe('createStore()', () => {
 		})
 		const a = store.get()
 		expect(a).toEqual({ a: 2 })
+	})
+
+	test('set() by return nothing', () => {
+		const store = createStore({ a: 1 })
+		store.set(() => nothing)
+		const a = store.get()
+		expect(a).toEqual(undefined)
 	})
 
 	test('set() by return', () => {
