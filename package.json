@@ -51,7 +51,7 @@
 		"watch": "vitest"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.8",
+		"@biomejs/biome": "2.3.11",
 		"@changesets/assemble-release-plan": "^6.0.0",
 		"@changesets/cli": "^2.29.8",
 		"@commitlint/cli": "^20.2.0",
