@@ -49,7 +49,7 @@
 	},
 	"dependencies": {
 		"@rushstack/eslint-patch": "^1.15.0",
-		"@typescript-eslint/eslint-plugin": "^8.50.1",
+		"@typescript-eslint/eslint-plugin": "^8.52.0",
 		"@typescript-eslint/parser": "^8.49.0",
 		"@vitest/coverage-v8": "^4.0.15",
 		"eslint": "^9.0.0",
