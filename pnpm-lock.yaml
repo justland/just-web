@@ -30,10 +30,10 @@ importers:
         version: 6.0.9(patch_hash=5bb32d8643179d24c1eac288f85c550808cd537096a78094e05325927ab2424b)
       '@changesets/cli':
         specifier: ^2.29.8
-        version: 2.29.8(@types/node@25.0.6)
+        version: 2.29.8(@types/node@25.0.10)
       '@commitlint/cli':
         specifier: ^20.2.0
-        version: 20.2.0(@types/node@25.0.6)(typescript@5.9.3)
+        version: 20.2.0(@types/node@25.0.10)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: ^20.3.1
         version: 20.3.1
@@ -41,11 +41,11 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0(@biomejs/biome@2.3.11)
       '@types/node':
-        specifier: ^25.0.6
-        version: 25.0.6
+        specifier: ^25.0.10
+        version: 25.0.10
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       eslint:
         specifier: ^9.0.0
         version: 9.39.1(jiti@2.6.1)
@@ -60,7 +60,7 @@ importers:
         version: 9.1.7
       knip:
         specifier: ^5.79.0
-        version: 5.79.0(@types/node@25.0.6)(typescript@5.9.3)
+        version: 5.79.0(@types/node@25.0.10)(typescript@5.9.3)
       npm-check-updates:
         specifier: ^19.3.1
         version: 19.3.1
@@ -75,7 +75,7 @@ importers:
         version: 1.57.0
       plop:
         specifier: ^4.0.0
-        version: 4.0.4(@types/node@25.0.6)
+        version: 4.0.4(@types/node@25.0.10)
       rimraf:
         specifier: ~6.1.2
         version: 6.1.2
@@ -87,7 +87,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   examples/browser:
     dependencies:
@@ -118,10 +118,10 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/browser-playwright':
         specifier: ^4.0.15
-        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+        version: 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -139,7 +139,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   frameworks/app:
     dependencies:
@@ -176,7 +176,7 @@ importers:
         version: 0.31.1
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -200,7 +200,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   frameworks/id:
     dependencies:
@@ -225,7 +225,7 @@ importers:
         version: 0.31.1
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -249,7 +249,7 @@ importers:
         version: 8.0.0-beta.7
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   frameworks/log:
     dependencies:
@@ -280,7 +280,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -298,7 +298,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   libraries/states:
     dependencies:
@@ -329,7 +329,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -350,7 +350,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/browser:
     dependencies:
@@ -384,10 +384,10 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/browser-playwright':
         specifier: ^4.0.15
-        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+        version: 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -414,7 +414,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/browser-i18n:
     dependencies:
@@ -448,10 +448,10 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/browser-playwright':
         specifier: ^4.0.15
-        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+        version: 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -469,7 +469,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/browser-keyboard:
     dependencies:
@@ -509,10 +509,10 @@ importers:
         version: 1.6.15
       '@vitest/browser-playwright':
         specifier: ^4.0.15
-        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+        version: 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -533,7 +533,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/browser-preferences:
     dependencies:
@@ -582,10 +582,10 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/browser-playwright':
         specifier: ^4.0.15
-        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+        version: 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -606,7 +606,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/commands:
     dependencies:
@@ -643,7 +643,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -667,7 +667,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/events:
     dependencies:
@@ -695,7 +695,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -716,7 +716,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/fetch:
     devDependencies:
@@ -737,10 +737,10 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/browser-playwright':
         specifier: ^4.0.15
-        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+        version: 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -758,7 +758,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/formatjs:
     dependencies:
@@ -783,7 +783,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -804,7 +804,7 @@ importers:
         version: 8.0.0-beta.7
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/history:
     devDependencies:
@@ -825,10 +825,10 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/browser-playwright':
         specifier: ^4.0.15
-        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+        version: 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       history:
         specifier: ^5.3.0
         version: 5.3.0
@@ -852,7 +852,7 @@ importers:
         version: 8.0.0-beta.7
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/i18n:
     devDependencies:
@@ -879,7 +879,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -897,7 +897,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/keyboard:
     dependencies:
@@ -928,7 +928,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -949,7 +949,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/os:
     dependencies:
@@ -980,7 +980,7 @@ importers:
         version: 1.3.6
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -998,7 +998,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/preferences:
     dependencies:
@@ -1029,7 +1029,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -1056,7 +1056,7 @@ importers:
         version: 8.0.0-beta.7
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   plugins/routes:
     dependencies:
@@ -1084,7 +1084,7 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       assertron:
         specifier: ^11.2.0
         version: 11.5.2
@@ -1105,7 +1105,7 @@ importers:
         version: 0.17.1(oxc-resolver@11.16.2)(typescript@5.9.3)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   presets/browser:
     dependencies:
@@ -1148,10 +1148,10 @@ importers:
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
       '@vitest/browser-playwright':
         specifier: ^4.0.15
-        version: 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+        version: 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       npm-run-all2:
         specifier: ^6.0.0
         version: 6.2.6
@@ -1172,7 +1172,7 @@ importers:
         version: 8.0.0-beta.7
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
 
   tools/repo-scripts:
     dependencies:
@@ -1187,7 +1187,7 @@ importers:
         version: 8.53.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       '@vitest/coverage-v8':
         specifier: ^4.0.15
-        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
+        version: 4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)
       eslint:
         specifier: ^9.0.0
         version: 9.39.1(jiti@2.6.1)
@@ -1217,7 +1217,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.15
-        version: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
     devDependencies:
       '@repobuddy/vitest':
         specifier: 'catalog:'
@@ -2526,8 +2526,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@25.0.6':
-    resolution: {integrity: sha512-NNu0sjyNxpoiW3YuVFfNz7mxSQ+S4X2G28uqg2s+CzoqoQjLPsWSbsFFyztIAqt2vb8kfEAsJNepMGPTxFDx3Q==}
+  '@types/node@25.0.10':
+    resolution: {integrity: sha512-zWW5KPngR/yvakJgGOmZ5vTBemDoSqF3AcV/LrO5u5wTWyEAVVh+IT39G4gtyAkh3CtTZs8aX/yRM82OfzHJRg==}
 
   '@types/picomatch@4.0.2':
     resolution: {integrity: sha512-qHHxQ+P9PysNEGbALT8f8YOSHW0KJu6l2xU8DYY0fu/EmGxXdVnuTLvFUvBgPJMSqXq29SYHveejeAha+4AYgA==}
@@ -4493,8 +4493,18 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  playwright-core@1.58.0:
+    resolution: {integrity: sha512-aaoB1RWrdNi3//rOeKuMiS65UCcgOVljU46At6eFcOFPFHWtd2weHRRow6z/n+Lec0Lvu0k9ZPKJSjPugikirw==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   playwright@1.57.0:
     resolution: {integrity: sha512-ilYQj1s8sr2ppEJ2YVadYBN0Mb3mdo9J0wQ+UuDhzYqURwSoW4n1Xs5vs7ORwgDGmyEh33tRMeS8KhdkMoLXQw==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  playwright@1.58.0:
+    resolution: {integrity: sha512-2SVA0sbPktiIY/MCOPX8e86ehA/e+tDNq+e5Y8qjKYti2Z/JG7xnronT/TXTIkKbYGWlCbuucZ6dziEgkoEjQQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -5574,7 +5584,7 @@ snapshots:
     dependencies:
       '@changesets/types': 6.1.0
 
-  '@changesets/cli@2.29.8(@types/node@25.0.6)':
+  '@changesets/cli@2.29.8(@types/node@25.0.10)':
     dependencies:
       '@changesets/apply-release-plan': 7.0.14
       '@changesets/assemble-release-plan': 6.0.9(patch_hash=5bb32d8643179d24c1eac288f85c550808cd537096a78094e05325927ab2424b)
@@ -5590,7 +5600,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@changesets/write': 0.4.0
-      '@inquirer/external-editor': 1.0.3(@types/node@25.0.6)
+      '@inquirer/external-editor': 1.0.3(@types/node@25.0.10)
       '@manypkg/get-packages': 1.1.3
       ansi-colors: 4.1.3
       ci-info: 3.9.0
@@ -5689,11 +5699,11 @@ snapshots:
       human-id: 4.1.3
       prettier: 2.8.8
 
-  '@commitlint/cli@20.2.0(@types/node@25.0.6)(typescript@5.9.3)':
+  '@commitlint/cli@20.2.0(@types/node@25.0.10)(typescript@5.9.3)':
     dependencies:
       '@commitlint/format': 20.2.0
       '@commitlint/lint': 20.2.0
-      '@commitlint/load': 20.2.0(@types/node@25.0.6)(typescript@5.9.3)
+      '@commitlint/load': 20.2.0(@types/node@25.0.10)(typescript@5.9.3)
       '@commitlint/read': 20.2.0
       '@commitlint/types': 20.2.0
       tinyexec: 1.0.2
@@ -5740,7 +5750,7 @@ snapshots:
       '@commitlint/rules': 20.2.0
       '@commitlint/types': 20.2.0
 
-  '@commitlint/load@20.2.0(@types/node@25.0.6)(typescript@5.9.3)':
+  '@commitlint/load@20.2.0(@types/node@25.0.10)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 20.2.0
       '@commitlint/execute-rule': 20.0.0
@@ -5748,7 +5758,7 @@ snapshots:
       '@commitlint/types': 20.2.0
       chalk: 5.6.2
       cosmiconfig: 9.0.0(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 6.2.0(@types/node@25.0.6)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.2.0(@types/node@25.0.10)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -6188,12 +6198,12 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@inquirer/external-editor@1.0.3(@types/node@25.0.6)':
+  '@inquirer/external-editor@1.0.3(@types/node@25.0.10)':
     dependencies:
       chardet: 2.1.1
       iconv-lite: 0.7.0
     optionalDependencies:
-      '@types/node': 25.0.6
+      '@types/node': 25.0.10
 
   '@inquirer/figures@1.0.15': {}
 
@@ -6350,9 +6360,9 @@ snapshots:
   '@repobuddy/vitest@2.1.1(@vitest/browser-playwright@4.0.15)(vitest@4.0.15)':
     dependencies:
       '@repobuddy/test': 1.0.0
-      vitest: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+      vitest: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
     optionalDependencies:
-      '@vitest/browser-playwright': 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+      '@vitest/browser-playwright': 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
 
   '@rolldown/binding-android-arm64@1.0.0-beta.53':
     optional: true
@@ -6532,7 +6542,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.2':
     dependencies:
-      '@types/node': 25.0.6
+      '@types/node': 25.0.10
 
   '@types/deep-eql@4.0.2': {}
 
@@ -6550,13 +6560,13 @@ snapshots:
   '@types/liftoff@4.0.3':
     dependencies:
       '@types/fined': 1.1.5
-      '@types/node': 25.0.6
+      '@types/node': 25.0.10
 
   '@types/mousetrap@1.6.15': {}
 
   '@types/node@12.20.55': {}
 
-  '@types/node@25.0.6':
+  '@types/node@25.0.10':
     dependencies:
       undici-types: 7.16.0
 
@@ -6572,7 +6582,7 @@ snapshots:
 
   '@types/through@0.0.33':
     dependencies:
-      '@types/node': 25.0.6
+      '@types/node': 25.0.10
 
   '@typescript-eslint/eslint-plugin@8.53.0(@typescript-eslint/parser@8.53.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
@@ -6813,29 +6823,29 @@ snapshots:
     dependencies:
       type-plus: 8.0.0-beta.7
 
-  '@vitest/browser-playwright@4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)':
+  '@vitest/browser-playwright@4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)':
     dependencies:
-      '@vitest/browser': 4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
-      '@vitest/mocker': 4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))
-      playwright: 1.57.0
+      '@vitest/browser': 4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+      '@vitest/mocker': 4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))
+      playwright: 1.58.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+      vitest: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
     transitivePeerDependencies:
       - bufferutil
       - msw
       - utf-8-validate
       - vite
 
-  '@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)':
+  '@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)':
     dependencies:
-      '@vitest/mocker': 4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))
       '@vitest/utils': 4.0.15
       magic-string: 0.30.21
       pixelmatch: 7.1.0
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+      vitest: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
       ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
@@ -6843,7 +6853,7 @@ snapshots:
       - utf-8-validate
       - vite
 
-  '@vitest/coverage-v8@4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)':
+  '@vitest/coverage-v8@4.0.15(@vitest/browser@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15))(vitest@4.0.15)':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.15
@@ -6856,9 +6866,9 @@ snapshots:
       obug: 2.1.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
+      vitest: 4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2)
     optionalDependencies:
-      '@vitest/browser': 4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+      '@vitest/browser': 4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
     transitivePeerDependencies:
       - supports-color
 
@@ -6879,13 +6889,13 @@ snapshots:
       chai: 6.2.1
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitest/mocker@4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@vitest/spy': 4.0.15
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/pretty-format@3.2.4':
     dependencies:
@@ -7207,9 +7217,9 @@ snapshots:
       meow: 12.1.1
       split2: 4.2.0
 
-  cosmiconfig-typescript-loader@6.2.0(@types/node@25.0.6)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@6.2.0(@types/node@25.0.10)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
-      '@types/node': 25.0.6
+      '@types/node': 25.0.10
       cosmiconfig: 9.0.0(typescript@5.9.3)
       jiti: 2.6.1
       typescript: 5.9.3
@@ -8050,9 +8060,9 @@ snapshots:
 
   ini@4.1.1: {}
 
-  inquirer@9.3.8(@types/node@25.0.6):
+  inquirer@9.3.8(@types/node@25.0.10):
     dependencies:
-      '@inquirer/external-editor': 1.0.3(@types/node@25.0.6)
+      '@inquirer/external-editor': 1.0.3(@types/node@25.0.10)
       '@inquirer/figures': 1.0.15
       ansi-escapes: 4.3.2
       cli-width: 4.1.0
@@ -8351,10 +8361,10 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  knip@5.79.0(@types/node@25.0.6)(typescript@5.9.3):
+  knip@5.79.0(@types/node@25.0.10)(typescript@5.9.3):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
-      '@types/node': 25.0.6
+      '@types/node': 25.0.10
       fast-glob: 3.3.3
       formatly: 0.3.0
       jiti: 2.6.1
@@ -8529,14 +8539,14 @@ snapshots:
 
   no-case@4.0.0: {}
 
-  node-plop@0.32.3(@types/node@25.0.6):
+  node-plop@0.32.3(@types/node@25.0.10):
     dependencies:
       '@types/inquirer': 9.0.9
       '@types/picomatch': 4.0.2
       change-case: 5.4.4
       dlv: 1.1.3
       handlebars: 4.7.8
-      inquirer: 9.3.8(@types/node@25.0.6)
+      inquirer: 9.3.8(@types/node@25.0.10)
       isbinaryfile: 5.0.6
       resolve: 1.22.11
       tinyglobby: 0.2.15
@@ -8813,20 +8823,28 @@ snapshots:
 
   playwright-core@1.57.0: {}
 
+  playwright-core@1.58.0: {}
+
   playwright@1.57.0:
     dependencies:
       playwright-core: 1.57.0
     optionalDependencies:
       fsevents: 2.3.2
 
-  plop@4.0.4(@types/node@25.0.6):
+  playwright@1.58.0:
+    dependencies:
+      playwright-core: 1.58.0
+    optionalDependencies:
+      fsevents: 2.3.2
+
+  plop@4.0.4(@types/node@25.0.10):
     dependencies:
       '@types/liftoff': 4.0.3
       interpret: 3.1.1
       liftoff: 5.0.1
       minimist: 1.2.8
       nanospinner: 1.2.2
-      node-plop: 0.32.3(@types/node@25.0.6)
+      node-plop: 0.32.3(@types/node@25.0.10)
       picocolors: 1.1.1
       v8flags: 4.0.1
     transitivePeerDependencies:
@@ -9594,7 +9612,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2):
+  vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -9603,15 +9621,15 @@ snapshots:
       rollup: 4.53.3
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 25.0.6
+      '@types/node': 25.0.10
       fsevents: 2.3.3
       jiti: 2.6.1
       yaml: 2.8.2
 
-  vitest@4.0.15(@types/node@25.0.6)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2):
+  vitest@4.0.15(@types/node@25.0.10)(@vitest/browser-playwright@4.0.15)(jiti@2.6.1)(jsdom@25.0.1)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.15
-      '@vitest/mocker': 4.0.15(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.15(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))
       '@vitest/pretty-format': 4.0.15
       '@vitest/runner': 4.0.15
       '@vitest/snapshot': 4.0.15
@@ -9628,11 +9646,11 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 25.0.6
-      '@vitest/browser-playwright': 4.0.15(playwright@1.57.0)(vite@7.2.6(@types/node@25.0.6)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
+      '@types/node': 25.0.10
+      '@vitest/browser-playwright': 4.0.15(playwright@1.58.0)(vite@7.2.6(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))(vitest@4.0.15)
       jsdom: 25.0.1
     transitivePeerDependencies:
       - jiti
