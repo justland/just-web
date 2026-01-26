@@ -61,7 +61,7 @@
 	},
 	"dependencies": {
 		"@unional/events-plus": "^3.0.0",
-		"eventemitter3": "^5.0.0"
+		"eventemitter3": "^5.0.4"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
