@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "add-changeset": {
+      "source": "repobuddy/agent-changesets",
+      "sourceType": "github",
+      "skillPath": "skills/add-changeset/SKILL.md",
+      "computedHash": "8a5266fe92b2f9f755238564e44b5b44e1b5ce0a469d5659c1b03d49dd590dd1"
+    },
     "create-skill": {
       "source": "cyberuni/agent-helmsman",
       "sourceType": "github",
@@ -12,6 +18,12 @@
       "sourceType": "github",
       "skillPath": "skills/init/SKILL.md",
       "computedHash": "3b7fe09f0412d2607040b48d1a976fd5a3a690a6da7233b6d9c7a45ca11898ef"
+    },
+    "setup-changesets": {
+      "source": "repobuddy/agent-changesets",
+      "sourceType": "github",
+      "skillPath": "skills/setup-changesets/SKILL.md",
+      "computedHash": "420852a5b0c12254ab2e4713116be62fadeee3b8e50f1f8e9ea84295c2fdc496"
     },
     "validate-skill": {
       "source": "cyberuni/agent-helmsman",
