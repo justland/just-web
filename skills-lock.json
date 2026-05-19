@@ -23,7 +23,7 @@
       "source": "repobuddy/agent-changesets",
       "sourceType": "github",
       "skillPath": "skills/setup-changesets/SKILL.md",
-      "computedHash": "420852a5b0c12254ab2e4713116be62fadeee3b8e50f1f8e9ea84295c2fdc496"
+      "computedHash": "6ee922527e013544ff5f739dea8fe6e178caa9629e123a29793776f485ff2e8e"
     },
     "validate-skill": {
       "source": "cyberuni/agent-helmsman",
