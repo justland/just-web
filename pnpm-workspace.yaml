@@ -8,6 +8,10 @@ packages:
   - presets/*
   - tools/*
 
+allowBuilds:
+  esbuild: true
+  fsevents: true
+
 catalog:
   '@repobuddy/vitest': ^2.1.1
 
