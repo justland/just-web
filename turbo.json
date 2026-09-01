@@ -16,10 +16,6 @@
 		"dev": {
 			"cache": false
 		},
-		"lint": {
-			"dependsOn": ["^build"],
-			"inputs": [".eslint*"]
-		},
 		"nuke": {
 			"cache": false
 		},

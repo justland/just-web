@@ -32,7 +32,6 @@ const config: KnipConfig = {
 		'playwright',
 		// Build and tooling dependencies
 		'@repobuddy/*',
-		'eslint*',
 		'repobuddy',
 		// Type-only dependencies that may be inferred
 		'@just-web/repo-scripts'

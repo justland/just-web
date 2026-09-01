@@ -29,16 +29,6 @@ export default function (
 			},
 			{
 				type: 'add',
-				path: 'plugins/{{name}}/.eslintignore',
-				templateFile: 'plops/plugins/.eslintignore'
-			},
-			{
-				type: 'add',
-				path: 'plugins/{{name}}/.eslintrc.cjs',
-				templateFile: 'plops/plugins/.eslintrc.cjs'
-			},
-			{
-				type: 'add',
 				path: 'plugins/{{name}}/.gitignore',
 				templateFile: 'plops/plugins/.gitignore'
 			},
