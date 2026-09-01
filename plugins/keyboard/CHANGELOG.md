@@ -1,5 +1,7 @@
 # @just-web/keyboard
 
+## 7.4.0
+
 ## 7.3.4
 
 ### Patch Changes

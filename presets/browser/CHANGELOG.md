@@ -1,5 +1,12 @@
 # @just-web/presets-browser
 
+## 8.0.4
+
+### Patch Changes
+
+- Updated dependencies [566f789]
+  - @just-web/states@7.4.0
+
 ## 8.0.3
 
 ### Patch Changes

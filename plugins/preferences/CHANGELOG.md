@@ -1,5 +1,12 @@
 # @just-web/preferences
 
+## 7.3.5
+
+### Patch Changes
+
+- Updated dependencies [566f789]
+  - @just-web/states@7.4.0
+
 ## 7.3.4
 
 ### Patch Changes

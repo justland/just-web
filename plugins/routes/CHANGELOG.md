@@ -1,5 +1,7 @@
 # @just-web/routes
 
+## 7.2.5
+
 ## 7.2.4
 
 ### Patch Changes

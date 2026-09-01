@@ -1,5 +1,7 @@
 # @just-web/browser-i18n
 
+## 4.0.4
+
 ## 4.0.3
 
 ### Patch Changes
