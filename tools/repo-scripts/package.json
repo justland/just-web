@@ -61,7 +61,7 @@
 		"rimraf": "~6.1.2",
 		"tsdown": "^0.17.1",
 		"typescript": "^5.0.4",
-		"vitest": "^4.0.15"
+		"vitest": "^4.1.0"
 	},
 	"devDependencies": {
 		"@repobuddy/vitest": "catalog:",
