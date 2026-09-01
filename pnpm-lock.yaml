@@ -295,8 +295,8 @@ importers:
         specifier: ^11.1.18
         version: 11.1.18
       tersify:
-        specifier: ^3.12.1
-        version: 3.12.1
+        specifier: ^4.0.3
+        version: 4.0.3
       type-plus:
         specifier: 8.0.0-beta.8
         version: 8.0.0-beta.8(typescript@5.9.3)
@@ -603,8 +603,8 @@ importers:
         specifier: ~4.0.0
         version: 4.0.0
       tersify:
-        specifier: ^3.12.1
-        version: 3.12.1
+        specifier: ^4.0.3
+        version: 4.0.3
       type-plus:
         specifier: 8.0.0-beta.8
         version: 8.0.0-beta.8(typescript@5.9.3)
