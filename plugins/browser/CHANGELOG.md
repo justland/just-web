@@ -1,5 +1,7 @@
 # @just-web/browser
 
+## 9.1.2
+
 ## 9.1.1
 
 ### Patch Changes

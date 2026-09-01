@@ -1,5 +1,12 @@
 # @just-web/browser-preferences
 
+## 9.1.2
+
+### Patch Changes
+
+- Updated dependencies [566f789]
+  - @just-web/states@7.4.0
+
 ## 9.1.1
 
 ### Patch Changes
