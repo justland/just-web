@@ -10,6 +10,10 @@ jobs:
   release:
     uses: justland/.github/.github/workflows/pnpm-release-changeset.yml@main
     needs: code
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
     secrets: inherit
 
   # docgen:
