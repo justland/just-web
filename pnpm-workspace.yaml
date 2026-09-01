@@ -16,7 +16,12 @@ catalog:
   '@repobuddy/vitest': ^2.1.1
 
 overrides:
-  glob@>=10.2.0 <10.5.0: '>=10.5.0'
+  # Upper bound added 2026-09-01. The replacement was previously open-ended
+  # ('>=10.5.0'), so anything this matched would have been rewritten to glob 13
+  # rather than to a patched glob 10. Nothing currently resolves in the matched
+  # range -- rimraf 6 asks for glob ^13 directly -- so the override is dormant.
+  # Exit condition: delete it once no dependency can request glob 10.2-10.4.
+  glob@>=10.2.0 <10.5.0: '>=10.5.0 <11'
 
 patchedDependencies:
   '@changesets/assemble-release-plan': patches/@changesets__assemble-release-plan.patch

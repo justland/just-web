@@ -11,7 +11,7 @@ catalogs:
       version: 2.1.2
 
 overrides:
-  glob@>=10.2.0 <10.5.0: '>=10.5.0'
+  glob@>=10.2.0 <10.5.0: '>=10.5.0 <11'
 
 patchedDependencies:
   '@changesets/assemble-release-plan': 5bb32d8643179d24c1eac288f85c550808cd537096a78094e05325927ab2424b
