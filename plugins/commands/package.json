@@ -1,6 +1,6 @@
 {
 	"name": "@just-web/commands",
-	"version": "7.3.3",
+	"version": "7.3.4",
 	"description": "just-web command system",
 	"keywords": [
 		"just-web",

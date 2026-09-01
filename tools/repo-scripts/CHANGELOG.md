@@ -1,5 +1,19 @@
 # @just-web/repo-scripts
 
+## 0.4.0
+
+### Minor Changes
+
+- e370daa: Remove the dead `config/eslint.js`, `config/.eslintrc.react.js` and `config/babel.config.js` exports, along with the eslint dependencies they pulled in.
+
+  The repository lints with biome, and these configs were unusable as shipped: they are `.eslintrc`-format objects that the declared eslint 9 cannot consume, and the babel config referenced `@babel/*` presets that were never dependencies. Consumers importing `@just-web/repo-scripts/config/eslint.js` should move to `@repobuddy/biome`.
+
+### Patch Changes
+
+- 412b24b: Rebuild with tsdown 0.22 and the refreshed toolchain.
+
+  No public API changes. The emitted `esm/`, `cjs/` and `.d.ts` output differs from the previous release (formatting, and declaration files now use inline `import("...")` types rather than a hoisted namespace import), so this ships as a patch.
+
 ## 0.3.1
 
 ### Patch Changes

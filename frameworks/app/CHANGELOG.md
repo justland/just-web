@@ -1,5 +1,13 @@
 # @just-web/app
 
+## 7.3.3
+
+### Patch Changes
+
+- 412b24b: Rebuild with tsdown 0.22 and the refreshed toolchain.
+
+  No public API changes. The emitted `esm/`, `cjs/` and `.d.ts` output differs from the previous release (formatting, and declaration files now use inline `import("...")` types rather than a hoisted namespace import), so this ships as a patch.
+
 ## 7.3.2
 
 ### Patch Changes
