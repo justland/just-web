@@ -72,21 +72,21 @@
 	},
 	"dependencies": {
 		"@just-web/id": "workspace:^",
-		"@unional/gizmo": "^2.2.0",
-		"standard-log": "^12.1.1",
-		"type-plus": "8.0.0-beta.7"
+		"@unional/gizmo": "^2.3.1",
+		"standard-log": "^12.1.2",
+		"type-plus": "8.0.0-beta.8"
 	},
 	"devDependencies": {
 		"@just-web/repo-scripts": "workspace:^",
 		"@repobuddy/typescript": "^2.1.0",
 		"@repobuddy/vitest": "catalog:",
-		"@size-limit/preset-small-lib": "~12.0.0",
-		"@vitest/coverage-v8": "^4.0.15",
-		"npm-run-all2": "^6.0.0",
-		"repobuddy": "^1.0.1",
-		"rimraf": "~6.1.2",
-		"size-limit": "~12.0.0",
-		"tsdown": "^0.17.1",
-		"vitest": "^4.0.15"
+		"@size-limit/preset-small-lib": "~13.0.3",
+		"@vitest/coverage-v8": "^4.1.11",
+		"npm-run-all2": "^9.0.3",
+		"repobuddy": "^1.5.0",
+		"rimraf": "~6.1.3",
+		"size-limit": "~13.0.3",
+		"tsdown": "^0.22.14",
+		"vitest": "^4.1.11"
 	}
 }

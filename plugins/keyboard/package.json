@@ -59,7 +59,7 @@
 		"verify": "npm-run-all -p build lint coverage -p size"
 	},
 	"dependencies": {
-		"type-plus": "8.0.0-beta.7"
+		"type-plus": "8.0.0-beta.8"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
@@ -68,15 +68,15 @@
 		"@just-web/states": "workspace:^",
 		"@repobuddy/typescript": "^2.1.0",
 		"@repobuddy/vitest": "catalog:",
-		"@size-limit/preset-small-lib": "~12.0.0",
-		"@vitest/coverage-v8": "^4.0.15",
-		"assertron": "^11.2.0",
-		"npm-run-all2": "^6.0.0",
-		"repobuddy": "^1.0.1",
-		"rimraf": "~6.1.2",
-		"size-limit": "~12.0.0",
-		"tsdown": "^0.17.1",
-		"vitest": "^4.0.15"
+		"@size-limit/preset-small-lib": "~13.0.3",
+		"@vitest/coverage-v8": "^4.1.11",
+		"assertron": "^11.5.3",
+		"npm-run-all2": "^9.0.3",
+		"repobuddy": "^1.5.0",
+		"rimraf": "~6.1.3",
+		"size-limit": "~13.0.3",
+		"tsdown": "^0.22.14",
+		"vitest": "^4.1.11"
 	},
 	"peerDependencies": {
 		"@just-web/app": "workspace:^",
