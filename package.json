@@ -52,8 +52,8 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.11",
-		"@changesets/assemble-release-plan": "^6.0.10",
-		"@changesets/cli": "^2.31.1",
+		"@changesets/assemble-release-plan": "^7.0.0",
+		"@changesets/cli": "^3.0.1",
 		"@commitlint/cli": "^21.2.2",
 		"@commitlint/config-conventional": "^21.2.2",
 		"@repobuddy/biome": "^2.3.1",

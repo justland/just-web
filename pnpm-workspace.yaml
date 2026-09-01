@@ -23,5 +23,3 @@ overrides:
   # Exit condition: delete it once no dependency can request glob 10.2-10.4.
   glob@>=10.2.0 <10.5.0: '>=10.5.0 <11'
 
-patchedDependencies:
-  '@changesets/assemble-release-plan': patches/@changesets__assemble-release-plan.patch
