@@ -2,6 +2,7 @@ name: pull-request
 on:
   pull_request:
     types: [opened, synchronize]
+  merge_group:
 
 jobs:
   code:
