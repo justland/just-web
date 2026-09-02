@@ -9,3 +9,9 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    ignore:
+      # type-plus keeps `latest` on 7.x deliberately; the 8.x line is prerelease.
+      # A pin that is ALREADY on a prerelease makes each new beta look like an
+      # ordinary patch, which is how `8.0.0-beta.8` reached ten packages here.
+      - dependency-name: "type-plus"
+        versions: [">=8.0.0-0"]
