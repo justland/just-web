@@ -15,6 +15,14 @@ allowBuilds:
 catalog:
   '@repobuddy/vitest': ^2.1.1
 
+# Supply-chain soak. This lived in .npmrc as `minimumreleaseage=1440`, which npm rejects as an
+# unknown config key and which `pnpm config get minimumReleaseAge` reported as undefined. pnpm
+# did honour it during resolution, but in LOOSE mode: a package inside the window was silently
+# appended to `minimumReleaseAgeExclude` in this file rather than refused. Strict makes pnpm
+# stop and ask instead, so the gate cannot be bypassed by an ordinary `pnpm add`.
+minimumReleaseAge: 1440
+minimumReleaseAgeStrict: true
+
 overrides:
   # Upper bound added 2026-09-01. The replacement was previously open-ended
   # ('>=10.5.0'), so anything this matched would have been rewritten to glob 13
