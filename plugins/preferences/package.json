@@ -89,7 +89,7 @@
 		"rimraf": "~6.1.3",
 		"size-limit": "~13.0.3",
 		"tsdown": "^0.22.14",
-		"type-plus": "8.0.0-beta.8",
+		"type-plus": "^7.6.2",
 		"vitest": "^4.1.11"
 	},
 	"peerDependencies": {
