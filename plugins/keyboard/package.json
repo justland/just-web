@@ -59,7 +59,7 @@
 		"verify": "npm-run-all -p build lint coverage -p size"
 	},
 	"dependencies": {
-		"type-plus": "8.0.0-beta.8"
+		"type-plus": "^7.6.2"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
