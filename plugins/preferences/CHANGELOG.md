@@ -1,5 +1,7 @@
 # @just-web/preferences
 
+## 7.3.6
+
 ## 7.3.5
 
 ### Patch Changes

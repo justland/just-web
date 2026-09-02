@@ -1,5 +1,7 @@
 # @just-web/presets-browser
 
+## 8.0.5
+
 ## 8.0.4
 
 ### Patch Changes
