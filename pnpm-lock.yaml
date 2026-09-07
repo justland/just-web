@@ -136,11 +136,11 @@ importers:
         specifier: workspace:^
         version: link:../log
       '@unional/gizmo':
-        specifier: ^2.3.1
-        version: 2.3.1(typescript@5.9.3)
+        specifier: ^3.0.0
+        version: 3.0.0(typescript@5.9.3)
       iso-error:
-        specifier: ~6.0.5
-        version: 6.0.5
+        specifier: ^7.0.0
+        version: 7.0.0
       type-plus:
         specifier: 8.0.0-beta.10
         version: 8.0.0-beta.10(typescript@5.9.3)
@@ -191,8 +191,8 @@ importers:
   frameworks/id:
     dependencies:
       '@unional/gizmo':
-        specifier: ^2.3.1
-        version: 2.3.1(typescript@5.9.3)
+        specifier: ^3.0.0
+        version: 3.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/repo-scripts':
         specifier: workspace:^
@@ -243,11 +243,11 @@ importers:
         specifier: workspace:^
         version: link:../id
       '@unional/gizmo':
-        specifier: ^2.3.1
-        version: 2.3.1(typescript@5.9.3)
+        specifier: ^3.0.0
+        version: 3.0.0(typescript@5.9.3)
       standard-log:
-        specifier: ^12.1.2
-        version: 12.1.2
+        specifier: ^13.2.0
+        version: 13.2.0(typescript@5.9.3)
       type-plus:
         specifier: 8.0.0-beta.10
         version: 8.0.0-beta.10(typescript@5.9.3)
@@ -344,8 +344,8 @@ importers:
         specifier: workspace:^
         version: link:../fetch
       iso-error:
-        specifier: ~6.0.5
-        version: 6.0.5
+        specifier: ^7.0.0
+        version: 7.0.0
       type-plus:
         specifier: 8.0.0-beta.10
         version: 8.0.0-beta.10(typescript@5.9.3)
@@ -393,8 +393,8 @@ importers:
         specifier: ~13.0.3
         version: 13.0.3
       standard-log:
-        specifier: ^12.1.2
-        version: 12.1.2
+        specifier: ^13.2.0
+        version: 13.2.0(typescript@5.9.3)
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -646,8 +646,8 @@ importers:
         specifier: ~13.0.3
         version: 13.0.3
       standard-log:
-        specifier: ^12.1.2
-        version: 12.1.2
+        specifier: ^13.2.0
+        version: 13.2.0(typescript@5.9.3)
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -658,8 +658,8 @@ importers:
   plugins/events:
     dependencies:
       '@unional/events-plus':
-        specifier: ^3.0.1
-        version: 3.0.1
+        specifier: ^4.0.0
+        version: 4.0.0(typescript@5.9.3)
       eventemitter3:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1639,6 +1639,9 @@ packages:
   '@just-func/types@0.5.1':
     resolution: {integrity: sha512-yP+XbIIT5qGI/6TOZ0lRFHq2UubCfpf+2EKQPhEwOGsvh1vJTdDTPGyNWYHmLMLT5jx8h/SR3mAAVDmYyAjpwA==}
 
+  '@just-func/types@0.6.0':
+    resolution: {integrity: sha512-5/nFEvX/QizdRCMXjo/VfW4qgBw2pX2+Sz5+aJ907d7NqXVXxEu1Hwu6k35A5INI2NtIOvplQnkm7uFqPGiL0w==}
+
   '@manypkg/find-root@3.1.0':
     resolution: {integrity: sha512-BcSqCyKhBVZ5YkSzOiheMCV41kqAFptW6xGqYSTjkVTl9XQpr+pqHhwgGCOHQtjDCv7Is6EFyA14Sm5GVbVABA==}
     engines: {node: '>=20.0.0'}
@@ -2119,12 +2122,12 @@ packages:
   '@types/through@0.0.33':
     resolution: {integrity: sha512-HsJ+z3QuETzP3cswwtzt2vEIiHBk/dCcHGhbmG5X3ecnwFD/lPrMpliGXxSCg03L9AhrdwA4Oz/qfspkDW+xGQ==}
 
-  '@unional/events-plus@3.0.1':
-    resolution: {integrity: sha512-xEjiErtCmVj8J1DQL9kD0U4mXfp5tWdNCxmQMqN8DN2K/BZPnCJcR0ZHM877DS/Ckm1edMsN8aAT+DDbqPh78Q==}
+  '@unional/events-plus@4.0.0':
+    resolution: {integrity: sha512-mq7b1fyn3dChiJpJPgRhL5wzhMd5uZ5O9JDHtU09hecLkzkefPMHt5VXYwhfPxzd+zDvhpgG3KkIuepcY0IZEw==}
 
-  '@unional/gizmo@2.3.1':
-    resolution: {integrity: sha512-m0UDjYCksX8hIGSpnODITI+fbY4AIv50q6M0SH6grG8EEA4ImywLhlfj639lJPPufOFg7IuhmaEKN5/hqFtu+g==}
-    engines: {node: '>= 14.16'}
+  '@unional/gizmo@3.0.0':
+    resolution: {integrity: sha512-aRaLx44dBGBckhgzyVmErtw2AElMyqCGqc0/E+e9ugRBFPcT+Aj299VmqJDj2Tj9Biejh/KF0NbAAJ6AkwannQ==}
+    engines: {node: '>= 20'}
 
   '@vitest/browser-playwright@4.1.11':
     resolution: {integrity: sha512-riLBxPqwnJ0lWs2DN2WeUfYeKLoAjbP2Xx8cLQdSddzMi20sksIa6K2mPz79DyMZKKVKH2ksOC2yJvtNcZg8cg==}
@@ -3144,6 +3147,10 @@ packages:
     resolution: {integrity: sha512-e6RUrLKvZhUzkjVYozUo8RKnZsKtoEljdPyzXWJfPfn2jhZWn74xyEYYrlWDFNr/+zQcyDEmXYp7ir+hzbJ8MA==}
     engines: {node: '>= 10'}
 
+  iso-error@7.0.0:
+    resolution: {integrity: sha512-GyHH/0Xyug/vO9LOr5zKI3fyEAAJuBuXYNZE+Fs5DmpUmH4oRbcR8aYyql+MGi8CY53qPcU1bNJEjC5QsesFhA==}
+    engines: {node: '>= 20'}
+
   isobject@3.0.1:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
@@ -3859,6 +3866,9 @@ packages:
   standard-log@12.1.2:
     resolution: {integrity: sha512-vFTFTkiZhHg8PGpp7wnOPJsQQsO2DMX1bnEAVms8LF9IdJWNGGMD+1btV5pWUkFb7p/qDHUhZqN/do+nsg0rPQ==}
 
+  standard-log@13.2.0:
+    resolution: {integrity: sha512-WFlhMhuYc7s5U1oh9JTAShgropuXzsZF0N8Wgrynzn7k+n7rFaMlQWRDNBgB2Rn+KQdXyHIQWT85703YY4VA4w==}
+
   std-env@4.2.0:
     resolution: {integrity: sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==}
 
@@ -4033,11 +4043,6 @@ packages:
 
   type-plus@8.0.0-beta.10:
     resolution: {integrity: sha512-ZdhzmQg7f8oxt5Cbivslk8o3zef8L3ibpKIeGH1ESf73y8ZEY1z9fe4Z3fTxcjmFOb8ESE1TbW/MCgEvpeLC4w==}
-    peerDependencies:
-      typescript: '>= 5.6.0'
-
-  type-plus@8.0.0-beta.8:
-    resolution: {integrity: sha512-egrpXQq2tV0abCf99+n4SCD/stT76qEwPBI1q7BqiVUe5pHWc+bm4vsOiNR84SmZTv4SoEl9UOZUdkEbS3POdw==}
     peerDependencies:
       typescript: '>= 5.6.0'
 
@@ -4740,6 +4745,12 @@ snapshots:
     dependencies:
       type-plus: 5.6.0
 
+  '@just-func/types@0.6.0(typescript@5.9.3)':
+    dependencies:
+      type-plus: 8.0.0-beta.10(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
   '@manypkg/find-root@3.1.0':
     dependencies:
       '@manypkg/tools': 2.1.2
@@ -5046,13 +5057,15 @@ snapshots:
     dependencies:
       '@types/node': 25.9.5
 
-  '@unional/events-plus@3.0.1':
+  '@unional/events-plus@4.0.0(typescript@5.9.3)':
     dependencies:
-      '@just-func/types': 0.5.1
+      '@just-func/types': 0.6.0(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
 
-  '@unional/gizmo@2.3.1(typescript@5.9.3)':
+  '@unional/gizmo@3.0.0(typescript@5.9.3)':
     dependencies:
-      type-plus: 8.0.0-beta.8(typescript@5.9.3)
+      type-plus: 8.0.0-beta.10(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
@@ -6148,6 +6161,8 @@ snapshots:
 
   iso-error@6.0.5: {}
 
+  iso-error@7.0.0: {}
+
   isobject@3.0.1: {}
 
   istanbul-lib-coverage@3.2.2: {}
@@ -6904,6 +6919,15 @@ snapshots:
       type-plus: 7.6.2
       upper-case: 2.0.2
 
+  standard-log@13.2.0(typescript@5.9.3):
+    dependencies:
+      '@just-func/types': 0.6.0(typescript@5.9.3)
+      iso-error: 6.0.5
+      ms: 2.1.3
+      type-plus: 8.0.0-beta.10(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
   std-env@4.2.0: {}
 
   stop-iteration-iterator@1.1.0:
@@ -7085,12 +7109,6 @@ snapshots:
       tersify: 4.0.6
       typescript: 5.9.3
       unpartial: 1.0.7
-
-  type-plus@8.0.0-beta.8(typescript@5.9.3):
-    dependencies:
-      tersify: 3.12.1
-      typescript: 5.9.3
-      unpartial: 1.0.6
 
   typed-array-buffer@1.0.3:
     dependencies:
