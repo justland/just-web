@@ -72,7 +72,7 @@
 		"@vitest/coverage-v8": "^4.1.11",
 		"assertron": "^11.6.0",
 		"npm-run-all2": "^9.0.3",
-		"repobuddy": "^1.5.0",
+		"repobuddy": "^1.5.1",
 		"rimraf": "~6.1.3",
 		"size-limit": "~13.0.3",
 		"tsdown": "^0.22.14",
