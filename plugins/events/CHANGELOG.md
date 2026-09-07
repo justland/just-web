@@ -1,5 +1,15 @@
 # @just-web/events
 
+## 7.2.4
+
+### Patch Changes
+
+- 13d878c: Bump the `assertron` `devDependency` to `^11.6.0`.
+  
+  `assertron@11.6.0` is the first release built against `type-plus` 8; the previous `^11.5.3` range kept resolving `11.5.2`/`11.5.3`, which pull `type-plus` 7 and `tersify` 3 into the tree alongside the version the rest of the repo uses. Development-only, so nothing about the published package changes.
+- Updated dependencies [13d878c]
+  - @just-web/app@8.0.0
+
 ## 7.2.3
 
 ### Patch Changes
