@@ -1,5 +1,12 @@
 # @just-web/fetch
 
+## 2.0.3
+
+### Patch Changes
+
+- Updated dependencies [13d878c]
+  - @just-web/app@8.0.0
+
 ## 2.0.2
 
 ### Patch Changes
