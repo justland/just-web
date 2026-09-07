@@ -71,7 +71,7 @@
 		"w": "pnpm test:watch"
 	},
 	"dependencies": {
-		"@unional/gizmo": "^2.3.1"
+		"@unional/gizmo": "^3.0.0"
 	},
 	"devDependencies": {
 		"@just-web/repo-scripts": "workspace:^",

@@ -72,7 +72,7 @@
 	},
 	"dependencies": {
 		"@just-web/fetch": "workspace:^",
-		"iso-error": "~6.0.5",
+		"iso-error": "^7.0.0",
 		"type-plus": "8.0.0-beta.10"
 	},
 	"devDependencies": {
@@ -90,7 +90,7 @@
 		"repobuddy": "^1.5.0",
 		"rimraf": "~6.1.3",
 		"size-limit": "~13.0.3",
-		"standard-log": "^12.1.2",
+		"standard-log": "^13.2.0",
 		"tsdown": "^0.22.14",
 		"vitest": "^4.1.11"
 	},
