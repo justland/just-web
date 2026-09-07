@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@repobuddy/vitest':
-      specifier: ^2.1.1
-      version: 2.1.2
+      specifier: ^2.1.4
+      version: 2.1.4
 
 overrides:
   glob@>=10.2.0 <10.5.0: '>=10.5.0 <11'
@@ -98,7 +98,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -153,7 +153,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -202,7 +202,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -260,7 +260,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -309,7 +309,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -364,7 +364,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -428,7 +428,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -486,7 +486,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -562,7 +562,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -623,7 +623,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -675,7 +675,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -717,7 +717,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -763,7 +763,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -805,7 +805,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -859,7 +859,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -908,7 +908,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -957,7 +957,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -1009,7 +1009,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -1064,7 +1064,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -1128,7 +1128,7 @@ importers:
         version: 2.1.0
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -1183,7 +1183,7 @@ importers:
     devDependencies:
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        version: 2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -1901,14 +1901,14 @@ packages:
     peerDependencies:
       '@biomejs/biome': '>= 2'
 
-  '@repobuddy/test@1.0.1':
-    resolution: {integrity: sha512-eNXZ6Cfs18EGQtPS/H68E0GQyQeB+al5sPcMgb70553CE0vs5Y7jDdO8Csgk/CHiuPy/rCKdN33OvvkSiGaG+A==}
+  '@repobuddy/test@1.0.2':
+    resolution: {integrity: sha512-EeofGgGuvzLee0Ya41H3SDL+sSMG/MtekDDS9wPVpaPaFxHrq+vIzUl8Ls+mchFSBXwifrupRFjVwGYcL+9LZw==}
 
   '@repobuddy/typescript@2.1.0':
     resolution: {integrity: sha512-b9owazWwMPs357qqti4CrIt7+isqcPbsUOZmW+Yc0L7OVz2YmrHhCgg2ggFGQgSFhhMWc/mQQ18K8VVR5KxPBQ==}
 
-  '@repobuddy/vitest@2.1.2':
-    resolution: {integrity: sha512-Fty+IoZKJUiTKFzjtpTrbFTT5upeEodBxOsi1H9VoIhFxHK8R0zZpd/gV85ou26WZTS8Pv0bYDrUOZoCrZioyA==}
+  '@repobuddy/vitest@2.1.4':
+    resolution: {integrity: sha512-VaiISKjtyXbpcb4WQiwGMoUTVsZcafc6o7PkU18QHIoHm1ziumlFbJqrMBrHPFDZ0f6qaQoD8AsibvoW9+rqgw==}
     peerDependencies:
       '@vitest/browser-playwright': ^4.0.15
       vitest: ^4.0.15
@@ -4894,7 +4894,7 @@ snapshots:
     dependencies:
       '@biomejs/biome': 2.5.11
 
-  '@repobuddy/test@1.0.1': {}
+  '@repobuddy/test@1.0.2': {}
 
   '@repobuddy/typescript@2.1.0':
     dependencies:
@@ -4902,9 +4902,9 @@ snapshots:
       dirname-filename-esm: 1.1.2
       execa: 9.6.1
 
-  '@repobuddy/vitest@2.1.2(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)':
+  '@repobuddy/vitest@2.1.4(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)':
     dependencies:
-      '@repobuddy/test': 1.0.1
+      '@repobuddy/test': 1.0.2
       vitest: 4.1.11(@types/node@25.9.5)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
     optionalDependencies:
       '@vitest/browser-playwright': 4.1.11(playwright@1.62.1)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)

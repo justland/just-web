@@ -13,7 +13,7 @@ allowBuilds:
   fsevents: true
 
 catalog:
-  '@repobuddy/vitest': ^2.1.1
+  '@repobuddy/vitest': ^2.1.4
 
 # Supply-chain soak. This lived in .npmrc as `minimumreleaseage=1440`, which npm rejects as an
 # unknown config key and which `pnpm config get minimumReleaseAge` reported as undefined. pnpm
