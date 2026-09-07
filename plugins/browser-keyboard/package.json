@@ -73,7 +73,7 @@
 	},
 	"dependencies": {
 		"mousetrap": "~1.6.5",
-		"type-plus": "^7.6.2"
+		"type-plus": "8.0.0-beta.10"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
@@ -87,7 +87,7 @@
 		"@types/mousetrap": "~1.6.15",
 		"@vitest/browser-playwright": "^4.1.11",
 		"@vitest/coverage-v8": "^4.1.11",
-		"assertron": "^11.5.3",
+		"assertron": "^11.6.0",
 		"npm-run-all2": "^9.0.3",
 		"repobuddy": "^1.5.0",
 		"rimraf": "~6.1.3",
