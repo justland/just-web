@@ -1,5 +1,7 @@
 # @just-web/history
 
+## 2.2.5
+
 ## 2.2.4
 
 ### Patch Changes

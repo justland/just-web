@@ -1,5 +1,27 @@
 # @just-web/app
 
+## 8.1.0
+
+### Minor Changes
+
+- cc22128: Adopt `iso-error@7`, removing a stale major from the dependency tree.
+  
+  `iso-error@7`'s major is the Node engine floor moving to `>= 20` (pulled in transitively via `type-plus@8`); its public types (`ModuleError` and the errors re-exported from `@just-web/app`) are unchanged.
+- cc22128: Adopt `standard-log@13`, removing a stale transitive `type-plus@5.6.0` and `tersify@3.12.1` from consumers' trees.
+  
+  `standard-log@13.2.0` widens its `@just-func/types` dependency from `^0.5.0` to `^0.6.0` so it resolves `type-plus@8.0.0-beta.10` instead of a caret-locked `type-plus@5.6.0`. `standard-log`'s own public API is unchanged across this jump. `@just-web/browser` and `@just-web/commands` only carry `standard-log` as a devDependency, so this is a `patch` for `@just-web/commands` (fixed-versioned with `@just-web/keyboard`).
+- cc22128: Adopt `@unional/gizmo@3`, removing a stale transitive `type-plus` copy from consumers' trees.
+  
+  `@unional/gizmo@3.0.0` pins `type-plus` to `8.0.0-beta.10` exactly and raises its Node engine floor to `>= 20` (it carries `type-plus` as a runtime dependency and re-exports its types). Gizmo's own public API (`define`, `incubate`, `Gizmo`, `GizmoBase`, `DepBuilder`, etc.) is unchanged, and none of `@just-web/log`, `@just-web/id` or `@just-web/app` declare their own `engines.node`, so the floor raise narrows nothing they declare.
+
+### Patch Changes
+
+- Updated dependencies [cc22128]
+- Updated dependencies [cc22128]
+- Updated dependencies [cc22128]
+  - @just-web/id@8.1.0
+  - @just-web/log@8.1.0
+
 ## 8.0.0
 
 ### Major Changes

@@ -1,5 +1,14 @@
 # @just-web/presets-browser
 
+## 9.0.1
+
+### Patch Changes
+
+- Updated dependencies [cc22128]
+- Updated dependencies [cc22128]
+  - @just-web/browser@10.1.0
+  - @just-web/browser-preferences@10.1.0
+
 ## 9.0.0
 
 ### Major Changes
