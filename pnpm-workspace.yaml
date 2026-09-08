@@ -23,25 +23,6 @@ catalog:
 minimumReleaseAge: 1440
 minimumReleaseAgeStrict: true
 
-# TEMPORARY. Remove once these have matured past the 1440-minute window; a
-# revert PR doing exactly that is open and should be merged then.
-#
-# All seven published 2026-09-07 carrying the `type-plus` 8 move that finally
-# lets this repo resolve a single major of tersify. The soak refused them,
-# which is the gate working as designed -- this exempts these seven by name
-# rather than weakening `minimumReleaseAgeStrict` for everything.
-# Last of the set matures 2026-09-08T08:40Z (repobuddy 1.6.0).
-minimumReleaseAgeExclude:
-  - '@just-func/types'
-  - '@repobuddy/typescript'
-  - '@unional/events-plus'
-  - assertron
-  - clibuilder
-  - iso-error
-  - repobuddy
-  - standard-log
-  - standard-log-color
-
 overrides:
   # Upper bound added 2026-09-01. The replacement was previously open-ended
   # ('>=10.5.0'), so anything this matched would have been rewritten to glob 13
