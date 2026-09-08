@@ -85,7 +85,7 @@
 		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~13.0.3",
 		"@types/mousetrap": "~1.6.15",
-		"@vitest/browser-playwright": "^4.1.11",
+		"@vitest/browser-playwright": "^5.0.0",
 		"@vitest/coverage-v8": "^4.1.11",
 		"assertron": "^11.6.0",
 		"npm-run-all2": "^9.0.3",
