@@ -265,8 +265,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -418,8 +418,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -476,8 +476,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       delay:
         specifier: ^7.0.0
         version: 7.0.0
@@ -601,8 +601,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -674,8 +674,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -732,8 +732,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -784,8 +784,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -1017,8 +1017,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -1118,8 +1118,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       immer:
         specifier: ^11.1.18
         version: 11.1.18
@@ -1173,8 +1173,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
       assertron:
-        specifier: ^11.6.0
-        version: 11.6.0(typescript@5.9.3)
+        specifier: ^11.7.0
+        version: 11.7.0(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -2515,8 +2515,8 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  assertron@11.6.0:
-    resolution: {integrity: sha512-10ISpYENayWRyH7bwz1l3jfYeyNv0W4TlJ5t2vNfPtKclHnpCXGKv0Vfr7xCGdgR843U2H3+EfUY12bOwjPDzA==}
+  assertron@11.7.0:
+    resolution: {integrity: sha512-LAykbog/XG9NO4T0kyHhOujm4xyEN2zsuqEHgqccHlLyCXm97ZJEXBVrQsk/+J+qIGqLAIv/Zk4hIOS/x8MATA==}
     engines: {node: '>=20'}
 
   ast-v8-to-istanbul@1.0.5:
@@ -5487,10 +5487,10 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  assertron@11.6.0(typescript@5.9.3):
+  assertron@11.7.0(typescript@5.9.3):
     dependencies:
       is-promise: 4.0.0
-      iso-error: 6.0.5
+      iso-error: 7.0.0
       path-equal: 1.2.8
       satisfier: 5.4.4
       tersify: 4.0.6
