@@ -1,5 +1,5 @@
 import type { Draft } from 'immer'
-import type { KeyTypes, Pick, RecordValue, UnionOfValues } from 'type-plus'
+import type { KeyTypes, RecordValue, UnionOfValues } from 'type-plus'
 import type { Registry, RegistryValue } from './registry.js'
 import type { Store, StoreValue } from './store.js'
 
