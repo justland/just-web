@@ -1,5 +1,9 @@
 # @just-web/browser-i18n
 
+## 4.0.7
+
+No changes in this release.
+
 ## 4.0.6
 
 ## 4.0.5

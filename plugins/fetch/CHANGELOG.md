@@ -1,5 +1,9 @@
 # @just-web/fetch
 
+## 2.0.5
+
+No changes in this release.
+
 ## 2.0.4
 
 ## 2.0.3
