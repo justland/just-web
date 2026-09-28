@@ -1,6 +1,6 @@
 import type { KeyboardGizmo } from '@just-web/keyboard'
 import type { Registry, WithAdder } from '@just-web/states'
-import type { AnyFunction, CanAssign, ExtractFunction } from 'type-plus'
+import type { AnyFunction, Assignable, ExtractFunction } from 'type-plus'
 import type { CommandsGizmo } from './commands_gizmo.js'
 
 export interface CommandHandler {
@@ -76,12 +76,8 @@ export interface CommandContribution {
 // this is a workaround
 export type Partial<T> = { [P in keyof T]?: T[P] | undefined }
 
-export type OverloadFallback<T extends AnyFunction, Then = AnyFunction, Else = T> = CanAssign<
-	ExtractFunction<T>,
-	T,
-	Else,
-	Then
->
+export type OverloadFallback<T extends AnyFunction, Then = AnyFunction, Else = T> =
+	Assignable<ExtractFunction<T>, T> extends true ? Else : Then
 
 export interface ContributionRegistry extends Registry<string, CommandContribution>, WithAdder<CommandContribution> {}
 

@@ -1,5 +1,5 @@
 import { define, type GizmoBase } from '@just-web/app'
-import { unpartial } from 'type-plus'
+import { required } from 'type-plus'
 import { isMac } from './os.js'
 import type { OSGizmo } from './os_gizmo.js'
 
@@ -15,7 +15,7 @@ export interface OSTestGizmoOptions {
 export const osTestGizmoFn: (options?: OSTestGizmoOptions) => GizmoBase<OSGizmo> = define(
 	(options?: OSTestGizmoOptions) => ({
 		async create() {
-			return { os: unpartial({ isMac }, options) }
+			return { os: required({ isMac }, options) }
 		}
 	})
 )

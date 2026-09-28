@@ -3,7 +3,7 @@ import { commandsGizmoFn } from '@just-web/commands'
 import { keyboardGizmoFn } from '@just-web/keyboard'
 import { AssertOrder } from 'assertron'
 import { nothing } from 'immer'
-import { isType, type JSONTypes } from 'type-plus'
+import { type JSONTypes, testType } from 'type-plus'
 import { describe, expect, it } from 'vitest'
 import {
 	clearAllUserPreferences,
@@ -100,7 +100,7 @@ describe('preferences.createState()', () => {
 		const { preferences } = await setupTestApp()
 		const store = preferences.createStore<{ b: string }>('some-pref')
 		const result = store.get()
-		isType.equal<true, { b: string } | undefined, typeof result>()
+		testType.equal<{ b: string } | undefined, typeof result>(true)
 	})
 
 	describe('get()', () => {
@@ -109,7 +109,7 @@ describe('preferences.createState()', () => {
 
 			const result = store.get()
 
-			isType.equal<true, JSONTypes | undefined, typeof result>()
+			testType.equal<JSONTypes | undefined, typeof result>(true)
 			expect(result).toBeUndefined()
 		})
 
@@ -118,7 +118,7 @@ describe('preferences.createState()', () => {
 
 			const result = store.get()
 
-			isType.equal<true, { a: number } | undefined, typeof result>()
+			testType.equal<{ a: number } | undefined, typeof result>(true)
 			expect(result).toEqual({ a: 1 })
 		})
 	})
@@ -129,7 +129,7 @@ describe('preferences.createState()', () => {
 			const store = await setupTestStore<TestPref>('set-value')
 			const r = store.set({ a: 2 })
 
-			isType.equal<true, void, typeof r>()
+			testType.equal<void, typeof r>(true)
 			expect(r).toBeUndefined()
 
 			const result = store.get()
@@ -140,7 +140,7 @@ describe('preferences.createState()', () => {
 		it('can set value to undefined', async () => {
 			const store = await setupTestStore<TestPref>('set-value-to-undefined')
 			const r = store.set({ a: 2 })
-			isType.equal<true, void, typeof r>()
+			testType.equal<void, typeof r>(true)
 			expect(r).toBeUndefined()
 
 			const r2 = store.set(undefined)
@@ -153,7 +153,7 @@ describe('preferences.createState()', () => {
 		it('can set value to null', async () => {
 			const store = await setupTestStore<TestPref | null>('set-to-null')
 			const r = store.set(null)
-			isType.equal<true, void, typeof r>()
+			testType.equal<void, typeof r>(true)
 			expect(r).toBeUndefined()
 
 			const result = store.get()
@@ -181,7 +181,7 @@ describe('preferences.createState()', () => {
 		it('accepts handler that returns new value', async () => {
 			const store = await setupTestStore<TestPref>('set-with-handler->value')
 			const r = store.set(v => ({ ...v, a: 1 }))
-			isType.equal<true, void, typeof r>()
+			testType.equal<void, typeof r>(true)
 			expect(r).toBeUndefined()
 
 			const result = store.get()
@@ -193,7 +193,7 @@ describe('preferences.createState()', () => {
 			const r = store.set(v => {
 				v!.a = 2
 			})
-			isType.equal<true, void, typeof r>()
+			testType.equal<void, typeof r>(true)
 			expect(r).toBeUndefined()
 
 			const result = store.get()
@@ -211,7 +211,7 @@ describe('preferences.createState()', () => {
 		it('accepts async handler that returns new value', async () => {
 			const store = await setupTestStore<TestPref>('set-with-async-handler->value')
 			const r = store.set(async v => ({ ...v, a: 1 }))
-			isType.equal<true, Promise<void>, typeof r>()
+			testType.equal<Promise<void>, typeof r>(true)
 			expect(await r).toBeUndefined()
 
 			const result = store.get()
@@ -223,7 +223,7 @@ describe('preferences.createState()', () => {
 			const r = store.set(async v => {
 				v!.a = 2
 			})
-			isType.equal<true, Promise<void>, typeof r>()
+			testType.equal<Promise<void>, typeof r>(true)
 			expect(await r).toBeUndefined()
 
 			const result = store.get()
@@ -234,7 +234,7 @@ describe('preferences.createState()', () => {
 			const store = await setupTestStore<TestPref>('set-with-async-handler->nothing')
 			store.set({ a: 1 })
 			const r = store.set(async _ => nothing)
-			isType.equal<true, Promise<void>, typeof r>()
+			testType.equal<Promise<void>, typeof r>(true)
 			expect(await r).toBeUndefined()
 
 			const result = store.get()
