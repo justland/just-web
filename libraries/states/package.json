@@ -63,7 +63,7 @@
 	"dependencies": {
 		"immer": "^11.1.18",
 		"tersify": "^4.0.6",
-		"type-plus": "8.0.0-beta.10"
+		"type-plus": "8.0.0-beta.12"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",

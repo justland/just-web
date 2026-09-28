@@ -243,8 +243,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/repo-scripts':
         specifier: workspace:^
@@ -332,8 +332,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
@@ -350,8 +350,8 @@ importers:
         specifier: ^13.2.0
         version: 13.2.0(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/repo-scripts':
         specifier: workspace:^
@@ -396,8 +396,8 @@ importers:
         specifier: ^4.0.6
         version: 4.0.6
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -448,8 +448,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -564,8 +564,8 @@ importers:
         specifier: ~1.6.5
         version: 1.6.5
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -640,8 +640,8 @@ importers:
         specifier: ^3.9.3
         version: 3.9.3
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -704,8 +704,8 @@ importers:
         specifier: ^4.0.6
         version: 4.0.6
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -887,8 +887,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
@@ -935,8 +935,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
@@ -989,8 +989,8 @@ importers:
   plugins/keyboard:
     dependencies:
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -1044,8 +1044,8 @@ importers:
         specifier: ~1.3.6
         version: 1.3.6
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -1139,8 +1139,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
@@ -1148,8 +1148,8 @@ importers:
   plugins/routes:
     dependencies:
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -1255,8 +1255,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.10
-        version: 8.0.0-beta.10(typescript@5.9.3)
+        specifier: 8.0.0-beta.12
+        version: 8.0.0-beta.12(typescript@5.9.3)
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
@@ -4163,6 +4163,11 @@ packages:
     peerDependencies:
       typescript: '>= 5.6.0'
 
+  type-plus@8.0.0-beta.12:
+    resolution: {integrity: sha512-isf19V90L8JOn9VBWWwUfH8DU6G3dfPptr3R+JtraYWHqLAsXYI2f9x1HZVTkajrkSffdEbetXUXf7FcIjSIRg==}
+    peerDependencies:
+      typescript: '>= 5.4.0'
+
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
     engines: {node: '>= 0.4'}
@@ -5494,7 +5499,7 @@ snapshots:
       path-equal: 1.2.8
       satisfier: 5.4.4
       tersify: 4.0.6
-      type-plus: 8.0.0-beta.10(typescript@5.9.3)
+      type-plus: 8.0.0-beta.12(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
@@ -7267,6 +7272,12 @@ snapshots:
   type-fest@0.21.3: {}
 
   type-plus@8.0.0-beta.10(typescript@5.9.3):
+    dependencies:
+      tersify: 4.0.6
+      typescript: 5.9.3
+      unpartial: 1.0.7
+
+  type-plus@8.0.0-beta.12(typescript@5.9.3):
     dependencies:
       tersify: 4.0.6
       typescript: 5.9.3
