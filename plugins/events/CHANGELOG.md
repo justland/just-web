@@ -1,5 +1,9 @@
 # @just-web/events
 
+## 8.0.1
+
+No changes in this release.
+
 ## 8.0.0
 
 ### Major Changes

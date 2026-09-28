@@ -1,5 +1,9 @@
 # @just-web/preferences
 
+## 8.0.2
+
+No changes in this release.
+
 ## 8.0.1
 
 ## 8.0.0

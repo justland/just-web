@@ -1,5 +1,9 @@
 # @just-web/presets-browser
 
+## 9.0.2
+
+No changes in this release.
+
 ## 9.0.1
 
 ### Patch Changes
