@@ -77,7 +77,7 @@
 		"@just-web/repo-scripts": "workspace:^",
 		"@repobuddy/typescript": "^2.2.0",
 		"@repobuddy/vitest": "catalog:",
-		"@size-limit/preset-small-lib": "~13.0.3",
+		"@size-limit/preset-small-lib": "~13.1.0",
 		"@vitest/coverage-v8": "^5.0.0",
 		"npm-run-all2": "^9.0.3",
 		"repobuddy": "^1.10.0",
