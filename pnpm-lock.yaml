@@ -394,7 +394,7 @@ importers:
         version: 11.1.18
       tersify:
         specifier: ^4.0.6
-        version: 4.0.6
+        version: 4.0.8
       type-plus:
         specifier: 8.0.0-beta.10
         version: 8.0.0-beta.10(typescript@5.9.3)
@@ -702,7 +702,7 @@ importers:
         version: 4.0.0
       tersify:
         specifier: ^4.0.6
-        version: 4.0.6
+        version: 4.0.8
       type-plus:
         specifier: 8.0.0-beta.10
         version: 8.0.0-beta.10(typescript@5.9.3)
@@ -4065,8 +4065,8 @@ packages:
     resolution: {integrity: sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA==}
     engines: {node: '>=6.0.0'}
 
-  tersify@4.0.6:
-    resolution: {integrity: sha512-+z2dTeRvbPyI7qiAmBY+VgWnhhN9IuaGjgrPfeF33hI4A/Yd9KT11tbc4l8vfIA3L/5EWiE0swvxOfAckGRuzA==}
+  tersify@4.0.8:
+    resolution: {integrity: sha512-8SP19qXCXiWztbyJLqmCwstqtZg7F5grbSov3yh8C+fyqHgKyfMaI/c5DCMKIGDkpoKX8cIz9ZqJxN7zZDtQcQ==}
 
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
@@ -4223,6 +4223,10 @@ packages:
 
   unpartial@1.0.7:
     resolution: {integrity: sha512-DeyxEI3KSlmDihGAk3Js/p/Ca886ymIz39pWH3VVV/LZ36MsRETylFS37fdzWBWDjMlzB63Rdy2KLCdetOMPig==}
+    engines: {node: '>= 20'}
+
+  unpartial@1.0.8:
+    resolution: {integrity: sha512-LDZX3wrdUWQdVKLOgouW+fCqNfietx11UzdipDBRsnx1LWKBkv4FpA9OHVeSNz12STLk6oz07dgENEWnHyAgIg==}
     engines: {node: '>= 20'}
 
   util-deprecate@1.0.2:
@@ -5493,7 +5497,7 @@ snapshots:
       iso-error: 6.0.5
       path-equal: 1.2.8
       satisfier: 5.4.4
-      tersify: 4.0.6
+      tersify: 4.0.8
       type-plus: 8.0.0-beta.10(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
@@ -6968,7 +6972,7 @@ snapshots:
 
   satisfier@5.4.4:
     dependencies:
-      tersify: 4.0.6
+      tersify: 4.0.8
 
   search-packages@2.2.1: {}
 
@@ -7194,10 +7198,10 @@ snapshots:
       mkdirp: 0.5.6
       rimraf: 2.6.3
 
-  tersify@4.0.6:
+  tersify@4.0.8:
     dependencies:
       acorn: 8.18.0
-      unpartial: 1.0.7
+      unpartial: 1.0.8
 
   tinybench@2.9.0: {}
 
@@ -7268,7 +7272,7 @@ snapshots:
 
   type-plus@8.0.0-beta.10(typescript@5.9.3):
     dependencies:
-      tersify: 4.0.6
+      tersify: 4.0.8
       typescript: 5.9.3
       unpartial: 1.0.7
 
@@ -7339,6 +7343,8 @@ snapshots:
   unlimited-timeout@0.1.0: {}
 
   unpartial@1.0.7: {}
+
+  unpartial@1.0.8: {}
 
   util-deprecate@1.0.2: {}
 
