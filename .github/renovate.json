@@ -1,0 +1,18 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["github>unional/renovate-preset"],
+	"platformAutomerge": true,
+	"packageRules": [
+		{
+			"description": "Non-major updates merge themselves once CI is green: dev tooling, the toolchain and GitHub Actions.",
+			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true
+		},
+		{
+			"description": "Runtime dependencies of a published package ship to consumers, so a human decides.",
+			"matchDepTypes": ["dependencies", "peerDependencies"],
+			"automerge": false
+		},
+		{ "description": "Majors are a human decision.", "matchUpdateTypes": ["major"], "automerge": false }
+	]
+}
