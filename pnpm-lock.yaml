@@ -256,8 +256,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@types/ramda':
         specifier: ^0.32.0
         version: 0.32.0
@@ -280,8 +280,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -305,8 +305,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@types/ramda':
         specifier: ^0.32.0
         version: 0.32.0
@@ -326,8 +326,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -360,8 +360,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
@@ -375,8 +375,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -409,8 +409,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
@@ -427,8 +427,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -464,8 +464,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
         specifier: ^4.1.11
         version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
@@ -488,8 +488,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       standard-log:
         specifier: ^13.3.1
         version: 13.3.1(typescript@5.9.3)
@@ -528,8 +528,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
         specifier: ^4.1.11
         version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
@@ -546,8 +546,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -586,8 +586,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@types/mousetrap':
         specifier: ~1.6.15
         version: 1.6.15
@@ -610,8 +610,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -662,8 +662,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
         specifier: ^4.1.11
         version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
@@ -683,8 +683,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -723,8 +723,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
@@ -741,8 +741,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       standard-log:
         specifier: ^13.3.1
         version: 13.3.1(typescript@5.9.3)
@@ -775,8 +775,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
@@ -793,8 +793,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -817,8 +817,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
         specifier: ^4.1.11
         version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
@@ -835,8 +835,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -863,8 +863,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
@@ -878,8 +878,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -905,8 +905,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
         specifier: ^4.1.11
         version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
@@ -926,8 +926,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -959,8 +959,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(typescript@5.9.3)(vitest@5.0.0)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^5.0.0
         version: 5.0.0(@vitest/browser@4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(vitest@5.0.0)
@@ -974,8 +974,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -1008,8 +1008,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
@@ -1026,8 +1026,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -1057,8 +1057,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(typescript@5.9.3)(vitest@5.0.0)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@types/platform':
         specifier: ~1.3.6
         version: 1.3.6
@@ -1075,8 +1075,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -1109,8 +1109,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
@@ -1130,8 +1130,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -1164,8 +1164,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
@@ -1182,8 +1182,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -1228,8 +1228,8 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
         specifier: ^4.1.11
         version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
@@ -1246,8 +1246,8 @@ importers:
         specifier: ~6.1.3
         version: 6.1.3
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
@@ -1283,11 +1283,11 @@ importers:
         specifier: 'catalog:'
         version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
-        specifier: ~13.0.3
-        version: 13.0.3(size-limit@13.0.3)
+        specifier: ~13.1.0
+        version: 13.1.1(size-limit@13.1.1)
       size-limit:
-        specifier: ~13.0.3
-        version: 13.0.3
+        specifier: ~13.1.0
+        version: 13.1.1
 
 packages:
 
@@ -2137,16 +2137,33 @@ packages:
     peerDependencies:
       size-limit: 13.0.3
 
+  '@size-limit/esbuild@13.1.1':
+    resolution: {integrity: sha512-+aWz9zUJTtnkc1UejLzrFGBOmM/H6QpYvL39BfgmxUULCeLn6xMb2sQw2w8n1CaF70/DvH9/J9QdNl4kAhdrHA==}
+    engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
+    peerDependencies:
+      size-limit: 13.1.1
+
   '@size-limit/file@13.0.3':
     resolution: {integrity: sha512-PWTITIXH5p9aGIf6qq2Fruihn/b9nBQyfkyoAyb6DzFJgS1Ek9MSPJYKxKFLO8jdo0aqSgBPd3sevbS6PyBiJw==}
     engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
     peerDependencies:
       size-limit: 13.0.3
 
+  '@size-limit/file@13.1.1':
+    resolution: {integrity: sha512-hWsrLRKBSh1vVFa86e2WcpBWcTYnwRvvZ54o6wzmPduhYUQPgOCr9eWqNMLCxvqLP5EiJeGCwLQFDjdgusGFSw==}
+    engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
+    peerDependencies:
+      size-limit: 13.1.1
+
   '@size-limit/preset-small-lib@13.0.3':
     resolution: {integrity: sha512-rqKn1+JkVF5ckZRmcxeQPZ8g0e9Fqddh6bjmDotijXJtN40KJQ+5TG6pTiYq3RaA4nkuEkixHULpDBGcgAARAg==}
     peerDependencies:
       size-limit: 13.0.3
+
+  '@size-limit/preset-small-lib@13.1.1':
+    resolution: {integrity: sha512-by5zdyqKuIU3umUo3WQFwDyv1/cOJnYR/cE8VEZeW9lPRyfaExiWu1A3jzIn+LA4GGZaYvQ5Z6THHMlGij9Jmw==}
+    peerDependencies:
+      size-limit: 13.1.1
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -3969,6 +3986,11 @@ packages:
     engines: {node: ^22.18.0 || ^24.0.0 || >=26.0.0}
     hasBin: true
 
+  size-limit@13.1.1:
+    resolution: {integrity: sha512-Yl3CuQFSB3TSirrg9jyD/ahEUa6+aoMWj4UuucW36XunEsBfYhRACZRQr7vaUKoLkS88Njw0czdpDQFfbvCc+Q==}
+    engines: {node: ^22.18.0 || ^24.0.0 || >=26.0.0}
+    hasBin: true
+
   smol-toml@1.8.0:
     resolution: {integrity: sha512-kCZr2V3ch9i00x8zXRhjUNVcjG9ijES5dDudkXvUVCT5QlJNQWElSJdZqyPemffHoLNUYwOcou0Fy+ojN0uHSQ==}
     engines: {node: '>= 18'}
@@ -5183,15 +5205,31 @@ snapshots:
       nanoid: 6.0.1
       size-limit: 13.0.3
 
+  '@size-limit/esbuild@13.1.1(size-limit@13.1.1)':
+    dependencies:
+      esbuild: 0.28.2
+      nanoid: 6.0.1
+      size-limit: 13.1.1
+
   '@size-limit/file@13.0.3(size-limit@13.0.3)':
     dependencies:
       size-limit: 13.0.3
+
+  '@size-limit/file@13.1.1(size-limit@13.1.1)':
+    dependencies:
+      size-limit: 13.1.1
 
   '@size-limit/preset-small-lib@13.0.3(size-limit@13.0.3)':
     dependencies:
       '@size-limit/esbuild': 13.0.3(size-limit@13.0.3)
       '@size-limit/file': 13.0.3(size-limit@13.0.3)
       size-limit: 13.0.3
+
+  '@size-limit/preset-small-lib@13.1.1(size-limit@13.1.1)':
+    dependencies:
+      '@size-limit/esbuild': 13.1.1(size-limit@13.1.1)
+      '@size-limit/file': 13.1.1(size-limit@13.1.1)
+      size-limit: 13.1.1
 
   '@standard-schema/spec@1.1.0': {}
 
@@ -7088,6 +7126,12 @@ snapshots:
   sisteransi@1.0.5: {}
 
   size-limit@13.0.3:
+    dependencies:
+      bytes-iec: 3.1.1
+      lilconfig: 3.1.3
+      nanospinner: 1.2.2
+
+  size-limit@13.1.1:
     dependencies:
       bytes-iec: 3.1.1
       lilconfig: 3.1.3
