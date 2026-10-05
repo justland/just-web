@@ -55,8 +55,8 @@
 	},
 	"devDependencies": {
 		"@repobuddy/vitest": "catalog:",
-		"@size-limit/preset-small-lib": "~13.0.3",
-		"size-limit": "~13.0.3"
+		"@size-limit/preset-small-lib": "~13.1.0",
+		"size-limit": "~13.1.0"
 	},
 	"size-limit": [
 		{
