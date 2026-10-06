@@ -76,8 +76,8 @@
 		"@repobuddy/typescript": "^2.2.0",
 		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~13.1.0",
-		"@vitest/browser-playwright": "^4.1.11",
-		"@vitest/coverage-v8": "^4.1.11",
+		"@vitest/browser-playwright": "^5.0.0",
+		"@vitest/coverage-v8": "^5.0.0",
 		"history": "^5.3.0",
 		"npm-run-all2": "^9.0.3",
 		"repobuddy": "^1.10.0",
@@ -85,7 +85,7 @@
 		"size-limit": "~13.1.0",
 		"tsdown": "^0.22.14",
 		"type-plus": "8.0.0-beta.12",
-		"vitest": "^4.1.11"
+		"vitest": "^5.0.0"
 	},
 	"peerDependencies": {
 		"@just-web/app": "workspace:^"
