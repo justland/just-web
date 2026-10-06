@@ -79,7 +79,7 @@
 		"@repobuddy/vitest": "catalog:",
 		"@size-limit/preset-small-lib": "~13.1.0",
 		"@types/ramda": "^0.32.0",
-		"@vitest/coverage-v8": "^4.1.11",
+		"@vitest/coverage-v8": "^5.0.0",
 		"npm-run-all2": "^9.0.3",
 		"ramda": "^0.32.0",
 		"repobuddy": "^1.10.0",
@@ -87,6 +87,6 @@
 		"size-limit": "~13.1.0",
 		"tsdown": "^0.22.14",
 		"type-plus": "8.0.0-beta.12",
-		"vitest": "^4.1.11"
+		"vitest": "^5.0.0"
 	}
 }
