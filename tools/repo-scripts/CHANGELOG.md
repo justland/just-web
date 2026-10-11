@@ -1,5 +1,11 @@
 # @just-web/repo-scripts
 
+## 0.5.0
+
+### Minor Changes
+
+- fa6e754: Update `vitest` and `@vitest/coverage-v8` to 5.
+
 ## 0.4.1
 
 ### Patch Changes
