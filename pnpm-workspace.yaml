@@ -29,7 +29,7 @@ overrides:
   # rather than to a patched glob 10. Nothing currently resolves in the matched
   # range -- rimraf 6 asks for glob ^13 directly -- so the override is dormant.
   # Exit condition: delete it once no dependency can request glob 10.2-10.4.
-  glob@>=10.2.0 <10.5.0: '>=10.5.0 <11'
+  glob@>=10.2.0 <10.5.0: '<14'
 
 
 # First-party packages are exempt from the soak.
