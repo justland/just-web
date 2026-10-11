@@ -3,6 +3,7 @@ on:
   pull_request:
     types: [opened, synchronize]
   merge_group:
+  workflow_dispatch:
 
 jobs:
   code:

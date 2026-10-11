@@ -1,5 +1,5 @@
 import { justTestApp } from '@just-web/app/testing'
-import { stub } from 'type-plus'
+import { stub } from 'type-plus/testing'
 import { afterEach, expect, it } from 'vitest'
 import { browserTestGizmoFn } from './testing/index.js'
 

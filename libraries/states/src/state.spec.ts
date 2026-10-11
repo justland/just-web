@@ -2,7 +2,7 @@ import { logLevels } from '@just-web/app'
 import { justTestApp } from '@just-web/app/testing'
 import { a, has, some } from 'assertron'
 import { nothing } from 'immer'
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { describe, expect, it } from 'vitest'
 import { createState, type OnStateChange } from './state.js'
 

@@ -1,4 +1,5 @@
-import { type KeyTypes, testType } from 'type-plus'
+import type { KeyTypes } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { describe, expect, it, test } from 'vitest'
 import { createRegistry, type ReadonlyRegistry, type Registry, toReadonlyRegistry, withAdder } from './index.js'
 

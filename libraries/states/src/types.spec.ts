@@ -1,5 +1,5 @@
 import { nothing } from 'immer'
-import type { JSONTypes } from 'type-plus'
+import type { JsonPrimitive } from 'type-plus'
 import { describe, expect, it } from 'vitest'
 import type { Updater } from './types.js'
 
@@ -9,8 +9,11 @@ describe('Updater<T>', () => {
 		foo(1)
 	})
 
-	it('JSONType', () => {
-		const foo: Updater<JSONTypes> = () => {}
+	it('JSON values', () => {
+		// type-plus 8 `JsonTypes` uses readonly arrays,
+		// which makes immer's `Draft<T>` recurse past the instantiation depth limit.
+		type Json = JsonPrimitive | Json[] | { [key: string]: Json }
+		const foo: Updater<Json> = () => {}
 		foo(1)
 	})
 

@@ -1,6 +1,6 @@
 import { justTestApp, type MemoryLogReporter } from '@just-web/app/testing'
 import { commandsGizmoFn } from '@just-web/commands'
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { expect, it } from 'vitest'
 import { presetsBrowserTestGizmoFn } from './testing/index.js'
 

@@ -1,5 +1,5 @@
 import { justTestApp } from '@just-web/app/testing'
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { expect, it } from 'vitest'
 import { formatJSGizmoFn, type IntlShape } from './index.js'
 

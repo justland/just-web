@@ -1,5 +1,5 @@
 import type { LogTestGizmo } from '@just-web/log/testing'
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { it } from 'vitest'
 import { type IdGizmo, justApp, type LogGizmo } from './index.js'
 import { justTestApp } from './just_app.testing.js'
