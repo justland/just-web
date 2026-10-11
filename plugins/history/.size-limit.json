@@ -1,9 +1,5 @@
 [
 	{
-		"path": "./cjs/index.cjs",
-		"limit": "10kb"
-	},
-	{
 		"path": "./esm/index.mjs",
 		"limit": "5kb"
 	}

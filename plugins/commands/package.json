@@ -25,26 +25,21 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": {
-				"types": "./esm/index.d.ts",
-				"default": "./esm/index.mjs"
-			},
-			"require": {
-				"types": "./cjs/index.d.cts",
-				"default": "./cjs/index.cjs"
-			},
+			"types": "./esm/index.d.ts",
 			"default": "./esm/index.mjs"
-		}
+		},
+		"./package.json": "./package.json"
 	},
-	"main": "./cjs/index.cjs",
 	"module": "./esm/index.mjs",
 	"types": "./esm/index.d.ts",
 	"files": [
-		"cjs",
 		"esm",
 		"src",
 		"!**/*.{spec,test,unit,accept,integrate,system,perf,stress}.*"
 	],
+	"engines": {
+		"node": "^20.19.0 || >=22.12.0"
+	},
 	"scripts": {
 		"build": "run-s build:code build:types",
 		"build:code": "tsdown --tsconfig tsconfig.build.json",
