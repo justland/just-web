@@ -1,5 +1,25 @@
 # @just-web/states
 
+## 9.0.0
+
+### Major Changes
+
+- e22a1ca: Drop the CommonJS build. The package now ships ESM only, following `type-plus` 8.
+  
+  Removed: the `cjs/` folder, the `require` export condition, and `main`.
+  `engines.node` is now `^20.19.0 || >=22.12.0`.
+  
+  Migration:
+  
+  - ESM code and bundlers need no change.
+  - CommonJS code on Node 20.19+ or 22.12+ can still `require("@just-web/states")`: Node loads ES modules through `require()` without a flag.
+  - On older Node, upgrade Node or load the package with `await import("@just-web/states")`.
+  - TypeScript projects on `moduleResolution: "node"` (node10) must move to `node16`, `nodenext` or `bundler` to resolve subpaths such as `/testing`.
+
+### Patch Changes
+
+- fa6e754: Update `type-plus` to 8.0.0 and `@unional/gizmo` to 3.0.2.
+
 ## 8.0.1
 
 ### Patch Changes
