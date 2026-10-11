@@ -1,3 +1,3 @@
-import { cjs, esm } from '@just-web/repo-scripts/config/tsdown.config.ts'
+import { esm } from '@just-web/repo-scripts/config/tsdown.config.ts'
 
-export default [cjs, esm]
+export default [esm]
