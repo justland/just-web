@@ -3,7 +3,8 @@ import { commandsGizmoFn } from '@just-web/commands'
 import { keyboardGizmoFn } from '@just-web/keyboard'
 import { AssertOrder } from 'assertron'
 import { nothing } from 'immer'
-import { type JSONTypes, testType } from 'type-plus'
+import type { JSONTypes } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { describe, expect, it } from 'vitest'
 import {
 	clearAllUserPreferences,
@@ -161,7 +162,7 @@ describe('preferences.createState()', () => {
 		})
 
 		it('can set value from null to something', async () => {
-			const store = await setupTestStore('set-from-null')
+			const store = await setupTestStore<number | null>('set-from-null')
 			store.set(null)
 			store.set(v => {
 				expect(v).toBeNull()
@@ -172,7 +173,7 @@ describe('preferences.createState()', () => {
 		})
 
 		it('can set value from null to something', async () => {
-			const store = await setupTestStore('set-with-handler->null')
+			const store = await setupTestStore<TestPref | null>('set-with-handler->null')
 			store.set(_ => null)
 			const result = store.get()
 			expect(result).toEqual(null)

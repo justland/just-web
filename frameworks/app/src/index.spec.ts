@@ -1,4 +1,4 @@
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { it } from 'vitest'
 import type { JustApp, JustAppOptions } from './index.js'
 

@@ -1,4 +1,4 @@
-import { stub } from 'type-plus'
+import { stub } from 'type-plus/testing'
 import { describe, expect, it } from 'vitest'
 import { ctx } from './os.ctx.js'
 import { isMac } from './os.js'

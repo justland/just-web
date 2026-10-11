@@ -1,5 +1,5 @@
 import { a } from 'assertron'
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { expect, it } from 'vitest'
 import { createMemoryLogReporter, define, type IdGizmo, justApp, type LogGizmo, logLevels } from './index.js'
 import { justTestApp, type LeafGizmo, leafGizmo, sideEffectGizmo } from './testing/index.js'

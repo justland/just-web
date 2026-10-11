@@ -1,7 +1,7 @@
 import { justTestApp } from '@just-web/app/testing'
 import { AssertOrder, a, some, startsWith } from 'assertron'
 import { logLevels } from 'standard-log'
-import { stub, testType } from 'type-plus'
+import { stub, testType } from 'type-plus/testing'
 import { afterEach, expect, it } from 'vitest'
 import { ctx } from './browser_gizmo.ctx.js'
 import { browserGizmoFn } from './index.js'

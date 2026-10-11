@@ -1,5 +1,5 @@
 import { nothing } from 'immer'
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { describe, expect, it, test } from 'vitest'
 import { createStore, type ReadonlyStore, type Store, toReadonlyStore } from './store.js'
 

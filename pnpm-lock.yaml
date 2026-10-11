@@ -108,8 +108,8 @@ settings:
 catalogs:
   default:
     '@repobuddy/vitest':
-      specifier: ^2.3.0
-      version: 2.3.0
+      specifier: ^3.0.0
+      version: 3.0.0
 
 overrides:
   glob@>=10.2.0 <10.5.0: '>=10.5.0 <11'
@@ -134,14 +134,14 @@ importers:
         specifier: ^21.2.2
         version: 21.2.2
       '@repobuddy/biome':
-        specifier: ^2.4.0
-        version: 2.4.0(@biomejs/biome@2.5.15)
+        specifier: ^2.5.1
+        version: 2.5.1(@biomejs/biome@2.5.15)
       '@types/node':
         specifier: ^25.9.5
         version: 25.9.5
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -173,8 +173,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@25.9.5)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   examples/browser:
     dependencies:
@@ -195,26 +195,26 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.0.3
         version: 13.0.3(size-limit@13.0.3)
       '@vitest/browser-playwright':
-        specifier: ^4.1.11
-        version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -225,8 +225,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   frameworks/app:
     dependencies:
@@ -237,24 +237,24 @@ importers:
         specifier: workspace:^
         version: link:../log
       '@unional/gizmo':
-        specifier: ^3.0.1
-        version: 3.0.1(typescript@5.9.3)
+        specifier: ^3.0.2
+        version: 3.0.2(typescript@5.9.3)
       iso-error:
         specifier: ^7.0.0
         version: 7.0.0
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
@@ -262,11 +262,11 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -274,8 +274,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -286,24 +286,24 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   frameworks/id:
     dependencies:
       '@unional/gizmo':
-        specifier: ^3.0.1
-        version: 3.0.1(typescript@5.9.3)
+        specifier: ^3.0.2
+        version: 3.0.2(typescript@5.9.3)
     devDependencies:
       '@just-web/repo-scripts':
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
@@ -311,8 +311,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -320,8 +320,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -332,11 +332,11 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   frameworks/log:
     dependencies:
@@ -344,8 +344,8 @@ importers:
         specifier: workspace:^
         version: link:../id
       '@unional/gizmo':
-        specifier: ^3.0.1
-        version: 3.0.1(typescript@5.9.3)
+        specifier: ^3.0.2
+        version: 3.0.2(typescript@5.9.3)
       standard-log:
         specifier: ^13.3.1
         version: 13.3.1(typescript@5.9.3)
@@ -354,23 +354,23 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -381,8 +381,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   libraries/states:
     dependencies:
@@ -393,8 +393,8 @@ importers:
         specifier: ^4.0.8
         version: 4.0.8
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -403,26 +403,26 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -433,8 +433,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/browser:
     dependencies:
@@ -445,8 +445,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -458,23 +458,23 @@ importers:
         specifier: workspace:^
         version: link:../../libraries/states
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
-        specifier: ^4.1.11
-        version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       delay:
         specifier: ^7.0.0
         version: 7.0.0
@@ -482,8 +482,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -497,8 +497,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/browser-i18n:
     dependencies:
@@ -522,26 +522,26 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
-        specifier: ^4.1.11
-        version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -552,8 +552,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/browser-keyboard:
     dependencies:
@@ -561,8 +561,8 @@ importers:
         specifier: ~1.6.5
         version: 1.6.5
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -580,11 +580,11 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
@@ -592,20 +592,20 @@ importers:
         specifier: ~1.6.15
         version: 1.6.15
       '@vitest/browser-playwright':
-        specifier: ^4.1.11
-        version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -616,8 +616,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/browser-preferences:
     dependencies:
@@ -637,8 +637,8 @@ importers:
         specifier: ^3.9.3
         version: 3.9.3
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -656,29 +656,29 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
-        specifier: ^4.1.11
-        version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -689,8 +689,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/commands:
     dependencies:
@@ -701,8 +701,8 @@ importers:
         specifier: ^4.0.8
         version: 4.0.8
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -717,26 +717,26 @@ importers:
         specifier: workspace:^
         version: link:../../libraries/states
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -750,8 +750,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/events:
     dependencies:
@@ -769,26 +769,26 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -799,8 +799,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/fetch:
     devDependencies:
@@ -811,26 +811,26 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
-        specifier: ^4.1.11
-        version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -841,8 +841,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/formatjs:
     dependencies:
@@ -857,23 +857,23 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -884,11 +884,11 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/history:
     devDependencies:
@@ -899,20 +899,20 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
-        specifier: ^4.1.11
-        version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       history:
         specifier: ^5.3.0
         version: 5.3.0
@@ -920,8 +920,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -932,11 +932,11 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/i18n:
     devDependencies:
@@ -953,23 +953,23 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(typescript@5.9.3)(vitest@5.0.0)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^5.0.0
-        version: 5.0.0(@vitest/browser@4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(vitest@5.0.0)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -980,14 +980,14 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^5.0.0
-        version: 5.0.0(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(@vitest/coverage-v8@5.0.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/keyboard:
     dependencies:
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -1002,26 +1002,26 @@ importers:
         specifier: workspace:^
         version: link:../../libraries/states
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1032,8 +1032,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/os:
     dependencies:
@@ -1041,8 +1041,8 @@ importers:
         specifier: ~1.3.6
         version: 1.3.6
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -1051,11 +1051,11 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(typescript@5.9.3)(vitest@5.0.0)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
@@ -1063,14 +1063,14 @@ importers:
         specifier: ~1.3.6
         version: 1.3.6
       '@vitest/coverage-v8':
-        specifier: ^5.0.0
-        version: 5.0.0(@vitest/browser@4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(vitest@5.0.0)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1081,8 +1081,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^5.0.0
-        version: 5.0.0(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(@vitest/coverage-v8@5.0.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/preferences:
     dependencies:
@@ -1103,20 +1103,20 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       immer:
         specifier: ^11.1.18
         version: 11.1.18
@@ -1124,8 +1124,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1136,17 +1136,17 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   plugins/routes:
     dependencies:
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
     devDependencies:
       '@just-web/app':
         specifier: workspace:^
@@ -1158,26 +1158,26 @@ importers:
         specifier: workspace:^
         version: link:../../libraries/states
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       assertron:
-        specifier: ^11.7.0
-        version: 11.7.0(typescript@5.9.3)
+        specifier: ^11.7.2
+        version: 11.7.2(typescript@5.9.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1188,8 +1188,8 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   presets/browser:
     dependencies:
@@ -1222,26 +1222,26 @@ importers:
         specifier: workspace:^
         version: link:../../tools/repo-scripts
       '@repobuddy/typescript':
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.9.3)
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.9.3)
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
       '@vitest/browser-playwright':
-        specifier: ^4.1.11
-        version: 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1252,17 +1252,17 @@ importers:
         specifier: ^0.22.14
         version: 0.22.14(oxc-resolver@11.24.2)(typescript@5.9.3)
       type-plus:
-        specifier: 8.0.0-beta.12
-        version: 8.0.0-beta.12(typescript@5.9.3)
+        specifier: 8.0.0
+        version: 8.0.0(typescript@5.9.3)
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
   tools/repo-scripts:
     dependencies:
       '@vitest/coverage-v8':
-        specifier: ^4.1.11
-        version: 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
+        specifier: ^5.0.3
+        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
@@ -1276,12 +1276,12 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
     devDependencies:
       '@repobuddy/vitest':
         specifier: 'catalog:'
-        version: 2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)
+        version: 3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)
       '@size-limit/preset-small-lib':
         specifier: ~13.1.0
         version: 13.1.1(size-limit@13.1.1)
@@ -1377,8 +1377,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@blazediff/core@1.9.1':
-    resolution: {integrity: sha512-ehg3jIkYKulZh+8om/O25vkvSsXXwC+skXmyA87FFx6A/45eqOkZsBltMw/TVteb0mloiGT8oGRTcjRAz66zaA==}
+  '@blazediff/core@1.10.0':
+    resolution: {integrity: sha512-AOQff0zgR7cGsZL+4E7hVkmujoPUpm0J9xzWGWZj5wCjd3gmxESXAPfKyuzs93VdpQNFhHlBhfOjrcZ+XTERtQ==}
 
   '@changesets/apply-release-plan@8.1.0':
     resolution: {integrity: sha512-M93HOGyX3ssg6He3b5NotaHtQVu6uajHS6UIQ28xKt2RzskCy73ayX4I914qBKjTJmrE4YFlELQjfcqxbmGLJw==}
@@ -1997,22 +1997,22 @@ packages:
   '@quansync/fs@1.0.0':
     resolution: {integrity: sha512-4TJ3DFtlf1L5LDMaM6CanJ/0lckGNtJcMjQ1NAV6zDmA0tEHKZtxNKin8EgPaVX1YzljbxckyT2tJrpQKAtngQ==}
 
-  '@repobuddy/biome@2.4.0':
-    resolution: {integrity: sha512-YdMjhey4Y9XzDR1cOIFFNBr6O+87TkFA1pViDFEFFryYKUdJ3qN/yZpCgcL1exZsuGDxC+0540hmJmtl9wKBQQ==}
+  '@repobuddy/biome@2.5.1':
+    resolution: {integrity: sha512-sdNvV6T5PTFPD1CrpiByf92Zm4nsvoAlBObx1x74LzKPOkaZ0rB7AAEBXMUZgjLYBoc2HGDXjx7qKxiIOn37Ww==}
     peerDependencies:
       '@biomejs/biome': '>= 2'
 
-  '@repobuddy/test@1.1.0':
-    resolution: {integrity: sha512-YW0j5QOxaNA1cSZm8lcKSFNlTey+D3Qpx4N/hb1AsD+lkbXOnhcC+2TrPIP/Om3NmBiNtXKHGg+yPekapEMbLQ==}
+  '@repobuddy/test@1.1.1':
+    resolution: {integrity: sha512-UmnLcSmyk3Y7QsCpFaU6KpdBXmrc7z2WozQTYbIIBAUB/AZcUvzs6KtqgWYm/XFfs/2lJJOg6OdUqaZXTPlk/A==}
 
-  '@repobuddy/typescript@2.2.0':
-    resolution: {integrity: sha512-nyAMraf5G6ROZgR6F0yPlYZGIfbIcEJCC/MfvPC7R6JuA2INvlFNQ+3a+qi//mjJZS1OEFKS+jA9n7Txw6oyLw==}
+  '@repobuddy/typescript@2.2.2':
+    resolution: {integrity: sha512-ZEE1l5VpYuCjPDZgP9/nGe6zojplHTaai9Y7qgSYduOTx/8uI9IAulU3MbfMGtXLuCuQPhRrIu+vvQ86dj1yxw==}
 
-  '@repobuddy/vitest@2.3.0':
-    resolution: {integrity: sha512-f9si1f0+OOAbnqRT/Zp9NMJ9DVyF9BZF1IPgq9hgMZ3dgYo+ZlQYtsLSWhyTQNbdTkvm4tzPtLzDQ5wtt0NKWg==}
+  '@repobuddy/vitest@3.0.0':
+    resolution: {integrity: sha512-WgoEqa5pvFOkWK1E8UC4SLzR03KCSqIumTLdtEzHlh/VE3uFccPSCiIUn8Y8BmhcLg6sT1DONF/f4NeA059j+w==}
     peerDependencies:
-      '@vitest/browser-playwright': ^4.0.15
-      vitest: ^4.0.15
+      '@vitest/browser-playwright': ^5.0.0
+      vitest: ^5.0.0
     peerDependenciesMeta:
       '@vitest/browser-playwright':
         optional: true
@@ -2165,9 +2165,6 @@ packages:
     peerDependencies:
       size-limit: 13.1.1
 
-  '@standard-schema/spec@1.1.0':
-    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
-
   '@turbo/darwin-64@2.10.12':
     resolution: {integrity: sha512-9nKgKoF6ZOUsM+or0OtNf+TTJSfGvDNP7ZFv/ZGWVwOSCkumyctQiTeHwB4UNljHTnC41AqylgbunLDHoccNrA==}
     cpu: [x64]
@@ -2243,52 +2240,40 @@ packages:
   '@unional/events-plus@4.0.0':
     resolution: {integrity: sha512-mq7b1fyn3dChiJpJPgRhL5wzhMd5uZ5O9JDHtU09hecLkzkefPMHt5VXYwhfPxzd+zDvhpgG3KkIuepcY0IZEw==}
 
-  '@unional/gizmo@3.0.1':
-    resolution: {integrity: sha512-gZMtQPMMxF+7ENz0Vxv4zIWzYU8YPjmx5Wf9A/+797/4stB7j9LXF257j6VUfOSqucVJhslx+iTaWjx5rfq6wg==}
+  '@unional/gizmo@3.0.2':
+    resolution: {integrity: sha512-JHYVz1MVcdd0TzqTdWgZ7qSwH3McUwLH8ayZv7lLDYhjFR7imZB/GbqYVBRwMuC0OE6rJ24BTZtaKmHZ7kI9Yw==}
     engines: {node: '>= 20'}
 
-  '@vitest/browser-playwright@4.1.11':
-    resolution: {integrity: sha512-riLBxPqwnJ0lWs2DN2WeUfYeKLoAjbP2Xx8cLQdSddzMi20sksIa6K2mPz79DyMZKKVKH2ksOC2yJvtNcZg8cg==}
+  '@vitest/browser-playwright@5.0.3':
+    resolution: {integrity: sha512-rYBHwIFL/ZtI6dl0rbrAatScXCrvX+TL2BX2AGOigkC1Y6u3rIWw8KMQJJMS4drSa1ksMCmZU2wpgwdE7kqu3g==}
     peerDependencies:
       playwright: '*'
-      vitest: 4.1.11
+      vitest: 5.0.3
 
-  '@vitest/browser@4.1.11':
-    resolution: {integrity: sha512-bwMovvAeuTFOK5kIFevw4VEf+1gVEICv4SYK4k3knJOxl6b1zEWud8mYKD73e1B0odAn174h1MofURy2TPWf3w==}
+  '@vitest/browser@5.0.3':
+    resolution: {integrity: sha512-7KHIkVA/gTRxQV9qPa9qLK+g5INZG6iRrlwXSFG5EKsOomW3UzzW7wsdt1Yp5PufzQ43lniuONlb4lUVCC2qSg==}
     peerDependencies:
-      vitest: 4.1.11
+      vitest: 5.0.3
 
-  '@vitest/coverage-v8@4.1.11':
-    resolution: {integrity: sha512-8MVGEFnJIcdGjcbfKmeq8z0pZHH0JlVtoVZH9Q/qwUp6wyFnEJUBMrw9DCaj+ra3vShGmhavjalMIhPNxZAUcw==}
+  '@vitest/coverage-v8@5.0.3':
+    resolution: {integrity: sha512-+klsyz7BvT1vCU28Zkfzms1Ia78XD0V41U3FUtRaa3S+vOr/EXvK1O6BvVD7l1RzEjm6SONR2aybOvDDf9u0mQ==}
     peerDependencies:
-      '@vitest/browser': 4.1.11
-      vitest: 4.1.11
+      '@vitest/browser': 5.0.3
+      vitest: 5.0.3
     peerDependenciesMeta:
       '@vitest/browser':
         optional: true
 
-  '@vitest/coverage-v8@5.0.0':
-    resolution: {integrity: sha512-toMg6PZGCIa/lQNCDoASrfb1ly4hsUKXFtFYC9kD4t78o5Y6LyNJU7AENt8eHPr3quYdxaxK7hj2mnbFfUk9NA==}
-    peerDependencies:
-      '@vitest/browser': 5.0.0
-      vitest: 5.0.0
-    peerDependenciesMeta:
-      '@vitest/browser':
-        optional: true
-
-  '@vitest/expect@4.1.11':
-    resolution: {integrity: sha512-VX2x5vNJXET47KAFzwERI+KRMtTTCSWTfSMKsW7JsUsXV4psq++e3DvZpuTDOpHcxytiDs6p2nhVb2tVDiiUYw==}
-
-  '@vitest/istanbul-lib-coverage@1.0.1':
-    resolution: {integrity: sha512-k3DJZ8LhMBK9NS4SclF1ASD3OgXEWDorbIcPTRDK0/Zae6fRvu+fJRxtFdLfHsa9Y24beCdPnoNZ4LviTNstfA==}
+  '@vitest/istanbul-lib-coverage@1.0.2':
+    resolution: {integrity: sha512-9J/JMwOf9AoJhAywhrn7ScKTL38hsWQP/qPG60OtaAFcQ5OXPwKsxZFlbnuCKmZ61m8/lGgHYnFpdyQZUvG/iA==}
     engines: {node: '>=22'}
 
-  '@vitest/istanbul-lib-report@1.0.1':
-    resolution: {integrity: sha512-1EOLRfsTMnyAr3+kEAsP4o9dhaDlGPpD7H5iLBBeq//YpNB1VIahkPhB+eRp9N2Dkfw8oySROjE3yf9XDeaIkQ==}
+  '@vitest/istanbul-lib-report@1.0.2':
+    resolution: {integrity: sha512-gUsfXZJbzPamoIY5TvHFiMMoXESBrUMo+xqaj+rYrWI69+EnvRlYBlP96ZnHPY4vX8kyUpgAnFUCg5wZG/HkDQ==}
     engines: {node: '>=22'}
 
-  '@vitest/mocker@4.1.11':
-    resolution: {integrity: sha512-2XJVD55d1o5AZous5CCGKS74g/riOj9odEt2bQpCVZeblHyHdnMeFl4jl0XjU21stf4mbjUkew2eXQZt65g5CQ==}
+  '@vitest/mocker@5.0.3':
+    resolution: {integrity: sha512-T8sWAIbkSyAjkwTcaEc3Iu0o9A27X1/kdXrizhZkGuSKScRQtRzclfAMpOTcGdXCsqxeWlpGy3XjqaW8CpLORg==}
     peerDependencies:
       msw: ^2.4.9
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -2298,34 +2283,19 @@ packages:
       vite:
         optional: true
 
-  '@vitest/mocker@5.0.0':
-    resolution: {integrity: sha512-66PGTMIiVJP3t4a5yxU9qPtf7MdTBs8jmToMvy+HVflB3Yy13WJZTtPePdvU+wjRV02SKK5doLbSA6o9pwOmiA==}
+  '@vitest/pretty-format@5.0.3':
+    resolution: {integrity: sha512-3hr5eV5z2ff0l2Q1vaKQbB4j3M3tElw8stDokEOTqXJB3Es5VrT8gBRIMY59gGuFp8Y61sWlWFK1aNUH5dHDYw==}
+
+  '@vitest/spy@5.0.3':
+    resolution: {integrity: sha512-XhFysQTB8AZ+P4gMi+Lpo99vg2AZi0qKpaB9yXQl37+CaMEAPO3iH/wGVnSyL5MPERiLezpqTVtrR6UZH5GCXg==}
+
+  '@vitest/ui@5.0.3':
+    resolution: {integrity: sha512-9dfvqDBvSbHM6y9YVXxAypkl2z7mrWozK/JFo237qI0cj/3M/kzDKiVZqzi3TE54Ler7Jditud7OMBZCyUvRHA==}
     peerDependencies:
-      msw: ^2.4.9
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
-    peerDependenciesMeta:
-      msw:
-        optional: true
-      vite:
-        optional: true
+      vitest: 5.0.3
 
-  '@vitest/pretty-format@4.1.11':
-    resolution: {integrity: sha512-yiZzPbGTS9Sr/JpFl8zHrcIkAofNbFV6k21vIgQN/cY/oxZeXhJv5sc/MBJ5jFKWmWs+oJHw0UXLZjmf931+Vw==}
-
-  '@vitest/runner@4.1.11':
-    resolution: {integrity: sha512-LztvUgdwMNJMIkj3hQnnxiC2Xy1zNxq928W/xhjCLaNCzqTZOudjwbQf6v9IntZGPw132i2Lq2rgTRZHD3JHNw==}
-
-  '@vitest/snapshot@4.1.11':
-    resolution: {integrity: sha512-pN7ikn1ON7h8ee4gIAp4AzyK+zBtJPzVbqOgu5LCEh4VaJVbPQcgYQYJIMGQPXVeJJq1fnfazis7a5pFNPahog==}
-
-  '@vitest/spy@4.1.11':
-    resolution: {integrity: sha512-apNa/prQy2qCeywhnixOHPRCgGNhvg7T4Dapfl1GahLp/R+uhBm5cPyFoNVyqsNd2h1nJxL6BqqdIjiABL60YA==}
-
-  '@vitest/spy@5.0.0':
-    resolution: {integrity: sha512-uy+luWBAPw9XfthoHi5AkfHUnuPYEESjl0p/r+meoBnU8bxg5GDQ3Ey8MjcJ6sqahkL4PFyrvfMJJBw7LbU06g==}
-
-  '@vitest/utils@4.1.11':
-    resolution: {integrity: sha512-zTCVGpyFsGWBhllOyKlTw/vnr6D9qxsfSDyfbyZmTyjHw5N/VuvzHpHoQjm2ZJzn4RJgx5w4r7V0er69CmLgPQ==}
+  '@vitest/utils@5.0.3':
+    resolution: {integrity: sha512-77fDTZv8eu1CzlIfgPU2yrl5MXSUaUAOvgdZEeVm3X3WIxUubIX2SforqS6176lT32HCF6uBVMYVqfHxw7o6eg==}
 
   '@yuku-codegen/binding-android-arm64@0.8.7':
     resolution: {integrity: sha512-C/0zV5IhgVdYhGJTwrY0v8dknxlhiKwtVJkMUaexu9/QvRmzlV4vfU3hZlUSgqc2BxQHntL1mCVbDq8j0FRFDw==}
@@ -2553,8 +2523,8 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  assertron@11.7.0:
-    resolution: {integrity: sha512-LAykbog/XG9NO4T0kyHhOujm4xyEN2zsuqEHgqccHlLyCXm97ZJEXBVrQsk/+J+qIGqLAIv/Zk4hIOS/x8MATA==}
+  assertron@11.7.2:
+    resolution: {integrity: sha512-J2PQepKEFVwzZUfUF1r5DdTTnfCxNHNMMr+AEnYcvUnMuTZJCd+zN16TjGGz/bHytKJKvdBfrV3M0bP++gIS1A==}
     engines: {node: '>=20'}
 
   ast-v8-to-istanbul@1.0.5:
@@ -2891,6 +2861,9 @@ packages:
       picomatch:
         optional: true
 
+  fflate@0.8.3:
+    resolution: {integrity: sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==}
+
   figures@6.1.0:
     resolution: {integrity: sha512-d+l3qxjSesT4V7v2fh+QnmFnUWv9lSpjarhShNTgBOfA0ttejbQUAlHLitbjkoRiDulW0OPoQPYIGhIC8ohejg==}
     engines: {node: '>=18'}
@@ -2914,6 +2887,9 @@ packages:
   flagged-respawn@2.0.0:
     resolution: {integrity: sha512-Gq/a6YCi8zexmGHMuJwahTGzXlAZAOsbCVKduWXC6TlLCjjFRlExMJc4GC2NYPYZ0r/brw9P7CpRgQmlPVeOoA==}
     engines: {node: '>= 10.13.0'}
+
+  flatted@3.4.4:
+    resolution: {integrity: sha512-5+ybhBZANEJxaH3X5evAFatUxLfEHSr7n6kYJ+1Qd0mUqr4eu9gIf6GDbWHf8RJijHrjjO8G+la14SlL2SeS1Q==}
 
   for-each@0.3.5:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
@@ -3064,9 +3040,6 @@ packages:
 
   hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
-
-  html-escaper@2.0.2:
-    resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
   human-id@4.2.1:
     resolution: {integrity: sha512-zPGsiS+dWoTZtZ4AtpA9Y+BdSFSNWvnouNlWNoUFyAM6xHOHmdCvqO3k8AIbdamCOv4gUFUVNPf6rJFfc4UiJw==}
@@ -3307,18 +3280,6 @@ packages:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
 
-  istanbul-lib-coverage@3.2.2:
-    resolution: {integrity: sha512-O8dpsF+r0WV/8MNRKfnmrtCWhuKjxrq2w+jpzBL5UZKTi2LeVWnWOmWRxFlesJONmc+wLAGvKQZEOanko0LFTg==}
-    engines: {node: '>=8'}
-
-  istanbul-lib-report@3.0.1:
-    resolution: {integrity: sha512-GCfE1mtsHGOELCU8e/Z7YWzpmybrx/+dSTfLrvY8qRmaY6zXTKWn6WQIjaAFw069icm6GVMNkgu0NzI4iPZUNw==}
-    engines: {node: '>=10'}
-
-  istanbul-reports@3.2.0:
-    resolution: {integrity: sha512-HGYWWS/ehqTV3xN10i23tkPkpH46MLCIMFNCaaKNavAXTF1RkqxawEPtnjnGZ6XKSInBKkiOA5BKS+aZiY3AvA==}
-    engines: {node: '>=8'}
-
   jiti@2.6.1:
     resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
     hasBin: true
@@ -3464,18 +3425,11 @@ packages:
     resolution: {integrity: sha512-4pfM1Ff0x50o0tQwb5ucw/RzNyD0/YJME6IVcStalZuMWxdt3sR3huStTtxz4PUmvZfRguvDejasvQ2kifR11g==}
     engines: {node: 20 || >=22}
 
-  magic-string@0.30.21:
-    resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
-
   magic-string@1.2.3:
     resolution: {integrity: sha512-Bpb0W2TbLKOZ7vJnOUnVRGq3WL2p+ISV29M6hYPL1AFCpyKZpdr5ytiXoTSSxRVhg8YW7f65+6gbG8WG6PCa/g==}
 
   magicast@0.5.4:
     resolution: {integrity: sha512-llBEhWm1SacoRwgHUoQJYtwp4PBLF4faQi5TCpIGyGs9n4y5+juI0tDgyKIfpqxckRHaHzouUEph3THklWh03w==}
-
-  make-dir@4.0.0:
-    resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
-    engines: {node: '>=10'}
 
   map-cache@0.2.2:
     resolution: {integrity: sha512-8y/eV9QQZCiyn1SprXSrCmqJN0yNRATe+PO8ztwqrvrbdRLA3eYJF0yaR0YayLWkMbsQSKWS9N2gPcGEc4UsZg==}
@@ -3805,8 +3759,8 @@ packages:
     resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
     engines: {node: '>=0.10'}
 
-  repobuddy@1.10.0:
-    resolution: {integrity: sha512-RAujlRD5Akggio1kuDDCXnuf6T2fLBXnFWmTRwbB0uNmO4y110LFL9bdrHhVG339KAQZi1WzcqB+CQ6G6SpYeg==}
+  repobuddy@2.2.0:
+    resolution: {integrity: sha512-Mi2RMg0Y1076rq58nUDklA8KUgwBREG6Wp5sXeJ3eBIl4WjG8m10jDU2X5pW71lu6rB+ZmEGnLDxC7P2jPev2Q==}
     hasBin: true
 
   require-from-string@2.0.2:
@@ -3896,8 +3850,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  satisfier@5.4.4:
-    resolution: {integrity: sha512-mjZ8PeqIuOI37rVglvx6JINVcRdXPqVWZkbg99oJyganLAvut4qlCAUDyvqbI7aYGQzF+1julBtcpL35r1NV1A==}
+  satisfier@5.4.6:
+    resolution: {integrity: sha512-xsWpHw+7sTgJjBVVJ0GC1MGwMpX4FnTjwwkZuBEjiHxhQFK10GS5Eqeh3RBT/Vp7dXOLlnY0iL5xI/7IEu918g==}
 
   search-packages@2.2.1:
     resolution: {integrity: sha512-ejUjMEDITHiKzfAgtpcIUXAliJK+jLb7DMyUaqVoyY1uwKuDajnccvx8o8woEuKvsDjH3j3mLhy6Uyc8v1UCHA==}
@@ -3964,9 +3918,6 @@ packages:
     resolution: {integrity: sha512-6x6dK6zJdpTzF4sQeNYxwtvBzf6Eg4GtlesS94HOvTudUeyK2WXAaIfmDgsyslYrRBeFIlsi54AYsFGUuhmvrQ==}
     engines: {node: '>= 0.4'}
 
-  siginfo@2.0.0:
-    resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
-
   signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
 
@@ -4014,9 +3965,6 @@ packages:
 
   spdx-license-ids@3.0.23:
     resolution: {integrity: sha512-CWLcCCH7VLu13TgOH+r8p1O/Znwhqv/dbb6lqWy67G+pT1kHmeD/+V36AVb/vq8QMIQwVShJ6Ssl5FPh0fuSdw==}
-
-  stackback@0.0.2:
-    resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
   standard-log-color@13.3.1:
     resolution: {integrity: sha512-CR++e1aHcpuq5bh0jFC2EbwchokUjd3L5EZ+HDl8AwXzOAtn899TkoSdIIR8CgVJX07cBlGOW8xXgZdj3mc9+Q==}
@@ -4107,9 +4055,6 @@ packages:
   tersify@4.0.8:
     resolution: {integrity: sha512-8SP19qXCXiWztbyJLqmCwstqtZg7F5grbSov3yh8C+fyqHgKyfMaI/c5DCMKIGDkpoKX8cIz9ZqJxN7zZDtQcQ==}
 
-  tinybench@2.9.0:
-    resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
-
   tinybench@6.1.4:
     resolution: {integrity: sha512-9APumHG7r4yOk4X4WlkmE71aZcv1gvin1czO3OQ1U9iJcFA5Ja/ygyb0vPOVHTthFozUYs8CLoLUlM8grb2lTQ==}
     engines: {node: '>=20.0.0'}
@@ -4196,6 +4141,15 @@ packages:
   type-fest@0.21.3:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
+
+  type-plus@8.0.0:
+    resolution: {integrity: sha512-wYKemYpT2XPgZyqZUvo6pT0ZiwWHcLJMyR68ZjY4IB96ozUpxrb6M7pj9xYzNcBHWG4r17WqXnkGRQZrHAWs7A==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      typescript: '>= 5.4.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   type-plus@8.0.0-beta.10:
     resolution: {integrity: sha512-ZdhzmQg7f8oxt5Cbivslk8o3zef8L3ibpKIeGH1ESf73y8ZEY1z9fe4Z3fTxcjmFOb8ESE1TbW/MCgEvpeLC4w==}
@@ -4330,61 +4284,20 @@ packages:
       yaml:
         optional: true
 
-  vitest@4.1.11:
-    resolution: {integrity: sha512-fhACrNXUidIbGSBr5FlbuBkO7VWC1ZyLl0DO4CU2DrQoAPxX84Ysxs+HeGQpii5lZWV1Q4gBZTTu49mF+A6Edw==}
-    engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
-    hasBin: true
-    peerDependencies:
-      '@edge-runtime/vm': '*'
-      '@opentelemetry/api': ^1.9.0
-      '@types/node': ^20.0.0 || ^22.0.0 || >=24.0.0
-      '@vitest/browser-playwright': 4.1.11
-      '@vitest/browser-preview': 4.1.11
-      '@vitest/browser-webdriverio': 4.1.11
-      '@vitest/coverage-istanbul': 4.1.11
-      '@vitest/coverage-v8': 4.1.11
-      '@vitest/ui': 4.1.11
-      happy-dom: '*'
-      jsdom: '*'
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
-    peerDependenciesMeta:
-      '@edge-runtime/vm':
-        optional: true
-      '@opentelemetry/api':
-        optional: true
-      '@types/node':
-        optional: true
-      '@vitest/browser-playwright':
-        optional: true
-      '@vitest/browser-preview':
-        optional: true
-      '@vitest/browser-webdriverio':
-        optional: true
-      '@vitest/coverage-istanbul':
-        optional: true
-      '@vitest/coverage-v8':
-        optional: true
-      '@vitest/ui':
-        optional: true
-      happy-dom:
-        optional: true
-      jsdom:
-        optional: true
-
-  vitest@5.0.0:
-    resolution: {integrity: sha512-gpsMNoRhMjMktVxPtstOH4/PJuPyovVaMDr4oDilXaGH1EcqM2OE96SoHT2VIQ6fTGtTjqmHDrEu2X9RQiXf8Q==}
+  vitest@5.0.3:
+    resolution: {integrity: sha512-xMw97S3rjdtj5dkVat7jCsqWBpvchs3RlpQctUqwJD0KkERk40vz2fJ77lDwW/Vzh/pk18eItYAzkodhSes3jQ==}
     engines: {node: ^22.12.0 || ^24.0.0 || >=26.0.0}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@opentelemetry/api': ^1.9.0
       '@types/node': ^22.0.0 || >=24.0.0
-      '@vitest/browser-playwright': 5.0.0
-      '@vitest/browser-preview': 5.0.0
+      '@vitest/browser-playwright': 5.0.3
+      '@vitest/browser-preview': 5.0.3
       '@vitest/browser-webdriverio': ^5.0.0-beta.5 || >=5.0.0
-      '@vitest/coverage-istanbul': 5.0.0
-      '@vitest/coverage-v8': 5.0.0
-      '@vitest/ui': 5.0.0
+      '@vitest/coverage-istanbul': 5.0.3
+      '@vitest/coverage-v8': 5.0.3
+      '@vitest/ui': 5.0.3
       happy-dom: '*'
       jsdom: '*'
       vite: ^6.4.0 || ^7.0.0 || ^8.0.0
@@ -4454,9 +4367,9 @@ packages:
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
     hasBin: true
 
-  why-is-node-running@2.3.0:
-    resolution: {integrity: sha512-hUrmaWBdVDcxvYqnyh09zunKzROWjbZTiNy8dBEjkS7ehEDQibXJ7XvlmtbwuTclUiIyN+CyXQD4Vmko8fNm8w==}
-    engines: {node: '>=8'}
+  why-is-node-running@3.2.1:
+    resolution: {integrity: sha512-Tb2FUhB4vUsGQlfSquQLYkApkuPAFQXGFzxWKHHumVz2dK+X1RUm/HnID4+TfIGYJ1kTcwOaCk/buYCEJr6YjQ==}
+    engines: {node: '>=20.11'}
     hasBin: true
 
   wordwrap@1.0.0:
@@ -4585,7 +4498,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.15':
     optional: true
 
-  '@blazediff/core@1.9.1': {}
+  '@blazediff/core@1.10.0': {}
 
   '@changesets/apply-release-plan@8.1.0':
     dependencies:
@@ -5106,17 +5019,17 @@ snapshots:
     dependencies:
       quansync: 1.0.0
 
-  '@repobuddy/biome@2.4.0(@biomejs/biome@2.5.15)':
+  '@repobuddy/biome@2.5.1(@biomejs/biome@2.5.15)':
     dependencies:
       '@biomejs/biome': 2.5.15
 
-  '@repobuddy/test@1.1.0(typescript@5.9.3)':
+  '@repobuddy/test@1.1.1(typescript@5.9.3)':
     dependencies:
-      assertron: 11.7.0(typescript@5.9.3)
+      assertron: 11.7.2(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
-  '@repobuddy/typescript@2.2.0(typescript@5.9.3)':
+  '@repobuddy/typescript@2.2.2(typescript@5.9.3)':
     dependencies:
       clibuilder: 11.3.0(typescript@5.9.3)
       dirname-filename-esm: 1.1.2
@@ -5124,21 +5037,12 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@repobuddy/vitest@2.3.0(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(typescript@5.9.3)(vitest@5.0.0)':
+  '@repobuddy/vitest@3.0.0(@vitest/browser-playwright@5.0.3)(typescript@5.9.3)(vitest@5.0.3)':
     dependencies:
-      '@repobuddy/test': 1.1.0(typescript@5.9.3)
-      vitest: 5.0.0(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(@vitest/coverage-v8@5.0.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      '@repobuddy/test': 1.1.1(typescript@5.9.3)
+      vitest: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
     optionalDependencies:
-      '@vitest/browser-playwright': 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
-    transitivePeerDependencies:
-      - typescript
-
-  '@repobuddy/vitest@2.3.0(@vitest/browser-playwright@4.1.11)(typescript@5.9.3)(vitest@4.1.11)':
-    dependencies:
-      '@repobuddy/test': 1.1.0(typescript@5.9.3)
-      vitest: 4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
-    optionalDependencies:
-      '@vitest/browser-playwright': 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+      '@vitest/browser-playwright': 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
     transitivePeerDependencies:
       - typescript
 
@@ -5231,8 +5135,6 @@ snapshots:
       '@size-limit/file': 13.1.1(size-limit@13.1.1)
       size-limit: 13.1.1
 
-  '@standard-schema/spec@1.1.0': {}
-
   '@turbo/darwin-64@2.10.12':
     optional: true
 
@@ -5305,35 +5207,36 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@unional/gizmo@3.0.1(typescript@5.9.3)':
+  '@unional/gizmo@3.0.2(typescript@5.9.3)':
     dependencies:
-      type-plus: 8.0.0-beta.12(typescript@5.9.3)
+      type-plus: 8.0.0(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
-  '@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)':
+  '@vitest/browser-playwright@5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)':
     dependencies:
-      '@vitest/browser': 4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
-      '@vitest/mocker': 4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      '@vitest/browser': 5.0.3(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
+      '@vitest/mocker': 5.0.3(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
       playwright: 1.63.0
       tinyrainbow: 3.1.1
-      vitest: 4.1.11(@types/node@25.9.5)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      vitest: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
     transitivePeerDependencies:
       - bufferutil
       - msw
       - utf-8-validate
       - vite
 
-  '@vitest/browser@4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)':
+  '@vitest/browser@5.0.3(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)':
     dependencies:
-      '@blazediff/core': 1.9.1
-      '@vitest/mocker': 4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
-      '@vitest/utils': 4.1.11
-      magic-string: 0.30.21
+      '@blazediff/core': 1.10.0
+      '@vitest/mocker': 5.0.3(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      '@vitest/ui': 5.0.3(vitest@5.0.3)
+      '@vitest/utils': 5.0.3
+      magic-string: 1.2.3
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.1.1
-      vitest: 4.1.11(@types/node@25.9.5)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      vitest: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
       ws: 8.21.3
     transitivePeerDependencies:
       - bufferutil
@@ -5341,91 +5244,54 @@ snapshots:
       - utf-8-validate
       - vite
 
-  '@vitest/coverage-v8@4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)':
+  '@vitest/coverage-v8@5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
-      '@vitest/utils': 4.1.11
-      ast-v8-to-istanbul: 1.0.5
-      istanbul-lib-coverage: 3.2.2
-      istanbul-lib-report: 3.0.1
-      istanbul-reports: 3.2.0
-      magicast: 0.5.4
-      obug: 2.1.4
-      std-env: 4.2.0
-      tinyrainbow: 3.1.1
-      vitest: 4.1.11(@types/node@25.9.5)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
-    optionalDependencies:
-      '@vitest/browser': 4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
-
-  '@vitest/coverage-v8@5.0.0(@vitest/browser@4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(vitest@5.0.0)':
-    dependencies:
-      '@bcoe/v8-coverage': 1.0.2
-      '@vitest/istanbul-lib-coverage': 1.0.1
-      '@vitest/istanbul-lib-report': 1.0.1
+      '@vitest/istanbul-lib-coverage': 1.0.2
+      '@vitest/istanbul-lib-report': 1.0.2
       ast-v8-to-istanbul: 1.0.5
       magicast: 0.5.4
       obug: 2.1.4
       std-env: 4.2.0
       tinyrainbow: 3.1.1
-      vitest: 5.0.0(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(@vitest/coverage-v8@5.0.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      vitest: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
     optionalDependencies:
-      '@vitest/browser': 4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
+      '@vitest/browser': 5.0.3(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
 
-  '@vitest/expect@4.1.11':
+  '@vitest/istanbul-lib-coverage@1.0.2': {}
+
+  '@vitest/istanbul-lib-report@1.0.2':
     dependencies:
-      '@standard-schema/spec': 1.1.0
-      '@types/chai': 5.2.3
-      '@vitest/spy': 4.1.11
-      '@vitest/utils': 4.1.11
-      chai: 6.2.2
-      tinyrainbow: 3.1.1
+      '@vitest/istanbul-lib-coverage': 1.0.2
 
-  '@vitest/istanbul-lib-coverage@1.0.1': {}
-
-  '@vitest/istanbul-lib-report@1.0.1':
-    dependencies:
-      '@vitest/istanbul-lib-coverage': 1.0.1
-
-  '@vitest/mocker@4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
-    dependencies:
-      '@vitest/spy': 4.1.11
-      estree-walker: 3.0.3
-      magic-string: 0.30.21
-    optionalDependencies:
-      vite: 8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
-
-  '@vitest/mocker@5.0.0(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
+  '@vitest/mocker@5.0.3(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
-      '@vitest/spy': 5.0.0
+      '@vitest/spy': 5.0.3
       estree-walker: 3.0.3
       magic-string: 1.2.3
     optionalDependencies:
       vite: 8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
 
-  '@vitest/pretty-format@4.1.11':
+  '@vitest/pretty-format@5.0.3':
     dependencies:
       tinyrainbow: 3.1.1
 
-  '@vitest/runner@4.1.11':
+  '@vitest/spy@5.0.3': {}
+
+  '@vitest/ui@5.0.3(vitest@5.0.3)':
     dependencies:
-      '@vitest/utils': 4.1.11
+      '@vitest/utils': 5.0.3
+      fflate: 0.8.3
+      flatted: 3.4.4
       pathe: 2.0.3
+      sirv: 3.0.2
+      tinyrainbow: 3.1.1
+      vitest: 5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
 
-  '@vitest/snapshot@4.1.11':
+  '@vitest/utils@5.0.3':
     dependencies:
-      '@vitest/pretty-format': 4.1.11
-      '@vitest/utils': 4.1.11
-      magic-string: 0.30.21
-      pathe: 2.0.3
-
-  '@vitest/spy@4.1.11': {}
-
-  '@vitest/spy@5.0.0': {}
-
-  '@vitest/utils@4.1.11':
-    dependencies:
-      '@vitest/pretty-format': 4.1.11
+      '@vitest/pretty-format': 5.0.3
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.1
 
@@ -5559,14 +5425,14 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  assertron@11.7.0(typescript@5.9.3):
+  assertron@11.7.2(typescript@5.9.3):
     dependencies:
       is-promise: 4.0.0
       iso-error: 7.0.0
       path-equal: 1.2.8
-      satisfier: 5.4.4
+      satisfier: 5.4.6
       tersify: 4.0.8
-      type-plus: 8.0.0-beta.10(typescript@5.9.3)
+      type-plus: 8.0.0(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
@@ -5994,6 +5860,8 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.7
 
+  fflate@0.8.3: {}
+
   figures@6.1.0:
     dependencies:
       is-unicode-supported: 2.1.0
@@ -6024,6 +5892,8 @@ snapshots:
       parse-filepath: 1.0.2
 
   flagged-respawn@2.0.0: {}
+
+  flatted@3.4.4: {}
 
   for-each@0.3.5:
     dependencies:
@@ -6190,8 +6060,6 @@ snapshots:
   hookable@6.1.1: {}
 
   hosted-git-info@2.8.9: {}
-
-  html-escaper@2.0.2: {}
 
   human-id@4.2.1: {}
 
@@ -6414,19 +6282,6 @@ snapshots:
 
   isobject@3.0.1: {}
 
-  istanbul-lib-coverage@3.2.2: {}
-
-  istanbul-lib-report@3.0.1:
-    dependencies:
-      istanbul-lib-coverage: 3.2.2
-      make-dir: 4.0.0
-      supports-color: 7.2.0
-
-  istanbul-reports@3.2.0:
-    dependencies:
-      html-escaper: 2.0.2
-      istanbul-lib-report: 3.0.1
-
   jiti@2.6.1: {}
 
   jiti@2.7.0: {}
@@ -6551,10 +6406,6 @@ snapshots:
 
   lru-cache@11.5.2: {}
 
-  magic-string@0.30.21:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.6.0
-
   magic-string@1.2.3:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
@@ -6564,10 +6415,6 @@ snapshots:
       '@babel/parser': 7.29.8
       '@babel/types': 7.29.8
       source-map-js: 1.2.1
-
-  make-dir@4.0.0:
-    dependencies:
-      semver: 7.8.5
 
   map-cache@0.2.2: {}
 
@@ -6933,7 +6780,7 @@ snapshots:
 
   repeat-string@1.6.1: {}
 
-  repobuddy@1.10.0: {}
+  repobuddy@2.2.0: {}
 
   require-from-string@2.0.2: {}
 
@@ -7033,7 +6880,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  satisfier@5.4.4:
+  satisfier@5.4.6:
     dependencies:
       tersify: 4.0.8
 
@@ -7111,8 +6958,6 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  siginfo@2.0.0: {}
-
   signal-exit@3.0.7: {}
 
   signal-exit@4.1.0: {}
@@ -7156,8 +7001,6 @@ snapshots:
       spdx-license-ids: 3.0.23
 
   spdx-license-ids@3.0.23: {}
-
-  stackback@0.0.2: {}
 
   standard-log-color@13.3.1(standard-log@13.3.1(typescript@5.9.3)):
     dependencies:
@@ -7273,8 +7116,6 @@ snapshots:
       acorn: 8.18.0
       unpartial: 1.0.8
 
-  tinybench@2.9.0: {}
-
   tinybench@6.1.4: {}
 
   tinyexec@1.3.0: {}
@@ -7339,6 +7180,12 @@ snapshots:
       '@turbo/windows-arm64': 2.10.12
 
   type-fest@0.21.3: {}
+
+  type-plus@8.0.0(typescript@5.9.3):
+    dependencies:
+      unpartial: 1.0.8
+    optionalDependencies:
+      typescript: 5.9.3
 
   type-plus@8.0.0-beta.10(typescript@5.9.3):
     dependencies:
@@ -7447,68 +7294,10 @@ snapshots:
       jiti: 2.7.0
       yaml: 2.9.0
 
-  vitest@4.1.11(@types/node@25.9.5)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)):
-    dependencies:
-      '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
-      '@vitest/pretty-format': 4.1.11
-      '@vitest/runner': 4.1.11
-      '@vitest/snapshot': 4.1.11
-      '@vitest/spy': 4.1.11
-      '@vitest/utils': 4.1.11
-      es-module-lexer: 2.3.2
-      expect-type: 1.4.0
-      magic-string: 0.30.21
-      obug: 2.1.4
-      pathe: 2.0.3
-      picomatch: 4.0.7
-      std-env: 4.2.0
-      tinybench: 2.9.0
-      tinyexec: 1.3.0
-      tinyglobby: 0.2.17
-      tinyrainbow: 3.1.1
-      vite: 8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
-      why-is-node-running: 2.3.0
-    optionalDependencies:
-      '@types/node': 25.9.5
-      '@vitest/browser-playwright': 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
-      '@vitest/coverage-v8': 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
-    transitivePeerDependencies:
-      - msw
-
-  vitest@4.1.11(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)):
-    dependencies:
-      '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
-      '@vitest/pretty-format': 4.1.11
-      '@vitest/runner': 4.1.11
-      '@vitest/snapshot': 4.1.11
-      '@vitest/spy': 4.1.11
-      '@vitest/utils': 4.1.11
-      es-module-lexer: 2.3.2
-      expect-type: 1.4.0
-      magic-string: 0.30.21
-      obug: 2.1.4
-      pathe: 2.0.3
-      picomatch: 4.0.7
-      std-env: 4.2.0
-      tinybench: 2.9.0
-      tinyexec: 1.3.0
-      tinyglobby: 0.2.17
-      tinyrainbow: 3.1.1
-      vite: 8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
-      why-is-node-running: 2.3.0
-    optionalDependencies:
-      '@types/node': 26.4.1
-      '@vitest/browser-playwright': 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
-      '@vitest/coverage-v8': 4.1.11(@vitest/browser@4.1.11)(vitest@4.1.11)
-    transitivePeerDependencies:
-      - msw
-
-  vitest@5.0.0(@types/node@26.4.1)(@vitest/browser-playwright@4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(@vitest/coverage-v8@5.0.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)):
+  vitest@5.0.3(@types/node@25.9.5)(@vitest/browser-playwright@5.0.3)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.0.0(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      '@vitest/mocker': 5.0.3(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
       chai: 6.2.2
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
@@ -7517,14 +7306,15 @@ snapshots:
       picomatch: 4.0.7
       std-env: 4.2.0
       tinybench: 6.1.4
-      tinyexec: 1.3.0
+      tinyexec: 1.3.1
       tinyglobby: 0.2.17
       vite: 8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
-      why-is-node-running: 2.3.0
+      why-is-node-running: 3.2.1
     optionalDependencies:
-      '@types/node': 26.4.1
-      '@vitest/browser-playwright': 4.1.11(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11)
-      '@vitest/coverage-v8': 5.0.0(@vitest/browser@4.1.11(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.11))(vitest@5.0.0)
+      '@types/node': 25.9.5
+      '@vitest/browser-playwright': 5.0.3(playwright@1.63.0)(vite@8.2.2(@types/node@25.9.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.3)
+      '@vitest/coverage-v8': 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
+      '@vitest/ui': 5.0.3(vitest@5.0.3)
     transitivePeerDependencies:
       - msw
 
@@ -7589,10 +7379,7 @@ snapshots:
     dependencies:
       isexe: 4.0.0
 
-  why-is-node-running@2.3.0:
-    dependencies:
-      siginfo: 2.0.0
-      stackback: 0.0.2
+  why-is-node-running@3.2.1: {}
 
   wordwrap@1.0.0: {}
 
