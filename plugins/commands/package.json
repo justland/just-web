@@ -56,7 +56,7 @@
 	"dependencies": {
 		"sentence-case": "~4.0.0",
 		"tersify": "^4.0.8",
-		"type-plus": "8.0.0"
+		"type-plus": "8.0.1"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",

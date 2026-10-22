@@ -62,7 +62,7 @@
 		"@just-web/states": "workspace:^",
 		"immer": "^11.1.18",
 		"js-base64": "^3.9.3",
-		"type-plus": "8.0.0"
+		"type-plus": "8.0.1"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
