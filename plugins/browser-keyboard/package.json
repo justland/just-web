@@ -60,7 +60,7 @@
 	},
 	"dependencies": {
 		"mousetrap": "~1.6.5",
-		"type-plus": "8.0.0"
+		"type-plus": "8.0.1"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
