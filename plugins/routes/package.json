@@ -34,7 +34,8 @@
 	"files": [
 		"esm",
 		"src",
-		"!**/*.{spec,test,unit,accept,integrate,system,perf,stress}.*"
+		"!**/*.{spec,test,unit,accept,integrate,system,perf,stress}.*",
+		"CHANGELOG.md"
 	],
 	"engines": {
 		"node": "^20.19.0 || >=22.12.0"
