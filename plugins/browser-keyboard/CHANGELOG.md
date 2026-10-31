@@ -1,5 +1,11 @@
 # @just-web/browser-contributions
 
+## 11.0.1
+
+### Patch Changes
+
+- 831cf3e: Include `CHANGELOG.md` in the published package.
+
 ## 11.0.0
 
 ### Major Changes
