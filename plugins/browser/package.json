@@ -61,7 +61,7 @@
 	"dependencies": {
 		"@just-web/fetch": "workspace:^",
 		"iso-error": "^7.0.0",
-		"type-plus": "8.0.0"
+		"type-plus": "8.0.1"
 	},
 	"devDependencies": {
 		"@just-web/app": "workspace:^",
