@@ -1,5 +1,11 @@
 # @just-web/repo-scripts
 
+## 0.5.1
+
+### Patch Changes
+
+- 831cf3e: Include `CHANGELOG.md` in the published package.
+
 ## 0.5.0
 
 ### Minor Changes
