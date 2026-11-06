@@ -331,8 +331,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -377,8 +377,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -426,8 +426,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -478,8 +478,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -539,8 +539,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -597,8 +597,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -661,8 +661,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -734,8 +734,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -792,8 +792,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -844,8 +844,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -886,8 +886,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -929,8 +929,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -977,8 +977,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1025,8 +1025,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1077,8 +1077,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1126,8 +1126,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1181,8 +1181,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1233,8 +1233,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -1297,8 +1297,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       repobuddy:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^4.0.0
+        version: 4.4.0
       rimraf:
         specifier: ~6.1.3
         version: 6.1.3
@@ -3818,6 +3818,10 @@ packages:
 
   repobuddy@2.2.0:
     resolution: {integrity: sha512-Mi2RMg0Y1076rq58nUDklA8KUgwBREG6Wp5sXeJ3eBIl4WjG8m10jDU2X5pW71lu6rB+ZmEGnLDxC7P2jPev2Q==}
+    hasBin: true
+
+  repobuddy@4.4.0:
+    resolution: {integrity: sha512-OVuvYNksifmsX7fpcxte64FLky6t0ASAdSwd3kTeecb0E2WLODySDOXBUUdHTr+Es0JpypVyscNVYBVPIR3F3A==}
     hasBin: true
 
   require-from-string@2.0.2:
@@ -6838,6 +6842,8 @@ snapshots:
   repeat-string@1.6.1: {}
 
   repobuddy@2.2.0: {}
+
+  repobuddy@4.4.0: {}
 
   require-from-string@2.0.2: {}
 
