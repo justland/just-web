@@ -169,7 +169,7 @@ catalogs:
       version: 3.0.0
 
 overrides:
-  glob@>=10.2.0 <10.5.0: '>=10.5.0 <11'
+  glob@>=10.2.0 <10.5.0: <15
 
 importers:
 
@@ -7527,7 +7527,7 @@ snapshots:
       lightningcss: 1.33.0
       picomatch: 4.0.7
       postcss: 8.5.26
-      rolldown: 1.2.7
+      rolldown: 1.2.16
       tinyglobby: 0.2.17
     optionalDependencies:
       '@types/node': 26.4.1
