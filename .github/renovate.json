@@ -1,6 +1,6 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>unional/renovate-preset"],
+	"extends": ["github>repobuddy/renovate-preset"],
 	"platformAutomerge": true,
 	"packageRules": [
 		{
@@ -12,7 +12,6 @@
 			"description": "Runtime dependencies of a published package ship to consumers, so a human decides.",
 			"matchDepTypes": ["dependencies", "peerDependencies"],
 			"automerge": false
-		},
-		{ "description": "Majors are a human decision.", "matchUpdateTypes": ["major"], "automerge": false }
+		}
 	]
 }
